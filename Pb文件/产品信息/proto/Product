@@ -1,0 +1,128 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//搜索产品列表
+message SearchProductListRequest {   
+
+    optional string                 keywords = 1; //关键字
+	
+	optional string                 searchType = 2; //0：默认综合，1：品牌，2：类型
+	
+	optional int32                  orderBy = 3; //排序方式，0：默认综合，1：年龄，2：价格，3：销量
+    
+}
+
+//查询产品列表结果
+message SearchProductListResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+   repeated ProductLiteInfo	       productLiteInfo = 3;
+}
+
+//产品简要信息
+message ProductLiteInfo {   
+
+   required string                 productId = 1; //产品Id
+   
+   required string                 productType = 2; //产品类型
+    
+   required string                 brand = 3; //品牌
+   
+   required string                 mainImageUrl = 4; //大图地址
+   
+   required string                 desc = 5; //描述
+   
+   optional double                 lowestRent = 6; //最低租金
+
+   optional int32                  unit = 7; //最低租金单位 1：天。2：月
+   
+   optional int64                  rentCount = 8; //已租件数
+   
+   optional double                 marketPrice = 9; //市场价
+   
+   optional double                 pledgePrice = 10; //押金
+    
+}
+
+//查看产品详情
+message ProductDetailRequest {   
+
+   required string                 productId = 1; //产品Id
+    
+}
+
+//产品详情
+message ProductDetailResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   optional ProductDetailInfo      productDetailInfo=3;
+    
+}
+
+
+//产品简要信息
+message ProductDetailInfo {   
+
+   required string                 productId = 1; //产品Id
+   
+   required string                 productType = 2; //产品类型
+    
+   required string                 brand = 3; //品牌
+   
+   repeated string                 imageUrl = 4; //图片地址
+   
+   required string                 desc = 5; //描述
+   
+   optional double                 lowestRent = 6; //最低租金
+
+   optional int32                  unit = 7; //最低租金 单位 1：天。2：月
+   
+   optional int64                  rentCount = 8; //已租件数
+   
+   optional double                 marketPrice = 9; //市场价
+   
+   optional double                 pledgePrice = 10; //押金
+   
+   optional double                 transportationPrice = 11; //运费
+   
+   optional string                 location = 12; //所在地
+   
+   optional int64                  stockCount = 13; //库存
+   
+   repeated ColorInfo              colorInfo = 14; //颜色信息   
+
+   repeated RentInfo               rentInfo = 15;//租金信息
+    
+}
+
+//颜色信息
+message ColorInfo {  
+
+ required string                 colorCode = 1; //颜色编号
+ 
+ required string                 colorName = 2; //颜色名称
+
+}
+
+//租金信息
+message RentInfo {  
+
+ required string                 rentCode = 1; //租金编码
+ 
+ required string                 rentPeriod = 2; //周期，单位：天
+ 
+ required string                 rentPeriodName = 3; //租用周期显示名称
+ 
+ required string                 rentPrice = 4; //单价，单位 元/天
+
+}
+
+
