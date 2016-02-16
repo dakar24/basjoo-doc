@@ -1,0 +1,43 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//发送注册验证码
+message SendRegisterCheckCodeRequest {   
+
+    required string                 mobileNo = 1;
+    
+}
+
+//发送注册验证码结果
+message SendRegisterCheckCodeResult {   
+
+   required string                 result_code = 1;
+    
+   required string                 result_message = 2;
+    
+}
+
+
+//注册请求
+message RegisterRequest {   
+
+    required string                 mobileNo = 1;
+
+    required string                 checkCode = 2;
+
+    required string                 password = 3;
+    
+}
+
+
+//注册结果
+message  RegisterResult {
+
+    required string                 result_code = 1;
+    
+    required string                 result_message = 2;
+    
+}
+
