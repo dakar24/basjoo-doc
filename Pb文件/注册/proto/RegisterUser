@@ -13,9 +13,9 @@ message SendRegisterCheckCodeRequest {
 //发送注册验证码结果
 message SendRegisterCheckCodeResult {   
 
-   required string                 result_code = 1;
+   required string                 resultCode = 1;
     
-   required string                 result_message = 2;
+   required string                 resultMsg = 2;
     
 }
 
@@ -28,6 +28,8 @@ message RegisterRequest {
     required string                 checkCode = 2;
 
     required string                 password = 3;
+
+    optional string                 headIconUrl = 4;
     
 }
 
@@ -35,9 +37,9 @@ message RegisterRequest {
 //注册结果
 message  RegisterResult {
 
-    required string                 result_code = 1;
+    required string                 resultCode = 1;
     
-    required string                 result_message = 2;
+    required string                 resultMsg = 2;
     
 }
 

@@ -505,32 +505,32 @@ public final class RegisterUser {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
-    boolean hasResultMessage();
+    boolean hasResultMsg();
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
-    java.lang.String getResultMessage();
+    java.lang.String getResultMsg();
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
-        getResultMessageBytes();
+        getResultMsgBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.SendRegisterCheckCodeResult}
@@ -597,7 +597,7 @@ public final class RegisterUser {
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultMessage_ = bs;
+              resultMsg_ = bs;
               break;
             }
           }
@@ -640,16 +640,16 @@ public final class RegisterUser {
     }
 
     private int bitField0_;
-    public static final int RESULT_CODE_FIELD_NUMBER = 1;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
     private java.lang.Object resultCode_;
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -666,7 +666,7 @@ public final class RegisterUser {
       }
     }
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -682,19 +682,19 @@ public final class RegisterUser {
       }
     }
 
-    public static final int RESULT_MESSAGE_FIELD_NUMBER = 2;
-    private java.lang.Object resultMessage_;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
-    public boolean hasResultMessage() {
+    public boolean hasResultMsg() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
-    public java.lang.String getResultMessage() {
-      java.lang.Object ref = resultMessage_;
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -702,22 +702,22 @@ public final class RegisterUser {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          resultMessage_ = s;
+          resultMsg_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getResultMessageBytes() {
-      java.lang.Object ref = resultMessage_;
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        resultMessage_ = b;
+        resultMsg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -726,7 +726,7 @@ public final class RegisterUser {
 
     private void initFields() {
       resultCode_ = "";
-      resultMessage_ = "";
+      resultMsg_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -738,7 +738,7 @@ public final class RegisterUser {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasResultMessage()) {
+      if (!hasResultMsg()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -753,7 +753,7 @@ public final class RegisterUser {
         output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultMessageBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -770,7 +770,7 @@ public final class RegisterUser {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultMessageBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -895,7 +895,7 @@ public final class RegisterUser {
         super.clear();
         resultCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        resultMessage_ = "";
+        resultMsg_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -932,7 +932,7 @@ public final class RegisterUser {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultMessage_ = resultMessage_;
+        result.resultMsg_ = resultMsg_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -954,9 +954,9 @@ public final class RegisterUser {
           resultCode_ = other.resultCode_;
           onChanged();
         }
-        if (other.hasResultMessage()) {
+        if (other.hasResultMsg()) {
           bitField0_ |= 0x00000002;
-          resultMessage_ = other.resultMessage_;
+          resultMsg_ = other.resultMsg_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -968,7 +968,7 @@ public final class RegisterUser {
           
           return false;
         }
-        if (!hasResultMessage()) {
+        if (!hasResultMsg()) {
           
           return false;
         }
@@ -996,13 +996,13 @@ public final class RegisterUser {
 
       private java.lang.Object resultCode_ = "";
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -1019,7 +1019,7 @@ public final class RegisterUser {
         }
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -1035,7 +1035,7 @@ public final class RegisterUser {
         }
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
@@ -1048,7 +1048,7 @@ public final class RegisterUser {
         return this;
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1057,7 +1057,7 @@ public final class RegisterUser {
         return this;
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
@@ -1070,24 +1070,24 @@ public final class RegisterUser {
         return this;
       }
 
-      private java.lang.Object resultMessage_ = "";
+      private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public boolean hasResultMessage() {
+      public boolean hasResultMsg() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public java.lang.String getResultMessage() {
-        java.lang.Object ref = resultMessage_;
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            resultMessage_ = s;
+            resultMsg_ = s;
           }
           return s;
         } else {
@@ -1095,53 +1095,53 @@ public final class RegisterUser {
         }
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getResultMessageBytes() {
-        java.lang.Object ref = resultMessage_;
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          resultMessage_ = b;
+          resultMsg_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public Builder setResultMessage(
+      public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        resultMessage_ = value;
+        resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public Builder clearResultMessage() {
+      public Builder clearResultMsg() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        resultMessage_ = getDefaultInstance().getResultMessage();
+        resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public Builder setResultMessageBytes(
+      public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        resultMessage_ = value;
+        resultMsg_ = value;
         onChanged();
         return this;
       }
@@ -1202,6 +1202,20 @@ public final class RegisterUser {
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
+
+    /**
+     * <code>optional string headIconUrl = 4;</code>
+     */
+    boolean hasHeadIconUrl();
+    /**
+     * <code>optional string headIconUrl = 4;</code>
+     */
+    java.lang.String getHeadIconUrl();
+    /**
+     * <code>optional string headIconUrl = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getHeadIconUrlBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.RegisterRequest}
@@ -1275,6 +1289,12 @@ public final class RegisterUser {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
               password_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              headIconUrl_ = bs;
               break;
             }
           }
@@ -1443,10 +1463,53 @@ public final class RegisterUser {
       }
     }
 
+    public static final int HEADICONURL_FIELD_NUMBER = 4;
+    private java.lang.Object headIconUrl_;
+    /**
+     * <code>optional string headIconUrl = 4;</code>
+     */
+    public boolean hasHeadIconUrl() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string headIconUrl = 4;</code>
+     */
+    public java.lang.String getHeadIconUrl() {
+      java.lang.Object ref = headIconUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          headIconUrl_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string headIconUrl = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHeadIconUrlBytes() {
+      java.lang.Object ref = headIconUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        headIconUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       mobileNo_ = "";
       checkCode_ = "";
       password_ = "";
+      headIconUrl_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1482,6 +1545,9 @@ public final class RegisterUser {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getPasswordBytes());
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getHeadIconUrlBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1502,6 +1568,10 @@ public final class RegisterUser {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, getPasswordBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getHeadIconUrlBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1630,6 +1700,8 @@ public final class RegisterUser {
         bitField0_ = (bitField0_ & ~0x00000002);
         password_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
+        headIconUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -1670,6 +1742,10 @@ public final class RegisterUser {
           to_bitField0_ |= 0x00000004;
         }
         result.password_ = password_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.headIconUrl_ = headIconUrl_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1699,6 +1775,11 @@ public final class RegisterUser {
         if (other.hasPassword()) {
           bitField0_ |= 0x00000004;
           password_ = other.password_;
+          onChanged();
+        }
+        if (other.hasHeadIconUrl()) {
+          bitField0_ |= 0x00000008;
+          headIconUrl_ = other.headIconUrl_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1968,6 +2049,82 @@ public final class RegisterUser {
         return this;
       }
 
+      private java.lang.Object headIconUrl_ = "";
+      /**
+       * <code>optional string headIconUrl = 4;</code>
+       */
+      public boolean hasHeadIconUrl() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string headIconUrl = 4;</code>
+       */
+      public java.lang.String getHeadIconUrl() {
+        java.lang.Object ref = headIconUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            headIconUrl_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string headIconUrl = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHeadIconUrlBytes() {
+        java.lang.Object ref = headIconUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          headIconUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string headIconUrl = 4;</code>
+       */
+      public Builder setHeadIconUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        headIconUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string headIconUrl = 4;</code>
+       */
+      public Builder clearHeadIconUrl() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        headIconUrl_ = getDefaultInstance().getHeadIconUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string headIconUrl = 4;</code>
+       */
+      public Builder setHeadIconUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        headIconUrl_ = value;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.RegisterRequest)
     }
 
@@ -1984,32 +2141,32 @@ public final class RegisterUser {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
-    boolean hasResultMessage();
+    boolean hasResultMsg();
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
-    java.lang.String getResultMessage();
+    java.lang.String getResultMsg();
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
-        getResultMessageBytes();
+        getResultMsgBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.RegisterResult}
@@ -2076,7 +2233,7 @@ public final class RegisterUser {
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultMessage_ = bs;
+              resultMsg_ = bs;
               break;
             }
           }
@@ -2119,16 +2276,16 @@ public final class RegisterUser {
     }
 
     private int bitField0_;
-    public static final int RESULT_CODE_FIELD_NUMBER = 1;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
     private java.lang.Object resultCode_;
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -2145,7 +2302,7 @@ public final class RegisterUser {
       }
     }
     /**
-     * <code>required string result_code = 1;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -2161,19 +2318,19 @@ public final class RegisterUser {
       }
     }
 
-    public static final int RESULT_MESSAGE_FIELD_NUMBER = 2;
-    private java.lang.Object resultMessage_;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
-    public boolean hasResultMessage() {
+    public boolean hasResultMsg() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
-    public java.lang.String getResultMessage() {
-      java.lang.Object ref = resultMessage_;
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -2181,22 +2338,22 @@ public final class RegisterUser {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          resultMessage_ = s;
+          resultMsg_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string result_message = 2;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getResultMessageBytes() {
-      java.lang.Object ref = resultMessage_;
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        resultMessage_ = b;
+        resultMsg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2205,7 +2362,7 @@ public final class RegisterUser {
 
     private void initFields() {
       resultCode_ = "";
-      resultMessage_ = "";
+      resultMsg_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2217,7 +2374,7 @@ public final class RegisterUser {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasResultMessage()) {
+      if (!hasResultMsg()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -2232,7 +2389,7 @@ public final class RegisterUser {
         output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultMessageBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -2249,7 +2406,7 @@ public final class RegisterUser {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultMessageBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2374,7 +2531,7 @@ public final class RegisterUser {
         super.clear();
         resultCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        resultMessage_ = "";
+        resultMsg_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -2411,7 +2568,7 @@ public final class RegisterUser {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultMessage_ = resultMessage_;
+        result.resultMsg_ = resultMsg_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2433,9 +2590,9 @@ public final class RegisterUser {
           resultCode_ = other.resultCode_;
           onChanged();
         }
-        if (other.hasResultMessage()) {
+        if (other.hasResultMsg()) {
           bitField0_ |= 0x00000002;
-          resultMessage_ = other.resultMessage_;
+          resultMsg_ = other.resultMsg_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2447,7 +2604,7 @@ public final class RegisterUser {
           
           return false;
         }
-        if (!hasResultMessage()) {
+        if (!hasResultMsg()) {
           
           return false;
         }
@@ -2475,13 +2632,13 @@ public final class RegisterUser {
 
       private java.lang.Object resultCode_ = "";
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -2498,7 +2655,7 @@ public final class RegisterUser {
         }
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -2514,7 +2671,7 @@ public final class RegisterUser {
         }
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
@@ -2527,7 +2684,7 @@ public final class RegisterUser {
         return this;
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2536,7 +2693,7 @@ public final class RegisterUser {
         return this;
       }
       /**
-       * <code>required string result_code = 1;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
@@ -2549,24 +2706,24 @@ public final class RegisterUser {
         return this;
       }
 
-      private java.lang.Object resultMessage_ = "";
+      private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public boolean hasResultMessage() {
+      public boolean hasResultMsg() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public java.lang.String getResultMessage() {
-        java.lang.Object ref = resultMessage_;
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            resultMessage_ = s;
+            resultMsg_ = s;
           }
           return s;
         } else {
@@ -2574,53 +2731,53 @@ public final class RegisterUser {
         }
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getResultMessageBytes() {
-        java.lang.Object ref = resultMessage_;
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          resultMessage_ = b;
+          resultMsg_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public Builder setResultMessage(
+      public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        resultMessage_ = value;
+        resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public Builder clearResultMessage() {
+      public Builder clearResultMsg() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        resultMessage_ = getDefaultInstance().getResultMessage();
+        resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string result_message = 2;</code>
+       * <code>required string resultMsg = 2;</code>
        */
-      public Builder setResultMessageBytes(
+      public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        resultMessage_ = value;
+        resultMsg_ = value;
         onChanged();
         return this;
       }
@@ -2667,13 +2824,13 @@ public final class RegisterUser {
     java.lang.String[] descriptorData = {
       "\n\014RegisterUser\022\035com.qjoy.basjoo.core.mod" +
       "el.pb\"0\n\034SendRegisterCheckCodeRequest\022\020\n" +
-      "\010mobileNo\030\001 \002(\t\"J\n\033SendRegisterCheckCode" +
-      "Result\022\023\n\013result_code\030\001 \002(\t\022\026\n\016result_me" +
-      "ssage\030\002 \002(\t\"H\n\017RegisterRequest\022\020\n\010mobile" +
-      "No\030\001 \002(\t\022\021\n\tcheckCode\030\002 \002(\t\022\020\n\010password\030" +
-      "\003 \002(\t\"=\n\016RegisterResult\022\023\n\013result_code\030\001" +
-      " \002(\t\022\026\n\016result_message\030\002 \002(\tB\037\n\035com.qjoy" +
-      ".basjoo.core.model.pb"
+      "\010mobileNo\030\001 \002(\t\"D\n\033SendRegisterCheckCode" +
+      "Result\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030" +
+      "\002 \002(\t\"]\n\017RegisterRequest\022\020\n\010mobileNo\030\001 \002" +
+      "(\t\022\021\n\tcheckCode\030\002 \002(\t\022\020\n\010password\030\003 \002(\t\022" +
+      "\023\n\013headIconUrl\030\004 \001(\t\"7\n\016RegisterResult\022\022" +
+      "\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\tB\037\n" +
+      "\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2698,19 +2855,19 @@ public final class RegisterUser {
     internal_static_com_qjoy_basjoo_core_model_pb_SendRegisterCheckCodeResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_SendRegisterCheckCodeResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMessage", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_RegisterRequest_descriptor,
-        new java.lang.String[] { "MobileNo", "CheckCode", "Password", });
+        new java.lang.String[] { "MobileNo", "CheckCode", "Password", "HeadIconUrl", });
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterResult_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_RegisterResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMessage", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

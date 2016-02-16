@@ -13,23 +13,23 @@ import static com.squareup.wire.Message.Label.REQUIRED;
  */
 public final class SendRegisterCheckCodeResult extends Message {
 
-  public static final int TAG_RESULT_CODE = 1;
-  public static final int TAG_RESULT_MESSAGE = 2;
+  public static final int TAG_RESULTCODE = 1;
+  public static final int TAG_RESULTMSG = 2;
 
-  public static final String DEFAULT_RESULT_CODE = "";
-  public static final String DEFAULT_RESULT_MESSAGE = "";
+  public static final String DEFAULT_RESULTCODE = "";
+  public static final String DEFAULT_RESULTMSG = "";
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
-  public String result_code;
+  public String resultCode;
 
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
-  public String result_message;
+  public String resultMsg;
 
   public SendRegisterCheckCodeResult(SendRegisterCheckCodeResult message) {
     super(message);
     if (message == null) return;
-    this.result_code = message.result_code;
-    this.result_message = message.result_message;
+    this.resultCode = message.resultCode;
+    this.resultMsg = message.resultMsg;
   }
 
   public SendRegisterCheckCodeResult() {
@@ -37,11 +37,11 @@ public final class SendRegisterCheckCodeResult extends Message {
 
   public SendRegisterCheckCodeResult fillTagValue(int tag, Object value) {
     switch(tag) {
-        case TAG_RESULT_CODE:
-        this.result_code = (String)value;
+        case TAG_RESULTCODE:
+        this.resultCode = (String)value;
         break;
-        case TAG_RESULT_MESSAGE:
-        this.result_message = (String)value;
+        case TAG_RESULTMSG:
+        this.resultMsg = (String)value;
         break;
         default: break;
         };
@@ -53,16 +53,16 @@ public final class SendRegisterCheckCodeResult extends Message {
     if (other == this) return true;
     if (!(other instanceof SendRegisterCheckCodeResult)) return false;
     SendRegisterCheckCodeResult o = (SendRegisterCheckCodeResult) other;
-    return equals(result_code, o.result_code)
-        && equals(result_message, o.result_message);
+    return equals(resultCode, o.resultCode)
+        && equals(resultMsg, o.resultMsg);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
     if (result == 0) {
-      result = result_code != null ? result_code.hashCode() : 0;
-      result = result * 37 + (result_message != null ? result_message.hashCode() : 0);
+      result = resultCode != null ? resultCode.hashCode() : 0;
+      result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       hashCode = result;
     }
     return result;

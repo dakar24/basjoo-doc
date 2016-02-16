@@ -73,7 +73,7 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _resultCode = @"";
-    _resultMessage = @"";
+    _resultMsg = @"";
   }
   return self;
 }
@@ -81,8 +81,8 @@
   if (self.hasResultCode) {
     [output writeString:1 value:self.resultCode];
   }
-  if (self.hasResultMessage) {
-    [output writeString:2 value:self.resultMessage];
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -93,8 +93,8 @@
   if (self.hasResultCode) {
     size_ += computeStringSize(1, self.resultCode);
   }
-  if (self.hasResultMessage) {
-    size_ += computeStringSize(2, self.resultMessage);
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -109,8 +109,8 @@
   if (self.hasResultCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
   }
-  if (self.hasResultMessage) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"resultMessage", self.resultMessage];
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -119,9 +119,9 @@
   _hasResultCode = YES;
   _resultCode = value;
 }
-- (void) setResultMessage:(NSString*) value {
-  _hasResultMessage = YES;
-  _resultMessage = value;
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -143,7 +143,7 @@
         break;
       }
       case 18: {
-        [self setResultMessage:[input readString]];
+        [self setResultMsg:[input readString]];
         break;
       }
     }
@@ -159,6 +159,7 @@
     _mobileNo = @"";
     _checkCode = @"";
     _password = @"";
+    _headIconUrl = @"";
   }
   return self;
 }
@@ -171,6 +172,9 @@
   }
   if (self.hasPassword) {
     [output writeString:3 value:self.password];
+  }
+  if (self.hasHeadIconUrl) {
+    [output writeString:4 value:self.headIconUrl];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -186,6 +190,9 @@
   }
   if (self.hasPassword) {
     size_ += computeStringSize(3, self.password);
+  }
+  if (self.hasHeadIconUrl) {
+    size_ += computeStringSize(4, self.headIconUrl);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -206,6 +213,9 @@
   if (self.hasPassword) {
     [output appendFormat:@"%@%@: %@\n", indent, @"password", self.password];
   }
+  if (self.hasHeadIconUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"headIconUrl", self.headIconUrl];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -220,6 +230,10 @@
 - (void) setPassword:(NSString*) value {
   _hasPassword = YES;
   _password = value;
+}
+- (void) setHeadIconUrl:(NSString*) value {
+  _hasHeadIconUrl = YES;
+  _headIconUrl = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -248,6 +262,10 @@
         [self setPassword:[input readString]];
         break;
       }
+      case 34: {
+        [self setHeadIconUrl:[input readString]];
+        break;
+      }
     }
   }
 }
@@ -259,7 +277,7 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _resultCode = @"";
-    _resultMessage = @"";
+    _resultMsg = @"";
   }
   return self;
 }
@@ -267,8 +285,8 @@
   if (self.hasResultCode) {
     [output writeString:1 value:self.resultCode];
   }
-  if (self.hasResultMessage) {
-    [output writeString:2 value:self.resultMessage];
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -279,8 +297,8 @@
   if (self.hasResultCode) {
     size_ += computeStringSize(1, self.resultCode);
   }
-  if (self.hasResultMessage) {
-    size_ += computeStringSize(2, self.resultMessage);
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -295,8 +313,8 @@
   if (self.hasResultCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
   }
-  if (self.hasResultMessage) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"resultMessage", self.resultMessage];
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -305,9 +323,9 @@
   _hasResultCode = YES;
   _resultCode = value;
 }
-- (void) setResultMessage:(NSString*) value {
-  _hasResultMessage = YES;
-  _resultMessage = value;
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -329,7 +347,7 @@
         break;
       }
       case 18: {
-        [self setResultMessage:[input readString]];
+        [self setResultMsg:[input readString]];
         break;
       }
     }
