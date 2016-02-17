@@ -205,7 +205,7 @@
       }
       case 26: {
         ProductLiteInfo* sub = [[ProductLiteInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addProductLiteInfo:sub];
         break;
       }
@@ -605,7 +605,7 @@
       }
       case 26: {
         ProductDetailInfo* sub = [[ProductDetailInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self setProductDetailInfo:sub];
         break;
       }
@@ -945,13 +945,13 @@
       }
       case 114: {
         ColorInfo* sub = [[ColorInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addColorInfo:sub];
         break;
       }
       case 122: {
         RentInfo* sub = [[RentInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addRentInfo:sub];
         break;
       }
