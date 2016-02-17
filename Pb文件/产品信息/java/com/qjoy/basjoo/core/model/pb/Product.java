@@ -80,6 +80,23 @@ public final class Product {
      * </pre>
      */
     int getOrderBy();
+
+    /**
+     * <code>optional int32 startIndex = 4;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    boolean hasStartIndex();
+    /**
+     * <code>optional int32 startIndex = 4;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    int getStartIndex();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.SearchProductListRequest}
@@ -152,6 +169,11 @@ public final class Product {
             case 24: {
               bitField0_ |= 0x00000004;
               orderBy_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              startIndex_ = input.readInt32();
               break;
             }
           }
@@ -325,10 +347,34 @@ public final class Product {
       return orderBy_;
     }
 
+    public static final int STARTINDEX_FIELD_NUMBER = 4;
+    private int startIndex_;
+    /**
+     * <code>optional int32 startIndex = 4;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    public boolean hasStartIndex() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int32 startIndex = 4;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    public int getStartIndex() {
+      return startIndex_;
+    }
+
     private void initFields() {
       keywords_ = "";
       searchType_ = "";
       orderBy_ = 0;
+      startIndex_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -352,6 +398,9 @@ public final class Product {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, orderBy_);
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, startIndex_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -372,6 +421,10 @@ public final class Product {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, orderBy_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, startIndex_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -500,6 +553,8 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000002);
         orderBy_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
+        startIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -540,6 +595,10 @@ public final class Product {
           to_bitField0_ |= 0x00000004;
         }
         result.orderBy_ = orderBy_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.startIndex_ = startIndex_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -568,6 +627,9 @@ public final class Product {
         }
         if (other.hasOrderBy()) {
           setOrderBy(other.getOrderBy());
+        }
+        if (other.hasStartIndex()) {
+          setStartIndex(other.getStartIndex());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -844,6 +906,54 @@ public final class Product {
         return this;
       }
 
+      private int startIndex_ ;
+      /**
+       * <code>optional int32 startIndex = 4;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public boolean hasStartIndex() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 startIndex = 4;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public int getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       * <code>optional int32 startIndex = 4;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public Builder setStartIndex(int value) {
+        bitField0_ |= 0x00000008;
+        startIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 startIndex = 4;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public Builder clearStartIndex() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.SearchProductListRequest)
     }
 
@@ -888,25 +998,79 @@ public final class Product {
         getResultMsgBytes();
 
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    boolean hasMaxIndex();
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    int getMaxIndex();
+
+    /**
+     * <code>optional bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    boolean hasHasMore();
+    /**
+     * <code>optional bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    boolean getHasMore();
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo> 
         getProductLiteInfoList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo getProductLiteInfo(int index);
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     int getProductLiteInfoCount();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfoOrBuilder> 
         getProductLiteInfoOrBuilderList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfoOrBuilder getProductLiteInfoOrBuilder(
         int index);
@@ -979,10 +1143,20 @@ public final class Product {
               resultMsg_ = bs;
               break;
             }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            case 24: {
+              bitField0_ |= 0x00000004;
+              maxIndex_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              hasMore_ = input.readBool();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
                 productLiteInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000010;
               }
               productLiteInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.PARSER, extensionRegistry));
               break;
@@ -995,7 +1169,7 @@ public final class Product {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           productLiteInfo_ = java.util.Collections.unmodifiableList(productLiteInfo_);
         }
         this.unknownFields = unknownFields.build();
@@ -1114,35 +1288,101 @@ public final class Product {
       }
     }
 
-    public static final int PRODUCTLITEINFO_FIELD_NUMBER = 3;
+    public static final int MAXINDEX_FIELD_NUMBER = 3;
+    private int maxIndex_;
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    public boolean hasMaxIndex() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    public int getMaxIndex() {
+      return maxIndex_;
+    }
+
+    public static final int HASMORE_FIELD_NUMBER = 4;
+    private boolean hasMore_;
+    /**
+     * <code>optional bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    public boolean hasHasMore() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    public boolean getHasMore() {
+      return hasMore_;
+    }
+
+    public static final int PRODUCTLITEINFO_FIELD_NUMBER = 5;
     private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo> productLiteInfo_;
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo> getProductLiteInfoList() {
       return productLiteInfo_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfoOrBuilder> 
         getProductLiteInfoOrBuilderList() {
       return productLiteInfo_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     public int getProductLiteInfoCount() {
       return productLiteInfo_.size();
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo getProductLiteInfo(int index) {
       return productLiteInfo_.get(index);
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+     *
+     * <pre>
+     *产品简要信息列表
+     * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfoOrBuilder getProductLiteInfoOrBuilder(
         int index) {
@@ -1152,6 +1392,8 @@ public final class Product {
     private void initFields() {
       resultCode_ = "";
       resultMsg_ = "";
+      maxIndex_ = 0;
+      hasMore_ = false;
       productLiteInfo_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
@@ -1187,8 +1429,14 @@ public final class Product {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getResultMsgBytes());
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, maxIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBool(4, hasMore_);
+      }
       for (int i = 0; i < productLiteInfo_.size(); i++) {
-        output.writeMessage(3, productLiteInfo_.get(i));
+        output.writeMessage(5, productLiteInfo_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -1207,9 +1455,17 @@ public final class Product {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getResultMsgBytes());
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, maxIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, hasMore_);
+      }
       for (int i = 0; i < productLiteInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, productLiteInfo_.get(i));
+          .computeMessageSize(5, productLiteInfo_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1337,9 +1593,13 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        maxIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        hasMore_ = false;
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (productLiteInfoBuilder_ == null) {
           productLiteInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           productLiteInfoBuilder_.clear();
         }
@@ -1379,10 +1639,18 @@ public final class Product {
           to_bitField0_ |= 0x00000002;
         }
         result.resultMsg_ = resultMsg_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.maxIndex_ = maxIndex_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.hasMore_ = hasMore_;
         if (productLiteInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
             productLiteInfo_ = java.util.Collections.unmodifiableList(productLiteInfo_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.productLiteInfo_ = productLiteInfo_;
         } else {
@@ -1414,11 +1682,17 @@ public final class Product {
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
+        if (other.hasMaxIndex()) {
+          setMaxIndex(other.getMaxIndex());
+        }
+        if (other.hasHasMore()) {
+          setHasMore(other.getHasMore());
+        }
         if (productLiteInfoBuilder_ == null) {
           if (!other.productLiteInfo_.isEmpty()) {
             if (productLiteInfo_.isEmpty()) {
               productLiteInfo_ = other.productLiteInfo_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureProductLiteInfoIsMutable();
               productLiteInfo_.addAll(other.productLiteInfo_);
@@ -1431,7 +1705,7 @@ public final class Product {
               productLiteInfoBuilder_.dispose();
               productLiteInfoBuilder_ = null;
               productLiteInfo_ = other.productLiteInfo_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000010);
               productLiteInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getProductLiteInfoFieldBuilder() : null;
@@ -1633,12 +1907,108 @@ public final class Product {
         return this;
       }
 
+      private int maxIndex_ ;
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public boolean hasMaxIndex() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public int getMaxIndex() {
+        return maxIndex_;
+      }
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public Builder setMaxIndex(int value) {
+        bitField0_ |= 0x00000004;
+        maxIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public Builder clearMaxIndex() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        maxIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasMore_ ;
+      /**
+       * <code>optional bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public boolean hasHasMore() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public boolean getHasMore() {
+        return hasMore_;
+      }
+      /**
+       * <code>optional bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public Builder setHasMore(boolean value) {
+        bitField0_ |= 0x00000008;
+        hasMore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public Builder clearHasMore() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        hasMore_ = false;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo> productLiteInfo_ =
         java.util.Collections.emptyList();
       private void ensureProductLiteInfoIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           productLiteInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo>(productLiteInfo_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -1646,7 +2016,11 @@ public final class Product {
           com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo, com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfoOrBuilder> productLiteInfoBuilder_;
 
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo> getProductLiteInfoList() {
         if (productLiteInfoBuilder_ == null) {
@@ -1656,7 +2030,11 @@ public final class Product {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public int getProductLiteInfoCount() {
         if (productLiteInfoBuilder_ == null) {
@@ -1666,7 +2044,11 @@ public final class Product {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo getProductLiteInfo(int index) {
         if (productLiteInfoBuilder_ == null) {
@@ -1676,7 +2058,11 @@ public final class Product {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public Builder setProductLiteInfo(
           int index, com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo value) {
@@ -1693,7 +2079,11 @@ public final class Product {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public Builder setProductLiteInfo(
           int index, com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.Builder builderForValue) {
@@ -1707,7 +2097,11 @@ public final class Product {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public Builder addProductLiteInfo(com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo value) {
         if (productLiteInfoBuilder_ == null) {
@@ -1723,7 +2117,11 @@ public final class Product {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public Builder addProductLiteInfo(
           int index, com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo value) {
@@ -1740,7 +2138,11 @@ public final class Product {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public Builder addProductLiteInfo(
           com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.Builder builderForValue) {
@@ -1754,7 +2156,11 @@ public final class Product {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public Builder addProductLiteInfo(
           int index, com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.Builder builderForValue) {
@@ -1768,7 +2174,11 @@ public final class Product {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public Builder addAllProductLiteInfo(
           java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo> values) {
@@ -1783,12 +2193,16 @@ public final class Product {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public Builder clearProductLiteInfo() {
         if (productLiteInfoBuilder_ == null) {
           productLiteInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           productLiteInfoBuilder_.clear();
@@ -1796,7 +2210,11 @@ public final class Product {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public Builder removeProductLiteInfo(int index) {
         if (productLiteInfoBuilder_ == null) {
@@ -1809,14 +2227,22 @@ public final class Product {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.Builder getProductLiteInfoBuilder(
           int index) {
         return getProductLiteInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfoOrBuilder getProductLiteInfoOrBuilder(
           int index) {
@@ -1826,7 +2252,11 @@ public final class Product {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfoOrBuilder> 
            getProductLiteInfoOrBuilderList() {
@@ -1837,14 +2267,22 @@ public final class Product {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.Builder addProductLiteInfoBuilder() {
         return getProductLiteInfoFieldBuilder().addBuilder(
             com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.Builder addProductLiteInfoBuilder(
           int index) {
@@ -1852,7 +2290,11 @@ public final class Product {
             index, com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 3;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductLiteInfo productLiteInfo = 5;</code>
+       *
+       * <pre>
+       *产品简要信息列表
+       * </pre>
        */
       public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.Builder> 
            getProductLiteInfoBuilderList() {
@@ -1865,7 +2307,7 @@ public final class Product {
           productLiteInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo, com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductLiteInfoOrBuilder>(
                   productLiteInfo_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
           productLiteInfo_ = null;
@@ -4400,14 +4842,26 @@ public final class Product {
 
     /**
      * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+     *
+     * <pre>
+     *产品详情信息
+     * </pre>
      */
     boolean hasProductDetailInfo();
     /**
      * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+     *
+     * <pre>
+     *产品详情信息
+     * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo getProductDetailInfo();
     /**
      * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+     *
+     * <pre>
+     *产品详情信息
+     * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfoOrBuilder getProductDetailInfoOrBuilder();
   }
@@ -4620,18 +5074,30 @@ public final class Product {
     private com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo productDetailInfo_;
     /**
      * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+     *
+     * <pre>
+     *产品详情信息
+     * </pre>
      */
     public boolean hasProductDetailInfo() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+     *
+     * <pre>
+     *产品详情信息
+     * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo getProductDetailInfo() {
       return productDetailInfo_;
     }
     /**
      * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+     *
+     * <pre>
+     *产品详情信息
+     * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfoOrBuilder getProductDetailInfoOrBuilder() {
       return productDetailInfo_;
@@ -5102,12 +5568,20 @@ public final class Product {
           com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo, com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfoOrBuilder> productDetailInfoBuilder_;
       /**
        * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+       *
+       * <pre>
+       *产品详情信息
+       * </pre>
        */
       public boolean hasProductDetailInfo() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+       *
+       * <pre>
+       *产品详情信息
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo getProductDetailInfo() {
         if (productDetailInfoBuilder_ == null) {
@@ -5118,6 +5592,10 @@ public final class Product {
       }
       /**
        * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+       *
+       * <pre>
+       *产品详情信息
+       * </pre>
        */
       public Builder setProductDetailInfo(com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo value) {
         if (productDetailInfoBuilder_ == null) {
@@ -5134,6 +5612,10 @@ public final class Product {
       }
       /**
        * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+       *
+       * <pre>
+       *产品详情信息
+       * </pre>
        */
       public Builder setProductDetailInfo(
           com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo.Builder builderForValue) {
@@ -5148,6 +5630,10 @@ public final class Product {
       }
       /**
        * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+       *
+       * <pre>
+       *产品详情信息
+       * </pre>
        */
       public Builder mergeProductDetailInfo(com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo value) {
         if (productDetailInfoBuilder_ == null) {
@@ -5167,6 +5653,10 @@ public final class Product {
       }
       /**
        * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+       *
+       * <pre>
+       *产品详情信息
+       * </pre>
        */
       public Builder clearProductDetailInfo() {
         if (productDetailInfoBuilder_ == null) {
@@ -5180,6 +5670,10 @@ public final class Product {
       }
       /**
        * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+       *
+       * <pre>
+       *产品详情信息
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo.Builder getProductDetailInfoBuilder() {
         bitField0_ |= 0x00000004;
@@ -5188,6 +5682,10 @@ public final class Product {
       }
       /**
        * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+       *
+       * <pre>
+       *产品详情信息
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfoOrBuilder getProductDetailInfoOrBuilder() {
         if (productDetailInfoBuilder_ != null) {
@@ -5198,6 +5696,10 @@ public final class Product {
       }
       /**
        * <code>optional .com.qjoy.basjoo.core.model.pb.ProductDetailInfo productDetailInfo = 3;</code>
+       *
+       * <pre>
+       *产品详情信息
+       * </pre>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo, com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfoOrBuilder> 
@@ -5516,7 +6018,7 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo> 
@@ -5525,7 +6027,7 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Product.ColorInfo getColorInfo(int index);
@@ -5533,7 +6035,7 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     int getColorInfoCount();
@@ -5541,7 +6043,7 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder> 
@@ -5550,61 +6052,105 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder getColorInfoOrBuilder(
         int index);
 
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    java.util.List<com.qjoy.basjoo.core.model.pb.Product.RentInfo> 
-        getRentInfoList();
+    java.util.List<com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo> 
+        getShortRentInfoList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    com.qjoy.basjoo.core.model.pb.Product.RentInfo getRentInfo(int index);
+    com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo getShortRentInfo(int index);
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    int getRentInfoCount();
+    int getShortRentInfoCount();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder> 
-        getRentInfoOrBuilderList();
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder> 
+        getShortRentInfoOrBuilderList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder getRentInfoOrBuilder(
+    com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder getShortRentInfoOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.Product.LongRentInfo> 
+        getLongRentInfoList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.LongRentInfo getLongRentInfo(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    int getLongRentInfoCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder> 
+        getLongRentInfoOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder getLongRentInfoOrBuilder(
         int index);
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductDetailInfo}
    *
    * <pre>
-   *产品简要信息
+   *产品详细信息
    * </pre>
    */
   public static final class ProductDetailInfo extends
@@ -5740,10 +6286,18 @@ public final class Product {
             }
             case 122: {
               if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
-                rentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.RentInfo>();
+                shortRentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo>();
                 mutable_bitField0_ |= 0x00004000;
               }
-              rentInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.RentInfo.PARSER, extensionRegistry));
+              shortRentInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.PARSER, extensionRegistry));
+              break;
+            }
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+                longRentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.LongRentInfo>();
+                mutable_bitField0_ |= 0x00008000;
+              }
+              longRentInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.PARSER, extensionRegistry));
               break;
             }
           }
@@ -5761,7 +6315,10 @@ public final class Product {
           colorInfo_ = java.util.Collections.unmodifiableList(colorInfo_);
         }
         if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
-          rentInfo_ = java.util.Collections.unmodifiableList(rentInfo_);
+          shortRentInfo_ = java.util.Collections.unmodifiableList(shortRentInfo_);
+        }
+        if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+          longRentInfo_ = java.util.Collections.unmodifiableList(longRentInfo_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6277,7 +6834,7 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo> getColorInfoList() {
@@ -6287,7 +6844,7 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder> 
@@ -6298,7 +6855,7 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     public int getColorInfoCount() {
@@ -6308,7 +6865,7 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Product.ColorInfo getColorInfo(int index) {
@@ -6318,7 +6875,7 @@ public final class Product {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
      *
      * <pre>
-     *颜色信息   
+     *颜色信息
      * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder getColorInfoOrBuilder(
@@ -6326,59 +6883,114 @@ public final class Product {
       return colorInfo_.get(index);
     }
 
-    public static final int RENTINFO_FIELD_NUMBER = 15;
-    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.RentInfo> rentInfo_;
+    public static final int SHORTRENTINFO_FIELD_NUMBER = 15;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo> shortRentInfo_;
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.RentInfo> getRentInfoList() {
-      return rentInfo_;
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo> getShortRentInfoList() {
+      return shortRentInfo_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder> 
-        getRentInfoOrBuilderList() {
-      return rentInfo_;
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder> 
+        getShortRentInfoOrBuilderList() {
+      return shortRentInfo_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    public int getRentInfoCount() {
-      return rentInfo_.size();
+    public int getShortRentInfoCount() {
+      return shortRentInfo_.size();
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    public com.qjoy.basjoo.core.model.pb.Product.RentInfo getRentInfo(int index) {
-      return rentInfo_.get(index);
+    public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo getShortRentInfo(int index) {
+      return shortRentInfo_.get(index);
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
      *
      * <pre>
-     *租金信息
+     *短租信息
      * </pre>
      */
-    public com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder getRentInfoOrBuilder(
+    public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder getShortRentInfoOrBuilder(
         int index) {
-      return rentInfo_.get(index);
+      return shortRentInfo_.get(index);
+    }
+
+    public static final int LONGRENTINFO_FIELD_NUMBER = 16;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.LongRentInfo> longRentInfo_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.LongRentInfo> getLongRentInfoList() {
+      return longRentInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder> 
+        getLongRentInfoOrBuilderList() {
+      return longRentInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    public int getLongRentInfoCount() {
+      return longRentInfo_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.LongRentInfo getLongRentInfo(int index) {
+      return longRentInfo_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+     *
+     * <pre>
+     *长租信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder getLongRentInfoOrBuilder(
+        int index) {
+      return longRentInfo_.get(index);
     }
 
     private void initFields() {
@@ -6396,7 +7008,8 @@ public final class Product {
       location_ = "";
       stockCount_ = 0L;
       colorInfo_ = java.util.Collections.emptyList();
-      rentInfo_ = java.util.Collections.emptyList();
+      shortRentInfo_ = java.util.Collections.emptyList();
+      longRentInfo_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -6426,8 +7039,14 @@ public final class Product {
           return false;
         }
       }
-      for (int i = 0; i < getRentInfoCount(); i++) {
-        if (!getRentInfo(i).isInitialized()) {
+      for (int i = 0; i < getShortRentInfoCount(); i++) {
+        if (!getShortRentInfo(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getLongRentInfoCount(); i++) {
+        if (!getLongRentInfo(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -6481,8 +7100,11 @@ public final class Product {
       for (int i = 0; i < colorInfo_.size(); i++) {
         output.writeMessage(14, colorInfo_.get(i));
       }
-      for (int i = 0; i < rentInfo_.size(); i++) {
-        output.writeMessage(15, rentInfo_.get(i));
+      for (int i = 0; i < shortRentInfo_.size(); i++) {
+        output.writeMessage(15, shortRentInfo_.get(i));
+      }
+      for (int i = 0; i < longRentInfo_.size(); i++) {
+        output.writeMessage(16, longRentInfo_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -6554,9 +7176,13 @@ public final class Product {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, colorInfo_.get(i));
       }
-      for (int i = 0; i < rentInfo_.size(); i++) {
+      for (int i = 0; i < shortRentInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, rentInfo_.get(i));
+          .computeMessageSize(15, shortRentInfo_.get(i));
+      }
+      for (int i = 0; i < longRentInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, longRentInfo_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -6640,7 +7266,7 @@ public final class Product {
      * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductDetailInfo}
      *
      * <pre>
-     *产品简要信息
+     *产品详细信息
      * </pre>
      */
     public static final class Builder extends
@@ -6672,7 +7298,8 @@ public final class Product {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getColorInfoFieldBuilder();
-          getRentInfoFieldBuilder();
+          getShortRentInfoFieldBuilder();
+          getLongRentInfoFieldBuilder();
         }
       }
       private static Builder create() {
@@ -6713,11 +7340,17 @@ public final class Product {
         } else {
           colorInfoBuilder_.clear();
         }
-        if (rentInfoBuilder_ == null) {
-          rentInfo_ = java.util.Collections.emptyList();
+        if (shortRentInfoBuilder_ == null) {
+          shortRentInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00004000);
         } else {
-          rentInfoBuilder_.clear();
+          shortRentInfoBuilder_.clear();
+        }
+        if (longRentInfoBuilder_ == null) {
+          longRentInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00008000);
+        } else {
+          longRentInfoBuilder_.clear();
         }
         return this;
       }
@@ -6809,14 +7442,23 @@ public final class Product {
         } else {
           result.colorInfo_ = colorInfoBuilder_.build();
         }
-        if (rentInfoBuilder_ == null) {
+        if (shortRentInfoBuilder_ == null) {
           if (((bitField0_ & 0x00004000) == 0x00004000)) {
-            rentInfo_ = java.util.Collections.unmodifiableList(rentInfo_);
+            shortRentInfo_ = java.util.Collections.unmodifiableList(shortRentInfo_);
             bitField0_ = (bitField0_ & ~0x00004000);
           }
-          result.rentInfo_ = rentInfo_;
+          result.shortRentInfo_ = shortRentInfo_;
         } else {
-          result.rentInfo_ = rentInfoBuilder_.build();
+          result.shortRentInfo_ = shortRentInfoBuilder_.build();
+        }
+        if (longRentInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00008000) == 0x00008000)) {
+            longRentInfo_ = java.util.Collections.unmodifiableList(longRentInfo_);
+            bitField0_ = (bitField0_ & ~0x00008000);
+          }
+          result.longRentInfo_ = longRentInfo_;
+        } else {
+          result.longRentInfo_ = longRentInfoBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -6916,29 +7558,55 @@ public final class Product {
             }
           }
         }
-        if (rentInfoBuilder_ == null) {
-          if (!other.rentInfo_.isEmpty()) {
-            if (rentInfo_.isEmpty()) {
-              rentInfo_ = other.rentInfo_;
+        if (shortRentInfoBuilder_ == null) {
+          if (!other.shortRentInfo_.isEmpty()) {
+            if (shortRentInfo_.isEmpty()) {
+              shortRentInfo_ = other.shortRentInfo_;
               bitField0_ = (bitField0_ & ~0x00004000);
             } else {
-              ensureRentInfoIsMutable();
-              rentInfo_.addAll(other.rentInfo_);
+              ensureShortRentInfoIsMutable();
+              shortRentInfo_.addAll(other.shortRentInfo_);
             }
             onChanged();
           }
         } else {
-          if (!other.rentInfo_.isEmpty()) {
-            if (rentInfoBuilder_.isEmpty()) {
-              rentInfoBuilder_.dispose();
-              rentInfoBuilder_ = null;
-              rentInfo_ = other.rentInfo_;
+          if (!other.shortRentInfo_.isEmpty()) {
+            if (shortRentInfoBuilder_.isEmpty()) {
+              shortRentInfoBuilder_.dispose();
+              shortRentInfoBuilder_ = null;
+              shortRentInfo_ = other.shortRentInfo_;
               bitField0_ = (bitField0_ & ~0x00004000);
-              rentInfoBuilder_ = 
+              shortRentInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getRentInfoFieldBuilder() : null;
+                   getShortRentInfoFieldBuilder() : null;
             } else {
-              rentInfoBuilder_.addAllMessages(other.rentInfo_);
+              shortRentInfoBuilder_.addAllMessages(other.shortRentInfo_);
+            }
+          }
+        }
+        if (longRentInfoBuilder_ == null) {
+          if (!other.longRentInfo_.isEmpty()) {
+            if (longRentInfo_.isEmpty()) {
+              longRentInfo_ = other.longRentInfo_;
+              bitField0_ = (bitField0_ & ~0x00008000);
+            } else {
+              ensureLongRentInfoIsMutable();
+              longRentInfo_.addAll(other.longRentInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.longRentInfo_.isEmpty()) {
+            if (longRentInfoBuilder_.isEmpty()) {
+              longRentInfoBuilder_.dispose();
+              longRentInfoBuilder_ = null;
+              longRentInfo_ = other.longRentInfo_;
+              bitField0_ = (bitField0_ & ~0x00008000);
+              longRentInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getLongRentInfoFieldBuilder() : null;
+            } else {
+              longRentInfoBuilder_.addAllMessages(other.longRentInfo_);
             }
           }
         }
@@ -6969,8 +7637,14 @@ public final class Product {
             return false;
           }
         }
-        for (int i = 0; i < getRentInfoCount(); i++) {
-          if (!getRentInfo(i).isInitialized()) {
+        for (int i = 0; i < getShortRentInfoCount(); i++) {
+          if (!getShortRentInfo(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getLongRentInfoCount(); i++) {
+          if (!getLongRentInfo(i).isInitialized()) {
             
             return false;
           }
@@ -7978,7 +8652,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo> getColorInfoList() {
@@ -7992,7 +8666,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public int getColorInfoCount() {
@@ -8006,7 +8680,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ColorInfo getColorInfo(int index) {
@@ -8020,7 +8694,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public Builder setColorInfo(
@@ -8041,7 +8715,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public Builder setColorInfo(
@@ -8059,7 +8733,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public Builder addColorInfo(com.qjoy.basjoo.core.model.pb.Product.ColorInfo value) {
@@ -8079,7 +8753,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public Builder addColorInfo(
@@ -8100,7 +8774,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public Builder addColorInfo(
@@ -8118,7 +8792,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public Builder addColorInfo(
@@ -8136,7 +8810,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public Builder addAllColorInfo(
@@ -8155,7 +8829,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public Builder clearColorInfo() {
@@ -8172,7 +8846,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public Builder removeColorInfo(int index) {
@@ -8189,7 +8863,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder getColorInfoBuilder(
@@ -8200,7 +8874,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder getColorInfoOrBuilder(
@@ -8214,7 +8888,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder> 
@@ -8229,7 +8903,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder addColorInfoBuilder() {
@@ -8240,7 +8914,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder addColorInfoBuilder(
@@ -8252,7 +8926,7 @@ public final class Product {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
        *
        * <pre>
-       *颜色信息   
+       *颜色信息
        * </pre>
        */
       public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder> 
@@ -8274,316 +8948,628 @@ public final class Product {
         return colorInfoBuilder_;
       }
 
-      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.RentInfo> rentInfo_ =
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo> shortRentInfo_ =
         java.util.Collections.emptyList();
-      private void ensureRentInfoIsMutable() {
+      private void ensureShortRentInfoIsMutable() {
         if (!((bitField0_ & 0x00004000) == 0x00004000)) {
-          rentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.RentInfo>(rentInfo_);
+          shortRentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo>(shortRentInfo_);
           bitField0_ |= 0x00004000;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.qjoy.basjoo.core.model.pb.Product.RentInfo, com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder> rentInfoBuilder_;
+          com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder> shortRentInfoBuilder_;
 
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.RentInfo> getRentInfoList() {
-        if (rentInfoBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(rentInfo_);
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo> getShortRentInfoList() {
+        if (shortRentInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(shortRentInfo_);
         } else {
-          return rentInfoBuilder_.getMessageList();
+          return shortRentInfoBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public int getRentInfoCount() {
-        if (rentInfoBuilder_ == null) {
-          return rentInfo_.size();
+      public int getShortRentInfoCount() {
+        if (shortRentInfoBuilder_ == null) {
+          return shortRentInfo_.size();
         } else {
-          return rentInfoBuilder_.getCount();
+          return shortRentInfoBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.RentInfo getRentInfo(int index) {
-        if (rentInfoBuilder_ == null) {
-          return rentInfo_.get(index);
+      public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo getShortRentInfo(int index) {
+        if (shortRentInfoBuilder_ == null) {
+          return shortRentInfo_.get(index);
         } else {
-          return rentInfoBuilder_.getMessage(index);
+          return shortRentInfoBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public Builder setRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.Product.RentInfo value) {
-        if (rentInfoBuilder_ == null) {
+      public Builder setShortRentInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo value) {
+        if (shortRentInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRentInfoIsMutable();
-          rentInfo_.set(index, value);
+          ensureShortRentInfoIsMutable();
+          shortRentInfo_.set(index, value);
           onChanged();
         } else {
-          rentInfoBuilder_.setMessage(index, value);
+          shortRentInfoBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public Builder setRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder builderForValue) {
-        if (rentInfoBuilder_ == null) {
-          ensureRentInfoIsMutable();
-          rentInfo_.set(index, builderForValue.build());
+      public Builder setShortRentInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder builderForValue) {
+        if (shortRentInfoBuilder_ == null) {
+          ensureShortRentInfoIsMutable();
+          shortRentInfo_.set(index, builderForValue.build());
           onChanged();
         } else {
-          rentInfoBuilder_.setMessage(index, builderForValue.build());
+          shortRentInfoBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public Builder addRentInfo(com.qjoy.basjoo.core.model.pb.Product.RentInfo value) {
-        if (rentInfoBuilder_ == null) {
+      public Builder addShortRentInfo(com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo value) {
+        if (shortRentInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRentInfoIsMutable();
-          rentInfo_.add(value);
+          ensureShortRentInfoIsMutable();
+          shortRentInfo_.add(value);
           onChanged();
         } else {
-          rentInfoBuilder_.addMessage(value);
+          shortRentInfoBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public Builder addRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.Product.RentInfo value) {
-        if (rentInfoBuilder_ == null) {
+      public Builder addShortRentInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo value) {
+        if (shortRentInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRentInfoIsMutable();
-          rentInfo_.add(index, value);
+          ensureShortRentInfoIsMutable();
+          shortRentInfo_.add(index, value);
           onChanged();
         } else {
-          rentInfoBuilder_.addMessage(index, value);
+          shortRentInfoBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public Builder addRentInfo(
-          com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder builderForValue) {
-        if (rentInfoBuilder_ == null) {
-          ensureRentInfoIsMutable();
-          rentInfo_.add(builderForValue.build());
+      public Builder addShortRentInfo(
+          com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder builderForValue) {
+        if (shortRentInfoBuilder_ == null) {
+          ensureShortRentInfoIsMutable();
+          shortRentInfo_.add(builderForValue.build());
           onChanged();
         } else {
-          rentInfoBuilder_.addMessage(builderForValue.build());
+          shortRentInfoBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public Builder addRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder builderForValue) {
-        if (rentInfoBuilder_ == null) {
-          ensureRentInfoIsMutable();
-          rentInfo_.add(index, builderForValue.build());
+      public Builder addShortRentInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder builderForValue) {
+        if (shortRentInfoBuilder_ == null) {
+          ensureShortRentInfoIsMutable();
+          shortRentInfo_.add(index, builderForValue.build());
           onChanged();
         } else {
-          rentInfoBuilder_.addMessage(index, builderForValue.build());
+          shortRentInfoBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public Builder addAllRentInfo(
-          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.RentInfo> values) {
-        if (rentInfoBuilder_ == null) {
-          ensureRentInfoIsMutable();
+      public Builder addAllShortRentInfo(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo> values) {
+        if (shortRentInfoBuilder_ == null) {
+          ensureShortRentInfoIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, rentInfo_);
+              values, shortRentInfo_);
           onChanged();
         } else {
-          rentInfoBuilder_.addAllMessages(values);
+          shortRentInfoBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public Builder clearRentInfo() {
-        if (rentInfoBuilder_ == null) {
-          rentInfo_ = java.util.Collections.emptyList();
+      public Builder clearShortRentInfo() {
+        if (shortRentInfoBuilder_ == null) {
+          shortRentInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00004000);
           onChanged();
         } else {
-          rentInfoBuilder_.clear();
+          shortRentInfoBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public Builder removeRentInfo(int index) {
-        if (rentInfoBuilder_ == null) {
-          ensureRentInfoIsMutable();
-          rentInfo_.remove(index);
+      public Builder removeShortRentInfo(int index) {
+        if (shortRentInfoBuilder_ == null) {
+          ensureShortRentInfoIsMutable();
+          shortRentInfo_.remove(index);
           onChanged();
         } else {
-          rentInfoBuilder_.remove(index);
+          shortRentInfoBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder getRentInfoBuilder(
+      public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder getShortRentInfoBuilder(
           int index) {
-        return getRentInfoFieldBuilder().getBuilder(index);
+        return getShortRentInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder getRentInfoOrBuilder(
+      public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder getShortRentInfoOrBuilder(
           int index) {
-        if (rentInfoBuilder_ == null) {
-          return rentInfo_.get(index);  } else {
-          return rentInfoBuilder_.getMessageOrBuilder(index);
+        if (shortRentInfoBuilder_ == null) {
+          return shortRentInfo_.get(index);  } else {
+          return shortRentInfoBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder> 
-           getRentInfoOrBuilderList() {
-        if (rentInfoBuilder_ != null) {
-          return rentInfoBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder> 
+           getShortRentInfoOrBuilderList() {
+        if (shortRentInfoBuilder_ != null) {
+          return shortRentInfoBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(rentInfo_);
+          return java.util.Collections.unmodifiableList(shortRentInfo_);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder addRentInfoBuilder() {
-        return getRentInfoFieldBuilder().addBuilder(
-            com.qjoy.basjoo.core.model.pb.Product.RentInfo.getDefaultInstance());
+      public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder addShortRentInfoBuilder() {
+        return getShortRentInfoFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder addRentInfoBuilder(
+      public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder addShortRentInfoBuilder(
           int index) {
-        return getRentInfoFieldBuilder().addBuilder(
-            index, com.qjoy.basjoo.core.model.pb.Product.RentInfo.getDefaultInstance());
+        return getShortRentInfoFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.RentInfo rentInfo = 15;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ShortRentInfo shortRentInfo = 15;</code>
        *
        * <pre>
-       *租金信息
+       *短租信息
        * </pre>
        */
-      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder> 
-           getRentInfoBuilderList() {
-        return getRentInfoFieldBuilder().getBuilderList();
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder> 
+           getShortRentInfoBuilderList() {
+        return getShortRentInfoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.qjoy.basjoo.core.model.pb.Product.RentInfo, com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder> 
-          getRentInfoFieldBuilder() {
-        if (rentInfoBuilder_ == null) {
-          rentInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.qjoy.basjoo.core.model.pb.Product.RentInfo, com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder>(
-                  rentInfo_,
+          com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder> 
+          getShortRentInfoFieldBuilder() {
+        if (shortRentInfoBuilder_ == null) {
+          shortRentInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder>(
+                  shortRentInfo_,
                   ((bitField0_ & 0x00004000) == 0x00004000),
                   getParentForChildren(),
                   isClean());
-          rentInfo_ = null;
+          shortRentInfo_ = null;
         }
-        return rentInfoBuilder_;
+        return shortRentInfoBuilder_;
+      }
+
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.LongRentInfo> longRentInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureLongRentInfoIsMutable() {
+        if (!((bitField0_ & 0x00008000) == 0x00008000)) {
+          longRentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.LongRentInfo>(longRentInfo_);
+          bitField0_ |= 0x00008000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.LongRentInfo, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder> longRentInfoBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.LongRentInfo> getLongRentInfoList() {
+        if (longRentInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(longRentInfo_);
+        } else {
+          return longRentInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public int getLongRentInfoCount() {
+        if (longRentInfoBuilder_ == null) {
+          return longRentInfo_.size();
+        } else {
+          return longRentInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.LongRentInfo getLongRentInfo(int index) {
+        if (longRentInfoBuilder_ == null) {
+          return longRentInfo_.get(index);
+        } else {
+          return longRentInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public Builder setLongRentInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo value) {
+        if (longRentInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLongRentInfoIsMutable();
+          longRentInfo_.set(index, value);
+          onChanged();
+        } else {
+          longRentInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public Builder setLongRentInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder builderForValue) {
+        if (longRentInfoBuilder_ == null) {
+          ensureLongRentInfoIsMutable();
+          longRentInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          longRentInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public Builder addLongRentInfo(com.qjoy.basjoo.core.model.pb.Product.LongRentInfo value) {
+        if (longRentInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLongRentInfoIsMutable();
+          longRentInfo_.add(value);
+          onChanged();
+        } else {
+          longRentInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public Builder addLongRentInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo value) {
+        if (longRentInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLongRentInfoIsMutable();
+          longRentInfo_.add(index, value);
+          onChanged();
+        } else {
+          longRentInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public Builder addLongRentInfo(
+          com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder builderForValue) {
+        if (longRentInfoBuilder_ == null) {
+          ensureLongRentInfoIsMutable();
+          longRentInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          longRentInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public Builder addLongRentInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder builderForValue) {
+        if (longRentInfoBuilder_ == null) {
+          ensureLongRentInfoIsMutable();
+          longRentInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          longRentInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public Builder addAllLongRentInfo(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.LongRentInfo> values) {
+        if (longRentInfoBuilder_ == null) {
+          ensureLongRentInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, longRentInfo_);
+          onChanged();
+        } else {
+          longRentInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public Builder clearLongRentInfo() {
+        if (longRentInfoBuilder_ == null) {
+          longRentInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00008000);
+          onChanged();
+        } else {
+          longRentInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public Builder removeLongRentInfo(int index) {
+        if (longRentInfoBuilder_ == null) {
+          ensureLongRentInfoIsMutable();
+          longRentInfo_.remove(index);
+          onChanged();
+        } else {
+          longRentInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder getLongRentInfoBuilder(
+          int index) {
+        return getLongRentInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder getLongRentInfoOrBuilder(
+          int index) {
+        if (longRentInfoBuilder_ == null) {
+          return longRentInfo_.get(index);  } else {
+          return longRentInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder> 
+           getLongRentInfoOrBuilderList() {
+        if (longRentInfoBuilder_ != null) {
+          return longRentInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(longRentInfo_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder addLongRentInfoBuilder() {
+        return getLongRentInfoFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder addLongRentInfoBuilder(
+          int index) {
+        return getLongRentInfoFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.LongRentInfo longRentInfo = 16;</code>
+       *
+       * <pre>
+       *长租信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder> 
+           getLongRentInfoBuilderList() {
+        return getLongRentInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.LongRentInfo, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder> 
+          getLongRentInfoFieldBuilder() {
+        if (longRentInfoBuilder_ == null) {
+          longRentInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Product.LongRentInfo, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder>(
+                  longRentInfo_,
+                  ((bitField0_ & 0x00008000) == 0x00008000),
+                  getParentForChildren(),
+                  isClean());
+          longRentInfo_ = null;
+        }
+        return longRentInfoBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ProductDetailInfo)
@@ -9350,8 +10336,997 @@ public final class Product {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ColorInfo)
   }
 
-  public interface RentInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.RentInfo)
+  public interface ShortRentInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ShortRentInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string rentCode = 1;</code>
+     *
+     * <pre>
+     *租金编码
+     * </pre>
+     */
+    boolean hasRentCode();
+    /**
+     * <code>required string rentCode = 1;</code>
+     *
+     * <pre>
+     *租金编码
+     * </pre>
+     */
+    java.lang.String getRentCode();
+    /**
+     * <code>required string rentCode = 1;</code>
+     *
+     * <pre>
+     *租金编码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getRentCodeBytes();
+
+    /**
+     * <code>required string rentPeriod = 2;</code>
+     *
+     * <pre>
+     *周期，单位：天
+     * </pre>
+     */
+    boolean hasRentPeriod();
+    /**
+     * <code>required string rentPeriod = 2;</code>
+     *
+     * <pre>
+     *周期，单位：天
+     * </pre>
+     */
+    java.lang.String getRentPeriod();
+    /**
+     * <code>required string rentPeriod = 2;</code>
+     *
+     * <pre>
+     *周期，单位：天
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getRentPeriodBytes();
+
+    /**
+     * <code>required double rentPrice = 3;</code>
+     *
+     * <pre>
+     *折算后的单天价，单位 元/天
+     * </pre>
+     */
+    boolean hasRentPrice();
+    /**
+     * <code>required double rentPrice = 3;</code>
+     *
+     * <pre>
+     *折算后的单天价，单位 元/天
+     * </pre>
+     */
+    double getRentPrice();
+
+    /**
+     * <code>required double totalRentPrice = 4;</code>
+     *
+     * <pre>
+     *该周期内总价
+     * </pre>
+     */
+    boolean hasTotalRentPrice();
+    /**
+     * <code>required double totalRentPrice = 4;</code>
+     *
+     * <pre>
+     *该周期内总价
+     * </pre>
+     */
+    double getTotalRentPrice();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ShortRentInfo}
+   *
+   * <pre>
+   *短租信息
+   * </pre>
+   */
+  public static final class ShortRentInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ShortRentInfo)
+      ShortRentInfoOrBuilder {
+    // Use ShortRentInfo.newBuilder() to construct.
+    private ShortRentInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ShortRentInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ShortRentInfo defaultInstance;
+    public static ShortRentInfo getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ShortRentInfo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ShortRentInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              rentCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              rentPeriod_ = bs;
+              break;
+            }
+            case 25: {
+              bitField0_ |= 0x00000004;
+              rentPrice_ = input.readDouble();
+              break;
+            }
+            case 33: {
+              bitField0_ |= 0x00000008;
+              totalRentPrice_ = input.readDouble();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.class, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ShortRentInfo> PARSER =
+        new com.google.protobuf.AbstractParser<ShortRentInfo>() {
+      public ShortRentInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ShortRentInfo(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ShortRentInfo> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RENTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object rentCode_;
+    /**
+     * <code>required string rentCode = 1;</code>
+     *
+     * <pre>
+     *租金编码
+     * </pre>
+     */
+    public boolean hasRentCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string rentCode = 1;</code>
+     *
+     * <pre>
+     *租金编码
+     * </pre>
+     */
+    public java.lang.String getRentCode() {
+      java.lang.Object ref = rentCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rentCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string rentCode = 1;</code>
+     *
+     * <pre>
+     *租金编码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getRentCodeBytes() {
+      java.lang.Object ref = rentCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rentCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RENTPERIOD_FIELD_NUMBER = 2;
+    private java.lang.Object rentPeriod_;
+    /**
+     * <code>required string rentPeriod = 2;</code>
+     *
+     * <pre>
+     *周期，单位：天
+     * </pre>
+     */
+    public boolean hasRentPeriod() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string rentPeriod = 2;</code>
+     *
+     * <pre>
+     *周期，单位：天
+     * </pre>
+     */
+    public java.lang.String getRentPeriod() {
+      java.lang.Object ref = rentPeriod_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rentPeriod_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string rentPeriod = 2;</code>
+     *
+     * <pre>
+     *周期，单位：天
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getRentPeriodBytes() {
+      java.lang.Object ref = rentPeriod_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rentPeriod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RENTPRICE_FIELD_NUMBER = 3;
+    private double rentPrice_;
+    /**
+     * <code>required double rentPrice = 3;</code>
+     *
+     * <pre>
+     *折算后的单天价，单位 元/天
+     * </pre>
+     */
+    public boolean hasRentPrice() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required double rentPrice = 3;</code>
+     *
+     * <pre>
+     *折算后的单天价，单位 元/天
+     * </pre>
+     */
+    public double getRentPrice() {
+      return rentPrice_;
+    }
+
+    public static final int TOTALRENTPRICE_FIELD_NUMBER = 4;
+    private double totalRentPrice_;
+    /**
+     * <code>required double totalRentPrice = 4;</code>
+     *
+     * <pre>
+     *该周期内总价
+     * </pre>
+     */
+    public boolean hasTotalRentPrice() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required double totalRentPrice = 4;</code>
+     *
+     * <pre>
+     *该周期内总价
+     * </pre>
+     */
+    public double getTotalRentPrice() {
+      return totalRentPrice_;
+    }
+
+    private void initFields() {
+      rentCode_ = "";
+      rentPeriod_ = "";
+      rentPrice_ = 0D;
+      totalRentPrice_ = 0D;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasRentCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRentPeriod()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRentPrice()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTotalRentPrice()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getRentCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getRentPeriodBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeDouble(3, rentPrice_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeDouble(4, totalRentPrice_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getRentCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getRentPeriodBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, rentPrice_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, totalRentPrice_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ShortRentInfo}
+     *
+     * <pre>
+     *短租信息
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ShortRentInfo)
+        com.qjoy.basjoo.core.model.pb.Product.ShortRentInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.class, com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        rentCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rentPeriod_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rentPrice_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        totalRentPrice_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo build() {
+        com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo result = new com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.rentCode_ = rentCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.rentPeriod_ = rentPeriod_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.rentPrice_ = rentPrice_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.totalRentPrice_ = totalRentPrice_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo.getDefaultInstance()) return this;
+        if (other.hasRentCode()) {
+          bitField0_ |= 0x00000001;
+          rentCode_ = other.rentCode_;
+          onChanged();
+        }
+        if (other.hasRentPeriod()) {
+          bitField0_ |= 0x00000002;
+          rentPeriod_ = other.rentPeriod_;
+          onChanged();
+        }
+        if (other.hasRentPrice()) {
+          setRentPrice(other.getRentPrice());
+        }
+        if (other.hasTotalRentPrice()) {
+          setTotalRentPrice(other.getTotalRentPrice());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasRentCode()) {
+          
+          return false;
+        }
+        if (!hasRentPeriod()) {
+          
+          return false;
+        }
+        if (!hasRentPrice()) {
+          
+          return false;
+        }
+        if (!hasTotalRentPrice()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object rentCode_ = "";
+      /**
+       * <code>required string rentCode = 1;</code>
+       *
+       * <pre>
+       *租金编码
+       * </pre>
+       */
+      public boolean hasRentCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string rentCode = 1;</code>
+       *
+       * <pre>
+       *租金编码
+       * </pre>
+       */
+      public java.lang.String getRentCode() {
+        java.lang.Object ref = rentCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            rentCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string rentCode = 1;</code>
+       *
+       * <pre>
+       *租金编码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getRentCodeBytes() {
+        java.lang.Object ref = rentCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rentCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string rentCode = 1;</code>
+       *
+       * <pre>
+       *租金编码
+       * </pre>
+       */
+      public Builder setRentCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        rentCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string rentCode = 1;</code>
+       *
+       * <pre>
+       *租金编码
+       * </pre>
+       */
+      public Builder clearRentCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rentCode_ = getDefaultInstance().getRentCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string rentCode = 1;</code>
+       *
+       * <pre>
+       *租金编码
+       * </pre>
+       */
+      public Builder setRentCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        rentCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rentPeriod_ = "";
+      /**
+       * <code>required string rentPeriod = 2;</code>
+       *
+       * <pre>
+       *周期，单位：天
+       * </pre>
+       */
+      public boolean hasRentPeriod() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string rentPeriod = 2;</code>
+       *
+       * <pre>
+       *周期，单位：天
+       * </pre>
+       */
+      public java.lang.String getRentPeriod() {
+        java.lang.Object ref = rentPeriod_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            rentPeriod_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string rentPeriod = 2;</code>
+       *
+       * <pre>
+       *周期，单位：天
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getRentPeriodBytes() {
+        java.lang.Object ref = rentPeriod_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rentPeriod_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string rentPeriod = 2;</code>
+       *
+       * <pre>
+       *周期，单位：天
+       * </pre>
+       */
+      public Builder setRentPeriod(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        rentPeriod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string rentPeriod = 2;</code>
+       *
+       * <pre>
+       *周期，单位：天
+       * </pre>
+       */
+      public Builder clearRentPeriod() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rentPeriod_ = getDefaultInstance().getRentPeriod();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string rentPeriod = 2;</code>
+       *
+       * <pre>
+       *周期，单位：天
+       * </pre>
+       */
+      public Builder setRentPeriodBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        rentPeriod_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double rentPrice_ ;
+      /**
+       * <code>required double rentPrice = 3;</code>
+       *
+       * <pre>
+       *折算后的单天价，单位 元/天
+       * </pre>
+       */
+      public boolean hasRentPrice() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required double rentPrice = 3;</code>
+       *
+       * <pre>
+       *折算后的单天价，单位 元/天
+       * </pre>
+       */
+      public double getRentPrice() {
+        return rentPrice_;
+      }
+      /**
+       * <code>required double rentPrice = 3;</code>
+       *
+       * <pre>
+       *折算后的单天价，单位 元/天
+       * </pre>
+       */
+      public Builder setRentPrice(double value) {
+        bitField0_ |= 0x00000004;
+        rentPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required double rentPrice = 3;</code>
+       *
+       * <pre>
+       *折算后的单天价，单位 元/天
+       * </pre>
+       */
+      public Builder clearRentPrice() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        rentPrice_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double totalRentPrice_ ;
+      /**
+       * <code>required double totalRentPrice = 4;</code>
+       *
+       * <pre>
+       *该周期内总价
+       * </pre>
+       */
+      public boolean hasTotalRentPrice() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required double totalRentPrice = 4;</code>
+       *
+       * <pre>
+       *该周期内总价
+       * </pre>
+       */
+      public double getTotalRentPrice() {
+        return totalRentPrice_;
+      }
+      /**
+       * <code>required double totalRentPrice = 4;</code>
+       *
+       * <pre>
+       *该周期内总价
+       * </pre>
+       */
+      public Builder setTotalRentPrice(double value) {
+        bitField0_ |= 0x00000008;
+        totalRentPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required double totalRentPrice = 4;</code>
+       *
+       * <pre>
+       *该周期内总价
+       * </pre>
+       */
+      public Builder clearTotalRentPrice() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        totalRentPrice_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ShortRentInfo)
+    }
+
+    static {
+      defaultInstance = new ShortRentInfo(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ShortRentInfo)
+  }
+
+  public interface LongRentInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.LongRentInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -9410,7 +11385,7 @@ public final class Product {
      * <code>required string rentPeriodName = 3;</code>
      *
      * <pre>
-     *租用周期显示名称
+     *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
      * </pre>
      */
     boolean hasRentPeriodName();
@@ -9418,7 +11393,7 @@ public final class Product {
      * <code>required string rentPeriodName = 3;</code>
      *
      * <pre>
-     *租用周期显示名称
+     *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
      * </pre>
      */
     java.lang.String getRentPeriodName();
@@ -9426,62 +11401,70 @@ public final class Product {
      * <code>required string rentPeriodName = 3;</code>
      *
      * <pre>
-     *租用周期显示名称
+     *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
      * </pre>
      */
     com.google.protobuf.ByteString
         getRentPeriodNameBytes();
 
     /**
-     * <code>required string rentPrice = 4;</code>
+     * <code>required double rentPrice = 4;</code>
      *
      * <pre>
-     *单价，单位 元/天
+     *折算后的单天价，单位 元/天
      * </pre>
      */
     boolean hasRentPrice();
     /**
-     * <code>required string rentPrice = 4;</code>
+     * <code>required double rentPrice = 4;</code>
      *
      * <pre>
-     *单价，单位 元/天
+     *折算后的单天价，单位 元/天
      * </pre>
      */
-    java.lang.String getRentPrice();
+    double getRentPrice();
+
     /**
-     * <code>required string rentPrice = 4;</code>
+     * <code>required double totalRentPrice = 5;</code>
      *
      * <pre>
-     *单价，单位 元/天
+     *该周期内总价
      * </pre>
      */
-    com.google.protobuf.ByteString
-        getRentPriceBytes();
+    boolean hasTotalRentPrice();
+    /**
+     * <code>required double totalRentPrice = 5;</code>
+     *
+     * <pre>
+     *该周期内总价
+     * </pre>
+     */
+    double getTotalRentPrice();
   }
   /**
-   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.RentInfo}
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.LongRentInfo}
    *
    * <pre>
-   *租金信息
+   *长租信息
    * </pre>
    */
-  public static final class RentInfo extends
+  public static final class LongRentInfo extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.RentInfo)
-      RentInfoOrBuilder {
-    // Use RentInfo.newBuilder() to construct.
-    private RentInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.LongRentInfo)
+      LongRentInfoOrBuilder {
+    // Use LongRentInfo.newBuilder() to construct.
+    private LongRentInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private RentInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private LongRentInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final RentInfo defaultInstance;
-    public static RentInfo getDefaultInstance() {
+    private static final LongRentInfo defaultInstance;
+    public static LongRentInfo getDefaultInstance() {
       return defaultInstance;
     }
 
-    public RentInfo getDefaultInstanceForType() {
+    public LongRentInfo getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -9491,7 +11474,7 @@ public final class Product {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private RentInfo(
+    private LongRentInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9532,10 +11515,14 @@ public final class Product {
               rentPeriodName_ = bs;
               break;
             }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 33: {
               bitField0_ |= 0x00000008;
-              rentPrice_ = bs;
+              rentPrice_ = input.readDouble();
+              break;
+            }
+            case 41: {
+              bitField0_ |= 0x00000010;
+              totalRentPrice_ = input.readDouble();
               break;
             }
           }
@@ -9552,28 +11539,28 @@ public final class Product {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_descriptor;
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_fieldAccessorTable
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.qjoy.basjoo.core.model.pb.Product.RentInfo.class, com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder.class);
+              com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.class, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<RentInfo> PARSER =
-        new com.google.protobuf.AbstractParser<RentInfo>() {
-      public RentInfo parsePartialFrom(
+    public static com.google.protobuf.Parser<LongRentInfo> PARSER =
+        new com.google.protobuf.AbstractParser<LongRentInfo>() {
+      public LongRentInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RentInfo(input, extensionRegistry);
+        return new LongRentInfo(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<RentInfo> getParserForType() {
+    public com.google.protobuf.Parser<LongRentInfo> getParserForType() {
       return PARSER;
     }
 
@@ -9692,7 +11679,7 @@ public final class Product {
      * <code>required string rentPeriodName = 3;</code>
      *
      * <pre>
-     *租用周期显示名称
+     *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
      * </pre>
      */
     public boolean hasRentPeriodName() {
@@ -9702,7 +11689,7 @@ public final class Product {
      * <code>required string rentPeriodName = 3;</code>
      *
      * <pre>
-     *租用周期显示名称
+     *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
      * </pre>
      */
     public java.lang.String getRentPeriodName() {
@@ -9723,7 +11710,7 @@ public final class Product {
      * <code>required string rentPeriodName = 3;</code>
      *
      * <pre>
-     *租用周期显示名称
+     *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
      * </pre>
      */
     public com.google.protobuf.ByteString
@@ -9741,64 +11728,57 @@ public final class Product {
     }
 
     public static final int RENTPRICE_FIELD_NUMBER = 4;
-    private java.lang.Object rentPrice_;
+    private double rentPrice_;
     /**
-     * <code>required string rentPrice = 4;</code>
+     * <code>required double rentPrice = 4;</code>
      *
      * <pre>
-     *单价，单位 元/天
+     *折算后的单天价，单位 元/天
      * </pre>
      */
     public boolean hasRentPrice() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required string rentPrice = 4;</code>
+     * <code>required double rentPrice = 4;</code>
      *
      * <pre>
-     *单价，单位 元/天
+     *折算后的单天价，单位 元/天
      * </pre>
      */
-    public java.lang.String getRentPrice() {
-      java.lang.Object ref = rentPrice_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          rentPrice_ = s;
-        }
-        return s;
-      }
+    public double getRentPrice() {
+      return rentPrice_;
+    }
+
+    public static final int TOTALRENTPRICE_FIELD_NUMBER = 5;
+    private double totalRentPrice_;
+    /**
+     * <code>required double totalRentPrice = 5;</code>
+     *
+     * <pre>
+     *该周期内总价
+     * </pre>
+     */
+    public boolean hasTotalRentPrice() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required string rentPrice = 4;</code>
+     * <code>required double totalRentPrice = 5;</code>
      *
      * <pre>
-     *单价，单位 元/天
+     *该周期内总价
      * </pre>
      */
-    public com.google.protobuf.ByteString
-        getRentPriceBytes() {
-      java.lang.Object ref = rentPrice_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        rentPrice_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public double getTotalRentPrice() {
+      return totalRentPrice_;
     }
 
     private void initFields() {
       rentCode_ = "";
       rentPeriod_ = "";
       rentPeriodName_ = "";
-      rentPrice_ = "";
+      rentPrice_ = 0D;
+      totalRentPrice_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9822,6 +11802,10 @@ public final class Product {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasTotalRentPrice()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -9839,7 +11823,10 @@ public final class Product {
         output.writeBytes(3, getRentPeriodNameBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getRentPriceBytes());
+        output.writeDouble(4, rentPrice_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeDouble(5, totalRentPrice_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -9864,7 +11851,11 @@ public final class Product {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getRentPriceBytes());
+          .computeDoubleSize(4, rentPrice_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, totalRentPrice_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9878,53 +11869,53 @@ public final class Product {
       return super.writeReplace();
     }
 
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseFrom(byte[] data)
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseDelimitedFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.RentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9933,7 +11924,7 @@ public final class Product {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.RentInfo prototype) {
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.LongRentInfo prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -9945,29 +11936,29 @@ public final class Product {
       return builder;
     }
     /**
-     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.RentInfo}
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.LongRentInfo}
      *
      * <pre>
-     *租金信息
+     *长租信息
      * </pre>
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.RentInfo)
-        com.qjoy.basjoo.core.model.pb.Product.RentInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.LongRentInfo)
+        com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_descriptor;
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_fieldAccessorTable
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.qjoy.basjoo.core.model.pb.Product.RentInfo.class, com.qjoy.basjoo.core.model.pb.Product.RentInfo.Builder.class);
+                com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.class, com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.Builder.class);
       }
 
-      // Construct using com.qjoy.basjoo.core.model.pb.Product.RentInfo.newBuilder()
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9993,8 +11984,10 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000002);
         rentPeriodName_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        rentPrice_ = "";
+        rentPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000008);
+        totalRentPrice_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -10004,23 +11997,23 @@ public final class Product {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_descriptor;
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor;
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.RentInfo getDefaultInstanceForType() {
-        return com.qjoy.basjoo.core.model.pb.Product.RentInfo.getDefaultInstance();
+      public com.qjoy.basjoo.core.model.pb.Product.LongRentInfo getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.getDefaultInstance();
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.RentInfo build() {
-        com.qjoy.basjoo.core.model.pb.Product.RentInfo result = buildPartial();
+      public com.qjoy.basjoo.core.model.pb.Product.LongRentInfo build() {
+        com.qjoy.basjoo.core.model.pb.Product.LongRentInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.RentInfo buildPartial() {
-        com.qjoy.basjoo.core.model.pb.Product.RentInfo result = new com.qjoy.basjoo.core.model.pb.Product.RentInfo(this);
+      public com.qjoy.basjoo.core.model.pb.Product.LongRentInfo buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.LongRentInfo result = new com.qjoy.basjoo.core.model.pb.Product.LongRentInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -10039,22 +12032,26 @@ public final class Product {
           to_bitField0_ |= 0x00000008;
         }
         result.rentPrice_ = rentPrice_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.totalRentPrice_ = totalRentPrice_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.RentInfo) {
-          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.RentInfo)other);
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.LongRentInfo) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.LongRentInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.RentInfo other) {
-        if (other == com.qjoy.basjoo.core.model.pb.Product.RentInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.LongRentInfo other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.getDefaultInstance()) return this;
         if (other.hasRentCode()) {
           bitField0_ |= 0x00000001;
           rentCode_ = other.rentCode_;
@@ -10071,9 +12068,10 @@ public final class Product {
           onChanged();
         }
         if (other.hasRentPrice()) {
-          bitField0_ |= 0x00000008;
-          rentPrice_ = other.rentPrice_;
-          onChanged();
+          setRentPrice(other.getRentPrice());
+        }
+        if (other.hasTotalRentPrice()) {
+          setTotalRentPrice(other.getTotalRentPrice());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -10096,6 +12094,10 @@ public final class Product {
           
           return false;
         }
+        if (!hasTotalRentPrice()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -10103,11 +12105,11 @@ public final class Product {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.qjoy.basjoo.core.model.pb.Product.RentInfo parsedMessage = null;
+        com.qjoy.basjoo.core.model.pb.Product.LongRentInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.RentInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.LongRentInfo) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -10323,7 +12325,7 @@ public final class Product {
        * <code>required string rentPeriodName = 3;</code>
        *
        * <pre>
-       *租用周期显示名称
+       *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
        * </pre>
        */
       public boolean hasRentPeriodName() {
@@ -10333,7 +12335,7 @@ public final class Product {
        * <code>required string rentPeriodName = 3;</code>
        *
        * <pre>
-       *租用周期显示名称
+       *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
        * </pre>
        */
       public java.lang.String getRentPeriodName() {
@@ -10354,7 +12356,7 @@ public final class Product {
        * <code>required string rentPeriodName = 3;</code>
        *
        * <pre>
-       *租用周期显示名称
+       *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
        * </pre>
        */
       public com.google.protobuf.ByteString
@@ -10374,7 +12376,7 @@ public final class Product {
        * <code>required string rentPeriodName = 3;</code>
        *
        * <pre>
-       *租用周期显示名称
+       *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
        * </pre>
        */
       public Builder setRentPeriodName(
@@ -10391,7 +12393,7 @@ public final class Product {
        * <code>required string rentPeriodName = 3;</code>
        *
        * <pre>
-       *租用周期显示名称
+       *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
        * </pre>
        */
       public Builder clearRentPeriodName() {
@@ -10404,7 +12406,7 @@ public final class Product {
        * <code>required string rentPeriodName = 3;</code>
        *
        * <pre>
-       *租用周期显示名称
+       *租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
        * </pre>
        */
       public Builder setRentPeriodNameBytes(
@@ -10418,115 +12420,111 @@ public final class Product {
         return this;
       }
 
-      private java.lang.Object rentPrice_ = "";
+      private double rentPrice_ ;
       /**
-       * <code>required string rentPrice = 4;</code>
+       * <code>required double rentPrice = 4;</code>
        *
        * <pre>
-       *单价，单位 元/天
+       *折算后的单天价，单位 元/天
        * </pre>
        */
       public boolean hasRentPrice() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required string rentPrice = 4;</code>
+       * <code>required double rentPrice = 4;</code>
        *
        * <pre>
-       *单价，单位 元/天
+       *折算后的单天价，单位 元/天
        * </pre>
        */
-      public java.lang.String getRentPrice() {
-        java.lang.Object ref = rentPrice_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            rentPrice_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public double getRentPrice() {
+        return rentPrice_;
       }
       /**
-       * <code>required string rentPrice = 4;</code>
+       * <code>required double rentPrice = 4;</code>
        *
        * <pre>
-       *单价，单位 元/天
+       *折算后的单天价，单位 元/天
        * </pre>
        */
-      public com.google.protobuf.ByteString
-          getRentPriceBytes() {
-        java.lang.Object ref = rentPrice_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          rentPrice_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string rentPrice = 4;</code>
-       *
-       * <pre>
-       *单价，单位 元/天
-       * </pre>
-       */
-      public Builder setRentPrice(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
+      public Builder setRentPrice(double value) {
+        bitField0_ |= 0x00000008;
         rentPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string rentPrice = 4;</code>
+       * <code>required double rentPrice = 4;</code>
        *
        * <pre>
-       *单价，单位 元/天
+       *折算后的单天价，单位 元/天
        * </pre>
        */
       public Builder clearRentPrice() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        rentPrice_ = getDefaultInstance().getRentPrice();
+        rentPrice_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double totalRentPrice_ ;
+      /**
+       * <code>required double totalRentPrice = 5;</code>
+       *
+       * <pre>
+       *该周期内总价
+       * </pre>
+       */
+      public boolean hasTotalRentPrice() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required double totalRentPrice = 5;</code>
+       *
+       * <pre>
+       *该周期内总价
+       * </pre>
+       */
+      public double getTotalRentPrice() {
+        return totalRentPrice_;
+      }
+      /**
+       * <code>required double totalRentPrice = 5;</code>
+       *
+       * <pre>
+       *该周期内总价
+       * </pre>
+       */
+      public Builder setTotalRentPrice(double value) {
+        bitField0_ |= 0x00000010;
+        totalRentPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string rentPrice = 4;</code>
+       * <code>required double totalRentPrice = 5;</code>
        *
        * <pre>
-       *单价，单位 元/天
+       *该周期内总价
        * </pre>
        */
-      public Builder setRentPriceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        rentPrice_ = value;
+      public Builder clearTotalRentPrice() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        totalRentPrice_ = 0D;
         onChanged();
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.RentInfo)
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.LongRentInfo)
     }
 
     static {
-      defaultInstance = new RentInfo(true);
+      defaultInstance = new LongRentInfo(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.RentInfo)
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.LongRentInfo)
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
@@ -10565,10 +12563,15 @@ public final class Product {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_descriptor;
+    internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_fieldAccessorTable;
+      internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10579,36 +12582,42 @@ public final class Product {
   static {
     java.lang.String[] descriptorData = {
       "\n\007Product\022\035com.qjoy.basjoo.core.model.pb" +
-      "\"Q\n\030SearchProductListRequest\022\020\n\010keywords" +
+      "\"e\n\030SearchProductListRequest\022\020\n\010keywords" +
       "\030\001 \001(\t\022\022\n\nsearchType\030\002 \001(\t\022\017\n\007orderBy\030\003 " +
-      "\001(\005\"\211\001\n\027SearchProductListResult\022\022\n\nresul" +
-      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017produc" +
-      "tLiteInfo\030\003 \003(\0132..com.qjoy.basjoo.core.m" +
-      "odel.pb.ProductLiteInfo\"\313\001\n\017ProductLiteI" +
-      "nfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productType\030\002 " +
-      "\002(\t\022\r\n\005brand\030\003 \002(\t\022\024\n\014mainImageUrl\030\004 \002(\t" +
-      "\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowestRent\030\006 \001(\001\022\014\n\004un",
-      "it\030\007 \001(\005\022\021\n\trentCount\030\010 \001(\003\022\023\n\013marketPri" +
-      "ce\030\t \001(\001\022\023\n\013pledgePrice\030\n \001(\001\")\n\024Product" +
-      "DetailRequest\022\021\n\tproductId\030\001 \002(\t\"\211\001\n\023Pro" +
-      "ductDetailResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
-      "resultMsg\030\002 \002(\t\022K\n\021productDetailInfo\030\003 \001" +
-      "(\01320.com.qjoy.basjoo.core.model.pb.Produ" +
-      "ctDetailInfo\"\204\003\n\021ProductDetailInfo\022\021\n\tpr" +
-      "oductId\030\001 \002(\t\022\023\n\013productType\030\002 \002(\t\022\r\n\005br" +
-      "and\030\003 \002(\t\022\020\n\010imageUrl\030\004 \003(\t\022\014\n\004desc\030\005 \002(" +
-      "\t\022\022\n\nlowestRent\030\006 \001(\001\022\014\n\004unit\030\007 \001(\005\022\021\n\tr",
-      "entCount\030\010 \001(\003\022\023\n\013marketPrice\030\t \001(\001\022\023\n\013p" +
-      "ledgePrice\030\n \001(\001\022\033\n\023transportationPrice\030" +
-      "\013 \001(\001\022\020\n\010location\030\014 \001(\t\022\022\n\nstockCount\030\r " +
-      "\001(\003\022;\n\tcolorInfo\030\016 \003(\0132(.com.qjoy.basjoo" +
-      ".core.model.pb.ColorInfo\0229\n\010rentInfo\030\017 \003" +
-      "(\0132\'.com.qjoy.basjoo.core.model.pb.RentI" +
-      "nfo\"1\n\tColorInfo\022\021\n\tcolorCode\030\001 \002(\t\022\021\n\tc" +
-      "olorName\030\002 \002(\t\"[\n\010RentInfo\022\020\n\010rentCode\030\001" +
-      " \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodNa" +
-      "me\030\003 \002(\t\022\021\n\trentPrice\030\004 \002(\tB\037\n\035com.qjoy.",
-      "basjoo.core.model.pb"
+      "\001(\005\022\022\n\nstartIndex\030\004 \001(\005\"\254\001\n\027SearchProduc" +
+      "tListResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
+      "tMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030" +
+      "\004 \001(\010\022G\n\017productLiteInfo\030\005 \003(\0132..com.qjo" +
+      "y.basjoo.core.model.pb.ProductLiteInfo\"\313" +
+      "\001\n\017ProductLiteInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n" +
+      "\013productType\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\024\n\014mai",
+      "nImageUrl\030\004 \002(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowestR" +
+      "ent\030\006 \001(\001\022\014\n\004unit\030\007 \001(\005\022\021\n\trentCount\030\010 \001" +
+      "(\003\022\023\n\013marketPrice\030\t \001(\001\022\023\n\013pledgePrice\030\n" +
+      " \001(\001\")\n\024ProductDetailRequest\022\021\n\tproductI" +
+      "d\030\001 \002(\t\"\211\001\n\023ProductDetailResult\022\022\n\nresul" +
+      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022K\n\021produc" +
+      "tDetailInfo\030\003 \001(\01320.com.qjoy.basjoo.core" +
+      ".model.pb.ProductDetailInfo\"\321\003\n\021ProductD" +
+      "etailInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productT" +
+      "ype\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\020\n\010imageUrl\030\004 \003",
+      "(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowestRent\030\006 \001(\001\022\014\n\004" +
+      "unit\030\007 \001(\005\022\021\n\trentCount\030\010 \001(\003\022\023\n\013marketP" +
+      "rice\030\t \001(\001\022\023\n\013pledgePrice\030\n \001(\001\022\033\n\023trans" +
+      "portationPrice\030\013 \001(\001\022\020\n\010location\030\014 \001(\t\022\022" +
+      "\n\nstockCount\030\r \001(\003\022;\n\tcolorInfo\030\016 \003(\0132(." +
+      "com.qjoy.basjoo.core.model.pb.ColorInfo\022" +
+      "C\n\rshortRentInfo\030\017 \003(\0132,.com.qjoy.basjoo" +
+      ".core.model.pb.ShortRentInfo\022A\n\014longRent" +
+      "Info\030\020 \003(\0132+.com.qjoy.basjoo.core.model." +
+      "pb.LongRentInfo\"1\n\tColorInfo\022\021\n\tcolorCod",
+      "e\030\001 \002(\t\022\021\n\tcolorName\030\002 \002(\t\"`\n\rShortRentI" +
+      "nfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(" +
+      "\t\022\021\n\trentPrice\030\003 \002(\001\022\026\n\016totalRentPrice\030\004" +
+      " \002(\001\"w\n\014LongRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022" +
+      "\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002" +
+      "(\t\022\021\n\trentPrice\030\004 \002(\001\022\026\n\016totalRentPrice\030" +
+      "\005 \002(\001B\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10627,13 +12636,13 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_SearchProductListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_SearchProductListRequest_descriptor,
-        new java.lang.String[] { "Keywords", "SearchType", "OrderBy", });
+        new java.lang.String[] { "Keywords", "SearchType", "OrderBy", "StartIndex", });
     internal_static_com_qjoy_basjoo_core_model_pb_SearchProductListResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_SearchProductListResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_SearchProductListResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMsg", "ProductLiteInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "MaxIndex", "HasMore", "ProductLiteInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_ProductLiteInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_ProductLiteInfo_fieldAccessorTable = new
@@ -10657,19 +12666,25 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "StockCount", "ColorInfo", "RentInfo", });
+        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "StockCount", "ColorInfo", "ShortRentInfo", "LongRentInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_descriptor,
         new java.lang.String[] { "ColorCode", "ColorName", });
-    internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_descriptor =
+    internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_fieldAccessorTable = new
+    internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_qjoy_basjoo_core_model_pb_RentInfo_descriptor,
-        new java.lang.String[] { "RentCode", "RentPeriod", "RentPeriodName", "RentPrice", });
+        internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor,
+        new java.lang.String[] { "RentCode", "RentPeriod", "RentPrice", "TotalRentPrice", });
+    internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor,
+        new java.lang.String[] { "RentCode", "RentPeriod", "RentPeriodName", "RentPrice", "TotalRentPrice", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

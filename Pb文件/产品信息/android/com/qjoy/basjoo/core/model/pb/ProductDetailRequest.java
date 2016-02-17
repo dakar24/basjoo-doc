@@ -17,6 +17,9 @@ public final class ProductDetailRequest extends Message {
 
   public static final String DEFAULT_PRODUCTID = "";
 
+  /**
+   * 产品Id
+   */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String productId;
 

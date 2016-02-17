@@ -26,6 +26,9 @@ public final class ProductDetailResult extends Message {
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String resultMsg;
 
+  /**
+   * 产品详情信息
+   */
   @ProtoField(tag = 3)
   public ProductDetailInfo productDetailInfo;
 

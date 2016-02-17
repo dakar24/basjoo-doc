@@ -16,25 +16,36 @@ public final class SearchProductListRequest extends Message {
   public static final int TAG_KEYWORDS = 1;
   public static final int TAG_SEARCHTYPE = 2;
   public static final int TAG_ORDERBY = 3;
+  public static final int TAG_STARTINDEX = 4;
 
   public static final String DEFAULT_KEYWORDS = "";
   public static final String DEFAULT_SEARCHTYPE = "";
   public static final Integer DEFAULT_ORDERBY = 0;
+  public static final Integer DEFAULT_STARTINDEX = 0;
 
+  /**
+   * 关键字
+   */
   @ProtoField(tag = 1, type = STRING)
   public String keywords;
 
   /**
-   * 关键字
+   * 0：默认综合，1：品牌，2：类型
    */
   @ProtoField(tag = 2, type = STRING)
   public String searchType;
 
   /**
-   * 0：默认综合，1：品牌，2：类型
+   * 排序方式，0：默认综合，1：年龄，2：价格，3：销量
    */
   @ProtoField(tag = 3, type = INT32)
   public Integer orderBy;
+
+  /**
+   * 起始index
+   */
+  @ProtoField(tag = 4, type = INT32)
+  public Integer startIndex;
 
   public SearchProductListRequest(SearchProductListRequest message) {
     super(message);
@@ -42,6 +53,7 @@ public final class SearchProductListRequest extends Message {
     this.keywords = message.keywords;
     this.searchType = message.searchType;
     this.orderBy = message.orderBy;
+    this.startIndex = message.startIndex;
   }
 
   public SearchProductListRequest() {
@@ -58,6 +70,9 @@ public final class SearchProductListRequest extends Message {
         case TAG_ORDERBY:
         this.orderBy = (Integer)value;
         break;
+        case TAG_STARTINDEX:
+        this.startIndex = (Integer)value;
+        break;
         default: break;
         };
     return this;
@@ -70,7 +85,8 @@ public final class SearchProductListRequest extends Message {
     SearchProductListRequest o = (SearchProductListRequest) other;
     return equals(keywords, o.keywords)
         && equals(searchType, o.searchType)
-        && equals(orderBy, o.orderBy);
+        && equals(orderBy, o.orderBy)
+        && equals(startIndex, o.startIndex);
   }
 
   @Override
@@ -80,6 +96,7 @@ public final class SearchProductListRequest extends Message {
       result = keywords != null ? keywords.hashCode() : 0;
       result = result * 37 + (searchType != null ? searchType.hashCode() : 0);
       result = result * 37 + (orderBy != null ? orderBy.hashCode() : 0);
+      result = result * 37 + (startIndex != null ? startIndex.hashCode() : 0);
       hashCode = result;
     }
     return result;

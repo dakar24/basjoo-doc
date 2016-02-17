@@ -15,7 +15,7 @@ import static com.squareup.wire.Message.Label.REPEATED;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 产品简要信息
+ * 产品详细信息
  */
 public final class ProductDetailInfo extends Message {
 
@@ -33,7 +33,8 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_LOCATION = 12;
   public static final int TAG_STOCKCOUNT = 13;
   public static final int TAG_COLORINFO = 14;
-  public static final int TAG_RENTINFO = 15;
+  public static final int TAG_SHORTRENTINFO = 15;
+  public static final int TAG_LONGRENTINFO = 16;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -49,94 +50,104 @@ public final class ProductDetailInfo extends Message {
   public static final String DEFAULT_LOCATION = "";
   public static final Long DEFAULT_STOCKCOUNT = 0L;
   public static final List<ColorInfo> DEFAULT_COLORINFO = Collections.emptyList();
-  public static final List<RentInfo> DEFAULT_RENTINFO = Collections.emptyList();
+  public static final List<ShortRentInfo> DEFAULT_SHORTRENTINFO = Collections.emptyList();
+  public static final List<LongRentInfo> DEFAULT_LONGRENTINFO = Collections.emptyList();
 
+  /**
+   * 产品Id
+   */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String productId;
 
   /**
-   * 产品Id
+   * 产品类型
    */
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String productType;
 
   /**
-   * 产品类型
+   * 品牌
    */
   @ProtoField(tag = 3, type = STRING, label = REQUIRED)
   public String brand;
 
   /**
-   * 品牌
+   * 图片地址
    */
   @ProtoField(tag = 4, type = STRING, label = REPEATED)
   public List<String> imageUrl;
 
   /**
-   * 图片地址
+   * 描述
    */
   @ProtoField(tag = 5, type = STRING, label = REQUIRED)
   public String desc;
 
   /**
-   * 描述
+   * 最低租金
    */
   @ProtoField(tag = 6, type = DOUBLE)
   public Double lowestRent;
 
   /**
-   * 最低租金
+   * 最低租金 单位 1：天。2：月
    */
   @ProtoField(tag = 7, type = INT32)
   public Integer unit;
 
   /**
-   * 最低租金 单位 1：天。2：月
+   * 已租件数
    */
   @ProtoField(tag = 8, type = INT64)
   public Long rentCount;
 
   /**
-   * 已租件数
+   * 市场价
    */
   @ProtoField(tag = 9, type = DOUBLE)
   public Double marketPrice;
 
   /**
-   * 市场价
+   * 押金
    */
   @ProtoField(tag = 10, type = DOUBLE)
   public Double pledgePrice;
 
   /**
-   * 押金
+   * 运费
    */
   @ProtoField(tag = 11, type = DOUBLE)
   public Double transportationPrice;
 
   /**
-   * 运费
+   * 所在地
    */
   @ProtoField(tag = 12, type = STRING)
   public String location;
 
   /**
-   * 所在地
+   * 库存
    */
   @ProtoField(tag = 13, type = INT64)
   public Long stockCount;
 
   /**
-   * 库存
+   * 颜色信息
    */
   @ProtoField(tag = 14, label = REPEATED)
   public List<ColorInfo> colorInfo;
 
   /**
-   * 颜色信息
+   * 短租信息
    */
   @ProtoField(tag = 15, label = REPEATED)
-  public List<RentInfo> rentInfo;
+  public List<ShortRentInfo> shortRentInfo;
+
+  /**
+   * 长租信息
+   */
+  @ProtoField(tag = 16, label = REPEATED)
+  public List<LongRentInfo> longRentInfo;
 
   public ProductDetailInfo(ProductDetailInfo message) {
     super(message);
@@ -155,7 +166,8 @@ public final class ProductDetailInfo extends Message {
     this.location = message.location;
     this.stockCount = message.stockCount;
     this.colorInfo = copyOf(message.colorInfo);
-    this.rentInfo = copyOf(message.rentInfo);
+    this.shortRentInfo = copyOf(message.shortRentInfo);
+    this.longRentInfo = copyOf(message.longRentInfo);
   }
 
   public ProductDetailInfo() {
@@ -205,8 +217,11 @@ public final class ProductDetailInfo extends Message {
         case TAG_COLORINFO:
         this.colorInfo = immutableCopyOf((List<ColorInfo>)value);
         break;
-        case TAG_RENTINFO:
-        this.rentInfo = immutableCopyOf((List<RentInfo>)value);
+        case TAG_SHORTRENTINFO:
+        this.shortRentInfo = immutableCopyOf((List<ShortRentInfo>)value);
+        break;
+        case TAG_LONGRENTINFO:
+        this.longRentInfo = immutableCopyOf((List<LongRentInfo>)value);
         break;
         default: break;
         };
@@ -232,7 +247,8 @@ public final class ProductDetailInfo extends Message {
         && equals(location, o.location)
         && equals(stockCount, o.stockCount)
         && equals(colorInfo, o.colorInfo)
-        && equals(rentInfo, o.rentInfo);
+        && equals(shortRentInfo, o.shortRentInfo)
+        && equals(longRentInfo, o.longRentInfo);
   }
 
   @Override
@@ -253,7 +269,8 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (location != null ? location.hashCode() : 0);
       result = result * 37 + (stockCount != null ? stockCount.hashCode() : 0);
       result = result * 37 + (colorInfo != null ? colorInfo.hashCode() : 1);
-      result = result * 37 + (rentInfo != null ? rentInfo.hashCode() : 1);
+      result = result * 37 + (shortRentInfo != null ? shortRentInfo.hashCode() : 1);
+      result = result * 37 + (longRentInfo != null ? longRentInfo.hashCode() : 1);
       hashCode = result;
     }
     return result;

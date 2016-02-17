@@ -9,6 +9,7 @@
     _keywords = @"";
     _searchType = @"";
     _orderBy = 0;
+    _startIndex = 0;
   }
   return self;
 }
@@ -21,6 +22,9 @@
   }
   if (self.hasOrderBy) {
     [output writeInt32:3 value:self.orderBy];
+  }
+  if (self.hasStartIndex) {
+    [output writeInt32:4 value:self.startIndex];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -36,6 +40,9 @@
   }
   if (self.hasOrderBy) {
     size_ += computeInt32Size(3, self.orderBy);
+  }
+  if (self.hasStartIndex) {
+    size_ += computeInt32Size(4, self.startIndex);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -56,6 +63,9 @@
   if (self.hasOrderBy) {
     [output appendFormat:@"%@%@: %@\n", indent, @"orderBy", [NSNumber numberWithInteger:self.orderBy]];
   }
+  if (self.hasStartIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"startIndex", [NSNumber numberWithInteger:self.startIndex]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -70,6 +80,10 @@
 - (void) setOrderBy:(SInt32) value {
   _hasOrderBy = YES;
   _orderBy = value;
+}
+- (void) setStartIndex:(SInt32) value {
+  _hasStartIndex = YES;
+  _startIndex = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -98,6 +112,10 @@
         [self setOrderBy:[input readInt32]];
         break;
       }
+      case 32: {
+        [self setStartIndex:[input readInt32]];
+        break;
+      }
     }
   }
 }
@@ -110,6 +128,8 @@
   if ((self = [super init])) {
     _resultCode = @"";
     _resultMsg = @"";
+    _maxIndex = 0;
+    _hasMore = NO;
   }
   return self;
 }
@@ -120,8 +140,14 @@
   if (self.hasResultMsg) {
     [output writeString:2 value:self.resultMsg];
   }
+  if (self.hasMaxIndex) {
+    [output writeInt32:3 value:self.maxIndex];
+  }
+  if (self.hasHasMore) {
+    [output writeBool:4 value:self.hasMore];
+  }
   [self.productLiteInfo enumerateObjectsUsingBlock:^(ProductLiteInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:3 value:element];
+    [output writeMessage:5 value:element];
   }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -135,8 +161,14 @@
   if (self.hasResultMsg) {
     size_ += computeStringSize(2, self.resultMsg);
   }
+  if (self.hasMaxIndex) {
+    size_ += computeInt32Size(3, self.maxIndex);
+  }
+  if (self.hasHasMore) {
+    size_ += computeBoolSize(4, self.hasMore);
+  }
   [self.productLiteInfo enumerateObjectsUsingBlock:^(ProductLiteInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(3, element);
+    size_ += computeMessageSize(5, element);
   }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -154,6 +186,12 @@
   if (self.hasResultMsg) {
     [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
   }
+  if (self.hasMaxIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"maxIndex", [NSNumber numberWithInteger:self.maxIndex]];
+  }
+  if (self.hasHasMore) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"hasMore", [NSNumber numberWithBool:self.hasMore]];
+  }
   [self.productLiteInfo enumerateObjectsUsingBlock:^(ProductLiteInfo *element, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@ {\n", indent, @"productLiteInfo"];
     [element writeDescriptionTo:output
@@ -170,6 +208,14 @@
 - (void) setResultMsg:(NSString*) value {
   _hasResultMsg = YES;
   _resultMsg = value;
+}
+- (void) setMaxIndex:(SInt32) value {
+  _hasMaxIndex = YES;
+  _maxIndex = value;
+}
+- (void) setHasMore:(BOOL) value {
+  _hasHasMore = YES;
+  _hasMore = value;
 }
 - (void)setProductLiteInfoArray:(NSArray *)array {
   _productLiteInfo = [[NSMutableArray alloc]initWithArray:array];
@@ -203,7 +249,15 @@
         [self setResultMsg:[input readString]];
         break;
       }
-      case 26: {
+      case 24: {
+        [self setMaxIndex:[input readInt32]];
+        break;
+      }
+      case 32: {
+        [self setHasMore:[input readBool]];
+        break;
+      }
+      case 42: {
         ProductLiteInfo* sub = [[ProductLiteInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addProductLiteInfo:sub];
@@ -677,8 +731,11 @@
   [self.colorInfo enumerateObjectsUsingBlock:^(ColorInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:14 value:element];
   }];
-  [self.rentInfo enumerateObjectsUsingBlock:^(RentInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.shortRentInfo enumerateObjectsUsingBlock:^(ShortRentInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:15 value:element];
+  }];
+  [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:16 value:element];
   }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -734,8 +791,11 @@
   [self.colorInfo enumerateObjectsUsingBlock:^(ColorInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(14, element);
   }];
-  [self.rentInfo enumerateObjectsUsingBlock:^(RentInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.shortRentInfo enumerateObjectsUsingBlock:^(ShortRentInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(15, element);
+  }];
+  [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(16, element);
   }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -792,8 +852,14 @@
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }];
-  [self.rentInfo enumerateObjectsUsingBlock:^(RentInfo *element, NSUInteger idx, BOOL *stop) {
-    [output appendFormat:@"%@%@ {\n", indent, @"rentInfo"];
+  [self.shortRentInfo enumerateObjectsUsingBlock:^(ShortRentInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"shortRentInfo"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
+  [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"longRentInfo"];
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
@@ -867,14 +933,23 @@
   }
   [_colorInfo addObject:value];
 }
-- (void)setRentInfoArray:(NSArray *)array {
-  _rentInfo = [[NSMutableArray alloc]initWithArray:array];
+- (void)setShortRentInfoArray:(NSArray *)array {
+  _shortRentInfo = [[NSMutableArray alloc]initWithArray:array];
 }
-- (void)addRentInfo:(RentInfo*)value {
-  if (_rentInfo == nil) {
-    _rentInfo = [[NSMutableArray alloc]init];
+- (void)addShortRentInfo:(ShortRentInfo*)value {
+  if (_shortRentInfo == nil) {
+    _shortRentInfo = [[NSMutableArray alloc]init];
   }
-  [_rentInfo addObject:value];
+  [_shortRentInfo addObject:value];
+}
+- (void)setLongRentInfoArray:(NSArray *)array {
+  _longRentInfo = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addLongRentInfo:(LongRentInfo*)value {
+  if (_longRentInfo == nil) {
+    _longRentInfo = [[NSMutableArray alloc]init];
+  }
+  [_longRentInfo addObject:value];
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -950,9 +1025,15 @@
         break;
       }
       case 122: {
-        RentInfo* sub = [[RentInfo alloc] init];
+        ShortRentInfo* sub = [[ShortRentInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
-        [self addRentInfo:sub];
+        [self addShortRentInfo:sub];
+        break;
+      }
+      case 130: {
+        LongRentInfo* sub = [[LongRentInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addLongRentInfo:sub];
         break;
       }
     }
@@ -1045,14 +1126,135 @@
 @end
 
 
-@implementation RentInfo
+@implementation ShortRentInfo
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _rentCode = @"";
+    _rentPeriod = @"";
+    _rentPrice = 0;
+    _totalRentPrice = 0;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasRentCode) {
+    [output writeString:1 value:self.rentCode];
+  }
+  if (self.hasRentPeriod) {
+    [output writeString:2 value:self.rentPeriod];
+  }
+  if (self.hasRentPrice) {
+    [output writeDouble:3 value:self.rentPrice];
+  }
+  if (self.hasTotalRentPrice) {
+    [output writeDouble:4 value:self.totalRentPrice];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasRentCode) {
+    size_ += computeStringSize(1, self.rentCode);
+  }
+  if (self.hasRentPeriod) {
+    size_ += computeStringSize(2, self.rentPeriod);
+  }
+  if (self.hasRentPrice) {
+    size_ += computeDoubleSize(3, self.rentPrice);
+  }
+  if (self.hasTotalRentPrice) {
+    size_ += computeDoubleSize(4, self.totalRentPrice);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ShortRentInfo*) parseFromData:(NSData*) data {
+  ShortRentInfo* result = [[ShortRentInfo alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasRentCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCode", self.rentCode];
+  }
+  if (self.hasRentPeriod) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentPeriod", self.rentPeriod];
+  }
+  if (self.hasRentPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentPrice", [NSNumber numberWithDouble:self.rentPrice]];
+  }
+  if (self.hasTotalRentPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalRentPrice", [NSNumber numberWithDouble:self.totalRentPrice]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setRentCode:(NSString*) value {
+  _hasRentCode = YES;
+  _rentCode = value;
+}
+- (void) setRentPeriod:(NSString*) value {
+  _hasRentPeriod = YES;
+  _rentPeriod = value;
+}
+- (void) setRentPrice:(Float64) value {
+  _hasRentPrice = YES;
+  _rentPrice = value;
+}
+- (void) setTotalRentPrice:(Float64) value {
+  _hasTotalRentPrice = YES;
+  _totalRentPrice = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setRentCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setRentPeriod:[input readString]];
+        break;
+      }
+      case 25: {
+        [self setRentPrice:[input readDouble]];
+        break;
+      }
+      case 33: {
+        [self setTotalRentPrice:[input readDouble]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation LongRentInfo
 
 - (instancetype) init {
   if ((self = [super init])) {
     _rentCode = @"";
     _rentPeriod = @"";
     _rentPeriodName = @"";
-    _rentPrice = @"";
+    _rentPrice = 0;
+    _totalRentPrice = 0;
   }
   return self;
 }
@@ -1067,7 +1269,10 @@
     [output writeString:3 value:self.rentPeriodName];
   }
   if (self.hasRentPrice) {
-    [output writeString:4 value:self.rentPrice];
+    [output writeDouble:4 value:self.rentPrice];
+  }
+  if (self.hasTotalRentPrice) {
+    [output writeDouble:5 value:self.totalRentPrice];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1085,14 +1290,17 @@
     size_ += computeStringSize(3, self.rentPeriodName);
   }
   if (self.hasRentPrice) {
-    size_ += computeStringSize(4, self.rentPrice);
+    size_ += computeDoubleSize(4, self.rentPrice);
+  }
+  if (self.hasTotalRentPrice) {
+    size_ += computeDoubleSize(5, self.totalRentPrice);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (RentInfo*) parseFromData:(NSData*) data {
-  RentInfo* result = [[RentInfo alloc] init];
++ (LongRentInfo*) parseFromData:(NSData*) data {
+  LongRentInfo* result = [[LongRentInfo alloc] init];
   [result mergeFromData:data];  return result;
 }
 #ifdef DEBUG
@@ -1107,7 +1315,10 @@
     [output appendFormat:@"%@%@: %@\n", indent, @"rentPeriodName", self.rentPeriodName];
   }
   if (self.hasRentPrice) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"rentPrice", self.rentPrice];
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentPrice", [NSNumber numberWithDouble:self.rentPrice]];
+  }
+  if (self.hasTotalRentPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalRentPrice", [NSNumber numberWithDouble:self.totalRentPrice]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -1124,9 +1335,13 @@
   _hasRentPeriodName = YES;
   _rentPeriodName = value;
 }
-- (void) setRentPrice:(NSString*) value {
+- (void) setRentPrice:(Float64) value {
   _hasRentPrice = YES;
   _rentPrice = value;
+}
+- (void) setTotalRentPrice:(Float64) value {
+  _hasTotalRentPrice = YES;
+  _totalRentPrice = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1155,8 +1370,12 @@
         [self setRentPeriodName:[input readString]];
         break;
       }
-      case 34: {
-        [self setRentPrice:[input readString]];
+      case 33: {
+        [self setRentPrice:[input readDouble]];
+        break;
+      }
+      case 41: {
+        [self setTotalRentPrice:[input readDouble]];
         break;
       }
     }

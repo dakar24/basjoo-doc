@@ -7,6 +7,8 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
+import static com.squareup.wire.Message.Datatype.BOOL;
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REPEATED;
 import static com.squareup.wire.Message.Label.REQUIRED;
@@ -18,10 +20,14 @@ public final class SearchProductListResult extends Message {
 
   public static final int TAG_RESULTCODE = 1;
   public static final int TAG_RESULTMSG = 2;
-  public static final int TAG_PRODUCTLITEINFO = 3;
+  public static final int TAG_MAXINDEX = 3;
+  public static final int TAG_HASMORE = 4;
+  public static final int TAG_PRODUCTLITEINFO = 5;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
+  public static final Integer DEFAULT_MAXINDEX = 0;
+  public static final Boolean DEFAULT_HASMORE = false;
   public static final List<ProductLiteInfo> DEFAULT_PRODUCTLITEINFO = Collections.emptyList();
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
@@ -30,7 +36,22 @@ public final class SearchProductListResult extends Message {
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String resultMsg;
 
-  @ProtoField(tag = 3, label = REPEATED)
+  /**
+   * 当前最大index
+   */
+  @ProtoField(tag = 3, type = INT32)
+  public Integer maxIndex;
+
+  /**
+   * 是否还有更多数据
+   */
+  @ProtoField(tag = 4, type = BOOL)
+  public Boolean hasMore;
+
+  /**
+   * 产品简要信息列表
+   */
+  @ProtoField(tag = 5, label = REPEATED)
   public List<ProductLiteInfo> productLiteInfo;
 
   public SearchProductListResult(SearchProductListResult message) {
@@ -38,6 +59,8 @@ public final class SearchProductListResult extends Message {
     if (message == null) return;
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
+    this.maxIndex = message.maxIndex;
+    this.hasMore = message.hasMore;
     this.productLiteInfo = copyOf(message.productLiteInfo);
   }
 
@@ -51,6 +74,12 @@ public final class SearchProductListResult extends Message {
         break;
         case TAG_RESULTMSG:
         this.resultMsg = (String)value;
+        break;
+        case TAG_MAXINDEX:
+        this.maxIndex = (Integer)value;
+        break;
+        case TAG_HASMORE:
+        this.hasMore = (Boolean)value;
         break;
         case TAG_PRODUCTLITEINFO:
         this.productLiteInfo = immutableCopyOf((List<ProductLiteInfo>)value);
@@ -67,6 +96,8 @@ public final class SearchProductListResult extends Message {
     SearchProductListResult o = (SearchProductListResult) other;
     return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
+        && equals(maxIndex, o.maxIndex)
+        && equals(hasMore, o.hasMore)
         && equals(productLiteInfo, o.productLiteInfo);
   }
 
@@ -76,6 +107,8 @@ public final class SearchProductListResult extends Message {
     if (result == 0) {
       result = resultCode != null ? resultCode.hashCode() : 0;
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
+      result = result * 37 + (maxIndex != null ? maxIndex.hashCode() : 0);
+      result = result * 37 + (hasMore != null ? hasMore.hashCode() : 0);
       result = result * 37 + (productLiteInfo != null ? productLiteInfo.hashCode() : 1);
       hashCode = result;
     }

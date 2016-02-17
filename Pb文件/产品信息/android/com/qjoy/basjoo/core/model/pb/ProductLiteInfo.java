@@ -38,59 +38,62 @@ public final class ProductLiteInfo extends Message {
   public static final Double DEFAULT_MARKETPRICE = 0D;
   public static final Double DEFAULT_PLEDGEPRICE = 0D;
 
+  /**
+   * 产品Id
+   */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String productId;
 
   /**
-   * 产品Id
+   * 产品类型
    */
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String productType;
 
   /**
-   * 产品类型
+   * 品牌
    */
   @ProtoField(tag = 3, type = STRING, label = REQUIRED)
   public String brand;
 
   /**
-   * 品牌
+   * 大图地址
    */
   @ProtoField(tag = 4, type = STRING, label = REQUIRED)
   public String mainImageUrl;
 
   /**
-   * 大图地址
+   * 描述
    */
   @ProtoField(tag = 5, type = STRING, label = REQUIRED)
   public String desc;
 
   /**
-   * 描述
+   * 最低租金
    */
   @ProtoField(tag = 6, type = DOUBLE)
   public Double lowestRent;
 
   /**
-   * 最低租金
+   * 最低租金单位 1：天。2：月
    */
   @ProtoField(tag = 7, type = INT32)
   public Integer unit;
 
   /**
-   * 最低租金单位 1：天。2：月
+   * 已租件数
    */
   @ProtoField(tag = 8, type = INT64)
   public Long rentCount;
 
   /**
-   * 已租件数
+   * 市场价
    */
   @ProtoField(tag = 9, type = DOUBLE)
   public Double marketPrice;
 
   /**
-   * 市场价
+   * 押金
    */
   @ProtoField(tag = 10, type = DOUBLE)
   public Double pledgePrice;

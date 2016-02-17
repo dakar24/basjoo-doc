@@ -19,11 +19,14 @@ public final class ColorInfo extends Message {
   public static final String DEFAULT_COLORCODE = "";
   public static final String DEFAULT_COLORNAME = "";
 
+  /**
+   * 颜色编号
+   */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String colorCode;
 
   /**
-   * 颜色编号
+   * 颜色名称
    */
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String colorName;
