@@ -1,0 +1,10 @@
+发送注册校验码：qjoy.basjoo.sendRegisterCheckCode
+注册：qjoy.basjoo.registerUser
+登陆：qjoy.basjoo.login
+搜索产品列表：qjoy.basjoo.searchProductList
+产品详情：qjoy.basjoo.productDetail
+添加收货地址：qjoy.basjoo.addReceiveAddress
+修改收货地址：qjoy.basjoo.modifyReceiveAddress
+设置默认收货地址：qjoy.basjoo.setDefaultReceiveAddress
+删除收货地址：qjoy.basjoo.deleteReceiveAddress
+查询收货地址列表：qjoy.basjoo.getReceiveAddressList
