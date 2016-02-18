@@ -2,7 +2,7 @@
 
 #import <QJProtocolBuffers/ProtocolBuffers.h>
 
-@class ColorInfo;
+@class CategoryInfo;
 @class LongRentInfo;
 @class ProductDetailInfo;
 @class ProductDetailRequest;
@@ -80,11 +80,11 @@
 @property (readonly) BOOL hasLowestRent;
 @property (readonly) BOOL hasUnit;
 @property (readonly) BOOL hasRentCount;
+@property (readonly) BOOL hasMaxAvailable;
 @property (readonly) BOOL hasMarketPrice;
 @property (readonly) BOOL hasPledgePrice;
 @property (readonly) BOOL hasTransportationPrice;
 @property (readonly) BOOL hasLocation;
-@property (readonly) BOOL hasStockCount;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic,strong) NSString* brand;
@@ -93,32 +93,34 @@
 @property (nonatomic)Float64 lowestRent;
 @property (nonatomic)SInt32 unit;
 @property (nonatomic)SInt64 rentCount;
+@property (nonatomic)SInt64 maxAvailable;
 @property (nonatomic)Float64 marketPrice;
 @property (nonatomic)Float64 pledgePrice;
 @property (nonatomic)Float64 transportationPrice;
 @property (nonatomic,strong) NSString* location;
-@property (nonatomic)SInt64 stockCount;
-@property (nonatomic,strong) NSMutableArray * colorInfo;
+@property (nonatomic,strong) NSMutableArray * categoryInfo;
 @property (nonatomic,strong) NSMutableArray * shortRentInfo;
 @property (nonatomic,strong) NSMutableArray * longRentInfo;
 @end
 
-@interface ColorInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasColorCode;
-@property (readonly) BOOL hasColorName;
-@property (nonatomic,strong) NSString* colorCode;
-@property (nonatomic,strong) NSString* colorName;
+@interface CategoryInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasCategoryCode;
+@property (readonly) BOOL hasCategoryName;
+@property (readonly) BOOL hasStockCount;
+@property (nonatomic,strong) NSString* categoryCode;
+@property (nonatomic,strong) NSString* categoryName;
+@property (nonatomic)SInt64 stockCount;
 @end
 
 @interface ShortRentInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasRentCode;
 @property (readonly) BOOL hasRentPeriod;
 @property (readonly) BOOL hasRentPrice;
-@property (readonly) BOOL hasTotalRentPrice;
+@property (readonly) BOOL hasTotalPrice;
 @property (nonatomic,strong) NSString* rentCode;
 @property (nonatomic,strong) NSString* rentPeriod;
 @property (nonatomic)Float64 rentPrice;
-@property (nonatomic)Float64 totalRentPrice;
+@property (nonatomic)Float64 totalPrice;
 @end
 
 @interface LongRentInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -126,11 +128,11 @@
 @property (readonly) BOOL hasRentPeriod;
 @property (readonly) BOOL hasRentPeriodName;
 @property (readonly) BOOL hasRentPrice;
-@property (readonly) BOOL hasTotalRentPrice;
+@property (readonly) BOOL hasTotalPrice;
 @property (nonatomic,strong) NSString* rentCode;
 @property (nonatomic,strong) NSString* rentPeriod;
 @property (nonatomic,strong) NSString* rentPeriodName;
 @property (nonatomic)Float64 rentPrice;
-@property (nonatomic)Float64 totalRentPrice;
+@property (nonatomic)Float64 totalPrice;
 @end
 

@@ -680,11 +680,11 @@
     _lowestRent = 0;
     _unit = 0;
     _rentCount = 0L;
+    _maxAvailable = 0L;
     _marketPrice = 0;
     _pledgePrice = 0;
     _transportationPrice = 0;
     _location = @"";
-    _stockCount = 0L;
   }
   return self;
 }
@@ -713,22 +713,22 @@
   if (self.hasRentCount) {
     [output writeInt64:8 value:self.rentCount];
   }
+  if (self.hasMaxAvailable) {
+    [output writeInt64:9 value:self.maxAvailable];
+  }
   if (self.hasMarketPrice) {
-    [output writeDouble:9 value:self.marketPrice];
+    [output writeDouble:10 value:self.marketPrice];
   }
   if (self.hasPledgePrice) {
-    [output writeDouble:10 value:self.pledgePrice];
+    [output writeDouble:11 value:self.pledgePrice];
   }
   if (self.hasTransportationPrice) {
-    [output writeDouble:11 value:self.transportationPrice];
+    [output writeDouble:12 value:self.transportationPrice];
   }
   if (self.hasLocation) {
-    [output writeString:12 value:self.location];
+    [output writeString:13 value:self.location];
   }
-  if (self.hasStockCount) {
-    [output writeInt64:13 value:self.stockCount];
-  }
-  [self.colorInfo enumerateObjectsUsingBlock:^(ColorInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.categoryInfo enumerateObjectsUsingBlock:^(CategoryInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:14 value:element];
   }];
   [self.shortRentInfo enumerateObjectsUsingBlock:^(ShortRentInfo *element, NSUInteger idx, BOOL *stop) {
@@ -773,22 +773,22 @@
   if (self.hasRentCount) {
     size_ += computeInt64Size(8, self.rentCount);
   }
+  if (self.hasMaxAvailable) {
+    size_ += computeInt64Size(9, self.maxAvailable);
+  }
   if (self.hasMarketPrice) {
-    size_ += computeDoubleSize(9, self.marketPrice);
+    size_ += computeDoubleSize(10, self.marketPrice);
   }
   if (self.hasPledgePrice) {
-    size_ += computeDoubleSize(10, self.pledgePrice);
+    size_ += computeDoubleSize(11, self.pledgePrice);
   }
   if (self.hasTransportationPrice) {
-    size_ += computeDoubleSize(11, self.transportationPrice);
+    size_ += computeDoubleSize(12, self.transportationPrice);
   }
   if (self.hasLocation) {
-    size_ += computeStringSize(12, self.location);
+    size_ += computeStringSize(13, self.location);
   }
-  if (self.hasStockCount) {
-    size_ += computeInt64Size(13, self.stockCount);
-  }
-  [self.colorInfo enumerateObjectsUsingBlock:^(ColorInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.categoryInfo enumerateObjectsUsingBlock:^(CategoryInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(14, element);
   }];
   [self.shortRentInfo enumerateObjectsUsingBlock:^(ShortRentInfo *element, NSUInteger idx, BOOL *stop) {
@@ -831,6 +831,9 @@
   if (self.hasRentCount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentCount", [NSNumber numberWithLongLong:self.rentCount]];
   }
+  if (self.hasMaxAvailable) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"maxAvailable", [NSNumber numberWithLongLong:self.maxAvailable]];
+  }
   if (self.hasMarketPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"marketPrice", [NSNumber numberWithDouble:self.marketPrice]];
   }
@@ -843,11 +846,8 @@
   if (self.hasLocation) {
     [output appendFormat:@"%@%@: %@\n", indent, @"location", self.location];
   }
-  if (self.hasStockCount) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"stockCount", [NSNumber numberWithLongLong:self.stockCount]];
-  }
-  [self.colorInfo enumerateObjectsUsingBlock:^(ColorInfo *element, NSUInteger idx, BOOL *stop) {
-    [output appendFormat:@"%@%@ {\n", indent, @"colorInfo"];
+  [self.categoryInfo enumerateObjectsUsingBlock:^(CategoryInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"categoryInfo"];
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
@@ -904,6 +904,10 @@
   _hasRentCount = YES;
   _rentCount = value;
 }
+- (void) setMaxAvailable:(SInt64) value {
+  _hasMaxAvailable = YES;
+  _maxAvailable = value;
+}
 - (void) setMarketPrice:(Float64) value {
   _hasMarketPrice = YES;
   _marketPrice = value;
@@ -920,18 +924,14 @@
   _hasLocation = YES;
   _location = value;
 }
-- (void) setStockCount:(SInt64) value {
-  _hasStockCount = YES;
-  _stockCount = value;
+- (void)setCategoryInfoArray:(NSArray *)array {
+  _categoryInfo = [[NSMutableArray alloc]initWithArray:array];
 }
-- (void)setColorInfoArray:(NSArray *)array {
-  _colorInfo = [[NSMutableArray alloc]initWithArray:array];
-}
-- (void)addColorInfo:(ColorInfo*)value {
-  if (_colorInfo == nil) {
-    _colorInfo = [[NSMutableArray alloc]init];
+- (void)addCategoryInfo:(CategoryInfo*)value {
+  if (_categoryInfo == nil) {
+    _categoryInfo = [[NSMutableArray alloc]init];
   }
-  [_colorInfo addObject:value];
+  [_categoryInfo addObject:value];
 }
 - (void)setShortRentInfoArray:(NSArray *)array {
   _shortRentInfo = [[NSMutableArray alloc]initWithArray:array];
@@ -998,30 +998,30 @@
         [self setRentCount:[input readInt64]];
         break;
       }
-      case 73: {
-        [self setMarketPrice:[input readDouble]];
+      case 72: {
+        [self setMaxAvailable:[input readInt64]];
         break;
       }
       case 81: {
-        [self setPledgePrice:[input readDouble]];
+        [self setMarketPrice:[input readDouble]];
         break;
       }
       case 89: {
+        [self setPledgePrice:[input readDouble]];
+        break;
+      }
+      case 97: {
         [self setTransportationPrice:[input readDouble]];
         break;
       }
-      case 98: {
+      case 106: {
         [self setLocation:[input readString]];
         break;
       }
-      case 104: {
-        [self setStockCount:[input readInt64]];
-        break;
-      }
       case 114: {
-        ColorInfo* sub = [[ColorInfo alloc] init];
+        CategoryInfo* sub = [[CategoryInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
-        [self addColorInfo:sub];
+        [self addCategoryInfo:sub];
         break;
       }
       case 122: {
@@ -1042,21 +1042,25 @@
 @end
 
 
-@implementation ColorInfo
+@implementation CategoryInfo
 
 - (instancetype) init {
   if ((self = [super init])) {
-    _colorCode = @"";
-    _colorName = @"";
+    _categoryCode = @"";
+    _categoryName = @"";
+    _stockCount = 0L;
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasColorCode) {
-    [output writeString:1 value:self.colorCode];
+  if (self.hasCategoryCode) {
+    [output writeString:1 value:self.categoryCode];
   }
-  if (self.hasColorName) {
-    [output writeString:2 value:self.colorName];
+  if (self.hasCategoryName) {
+    [output writeString:2 value:self.categoryName];
+  }
+  if (self.hasStockCount) {
+    [output writeInt64:3 value:self.stockCount];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1064,38 +1068,48 @@
   __block SInt32 size_ = memoizedSerializedSize;
 
   size_ = 0;
-  if (self.hasColorCode) {
-    size_ += computeStringSize(1, self.colorCode);
+  if (self.hasCategoryCode) {
+    size_ += computeStringSize(1, self.categoryCode);
   }
-  if (self.hasColorName) {
-    size_ += computeStringSize(2, self.colorName);
+  if (self.hasCategoryName) {
+    size_ += computeStringSize(2, self.categoryName);
+  }
+  if (self.hasStockCount) {
+    size_ += computeInt64Size(3, self.stockCount);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (ColorInfo*) parseFromData:(NSData*) data {
-  ColorInfo* result = [[ColorInfo alloc] init];
++ (CategoryInfo*) parseFromData:(NSData*) data {
+  CategoryInfo* result = [[CategoryInfo alloc] init];
   [result mergeFromData:data];  return result;
 }
 #ifdef DEBUG
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasColorCode) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"colorCode", self.colorCode];
+  if (self.hasCategoryCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryCode", self.categoryCode];
   }
-  if (self.hasColorName) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"colorName", self.colorName];
+  if (self.hasCategoryName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryName", self.categoryName];
+  }
+  if (self.hasStockCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"stockCount", [NSNumber numberWithLongLong:self.stockCount]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
-- (void) setColorCode:(NSString*) value {
-  _hasColorCode = YES;
-  _colorCode = value;
+- (void) setCategoryCode:(NSString*) value {
+  _hasCategoryCode = YES;
+  _categoryCode = value;
 }
-- (void) setColorName:(NSString*) value {
-  _hasColorName = YES;
-  _colorName = value;
+- (void) setCategoryName:(NSString*) value {
+  _hasCategoryName = YES;
+  _categoryName = value;
+}
+- (void) setStockCount:(SInt64) value {
+  _hasStockCount = YES;
+  _stockCount = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1113,11 +1127,15 @@
         break;
       }
       case 10: {
-        [self setColorCode:[input readString]];
+        [self setCategoryCode:[input readString]];
         break;
       }
       case 18: {
-        [self setColorName:[input readString]];
+        [self setCategoryName:[input readString]];
+        break;
+      }
+      case 24: {
+        [self setStockCount:[input readInt64]];
         break;
       }
     }
@@ -1133,7 +1151,7 @@
     _rentCode = @"";
     _rentPeriod = @"";
     _rentPrice = 0;
-    _totalRentPrice = 0;
+    _totalPrice = 0;
   }
   return self;
 }
@@ -1147,8 +1165,8 @@
   if (self.hasRentPrice) {
     [output writeDouble:3 value:self.rentPrice];
   }
-  if (self.hasTotalRentPrice) {
-    [output writeDouble:4 value:self.totalRentPrice];
+  if (self.hasTotalPrice) {
+    [output writeDouble:4 value:self.totalPrice];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1165,8 +1183,8 @@
   if (self.hasRentPrice) {
     size_ += computeDoubleSize(3, self.rentPrice);
   }
-  if (self.hasTotalRentPrice) {
-    size_ += computeDoubleSize(4, self.totalRentPrice);
+  if (self.hasTotalPrice) {
+    size_ += computeDoubleSize(4, self.totalPrice);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1187,8 +1205,8 @@
   if (self.hasRentPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentPrice", [NSNumber numberWithDouble:self.rentPrice]];
   }
-  if (self.hasTotalRentPrice) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"totalRentPrice", [NSNumber numberWithDouble:self.totalRentPrice]];
+  if (self.hasTotalPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalPrice", [NSNumber numberWithDouble:self.totalPrice]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -1205,9 +1223,9 @@
   _hasRentPrice = YES;
   _rentPrice = value;
 }
-- (void) setTotalRentPrice:(Float64) value {
-  _hasTotalRentPrice = YES;
-  _totalRentPrice = value;
+- (void) setTotalPrice:(Float64) value {
+  _hasTotalPrice = YES;
+  _totalPrice = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1237,7 +1255,7 @@
         break;
       }
       case 33: {
-        [self setTotalRentPrice:[input readDouble]];
+        [self setTotalPrice:[input readDouble]];
         break;
       }
     }
@@ -1254,7 +1272,7 @@
     _rentPeriod = @"";
     _rentPeriodName = @"";
     _rentPrice = 0;
-    _totalRentPrice = 0;
+    _totalPrice = 0;
   }
   return self;
 }
@@ -1271,8 +1289,8 @@
   if (self.hasRentPrice) {
     [output writeDouble:4 value:self.rentPrice];
   }
-  if (self.hasTotalRentPrice) {
-    [output writeDouble:5 value:self.totalRentPrice];
+  if (self.hasTotalPrice) {
+    [output writeDouble:5 value:self.totalPrice];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1292,8 +1310,8 @@
   if (self.hasRentPrice) {
     size_ += computeDoubleSize(4, self.rentPrice);
   }
-  if (self.hasTotalRentPrice) {
-    size_ += computeDoubleSize(5, self.totalRentPrice);
+  if (self.hasTotalPrice) {
+    size_ += computeDoubleSize(5, self.totalPrice);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1317,8 +1335,8 @@
   if (self.hasRentPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentPrice", [NSNumber numberWithDouble:self.rentPrice]];
   }
-  if (self.hasTotalRentPrice) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"totalRentPrice", [NSNumber numberWithDouble:self.totalRentPrice]];
+  if (self.hasTotalPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalPrice", [NSNumber numberWithDouble:self.totalPrice]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -1339,9 +1357,9 @@
   _hasRentPrice = YES;
   _rentPrice = value;
 }
-- (void) setTotalRentPrice:(Float64) value {
-  _hasTotalRentPrice = YES;
-  _totalRentPrice = value;
+- (void) setTotalPrice:(Float64) value {
+  _hasTotalPrice = YES;
+  _totalPrice = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1375,7 +1393,7 @@
         break;
       }
       case 41: {
-        [self setTotalRentPrice:[input readDouble]];
+        [self setTotalPrice:[input readDouble]];
         break;
       }
     }

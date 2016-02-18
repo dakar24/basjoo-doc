@@ -120,23 +120,23 @@ message ProductDetailInfo {
    //已租件数
    optional int64                  rentCount = 8; 
    
+   //最大可租数
+   optional int64                  maxAvailable = 9; 
+   
    //市场价
-   optional double                 marketPrice = 9; 
+   optional double                 marketPrice = 10; 
    
    //押金
-   optional double                 pledgePrice = 10; 
+   optional double                 pledgePrice = 11; 
    
    //运费
-   optional double                 transportationPrice = 11; 
+   optional double                 transportationPrice = 12; 
    
    //所在地
-   optional string                 location = 12; 
+   optional string                 location = 13; 
    
-   //库存
-   optional int64                  stockCount = 13; 
-   
-   //颜色信息
-   repeated ColorInfo              colorInfo = 14;   
+   //分类信息
+   repeated CategoryInfo           categoryInfo = 14;   
 
    //短租信息
    repeated ShortRentInfo          shortRentInfo = 15;
@@ -146,14 +146,18 @@ message ProductDetailInfo {
     
 }
 
-//颜色信息
-message ColorInfo {  
+//类别信息(颜色等)
+message CategoryInfo {  
 
- //颜色编号
- required string                 colorCode = 1; 
+    //类别编号
+    required string                categoryCode = 1; 
  
- //颜色名称
- required string                 colorName = 2; 
+    //类别名称
+    required string                categoryName = 2; 
+ 
+    //库存
+    optional int64                 stockCount = 3;  
+   
 
 }
 
@@ -170,7 +174,7 @@ message ShortRentInfo {
  required double                 rentPrice = 3; 
  
  //该周期内总价
- required double                 totalRentPrice = 4; 
+ required double                 totalPrice = 4; 
 
 }
 
@@ -190,7 +194,7 @@ message LongRentInfo {
  required double                 rentPrice = 4; 
  
  //该周期内总价
- required double                 totalRentPrice = 5; 
+ required double                 totalPrice = 5; 
 
 }
 

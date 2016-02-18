@@ -5921,7 +5921,24 @@ public final class Product {
     long getRentCount();
 
     /**
-     * <code>optional double marketPrice = 9;</code>
+     * <code>optional int64 maxAvailable = 9;</code>
+     *
+     * <pre>
+     *最大可租数
+     * </pre>
+     */
+    boolean hasMaxAvailable();
+    /**
+     * <code>optional int64 maxAvailable = 9;</code>
+     *
+     * <pre>
+     *最大可租数
+     * </pre>
+     */
+    long getMaxAvailable();
+
+    /**
+     * <code>optional double marketPrice = 10;</code>
      *
      * <pre>
      *市场价
@@ -5929,7 +5946,7 @@ public final class Product {
      */
     boolean hasMarketPrice();
     /**
-     * <code>optional double marketPrice = 9;</code>
+     * <code>optional double marketPrice = 10;</code>
      *
      * <pre>
      *市场价
@@ -5938,7 +5955,7 @@ public final class Product {
     double getMarketPrice();
 
     /**
-     * <code>optional double pledgePrice = 10;</code>
+     * <code>optional double pledgePrice = 11;</code>
      *
      * <pre>
      *押金
@@ -5946,7 +5963,7 @@ public final class Product {
      */
     boolean hasPledgePrice();
     /**
-     * <code>optional double pledgePrice = 10;</code>
+     * <code>optional double pledgePrice = 11;</code>
      *
      * <pre>
      *押金
@@ -5955,7 +5972,7 @@ public final class Product {
     double getPledgePrice();
 
     /**
-     * <code>optional double transportationPrice = 11;</code>
+     * <code>optional double transportationPrice = 12;</code>
      *
      * <pre>
      *运费
@@ -5963,7 +5980,7 @@ public final class Product {
      */
     boolean hasTransportationPrice();
     /**
-     * <code>optional double transportationPrice = 11;</code>
+     * <code>optional double transportationPrice = 12;</code>
      *
      * <pre>
      *运费
@@ -5972,7 +5989,7 @@ public final class Product {
     double getTransportationPrice();
 
     /**
-     * <code>optional string location = 12;</code>
+     * <code>optional string location = 13;</code>
      *
      * <pre>
      *所在地
@@ -5980,7 +5997,7 @@ public final class Product {
      */
     boolean hasLocation();
     /**
-     * <code>optional string location = 12;</code>
+     * <code>optional string location = 13;</code>
      *
      * <pre>
      *所在地
@@ -5988,7 +6005,7 @@ public final class Product {
      */
     java.lang.String getLocation();
     /**
-     * <code>optional string location = 12;</code>
+     * <code>optional string location = 13;</code>
      *
      * <pre>
      *所在地
@@ -5998,64 +6015,47 @@ public final class Product {
         getLocationBytes();
 
     /**
-     * <code>optional int64 stockCount = 13;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *库存
+     *分类信息
      * </pre>
      */
-    boolean hasStockCount();
+    java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryInfo> 
+        getCategoryInfoList();
     /**
-     * <code>optional int64 stockCount = 13;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *库存
+     *分类信息
      * </pre>
      */
-    long getStockCount();
-
+    com.qjoy.basjoo.core.model.pb.Product.CategoryInfo getCategoryInfo(int index);
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *颜色信息
+     *分类信息
      * </pre>
      */
-    java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo> 
-        getColorInfoList();
+    int getCategoryInfoCount();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *颜色信息
+     *分类信息
      * </pre>
      */
-    com.qjoy.basjoo.core.model.pb.Product.ColorInfo getColorInfo(int index);
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder> 
+        getCategoryInfoOrBuilderList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *颜色信息
+     *分类信息
      * </pre>
      */
-    int getColorInfoCount();
-    /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
-     *
-     * <pre>
-     *颜色信息
-     * </pre>
-     */
-    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder> 
-        getColorInfoOrBuilderList();
-    /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
-     *
-     * <pre>
-     *颜色信息
-     * </pre>
-     */
-    com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder getColorInfoOrBuilder(
+    com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder getCategoryInfoOrBuilder(
         int index);
 
     /**
@@ -6250,38 +6250,38 @@ public final class Product {
               rentCount_ = input.readInt64();
               break;
             }
-            case 73: {
+            case 72: {
               bitField0_ |= 0x00000080;
-              marketPrice_ = input.readDouble();
+              maxAvailable_ = input.readInt64();
               break;
             }
             case 81: {
               bitField0_ |= 0x00000100;
-              pledgePrice_ = input.readDouble();
+              marketPrice_ = input.readDouble();
               break;
             }
             case 89: {
               bitField0_ |= 0x00000200;
+              pledgePrice_ = input.readDouble();
+              break;
+            }
+            case 97: {
+              bitField0_ |= 0x00000400;
               transportationPrice_ = input.readDouble();
               break;
             }
-            case 98: {
+            case 106: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000400;
-              location_ = bs;
-              break;
-            }
-            case 104: {
               bitField0_ |= 0x00000800;
-              stockCount_ = input.readInt64();
+              location_ = bs;
               break;
             }
             case 114: {
               if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
-                colorInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ColorInfo>();
+                categoryInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.CategoryInfo>();
                 mutable_bitField0_ |= 0x00002000;
               }
-              colorInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.ColorInfo.PARSER, extensionRegistry));
+              categoryInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.PARSER, extensionRegistry));
               break;
             }
             case 122: {
@@ -6312,7 +6312,7 @@ public final class Product {
           imageUrl_ = imageUrl_.getUnmodifiableView();
         }
         if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
-          colorInfo_ = java.util.Collections.unmodifiableList(colorInfo_);
+          categoryInfo_ = java.util.Collections.unmodifiableList(categoryInfo_);
         }
         if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
           shortRentInfo_ = java.util.Collections.unmodifiableList(shortRentInfo_);
@@ -6682,20 +6682,43 @@ public final class Product {
       return rentCount_;
     }
 
-    public static final int MARKETPRICE_FIELD_NUMBER = 9;
+    public static final int MAXAVAILABLE_FIELD_NUMBER = 9;
+    private long maxAvailable_;
+    /**
+     * <code>optional int64 maxAvailable = 9;</code>
+     *
+     * <pre>
+     *最大可租数
+     * </pre>
+     */
+    public boolean hasMaxAvailable() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional int64 maxAvailable = 9;</code>
+     *
+     * <pre>
+     *最大可租数
+     * </pre>
+     */
+    public long getMaxAvailable() {
+      return maxAvailable_;
+    }
+
+    public static final int MARKETPRICE_FIELD_NUMBER = 10;
     private double marketPrice_;
     /**
-     * <code>optional double marketPrice = 9;</code>
+     * <code>optional double marketPrice = 10;</code>
      *
      * <pre>
      *市场价
      * </pre>
      */
     public boolean hasMarketPrice() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
-     * <code>optional double marketPrice = 9;</code>
+     * <code>optional double marketPrice = 10;</code>
      *
      * <pre>
      *市场价
@@ -6705,20 +6728,20 @@ public final class Product {
       return marketPrice_;
     }
 
-    public static final int PLEDGEPRICE_FIELD_NUMBER = 10;
+    public static final int PLEDGEPRICE_FIELD_NUMBER = 11;
     private double pledgePrice_;
     /**
-     * <code>optional double pledgePrice = 10;</code>
+     * <code>optional double pledgePrice = 11;</code>
      *
      * <pre>
      *押金
      * </pre>
      */
     public boolean hasPledgePrice() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
-     * <code>optional double pledgePrice = 10;</code>
+     * <code>optional double pledgePrice = 11;</code>
      *
      * <pre>
      *押金
@@ -6728,20 +6751,20 @@ public final class Product {
       return pledgePrice_;
     }
 
-    public static final int TRANSPORTATIONPRICE_FIELD_NUMBER = 11;
+    public static final int TRANSPORTATIONPRICE_FIELD_NUMBER = 12;
     private double transportationPrice_;
     /**
-     * <code>optional double transportationPrice = 11;</code>
+     * <code>optional double transportationPrice = 12;</code>
      *
      * <pre>
      *运费
      * </pre>
      */
     public boolean hasTransportationPrice() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>optional double transportationPrice = 11;</code>
+     * <code>optional double transportationPrice = 12;</code>
      *
      * <pre>
      *运费
@@ -6751,20 +6774,20 @@ public final class Product {
       return transportationPrice_;
     }
 
-    public static final int LOCATION_FIELD_NUMBER = 12;
+    public static final int LOCATION_FIELD_NUMBER = 13;
     private java.lang.Object location_;
     /**
-     * <code>optional string location = 12;</code>
+     * <code>optional string location = 13;</code>
      *
      * <pre>
      *所在地
      * </pre>
      */
     public boolean hasLocation() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>optional string location = 12;</code>
+     * <code>optional string location = 13;</code>
      *
      * <pre>
      *所在地
@@ -6785,7 +6808,7 @@ public final class Product {
       }
     }
     /**
-     * <code>optional string location = 12;</code>
+     * <code>optional string location = 13;</code>
      *
      * <pre>
      *所在地
@@ -6805,82 +6828,59 @@ public final class Product {
       }
     }
 
-    public static final int STOCKCOUNT_FIELD_NUMBER = 13;
-    private long stockCount_;
+    public static final int CATEGORYINFO_FIELD_NUMBER = 14;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryInfo> categoryInfo_;
     /**
-     * <code>optional int64 stockCount = 13;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *库存
+     *分类信息
      * </pre>
      */
-    public boolean hasStockCount() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryInfo> getCategoryInfoList() {
+      return categoryInfo_;
     }
     /**
-     * <code>optional int64 stockCount = 13;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *库存
+     *分类信息
      * </pre>
      */
-    public long getStockCount() {
-      return stockCount_;
-    }
-
-    public static final int COLORINFO_FIELD_NUMBER = 14;
-    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo> colorInfo_;
-    /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
-     *
-     * <pre>
-     *颜色信息
-     * </pre>
-     */
-    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo> getColorInfoList() {
-      return colorInfo_;
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder> 
+        getCategoryInfoOrBuilderList() {
+      return categoryInfo_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *颜色信息
+     *分类信息
      * </pre>
      */
-    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder> 
-        getColorInfoOrBuilderList() {
-      return colorInfo_;
+    public int getCategoryInfoCount() {
+      return categoryInfo_.size();
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *颜色信息
+     *分类信息
      * </pre>
      */
-    public int getColorInfoCount() {
-      return colorInfo_.size();
+    public com.qjoy.basjoo.core.model.pb.Product.CategoryInfo getCategoryInfo(int index) {
+      return categoryInfo_.get(index);
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
      *
      * <pre>
-     *颜色信息
+     *分类信息
      * </pre>
      */
-    public com.qjoy.basjoo.core.model.pb.Product.ColorInfo getColorInfo(int index) {
-      return colorInfo_.get(index);
-    }
-    /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
-     *
-     * <pre>
-     *颜色信息
-     * </pre>
-     */
-    public com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder getColorInfoOrBuilder(
+    public com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder getCategoryInfoOrBuilder(
         int index) {
-      return colorInfo_.get(index);
+      return categoryInfo_.get(index);
     }
 
     public static final int SHORTRENTINFO_FIELD_NUMBER = 15;
@@ -7002,12 +7002,12 @@ public final class Product {
       lowestRent_ = 0D;
       unit_ = 0;
       rentCount_ = 0L;
+      maxAvailable_ = 0L;
       marketPrice_ = 0D;
       pledgePrice_ = 0D;
       transportationPrice_ = 0D;
       location_ = "";
-      stockCount_ = 0L;
-      colorInfo_ = java.util.Collections.emptyList();
+      categoryInfo_ = java.util.Collections.emptyList();
       shortRentInfo_ = java.util.Collections.emptyList();
       longRentInfo_ = java.util.Collections.emptyList();
     }
@@ -7033,8 +7033,8 @@ public final class Product {
         memoizedIsInitialized = 0;
         return false;
       }
-      for (int i = 0; i < getColorInfoCount(); i++) {
-        if (!getColorInfo(i).isInitialized()) {
+      for (int i = 0; i < getCategoryInfoCount(); i++) {
+        if (!getCategoryInfo(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -7083,22 +7083,22 @@ public final class Product {
         output.writeInt64(8, rentCount_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeDouble(9, marketPrice_);
+        output.writeInt64(9, maxAvailable_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeDouble(10, pledgePrice_);
+        output.writeDouble(10, marketPrice_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeDouble(11, transportationPrice_);
+        output.writeDouble(11, pledgePrice_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeBytes(12, getLocationBytes());
+        output.writeDouble(12, transportationPrice_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeInt64(13, stockCount_);
+        output.writeBytes(13, getLocationBytes());
       }
-      for (int i = 0; i < colorInfo_.size(); i++) {
-        output.writeMessage(14, colorInfo_.get(i));
+      for (int i = 0; i < categoryInfo_.size(); i++) {
+        output.writeMessage(14, categoryInfo_.get(i));
       }
       for (int i = 0; i < shortRentInfo_.size(); i++) {
         output.writeMessage(15, shortRentInfo_.get(i));
@@ -7154,27 +7154,27 @@ public final class Product {
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, marketPrice_);
+          .computeInt64Size(9, maxAvailable_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, pledgePrice_);
+          .computeDoubleSize(10, marketPrice_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, transportationPrice_);
+          .computeDoubleSize(11, pledgePrice_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(12, getLocationBytes());
+          .computeDoubleSize(12, transportationPrice_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(13, stockCount_);
+          .computeBytesSize(13, getLocationBytes());
       }
-      for (int i = 0; i < colorInfo_.size(); i++) {
+      for (int i = 0; i < categoryInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, colorInfo_.get(i));
+          .computeMessageSize(14, categoryInfo_.get(i));
       }
       for (int i = 0; i < shortRentInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -7297,7 +7297,7 @@ public final class Product {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getColorInfoFieldBuilder();
+          getCategoryInfoFieldBuilder();
           getShortRentInfoFieldBuilder();
           getLongRentInfoFieldBuilder();
         }
@@ -7324,21 +7324,21 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000040);
         rentCount_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000080);
-        marketPrice_ = 0D;
+        maxAvailable_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000100);
-        pledgePrice_ = 0D;
+        marketPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000200);
-        transportationPrice_ = 0D;
+        pledgePrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000400);
-        location_ = "";
+        transportationPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000800);
-        stockCount_ = 0L;
+        location_ = "";
         bitField0_ = (bitField0_ & ~0x00001000);
-        if (colorInfoBuilder_ == null) {
-          colorInfo_ = java.util.Collections.emptyList();
+        if (categoryInfoBuilder_ == null) {
+          categoryInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00002000);
         } else {
-          colorInfoBuilder_.clear();
+          categoryInfoBuilder_.clear();
         }
         if (shortRentInfoBuilder_ == null) {
           shortRentInfo_ = java.util.Collections.emptyList();
@@ -7416,31 +7416,31 @@ public final class Product {
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.marketPrice_ = marketPrice_;
+        result.maxAvailable_ = maxAvailable_;
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.pledgePrice_ = pledgePrice_;
+        result.marketPrice_ = marketPrice_;
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.transportationPrice_ = transportationPrice_;
+        result.pledgePrice_ = pledgePrice_;
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.location_ = location_;
+        result.transportationPrice_ = transportationPrice_;
         if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.stockCount_ = stockCount_;
-        if (colorInfoBuilder_ == null) {
+        result.location_ = location_;
+        if (categoryInfoBuilder_ == null) {
           if (((bitField0_ & 0x00002000) == 0x00002000)) {
-            colorInfo_ = java.util.Collections.unmodifiableList(colorInfo_);
+            categoryInfo_ = java.util.Collections.unmodifiableList(categoryInfo_);
             bitField0_ = (bitField0_ & ~0x00002000);
           }
-          result.colorInfo_ = colorInfo_;
+          result.categoryInfo_ = categoryInfo_;
         } else {
-          result.colorInfo_ = colorInfoBuilder_.build();
+          result.categoryInfo_ = categoryInfoBuilder_.build();
         }
         if (shortRentInfoBuilder_ == null) {
           if (((bitField0_ & 0x00004000) == 0x00004000)) {
@@ -7515,6 +7515,9 @@ public final class Product {
         if (other.hasRentCount()) {
           setRentCount(other.getRentCount());
         }
+        if (other.hasMaxAvailable()) {
+          setMaxAvailable(other.getMaxAvailable());
+        }
         if (other.hasMarketPrice()) {
           setMarketPrice(other.getMarketPrice());
         }
@@ -7525,36 +7528,33 @@ public final class Product {
           setTransportationPrice(other.getTransportationPrice());
         }
         if (other.hasLocation()) {
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
           location_ = other.location_;
           onChanged();
         }
-        if (other.hasStockCount()) {
-          setStockCount(other.getStockCount());
-        }
-        if (colorInfoBuilder_ == null) {
-          if (!other.colorInfo_.isEmpty()) {
-            if (colorInfo_.isEmpty()) {
-              colorInfo_ = other.colorInfo_;
+        if (categoryInfoBuilder_ == null) {
+          if (!other.categoryInfo_.isEmpty()) {
+            if (categoryInfo_.isEmpty()) {
+              categoryInfo_ = other.categoryInfo_;
               bitField0_ = (bitField0_ & ~0x00002000);
             } else {
-              ensureColorInfoIsMutable();
-              colorInfo_.addAll(other.colorInfo_);
+              ensureCategoryInfoIsMutable();
+              categoryInfo_.addAll(other.categoryInfo_);
             }
             onChanged();
           }
         } else {
-          if (!other.colorInfo_.isEmpty()) {
-            if (colorInfoBuilder_.isEmpty()) {
-              colorInfoBuilder_.dispose();
-              colorInfoBuilder_ = null;
-              colorInfo_ = other.colorInfo_;
+          if (!other.categoryInfo_.isEmpty()) {
+            if (categoryInfoBuilder_.isEmpty()) {
+              categoryInfoBuilder_.dispose();
+              categoryInfoBuilder_ = null;
+              categoryInfo_ = other.categoryInfo_;
               bitField0_ = (bitField0_ & ~0x00002000);
-              colorInfoBuilder_ = 
+              categoryInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getColorInfoFieldBuilder() : null;
+                   getCategoryInfoFieldBuilder() : null;
             } else {
-              colorInfoBuilder_.addAllMessages(other.colorInfo_);
+              categoryInfoBuilder_.addAllMessages(other.categoryInfo_);
             }
           }
         }
@@ -7631,8 +7631,8 @@ public final class Product {
           
           return false;
         }
-        for (int i = 0; i < getColorInfoCount(); i++) {
-          if (!getColorInfo(i).isInitialized()) {
+        for (int i = 0; i < getCategoryInfoCount(); i++) {
+          if (!getCategoryInfo(i).isInitialized()) {
             
             return false;
           }
@@ -8344,19 +8344,67 @@ public final class Product {
         return this;
       }
 
+      private long maxAvailable_ ;
+      /**
+       * <code>optional int64 maxAvailable = 9;</code>
+       *
+       * <pre>
+       *最大可租数
+       * </pre>
+       */
+      public boolean hasMaxAvailable() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional int64 maxAvailable = 9;</code>
+       *
+       * <pre>
+       *最大可租数
+       * </pre>
+       */
+      public long getMaxAvailable() {
+        return maxAvailable_;
+      }
+      /**
+       * <code>optional int64 maxAvailable = 9;</code>
+       *
+       * <pre>
+       *最大可租数
+       * </pre>
+       */
+      public Builder setMaxAvailable(long value) {
+        bitField0_ |= 0x00000100;
+        maxAvailable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 maxAvailable = 9;</code>
+       *
+       * <pre>
+       *最大可租数
+       * </pre>
+       */
+      public Builder clearMaxAvailable() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        maxAvailable_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private double marketPrice_ ;
       /**
-       * <code>optional double marketPrice = 9;</code>
+       * <code>optional double marketPrice = 10;</code>
        *
        * <pre>
        *市场价
        * </pre>
        */
       public boolean hasMarketPrice() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>optional double marketPrice = 9;</code>
+       * <code>optional double marketPrice = 10;</code>
        *
        * <pre>
        *市场价
@@ -8366,27 +8414,27 @@ public final class Product {
         return marketPrice_;
       }
       /**
-       * <code>optional double marketPrice = 9;</code>
+       * <code>optional double marketPrice = 10;</code>
        *
        * <pre>
        *市场价
        * </pre>
        */
       public Builder setMarketPrice(double value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         marketPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double marketPrice = 9;</code>
+       * <code>optional double marketPrice = 10;</code>
        *
        * <pre>
        *市场价
        * </pre>
        */
       public Builder clearMarketPrice() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         marketPrice_ = 0D;
         onChanged();
         return this;
@@ -8394,17 +8442,17 @@ public final class Product {
 
       private double pledgePrice_ ;
       /**
-       * <code>optional double pledgePrice = 10;</code>
+       * <code>optional double pledgePrice = 11;</code>
        *
        * <pre>
        *押金
        * </pre>
        */
       public boolean hasPledgePrice() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>optional double pledgePrice = 10;</code>
+       * <code>optional double pledgePrice = 11;</code>
        *
        * <pre>
        *押金
@@ -8414,27 +8462,27 @@ public final class Product {
         return pledgePrice_;
       }
       /**
-       * <code>optional double pledgePrice = 10;</code>
+       * <code>optional double pledgePrice = 11;</code>
        *
        * <pre>
        *押金
        * </pre>
        */
       public Builder setPledgePrice(double value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         pledgePrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double pledgePrice = 10;</code>
+       * <code>optional double pledgePrice = 11;</code>
        *
        * <pre>
        *押金
        * </pre>
        */
       public Builder clearPledgePrice() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         pledgePrice_ = 0D;
         onChanged();
         return this;
@@ -8442,17 +8490,17 @@ public final class Product {
 
       private double transportationPrice_ ;
       /**
-       * <code>optional double transportationPrice = 11;</code>
+       * <code>optional double transportationPrice = 12;</code>
        *
        * <pre>
        *运费
        * </pre>
        */
       public boolean hasTransportationPrice() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
-       * <code>optional double transportationPrice = 11;</code>
+       * <code>optional double transportationPrice = 12;</code>
        *
        * <pre>
        *运费
@@ -8462,27 +8510,27 @@ public final class Product {
         return transportationPrice_;
       }
       /**
-       * <code>optional double transportationPrice = 11;</code>
+       * <code>optional double transportationPrice = 12;</code>
        *
        * <pre>
        *运费
        * </pre>
        */
       public Builder setTransportationPrice(double value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         transportationPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double transportationPrice = 11;</code>
+       * <code>optional double transportationPrice = 12;</code>
        *
        * <pre>
        *运费
        * </pre>
        */
       public Builder clearTransportationPrice() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         transportationPrice_ = 0D;
         onChanged();
         return this;
@@ -8490,17 +8538,17 @@ public final class Product {
 
       private java.lang.Object location_ = "";
       /**
-       * <code>optional string location = 12;</code>
+       * <code>optional string location = 13;</code>
        *
        * <pre>
        *所在地
        * </pre>
        */
       public boolean hasLocation() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
-       * <code>optional string location = 12;</code>
+       * <code>optional string location = 13;</code>
        *
        * <pre>
        *所在地
@@ -8521,7 +8569,7 @@ public final class Product {
         }
       }
       /**
-       * <code>optional string location = 12;</code>
+       * <code>optional string location = 13;</code>
        *
        * <pre>
        *所在地
@@ -8541,7 +8589,7 @@ public final class Product {
         }
       }
       /**
-       * <code>optional string location = 12;</code>
+       * <code>optional string location = 13;</code>
        *
        * <pre>
        *所在地
@@ -8552,26 +8600,26 @@ public final class Product {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  bitField0_ |= 0x00001000;
         location_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string location = 12;</code>
+       * <code>optional string location = 13;</code>
        *
        * <pre>
        *所在地
        * </pre>
        */
       public Builder clearLocation() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         location_ = getDefaultInstance().getLocation();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string location = 12;</code>
+       * <code>optional string location = 13;</code>
        *
        * <pre>
        *所在地
@@ -8582,370 +8630,322 @@ public final class Product {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  bitField0_ |= 0x00001000;
         location_ = value;
         onChanged();
         return this;
       }
 
-      private long stockCount_ ;
-      /**
-       * <code>optional int64 stockCount = 13;</code>
-       *
-       * <pre>
-       *库存
-       * </pre>
-       */
-      public boolean hasStockCount() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
-      }
-      /**
-       * <code>optional int64 stockCount = 13;</code>
-       *
-       * <pre>
-       *库存
-       * </pre>
-       */
-      public long getStockCount() {
-        return stockCount_;
-      }
-      /**
-       * <code>optional int64 stockCount = 13;</code>
-       *
-       * <pre>
-       *库存
-       * </pre>
-       */
-      public Builder setStockCount(long value) {
-        bitField0_ |= 0x00001000;
-        stockCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 stockCount = 13;</code>
-       *
-       * <pre>
-       *库存
-       * </pre>
-       */
-      public Builder clearStockCount() {
-        bitField0_ = (bitField0_ & ~0x00001000);
-        stockCount_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo> colorInfo_ =
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryInfo> categoryInfo_ =
         java.util.Collections.emptyList();
-      private void ensureColorInfoIsMutable() {
+      private void ensureCategoryInfoIsMutable() {
         if (!((bitField0_ & 0x00002000) == 0x00002000)) {
-          colorInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ColorInfo>(colorInfo_);
+          categoryInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.CategoryInfo>(categoryInfo_);
           bitField0_ |= 0x00002000;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.qjoy.basjoo.core.model.pb.Product.ColorInfo, com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder> colorInfoBuilder_;
+          com.qjoy.basjoo.core.model.pb.Product.CategoryInfo, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder> categoryInfoBuilder_;
 
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo> getColorInfoList() {
-        if (colorInfoBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(colorInfo_);
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryInfo> getCategoryInfoList() {
+        if (categoryInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(categoryInfo_);
         } else {
-          return colorInfoBuilder_.getMessageList();
+          return categoryInfoBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public int getColorInfoCount() {
-        if (colorInfoBuilder_ == null) {
-          return colorInfo_.size();
+      public int getCategoryInfoCount() {
+        if (categoryInfoBuilder_ == null) {
+          return categoryInfo_.size();
         } else {
-          return colorInfoBuilder_.getCount();
+          return categoryInfoBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.ColorInfo getColorInfo(int index) {
-        if (colorInfoBuilder_ == null) {
-          return colorInfo_.get(index);
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryInfo getCategoryInfo(int index) {
+        if (categoryInfoBuilder_ == null) {
+          return categoryInfo_.get(index);
         } else {
-          return colorInfoBuilder_.getMessage(index);
+          return categoryInfoBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public Builder setColorInfo(
-          int index, com.qjoy.basjoo.core.model.pb.Product.ColorInfo value) {
-        if (colorInfoBuilder_ == null) {
+      public Builder setCategoryInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo value) {
+        if (categoryInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureColorInfoIsMutable();
-          colorInfo_.set(index, value);
+          ensureCategoryInfoIsMutable();
+          categoryInfo_.set(index, value);
           onChanged();
         } else {
-          colorInfoBuilder_.setMessage(index, value);
+          categoryInfoBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public Builder setColorInfo(
-          int index, com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder builderForValue) {
-        if (colorInfoBuilder_ == null) {
-          ensureColorInfoIsMutable();
-          colorInfo_.set(index, builderForValue.build());
+      public Builder setCategoryInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder builderForValue) {
+        if (categoryInfoBuilder_ == null) {
+          ensureCategoryInfoIsMutable();
+          categoryInfo_.set(index, builderForValue.build());
           onChanged();
         } else {
-          colorInfoBuilder_.setMessage(index, builderForValue.build());
+          categoryInfoBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public Builder addColorInfo(com.qjoy.basjoo.core.model.pb.Product.ColorInfo value) {
-        if (colorInfoBuilder_ == null) {
+      public Builder addCategoryInfo(com.qjoy.basjoo.core.model.pb.Product.CategoryInfo value) {
+        if (categoryInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureColorInfoIsMutable();
-          colorInfo_.add(value);
+          ensureCategoryInfoIsMutable();
+          categoryInfo_.add(value);
           onChanged();
         } else {
-          colorInfoBuilder_.addMessage(value);
+          categoryInfoBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public Builder addColorInfo(
-          int index, com.qjoy.basjoo.core.model.pb.Product.ColorInfo value) {
-        if (colorInfoBuilder_ == null) {
+      public Builder addCategoryInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo value) {
+        if (categoryInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureColorInfoIsMutable();
-          colorInfo_.add(index, value);
+          ensureCategoryInfoIsMutable();
+          categoryInfo_.add(index, value);
           onChanged();
         } else {
-          colorInfoBuilder_.addMessage(index, value);
+          categoryInfoBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public Builder addColorInfo(
-          com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder builderForValue) {
-        if (colorInfoBuilder_ == null) {
-          ensureColorInfoIsMutable();
-          colorInfo_.add(builderForValue.build());
+      public Builder addCategoryInfo(
+          com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder builderForValue) {
+        if (categoryInfoBuilder_ == null) {
+          ensureCategoryInfoIsMutable();
+          categoryInfo_.add(builderForValue.build());
           onChanged();
         } else {
-          colorInfoBuilder_.addMessage(builderForValue.build());
+          categoryInfoBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public Builder addColorInfo(
-          int index, com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder builderForValue) {
-        if (colorInfoBuilder_ == null) {
-          ensureColorInfoIsMutable();
-          colorInfo_.add(index, builderForValue.build());
+      public Builder addCategoryInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder builderForValue) {
+        if (categoryInfoBuilder_ == null) {
+          ensureCategoryInfoIsMutable();
+          categoryInfo_.add(index, builderForValue.build());
           onChanged();
         } else {
-          colorInfoBuilder_.addMessage(index, builderForValue.build());
+          categoryInfoBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public Builder addAllColorInfo(
-          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.ColorInfo> values) {
-        if (colorInfoBuilder_ == null) {
-          ensureColorInfoIsMutable();
+      public Builder addAllCategoryInfo(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.CategoryInfo> values) {
+        if (categoryInfoBuilder_ == null) {
+          ensureCategoryInfoIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, colorInfo_);
+              values, categoryInfo_);
           onChanged();
         } else {
-          colorInfoBuilder_.addAllMessages(values);
+          categoryInfoBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public Builder clearColorInfo() {
-        if (colorInfoBuilder_ == null) {
-          colorInfo_ = java.util.Collections.emptyList();
+      public Builder clearCategoryInfo() {
+        if (categoryInfoBuilder_ == null) {
+          categoryInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00002000);
           onChanged();
         } else {
-          colorInfoBuilder_.clear();
+          categoryInfoBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public Builder removeColorInfo(int index) {
-        if (colorInfoBuilder_ == null) {
-          ensureColorInfoIsMutable();
-          colorInfo_.remove(index);
+      public Builder removeCategoryInfo(int index) {
+        if (categoryInfoBuilder_ == null) {
+          ensureCategoryInfoIsMutable();
+          categoryInfo_.remove(index);
           onChanged();
         } else {
-          colorInfoBuilder_.remove(index);
+          categoryInfoBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder getColorInfoBuilder(
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder getCategoryInfoBuilder(
           int index) {
-        return getColorInfoFieldBuilder().getBuilder(index);
+        return getCategoryInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder getColorInfoOrBuilder(
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder getCategoryInfoOrBuilder(
           int index) {
-        if (colorInfoBuilder_ == null) {
-          return colorInfo_.get(index);  } else {
-          return colorInfoBuilder_.getMessageOrBuilder(index);
+        if (categoryInfoBuilder_ == null) {
+          return categoryInfo_.get(index);  } else {
+          return categoryInfoBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder> 
-           getColorInfoOrBuilderList() {
-        if (colorInfoBuilder_ != null) {
-          return colorInfoBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder> 
+           getCategoryInfoOrBuilderList() {
+        if (categoryInfoBuilder_ != null) {
+          return categoryInfoBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(colorInfo_);
+          return java.util.Collections.unmodifiableList(categoryInfo_);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder addColorInfoBuilder() {
-        return getColorInfoFieldBuilder().addBuilder(
-            com.qjoy.basjoo.core.model.pb.Product.ColorInfo.getDefaultInstance());
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder addCategoryInfoBuilder() {
+        return getCategoryInfoFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder addColorInfoBuilder(
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder addCategoryInfoBuilder(
           int index) {
-        return getColorInfoFieldBuilder().addBuilder(
-            index, com.qjoy.basjoo.core.model.pb.Product.ColorInfo.getDefaultInstance());
+        return getCategoryInfoFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.ColorInfo colorInfo = 14;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryInfo categoryInfo = 14;</code>
        *
        * <pre>
-       *颜色信息
+       *分类信息
        * </pre>
        */
-      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder> 
-           getColorInfoBuilderList() {
-        return getColorInfoFieldBuilder().getBuilderList();
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder> 
+           getCategoryInfoBuilderList() {
+        return getCategoryInfoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.qjoy.basjoo.core.model.pb.Product.ColorInfo, com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder> 
-          getColorInfoFieldBuilder() {
-        if (colorInfoBuilder_ == null) {
-          colorInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.qjoy.basjoo.core.model.pb.Product.ColorInfo, com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder>(
-                  colorInfo_,
+          com.qjoy.basjoo.core.model.pb.Product.CategoryInfo, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder> 
+          getCategoryInfoFieldBuilder() {
+        if (categoryInfoBuilder_ == null) {
+          categoryInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Product.CategoryInfo, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder>(
+                  categoryInfo_,
                   ((bitField0_ & 0x00002000) == 0x00002000),
                   getParentForChildren(),
                   isClean());
-          colorInfo_ = null;
+          categoryInfo_ = null;
         }
-        return colorInfoBuilder_;
+        return categoryInfoBuilder_;
       }
 
       private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ShortRentInfo> shortRentInfo_ =
@@ -9583,86 +9583,103 @@ public final class Product {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ProductDetailInfo)
   }
 
-  public interface ColorInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ColorInfo)
+  public interface CategoryInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.CategoryInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string colorCode = 1;</code>
+     * <code>required string categoryCode = 1;</code>
      *
      * <pre>
-     *颜色编号
+     *类别编号
      * </pre>
      */
-    boolean hasColorCode();
+    boolean hasCategoryCode();
     /**
-     * <code>required string colorCode = 1;</code>
+     * <code>required string categoryCode = 1;</code>
      *
      * <pre>
-     *颜色编号
+     *类别编号
      * </pre>
      */
-    java.lang.String getColorCode();
+    java.lang.String getCategoryCode();
     /**
-     * <code>required string colorCode = 1;</code>
+     * <code>required string categoryCode = 1;</code>
      *
      * <pre>
-     *颜色编号
+     *类别编号
      * </pre>
      */
     com.google.protobuf.ByteString
-        getColorCodeBytes();
+        getCategoryCodeBytes();
 
     /**
-     * <code>required string colorName = 2;</code>
+     * <code>required string categoryName = 2;</code>
      *
      * <pre>
-     *颜色名称
+     *类别名称
      * </pre>
      */
-    boolean hasColorName();
+    boolean hasCategoryName();
     /**
-     * <code>required string colorName = 2;</code>
+     * <code>required string categoryName = 2;</code>
      *
      * <pre>
-     *颜色名称
+     *类别名称
      * </pre>
      */
-    java.lang.String getColorName();
+    java.lang.String getCategoryName();
     /**
-     * <code>required string colorName = 2;</code>
+     * <code>required string categoryName = 2;</code>
      *
      * <pre>
-     *颜色名称
+     *类别名称
      * </pre>
      */
     com.google.protobuf.ByteString
-        getColorNameBytes();
+        getCategoryNameBytes();
+
+    /**
+     * <code>optional int64 stockCount = 3;</code>
+     *
+     * <pre>
+     *库存
+     * </pre>
+     */
+    boolean hasStockCount();
+    /**
+     * <code>optional int64 stockCount = 3;</code>
+     *
+     * <pre>
+     *库存
+     * </pre>
+     */
+    long getStockCount();
   }
   /**
-   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ColorInfo}
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CategoryInfo}
    *
    * <pre>
-   *颜色信息
+   *类别信息(颜色等)
    * </pre>
    */
-  public static final class ColorInfo extends
+  public static final class CategoryInfo extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ColorInfo)
-      ColorInfoOrBuilder {
-    // Use ColorInfo.newBuilder() to construct.
-    private ColorInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.CategoryInfo)
+      CategoryInfoOrBuilder {
+    // Use CategoryInfo.newBuilder() to construct.
+    private CategoryInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private ColorInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private CategoryInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final ColorInfo defaultInstance;
-    public static ColorInfo getDefaultInstance() {
+    private static final CategoryInfo defaultInstance;
+    public static CategoryInfo getDefaultInstance() {
       return defaultInstance;
     }
 
-    public ColorInfo getDefaultInstanceForType() {
+    public CategoryInfo getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -9672,7 +9689,7 @@ public final class Product {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private ColorInfo(
+    private CategoryInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9698,13 +9715,18 @@ public final class Product {
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              colorCode_ = bs;
+              categoryCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              colorName_ = bs;
+              categoryName_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              stockCount_ = input.readInt64();
               break;
             }
           }
@@ -9721,53 +9743,53 @@ public final class Product {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_descriptor;
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_fieldAccessorTable
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.qjoy.basjoo.core.model.pb.Product.ColorInfo.class, com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder.class);
+              com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.class, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<ColorInfo> PARSER =
-        new com.google.protobuf.AbstractParser<ColorInfo>() {
-      public ColorInfo parsePartialFrom(
+    public static com.google.protobuf.Parser<CategoryInfo> PARSER =
+        new com.google.protobuf.AbstractParser<CategoryInfo>() {
+      public CategoryInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ColorInfo(input, extensionRegistry);
+        return new CategoryInfo(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ColorInfo> getParserForType() {
+    public com.google.protobuf.Parser<CategoryInfo> getParserForType() {
       return PARSER;
     }
 
     private int bitField0_;
-    public static final int COLORCODE_FIELD_NUMBER = 1;
-    private java.lang.Object colorCode_;
+    public static final int CATEGORYCODE_FIELD_NUMBER = 1;
+    private java.lang.Object categoryCode_;
     /**
-     * <code>required string colorCode = 1;</code>
+     * <code>required string categoryCode = 1;</code>
      *
      * <pre>
-     *颜色编号
+     *类别编号
      * </pre>
      */
-    public boolean hasColorCode() {
+    public boolean hasCategoryCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string colorCode = 1;</code>
+     * <code>required string categoryCode = 1;</code>
      *
      * <pre>
-     *颜色编号
+     *类别编号
      * </pre>
      */
-    public java.lang.String getColorCode() {
-      java.lang.Object ref = colorCode_;
+    public java.lang.String getCategoryCode() {
+      java.lang.Object ref = categoryCode_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -9775,53 +9797,53 @@ public final class Product {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          colorCode_ = s;
+          categoryCode_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string colorCode = 1;</code>
+     * <code>required string categoryCode = 1;</code>
      *
      * <pre>
-     *颜色编号
+     *类别编号
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getColorCodeBytes() {
-      java.lang.Object ref = colorCode_;
+        getCategoryCodeBytes() {
+      java.lang.Object ref = categoryCode_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        colorCode_ = b;
+        categoryCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int COLORNAME_FIELD_NUMBER = 2;
-    private java.lang.Object colorName_;
+    public static final int CATEGORYNAME_FIELD_NUMBER = 2;
+    private java.lang.Object categoryName_;
     /**
-     * <code>required string colorName = 2;</code>
+     * <code>required string categoryName = 2;</code>
      *
      * <pre>
-     *颜色名称
+     *类别名称
      * </pre>
      */
-    public boolean hasColorName() {
+    public boolean hasCategoryName() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string colorName = 2;</code>
+     * <code>required string categoryName = 2;</code>
      *
      * <pre>
-     *颜色名称
+     *类别名称
      * </pre>
      */
-    public java.lang.String getColorName() {
-      java.lang.Object ref = colorName_;
+    public java.lang.String getCategoryName() {
+      java.lang.Object ref = categoryName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -9829,35 +9851,59 @@ public final class Product {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          colorName_ = s;
+          categoryName_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string colorName = 2;</code>
+     * <code>required string categoryName = 2;</code>
      *
      * <pre>
-     *颜色名称
+     *类别名称
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getColorNameBytes() {
-      java.lang.Object ref = colorName_;
+        getCategoryNameBytes() {
+      java.lang.Object ref = categoryName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        colorName_ = b;
+        categoryName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
+    public static final int STOCKCOUNT_FIELD_NUMBER = 3;
+    private long stockCount_;
+    /**
+     * <code>optional int64 stockCount = 3;</code>
+     *
+     * <pre>
+     *库存
+     * </pre>
+     */
+    public boolean hasStockCount() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 stockCount = 3;</code>
+     *
+     * <pre>
+     *库存
+     * </pre>
+     */
+    public long getStockCount() {
+      return stockCount_;
+    }
+
     private void initFields() {
-      colorCode_ = "";
-      colorName_ = "";
+      categoryCode_ = "";
+      categoryName_ = "";
+      stockCount_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9865,11 +9911,11 @@ public final class Product {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasColorCode()) {
+      if (!hasCategoryCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasColorName()) {
+      if (!hasCategoryName()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -9881,10 +9927,13 @@ public final class Product {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getColorCodeBytes());
+        output.writeBytes(1, getCategoryCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getColorNameBytes());
+        output.writeBytes(2, getCategoryNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, stockCount_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -9897,11 +9946,15 @@ public final class Product {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getColorCodeBytes());
+          .computeBytesSize(1, getCategoryCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getColorNameBytes());
+          .computeBytesSize(2, getCategoryNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, stockCount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9915,53 +9968,53 @@ public final class Product {
       return super.writeReplace();
     }
 
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseFrom(byte[] data)
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseDelimitedFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.ColorInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9970,7 +10023,7 @@ public final class Product {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.ColorInfo prototype) {
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.CategoryInfo prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -9982,29 +10035,29 @@ public final class Product {
       return builder;
     }
     /**
-     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ColorInfo}
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CategoryInfo}
      *
      * <pre>
-     *颜色信息
+     *类别信息(颜色等)
      * </pre>
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ColorInfo)
-        com.qjoy.basjoo.core.model.pb.Product.ColorInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.CategoryInfo)
+        com.qjoy.basjoo.core.model.pb.Product.CategoryInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_descriptor;
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_fieldAccessorTable
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.qjoy.basjoo.core.model.pb.Product.ColorInfo.class, com.qjoy.basjoo.core.model.pb.Product.ColorInfo.Builder.class);
+                com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.class, com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.Builder.class);
       }
 
-      // Construct using com.qjoy.basjoo.core.model.pb.Product.ColorInfo.newBuilder()
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10024,10 +10077,12 @@ public final class Product {
 
       public Builder clear() {
         super.clear();
-        colorCode_ = "";
+        categoryCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        colorName_ = "";
+        categoryName_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        stockCount_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -10037,69 +10092,76 @@ public final class Product {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_descriptor;
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor;
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.ColorInfo getDefaultInstanceForType() {
-        return com.qjoy.basjoo.core.model.pb.Product.ColorInfo.getDefaultInstance();
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryInfo getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.getDefaultInstance();
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.ColorInfo build() {
-        com.qjoy.basjoo.core.model.pb.Product.ColorInfo result = buildPartial();
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryInfo build() {
+        com.qjoy.basjoo.core.model.pb.Product.CategoryInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.ColorInfo buildPartial() {
-        com.qjoy.basjoo.core.model.pb.Product.ColorInfo result = new com.qjoy.basjoo.core.model.pb.Product.ColorInfo(this);
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryInfo buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.CategoryInfo result = new com.qjoy.basjoo.core.model.pb.Product.CategoryInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.colorCode_ = colorCode_;
+        result.categoryCode_ = categoryCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.colorName_ = colorName_;
+        result.categoryName_ = categoryName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.stockCount_ = stockCount_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.ColorInfo) {
-          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.ColorInfo)other);
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.CategoryInfo) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.CategoryInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.ColorInfo other) {
-        if (other == com.qjoy.basjoo.core.model.pb.Product.ColorInfo.getDefaultInstance()) return this;
-        if (other.hasColorCode()) {
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.CategoryInfo other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.CategoryInfo.getDefaultInstance()) return this;
+        if (other.hasCategoryCode()) {
           bitField0_ |= 0x00000001;
-          colorCode_ = other.colorCode_;
+          categoryCode_ = other.categoryCode_;
           onChanged();
         }
-        if (other.hasColorName()) {
+        if (other.hasCategoryName()) {
           bitField0_ |= 0x00000002;
-          colorName_ = other.colorName_;
+          categoryName_ = other.categoryName_;
           onChanged();
+        }
+        if (other.hasStockCount()) {
+          setStockCount(other.getStockCount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
-        if (!hasColorCode()) {
+        if (!hasCategoryCode()) {
           
           return false;
         }
-        if (!hasColorName()) {
+        if (!hasCategoryName()) {
           
           return false;
         }
@@ -10110,11 +10172,11 @@ public final class Product {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.qjoy.basjoo.core.model.pb.Product.ColorInfo parsedMessage = null;
+        com.qjoy.basjoo.core.model.pb.Product.CategoryInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.ColorInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.CategoryInfo) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -10125,32 +10187,32 @@ public final class Product {
       }
       private int bitField0_;
 
-      private java.lang.Object colorCode_ = "";
+      private java.lang.Object categoryCode_ = "";
       /**
-       * <code>required string colorCode = 1;</code>
+       * <code>required string categoryCode = 1;</code>
        *
        * <pre>
-       *颜色编号
+       *类别编号
        * </pre>
        */
-      public boolean hasColorCode() {
+      public boolean hasCategoryCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string colorCode = 1;</code>
+       * <code>required string categoryCode = 1;</code>
        *
        * <pre>
-       *颜色编号
+       *类别编号
        * </pre>
        */
-      public java.lang.String getColorCode() {
-        java.lang.Object ref = colorCode_;
+      public java.lang.String getCategoryCode() {
+        java.lang.Object ref = categoryCode_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            colorCode_ = s;
+            categoryCode_ = s;
           }
           return s;
         } else {
@@ -10158,99 +10220,99 @@ public final class Product {
         }
       }
       /**
-       * <code>required string colorCode = 1;</code>
+       * <code>required string categoryCode = 1;</code>
        *
        * <pre>
-       *颜色编号
+       *类别编号
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getColorCodeBytes() {
-        java.lang.Object ref = colorCode_;
+          getCategoryCodeBytes() {
+        java.lang.Object ref = categoryCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          colorCode_ = b;
+          categoryCode_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string colorCode = 1;</code>
+       * <code>required string categoryCode = 1;</code>
        *
        * <pre>
-       *颜色编号
+       *类别编号
        * </pre>
        */
-      public Builder setColorCode(
+      public Builder setCategoryCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000001;
-        colorCode_ = value;
+        categoryCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string colorCode = 1;</code>
+       * <code>required string categoryCode = 1;</code>
        *
        * <pre>
-       *颜色编号
+       *类别编号
        * </pre>
        */
-      public Builder clearColorCode() {
+      public Builder clearCategoryCode() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        colorCode_ = getDefaultInstance().getColorCode();
+        categoryCode_ = getDefaultInstance().getCategoryCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string colorCode = 1;</code>
+       * <code>required string categoryCode = 1;</code>
        *
        * <pre>
-       *颜色编号
+       *类别编号
        * </pre>
        */
-      public Builder setColorCodeBytes(
+      public Builder setCategoryCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000001;
-        colorCode_ = value;
+        categoryCode_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object colorName_ = "";
+      private java.lang.Object categoryName_ = "";
       /**
-       * <code>required string colorName = 2;</code>
+       * <code>required string categoryName = 2;</code>
        *
        * <pre>
-       *颜色名称
+       *类别名称
        * </pre>
        */
-      public boolean hasColorName() {
+      public boolean hasCategoryName() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string colorName = 2;</code>
+       * <code>required string categoryName = 2;</code>
        *
        * <pre>
-       *颜色名称
+       *类别名称
        * </pre>
        */
-      public java.lang.String getColorName() {
-        java.lang.Object ref = colorName_;
+      public java.lang.String getCategoryName() {
+        java.lang.Object ref = categoryName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            colorName_ = s;
+            categoryName_ = s;
           }
           return s;
         } else {
@@ -10258,82 +10320,130 @@ public final class Product {
         }
       }
       /**
-       * <code>required string colorName = 2;</code>
+       * <code>required string categoryName = 2;</code>
        *
        * <pre>
-       *颜色名称
+       *类别名称
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getColorNameBytes() {
-        java.lang.Object ref = colorName_;
+          getCategoryNameBytes() {
+        java.lang.Object ref = categoryName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          colorName_ = b;
+          categoryName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string colorName = 2;</code>
+       * <code>required string categoryName = 2;</code>
        *
        * <pre>
-       *颜色名称
+       *类别名称
        * </pre>
        */
-      public Builder setColorName(
+      public Builder setCategoryName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        colorName_ = value;
+        categoryName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string colorName = 2;</code>
+       * <code>required string categoryName = 2;</code>
        *
        * <pre>
-       *颜色名称
+       *类别名称
        * </pre>
        */
-      public Builder clearColorName() {
+      public Builder clearCategoryName() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        colorName_ = getDefaultInstance().getColorName();
+        categoryName_ = getDefaultInstance().getCategoryName();
         onChanged();
         return this;
       }
       /**
-       * <code>required string colorName = 2;</code>
+       * <code>required string categoryName = 2;</code>
        *
        * <pre>
-       *颜色名称
+       *类别名称
        * </pre>
        */
-      public Builder setColorNameBytes(
+      public Builder setCategoryNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        colorName_ = value;
+        categoryName_ = value;
         onChanged();
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ColorInfo)
+      private long stockCount_ ;
+      /**
+       * <code>optional int64 stockCount = 3;</code>
+       *
+       * <pre>
+       *库存
+       * </pre>
+       */
+      public boolean hasStockCount() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 stockCount = 3;</code>
+       *
+       * <pre>
+       *库存
+       * </pre>
+       */
+      public long getStockCount() {
+        return stockCount_;
+      }
+      /**
+       * <code>optional int64 stockCount = 3;</code>
+       *
+       * <pre>
+       *库存
+       * </pre>
+       */
+      public Builder setStockCount(long value) {
+        bitField0_ |= 0x00000004;
+        stockCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 stockCount = 3;</code>
+       *
+       * <pre>
+       *库存
+       * </pre>
+       */
+      public Builder clearStockCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        stockCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.CategoryInfo)
     }
 
     static {
-      defaultInstance = new ColorInfo(true);
+      defaultInstance = new CategoryInfo(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ColorInfo)
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.CategoryInfo)
   }
 
   public interface ShortRentInfoOrBuilder extends
@@ -10410,21 +10520,21 @@ public final class Product {
     double getRentPrice();
 
     /**
-     * <code>required double totalRentPrice = 4;</code>
+     * <code>required double totalPrice = 4;</code>
      *
      * <pre>
      *该周期内总价
      * </pre>
      */
-    boolean hasTotalRentPrice();
+    boolean hasTotalPrice();
     /**
-     * <code>required double totalRentPrice = 4;</code>
+     * <code>required double totalPrice = 4;</code>
      *
      * <pre>
      *该周期内总价
      * </pre>
      */
-    double getTotalRentPrice();
+    double getTotalPrice();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ShortRentInfo}
@@ -10501,7 +10611,7 @@ public final class Product {
             }
             case 33: {
               bitField0_ |= 0x00000008;
-              totalRentPrice_ = input.readDouble();
+              totalPrice_ = input.readDouble();
               break;
             }
           }
@@ -10675,34 +10785,34 @@ public final class Product {
       return rentPrice_;
     }
 
-    public static final int TOTALRENTPRICE_FIELD_NUMBER = 4;
-    private double totalRentPrice_;
+    public static final int TOTALPRICE_FIELD_NUMBER = 4;
+    private double totalPrice_;
     /**
-     * <code>required double totalRentPrice = 4;</code>
+     * <code>required double totalPrice = 4;</code>
      *
      * <pre>
      *该周期内总价
      * </pre>
      */
-    public boolean hasTotalRentPrice() {
+    public boolean hasTotalPrice() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required double totalRentPrice = 4;</code>
+     * <code>required double totalPrice = 4;</code>
      *
      * <pre>
      *该周期内总价
      * </pre>
      */
-    public double getTotalRentPrice() {
-      return totalRentPrice_;
+    public double getTotalPrice() {
+      return totalPrice_;
     }
 
     private void initFields() {
       rentCode_ = "";
       rentPeriod_ = "";
       rentPrice_ = 0D;
-      totalRentPrice_ = 0D;
+      totalPrice_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -10722,7 +10832,7 @@ public final class Product {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasTotalRentPrice()) {
+      if (!hasTotalPrice()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -10743,7 +10853,7 @@ public final class Product {
         output.writeDouble(3, rentPrice_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeDouble(4, totalRentPrice_);
+        output.writeDouble(4, totalPrice_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -10768,7 +10878,7 @@ public final class Product {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, totalRentPrice_);
+          .computeDoubleSize(4, totalPrice_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -10897,7 +11007,7 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000002);
         rentPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000004);
-        totalRentPrice_ = 0D;
+        totalPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
@@ -10942,7 +11052,7 @@ public final class Product {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.totalRentPrice_ = totalRentPrice_;
+        result.totalPrice_ = totalPrice_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -10972,8 +11082,8 @@ public final class Product {
         if (other.hasRentPrice()) {
           setRentPrice(other.getRentPrice());
         }
-        if (other.hasTotalRentPrice()) {
-          setTotalRentPrice(other.getTotalRentPrice());
+        if (other.hasTotalPrice()) {
+          setTotalPrice(other.getTotalPrice());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -10992,7 +11102,7 @@ public final class Product {
           
           return false;
         }
-        if (!hasTotalRentPrice()) {
+        if (!hasTotalPrice()) {
           
           return false;
         }
@@ -11266,50 +11376,50 @@ public final class Product {
         return this;
       }
 
-      private double totalRentPrice_ ;
+      private double totalPrice_ ;
       /**
-       * <code>required double totalRentPrice = 4;</code>
+       * <code>required double totalPrice = 4;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
-      public boolean hasTotalRentPrice() {
+      public boolean hasTotalPrice() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required double totalRentPrice = 4;</code>
+       * <code>required double totalPrice = 4;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
-      public double getTotalRentPrice() {
-        return totalRentPrice_;
+      public double getTotalPrice() {
+        return totalPrice_;
       }
       /**
-       * <code>required double totalRentPrice = 4;</code>
+       * <code>required double totalPrice = 4;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
-      public Builder setTotalRentPrice(double value) {
+      public Builder setTotalPrice(double value) {
         bitField0_ |= 0x00000008;
-        totalRentPrice_ = value;
+        totalPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double totalRentPrice = 4;</code>
+       * <code>required double totalPrice = 4;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
-      public Builder clearTotalRentPrice() {
+      public Builder clearTotalPrice() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        totalRentPrice_ = 0D;
+        totalPrice_ = 0D;
         onChanged();
         return this;
       }
@@ -11425,21 +11535,21 @@ public final class Product {
     double getRentPrice();
 
     /**
-     * <code>required double totalRentPrice = 5;</code>
+     * <code>required double totalPrice = 5;</code>
      *
      * <pre>
      *该周期内总价
      * </pre>
      */
-    boolean hasTotalRentPrice();
+    boolean hasTotalPrice();
     /**
-     * <code>required double totalRentPrice = 5;</code>
+     * <code>required double totalPrice = 5;</code>
      *
      * <pre>
      *该周期内总价
      * </pre>
      */
-    double getTotalRentPrice();
+    double getTotalPrice();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.LongRentInfo}
@@ -11522,7 +11632,7 @@ public final class Product {
             }
             case 41: {
               bitField0_ |= 0x00000010;
-              totalRentPrice_ = input.readDouble();
+              totalPrice_ = input.readDouble();
               break;
             }
           }
@@ -11750,27 +11860,27 @@ public final class Product {
       return rentPrice_;
     }
 
-    public static final int TOTALRENTPRICE_FIELD_NUMBER = 5;
-    private double totalRentPrice_;
+    public static final int TOTALPRICE_FIELD_NUMBER = 5;
+    private double totalPrice_;
     /**
-     * <code>required double totalRentPrice = 5;</code>
+     * <code>required double totalPrice = 5;</code>
      *
      * <pre>
      *该周期内总价
      * </pre>
      */
-    public boolean hasTotalRentPrice() {
+    public boolean hasTotalPrice() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required double totalRentPrice = 5;</code>
+     * <code>required double totalPrice = 5;</code>
      *
      * <pre>
      *该周期内总价
      * </pre>
      */
-    public double getTotalRentPrice() {
-      return totalRentPrice_;
+    public double getTotalPrice() {
+      return totalPrice_;
     }
 
     private void initFields() {
@@ -11778,7 +11888,7 @@ public final class Product {
       rentPeriod_ = "";
       rentPeriodName_ = "";
       rentPrice_ = 0D;
-      totalRentPrice_ = 0D;
+      totalPrice_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -11802,7 +11912,7 @@ public final class Product {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasTotalRentPrice()) {
+      if (!hasTotalPrice()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -11826,7 +11936,7 @@ public final class Product {
         output.writeDouble(4, rentPrice_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeDouble(5, totalRentPrice_);
+        output.writeDouble(5, totalPrice_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -11855,7 +11965,7 @@ public final class Product {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, totalRentPrice_);
+          .computeDoubleSize(5, totalPrice_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -11986,7 +12096,7 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000004);
         rentPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000008);
-        totalRentPrice_ = 0D;
+        totalPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
@@ -12035,7 +12145,7 @@ public final class Product {
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.totalRentPrice_ = totalRentPrice_;
+        result.totalPrice_ = totalPrice_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -12070,8 +12180,8 @@ public final class Product {
         if (other.hasRentPrice()) {
           setRentPrice(other.getRentPrice());
         }
-        if (other.hasTotalRentPrice()) {
-          setTotalRentPrice(other.getTotalRentPrice());
+        if (other.hasTotalPrice()) {
+          setTotalPrice(other.getTotalPrice());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -12094,7 +12204,7 @@ public final class Product {
           
           return false;
         }
-        if (!hasTotalRentPrice()) {
+        if (!hasTotalPrice()) {
           
           return false;
         }
@@ -12468,50 +12578,50 @@ public final class Product {
         return this;
       }
 
-      private double totalRentPrice_ ;
+      private double totalPrice_ ;
       /**
-       * <code>required double totalRentPrice = 5;</code>
+       * <code>required double totalPrice = 5;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
-      public boolean hasTotalRentPrice() {
+      public boolean hasTotalPrice() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required double totalRentPrice = 5;</code>
+       * <code>required double totalPrice = 5;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
-      public double getTotalRentPrice() {
-        return totalRentPrice_;
+      public double getTotalPrice() {
+        return totalPrice_;
       }
       /**
-       * <code>required double totalRentPrice = 5;</code>
+       * <code>required double totalPrice = 5;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
-      public Builder setTotalRentPrice(double value) {
+      public Builder setTotalPrice(double value) {
         bitField0_ |= 0x00000010;
-        totalRentPrice_ = value;
+        totalPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double totalRentPrice = 5;</code>
+       * <code>required double totalPrice = 5;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
-      public Builder clearTotalRentPrice() {
+      public Builder clearTotalPrice() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        totalRentPrice_ = 0D;
+        totalPrice_ = 0D;
         onChanged();
         return this;
       }
@@ -12558,10 +12668,10 @@ public final class Product {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_descriptor;
+    internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_fieldAccessorTable;
+      internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor;
   private static
@@ -12598,26 +12708,27 @@ public final class Product {
       "d\030\001 \002(\t\"\211\001\n\023ProductDetailResult\022\022\n\nresul" +
       "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022K\n\021produc" +
       "tDetailInfo\030\003 \001(\01320.com.qjoy.basjoo.core" +
-      ".model.pb.ProductDetailInfo\"\321\003\n\021ProductD" +
+      ".model.pb.ProductDetailInfo\"\331\003\n\021ProductD" +
       "etailInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productT" +
       "ype\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\020\n\010imageUrl\030\004 \003",
       "(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowestRent\030\006 \001(\001\022\014\n\004" +
-      "unit\030\007 \001(\005\022\021\n\trentCount\030\010 \001(\003\022\023\n\013marketP" +
-      "rice\030\t \001(\001\022\023\n\013pledgePrice\030\n \001(\001\022\033\n\023trans" +
-      "portationPrice\030\013 \001(\001\022\020\n\010location\030\014 \001(\t\022\022" +
-      "\n\nstockCount\030\r \001(\003\022;\n\tcolorInfo\030\016 \003(\0132(." +
-      "com.qjoy.basjoo.core.model.pb.ColorInfo\022" +
-      "C\n\rshortRentInfo\030\017 \003(\0132,.com.qjoy.basjoo" +
-      ".core.model.pb.ShortRentInfo\022A\n\014longRent" +
-      "Info\030\020 \003(\0132+.com.qjoy.basjoo.core.model." +
-      "pb.LongRentInfo\"1\n\tColorInfo\022\021\n\tcolorCod",
-      "e\030\001 \002(\t\022\021\n\tcolorName\030\002 \002(\t\"`\n\rShortRentI" +
-      "nfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(" +
-      "\t\022\021\n\trentPrice\030\003 \002(\001\022\026\n\016totalRentPrice\030\004" +
-      " \002(\001\"w\n\014LongRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022" +
-      "\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002" +
-      "(\t\022\021\n\trentPrice\030\004 \002(\001\022\026\n\016totalRentPrice\030" +
-      "\005 \002(\001B\037\n\035com.qjoy.basjoo.core.model.pb"
+      "unit\030\007 \001(\005\022\021\n\trentCount\030\010 \001(\003\022\024\n\014maxAvai" +
+      "lable\030\t \001(\003\022\023\n\013marketPrice\030\n \001(\001\022\023\n\013pled" +
+      "gePrice\030\013 \001(\001\022\033\n\023transportationPrice\030\014 \001" +
+      "(\001\022\020\n\010location\030\r \001(\t\022A\n\014categoryInfo\030\016 \003" +
+      "(\0132+.com.qjoy.basjoo.core.model.pb.Categ" +
+      "oryInfo\022C\n\rshortRentInfo\030\017 \003(\0132,.com.qjo" +
+      "y.basjoo.core.model.pb.ShortRentInfo\022A\n\014" +
+      "longRentInfo\030\020 \003(\0132+.com.qjoy.basjoo.cor" +
+      "e.model.pb.LongRentInfo\"N\n\014CategoryInfo\022",
+      "\024\n\014categoryCode\030\001 \002(\t\022\024\n\014categoryName\030\002 " +
+      "\002(\t\022\022\n\nstockCount\030\003 \001(\003\"\\\n\rShortRentInfo" +
+      "\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\021" +
+      "\n\trentPrice\030\003 \002(\001\022\022\n\ntotalPrice\030\004 \002(\001\"s\n" +
+      "\014LongRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentP" +
+      "eriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002(\t\022\021\n\tr" +
+      "entPrice\030\004 \002(\001\022\022\n\ntotalPrice\030\005 \002(\001B\037\n\035co" +
+      "m.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12666,25 +12777,25 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "StockCount", "ColorInfo", "ShortRentInfo", "LongRentInfo", });
-    internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_descriptor =
+        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MaxAvailable", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "CategoryInfo", "ShortRentInfo", "LongRentInfo", });
+    internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_fieldAccessorTable = new
+    internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_qjoy_basjoo_core_model_pb_ColorInfo_descriptor,
-        new java.lang.String[] { "ColorCode", "ColorName", });
+        internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor,
+        new java.lang.String[] { "CategoryCode", "CategoryName", "StockCount", });
     internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor,
-        new java.lang.String[] { "RentCode", "RentPeriod", "RentPrice", "TotalRentPrice", });
+        new java.lang.String[] { "RentCode", "RentPeriod", "RentPrice", "TotalPrice", });
     internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor,
-        new java.lang.String[] { "RentCode", "RentPeriod", "RentPeriodName", "RentPrice", "TotalRentPrice", });
+        new java.lang.String[] { "RentCode", "RentPeriod", "RentPeriodName", "RentPrice", "TotalPrice", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

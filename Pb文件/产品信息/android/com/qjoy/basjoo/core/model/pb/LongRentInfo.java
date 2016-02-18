@@ -18,13 +18,13 @@ public final class LongRentInfo extends Message {
   public static final int TAG_RENTPERIOD = 2;
   public static final int TAG_RENTPERIODNAME = 3;
   public static final int TAG_RENTPRICE = 4;
-  public static final int TAG_TOTALRENTPRICE = 5;
+  public static final int TAG_TOTALPRICE = 5;
 
   public static final String DEFAULT_RENTCODE = "";
   public static final String DEFAULT_RENTPERIOD = "";
   public static final String DEFAULT_RENTPERIODNAME = "";
   public static final Double DEFAULT_RENTPRICE = 0D;
-  public static final Double DEFAULT_TOTALRENTPRICE = 0D;
+  public static final Double DEFAULT_TOTALPRICE = 0D;
 
   /**
    * 租金编码
@@ -54,7 +54,7 @@ public final class LongRentInfo extends Message {
    * 该周期内总价
    */
   @ProtoField(tag = 5, type = DOUBLE, label = REQUIRED)
-  public Double totalRentPrice;
+  public Double totalPrice;
 
   public LongRentInfo(LongRentInfo message) {
     super(message);
@@ -63,7 +63,7 @@ public final class LongRentInfo extends Message {
     this.rentPeriod = message.rentPeriod;
     this.rentPeriodName = message.rentPeriodName;
     this.rentPrice = message.rentPrice;
-    this.totalRentPrice = message.totalRentPrice;
+    this.totalPrice = message.totalPrice;
   }
 
   public LongRentInfo() {
@@ -83,8 +83,8 @@ public final class LongRentInfo extends Message {
         case TAG_RENTPRICE:
         this.rentPrice = (Double)value;
         break;
-        case TAG_TOTALRENTPRICE:
-        this.totalRentPrice = (Double)value;
+        case TAG_TOTALPRICE:
+        this.totalPrice = (Double)value;
         break;
         default: break;
         };
@@ -100,7 +100,7 @@ public final class LongRentInfo extends Message {
         && equals(rentPeriod, o.rentPeriod)
         && equals(rentPeriodName, o.rentPeriodName)
         && equals(rentPrice, o.rentPrice)
-        && equals(totalRentPrice, o.totalRentPrice);
+        && equals(totalPrice, o.totalPrice);
   }
 
   @Override
@@ -111,7 +111,7 @@ public final class LongRentInfo extends Message {
       result = result * 37 + (rentPeriod != null ? rentPeriod.hashCode() : 0);
       result = result * 37 + (rentPeriodName != null ? rentPeriodName.hashCode() : 0);
       result = result * 37 + (rentPrice != null ? rentPrice.hashCode() : 0);
-      result = result * 37 + (totalRentPrice != null ? totalRentPrice.hashCode() : 0);
+      result = result * 37 + (totalPrice != null ? totalPrice.hashCode() : 0);
       hashCode = result;
     }
     return result;

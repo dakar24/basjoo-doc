@@ -27,12 +27,12 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_LOWESTRENT = 6;
   public static final int TAG_UNIT = 7;
   public static final int TAG_RENTCOUNT = 8;
-  public static final int TAG_MARKETPRICE = 9;
-  public static final int TAG_PLEDGEPRICE = 10;
-  public static final int TAG_TRANSPORTATIONPRICE = 11;
-  public static final int TAG_LOCATION = 12;
-  public static final int TAG_STOCKCOUNT = 13;
-  public static final int TAG_COLORINFO = 14;
+  public static final int TAG_MAXAVAILABLE = 9;
+  public static final int TAG_MARKETPRICE = 10;
+  public static final int TAG_PLEDGEPRICE = 11;
+  public static final int TAG_TRANSPORTATIONPRICE = 12;
+  public static final int TAG_LOCATION = 13;
+  public static final int TAG_CATEGORYINFO = 14;
   public static final int TAG_SHORTRENTINFO = 15;
   public static final int TAG_LONGRENTINFO = 16;
 
@@ -44,12 +44,12 @@ public final class ProductDetailInfo extends Message {
   public static final Double DEFAULT_LOWESTRENT = 0D;
   public static final Integer DEFAULT_UNIT = 0;
   public static final Long DEFAULT_RENTCOUNT = 0L;
+  public static final Long DEFAULT_MAXAVAILABLE = 0L;
   public static final Double DEFAULT_MARKETPRICE = 0D;
   public static final Double DEFAULT_PLEDGEPRICE = 0D;
   public static final Double DEFAULT_TRANSPORTATIONPRICE = 0D;
   public static final String DEFAULT_LOCATION = "";
-  public static final Long DEFAULT_STOCKCOUNT = 0L;
-  public static final List<ColorInfo> DEFAULT_COLORINFO = Collections.emptyList();
+  public static final List<CategoryInfo> DEFAULT_CATEGORYINFO = Collections.emptyList();
   public static final List<ShortRentInfo> DEFAULT_SHORTRENTINFO = Collections.emptyList();
   public static final List<LongRentInfo> DEFAULT_LONGRENTINFO = Collections.emptyList();
 
@@ -102,40 +102,40 @@ public final class ProductDetailInfo extends Message {
   public Long rentCount;
 
   /**
+   * 最大可租数
+   */
+  @ProtoField(tag = 9, type = INT64)
+  public Long maxAvailable;
+
+  /**
    * 市场价
    */
-  @ProtoField(tag = 9, type = DOUBLE)
+  @ProtoField(tag = 10, type = DOUBLE)
   public Double marketPrice;
 
   /**
    * 押金
    */
-  @ProtoField(tag = 10, type = DOUBLE)
+  @ProtoField(tag = 11, type = DOUBLE)
   public Double pledgePrice;
 
   /**
    * 运费
    */
-  @ProtoField(tag = 11, type = DOUBLE)
+  @ProtoField(tag = 12, type = DOUBLE)
   public Double transportationPrice;
 
   /**
    * 所在地
    */
-  @ProtoField(tag = 12, type = STRING)
+  @ProtoField(tag = 13, type = STRING)
   public String location;
 
   /**
-   * 库存
-   */
-  @ProtoField(tag = 13, type = INT64)
-  public Long stockCount;
-
-  /**
-   * 颜色信息
+   * 分类信息
    */
   @ProtoField(tag = 14, label = REPEATED)
-  public List<ColorInfo> colorInfo;
+  public List<CategoryInfo> categoryInfo;
 
   /**
    * 短租信息
@@ -160,12 +160,12 @@ public final class ProductDetailInfo extends Message {
     this.lowestRent = message.lowestRent;
     this.unit = message.unit;
     this.rentCount = message.rentCount;
+    this.maxAvailable = message.maxAvailable;
     this.marketPrice = message.marketPrice;
     this.pledgePrice = message.pledgePrice;
     this.transportationPrice = message.transportationPrice;
     this.location = message.location;
-    this.stockCount = message.stockCount;
-    this.colorInfo = copyOf(message.colorInfo);
+    this.categoryInfo = copyOf(message.categoryInfo);
     this.shortRentInfo = copyOf(message.shortRentInfo);
     this.longRentInfo = copyOf(message.longRentInfo);
   }
@@ -199,6 +199,9 @@ public final class ProductDetailInfo extends Message {
         case TAG_RENTCOUNT:
         this.rentCount = (Long)value;
         break;
+        case TAG_MAXAVAILABLE:
+        this.maxAvailable = (Long)value;
+        break;
         case TAG_MARKETPRICE:
         this.marketPrice = (Double)value;
         break;
@@ -211,11 +214,8 @@ public final class ProductDetailInfo extends Message {
         case TAG_LOCATION:
         this.location = (String)value;
         break;
-        case TAG_STOCKCOUNT:
-        this.stockCount = (Long)value;
-        break;
-        case TAG_COLORINFO:
-        this.colorInfo = immutableCopyOf((List<ColorInfo>)value);
+        case TAG_CATEGORYINFO:
+        this.categoryInfo = immutableCopyOf((List<CategoryInfo>)value);
         break;
         case TAG_SHORTRENTINFO:
         this.shortRentInfo = immutableCopyOf((List<ShortRentInfo>)value);
@@ -241,12 +241,12 @@ public final class ProductDetailInfo extends Message {
         && equals(lowestRent, o.lowestRent)
         && equals(unit, o.unit)
         && equals(rentCount, o.rentCount)
+        && equals(maxAvailable, o.maxAvailable)
         && equals(marketPrice, o.marketPrice)
         && equals(pledgePrice, o.pledgePrice)
         && equals(transportationPrice, o.transportationPrice)
         && equals(location, o.location)
-        && equals(stockCount, o.stockCount)
-        && equals(colorInfo, o.colorInfo)
+        && equals(categoryInfo, o.categoryInfo)
         && equals(shortRentInfo, o.shortRentInfo)
         && equals(longRentInfo, o.longRentInfo);
   }
@@ -263,12 +263,12 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (lowestRent != null ? lowestRent.hashCode() : 0);
       result = result * 37 + (unit != null ? unit.hashCode() : 0);
       result = result * 37 + (rentCount != null ? rentCount.hashCode() : 0);
+      result = result * 37 + (maxAvailable != null ? maxAvailable.hashCode() : 0);
       result = result * 37 + (marketPrice != null ? marketPrice.hashCode() : 0);
       result = result * 37 + (pledgePrice != null ? pledgePrice.hashCode() : 0);
       result = result * 37 + (transportationPrice != null ? transportationPrice.hashCode() : 0);
       result = result * 37 + (location != null ? location.hashCode() : 0);
-      result = result * 37 + (stockCount != null ? stockCount.hashCode() : 0);
-      result = result * 37 + (colorInfo != null ? colorInfo.hashCode() : 1);
+      result = result * 37 + (categoryInfo != null ? categoryInfo.hashCode() : 1);
       result = result * 37 + (shortRentInfo != null ? shortRentInfo.hashCode() : 1);
       result = result * 37 + (longRentInfo != null ? longRentInfo.hashCode() : 1);
       hashCode = result;
