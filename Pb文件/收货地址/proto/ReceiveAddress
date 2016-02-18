@@ -1,0 +1,138 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//添加收货地址请求
+message AddAddressRequest {   
+
+    //收件人
+    required string                 receiver = 1;
+	//手机号
+	required string                 mobileNo = 2;
+    //所在地区
+	required string                 section = 3;
+	//所在街道
+	required string                 street=4;
+	//详细地址
+	required string                 detail=5;
+	//邮编
+	required string                 postCode=6;
+	
+}
+
+//添加收货结果
+message AddAddressResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   //地址ID
+   optional string                 addressId = 3;      
+    
+}
+
+//修改收货地址请求
+message ModifyAddressRequest {   
+
+    required string                 receiver = 1;
+	
+	required string                 mobileNo = 2;
+    //所在地区
+	required string                 section = 3;
+	//所在街道
+	required string                 street=4;
+	//详细地址
+	required string                 detail=5;  	
+	//邮编
+	required string                 postCode=6;
+    //地址ID
+    optional string                 addressId = 7; 	
+    
+}
+
+//添加收货结果
+message ModifyAddressResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   //地址ID
+   optional string                 addressId = 3;      
+    
+}
+
+//删除收货地址请求
+message DeleteAddressRequest {      
+	
+    //地址ID
+    optional string                 addressId = 1; 	
+    
+}
+
+
+//删除收货地址结果
+message DeleteAddressResult {      
+	
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+}
+
+
+//获取收货地址列表请求
+message GetAddressListRequest {  
+    
+}
+
+//获取收货地址列表结果
+message GetAddressListResult {  
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2; 
+   
+   repeated AddressDetailInfo      addressDetailInfo = 3;
+}
+
+//收货地址详细信息
+message AddressDetailInfo{
+
+    required string                 receiver = 1;
+
+    required string                 mobileNo = 2;
+    //所在地区
+	required string                 section = 3;
+	//所在街道
+	required string                 street=4;
+	//详细地址
+	required string                 detail=5;
+	//邮编
+	required string                 postCode=6;
+    //地址ID
+    optional string                 addressId = 7;
+	//是否默认
+	required bool                   default = 8;
+}
+
+
+//设置为默认收货地址请求
+message SetDefaultRequest {
+    //地址ID
+    optional string                 addressId = 1;
+    
+}
+
+
+//设置为默认收货地址结果
+message SetDefaultResult {      
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+}
+
+
+
