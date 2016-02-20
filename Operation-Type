@@ -9,3 +9,4 @@
 删除收货地址：qjoy.basjoo.deleteReceiveAddress
 查询收货地址列表：qjoy.basjoo.getReceiveAddressList
 获取搜索热点：qjoy.basjoo.getSearchHot
+修改密码：qjoy.basjoo.changePassword
