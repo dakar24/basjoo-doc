@@ -8,3 +8,4 @@
 设置默认收货地址：qjoy.basjoo.setDefaultReceiveAddress
 删除收货地址：qjoy.basjoo.deleteReceiveAddress
 查询收货地址列表：qjoy.basjoo.getReceiveAddressList
+获取搜索热点：qjoy.basjoo.getSearchHot

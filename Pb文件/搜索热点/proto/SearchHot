@@ -1,0 +1,42 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取搜索热点
+message GetSearchHotRequest {  
+
+    
+}
+
+//获取搜索热点结果
+message GetSearchHotResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   //热点列表
+   repeated SearchHotInfo          searchHotInfo=3;
+    
+}
+
+//热点信息
+message SearchHotInfo{
+
+   //关键字
+   required string                 keywords = 1;
+    
+   //搜索类型,0：默认综合，1：按品牌，
+   optional string                 searchType = 2;
+   
+   //产品类型,0:默认（所有类型），1：推车，2：座椅，3：提篮，4：胎心监测仪,999:其他，
+   optional string                 productType = 3;
+
+}
+
+
+
+
+
+
