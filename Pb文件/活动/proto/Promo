@@ -1,0 +1,64 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取营销活动列表
+message GetPromoListRequest {   
+ 
+  //活动分类。0：启动页活动，1：首页主活动， 2：推荐商品活动，3：热门活动 ,4.....等
+  required string                 promoClass = 1;
+}
+
+//获取活动信息结果
+message GetPromoListResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;  
+   
+   repeated PromoInfo              promoInfo = 3;
+   
+    
+}
+
+message PromoInfo{
+
+   //活动ID;
+   required string                 promoId = 1;
+   
+    //活动类型。0：H5，1：native，2：纯文本活动
+   required string                 promoType = 2;   
+  
+   //活动分类。0：启动页活动，1：首页主活动， 2：推荐商品活动，3：热门活动 ,4.....等
+   required string                 promoClass = 3;
+   
+   //活动图片地址，部分活动只有文字，没有图片
+   optional string                 promoImageUrl = 4;
+   
+   //活动描述（文本活动需要）
+   optional string                 promoDesc = 5;
+   
+   //活动地址,H5地址 or native launch 地址
+   optional string                 promoUrl = 6;
+   
+   //活动扩展参数
+   repeated PromoExtInfo           promoExtInfo = 7;
+   
+}
+
+message PromoExtInfo{
+
+   //参数Key
+   required string                 key = 1;
+   
+   //参数Value
+   required string                 value = 2;
+   
+   
+}
+
+
+
+
+
