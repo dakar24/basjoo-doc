@@ -31,7 +31,7 @@ message SearchProductListResult {
    optional int32                  maxIndex = 3;
    
    //是否还有更多数据
-   optional bool                   hasMore  = 4;
+   required bool                   hasMore  = 4;
    
    //产品简要信息列表
    repeated ProductLiteInfo	       productLiteInfo = 5;
@@ -143,6 +143,20 @@ message ProductDetailInfo {
    
    //长租信息
    repeated LongRentInfo           longRentInfo = 16;
+   
+   //产品基本参数
+   repeated ProductBaseParam       baseParam = 17;
+   
+   //图文参数地址（多图文）
+   repeated string                 imageParamUrls=18; 
+   
+   //评价总数
+   optional int64                  evaluateCount=19;
+   
+   //前N个评价信息
+   repeated ProductEvaluateInfo    productEvaluateInfo=20;
+   
+
     
 }
 
@@ -197,5 +211,92 @@ message LongRentInfo {
  required double                 totalPrice = 5; 
 
 }
+
+//产品基本参数
+message ProductBaseParam{
+ 
+ //参数编码
+ required string                 code = 1; 
+ 
+ //展示Key
+ required string                 showKey = 2; 
+ 
+ //展示Value
+ required string                 showValue = 3; 
+}
+
+
+//产品评价信息
+message ProductEvaluateInfo{
+ 
+ //评价时间
+ required int64                 time = 1; 
+ 
+ //评价用户ID
+ required string                userId = 2; 
+ 
+ //评价用户
+ required string                userName = 3; 
+ 
+ //评价用户头像地址
+ required string                headIconUrl = 4; 
+ 
+ //评价用户等级
+ required string                userLevel = 5; 
+ 
+ //评价用户所购买的产品类目名称
+ required string                rentCategoryName = 6; 
+ 
+ //评价内容
+ required string                content=7;
+ 
+ //图文参数地址（多图文）
+ repeated string                imageUrls=8; 
+}
+
+
+//获取产品的评论列表
+message getProductEvaluateListRequest{
+  //产品Id
+  required string                 productId = 1; 
+  
+  //评论类型：0：全部，1：只看有图评论
+  required int32                  evaluateType = 2; 
+  
+  //起始index
+  optional int32                  startIndex = 3;
+}
+
+
+//获取产品的评论列表
+message getProductEvaluateListResult{
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;   
+   
+   //当前最大index
+   optional int32                  maxIndex = 3;
+   
+   //是否还有更多评论数据
+   required bool                   hasMore  = 4;
+   
+   //总评论条数
+   required int64                  totalCount=5;
+   
+   //有图评论总条数
+   required int64                  totalImageCount=6;
+   
+   //评论列表
+   repeated ProductEvaluateInfo    productEvaluateInfo=7;
+}
+
+
+
+
+
+
+
+
 
 

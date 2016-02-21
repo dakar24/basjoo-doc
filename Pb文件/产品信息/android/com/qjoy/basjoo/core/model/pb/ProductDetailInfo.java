@@ -35,6 +35,10 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_CATEGORYINFO = 14;
   public static final int TAG_SHORTRENTINFO = 15;
   public static final int TAG_LONGRENTINFO = 16;
+  public static final int TAG_BASEPARAM = 17;
+  public static final int TAG_IMAGEPARAMURLS = 18;
+  public static final int TAG_EVALUATECOUNT = 19;
+  public static final int TAG_PRODUCTEVALUATEINFO = 20;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -52,6 +56,10 @@ public final class ProductDetailInfo extends Message {
   public static final List<CategoryInfo> DEFAULT_CATEGORYINFO = Collections.emptyList();
   public static final List<ShortRentInfo> DEFAULT_SHORTRENTINFO = Collections.emptyList();
   public static final List<LongRentInfo> DEFAULT_LONGRENTINFO = Collections.emptyList();
+  public static final List<ProductBaseParam> DEFAULT_BASEPARAM = Collections.emptyList();
+  public static final List<String> DEFAULT_IMAGEPARAMURLS = Collections.emptyList();
+  public static final Long DEFAULT_EVALUATECOUNT = 0L;
+  public static final List<ProductEvaluateInfo> DEFAULT_PRODUCTEVALUATEINFO = Collections.emptyList();
 
   /**
    * 产品Id
@@ -149,6 +157,30 @@ public final class ProductDetailInfo extends Message {
   @ProtoField(tag = 16, label = REPEATED)
   public List<LongRentInfo> longRentInfo;
 
+  /**
+   * 产品基本参数
+   */
+  @ProtoField(tag = 17, label = REPEATED)
+  public List<ProductBaseParam> baseParam;
+
+  /**
+   * 图文参数地址（多图文）
+   */
+  @ProtoField(tag = 18, type = STRING, label = REPEATED)
+  public List<String> imageParamUrls;
+
+  /**
+   * 评价总数
+   */
+  @ProtoField(tag = 19, type = INT64)
+  public Long evaluateCount;
+
+  /**
+   * 前N个评价信息
+   */
+  @ProtoField(tag = 20, label = REPEATED)
+  public List<ProductEvaluateInfo> productEvaluateInfo;
+
   public ProductDetailInfo(ProductDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -168,6 +200,10 @@ public final class ProductDetailInfo extends Message {
     this.categoryInfo = copyOf(message.categoryInfo);
     this.shortRentInfo = copyOf(message.shortRentInfo);
     this.longRentInfo = copyOf(message.longRentInfo);
+    this.baseParam = copyOf(message.baseParam);
+    this.imageParamUrls = copyOf(message.imageParamUrls);
+    this.evaluateCount = message.evaluateCount;
+    this.productEvaluateInfo = copyOf(message.productEvaluateInfo);
   }
 
   public ProductDetailInfo() {
@@ -223,6 +259,18 @@ public final class ProductDetailInfo extends Message {
         case TAG_LONGRENTINFO:
         this.longRentInfo = immutableCopyOf((List<LongRentInfo>)value);
         break;
+        case TAG_BASEPARAM:
+        this.baseParam = immutableCopyOf((List<ProductBaseParam>)value);
+        break;
+        case TAG_IMAGEPARAMURLS:
+        this.imageParamUrls = immutableCopyOf((List<String>)value);
+        break;
+        case TAG_EVALUATECOUNT:
+        this.evaluateCount = (Long)value;
+        break;
+        case TAG_PRODUCTEVALUATEINFO:
+        this.productEvaluateInfo = immutableCopyOf((List<ProductEvaluateInfo>)value);
+        break;
         default: break;
         };
     return this;
@@ -248,7 +296,11 @@ public final class ProductDetailInfo extends Message {
         && equals(location, o.location)
         && equals(categoryInfo, o.categoryInfo)
         && equals(shortRentInfo, o.shortRentInfo)
-        && equals(longRentInfo, o.longRentInfo);
+        && equals(longRentInfo, o.longRentInfo)
+        && equals(baseParam, o.baseParam)
+        && equals(imageParamUrls, o.imageParamUrls)
+        && equals(evaluateCount, o.evaluateCount)
+        && equals(productEvaluateInfo, o.productEvaluateInfo);
   }
 
   @Override
@@ -271,6 +323,10 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (categoryInfo != null ? categoryInfo.hashCode() : 1);
       result = result * 37 + (shortRentInfo != null ? shortRentInfo.hashCode() : 1);
       result = result * 37 + (longRentInfo != null ? longRentInfo.hashCode() : 1);
+      result = result * 37 + (baseParam != null ? baseParam.hashCode() : 1);
+      result = result * 37 + (imageParamUrls != null ? imageParamUrls.hashCode() : 1);
+      result = result * 37 + (evaluateCount != null ? evaluateCount.hashCode() : 0);
+      result = result * 37 + (productEvaluateInfo != null ? productEvaluateInfo.hashCode() : 1);
       hashCode = result;
     }
     return result;

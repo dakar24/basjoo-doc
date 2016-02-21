@@ -4,13 +4,17 @@
 
 @class CategoryInfo;
 @class LongRentInfo;
+@class ProductBaseParam;
 @class ProductDetailInfo;
 @class ProductDetailRequest;
 @class ProductDetailResult;
+@class ProductEvaluateInfo;
 @class ProductLiteInfo;
 @class SearchProductListRequest;
 @class SearchProductListResult;
 @class ShortRentInfo;
+@class getProductEvaluateListRequest;
+@class getProductEvaluateListResult;
 
 @interface SearchProductListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasKeywords;
@@ -85,6 +89,7 @@
 @property (readonly) BOOL hasPledgePrice;
 @property (readonly) BOOL hasTransportationPrice;
 @property (readonly) BOOL hasLocation;
+@property (readonly) BOOL hasEvaluateCount;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic,strong) NSString* brand;
@@ -101,6 +106,10 @@
 @property (nonatomic,strong) NSMutableArray * categoryInfo;
 @property (nonatomic,strong) NSMutableArray * shortRentInfo;
 @property (nonatomic,strong) NSMutableArray * longRentInfo;
+@property (nonatomic,strong) NSMutableArray * baseParam;
+@property (nonatomic,strong) NSMutableArray * imageParamUrls;
+@property (nonatomic)SInt64 evaluateCount;
+@property (nonatomic,strong) NSMutableArray * productEvaluateInfo;
 @end
 
 @interface CategoryInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -134,5 +143,57 @@
 @property (nonatomic,strong) NSString* rentPeriodName;
 @property (nonatomic)Float64 rentPrice;
 @property (nonatomic)Float64 totalPrice;
+@end
+
+@interface ProductBaseParam : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasCode;
+@property (readonly) BOOL hasShowKey;
+@property (readonly) BOOL hasShowValue;
+@property (nonatomic,strong) NSString* code;
+@property (nonatomic,strong) NSString* showKey;
+@property (nonatomic,strong) NSString* showValue;
+@end
+
+@interface ProductEvaluateInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasTime;
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasUserName;
+@property (readonly) BOOL hasHeadIconUrl;
+@property (readonly) BOOL hasUserLevel;
+@property (readonly) BOOL hasRentCategoryName;
+@property (readonly) BOOL hasContent;
+@property (nonatomic)SInt64 time;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSString* userName;
+@property (nonatomic,strong) NSString* headIconUrl;
+@property (nonatomic,strong) NSString* userLevel;
+@property (nonatomic,strong) NSString* rentCategoryName;
+@property (nonatomic,strong) NSString* content;
+@property (nonatomic,strong) NSMutableArray * imageUrls;
+@end
+
+@interface getProductEvaluateListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasProductId;
+@property (readonly) BOOL hasEvaluateType;
+@property (readonly) BOOL hasStartIndex;
+@property (nonatomic,strong) NSString* productId;
+@property (nonatomic)SInt32 evaluateType;
+@property (nonatomic)SInt32 startIndex;
+@end
+
+@interface getProductEvaluateListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasMaxIndex;
+@property (readonly) BOOL hasHasMore;
+@property (readonly) BOOL hasTotalCount;
+@property (readonly) BOOL hasTotalImageCount;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic)SInt32 maxIndex;
+@property (nonatomic)BOOL hasMore;
+@property (nonatomic)SInt64 totalCount;
+@property (nonatomic)SInt64 totalImageCount;
+@property (nonatomic,strong) NSMutableArray * productEvaluateInfo;
 @end
 

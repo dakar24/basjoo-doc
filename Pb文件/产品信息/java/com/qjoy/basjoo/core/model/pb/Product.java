@@ -1015,7 +1015,7 @@ public final class Product {
     int getMaxIndex();
 
     /**
-     * <code>optional bool hasMore = 4;</code>
+     * <code>required bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -1023,7 +1023,7 @@ public final class Product {
      */
     boolean hasHasMore();
     /**
-     * <code>optional bool hasMore = 4;</code>
+     * <code>required bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -1314,7 +1314,7 @@ public final class Product {
     public static final int HASMORE_FIELD_NUMBER = 4;
     private boolean hasMore_;
     /**
-     * <code>optional bool hasMore = 4;</code>
+     * <code>required bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -1324,7 +1324,7 @@ public final class Product {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional bool hasMore = 4;</code>
+     * <code>required bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -1407,6 +1407,10 @@ public final class Product {
         return false;
       }
       if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasHasMore()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1727,6 +1731,10 @@ public final class Product {
           
           return false;
         }
+        if (!hasHasMore()) {
+          
+          return false;
+        }
         for (int i = 0; i < getProductLiteInfoCount(); i++) {
           if (!getProductLiteInfo(i).isInitialized()) {
             
@@ -1957,7 +1965,7 @@ public final class Product {
 
       private boolean hasMore_ ;
       /**
-       * <code>optional bool hasMore = 4;</code>
+       * <code>required bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -1967,7 +1975,7 @@ public final class Product {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional bool hasMore = 4;</code>
+       * <code>required bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -1977,7 +1985,7 @@ public final class Product {
         return hasMore_;
       }
       /**
-       * <code>optional bool hasMore = 4;</code>
+       * <code>required bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -1990,7 +1998,7 @@ public final class Product {
         return this;
       }
       /**
-       * <code>optional bool hasMore = 4;</code>
+       * <code>required bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -6145,6 +6153,146 @@ public final class Product {
      */
     com.qjoy.basjoo.core.model.pb.Product.LongRentInfoOrBuilder getLongRentInfoOrBuilder(
         int index);
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam> 
+        getBaseParamList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam getBaseParam(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    int getBaseParamCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder> 
+        getBaseParamOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder getBaseParamOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated string imageParamUrls = 18;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    com.google.protobuf.ProtocolStringList
+        getImageParamUrlsList();
+    /**
+     * <code>repeated string imageParamUrls = 18;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    int getImageParamUrlsCount();
+    /**
+     * <code>repeated string imageParamUrls = 18;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    java.lang.String getImageParamUrls(int index);
+    /**
+     * <code>repeated string imageParamUrls = 18;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getImageParamUrlsBytes(int index);
+
+    /**
+     * <code>optional int64 evaluateCount = 19;</code>
+     *
+     * <pre>
+     *评价总数
+     * </pre>
+     */
+    boolean hasEvaluateCount();
+    /**
+     * <code>optional int64 evaluateCount = 19;</code>
+     *
+     * <pre>
+     *评价总数
+     * </pre>
+     */
+    long getEvaluateCount();
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> 
+        getProductEvaluateInfoList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo getProductEvaluateInfo(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    int getProductEvaluateInfoCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> 
+        getProductEvaluateInfoOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder getProductEvaluateInfoOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductDetailInfo}
@@ -6300,6 +6448,36 @@ public final class Product {
               longRentInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.LongRentInfo.PARSER, extensionRegistry));
               break;
             }
+            case 138: {
+              if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+                baseParam_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam>();
+                mutable_bitField0_ |= 0x00010000;
+              }
+              baseParam_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.PARSER, extensionRegistry));
+              break;
+            }
+            case 146: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
+                imageParamUrls_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00020000;
+              }
+              imageParamUrls_.add(bs);
+              break;
+            }
+            case 152: {
+              bitField0_ |= 0x00001000;
+              evaluateCount_ = input.readInt64();
+              break;
+            }
+            case 162: {
+              if (!((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
+                productEvaluateInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo>();
+                mutable_bitField0_ |= 0x00080000;
+              }
+              productEvaluateInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.PARSER, extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6319,6 +6497,15 @@ public final class Product {
         }
         if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
           longRentInfo_ = java.util.Collections.unmodifiableList(longRentInfo_);
+        }
+        if (((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+          baseParam_ = java.util.Collections.unmodifiableList(baseParam_);
+        }
+        if (((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
+          imageParamUrls_ = imageParamUrls_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
+          productEvaluateInfo_ = java.util.Collections.unmodifiableList(productEvaluateInfo_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6993,6 +7180,184 @@ public final class Product {
       return longRentInfo_.get(index);
     }
 
+    public static final int BASEPARAM_FIELD_NUMBER = 17;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam> baseParam_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam> getBaseParamList() {
+      return baseParam_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder> 
+        getBaseParamOrBuilderList() {
+      return baseParam_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    public int getBaseParamCount() {
+      return baseParam_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam getBaseParam(int index) {
+      return baseParam_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder getBaseParamOrBuilder(
+        int index) {
+      return baseParam_.get(index);
+    }
+
+    public static final int IMAGEPARAMURLS_FIELD_NUMBER = 18;
+    private com.google.protobuf.LazyStringList imageParamUrls_;
+    /**
+     * <code>repeated string imageParamUrls = 18;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getImageParamUrlsList() {
+      return imageParamUrls_;
+    }
+    /**
+     * <code>repeated string imageParamUrls = 18;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    public int getImageParamUrlsCount() {
+      return imageParamUrls_.size();
+    }
+    /**
+     * <code>repeated string imageParamUrls = 18;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    public java.lang.String getImageParamUrls(int index) {
+      return imageParamUrls_.get(index);
+    }
+    /**
+     * <code>repeated string imageParamUrls = 18;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getImageParamUrlsBytes(int index) {
+      return imageParamUrls_.getByteString(index);
+    }
+
+    public static final int EVALUATECOUNT_FIELD_NUMBER = 19;
+    private long evaluateCount_;
+    /**
+     * <code>optional int64 evaluateCount = 19;</code>
+     *
+     * <pre>
+     *评价总数
+     * </pre>
+     */
+    public boolean hasEvaluateCount() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional int64 evaluateCount = 19;</code>
+     *
+     * <pre>
+     *评价总数
+     * </pre>
+     */
+    public long getEvaluateCount() {
+      return evaluateCount_;
+    }
+
+    public static final int PRODUCTEVALUATEINFO_FIELD_NUMBER = 20;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> productEvaluateInfo_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> getProductEvaluateInfoList() {
+      return productEvaluateInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> 
+        getProductEvaluateInfoOrBuilderList() {
+      return productEvaluateInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    public int getProductEvaluateInfoCount() {
+      return productEvaluateInfo_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo getProductEvaluateInfo(int index) {
+      return productEvaluateInfo_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+     *
+     * <pre>
+     *前N个评价信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder getProductEvaluateInfoOrBuilder(
+        int index) {
+      return productEvaluateInfo_.get(index);
+    }
+
     private void initFields() {
       productId_ = "";
       productType_ = "";
@@ -7010,6 +7375,10 @@ public final class Product {
       categoryInfo_ = java.util.Collections.emptyList();
       shortRentInfo_ = java.util.Collections.emptyList();
       longRentInfo_ = java.util.Collections.emptyList();
+      baseParam_ = java.util.Collections.emptyList();
+      imageParamUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      evaluateCount_ = 0L;
+      productEvaluateInfo_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7047,6 +7416,18 @@ public final class Product {
       }
       for (int i = 0; i < getLongRentInfoCount(); i++) {
         if (!getLongRentInfo(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getBaseParamCount(); i++) {
+        if (!getBaseParam(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getProductEvaluateInfoCount(); i++) {
+        if (!getProductEvaluateInfo(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -7105,6 +7486,18 @@ public final class Product {
       }
       for (int i = 0; i < longRentInfo_.size(); i++) {
         output.writeMessage(16, longRentInfo_.get(i));
+      }
+      for (int i = 0; i < baseParam_.size(); i++) {
+        output.writeMessage(17, baseParam_.get(i));
+      }
+      for (int i = 0; i < imageParamUrls_.size(); i++) {
+        output.writeBytes(18, imageParamUrls_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeInt64(19, evaluateCount_);
+      }
+      for (int i = 0; i < productEvaluateInfo_.size(); i++) {
+        output.writeMessage(20, productEvaluateInfo_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -7183,6 +7576,27 @@ public final class Product {
       for (int i = 0; i < longRentInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, longRentInfo_.get(i));
+      }
+      for (int i = 0; i < baseParam_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, baseParam_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < imageParamUrls_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(imageParamUrls_.getByteString(i));
+        }
+        size += dataSize;
+        size += 2 * getImageParamUrlsList().size();
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(19, evaluateCount_);
+      }
+      for (int i = 0; i < productEvaluateInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(20, productEvaluateInfo_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7300,6 +7714,8 @@ public final class Product {
           getCategoryInfoFieldBuilder();
           getShortRentInfoFieldBuilder();
           getLongRentInfoFieldBuilder();
+          getBaseParamFieldBuilder();
+          getProductEvaluateInfoFieldBuilder();
         }
       }
       private static Builder create() {
@@ -7351,6 +7767,22 @@ public final class Product {
           bitField0_ = (bitField0_ & ~0x00008000);
         } else {
           longRentInfoBuilder_.clear();
+        }
+        if (baseParamBuilder_ == null) {
+          baseParam_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00010000);
+        } else {
+          baseParamBuilder_.clear();
+        }
+        imageParamUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00020000);
+        evaluateCount_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00040000);
+        if (productEvaluateInfoBuilder_ == null) {
+          productEvaluateInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00080000);
+        } else {
+          productEvaluateInfoBuilder_.clear();
         }
         return this;
       }
@@ -7459,6 +7891,33 @@ public final class Product {
           result.longRentInfo_ = longRentInfo_;
         } else {
           result.longRentInfo_ = longRentInfoBuilder_.build();
+        }
+        if (baseParamBuilder_ == null) {
+          if (((bitField0_ & 0x00010000) == 0x00010000)) {
+            baseParam_ = java.util.Collections.unmodifiableList(baseParam_);
+            bitField0_ = (bitField0_ & ~0x00010000);
+          }
+          result.baseParam_ = baseParam_;
+        } else {
+          result.baseParam_ = baseParamBuilder_.build();
+        }
+        if (((bitField0_ & 0x00020000) == 0x00020000)) {
+          imageParamUrls_ = imageParamUrls_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00020000);
+        }
+        result.imageParamUrls_ = imageParamUrls_;
+        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.evaluateCount_ = evaluateCount_;
+        if (productEvaluateInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00080000) == 0x00080000)) {
+            productEvaluateInfo_ = java.util.Collections.unmodifiableList(productEvaluateInfo_);
+            bitField0_ = (bitField0_ & ~0x00080000);
+          }
+          result.productEvaluateInfo_ = productEvaluateInfo_;
+        } else {
+          result.productEvaluateInfo_ = productEvaluateInfoBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -7610,6 +8069,71 @@ public final class Product {
             }
           }
         }
+        if (baseParamBuilder_ == null) {
+          if (!other.baseParam_.isEmpty()) {
+            if (baseParam_.isEmpty()) {
+              baseParam_ = other.baseParam_;
+              bitField0_ = (bitField0_ & ~0x00010000);
+            } else {
+              ensureBaseParamIsMutable();
+              baseParam_.addAll(other.baseParam_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.baseParam_.isEmpty()) {
+            if (baseParamBuilder_.isEmpty()) {
+              baseParamBuilder_.dispose();
+              baseParamBuilder_ = null;
+              baseParam_ = other.baseParam_;
+              bitField0_ = (bitField0_ & ~0x00010000);
+              baseParamBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getBaseParamFieldBuilder() : null;
+            } else {
+              baseParamBuilder_.addAllMessages(other.baseParam_);
+            }
+          }
+        }
+        if (!other.imageParamUrls_.isEmpty()) {
+          if (imageParamUrls_.isEmpty()) {
+            imageParamUrls_ = other.imageParamUrls_;
+            bitField0_ = (bitField0_ & ~0x00020000);
+          } else {
+            ensureImageParamUrlsIsMutable();
+            imageParamUrls_.addAll(other.imageParamUrls_);
+          }
+          onChanged();
+        }
+        if (other.hasEvaluateCount()) {
+          setEvaluateCount(other.getEvaluateCount());
+        }
+        if (productEvaluateInfoBuilder_ == null) {
+          if (!other.productEvaluateInfo_.isEmpty()) {
+            if (productEvaluateInfo_.isEmpty()) {
+              productEvaluateInfo_ = other.productEvaluateInfo_;
+              bitField0_ = (bitField0_ & ~0x00080000);
+            } else {
+              ensureProductEvaluateInfoIsMutable();
+              productEvaluateInfo_.addAll(other.productEvaluateInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.productEvaluateInfo_.isEmpty()) {
+            if (productEvaluateInfoBuilder_.isEmpty()) {
+              productEvaluateInfoBuilder_.dispose();
+              productEvaluateInfoBuilder_ = null;
+              productEvaluateInfo_ = other.productEvaluateInfo_;
+              bitField0_ = (bitField0_ & ~0x00080000);
+              productEvaluateInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getProductEvaluateInfoFieldBuilder() : null;
+            } else {
+              productEvaluateInfoBuilder_.addAllMessages(other.productEvaluateInfo_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -7645,6 +8169,18 @@ public final class Product {
         }
         for (int i = 0; i < getLongRentInfoCount(); i++) {
           if (!getLongRentInfo(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getBaseParamCount(); i++) {
+          if (!getBaseParam(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getProductEvaluateInfoCount(); i++) {
+          if (!getProductEvaluateInfo(i).isInitialized()) {
             
             return false;
           }
@@ -9570,6 +10106,807 @@ public final class Product {
           longRentInfo_ = null;
         }
         return longRentInfoBuilder_;
+      }
+
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam> baseParam_ =
+        java.util.Collections.emptyList();
+      private void ensureBaseParamIsMutable() {
+        if (!((bitField0_ & 0x00010000) == 0x00010000)) {
+          baseParam_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam>(baseParam_);
+          bitField0_ |= 0x00010000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder> baseParamBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam> getBaseParamList() {
+        if (baseParamBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(baseParam_);
+        } else {
+          return baseParamBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public int getBaseParamCount() {
+        if (baseParamBuilder_ == null) {
+          return baseParam_.size();
+        } else {
+          return baseParamBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam getBaseParam(int index) {
+        if (baseParamBuilder_ == null) {
+          return baseParam_.get(index);
+        } else {
+          return baseParamBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public Builder setBaseParam(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam value) {
+        if (baseParamBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBaseParamIsMutable();
+          baseParam_.set(index, value);
+          onChanged();
+        } else {
+          baseParamBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public Builder setBaseParam(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder builderForValue) {
+        if (baseParamBuilder_ == null) {
+          ensureBaseParamIsMutable();
+          baseParam_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          baseParamBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public Builder addBaseParam(com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam value) {
+        if (baseParamBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBaseParamIsMutable();
+          baseParam_.add(value);
+          onChanged();
+        } else {
+          baseParamBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public Builder addBaseParam(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam value) {
+        if (baseParamBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBaseParamIsMutable();
+          baseParam_.add(index, value);
+          onChanged();
+        } else {
+          baseParamBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public Builder addBaseParam(
+          com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder builderForValue) {
+        if (baseParamBuilder_ == null) {
+          ensureBaseParamIsMutable();
+          baseParam_.add(builderForValue.build());
+          onChanged();
+        } else {
+          baseParamBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public Builder addBaseParam(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder builderForValue) {
+        if (baseParamBuilder_ == null) {
+          ensureBaseParamIsMutable();
+          baseParam_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          baseParamBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public Builder addAllBaseParam(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam> values) {
+        if (baseParamBuilder_ == null) {
+          ensureBaseParamIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, baseParam_);
+          onChanged();
+        } else {
+          baseParamBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public Builder clearBaseParam() {
+        if (baseParamBuilder_ == null) {
+          baseParam_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00010000);
+          onChanged();
+        } else {
+          baseParamBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public Builder removeBaseParam(int index) {
+        if (baseParamBuilder_ == null) {
+          ensureBaseParamIsMutable();
+          baseParam_.remove(index);
+          onChanged();
+        } else {
+          baseParamBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder getBaseParamBuilder(
+          int index) {
+        return getBaseParamFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder getBaseParamOrBuilder(
+          int index) {
+        if (baseParamBuilder_ == null) {
+          return baseParam_.get(index);  } else {
+          return baseParamBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder> 
+           getBaseParamOrBuilderList() {
+        if (baseParamBuilder_ != null) {
+          return baseParamBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(baseParam_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder addBaseParamBuilder() {
+        return getBaseParamFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder addBaseParamBuilder(
+          int index) {
+        return getBaseParamFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductBaseParam baseParam = 17;</code>
+       *
+       * <pre>
+       *产品基本参数
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder> 
+           getBaseParamBuilderList() {
+        return getBaseParamFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder> 
+          getBaseParamFieldBuilder() {
+        if (baseParamBuilder_ == null) {
+          baseParamBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder>(
+                  baseParam_,
+                  ((bitField0_ & 0x00010000) == 0x00010000),
+                  getParentForChildren(),
+                  isClean());
+          baseParam_ = null;
+        }
+        return baseParamBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList imageParamUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureImageParamUrlsIsMutable() {
+        if (!((bitField0_ & 0x00020000) == 0x00020000)) {
+          imageParamUrls_ = new com.google.protobuf.LazyStringArrayList(imageParamUrls_);
+          bitField0_ |= 0x00020000;
+         }
+      }
+      /**
+       * <code>repeated string imageParamUrls = 18;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getImageParamUrlsList() {
+        return imageParamUrls_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string imageParamUrls = 18;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public int getImageParamUrlsCount() {
+        return imageParamUrls_.size();
+      }
+      /**
+       * <code>repeated string imageParamUrls = 18;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public java.lang.String getImageParamUrls(int index) {
+        return imageParamUrls_.get(index);
+      }
+      /**
+       * <code>repeated string imageParamUrls = 18;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getImageParamUrlsBytes(int index) {
+        return imageParamUrls_.getByteString(index);
+      }
+      /**
+       * <code>repeated string imageParamUrls = 18;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder setImageParamUrls(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureImageParamUrlsIsMutable();
+        imageParamUrls_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imageParamUrls = 18;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder addImageParamUrls(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureImageParamUrlsIsMutable();
+        imageParamUrls_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imageParamUrls = 18;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder addAllImageParamUrls(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureImageParamUrlsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, imageParamUrls_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imageParamUrls = 18;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder clearImageParamUrls() {
+        imageParamUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00020000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imageParamUrls = 18;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder addImageParamUrlsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureImageParamUrlsIsMutable();
+        imageParamUrls_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private long evaluateCount_ ;
+      /**
+       * <code>optional int64 evaluateCount = 19;</code>
+       *
+       * <pre>
+       *评价总数
+       * </pre>
+       */
+      public boolean hasEvaluateCount() {
+        return ((bitField0_ & 0x00040000) == 0x00040000);
+      }
+      /**
+       * <code>optional int64 evaluateCount = 19;</code>
+       *
+       * <pre>
+       *评价总数
+       * </pre>
+       */
+      public long getEvaluateCount() {
+        return evaluateCount_;
+      }
+      /**
+       * <code>optional int64 evaluateCount = 19;</code>
+       *
+       * <pre>
+       *评价总数
+       * </pre>
+       */
+      public Builder setEvaluateCount(long value) {
+        bitField0_ |= 0x00040000;
+        evaluateCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 evaluateCount = 19;</code>
+       *
+       * <pre>
+       *评价总数
+       * </pre>
+       */
+      public Builder clearEvaluateCount() {
+        bitField0_ = (bitField0_ & ~0x00040000);
+        evaluateCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> productEvaluateInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureProductEvaluateInfoIsMutable() {
+        if (!((bitField0_ & 0x00080000) == 0x00080000)) {
+          productEvaluateInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo>(productEvaluateInfo_);
+          bitField0_ |= 0x00080000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> productEvaluateInfoBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> getProductEvaluateInfoList() {
+        if (productEvaluateInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(productEvaluateInfo_);
+        } else {
+          return productEvaluateInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public int getProductEvaluateInfoCount() {
+        if (productEvaluateInfoBuilder_ == null) {
+          return productEvaluateInfo_.size();
+        } else {
+          return productEvaluateInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo getProductEvaluateInfo(int index) {
+        if (productEvaluateInfoBuilder_ == null) {
+          return productEvaluateInfo_.get(index);
+        } else {
+          return productEvaluateInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public Builder setProductEvaluateInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo value) {
+        if (productEvaluateInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.set(index, value);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public Builder setProductEvaluateInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder builderForValue) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public Builder addProductEvaluateInfo(com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo value) {
+        if (productEvaluateInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.add(value);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public Builder addProductEvaluateInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo value) {
+        if (productEvaluateInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.add(index, value);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public Builder addProductEvaluateInfo(
+          com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder builderForValue) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public Builder addProductEvaluateInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder builderForValue) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public Builder addAllProductEvaluateInfo(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> values) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, productEvaluateInfo_);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public Builder clearProductEvaluateInfo() {
+        if (productEvaluateInfoBuilder_ == null) {
+          productEvaluateInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00080000);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public Builder removeProductEvaluateInfo(int index) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.remove(index);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder getProductEvaluateInfoBuilder(
+          int index) {
+        return getProductEvaluateInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder getProductEvaluateInfoOrBuilder(
+          int index) {
+        if (productEvaluateInfoBuilder_ == null) {
+          return productEvaluateInfo_.get(index);  } else {
+          return productEvaluateInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> 
+           getProductEvaluateInfoOrBuilderList() {
+        if (productEvaluateInfoBuilder_ != null) {
+          return productEvaluateInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(productEvaluateInfo_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder addProductEvaluateInfoBuilder() {
+        return getProductEvaluateInfoFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder addProductEvaluateInfoBuilder(
+          int index) {
+        return getProductEvaluateInfoFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 20;</code>
+       *
+       * <pre>
+       *前N个评价信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder> 
+           getProductEvaluateInfoBuilderList() {
+        return getProductEvaluateInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> 
+          getProductEvaluateInfoFieldBuilder() {
+        if (productEvaluateInfoBuilder_ == null) {
+          productEvaluateInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder>(
+                  productEvaluateInfo_,
+                  ((bitField0_ & 0x00080000) == 0x00080000),
+                  getParentForChildren(),
+                  isClean());
+          productEvaluateInfo_ = null;
+        }
+        return productEvaluateInfoBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ProductDetailInfo)
@@ -12637,6 +13974,5319 @@ public final class Product {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.LongRentInfo)
   }
 
+  public interface ProductBaseParamOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ProductBaseParam)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *参数编码
+     * </pre>
+     */
+    boolean hasCode();
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *参数编码
+     * </pre>
+     */
+    java.lang.String getCode();
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *参数编码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes();
+
+    /**
+     * <code>required string showKey = 2;</code>
+     *
+     * <pre>
+     *展示Key
+     * </pre>
+     */
+    boolean hasShowKey();
+    /**
+     * <code>required string showKey = 2;</code>
+     *
+     * <pre>
+     *展示Key
+     * </pre>
+     */
+    java.lang.String getShowKey();
+    /**
+     * <code>required string showKey = 2;</code>
+     *
+     * <pre>
+     *展示Key
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getShowKeyBytes();
+
+    /**
+     * <code>required string showValue = 3;</code>
+     *
+     * <pre>
+     *展示Value
+     * </pre>
+     */
+    boolean hasShowValue();
+    /**
+     * <code>required string showValue = 3;</code>
+     *
+     * <pre>
+     *展示Value
+     * </pre>
+     */
+    java.lang.String getShowValue();
+    /**
+     * <code>required string showValue = 3;</code>
+     *
+     * <pre>
+     *展示Value
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getShowValueBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductBaseParam}
+   *
+   * <pre>
+   *产品基本参数
+   * </pre>
+   */
+  public static final class ProductBaseParam extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ProductBaseParam)
+      ProductBaseParamOrBuilder {
+    // Use ProductBaseParam.newBuilder() to construct.
+    private ProductBaseParam(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ProductBaseParam(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ProductBaseParam defaultInstance;
+    public static ProductBaseParam getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ProductBaseParam getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProductBaseParam(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              code_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              showKey_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              showValue_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.class, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ProductBaseParam> PARSER =
+        new com.google.protobuf.AbstractParser<ProductBaseParam>() {
+      public ProductBaseParam parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProductBaseParam(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductBaseParam> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int CODE_FIELD_NUMBER = 1;
+    private java.lang.Object code_;
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *参数编码
+     * </pre>
+     */
+    public boolean hasCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *参数编码
+     * </pre>
+     */
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          code_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *参数编码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHOWKEY_FIELD_NUMBER = 2;
+    private java.lang.Object showKey_;
+    /**
+     * <code>required string showKey = 2;</code>
+     *
+     * <pre>
+     *展示Key
+     * </pre>
+     */
+    public boolean hasShowKey() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string showKey = 2;</code>
+     *
+     * <pre>
+     *展示Key
+     * </pre>
+     */
+    public java.lang.String getShowKey() {
+      java.lang.Object ref = showKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          showKey_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string showKey = 2;</code>
+     *
+     * <pre>
+     *展示Key
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getShowKeyBytes() {
+      java.lang.Object ref = showKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        showKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHOWVALUE_FIELD_NUMBER = 3;
+    private java.lang.Object showValue_;
+    /**
+     * <code>required string showValue = 3;</code>
+     *
+     * <pre>
+     *展示Value
+     * </pre>
+     */
+    public boolean hasShowValue() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string showValue = 3;</code>
+     *
+     * <pre>
+     *展示Value
+     * </pre>
+     */
+    public java.lang.String getShowValue() {
+      java.lang.Object ref = showValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          showValue_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string showValue = 3;</code>
+     *
+     * <pre>
+     *展示Value
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getShowValueBytes() {
+      java.lang.Object ref = showValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        showValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      code_ = "";
+      showKey_ = "";
+      showValue_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasShowKey()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasShowValue()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getShowKeyBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getShowValueBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getShowKeyBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getShowValueBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductBaseParam}
+     *
+     * <pre>
+     *产品基本参数
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ProductBaseParam)
+        com.qjoy.basjoo.core.model.pb.Product.ProductBaseParamOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.class, com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        code_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        showKey_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        showValue_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam build() {
+        com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam result = new com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.code_ = code_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.showKey_ = showKey_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.showValue_ = showValue_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam.getDefaultInstance()) return this;
+        if (other.hasCode()) {
+          bitField0_ |= 0x00000001;
+          code_ = other.code_;
+          onChanged();
+        }
+        if (other.hasShowKey()) {
+          bitField0_ |= 0x00000002;
+          showKey_ = other.showKey_;
+          onChanged();
+        }
+        if (other.hasShowValue()) {
+          bitField0_ |= 0x00000004;
+          showValue_ = other.showValue_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasCode()) {
+          
+          return false;
+        }
+        if (!hasShowKey()) {
+          
+          return false;
+        }
+        if (!hasShowValue()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.ProductBaseParam) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object code_ = "";
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *参数编码
+       * </pre>
+       */
+      public boolean hasCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *参数编码
+       * </pre>
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            code_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *参数编码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *参数编码
+       * </pre>
+       */
+      public Builder setCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *参数编码
+       * </pre>
+       */
+      public Builder clearCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        code_ = getDefaultInstance().getCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *参数编码
+       * </pre>
+       */
+      public Builder setCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        code_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object showKey_ = "";
+      /**
+       * <code>required string showKey = 2;</code>
+       *
+       * <pre>
+       *展示Key
+       * </pre>
+       */
+      public boolean hasShowKey() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string showKey = 2;</code>
+       *
+       * <pre>
+       *展示Key
+       * </pre>
+       */
+      public java.lang.String getShowKey() {
+        java.lang.Object ref = showKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            showKey_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string showKey = 2;</code>
+       *
+       * <pre>
+       *展示Key
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getShowKeyBytes() {
+        java.lang.Object ref = showKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          showKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string showKey = 2;</code>
+       *
+       * <pre>
+       *展示Key
+       * </pre>
+       */
+      public Builder setShowKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        showKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string showKey = 2;</code>
+       *
+       * <pre>
+       *展示Key
+       * </pre>
+       */
+      public Builder clearShowKey() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        showKey_ = getDefaultInstance().getShowKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string showKey = 2;</code>
+       *
+       * <pre>
+       *展示Key
+       * </pre>
+       */
+      public Builder setShowKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        showKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object showValue_ = "";
+      /**
+       * <code>required string showValue = 3;</code>
+       *
+       * <pre>
+       *展示Value
+       * </pre>
+       */
+      public boolean hasShowValue() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string showValue = 3;</code>
+       *
+       * <pre>
+       *展示Value
+       * </pre>
+       */
+      public java.lang.String getShowValue() {
+        java.lang.Object ref = showValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            showValue_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string showValue = 3;</code>
+       *
+       * <pre>
+       *展示Value
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getShowValueBytes() {
+        java.lang.Object ref = showValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          showValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string showValue = 3;</code>
+       *
+       * <pre>
+       *展示Value
+       * </pre>
+       */
+      public Builder setShowValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        showValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string showValue = 3;</code>
+       *
+       * <pre>
+       *展示Value
+       * </pre>
+       */
+      public Builder clearShowValue() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        showValue_ = getDefaultInstance().getShowValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string showValue = 3;</code>
+       *
+       * <pre>
+       *展示Value
+       * </pre>
+       */
+      public Builder setShowValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        showValue_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ProductBaseParam)
+    }
+
+    static {
+      defaultInstance = new ProductBaseParam(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ProductBaseParam)
+  }
+
+  public interface ProductEvaluateInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required int64 time = 1;</code>
+     *
+     * <pre>
+     *评价时间
+     * </pre>
+     */
+    boolean hasTime();
+    /**
+     * <code>required int64 time = 1;</code>
+     *
+     * <pre>
+     *评价时间
+     * </pre>
+     */
+    long getTime();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *评价用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *评价用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *评价用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>required string userName = 3;</code>
+     *
+     * <pre>
+     *评价用户
+     * </pre>
+     */
+    boolean hasUserName();
+    /**
+     * <code>required string userName = 3;</code>
+     *
+     * <pre>
+     *评价用户
+     * </pre>
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>required string userName = 3;</code>
+     *
+     * <pre>
+     *评价用户
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
+
+    /**
+     * <code>required string headIconUrl = 4;</code>
+     *
+     * <pre>
+     *评价用户头像地址
+     * </pre>
+     */
+    boolean hasHeadIconUrl();
+    /**
+     * <code>required string headIconUrl = 4;</code>
+     *
+     * <pre>
+     *评价用户头像地址
+     * </pre>
+     */
+    java.lang.String getHeadIconUrl();
+    /**
+     * <code>required string headIconUrl = 4;</code>
+     *
+     * <pre>
+     *评价用户头像地址
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getHeadIconUrlBytes();
+
+    /**
+     * <code>required string userLevel = 5;</code>
+     *
+     * <pre>
+     *评价用户等级
+     * </pre>
+     */
+    boolean hasUserLevel();
+    /**
+     * <code>required string userLevel = 5;</code>
+     *
+     * <pre>
+     *评价用户等级
+     * </pre>
+     */
+    java.lang.String getUserLevel();
+    /**
+     * <code>required string userLevel = 5;</code>
+     *
+     * <pre>
+     *评价用户等级
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserLevelBytes();
+
+    /**
+     * <code>required string rentCategoryName = 6;</code>
+     *
+     * <pre>
+     *评价用户所购买的产品类目名称
+     * </pre>
+     */
+    boolean hasRentCategoryName();
+    /**
+     * <code>required string rentCategoryName = 6;</code>
+     *
+     * <pre>
+     *评价用户所购买的产品类目名称
+     * </pre>
+     */
+    java.lang.String getRentCategoryName();
+    /**
+     * <code>required string rentCategoryName = 6;</code>
+     *
+     * <pre>
+     *评价用户所购买的产品类目名称
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getRentCategoryNameBytes();
+
+    /**
+     * <code>required string content = 7;</code>
+     *
+     * <pre>
+     *评价内容
+     * </pre>
+     */
+    boolean hasContent();
+    /**
+     * <code>required string content = 7;</code>
+     *
+     * <pre>
+     *评价内容
+     * </pre>
+     */
+    java.lang.String getContent();
+    /**
+     * <code>required string content = 7;</code>
+     *
+     * <pre>
+     *评价内容
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getContentBytes();
+
+    /**
+     * <code>repeated string imageUrls = 8;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    com.google.protobuf.ProtocolStringList
+        getImageUrlsList();
+    /**
+     * <code>repeated string imageUrls = 8;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    int getImageUrlsCount();
+    /**
+     * <code>repeated string imageUrls = 8;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    java.lang.String getImageUrls(int index);
+    /**
+     * <code>repeated string imageUrls = 8;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getImageUrlsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo}
+   *
+   * <pre>
+   *产品评价信息
+   * </pre>
+   */
+  public static final class ProductEvaluateInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo)
+      ProductEvaluateInfoOrBuilder {
+    // Use ProductEvaluateInfo.newBuilder() to construct.
+    private ProductEvaluateInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ProductEvaluateInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ProductEvaluateInfo defaultInstance;
+    public static ProductEvaluateInfo getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ProductEvaluateInfo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProductEvaluateInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              time_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              userName_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              headIconUrl_ = bs;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              userLevel_ = bs;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              rentCategoryName_ = bs;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              content_ = bs;
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                imageUrls_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              imageUrls_.add(bs);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+          imageUrls_ = imageUrls_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.class, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ProductEvaluateInfo> PARSER =
+        new com.google.protobuf.AbstractParser<ProductEvaluateInfo>() {
+      public ProductEvaluateInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProductEvaluateInfo(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductEvaluateInfo> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int TIME_FIELD_NUMBER = 1;
+    private long time_;
+    /**
+     * <code>required int64 time = 1;</code>
+     *
+     * <pre>
+     *评价时间
+     * </pre>
+     */
+    public boolean hasTime() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 time = 1;</code>
+     *
+     * <pre>
+     *评价时间
+     * </pre>
+     */
+    public long getTime() {
+      return time_;
+    }
+
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *评价用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *评价用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *评价用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 3;
+    private java.lang.Object userName_;
+    /**
+     * <code>required string userName = 3;</code>
+     *
+     * <pre>
+     *评价用户
+     * </pre>
+     */
+    public boolean hasUserName() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string userName = 3;</code>
+     *
+     * <pre>
+     *评价用户
+     * </pre>
+     */
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userName = 3;</code>
+     *
+     * <pre>
+     *评价用户
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HEADICONURL_FIELD_NUMBER = 4;
+    private java.lang.Object headIconUrl_;
+    /**
+     * <code>required string headIconUrl = 4;</code>
+     *
+     * <pre>
+     *评价用户头像地址
+     * </pre>
+     */
+    public boolean hasHeadIconUrl() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string headIconUrl = 4;</code>
+     *
+     * <pre>
+     *评价用户头像地址
+     * </pre>
+     */
+    public java.lang.String getHeadIconUrl() {
+      java.lang.Object ref = headIconUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          headIconUrl_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string headIconUrl = 4;</code>
+     *
+     * <pre>
+     *评价用户头像地址
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getHeadIconUrlBytes() {
+      java.lang.Object ref = headIconUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        headIconUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERLEVEL_FIELD_NUMBER = 5;
+    private java.lang.Object userLevel_;
+    /**
+     * <code>required string userLevel = 5;</code>
+     *
+     * <pre>
+     *评价用户等级
+     * </pre>
+     */
+    public boolean hasUserLevel() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required string userLevel = 5;</code>
+     *
+     * <pre>
+     *评价用户等级
+     * </pre>
+     */
+    public java.lang.String getUserLevel() {
+      java.lang.Object ref = userLevel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userLevel_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userLevel = 5;</code>
+     *
+     * <pre>
+     *评价用户等级
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserLevelBytes() {
+      java.lang.Object ref = userLevel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userLevel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RENTCATEGORYNAME_FIELD_NUMBER = 6;
+    private java.lang.Object rentCategoryName_;
+    /**
+     * <code>required string rentCategoryName = 6;</code>
+     *
+     * <pre>
+     *评价用户所购买的产品类目名称
+     * </pre>
+     */
+    public boolean hasRentCategoryName() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>required string rentCategoryName = 6;</code>
+     *
+     * <pre>
+     *评价用户所购买的产品类目名称
+     * </pre>
+     */
+    public java.lang.String getRentCategoryName() {
+      java.lang.Object ref = rentCategoryName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rentCategoryName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string rentCategoryName = 6;</code>
+     *
+     * <pre>
+     *评价用户所购买的产品类目名称
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getRentCategoryNameBytes() {
+      java.lang.Object ref = rentCategoryName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rentCategoryName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 7;
+    private java.lang.Object content_;
+    /**
+     * <code>required string content = 7;</code>
+     *
+     * <pre>
+     *评价内容
+     * </pre>
+     */
+    public boolean hasContent() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>required string content = 7;</code>
+     *
+     * <pre>
+     *评价内容
+     * </pre>
+     */
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          content_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string content = 7;</code>
+     *
+     * <pre>
+     *评价内容
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IMAGEURLS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList imageUrls_;
+    /**
+     * <code>repeated string imageUrls = 8;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getImageUrlsList() {
+      return imageUrls_;
+    }
+    /**
+     * <code>repeated string imageUrls = 8;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    public int getImageUrlsCount() {
+      return imageUrls_.size();
+    }
+    /**
+     * <code>repeated string imageUrls = 8;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    public java.lang.String getImageUrls(int index) {
+      return imageUrls_.get(index);
+    }
+    /**
+     * <code>repeated string imageUrls = 8;</code>
+     *
+     * <pre>
+     *图文参数地址（多图文）
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getImageUrlsBytes(int index) {
+      return imageUrls_.getByteString(index);
+    }
+
+    private void initFields() {
+      time_ = 0L;
+      userId_ = "";
+      userName_ = "";
+      headIconUrl_ = "";
+      userLevel_ = "";
+      rentCategoryName_ = "";
+      content_ = "";
+      imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasHeadIconUrl()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserLevel()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRentCategoryName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasContent()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, time_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getUserNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getHeadIconUrlBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getUserLevelBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getRentCategoryNameBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getContentBytes());
+      }
+      for (int i = 0; i < imageUrls_.size(); i++) {
+        output.writeBytes(8, imageUrls_.getByteString(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, time_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getUserNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getHeadIconUrlBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getUserLevelBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getRentCategoryNameBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getContentBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < imageUrls_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(imageUrls_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getImageUrlsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo}
+     *
+     * <pre>
+     *产品评价信息
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo)
+        com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.class, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        time_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        headIconUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        userLevel_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rentCategoryName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        content_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo build() {
+        com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo result = new com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.time_ = time_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.userName_ = userName_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.headIconUrl_ = headIconUrl_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.userLevel_ = userLevel_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.rentCategoryName_ = rentCategoryName_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.content_ = content_;
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          imageUrls_ = imageUrls_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.imageUrls_ = imageUrls_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.getDefaultInstance()) return this;
+        if (other.hasTime()) {
+          setTime(other.getTime());
+        }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (other.hasUserName()) {
+          bitField0_ |= 0x00000004;
+          userName_ = other.userName_;
+          onChanged();
+        }
+        if (other.hasHeadIconUrl()) {
+          bitField0_ |= 0x00000008;
+          headIconUrl_ = other.headIconUrl_;
+          onChanged();
+        }
+        if (other.hasUserLevel()) {
+          bitField0_ |= 0x00000010;
+          userLevel_ = other.userLevel_;
+          onChanged();
+        }
+        if (other.hasRentCategoryName()) {
+          bitField0_ |= 0x00000020;
+          rentCategoryName_ = other.rentCategoryName_;
+          onChanged();
+        }
+        if (other.hasContent()) {
+          bitField0_ |= 0x00000040;
+          content_ = other.content_;
+          onChanged();
+        }
+        if (!other.imageUrls_.isEmpty()) {
+          if (imageUrls_.isEmpty()) {
+            imageUrls_ = other.imageUrls_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureImageUrlsIsMutable();
+            imageUrls_.addAll(other.imageUrls_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasTime()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
+          
+          return false;
+        }
+        if (!hasUserName()) {
+          
+          return false;
+        }
+        if (!hasHeadIconUrl()) {
+          
+          return false;
+        }
+        if (!hasUserLevel()) {
+          
+          return false;
+        }
+        if (!hasRentCategoryName()) {
+          
+          return false;
+        }
+        if (!hasContent()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long time_ ;
+      /**
+       * <code>required int64 time = 1;</code>
+       *
+       * <pre>
+       *评价时间
+       * </pre>
+       */
+      public boolean hasTime() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 time = 1;</code>
+       *
+       * <pre>
+       *评价时间
+       * </pre>
+       */
+      public long getTime() {
+        return time_;
+      }
+      /**
+       * <code>required int64 time = 1;</code>
+       *
+       * <pre>
+       *评价时间
+       * </pre>
+       */
+      public Builder setTime(long value) {
+        bitField0_ |= 0x00000001;
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 time = 1;</code>
+       *
+       * <pre>
+       *评价时间
+       * </pre>
+       */
+      public Builder clearTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *评价用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *评价用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *评价用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *评价用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *评价用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *评价用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>required string userName = 3;</code>
+       *
+       * <pre>
+       *评价用户
+       * </pre>
+       */
+      public boolean hasUserName() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string userName = 3;</code>
+       *
+       * <pre>
+       *评价用户
+       * </pre>
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userName = 3;</code>
+       *
+       * <pre>
+       *评价用户
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userName = 3;</code>
+       *
+       * <pre>
+       *评价用户
+       * </pre>
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userName = 3;</code>
+       *
+       * <pre>
+       *评价用户
+       * </pre>
+       */
+      public Builder clearUserName() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userName = 3;</code>
+       *
+       * <pre>
+       *评价用户
+       * </pre>
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object headIconUrl_ = "";
+      /**
+       * <code>required string headIconUrl = 4;</code>
+       *
+       * <pre>
+       *评价用户头像地址
+       * </pre>
+       */
+      public boolean hasHeadIconUrl() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string headIconUrl = 4;</code>
+       *
+       * <pre>
+       *评价用户头像地址
+       * </pre>
+       */
+      public java.lang.String getHeadIconUrl() {
+        java.lang.Object ref = headIconUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            headIconUrl_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string headIconUrl = 4;</code>
+       *
+       * <pre>
+       *评价用户头像地址
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getHeadIconUrlBytes() {
+        java.lang.Object ref = headIconUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          headIconUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string headIconUrl = 4;</code>
+       *
+       * <pre>
+       *评价用户头像地址
+       * </pre>
+       */
+      public Builder setHeadIconUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        headIconUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string headIconUrl = 4;</code>
+       *
+       * <pre>
+       *评价用户头像地址
+       * </pre>
+       */
+      public Builder clearHeadIconUrl() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        headIconUrl_ = getDefaultInstance().getHeadIconUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string headIconUrl = 4;</code>
+       *
+       * <pre>
+       *评价用户头像地址
+       * </pre>
+       */
+      public Builder setHeadIconUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        headIconUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userLevel_ = "";
+      /**
+       * <code>required string userLevel = 5;</code>
+       *
+       * <pre>
+       *评价用户等级
+       * </pre>
+       */
+      public boolean hasUserLevel() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required string userLevel = 5;</code>
+       *
+       * <pre>
+       *评价用户等级
+       * </pre>
+       */
+      public java.lang.String getUserLevel() {
+        java.lang.Object ref = userLevel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userLevel_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userLevel = 5;</code>
+       *
+       * <pre>
+       *评价用户等级
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserLevelBytes() {
+        java.lang.Object ref = userLevel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userLevel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userLevel = 5;</code>
+       *
+       * <pre>
+       *评价用户等级
+       * </pre>
+       */
+      public Builder setUserLevel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        userLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userLevel = 5;</code>
+       *
+       * <pre>
+       *评价用户等级
+       * </pre>
+       */
+      public Builder clearUserLevel() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        userLevel_ = getDefaultInstance().getUserLevel();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userLevel = 5;</code>
+       *
+       * <pre>
+       *评价用户等级
+       * </pre>
+       */
+      public Builder setUserLevelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        userLevel_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rentCategoryName_ = "";
+      /**
+       * <code>required string rentCategoryName = 6;</code>
+       *
+       * <pre>
+       *评价用户所购买的产品类目名称
+       * </pre>
+       */
+      public boolean hasRentCategoryName() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required string rentCategoryName = 6;</code>
+       *
+       * <pre>
+       *评价用户所购买的产品类目名称
+       * </pre>
+       */
+      public java.lang.String getRentCategoryName() {
+        java.lang.Object ref = rentCategoryName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            rentCategoryName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string rentCategoryName = 6;</code>
+       *
+       * <pre>
+       *评价用户所购买的产品类目名称
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getRentCategoryNameBytes() {
+        java.lang.Object ref = rentCategoryName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rentCategoryName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string rentCategoryName = 6;</code>
+       *
+       * <pre>
+       *评价用户所购买的产品类目名称
+       * </pre>
+       */
+      public Builder setRentCategoryName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        rentCategoryName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string rentCategoryName = 6;</code>
+       *
+       * <pre>
+       *评价用户所购买的产品类目名称
+       * </pre>
+       */
+      public Builder clearRentCategoryName() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        rentCategoryName_ = getDefaultInstance().getRentCategoryName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string rentCategoryName = 6;</code>
+       *
+       * <pre>
+       *评价用户所购买的产品类目名称
+       * </pre>
+       */
+      public Builder setRentCategoryNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        rentCategoryName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object content_ = "";
+      /**
+       * <code>required string content = 7;</code>
+       *
+       * <pre>
+       *评价内容
+       * </pre>
+       */
+      public boolean hasContent() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>required string content = 7;</code>
+       *
+       * <pre>
+       *评价内容
+       * </pre>
+       */
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            content_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string content = 7;</code>
+       *
+       * <pre>
+       *评价内容
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string content = 7;</code>
+       *
+       * <pre>
+       *评价内容
+       * </pre>
+       */
+      public Builder setContent(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string content = 7;</code>
+       *
+       * <pre>
+       *评价内容
+       * </pre>
+       */
+      public Builder clearContent() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string content = 7;</code>
+       *
+       * <pre>
+       *评价内容
+       * </pre>
+       */
+      public Builder setContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureImageUrlsIsMutable() {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+          imageUrls_ = new com.google.protobuf.LazyStringArrayList(imageUrls_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+      /**
+       * <code>repeated string imageUrls = 8;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getImageUrlsList() {
+        return imageUrls_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string imageUrls = 8;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public int getImageUrlsCount() {
+        return imageUrls_.size();
+      }
+      /**
+       * <code>repeated string imageUrls = 8;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public java.lang.String getImageUrls(int index) {
+        return imageUrls_.get(index);
+      }
+      /**
+       * <code>repeated string imageUrls = 8;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getImageUrlsBytes(int index) {
+        return imageUrls_.getByteString(index);
+      }
+      /**
+       * <code>repeated string imageUrls = 8;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder setImageUrls(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureImageUrlsIsMutable();
+        imageUrls_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imageUrls = 8;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder addImageUrls(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureImageUrlsIsMutable();
+        imageUrls_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imageUrls = 8;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder addAllImageUrls(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureImageUrlsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, imageUrls_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imageUrls = 8;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder clearImageUrls() {
+        imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imageUrls = 8;</code>
+       *
+       * <pre>
+       *图文参数地址（多图文）
+       * </pre>
+       */
+      public Builder addImageUrlsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureImageUrlsIsMutable();
+        imageUrls_.add(value);
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo)
+    }
+
+    static {
+      defaultInstance = new ProductEvaluateInfo(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo)
+  }
+
+  public interface getProductEvaluateListRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    boolean hasProductId();
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    java.lang.String getProductId();
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getProductIdBytes();
+
+    /**
+     * <code>required int32 evaluateType = 2;</code>
+     *
+     * <pre>
+     *评论类型：0：全部，1：只看有图评论
+     * </pre>
+     */
+    boolean hasEvaluateType();
+    /**
+     * <code>required int32 evaluateType = 2;</code>
+     *
+     * <pre>
+     *评论类型：0：全部，1：只看有图评论
+     * </pre>
+     */
+    int getEvaluateType();
+
+    /**
+     * <code>optional int32 startIndex = 3;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    boolean hasStartIndex();
+    /**
+     * <code>optional int32 startIndex = 3;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    int getStartIndex();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest}
+   *
+   * <pre>
+   *获取产品的评论列表
+   * </pre>
+   */
+  public static final class getProductEvaluateListRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
+      getProductEvaluateListRequestOrBuilder {
+    // Use getProductEvaluateListRequest.newBuilder() to construct.
+    private getProductEvaluateListRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private getProductEvaluateListRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final getProductEvaluateListRequest defaultInstance;
+    public static getProductEvaluateListRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public getProductEvaluateListRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private getProductEvaluateListRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              productId_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              evaluateType_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              startIndex_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.class, com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<getProductEvaluateListRequest> PARSER =
+        new com.google.protobuf.AbstractParser<getProductEvaluateListRequest>() {
+      public getProductEvaluateListRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new getProductEvaluateListRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<getProductEvaluateListRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int PRODUCTID_FIELD_NUMBER = 1;
+    private java.lang.Object productId_;
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    public boolean hasProductId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          productId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EVALUATETYPE_FIELD_NUMBER = 2;
+    private int evaluateType_;
+    /**
+     * <code>required int32 evaluateType = 2;</code>
+     *
+     * <pre>
+     *评论类型：0：全部，1：只看有图评论
+     * </pre>
+     */
+    public boolean hasEvaluateType() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 evaluateType = 2;</code>
+     *
+     * <pre>
+     *评论类型：0：全部，1：只看有图评论
+     * </pre>
+     */
+    public int getEvaluateType() {
+      return evaluateType_;
+    }
+
+    public static final int STARTINDEX_FIELD_NUMBER = 3;
+    private int startIndex_;
+    /**
+     * <code>optional int32 startIndex = 3;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    public boolean hasStartIndex() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 startIndex = 3;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    public int getStartIndex() {
+      return startIndex_;
+    }
+
+    private void initFields() {
+      productId_ = "";
+      evaluateType_ = 0;
+      startIndex_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasProductId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasEvaluateType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getProductIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, evaluateType_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, startIndex_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getProductIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, evaluateType_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, startIndex_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest}
+     *
+     * <pre>
+     *获取产品的评论列表
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
+        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.class, com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        productId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        evaluateType_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        startIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest build() {
+        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest result = new com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.productId_ = productId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.evaluateType_ = evaluateType_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.startIndex_ = startIndex_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.getDefaultInstance()) return this;
+        if (other.hasProductId()) {
+          bitField0_ |= 0x00000001;
+          productId_ = other.productId_;
+          onChanged();
+        }
+        if (other.hasEvaluateType()) {
+          setEvaluateType(other.getEvaluateType());
+        }
+        if (other.hasStartIndex()) {
+          setStartIndex(other.getStartIndex());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasProductId()) {
+          
+          return false;
+        }
+        if (!hasEvaluateType()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object productId_ = "";
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public boolean hasProductId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public java.lang.String getProductId() {
+        java.lang.Object ref = productId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            productId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getProductIdBytes() {
+        java.lang.Object ref = productId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public Builder setProductId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        productId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public Builder clearProductId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        productId_ = getDefaultInstance().getProductId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public Builder setProductIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        productId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int evaluateType_ ;
+      /**
+       * <code>required int32 evaluateType = 2;</code>
+       *
+       * <pre>
+       *评论类型：0：全部，1：只看有图评论
+       * </pre>
+       */
+      public boolean hasEvaluateType() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 evaluateType = 2;</code>
+       *
+       * <pre>
+       *评论类型：0：全部，1：只看有图评论
+       * </pre>
+       */
+      public int getEvaluateType() {
+        return evaluateType_;
+      }
+      /**
+       * <code>required int32 evaluateType = 2;</code>
+       *
+       * <pre>
+       *评论类型：0：全部，1：只看有图评论
+       * </pre>
+       */
+      public Builder setEvaluateType(int value) {
+        bitField0_ |= 0x00000002;
+        evaluateType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 evaluateType = 2;</code>
+       *
+       * <pre>
+       *评论类型：0：全部，1：只看有图评论
+       * </pre>
+       */
+      public Builder clearEvaluateType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        evaluateType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int startIndex_ ;
+      /**
+       * <code>optional int32 startIndex = 3;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public boolean hasStartIndex() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 startIndex = 3;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public int getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       * <code>optional int32 startIndex = 3;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public Builder setStartIndex(int value) {
+        bitField0_ |= 0x00000004;
+        startIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 startIndex = 3;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public Builder clearStartIndex() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
+    }
+
+    static {
+      defaultInstance = new getProductEvaluateListRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
+  }
+
+  public interface getProductEvaluateListResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    boolean hasMaxIndex();
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    int getMaxIndex();
+
+    /**
+     * <code>required bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多评论数据
+     * </pre>
+     */
+    boolean hasHasMore();
+    /**
+     * <code>required bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多评论数据
+     * </pre>
+     */
+    boolean getHasMore();
+
+    /**
+     * <code>required int64 totalCount = 5;</code>
+     *
+     * <pre>
+     *总评论条数
+     * </pre>
+     */
+    boolean hasTotalCount();
+    /**
+     * <code>required int64 totalCount = 5;</code>
+     *
+     * <pre>
+     *总评论条数
+     * </pre>
+     */
+    long getTotalCount();
+
+    /**
+     * <code>required int64 totalImageCount = 6;</code>
+     *
+     * <pre>
+     *有图评论总条数
+     * </pre>
+     */
+    boolean hasTotalImageCount();
+    /**
+     * <code>required int64 totalImageCount = 6;</code>
+     *
+     * <pre>
+     *有图评论总条数
+     * </pre>
+     */
+    long getTotalImageCount();
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> 
+        getProductEvaluateInfoList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo getProductEvaluateInfo(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    int getProductEvaluateInfoCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> 
+        getProductEvaluateInfoOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder getProductEvaluateInfoOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult}
+   *
+   * <pre>
+   *获取产品的评论列表
+   * </pre>
+   */
+  public static final class getProductEvaluateListResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
+      getProductEvaluateListResultOrBuilder {
+    // Use getProductEvaluateListResult.newBuilder() to construct.
+    private getProductEvaluateListResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private getProductEvaluateListResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final getProductEvaluateListResult defaultInstance;
+    public static getProductEvaluateListResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public getProductEvaluateListResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private getProductEvaluateListResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              maxIndex_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              hasMore_ = input.readBool();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              totalCount_ = input.readInt64();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              totalImageCount_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                productEvaluateInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              productEvaluateInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          productEvaluateInfo_ = java.util.Collections.unmodifiableList(productEvaluateInfo_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.class, com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<getProductEvaluateListResult> PARSER =
+        new com.google.protobuf.AbstractParser<getProductEvaluateListResult>() {
+      public getProductEvaluateListResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new getProductEvaluateListResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<getProductEvaluateListResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAXINDEX_FIELD_NUMBER = 3;
+    private int maxIndex_;
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    public boolean hasMaxIndex() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    public int getMaxIndex() {
+      return maxIndex_;
+    }
+
+    public static final int HASMORE_FIELD_NUMBER = 4;
+    private boolean hasMore_;
+    /**
+     * <code>required bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多评论数据
+     * </pre>
+     */
+    public boolean hasHasMore() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多评论数据
+     * </pre>
+     */
+    public boolean getHasMore() {
+      return hasMore_;
+    }
+
+    public static final int TOTALCOUNT_FIELD_NUMBER = 5;
+    private long totalCount_;
+    /**
+     * <code>required int64 totalCount = 5;</code>
+     *
+     * <pre>
+     *总评论条数
+     * </pre>
+     */
+    public boolean hasTotalCount() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required int64 totalCount = 5;</code>
+     *
+     * <pre>
+     *总评论条数
+     * </pre>
+     */
+    public long getTotalCount() {
+      return totalCount_;
+    }
+
+    public static final int TOTALIMAGECOUNT_FIELD_NUMBER = 6;
+    private long totalImageCount_;
+    /**
+     * <code>required int64 totalImageCount = 6;</code>
+     *
+     * <pre>
+     *有图评论总条数
+     * </pre>
+     */
+    public boolean hasTotalImageCount() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>required int64 totalImageCount = 6;</code>
+     *
+     * <pre>
+     *有图评论总条数
+     * </pre>
+     */
+    public long getTotalImageCount() {
+      return totalImageCount_;
+    }
+
+    public static final int PRODUCTEVALUATEINFO_FIELD_NUMBER = 7;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> productEvaluateInfo_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> getProductEvaluateInfoList() {
+      return productEvaluateInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> 
+        getProductEvaluateInfoOrBuilderList() {
+      return productEvaluateInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    public int getProductEvaluateInfoCount() {
+      return productEvaluateInfo_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo getProductEvaluateInfo(int index) {
+      return productEvaluateInfo_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+     *
+     * <pre>
+     *评论列表
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder getProductEvaluateInfoOrBuilder(
+        int index) {
+      return productEvaluateInfo_.get(index);
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+      maxIndex_ = 0;
+      hasMore_ = false;
+      totalCount_ = 0L;
+      totalImageCount_ = 0L;
+      productEvaluateInfo_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasHasMore()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTotalCount()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTotalImageCount()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getProductEvaluateInfoCount(); i++) {
+        if (!getProductEvaluateInfo(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, maxIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBool(4, hasMore_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt64(5, totalCount_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt64(6, totalImageCount_);
+      }
+      for (int i = 0; i < productEvaluateInfo_.size(); i++) {
+        output.writeMessage(7, productEvaluateInfo_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, maxIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, hasMore_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, totalCount_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, totalImageCount_);
+      }
+      for (int i = 0; i < productEvaluateInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, productEvaluateInfo_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult}
+     *
+     * <pre>
+     *获取产品的评论列表
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
+        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.class, com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getProductEvaluateInfoFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        hasMore_ = false;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        totalCount_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        totalImageCount_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        if (productEvaluateInfoBuilder_ == null) {
+          productEvaluateInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          productEvaluateInfoBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult build() {
+        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult result = new com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.maxIndex_ = maxIndex_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.hasMore_ = hasMore_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.totalCount_ = totalCount_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.totalImageCount_ = totalImageCount_;
+        if (productEvaluateInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            productEvaluateInfo_ = java.util.Collections.unmodifiableList(productEvaluateInfo_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.productEvaluateInfo_ = productEvaluateInfo_;
+        } else {
+          result.productEvaluateInfo_ = productEvaluateInfoBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        if (other.hasMaxIndex()) {
+          setMaxIndex(other.getMaxIndex());
+        }
+        if (other.hasHasMore()) {
+          setHasMore(other.getHasMore());
+        }
+        if (other.hasTotalCount()) {
+          setTotalCount(other.getTotalCount());
+        }
+        if (other.hasTotalImageCount()) {
+          setTotalImageCount(other.getTotalImageCount());
+        }
+        if (productEvaluateInfoBuilder_ == null) {
+          if (!other.productEvaluateInfo_.isEmpty()) {
+            if (productEvaluateInfo_.isEmpty()) {
+              productEvaluateInfo_ = other.productEvaluateInfo_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureProductEvaluateInfoIsMutable();
+              productEvaluateInfo_.addAll(other.productEvaluateInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.productEvaluateInfo_.isEmpty()) {
+            if (productEvaluateInfoBuilder_.isEmpty()) {
+              productEvaluateInfoBuilder_.dispose();
+              productEvaluateInfoBuilder_ = null;
+              productEvaluateInfo_ = other.productEvaluateInfo_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              productEvaluateInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getProductEvaluateInfoFieldBuilder() : null;
+            } else {
+              productEvaluateInfoBuilder_.addAllMessages(other.productEvaluateInfo_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        if (!hasHasMore()) {
+          
+          return false;
+        }
+        if (!hasTotalCount()) {
+          
+          return false;
+        }
+        if (!hasTotalImageCount()) {
+          
+          return false;
+        }
+        for (int i = 0; i < getProductEvaluateInfoCount(); i++) {
+          if (!getProductEvaluateInfo(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int maxIndex_ ;
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public boolean hasMaxIndex() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public int getMaxIndex() {
+        return maxIndex_;
+      }
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public Builder setMaxIndex(int value) {
+        bitField0_ |= 0x00000004;
+        maxIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public Builder clearMaxIndex() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        maxIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasMore_ ;
+      /**
+       * <code>required bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多评论数据
+       * </pre>
+       */
+      public boolean hasHasMore() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多评论数据
+       * </pre>
+       */
+      public boolean getHasMore() {
+        return hasMore_;
+      }
+      /**
+       * <code>required bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多评论数据
+       * </pre>
+       */
+      public Builder setHasMore(boolean value) {
+        bitField0_ |= 0x00000008;
+        hasMore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多评论数据
+       * </pre>
+       */
+      public Builder clearHasMore() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        hasMore_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long totalCount_ ;
+      /**
+       * <code>required int64 totalCount = 5;</code>
+       *
+       * <pre>
+       *总评论条数
+       * </pre>
+       */
+      public boolean hasTotalCount() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required int64 totalCount = 5;</code>
+       *
+       * <pre>
+       *总评论条数
+       * </pre>
+       */
+      public long getTotalCount() {
+        return totalCount_;
+      }
+      /**
+       * <code>required int64 totalCount = 5;</code>
+       *
+       * <pre>
+       *总评论条数
+       * </pre>
+       */
+      public Builder setTotalCount(long value) {
+        bitField0_ |= 0x00000010;
+        totalCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 totalCount = 5;</code>
+       *
+       * <pre>
+       *总评论条数
+       * </pre>
+       */
+      public Builder clearTotalCount() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        totalCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long totalImageCount_ ;
+      /**
+       * <code>required int64 totalImageCount = 6;</code>
+       *
+       * <pre>
+       *有图评论总条数
+       * </pre>
+       */
+      public boolean hasTotalImageCount() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required int64 totalImageCount = 6;</code>
+       *
+       * <pre>
+       *有图评论总条数
+       * </pre>
+       */
+      public long getTotalImageCount() {
+        return totalImageCount_;
+      }
+      /**
+       * <code>required int64 totalImageCount = 6;</code>
+       *
+       * <pre>
+       *有图评论总条数
+       * </pre>
+       */
+      public Builder setTotalImageCount(long value) {
+        bitField0_ |= 0x00000020;
+        totalImageCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 totalImageCount = 6;</code>
+       *
+       * <pre>
+       *有图评论总条数
+       * </pre>
+       */
+      public Builder clearTotalImageCount() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        totalImageCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> productEvaluateInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureProductEvaluateInfoIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          productEvaluateInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo>(productEvaluateInfo_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> productEvaluateInfoBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> getProductEvaluateInfoList() {
+        if (productEvaluateInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(productEvaluateInfo_);
+        } else {
+          return productEvaluateInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public int getProductEvaluateInfoCount() {
+        if (productEvaluateInfoBuilder_ == null) {
+          return productEvaluateInfo_.size();
+        } else {
+          return productEvaluateInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo getProductEvaluateInfo(int index) {
+        if (productEvaluateInfoBuilder_ == null) {
+          return productEvaluateInfo_.get(index);
+        } else {
+          return productEvaluateInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public Builder setProductEvaluateInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo value) {
+        if (productEvaluateInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.set(index, value);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public Builder setProductEvaluateInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder builderForValue) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public Builder addProductEvaluateInfo(com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo value) {
+        if (productEvaluateInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.add(value);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public Builder addProductEvaluateInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo value) {
+        if (productEvaluateInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.add(index, value);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public Builder addProductEvaluateInfo(
+          com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder builderForValue) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public Builder addProductEvaluateInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder builderForValue) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public Builder addAllProductEvaluateInfo(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo> values) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, productEvaluateInfo_);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public Builder clearProductEvaluateInfo() {
+        if (productEvaluateInfoBuilder_ == null) {
+          productEvaluateInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public Builder removeProductEvaluateInfo(int index) {
+        if (productEvaluateInfoBuilder_ == null) {
+          ensureProductEvaluateInfoIsMutable();
+          productEvaluateInfo_.remove(index);
+          onChanged();
+        } else {
+          productEvaluateInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder getProductEvaluateInfoBuilder(
+          int index) {
+        return getProductEvaluateInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder getProductEvaluateInfoOrBuilder(
+          int index) {
+        if (productEvaluateInfoBuilder_ == null) {
+          return productEvaluateInfo_.get(index);  } else {
+          return productEvaluateInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> 
+           getProductEvaluateInfoOrBuilderList() {
+        if (productEvaluateInfoBuilder_ != null) {
+          return productEvaluateInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(productEvaluateInfo_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder addProductEvaluateInfoBuilder() {
+        return getProductEvaluateInfoFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder addProductEvaluateInfoBuilder(
+          int index) {
+        return getProductEvaluateInfoFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo productEvaluateInfo = 7;</code>
+       *
+       * <pre>
+       *评论列表
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder> 
+           getProductEvaluateInfoBuilderList() {
+        return getProductEvaluateInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder> 
+          getProductEvaluateInfoFieldBuilder() {
+        if (productEvaluateInfoBuilder_ == null) {
+          productEvaluateInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder>(
+                  productEvaluateInfo_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          productEvaluateInfo_ = null;
+        }
+        return productEvaluateInfoBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
+    }
+
+    static {
+      defaultInstance = new getProductEvaluateListResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_SearchProductListRequest_descriptor;
   private static
@@ -12682,6 +19332,26 @@ public final class Product {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12697,7 +19367,7 @@ public final class Product {
       "\001(\005\022\022\n\nstartIndex\030\004 \001(\005\"\254\001\n\027SearchProduc" +
       "tListResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
       "tMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030" +
-      "\004 \001(\010\022G\n\017productLiteInfo\030\005 \003(\0132..com.qjo" +
+      "\004 \002(\010\022G\n\017productLiteInfo\030\005 \003(\0132..com.qjo" +
       "y.basjoo.core.model.pb.ProductLiteInfo\"\313" +
       "\001\n\017ProductLiteInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n" +
       "\013productType\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\024\n\014mai",
@@ -12708,7 +19378,7 @@ public final class Product {
       "d\030\001 \002(\t\"\211\001\n\023ProductDetailResult\022\022\n\nresul" +
       "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022K\n\021produc" +
       "tDetailInfo\030\003 \001(\01320.com.qjoy.basjoo.core" +
-      ".model.pb.ProductDetailInfo\"\331\003\n\021ProductD" +
+      ".model.pb.ProductDetailInfo\"\235\005\n\021ProductD" +
       "etailInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productT" +
       "ype\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\020\n\010imageUrl\030\004 \003",
       "(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowestRent\030\006 \001(\001\022\014\n\004" +
@@ -12720,15 +19390,34 @@ public final class Product {
       "oryInfo\022C\n\rshortRentInfo\030\017 \003(\0132,.com.qjo" +
       "y.basjoo.core.model.pb.ShortRentInfo\022A\n\014" +
       "longRentInfo\030\020 \003(\0132+.com.qjoy.basjoo.cor" +
-      "e.model.pb.LongRentInfo\"N\n\014CategoryInfo\022",
-      "\024\n\014categoryCode\030\001 \002(\t\022\024\n\014categoryName\030\002 " +
-      "\002(\t\022\022\n\nstockCount\030\003 \001(\003\"\\\n\rShortRentInfo" +
-      "\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\021" +
-      "\n\trentPrice\030\003 \002(\001\022\022\n\ntotalPrice\030\004 \002(\001\"s\n" +
-      "\014LongRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentP" +
-      "eriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002(\t\022\021\n\tr" +
-      "entPrice\030\004 \002(\001\022\022\n\ntotalPrice\030\005 \002(\001B\037\n\035co" +
-      "m.qjoy.basjoo.core.model.pb"
+      "e.model.pb.LongRentInfo\022B\n\tbaseParam\030\021 \003",
+      "(\0132/.com.qjoy.basjoo.core.model.pb.Produ" +
+      "ctBaseParam\022\026\n\016imageParamUrls\030\022 \003(\t\022\025\n\re" +
+      "valuateCount\030\023 \001(\003\022O\n\023productEvaluateInf" +
+      "o\030\024 \003(\01322.com.qjoy.basjoo.core.model.pb." +
+      "ProductEvaluateInfo\"N\n\014CategoryInfo\022\024\n\014c" +
+      "ategoryCode\030\001 \002(\t\022\024\n\014categoryName\030\002 \002(\t\022" +
+      "\022\n\nstockCount\030\003 \001(\003\"\\\n\rShortRentInfo\022\020\n\010" +
+      "rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\021\n\tre" +
+      "ntPrice\030\003 \002(\001\022\022\n\ntotalPrice\030\004 \002(\001\"s\n\014Lon" +
+      "gRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPerio",
+      "d\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002(\t\022\021\n\trentP" +
+      "rice\030\004 \002(\001\022\022\n\ntotalPrice\030\005 \002(\001\"D\n\020Produc" +
+      "tBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030\002 \002(" +
+      "\t\022\021\n\tshowValue\030\003 \002(\t\"\253\001\n\023ProductEvaluate" +
+      "Info\022\014\n\004time\030\001 \002(\003\022\016\n\006userId\030\002 \002(\t\022\020\n\010us" +
+      "erName\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \002(\t\022\021\n\tuse" +
+      "rLevel\030\005 \002(\t\022\030\n\020rentCategoryName\030\006 \002(\t\022\017" +
+      "\n\007content\030\007 \002(\t\022\021\n\timageUrls\030\010 \003(\t\"\\\n\035ge" +
+      "tProductEvaluateListRequest\022\021\n\tproductId" +
+      "\030\001 \002(\t\022\024\n\014evaluateType\030\002 \002(\005\022\022\n\nstartInd",
+      "ex\030\003 \001(\005\"\346\001\n\034getProductEvaluateListResul" +
+      "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
+      "\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\022\n\nt" +
+      "otalCount\030\005 \002(\003\022\027\n\017totalImageCount\030\006 \002(\003" +
+      "\022O\n\023productEvaluateInfo\030\007 \003(\01322.com.qjoy" +
+      ".basjoo.core.model.pb.ProductEvaluateInf" +
+      "oB\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12777,7 +19466,7 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MaxAvailable", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "CategoryInfo", "ShortRentInfo", "LongRentInfo", });
+        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MaxAvailable", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "CategoryInfo", "ShortRentInfo", "LongRentInfo", "BaseParam", "ImageParamUrls", "EvaluateCount", "ProductEvaluateInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_fieldAccessorTable = new
@@ -12796,6 +19485,30 @@ public final class Product {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor,
         new java.lang.String[] { "RentCode", "RentPeriod", "RentPeriodName", "RentPrice", "TotalPrice", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_descriptor,
+        new java.lang.String[] { "Code", "ShowKey", "ShowValue", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_descriptor,
+        new java.lang.String[] { "Time", "UserId", "UserName", "HeadIconUrl", "UserLevel", "RentCategoryName", "Content", "ImageUrls", });
+    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor,
+        new java.lang.String[] { "ProductId", "EvaluateType", "StartIndex", });
+    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", "MaxIndex", "HasMore", "TotalCount", "TotalImageCount", "ProductEvaluateInfo", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

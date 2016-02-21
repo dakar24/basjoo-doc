@@ -685,6 +685,7 @@
     _pledgePrice = 0;
     _transportationPrice = 0;
     _location = @"";
+    _evaluateCount = 0L;
   }
   return self;
 }
@@ -736,6 +737,18 @@
   }];
   [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:16 value:element];
+  }];
+  [self.baseParam enumerateObjectsUsingBlock:^(ProductBaseParam *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:17 value:element];
+  }];
+  [self.imageParamUrls enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:18 value:element];
+  }];
+  if (self.hasEvaluateCount) {
+    [output writeInt64:19 value:self.evaluateCount];
+  }
+  [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:20 value:element];
   }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -796,6 +809,24 @@
   }];
   [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(16, element);
+  }];
+  [self.baseParam enumerateObjectsUsingBlock:^(ProductBaseParam *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(17, element);
+  }];
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.imageParamUrls.count;
+    [self.imageParamUrls enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(2 * count);
+  }
+  if (self.hasEvaluateCount) {
+    size_ += computeInt64Size(19, self.evaluateCount);
+  }
+  [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(20, element);
   }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -860,6 +891,24 @@
   }];
   [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@ {\n", indent, @"longRentInfo"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
+  [self.baseParam enumerateObjectsUsingBlock:^(ProductBaseParam *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"baseParam"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
+  [self.imageParamUrls enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"imageParamUrls", obj];
+  }];
+  if (self.hasEvaluateCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"evaluateCount", [NSNumber numberWithLongLong:self.evaluateCount]];
+  }
+  [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"productEvaluateInfo"];
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
@@ -951,6 +1000,37 @@
   }
   [_longRentInfo addObject:value];
 }
+- (void)setBaseParamArray:(NSArray *)array {
+  _baseParam = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addBaseParam:(ProductBaseParam*)value {
+  if (_baseParam == nil) {
+    _baseParam = [[NSMutableArray alloc]init];
+  }
+  [_baseParam addObject:value];
+}
+- (void)setImageParamUrlsArray:(NSArray *)array {
+  _imageParamUrls = [[NSMutableArray alloc] initWithArray:array];
+}
+- (void)addImageParamUrls:(NSString*)value {
+  if (_imageParamUrls == nil) {
+    _imageParamUrls = [[NSMutableArray alloc]init];
+  }
+  [_imageParamUrls addObject:value];
+}
+- (void) setEvaluateCount:(SInt64) value {
+  _hasEvaluateCount = YES;
+  _evaluateCount = value;
+}
+- (void)setProductEvaluateInfoArray:(NSArray *)array {
+  _productEvaluateInfo = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addProductEvaluateInfo:(ProductEvaluateInfo*)value {
+  if (_productEvaluateInfo == nil) {
+    _productEvaluateInfo = [[NSMutableArray alloc]init];
+  }
+  [_productEvaluateInfo addObject:value];
+}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -1034,6 +1114,26 @@
         LongRentInfo* sub = [[LongRentInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addLongRentInfo:sub];
+        break;
+      }
+      case 138: {
+        ProductBaseParam* sub = [[ProductBaseParam alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addBaseParam:sub];
+        break;
+      }
+      case 146: {
+        [self addImageParamUrls:[input readString]];
+        break;
+      }
+      case 152: {
+        [self setEvaluateCount:[input readInt64]];
+        break;
+      }
+      case 162: {
+        ProductEvaluateInfo* sub = [[ProductEvaluateInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addProductEvaluateInfo:sub];
         break;
       }
     }
@@ -1394,6 +1494,595 @@
       }
       case 41: {
         [self setTotalPrice:[input readDouble]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ProductBaseParam
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _code = @"";
+    _showKey = @"";
+    _showValue = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasCode) {
+    [output writeString:1 value:self.code];
+  }
+  if (self.hasShowKey) {
+    [output writeString:2 value:self.showKey];
+  }
+  if (self.hasShowValue) {
+    [output writeString:3 value:self.showValue];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasCode) {
+    size_ += computeStringSize(1, self.code);
+  }
+  if (self.hasShowKey) {
+    size_ += computeStringSize(2, self.showKey);
+  }
+  if (self.hasShowValue) {
+    size_ += computeStringSize(3, self.showValue);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ProductBaseParam*) parseFromData:(NSData*) data {
+  ProductBaseParam* result = [[ProductBaseParam alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"code", self.code];
+  }
+  if (self.hasShowKey) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"showKey", self.showKey];
+  }
+  if (self.hasShowValue) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"showValue", self.showValue];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setCode:(NSString*) value {
+  _hasCode = YES;
+  _code = value;
+}
+- (void) setShowKey:(NSString*) value {
+  _hasShowKey = YES;
+  _showKey = value;
+}
+- (void) setShowValue:(NSString*) value {
+  _hasShowValue = YES;
+  _showValue = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setShowKey:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setShowValue:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ProductEvaluateInfo
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _time = 0L;
+    _userId = @"";
+    _userName = @"";
+    _headIconUrl = @"";
+    _userLevel = @"";
+    _rentCategoryName = @"";
+    _content = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasTime) {
+    [output writeInt64:1 value:self.time];
+  }
+  if (self.hasUserId) {
+    [output writeString:2 value:self.userId];
+  }
+  if (self.hasUserName) {
+    [output writeString:3 value:self.userName];
+  }
+  if (self.hasHeadIconUrl) {
+    [output writeString:4 value:self.headIconUrl];
+  }
+  if (self.hasUserLevel) {
+    [output writeString:5 value:self.userLevel];
+  }
+  if (self.hasRentCategoryName) {
+    [output writeString:6 value:self.rentCategoryName];
+  }
+  if (self.hasContent) {
+    [output writeString:7 value:self.content];
+  }
+  [self.imageUrls enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:8 value:element];
+  }];
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasTime) {
+    size_ += computeInt64Size(1, self.time);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(2, self.userId);
+  }
+  if (self.hasUserName) {
+    size_ += computeStringSize(3, self.userName);
+  }
+  if (self.hasHeadIconUrl) {
+    size_ += computeStringSize(4, self.headIconUrl);
+  }
+  if (self.hasUserLevel) {
+    size_ += computeStringSize(5, self.userLevel);
+  }
+  if (self.hasRentCategoryName) {
+    size_ += computeStringSize(6, self.rentCategoryName);
+  }
+  if (self.hasContent) {
+    size_ += computeStringSize(7, self.content);
+  }
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.imageUrls.count;
+    [self.imageUrls enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(1 * count);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ProductEvaluateInfo*) parseFromData:(NSData*) data {
+  ProductEvaluateInfo* result = [[ProductEvaluateInfo alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"time", [NSNumber numberWithLongLong:self.time]];
+  }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
+  if (self.hasUserName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userName", self.userName];
+  }
+  if (self.hasHeadIconUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"headIconUrl", self.headIconUrl];
+  }
+  if (self.hasUserLevel) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userLevel", self.userLevel];
+  }
+  if (self.hasRentCategoryName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCategoryName", self.rentCategoryName];
+  }
+  if (self.hasContent) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"content", self.content];
+  }
+  [self.imageUrls enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"imageUrls", obj];
+  }];
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setTime:(SInt64) value {
+  _hasTime = YES;
+  _time = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
+- (void) setUserName:(NSString*) value {
+  _hasUserName = YES;
+  _userName = value;
+}
+- (void) setHeadIconUrl:(NSString*) value {
+  _hasHeadIconUrl = YES;
+  _headIconUrl = value;
+}
+- (void) setUserLevel:(NSString*) value {
+  _hasUserLevel = YES;
+  _userLevel = value;
+}
+- (void) setRentCategoryName:(NSString*) value {
+  _hasRentCategoryName = YES;
+  _rentCategoryName = value;
+}
+- (void) setContent:(NSString*) value {
+  _hasContent = YES;
+  _content = value;
+}
+- (void)setImageUrlsArray:(NSArray *)array {
+  _imageUrls = [[NSMutableArray alloc] initWithArray:array];
+}
+- (void)addImageUrls:(NSString*)value {
+  if (_imageUrls == nil) {
+    _imageUrls = [[NSMutableArray alloc]init];
+  }
+  [_imageUrls addObject:value];
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 8: {
+        [self setTime:[input readInt64]];
+        break;
+      }
+      case 18: {
+        [self setUserId:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setUserName:[input readString]];
+        break;
+      }
+      case 34: {
+        [self setHeadIconUrl:[input readString]];
+        break;
+      }
+      case 42: {
+        [self setUserLevel:[input readString]];
+        break;
+      }
+      case 50: {
+        [self setRentCategoryName:[input readString]];
+        break;
+      }
+      case 58: {
+        [self setContent:[input readString]];
+        break;
+      }
+      case 66: {
+        [self addImageUrls:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation getProductEvaluateListRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _productId = @"";
+    _evaluateType = 0;
+    _startIndex = 0;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasProductId) {
+    [output writeString:1 value:self.productId];
+  }
+  if (self.hasEvaluateType) {
+    [output writeInt32:2 value:self.evaluateType];
+  }
+  if (self.hasStartIndex) {
+    [output writeInt32:3 value:self.startIndex];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasProductId) {
+    size_ += computeStringSize(1, self.productId);
+  }
+  if (self.hasEvaluateType) {
+    size_ += computeInt32Size(2, self.evaluateType);
+  }
+  if (self.hasStartIndex) {
+    size_ += computeInt32Size(3, self.startIndex);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (getProductEvaluateListRequest*) parseFromData:(NSData*) data {
+  getProductEvaluateListRequest* result = [[getProductEvaluateListRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasProductId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"productId", self.productId];
+  }
+  if (self.hasEvaluateType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"evaluateType", [NSNumber numberWithInteger:self.evaluateType]];
+  }
+  if (self.hasStartIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"startIndex", [NSNumber numberWithInteger:self.startIndex]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setProductId:(NSString*) value {
+  _hasProductId = YES;
+  _productId = value;
+}
+- (void) setEvaluateType:(SInt32) value {
+  _hasEvaluateType = YES;
+  _evaluateType = value;
+}
+- (void) setStartIndex:(SInt32) value {
+  _hasStartIndex = YES;
+  _startIndex = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setProductId:[input readString]];
+        break;
+      }
+      case 16: {
+        [self setEvaluateType:[input readInt32]];
+        break;
+      }
+      case 24: {
+        [self setStartIndex:[input readInt32]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation getProductEvaluateListResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+    _maxIndex = 0;
+    _hasMore = NO;
+    _totalCount = 0L;
+    _totalImageCount = 0L;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  if (self.hasMaxIndex) {
+    [output writeInt32:3 value:self.maxIndex];
+  }
+  if (self.hasHasMore) {
+    [output writeBool:4 value:self.hasMore];
+  }
+  if (self.hasTotalCount) {
+    [output writeInt64:5 value:self.totalCount];
+  }
+  if (self.hasTotalImageCount) {
+    [output writeInt64:6 value:self.totalImageCount];
+  }
+  [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:7 value:element];
+  }];
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  if (self.hasMaxIndex) {
+    size_ += computeInt32Size(3, self.maxIndex);
+  }
+  if (self.hasHasMore) {
+    size_ += computeBoolSize(4, self.hasMore);
+  }
+  if (self.hasTotalCount) {
+    size_ += computeInt64Size(5, self.totalCount);
+  }
+  if (self.hasTotalImageCount) {
+    size_ += computeInt64Size(6, self.totalImageCount);
+  }
+  [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(7, element);
+  }];
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (getProductEvaluateListResult*) parseFromData:(NSData*) data {
+  getProductEvaluateListResult* result = [[getProductEvaluateListResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  if (self.hasMaxIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"maxIndex", [NSNumber numberWithInteger:self.maxIndex]];
+  }
+  if (self.hasHasMore) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"hasMore", [NSNumber numberWithBool:self.hasMore]];
+  }
+  if (self.hasTotalCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalCount", [NSNumber numberWithLongLong:self.totalCount]];
+  }
+  if (self.hasTotalImageCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalImageCount", [NSNumber numberWithLongLong:self.totalImageCount]];
+  }
+  [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"productEvaluateInfo"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) setMaxIndex:(SInt32) value {
+  _hasMaxIndex = YES;
+  _maxIndex = value;
+}
+- (void) setHasMore:(BOOL) value {
+  _hasHasMore = YES;
+  _hasMore = value;
+}
+- (void) setTotalCount:(SInt64) value {
+  _hasTotalCount = YES;
+  _totalCount = value;
+}
+- (void) setTotalImageCount:(SInt64) value {
+  _hasTotalImageCount = YES;
+  _totalImageCount = value;
+}
+- (void)setProductEvaluateInfoArray:(NSArray *)array {
+  _productEvaluateInfo = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addProductEvaluateInfo:(ProductEvaluateInfo*)value {
+  if (_productEvaluateInfo == nil) {
+    _productEvaluateInfo = [[NSMutableArray alloc]init];
+  }
+  [_productEvaluateInfo addObject:value];
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+      case 24: {
+        [self setMaxIndex:[input readInt32]];
+        break;
+      }
+      case 32: {
+        [self setHasMore:[input readBool]];
+        break;
+      }
+      case 40: {
+        [self setTotalCount:[input readInt64]];
+        break;
+      }
+      case 48: {
+        [self setTotalImageCount:[input readInt64]];
+        break;
+      }
+      case 58: {
+        ProductEvaluateInfo* sub = [[ProductEvaluateInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addProductEvaluateInfo:sub];
         break;
       }
     }
