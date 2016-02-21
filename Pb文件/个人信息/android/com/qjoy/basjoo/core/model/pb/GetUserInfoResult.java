@@ -19,6 +19,7 @@ public final class GetUserInfoResult extends Message {
   public static final int TAG_HEADICONURL = 4;
   public static final int TAG_MOBILENO = 5;
   public static final int TAG_USERNAME = 6;
+  public static final int TAG_INVITECODE = 7;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
@@ -26,6 +27,7 @@ public final class GetUserInfoResult extends Message {
   public static final String DEFAULT_HEADICONURL = "";
   public static final String DEFAULT_MOBILENO = "";
   public static final String DEFAULT_USERNAME = "";
+  public static final String DEFAULT_INVITECODE = "";
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
@@ -45,6 +47,12 @@ public final class GetUserInfoResult extends Message {
   @ProtoField(tag = 6, type = STRING, label = REQUIRED)
   public String userName;
 
+  /**
+   * 邀请码，类似Uber
+   */
+  @ProtoField(tag = 7, type = STRING)
+  public String inviteCode;
+
   public GetUserInfoResult(GetUserInfoResult message) {
     super(message);
     if (message == null) return;
@@ -54,6 +62,7 @@ public final class GetUserInfoResult extends Message {
     this.headIconUrl = message.headIconUrl;
     this.mobileNo = message.mobileNo;
     this.userName = message.userName;
+    this.inviteCode = message.inviteCode;
   }
 
   public GetUserInfoResult() {
@@ -79,6 +88,9 @@ public final class GetUserInfoResult extends Message {
         case TAG_USERNAME:
         this.userName = (String)value;
         break;
+        case TAG_INVITECODE:
+        this.inviteCode = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -94,7 +106,8 @@ public final class GetUserInfoResult extends Message {
         && equals(userId, o.userId)
         && equals(headIconUrl, o.headIconUrl)
         && equals(mobileNo, o.mobileNo)
-        && equals(userName, o.userName);
+        && equals(userName, o.userName)
+        && equals(inviteCode, o.inviteCode);
   }
 
   @Override
@@ -107,6 +120,7 @@ public final class GetUserInfoResult extends Message {
       result = result * 37 + (headIconUrl != null ? headIconUrl.hashCode() : 0);
       result = result * 37 + (mobileNo != null ? mobileNo.hashCode() : 0);
       result = result * 37 + (userName != null ? userName.hashCode() : 0);
+      result = result * 37 + (inviteCode != null ? inviteCode.hashCode() : 0);
       hashCode = result;
     }
     return result;

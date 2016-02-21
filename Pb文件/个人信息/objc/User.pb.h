@@ -15,11 +15,13 @@
 @property (readonly) BOOL hasHeadIconUrl;
 @property (readonly) BOOL hasMobileNo;
 @property (readonly) BOOL hasUserName;
+@property (readonly) BOOL hasInviteCode;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* userId;
 @property (nonatomic,strong) NSString* headIconUrl;
 @property (nonatomic,strong) NSString* mobileNo;
 @property (nonatomic,strong) NSString* userName;
+@property (nonatomic,strong) NSString* inviteCode;
 @end
 

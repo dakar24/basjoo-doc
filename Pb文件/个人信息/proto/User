@@ -22,6 +22,9 @@ message GetUserInfoResult {
    required string                 mobileNo = 5;
    
    required string                 userName = 6; 
+   
+   //邀请码，类似Uber
+   optional string                 inviteCode=7;
     
 }
 

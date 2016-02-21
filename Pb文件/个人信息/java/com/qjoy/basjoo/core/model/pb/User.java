@@ -416,6 +416,32 @@ public final class User {
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
+
+    /**
+     * <code>optional string inviteCode = 7;</code>
+     *
+     * <pre>
+     *邀请码，类似Uber
+     * </pre>
+     */
+    boolean hasInviteCode();
+    /**
+     * <code>optional string inviteCode = 7;</code>
+     *
+     * <pre>
+     *邀请码，类似Uber
+     * </pre>
+     */
+    java.lang.String getInviteCode();
+    /**
+     * <code>optional string inviteCode = 7;</code>
+     *
+     * <pre>
+     *邀请码，类似Uber
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getInviteCodeBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetUserInfoResult}
@@ -507,6 +533,12 @@ public final class User {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
               userName_ = bs;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              inviteCode_ = bs;
               break;
             }
           }
@@ -801,6 +833,60 @@ public final class User {
       }
     }
 
+    public static final int INVITECODE_FIELD_NUMBER = 7;
+    private java.lang.Object inviteCode_;
+    /**
+     * <code>optional string inviteCode = 7;</code>
+     *
+     * <pre>
+     *邀请码，类似Uber
+     * </pre>
+     */
+    public boolean hasInviteCode() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional string inviteCode = 7;</code>
+     *
+     * <pre>
+     *邀请码，类似Uber
+     * </pre>
+     */
+    public java.lang.String getInviteCode() {
+      java.lang.Object ref = inviteCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          inviteCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string inviteCode = 7;</code>
+     *
+     * <pre>
+     *邀请码，类似Uber
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getInviteCodeBytes() {
+      java.lang.Object ref = inviteCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        inviteCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       resultCode_ = "";
       resultMsg_ = "";
@@ -808,6 +894,7 @@ public final class User {
       headIconUrl_ = "";
       mobileNo_ = "";
       userName_ = "";
+      inviteCode_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -860,6 +947,9 @@ public final class User {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeBytes(6, getUserNameBytes());
       }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getInviteCodeBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -892,6 +982,10 @@ public final class User {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, getUserNameBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getInviteCodeBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1026,6 +1120,8 @@ public final class User {
         bitField0_ = (bitField0_ & ~0x00000010);
         userName_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
+        inviteCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -1078,6 +1174,10 @@ public final class User {
           to_bitField0_ |= 0x00000020;
         }
         result.userName_ = userName_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.inviteCode_ = inviteCode_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1122,6 +1222,11 @@ public final class User {
         if (other.hasUserName()) {
           bitField0_ |= 0x00000020;
           userName_ = other.userName_;
+          onChanged();
+        }
+        if (other.hasInviteCode()) {
+          bitField0_ |= 0x00000040;
+          inviteCode_ = other.inviteCode_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1627,6 +1732,106 @@ public final class User {
         return this;
       }
 
+      private java.lang.Object inviteCode_ = "";
+      /**
+       * <code>optional string inviteCode = 7;</code>
+       *
+       * <pre>
+       *邀请码，类似Uber
+       * </pre>
+       */
+      public boolean hasInviteCode() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional string inviteCode = 7;</code>
+       *
+       * <pre>
+       *邀请码，类似Uber
+       * </pre>
+       */
+      public java.lang.String getInviteCode() {
+        java.lang.Object ref = inviteCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            inviteCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string inviteCode = 7;</code>
+       *
+       * <pre>
+       *邀请码，类似Uber
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getInviteCodeBytes() {
+        java.lang.Object ref = inviteCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          inviteCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string inviteCode = 7;</code>
+       *
+       * <pre>
+       *邀请码，类似Uber
+       * </pre>
+       */
+      public Builder setInviteCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        inviteCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string inviteCode = 7;</code>
+       *
+       * <pre>
+       *邀请码，类似Uber
+       * </pre>
+       */
+      public Builder clearInviteCode() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        inviteCode_ = getDefaultInstance().getInviteCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string inviteCode = 7;</code>
+       *
+       * <pre>
+       *邀请码，类似Uber
+       * </pre>
+       */
+      public Builder setInviteCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        inviteCode_ = value;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetUserInfoResult)
     }
 
@@ -1658,11 +1863,12 @@ public final class User {
   static {
     java.lang.String[] descriptorData = {
       "\n\004User\022\035com.qjoy.basjoo.core.model.pb\"\024\n" +
-      "\022GetUserInfoRequest\"\203\001\n\021GetUserInfoResul" +
+      "\022GetUserInfoRequest\"\227\001\n\021GetUserInfoResul" +
       "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
       "\022\016\n\006userId\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \001(\t\022\020\n" +
-      "\010mobileNo\030\005 \002(\t\022\020\n\010userName\030\006 \002(\tB\037\n\035com" +
-      ".qjoy.basjoo.core.model.pb"
+      "\010mobileNo\030\005 \002(\t\022\020\n\010userName\030\006 \002(\t\022\022\n\ninv" +
+      "iteCode\030\007 \001(\tB\037\n\035com.qjoy.basjoo.core.mo" +
+      "del.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1687,7 +1893,7 @@ public final class User {
     internal_static_com_qjoy_basjoo_core_model_pb_GetUserInfoResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetUserInfoResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMsg", "UserId", "HeadIconUrl", "MobileNo", "UserName", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "UserId", "HeadIconUrl", "MobileNo", "UserName", "InviteCode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
