@@ -1268,7 +1268,7 @@
   if ((self = [super init])) {
     _rentCode = @"";
     _rentPeriod = @"";
-    _rentPrice = 0;
+    _rentPricePerDay = 0;
     _totalPrice = 0;
   }
   return self;
@@ -1280,8 +1280,8 @@
   if (self.hasRentPeriod) {
     [output writeString:2 value:self.rentPeriod];
   }
-  if (self.hasRentPrice) {
-    [output writeDouble:3 value:self.rentPrice];
+  if (self.hasRentPricePerDay) {
+    [output writeDouble:3 value:self.rentPricePerDay];
   }
   if (self.hasTotalPrice) {
     [output writeDouble:4 value:self.totalPrice];
@@ -1298,8 +1298,8 @@
   if (self.hasRentPeriod) {
     size_ += computeStringSize(2, self.rentPeriod);
   }
-  if (self.hasRentPrice) {
-    size_ += computeDoubleSize(3, self.rentPrice);
+  if (self.hasRentPricePerDay) {
+    size_ += computeDoubleSize(3, self.rentPricePerDay);
   }
   if (self.hasTotalPrice) {
     size_ += computeDoubleSize(4, self.totalPrice);
@@ -1320,8 +1320,8 @@
   if (self.hasRentPeriod) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentPeriod", self.rentPeriod];
   }
-  if (self.hasRentPrice) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"rentPrice", [NSNumber numberWithDouble:self.rentPrice]];
+  if (self.hasRentPricePerDay) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentPricePerDay", [NSNumber numberWithDouble:self.rentPricePerDay]];
   }
   if (self.hasTotalPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"totalPrice", [NSNumber numberWithDouble:self.totalPrice]];
@@ -1337,9 +1337,9 @@
   _hasRentPeriod = YES;
   _rentPeriod = value;
 }
-- (void) setRentPrice:(Float64) value {
-  _hasRentPrice = YES;
-  _rentPrice = value;
+- (void) setRentPricePerDay:(Float64) value {
+  _hasRentPricePerDay = YES;
+  _rentPricePerDay = value;
 }
 - (void) setTotalPrice:(Float64) value {
   _hasTotalPrice = YES;
@@ -1369,7 +1369,7 @@
         break;
       }
       case 25: {
-        [self setRentPrice:[input readDouble]];
+        [self setRentPricePerDay:[input readDouble]];
         break;
       }
       case 33: {
@@ -1389,7 +1389,8 @@
     _rentCode = @"";
     _rentPeriod = @"";
     _rentPeriodName = @"";
-    _rentPrice = 0;
+    _rentPricePerDay = 0;
+    _rentPricePerMonth = 0;
     _totalPrice = 0;
   }
   return self;
@@ -1404,11 +1405,14 @@
   if (self.hasRentPeriodName) {
     [output writeString:3 value:self.rentPeriodName];
   }
-  if (self.hasRentPrice) {
-    [output writeDouble:4 value:self.rentPrice];
+  if (self.hasRentPricePerDay) {
+    [output writeDouble:4 value:self.rentPricePerDay];
+  }
+  if (self.hasRentPricePerMonth) {
+    [output writeDouble:5 value:self.rentPricePerMonth];
   }
   if (self.hasTotalPrice) {
-    [output writeDouble:5 value:self.totalPrice];
+    [output writeDouble:6 value:self.totalPrice];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1425,11 +1429,14 @@
   if (self.hasRentPeriodName) {
     size_ += computeStringSize(3, self.rentPeriodName);
   }
-  if (self.hasRentPrice) {
-    size_ += computeDoubleSize(4, self.rentPrice);
+  if (self.hasRentPricePerDay) {
+    size_ += computeDoubleSize(4, self.rentPricePerDay);
+  }
+  if (self.hasRentPricePerMonth) {
+    size_ += computeDoubleSize(5, self.rentPricePerMonth);
   }
   if (self.hasTotalPrice) {
-    size_ += computeDoubleSize(5, self.totalPrice);
+    size_ += computeDoubleSize(6, self.totalPrice);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1450,8 +1457,11 @@
   if (self.hasRentPeriodName) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentPeriodName", self.rentPeriodName];
   }
-  if (self.hasRentPrice) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"rentPrice", [NSNumber numberWithDouble:self.rentPrice]];
+  if (self.hasRentPricePerDay) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentPricePerDay", [NSNumber numberWithDouble:self.rentPricePerDay]];
+  }
+  if (self.hasRentPricePerMonth) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentPricePerMonth", [NSNumber numberWithDouble:self.rentPricePerMonth]];
   }
   if (self.hasTotalPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"totalPrice", [NSNumber numberWithDouble:self.totalPrice]];
@@ -1471,9 +1481,13 @@
   _hasRentPeriodName = YES;
   _rentPeriodName = value;
 }
-- (void) setRentPrice:(Float64) value {
-  _hasRentPrice = YES;
-  _rentPrice = value;
+- (void) setRentPricePerDay:(Float64) value {
+  _hasRentPricePerDay = YES;
+  _rentPricePerDay = value;
+}
+- (void) setRentPricePerMonth:(Float64) value {
+  _hasRentPricePerMonth = YES;
+  _rentPricePerMonth = value;
 }
 - (void) setTotalPrice:(Float64) value {
   _hasTotalPrice = YES;
@@ -1507,10 +1521,14 @@
         break;
       }
       case 33: {
-        [self setRentPrice:[input readDouble]];
+        [self setRentPricePerDay:[input readDouble]];
         break;
       }
       case 41: {
+        [self setRentPricePerMonth:[input readDouble]];
+        break;
+      }
+      case 49: {
         [self setTotalPrice:[input readDouble]];
         break;
       }

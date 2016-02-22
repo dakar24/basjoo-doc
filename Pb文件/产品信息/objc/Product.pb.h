@@ -126,11 +126,11 @@
 @interface ShortRentInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasRentCode;
 @property (readonly) BOOL hasRentPeriod;
-@property (readonly) BOOL hasRentPrice;
+@property (readonly) BOOL hasRentPricePerDay;
 @property (readonly) BOOL hasTotalPrice;
 @property (nonatomic,strong) NSString* rentCode;
 @property (nonatomic,strong) NSString* rentPeriod;
-@property (nonatomic)Float64 rentPrice;
+@property (nonatomic)Float64 rentPricePerDay;
 @property (nonatomic)Float64 totalPrice;
 @end
 
@@ -138,12 +138,14 @@
 @property (readonly) BOOL hasRentCode;
 @property (readonly) BOOL hasRentPeriod;
 @property (readonly) BOOL hasRentPeriodName;
-@property (readonly) BOOL hasRentPrice;
+@property (readonly) BOOL hasRentPricePerDay;
+@property (readonly) BOOL hasRentPricePerMonth;
 @property (readonly) BOOL hasTotalPrice;
 @property (nonatomic,strong) NSString* rentCode;
 @property (nonatomic,strong) NSString* rentPeriod;
 @property (nonatomic,strong) NSString* rentPeriodName;
-@property (nonatomic)Float64 rentPrice;
+@property (nonatomic)Float64 rentPricePerDay;
+@property (nonatomic)Float64 rentPricePerMonth;
 @property (nonatomic)Float64 totalPrice;
 @end
 

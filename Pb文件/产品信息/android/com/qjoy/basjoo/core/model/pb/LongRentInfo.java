@@ -17,13 +17,15 @@ public final class LongRentInfo extends Message {
   public static final int TAG_RENTCODE = 1;
   public static final int TAG_RENTPERIOD = 2;
   public static final int TAG_RENTPERIODNAME = 3;
-  public static final int TAG_RENTPRICE = 4;
-  public static final int TAG_TOTALPRICE = 5;
+  public static final int TAG_RENTPRICEPERDAY = 4;
+  public static final int TAG_RENTPRICEPERMONTH = 5;
+  public static final int TAG_TOTALPRICE = 6;
 
   public static final String DEFAULT_RENTCODE = "";
   public static final String DEFAULT_RENTPERIOD = "";
   public static final String DEFAULT_RENTPERIODNAME = "";
-  public static final Double DEFAULT_RENTPRICE = 0D;
+  public static final Double DEFAULT_RENTPRICEPERDAY = 0D;
+  public static final Double DEFAULT_RENTPRICEPERMONTH = 0D;
   public static final Double DEFAULT_TOTALPRICE = 0D;
 
   /**
@@ -48,12 +50,18 @@ public final class LongRentInfo extends Message {
    * 折算后的单天价，单位 元/天
    */
   @ProtoField(tag = 4, type = DOUBLE, label = REQUIRED)
-  public Double rentPrice;
+  public Double rentPricePerDay;
+
+  /**
+   * 折算后的单月租金价，单位 元/月
+   */
+  @ProtoField(tag = 5, type = DOUBLE, label = REQUIRED)
+  public Double rentPricePerMonth;
 
   /**
    * 该周期内总价
    */
-  @ProtoField(tag = 5, type = DOUBLE, label = REQUIRED)
+  @ProtoField(tag = 6, type = DOUBLE, label = REQUIRED)
   public Double totalPrice;
 
   public LongRentInfo(LongRentInfo message) {
@@ -62,7 +70,8 @@ public final class LongRentInfo extends Message {
     this.rentCode = message.rentCode;
     this.rentPeriod = message.rentPeriod;
     this.rentPeriodName = message.rentPeriodName;
-    this.rentPrice = message.rentPrice;
+    this.rentPricePerDay = message.rentPricePerDay;
+    this.rentPricePerMonth = message.rentPricePerMonth;
     this.totalPrice = message.totalPrice;
   }
 
@@ -80,8 +89,11 @@ public final class LongRentInfo extends Message {
         case TAG_RENTPERIODNAME:
         this.rentPeriodName = (String)value;
         break;
-        case TAG_RENTPRICE:
-        this.rentPrice = (Double)value;
+        case TAG_RENTPRICEPERDAY:
+        this.rentPricePerDay = (Double)value;
+        break;
+        case TAG_RENTPRICEPERMONTH:
+        this.rentPricePerMonth = (Double)value;
         break;
         case TAG_TOTALPRICE:
         this.totalPrice = (Double)value;
@@ -99,7 +111,8 @@ public final class LongRentInfo extends Message {
     return equals(rentCode, o.rentCode)
         && equals(rentPeriod, o.rentPeriod)
         && equals(rentPeriodName, o.rentPeriodName)
-        && equals(rentPrice, o.rentPrice)
+        && equals(rentPricePerDay, o.rentPricePerDay)
+        && equals(rentPricePerMonth, o.rentPricePerMonth)
         && equals(totalPrice, o.totalPrice);
   }
 
@@ -110,7 +123,8 @@ public final class LongRentInfo extends Message {
       result = rentCode != null ? rentCode.hashCode() : 0;
       result = result * 37 + (rentPeriod != null ? rentPeriod.hashCode() : 0);
       result = result * 37 + (rentPeriodName != null ? rentPeriodName.hashCode() : 0);
-      result = result * 37 + (rentPrice != null ? rentPrice.hashCode() : 0);
+      result = result * 37 + (rentPricePerDay != null ? rentPricePerDay.hashCode() : 0);
+      result = result * 37 + (rentPricePerMonth != null ? rentPricePerMonth.hashCode() : 0);
       result = result * 37 + (totalPrice != null ? totalPrice.hashCode() : 0);
       hashCode = result;
     }

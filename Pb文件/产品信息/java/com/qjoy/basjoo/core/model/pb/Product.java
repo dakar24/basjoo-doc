@@ -12045,21 +12045,21 @@ public final class Product {
         getRentPeriodBytes();
 
     /**
-     * <code>required double rentPrice = 3;</code>
+     * <code>required double rentPricePerDay = 3;</code>
      *
      * <pre>
      *折算后的单天价，单位 元/天
      * </pre>
      */
-    boolean hasRentPrice();
+    boolean hasRentPricePerDay();
     /**
-     * <code>required double rentPrice = 3;</code>
+     * <code>required double rentPricePerDay = 3;</code>
      *
      * <pre>
      *折算后的单天价，单位 元/天
      * </pre>
      */
-    double getRentPrice();
+    double getRentPricePerDay();
 
     /**
      * <code>required double totalPrice = 4;</code>
@@ -12148,7 +12148,7 @@ public final class Product {
             }
             case 25: {
               bitField0_ |= 0x00000004;
-              rentPrice_ = input.readDouble();
+              rentPricePerDay_ = input.readDouble();
               break;
             }
             case 33: {
@@ -12304,27 +12304,27 @@ public final class Product {
       }
     }
 
-    public static final int RENTPRICE_FIELD_NUMBER = 3;
-    private double rentPrice_;
+    public static final int RENTPRICEPERDAY_FIELD_NUMBER = 3;
+    private double rentPricePerDay_;
     /**
-     * <code>required double rentPrice = 3;</code>
+     * <code>required double rentPricePerDay = 3;</code>
      *
      * <pre>
      *折算后的单天价，单位 元/天
      * </pre>
      */
-    public boolean hasRentPrice() {
+    public boolean hasRentPricePerDay() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required double rentPrice = 3;</code>
+     * <code>required double rentPricePerDay = 3;</code>
      *
      * <pre>
      *折算后的单天价，单位 元/天
      * </pre>
      */
-    public double getRentPrice() {
-      return rentPrice_;
+    public double getRentPricePerDay() {
+      return rentPricePerDay_;
     }
 
     public static final int TOTALPRICE_FIELD_NUMBER = 4;
@@ -12353,7 +12353,7 @@ public final class Product {
     private void initFields() {
       rentCode_ = "";
       rentPeriod_ = "";
-      rentPrice_ = 0D;
+      rentPricePerDay_ = 0D;
       totalPrice_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
@@ -12370,7 +12370,7 @@ public final class Product {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasRentPrice()) {
+      if (!hasRentPricePerDay()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -12392,7 +12392,7 @@ public final class Product {
         output.writeBytes(2, getRentPeriodBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeDouble(3, rentPrice_);
+        output.writeDouble(3, rentPricePerDay_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeDouble(4, totalPrice_);
@@ -12416,7 +12416,7 @@ public final class Product {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, rentPrice_);
+          .computeDoubleSize(3, rentPricePerDay_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
@@ -12547,7 +12547,7 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000001);
         rentPeriod_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        rentPrice_ = 0D;
+        rentPricePerDay_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000004);
         totalPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -12590,7 +12590,7 @@ public final class Product {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.rentPrice_ = rentPrice_;
+        result.rentPricePerDay_ = rentPricePerDay_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
@@ -12621,8 +12621,8 @@ public final class Product {
           rentPeriod_ = other.rentPeriod_;
           onChanged();
         }
-        if (other.hasRentPrice()) {
-          setRentPrice(other.getRentPrice());
+        if (other.hasRentPricePerDay()) {
+          setRentPricePerDay(other.getRentPricePerDay());
         }
         if (other.hasTotalPrice()) {
           setTotalPrice(other.getTotalPrice());
@@ -12640,7 +12640,7 @@ public final class Product {
           
           return false;
         }
-        if (!hasRentPrice()) {
+        if (!hasRentPricePerDay()) {
           
           return false;
         }
@@ -12870,50 +12870,50 @@ public final class Product {
         return this;
       }
 
-      private double rentPrice_ ;
+      private double rentPricePerDay_ ;
       /**
-       * <code>required double rentPrice = 3;</code>
+       * <code>required double rentPricePerDay = 3;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
-      public boolean hasRentPrice() {
+      public boolean hasRentPricePerDay() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required double rentPrice = 3;</code>
+       * <code>required double rentPricePerDay = 3;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
-      public double getRentPrice() {
-        return rentPrice_;
+      public double getRentPricePerDay() {
+        return rentPricePerDay_;
       }
       /**
-       * <code>required double rentPrice = 3;</code>
+       * <code>required double rentPricePerDay = 3;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
-      public Builder setRentPrice(double value) {
+      public Builder setRentPricePerDay(double value) {
         bitField0_ |= 0x00000004;
-        rentPrice_ = value;
+        rentPricePerDay_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double rentPrice = 3;</code>
+       * <code>required double rentPricePerDay = 3;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
-      public Builder clearRentPrice() {
+      public Builder clearRentPricePerDay() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        rentPrice_ = 0D;
+        rentPricePerDay_ = 0D;
         onChanged();
         return this;
       }
@@ -13060,24 +13060,41 @@ public final class Product {
         getRentPeriodNameBytes();
 
     /**
-     * <code>required double rentPrice = 4;</code>
+     * <code>required double rentPricePerDay = 4;</code>
      *
      * <pre>
      *折算后的单天价，单位 元/天
      * </pre>
      */
-    boolean hasRentPrice();
+    boolean hasRentPricePerDay();
     /**
-     * <code>required double rentPrice = 4;</code>
+     * <code>required double rentPricePerDay = 4;</code>
      *
      * <pre>
      *折算后的单天价，单位 元/天
      * </pre>
      */
-    double getRentPrice();
+    double getRentPricePerDay();
 
     /**
-     * <code>required double totalPrice = 5;</code>
+     * <code>required double rentPricePerMonth = 5;</code>
+     *
+     * <pre>
+     *折算后的单月租金价，单位 元/月
+     * </pre>
+     */
+    boolean hasRentPricePerMonth();
+    /**
+     * <code>required double rentPricePerMonth = 5;</code>
+     *
+     * <pre>
+     *折算后的单月租金价，单位 元/月
+     * </pre>
+     */
+    double getRentPricePerMonth();
+
+    /**
+     * <code>required double totalPrice = 6;</code>
      *
      * <pre>
      *该周期内总价
@@ -13085,7 +13102,7 @@ public final class Product {
      */
     boolean hasTotalPrice();
     /**
-     * <code>required double totalPrice = 5;</code>
+     * <code>required double totalPrice = 6;</code>
      *
      * <pre>
      *该周期内总价
@@ -13169,11 +13186,16 @@ public final class Product {
             }
             case 33: {
               bitField0_ |= 0x00000008;
-              rentPrice_ = input.readDouble();
+              rentPricePerDay_ = input.readDouble();
               break;
             }
             case 41: {
               bitField0_ |= 0x00000010;
+              rentPricePerMonth_ = input.readDouble();
+              break;
+            }
+            case 49: {
+              bitField0_ |= 0x00000020;
               totalPrice_ = input.readDouble();
               break;
             }
@@ -13379,43 +13401,66 @@ public final class Product {
       }
     }
 
-    public static final int RENTPRICE_FIELD_NUMBER = 4;
-    private double rentPrice_;
+    public static final int RENTPRICEPERDAY_FIELD_NUMBER = 4;
+    private double rentPricePerDay_;
     /**
-     * <code>required double rentPrice = 4;</code>
+     * <code>required double rentPricePerDay = 4;</code>
      *
      * <pre>
      *折算后的单天价，单位 元/天
      * </pre>
      */
-    public boolean hasRentPrice() {
+    public boolean hasRentPricePerDay() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required double rentPrice = 4;</code>
+     * <code>required double rentPricePerDay = 4;</code>
      *
      * <pre>
      *折算后的单天价，单位 元/天
      * </pre>
      */
-    public double getRentPrice() {
-      return rentPrice_;
+    public double getRentPricePerDay() {
+      return rentPricePerDay_;
     }
 
-    public static final int TOTALPRICE_FIELD_NUMBER = 5;
+    public static final int RENTPRICEPERMONTH_FIELD_NUMBER = 5;
+    private double rentPricePerMonth_;
+    /**
+     * <code>required double rentPricePerMonth = 5;</code>
+     *
+     * <pre>
+     *折算后的单月租金价，单位 元/月
+     * </pre>
+     */
+    public boolean hasRentPricePerMonth() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required double rentPricePerMonth = 5;</code>
+     *
+     * <pre>
+     *折算后的单月租金价，单位 元/月
+     * </pre>
+     */
+    public double getRentPricePerMonth() {
+      return rentPricePerMonth_;
+    }
+
+    public static final int TOTALPRICE_FIELD_NUMBER = 6;
     private double totalPrice_;
     /**
-     * <code>required double totalPrice = 5;</code>
+     * <code>required double totalPrice = 6;</code>
      *
      * <pre>
      *该周期内总价
      * </pre>
      */
     public boolean hasTotalPrice() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required double totalPrice = 5;</code>
+     * <code>required double totalPrice = 6;</code>
      *
      * <pre>
      *该周期内总价
@@ -13429,7 +13474,8 @@ public final class Product {
       rentCode_ = "";
       rentPeriod_ = "";
       rentPeriodName_ = "";
-      rentPrice_ = 0D;
+      rentPricePerDay_ = 0D;
+      rentPricePerMonth_ = 0D;
       totalPrice_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
@@ -13450,7 +13496,11 @@ public final class Product {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasRentPrice()) {
+      if (!hasRentPricePerDay()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRentPricePerMonth()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -13475,10 +13525,13 @@ public final class Product {
         output.writeBytes(3, getRentPeriodNameBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeDouble(4, rentPrice_);
+        output.writeDouble(4, rentPricePerDay_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeDouble(5, totalPrice_);
+        output.writeDouble(5, rentPricePerMonth_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeDouble(6, totalPrice_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -13503,11 +13556,15 @@ public final class Product {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, rentPrice_);
+          .computeDoubleSize(4, rentPricePerDay_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, totalPrice_);
+          .computeDoubleSize(5, rentPricePerMonth_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, totalPrice_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -13636,10 +13693,12 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000002);
         rentPeriodName_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        rentPrice_ = 0D;
+        rentPricePerDay_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000008);
-        totalPrice_ = 0D;
+        rentPricePerMonth_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000010);
+        totalPrice_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -13683,9 +13742,13 @@ public final class Product {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.rentPrice_ = rentPrice_;
+        result.rentPricePerDay_ = rentPricePerDay_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
+        }
+        result.rentPricePerMonth_ = rentPricePerMonth_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
         }
         result.totalPrice_ = totalPrice_;
         result.bitField0_ = to_bitField0_;
@@ -13719,8 +13782,11 @@ public final class Product {
           rentPeriodName_ = other.rentPeriodName_;
           onChanged();
         }
-        if (other.hasRentPrice()) {
-          setRentPrice(other.getRentPrice());
+        if (other.hasRentPricePerDay()) {
+          setRentPricePerDay(other.getRentPricePerDay());
+        }
+        if (other.hasRentPricePerMonth()) {
+          setRentPricePerMonth(other.getRentPricePerMonth());
         }
         if (other.hasTotalPrice()) {
           setTotalPrice(other.getTotalPrice());
@@ -13742,7 +13808,11 @@ public final class Product {
           
           return false;
         }
-        if (!hasRentPrice()) {
+        if (!hasRentPricePerDay()) {
+          
+          return false;
+        }
+        if (!hasRentPricePerMonth()) {
           
           return false;
         }
@@ -14072,67 +14142,115 @@ public final class Product {
         return this;
       }
 
-      private double rentPrice_ ;
+      private double rentPricePerDay_ ;
       /**
-       * <code>required double rentPrice = 4;</code>
+       * <code>required double rentPricePerDay = 4;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
-      public boolean hasRentPrice() {
+      public boolean hasRentPricePerDay() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required double rentPrice = 4;</code>
+       * <code>required double rentPricePerDay = 4;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
-      public double getRentPrice() {
-        return rentPrice_;
+      public double getRentPricePerDay() {
+        return rentPricePerDay_;
       }
       /**
-       * <code>required double rentPrice = 4;</code>
+       * <code>required double rentPricePerDay = 4;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
-      public Builder setRentPrice(double value) {
+      public Builder setRentPricePerDay(double value) {
         bitField0_ |= 0x00000008;
-        rentPrice_ = value;
+        rentPricePerDay_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double rentPrice = 4;</code>
+       * <code>required double rentPricePerDay = 4;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
-      public Builder clearRentPrice() {
+      public Builder clearRentPricePerDay() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        rentPrice_ = 0D;
+        rentPricePerDay_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double rentPricePerMonth_ ;
+      /**
+       * <code>required double rentPricePerMonth = 5;</code>
+       *
+       * <pre>
+       *折算后的单月租金价，单位 元/月
+       * </pre>
+       */
+      public boolean hasRentPricePerMonth() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required double rentPricePerMonth = 5;</code>
+       *
+       * <pre>
+       *折算后的单月租金价，单位 元/月
+       * </pre>
+       */
+      public double getRentPricePerMonth() {
+        return rentPricePerMonth_;
+      }
+      /**
+       * <code>required double rentPricePerMonth = 5;</code>
+       *
+       * <pre>
+       *折算后的单月租金价，单位 元/月
+       * </pre>
+       */
+      public Builder setRentPricePerMonth(double value) {
+        bitField0_ |= 0x00000010;
+        rentPricePerMonth_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required double rentPricePerMonth = 5;</code>
+       *
+       * <pre>
+       *折算后的单月租金价，单位 元/月
+       * </pre>
+       */
+      public Builder clearRentPricePerMonth() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rentPricePerMonth_ = 0D;
         onChanged();
         return this;
       }
 
       private double totalPrice_ ;
       /**
-       * <code>required double totalPrice = 5;</code>
+       * <code>required double totalPrice = 6;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
       public boolean hasTotalPrice() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required double totalPrice = 5;</code>
+       * <code>required double totalPrice = 6;</code>
        *
        * <pre>
        *该周期内总价
@@ -14142,27 +14260,27 @@ public final class Product {
         return totalPrice_;
       }
       /**
-       * <code>required double totalPrice = 5;</code>
+       * <code>required double totalPrice = 6;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
       public Builder setTotalPrice(double value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         totalPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double totalPrice = 5;</code>
+       * <code>required double totalPrice = 6;</code>
        *
        * <pre>
        *该周期内总价
        * </pre>
        */
       public Builder clearTotalPrice() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         totalPrice_ = 0D;
         onChanged();
         return this;
@@ -19603,19 +19721,20 @@ public final class Product {
       "asjoo.core.model.pb.ProductEvaluateInfo\"" +
       "N\n\014CategoryInfo\022\024\n\014categoryCode\030\001 \002(\t\022\024\n" +
       "\014categoryName\030\002 \002(\t\022\022\n\nstockCount\030\003 \001(\003\"" +
-      "\\\n\rShortRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nre" +
-      "ntPeriod\030\002 \002(\t\022\021\n\trentPrice\030\003 \002(\001\022\022\n\ntot" +
-      "alPrice\030\004 \002(\001\"s\n\014LongRentInfo\022\020\n\010rentCod",
-      "e\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPerio" +
-      "dName\030\003 \002(\t\022\021\n\trentPrice\030\004 \002(\001\022\022\n\ntotalP" +
-      "rice\030\005 \002(\001\"D\n\020ProductBaseParam\022\014\n\004code\030\001" +
+      "b\n\rShortRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nre" +
+      "ntPeriod\030\002 \002(\t\022\027\n\017rentPricePerDay\030\003 \002(\001\022" +
+      "\022\n\ntotalPrice\030\004 \002(\001\"\224\001\n\014LongRentInfo\022\020\n\010",
+      "rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\026\n\016re" +
+      "ntPeriodName\030\003 \002(\t\022\027\n\017rentPricePerDay\030\004 " +
+      "\002(\001\022\031\n\021rentPricePerMonth\030\005 \002(\001\022\022\n\ntotalP" +
+      "rice\030\006 \002(\001\"D\n\020ProductBaseParam\022\014\n\004code\030\001" +
       " \002(\t\022\017\n\007showKey\030\002 \002(\t\022\021\n\tshowValue\030\003 \002(\t" +
       "\"\253\001\n\023ProductEvaluateInfo\022\014\n\004time\030\001 \002(\003\022\016" +
       "\n\006userId\030\002 \002(\t\022\020\n\010userName\030\003 \002(\t\022\023\n\013head" +
       "IconUrl\030\004 \002(\t\022\021\n\tuserLevel\030\005 \002(\t\022\030\n\020rent" +
       "CategoryName\030\006 \002(\t\022\017\n\007content\030\007 \002(\t\022\021\n\ti" +
-      "mageUrls\030\010 \003(\t\"\\\n\035getProductEvaluateList" +
-      "Request\022\021\n\tproductId\030\001 \002(\t\022\024\n\014evaluateTy",
+      "mageUrls\030\010 \003(\t\"\\\n\035getProductEvaluateList",
+      "Request\022\021\n\tproductId\030\001 \002(\t\022\024\n\014evaluateTy" +
       "pe\030\002 \002(\005\022\022\n\nstartIndex\030\003 \001(\005\"\346\001\n\034getProd" +
       "uctEvaluateListResult\022\022\n\nresultCode\030\001 \002(" +
       "\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017" +
@@ -19684,13 +19803,13 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor,
-        new java.lang.String[] { "RentCode", "RentPeriod", "RentPrice", "TotalPrice", });
+        new java.lang.String[] { "RentCode", "RentPeriod", "RentPricePerDay", "TotalPrice", });
     internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_LongRentInfo_descriptor,
-        new java.lang.String[] { "RentCode", "RentPeriod", "RentPeriodName", "RentPrice", "TotalPrice", });
+        new java.lang.String[] { "RentCode", "RentPeriod", "RentPeriodName", "RentPricePerDay", "RentPricePerMonth", "TotalPrice", });
     internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_com_qjoy_basjoo_core_model_pb_ProductBaseParam_fieldAccessorTable = new

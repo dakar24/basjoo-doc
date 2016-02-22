@@ -188,7 +188,7 @@ message ShortRentInfo {
  required string                 rentPeriod = 2; 
  
  //折算后的单天价，单位 元/天
- required double                 rentPrice = 3; 
+ required double                 rentPricePerDay = 3; 
  
  //该周期内总价
  required double                 totalPrice = 4; 
@@ -208,10 +208,13 @@ message LongRentInfo {
  required string                 rentPeriodName = 3; 
  
  //折算后的单天价，单位 元/天
- required double                 rentPrice = 4; 
+ required double                 rentPricePerDay = 4; 
+ 
+ //折算后的单月租金价，单位 元/月
+ required double                 rentPricePerMonth = 5;
  
  //该周期内总价
- required double                 totalPrice = 5; 
+ required double                 totalPrice = 6; 
 
 }
 

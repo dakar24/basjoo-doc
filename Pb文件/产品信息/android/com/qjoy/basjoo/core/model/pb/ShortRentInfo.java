@@ -16,12 +16,12 @@ public final class ShortRentInfo extends Message {
 
   public static final int TAG_RENTCODE = 1;
   public static final int TAG_RENTPERIOD = 2;
-  public static final int TAG_RENTPRICE = 3;
+  public static final int TAG_RENTPRICEPERDAY = 3;
   public static final int TAG_TOTALPRICE = 4;
 
   public static final String DEFAULT_RENTCODE = "";
   public static final String DEFAULT_RENTPERIOD = "";
-  public static final Double DEFAULT_RENTPRICE = 0D;
+  public static final Double DEFAULT_RENTPRICEPERDAY = 0D;
   public static final Double DEFAULT_TOTALPRICE = 0D;
 
   /**
@@ -40,7 +40,7 @@ public final class ShortRentInfo extends Message {
    * 折算后的单天价，单位 元/天
    */
   @ProtoField(tag = 3, type = DOUBLE, label = REQUIRED)
-  public Double rentPrice;
+  public Double rentPricePerDay;
 
   /**
    * 该周期内总价
@@ -53,7 +53,7 @@ public final class ShortRentInfo extends Message {
     if (message == null) return;
     this.rentCode = message.rentCode;
     this.rentPeriod = message.rentPeriod;
-    this.rentPrice = message.rentPrice;
+    this.rentPricePerDay = message.rentPricePerDay;
     this.totalPrice = message.totalPrice;
   }
 
@@ -68,8 +68,8 @@ public final class ShortRentInfo extends Message {
         case TAG_RENTPERIOD:
         this.rentPeriod = (String)value;
         break;
-        case TAG_RENTPRICE:
-        this.rentPrice = (Double)value;
+        case TAG_RENTPRICEPERDAY:
+        this.rentPricePerDay = (Double)value;
         break;
         case TAG_TOTALPRICE:
         this.totalPrice = (Double)value;
@@ -86,7 +86,7 @@ public final class ShortRentInfo extends Message {
     ShortRentInfo o = (ShortRentInfo) other;
     return equals(rentCode, o.rentCode)
         && equals(rentPeriod, o.rentPeriod)
-        && equals(rentPrice, o.rentPrice)
+        && equals(rentPricePerDay, o.rentPricePerDay)
         && equals(totalPrice, o.totalPrice);
   }
 
@@ -96,7 +96,7 @@ public final class ShortRentInfo extends Message {
     if (result == 0) {
       result = rentCode != null ? rentCode.hashCode() : 0;
       result = result * 37 + (rentPeriod != null ? rentPeriod.hashCode() : 0);
-      result = result * 37 + (rentPrice != null ? rentPrice.hashCode() : 0);
+      result = result * 37 + (rentPricePerDay != null ? rentPricePerDay.hashCode() : 0);
       result = result * 37 + (totalPrice != null ? totalPrice.hashCode() : 0);
       hashCode = result;
     }
