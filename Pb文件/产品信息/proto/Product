@@ -111,50 +111,53 @@ message ProductDetailInfo {
    //描述
    required string                 desc = 5; 
    
+   //适合年龄段
+   optional string                 ageBracket = 6;
+   
    //最低租金
-   optional double                 lowestRent = 6; 
+   optional double                 lowestRent = 7; 
 
    //最低租金 单位 1：天。2：月
-   optional int32                  unit = 7; 
+   optional int32                  unit = 8; 
    
    //已租件数
-   optional int64                  rentCount = 8; 
+   optional int64                  rentCount = 9; 
    
    //最大可租数
-   optional int64                  maxAvailable = 9; 
+   optional int64                  maxAvailable = 10; 
    
    //市场价
-   optional double                 marketPrice = 10; 
+   optional double                 marketPrice = 11; 
    
    //押金
-   optional double                 pledgePrice = 11; 
+   optional double                 pledgePrice = 12; 
    
    //运费
-   optional double                 transportationPrice = 12; 
+   optional double                 transportationPrice = 13; 
    
    //所在地
-   optional string                 location = 13; 
+   optional string                 location = 14; 
    
    //分类信息
-   repeated CategoryInfo           categoryInfo = 14;   
+   repeated CategoryInfo           categoryInfo = 15;   
 
    //短租信息
-   repeated ShortRentInfo          shortRentInfo = 15;
+   repeated ShortRentInfo          shortRentInfo = 16;
    
    //长租信息
-   repeated LongRentInfo           longRentInfo = 16;
+   repeated LongRentInfo           longRentInfo = 17;
    
    //产品基本参数
-   repeated ProductBaseParam       baseParam = 17;
+   repeated ProductBaseParam       baseParam = 18;
    
    //图文参数地址（多图文）
-   repeated string                 imageParamUrls=18; 
+   repeated string                 imageParamUrls=19; 
    
    //评价总数
-   optional int64                  evaluateCount=19;
+   optional int64                  evaluateCount=20;
    
    //前N个评价信息
-   repeated ProductEvaluateInfo    productEvaluateInfo=20;
+   repeated ProductEvaluateInfo    productEvaluateInfo=21;
    
 
     

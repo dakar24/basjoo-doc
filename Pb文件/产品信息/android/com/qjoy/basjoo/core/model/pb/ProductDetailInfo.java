@@ -24,27 +24,29 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_BRAND = 3;
   public static final int TAG_IMAGEURL = 4;
   public static final int TAG_DESC = 5;
-  public static final int TAG_LOWESTRENT = 6;
-  public static final int TAG_UNIT = 7;
-  public static final int TAG_RENTCOUNT = 8;
-  public static final int TAG_MAXAVAILABLE = 9;
-  public static final int TAG_MARKETPRICE = 10;
-  public static final int TAG_PLEDGEPRICE = 11;
-  public static final int TAG_TRANSPORTATIONPRICE = 12;
-  public static final int TAG_LOCATION = 13;
-  public static final int TAG_CATEGORYINFO = 14;
-  public static final int TAG_SHORTRENTINFO = 15;
-  public static final int TAG_LONGRENTINFO = 16;
-  public static final int TAG_BASEPARAM = 17;
-  public static final int TAG_IMAGEPARAMURLS = 18;
-  public static final int TAG_EVALUATECOUNT = 19;
-  public static final int TAG_PRODUCTEVALUATEINFO = 20;
+  public static final int TAG_AGEBRACKET = 6;
+  public static final int TAG_LOWESTRENT = 7;
+  public static final int TAG_UNIT = 8;
+  public static final int TAG_RENTCOUNT = 9;
+  public static final int TAG_MAXAVAILABLE = 10;
+  public static final int TAG_MARKETPRICE = 11;
+  public static final int TAG_PLEDGEPRICE = 12;
+  public static final int TAG_TRANSPORTATIONPRICE = 13;
+  public static final int TAG_LOCATION = 14;
+  public static final int TAG_CATEGORYINFO = 15;
+  public static final int TAG_SHORTRENTINFO = 16;
+  public static final int TAG_LONGRENTINFO = 17;
+  public static final int TAG_BASEPARAM = 18;
+  public static final int TAG_IMAGEPARAMURLS = 19;
+  public static final int TAG_EVALUATECOUNT = 20;
+  public static final int TAG_PRODUCTEVALUATEINFO = 21;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
   public static final String DEFAULT_BRAND = "";
   public static final List<String> DEFAULT_IMAGEURL = Collections.emptyList();
   public static final String DEFAULT_DESC = "";
+  public static final String DEFAULT_AGEBRACKET = "";
   public static final Double DEFAULT_LOWESTRENT = 0D;
   public static final Integer DEFAULT_UNIT = 0;
   public static final Long DEFAULT_RENTCOUNT = 0L;
@@ -92,93 +94,99 @@ public final class ProductDetailInfo extends Message {
   public String desc;
 
   /**
+   * 适合年龄段
+   */
+  @ProtoField(tag = 6, type = STRING)
+  public String ageBracket;
+
+  /**
    * 最低租金
    */
-  @ProtoField(tag = 6, type = DOUBLE)
+  @ProtoField(tag = 7, type = DOUBLE)
   public Double lowestRent;
 
   /**
    * 最低租金 单位 1：天。2：月
    */
-  @ProtoField(tag = 7, type = INT32)
+  @ProtoField(tag = 8, type = INT32)
   public Integer unit;
 
   /**
    * 已租件数
    */
-  @ProtoField(tag = 8, type = INT64)
+  @ProtoField(tag = 9, type = INT64)
   public Long rentCount;
 
   /**
    * 最大可租数
    */
-  @ProtoField(tag = 9, type = INT64)
+  @ProtoField(tag = 10, type = INT64)
   public Long maxAvailable;
 
   /**
    * 市场价
    */
-  @ProtoField(tag = 10, type = DOUBLE)
+  @ProtoField(tag = 11, type = DOUBLE)
   public Double marketPrice;
 
   /**
    * 押金
    */
-  @ProtoField(tag = 11, type = DOUBLE)
+  @ProtoField(tag = 12, type = DOUBLE)
   public Double pledgePrice;
 
   /**
    * 运费
    */
-  @ProtoField(tag = 12, type = DOUBLE)
+  @ProtoField(tag = 13, type = DOUBLE)
   public Double transportationPrice;
 
   /**
    * 所在地
    */
-  @ProtoField(tag = 13, type = STRING)
+  @ProtoField(tag = 14, type = STRING)
   public String location;
 
   /**
    * 分类信息
    */
-  @ProtoField(tag = 14, label = REPEATED)
+  @ProtoField(tag = 15, label = REPEATED)
   public List<CategoryInfo> categoryInfo;
 
   /**
    * 短租信息
    */
-  @ProtoField(tag = 15, label = REPEATED)
+  @ProtoField(tag = 16, label = REPEATED)
   public List<ShortRentInfo> shortRentInfo;
 
   /**
    * 长租信息
    */
-  @ProtoField(tag = 16, label = REPEATED)
+  @ProtoField(tag = 17, label = REPEATED)
   public List<LongRentInfo> longRentInfo;
 
   /**
    * 产品基本参数
    */
-  @ProtoField(tag = 17, label = REPEATED)
+  @ProtoField(tag = 18, label = REPEATED)
   public List<ProductBaseParam> baseParam;
 
   /**
    * 图文参数地址（多图文）
    */
-  @ProtoField(tag = 18, type = STRING, label = REPEATED)
+  @ProtoField(tag = 19, type = STRING, label = REPEATED)
   public List<String> imageParamUrls;
 
   /**
    * 评价总数
    */
-  @ProtoField(tag = 19, type = INT64)
+  @ProtoField(tag = 20, type = INT64)
   public Long evaluateCount;
 
   /**
    * 前N个评价信息
    */
-  @ProtoField(tag = 20, label = REPEATED)
+  @ProtoField(tag = 21, label = REPEATED)
   public List<ProductEvaluateInfo> productEvaluateInfo;
 
   public ProductDetailInfo(ProductDetailInfo message) {
@@ -189,6 +197,7 @@ public final class ProductDetailInfo extends Message {
     this.brand = message.brand;
     this.imageUrl = copyOf(message.imageUrl);
     this.desc = message.desc;
+    this.ageBracket = message.ageBracket;
     this.lowestRent = message.lowestRent;
     this.unit = message.unit;
     this.rentCount = message.rentCount;
@@ -225,6 +234,9 @@ public final class ProductDetailInfo extends Message {
         break;
         case TAG_DESC:
         this.desc = (String)value;
+        break;
+        case TAG_AGEBRACKET:
+        this.ageBracket = (String)value;
         break;
         case TAG_LOWESTRENT:
         this.lowestRent = (Double)value;
@@ -286,6 +298,7 @@ public final class ProductDetailInfo extends Message {
         && equals(brand, o.brand)
         && equals(imageUrl, o.imageUrl)
         && equals(desc, o.desc)
+        && equals(ageBracket, o.ageBracket)
         && equals(lowestRent, o.lowestRent)
         && equals(unit, o.unit)
         && equals(rentCount, o.rentCount)
@@ -312,6 +325,7 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (brand != null ? brand.hashCode() : 0);
       result = result * 37 + (imageUrl != null ? imageUrl.hashCode() : 1);
       result = result * 37 + (desc != null ? desc.hashCode() : 0);
+      result = result * 37 + (ageBracket != null ? ageBracket.hashCode() : 0);
       result = result * 37 + (lowestRent != null ? lowestRent.hashCode() : 0);
       result = result * 37 + (unit != null ? unit.hashCode() : 0);
       result = result * 37 + (rentCount != null ? rentCount.hashCode() : 0);

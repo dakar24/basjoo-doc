@@ -81,6 +81,7 @@
 @property (readonly) BOOL hasProductType;
 @property (readonly) BOOL hasBrand;
 @property (readonly) BOOL hasDesc;
+@property (readonly) BOOL hasAgeBracket;
 @property (readonly) BOOL hasLowestRent;
 @property (readonly) BOOL hasUnit;
 @property (readonly) BOOL hasRentCount;
@@ -95,6 +96,7 @@
 @property (nonatomic,strong) NSString* brand;
 @property (nonatomic,strong) NSMutableArray * imageUrl;
 @property (nonatomic,strong) NSString* desc;
+@property (nonatomic,strong) NSString* ageBracket;
 @property (nonatomic)Float64 lowestRent;
 @property (nonatomic)SInt32 unit;
 @property (nonatomic)SInt64 rentCount;

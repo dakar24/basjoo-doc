@@ -677,6 +677,7 @@
     _productType = @"";
     _brand = @"";
     _desc = @"";
+    _ageBracket = @"";
     _lowestRent = 0;
     _unit = 0;
     _rentCount = 0L;
@@ -705,50 +706,53 @@
   if (self.hasDesc) {
     [output writeString:5 value:self.desc];
   }
+  if (self.hasAgeBracket) {
+    [output writeString:6 value:self.ageBracket];
+  }
   if (self.hasLowestRent) {
-    [output writeDouble:6 value:self.lowestRent];
+    [output writeDouble:7 value:self.lowestRent];
   }
   if (self.hasUnit) {
-    [output writeInt32:7 value:self.unit];
+    [output writeInt32:8 value:self.unit];
   }
   if (self.hasRentCount) {
-    [output writeInt64:8 value:self.rentCount];
+    [output writeInt64:9 value:self.rentCount];
   }
   if (self.hasMaxAvailable) {
-    [output writeInt64:9 value:self.maxAvailable];
+    [output writeInt64:10 value:self.maxAvailable];
   }
   if (self.hasMarketPrice) {
-    [output writeDouble:10 value:self.marketPrice];
+    [output writeDouble:11 value:self.marketPrice];
   }
   if (self.hasPledgePrice) {
-    [output writeDouble:11 value:self.pledgePrice];
+    [output writeDouble:12 value:self.pledgePrice];
   }
   if (self.hasTransportationPrice) {
-    [output writeDouble:12 value:self.transportationPrice];
+    [output writeDouble:13 value:self.transportationPrice];
   }
   if (self.hasLocation) {
-    [output writeString:13 value:self.location];
+    [output writeString:14 value:self.location];
   }
   [self.categoryInfo enumerateObjectsUsingBlock:^(CategoryInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:14 value:element];
-  }];
-  [self.shortRentInfo enumerateObjectsUsingBlock:^(ShortRentInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:15 value:element];
   }];
-  [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.shortRentInfo enumerateObjectsUsingBlock:^(ShortRentInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:16 value:element];
   }];
-  [self.baseParam enumerateObjectsUsingBlock:^(ProductBaseParam *element, NSUInteger idx, BOOL *stop) {
+  [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:17 value:element];
   }];
+  [self.baseParam enumerateObjectsUsingBlock:^(ProductBaseParam *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:18 value:element];
+  }];
   [self.imageParamUrls enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
-    [output writeString:18 value:element];
+    [output writeString:19 value:element];
   }];
   if (self.hasEvaluateCount) {
-    [output writeInt64:19 value:self.evaluateCount];
+    [output writeInt64:20 value:self.evaluateCount];
   }
   [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:20 value:element];
+    [output writeMessage:21 value:element];
   }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -777,41 +781,44 @@
   if (self.hasDesc) {
     size_ += computeStringSize(5, self.desc);
   }
+  if (self.hasAgeBracket) {
+    size_ += computeStringSize(6, self.ageBracket);
+  }
   if (self.hasLowestRent) {
-    size_ += computeDoubleSize(6, self.lowestRent);
+    size_ += computeDoubleSize(7, self.lowestRent);
   }
   if (self.hasUnit) {
-    size_ += computeInt32Size(7, self.unit);
+    size_ += computeInt32Size(8, self.unit);
   }
   if (self.hasRentCount) {
-    size_ += computeInt64Size(8, self.rentCount);
+    size_ += computeInt64Size(9, self.rentCount);
   }
   if (self.hasMaxAvailable) {
-    size_ += computeInt64Size(9, self.maxAvailable);
+    size_ += computeInt64Size(10, self.maxAvailable);
   }
   if (self.hasMarketPrice) {
-    size_ += computeDoubleSize(10, self.marketPrice);
+    size_ += computeDoubleSize(11, self.marketPrice);
   }
   if (self.hasPledgePrice) {
-    size_ += computeDoubleSize(11, self.pledgePrice);
+    size_ += computeDoubleSize(12, self.pledgePrice);
   }
   if (self.hasTransportationPrice) {
-    size_ += computeDoubleSize(12, self.transportationPrice);
+    size_ += computeDoubleSize(13, self.transportationPrice);
   }
   if (self.hasLocation) {
-    size_ += computeStringSize(13, self.location);
+    size_ += computeStringSize(14, self.location);
   }
   [self.categoryInfo enumerateObjectsUsingBlock:^(CategoryInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(14, element);
-  }];
-  [self.shortRentInfo enumerateObjectsUsingBlock:^(ShortRentInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(15, element);
   }];
-  [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.shortRentInfo enumerateObjectsUsingBlock:^(ShortRentInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(16, element);
   }];
-  [self.baseParam enumerateObjectsUsingBlock:^(ProductBaseParam *element, NSUInteger idx, BOOL *stop) {
+  [self.longRentInfo enumerateObjectsUsingBlock:^(LongRentInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(17, element);
+  }];
+  [self.baseParam enumerateObjectsUsingBlock:^(ProductBaseParam *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(18, element);
   }];
   {
     __block SInt32 dataSize = 0;
@@ -823,10 +830,10 @@
     size_ += (SInt32)(2 * count);
   }
   if (self.hasEvaluateCount) {
-    size_ += computeInt64Size(19, self.evaluateCount);
+    size_ += computeInt64Size(20, self.evaluateCount);
   }
   [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(20, element);
+    size_ += computeMessageSize(21, element);
   }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -852,6 +859,9 @@
   }];
   if (self.hasDesc) {
     [output appendFormat:@"%@%@: %@\n", indent, @"desc", self.desc];
+  }
+  if (self.hasAgeBracket) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"ageBracket", self.ageBracket];
   }
   if (self.hasLowestRent) {
     [output appendFormat:@"%@%@: %@\n", indent, @"lowestRent", [NSNumber numberWithDouble:self.lowestRent]];
@@ -940,6 +950,10 @@
 - (void) setDesc:(NSString*) value {
   _hasDesc = YES;
   _desc = value;
+}
+- (void) setAgeBracket:(NSString*) value {
+  _hasAgeBracket = YES;
+  _ageBracket = value;
 }
 - (void) setLowestRent:(Float64) value {
   _hasLowestRent = YES;
@@ -1066,71 +1080,75 @@
         [self setDesc:[input readString]];
         break;
       }
-      case 49: {
+      case 50: {
+        [self setAgeBracket:[input readString]];
+        break;
+      }
+      case 57: {
         [self setLowestRent:[input readDouble]];
         break;
       }
-      case 56: {
+      case 64: {
         [self setUnit:[input readInt32]];
         break;
       }
-      case 64: {
+      case 72: {
         [self setRentCount:[input readInt64]];
         break;
       }
-      case 72: {
+      case 80: {
         [self setMaxAvailable:[input readInt64]];
         break;
       }
-      case 81: {
+      case 89: {
         [self setMarketPrice:[input readDouble]];
         break;
       }
-      case 89: {
+      case 97: {
         [self setPledgePrice:[input readDouble]];
         break;
       }
-      case 97: {
+      case 105: {
         [self setTransportationPrice:[input readDouble]];
         break;
       }
-      case 106: {
+      case 114: {
         [self setLocation:[input readString]];
         break;
       }
-      case 114: {
+      case 122: {
         CategoryInfo* sub = [[CategoryInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addCategoryInfo:sub];
         break;
       }
-      case 122: {
+      case 130: {
         ShortRentInfo* sub = [[ShortRentInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addShortRentInfo:sub];
         break;
       }
-      case 130: {
+      case 138: {
         LongRentInfo* sub = [[LongRentInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addLongRentInfo:sub];
         break;
       }
-      case 138: {
+      case 146: {
         ProductBaseParam* sub = [[ProductBaseParam alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addBaseParam:sub];
         break;
       }
-      case 146: {
+      case 154: {
         [self addImageParamUrls:[input readString]];
         break;
       }
-      case 152: {
+      case 160: {
         [self setEvaluateCount:[input readInt64]];
         break;
       }
-      case 162: {
+      case 170: {
         ProductEvaluateInfo* sub = [[ProductEvaluateInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addProductEvaluateInfo:sub];
