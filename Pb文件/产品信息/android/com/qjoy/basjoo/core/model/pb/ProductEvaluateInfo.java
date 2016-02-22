@@ -7,6 +7,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.INT64;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REPEATED;
@@ -25,15 +26,19 @@ public final class ProductEvaluateInfo extends Message {
   public static final int TAG_RENTCATEGORYNAME = 6;
   public static final int TAG_CONTENT = 7;
   public static final int TAG_IMAGEURLS = 8;
+  public static final int TAG_LEVEL = 9;
+  public static final int TAG_EVALUATEID = 10;
 
   public static final Long DEFAULT_TIME = 0L;
   public static final String DEFAULT_USERID = "";
   public static final String DEFAULT_USERNAME = "";
   public static final String DEFAULT_HEADICONURL = "";
-  public static final String DEFAULT_USERLEVEL = "";
+  public static final Integer DEFAULT_USERLEVEL = 0;
   public static final String DEFAULT_RENTCATEGORYNAME = "";
   public static final String DEFAULT_CONTENT = "";
   public static final List<String> DEFAULT_IMAGEURLS = Collections.emptyList();
+  public static final Integer DEFAULT_LEVEL = 0;
+  public static final String DEFAULT_EVALUATEID = "";
 
   /**
    * 评价时间
@@ -62,8 +67,8 @@ public final class ProductEvaluateInfo extends Message {
   /**
    * 评价用户等级
    */
-  @ProtoField(tag = 5, type = STRING, label = REQUIRED)
-  public String userLevel;
+  @ProtoField(tag = 5, type = INT32, label = REQUIRED)
+  public Integer userLevel;
 
   /**
    * 评价用户所购买的产品类目名称
@@ -83,6 +88,18 @@ public final class ProductEvaluateInfo extends Message {
   @ProtoField(tag = 8, type = STRING, label = REPEATED)
   public List<String> imageUrls;
 
+  /**
+   * 评价等级: 1星，2星，...5星最高
+   */
+  @ProtoField(tag = 9, type = INT32, label = REQUIRED)
+  public Integer level;
+
+  /**
+   * 评价Id
+   */
+  @ProtoField(tag = 10, type = STRING, label = REQUIRED)
+  public String evaluateId;
+
   public ProductEvaluateInfo(ProductEvaluateInfo message) {
     super(message);
     if (message == null) return;
@@ -94,6 +111,8 @@ public final class ProductEvaluateInfo extends Message {
     this.rentCategoryName = message.rentCategoryName;
     this.content = message.content;
     this.imageUrls = copyOf(message.imageUrls);
+    this.level = message.level;
+    this.evaluateId = message.evaluateId;
   }
 
   public ProductEvaluateInfo() {
@@ -114,7 +133,7 @@ public final class ProductEvaluateInfo extends Message {
         this.headIconUrl = (String)value;
         break;
         case TAG_USERLEVEL:
-        this.userLevel = (String)value;
+        this.userLevel = (Integer)value;
         break;
         case TAG_RENTCATEGORYNAME:
         this.rentCategoryName = (String)value;
@@ -124,6 +143,12 @@ public final class ProductEvaluateInfo extends Message {
         break;
         case TAG_IMAGEURLS:
         this.imageUrls = immutableCopyOf((List<String>)value);
+        break;
+        case TAG_LEVEL:
+        this.level = (Integer)value;
+        break;
+        case TAG_EVALUATEID:
+        this.evaluateId = (String)value;
         break;
         default: break;
         };
@@ -142,7 +167,9 @@ public final class ProductEvaluateInfo extends Message {
         && equals(userLevel, o.userLevel)
         && equals(rentCategoryName, o.rentCategoryName)
         && equals(content, o.content)
-        && equals(imageUrls, o.imageUrls);
+        && equals(imageUrls, o.imageUrls)
+        && equals(level, o.level)
+        && equals(evaluateId, o.evaluateId);
   }
 
   @Override
@@ -157,6 +184,8 @@ public final class ProductEvaluateInfo extends Message {
       result = result * 37 + (rentCategoryName != null ? rentCategoryName.hashCode() : 0);
       result = result * 37 + (content != null ? content.hashCode() : 0);
       result = result * 37 + (imageUrls != null ? imageUrls.hashCode() : 1);
+      result = result * 37 + (level != null ? level.hashCode() : 0);
+      result = result * 37 + (evaluateId != null ? evaluateId.hashCode() : 0);
       hashCode = result;
     }
     return result;

@@ -15363,7 +15363,7 @@ public final class Product {
         getHeadIconUrlBytes();
 
     /**
-     * <code>required string userLevel = 5;</code>
+     * <code>required int32 userLevel = 5;</code>
      *
      * <pre>
      *评价用户等级
@@ -15371,22 +15371,13 @@ public final class Product {
      */
     boolean hasUserLevel();
     /**
-     * <code>required string userLevel = 5;</code>
+     * <code>required int32 userLevel = 5;</code>
      *
      * <pre>
      *评价用户等级
      * </pre>
      */
-    java.lang.String getUserLevel();
-    /**
-     * <code>required string userLevel = 5;</code>
-     *
-     * <pre>
-     *评价用户等级
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getUserLevelBytes();
+    int getUserLevel();
 
     /**
      * <code>required string rentCategoryName = 6;</code>
@@ -15474,6 +15465,49 @@ public final class Product {
      */
     com.google.protobuf.ByteString
         getImageUrlsBytes(int index);
+
+    /**
+     * <code>required int32 level = 9;</code>
+     *
+     * <pre>
+     *评价等级: 1星，2星，...5星最高
+     * </pre>
+     */
+    boolean hasLevel();
+    /**
+     * <code>required int32 level = 9;</code>
+     *
+     * <pre>
+     *评价等级: 1星，2星，...5星最高
+     * </pre>
+     */
+    int getLevel();
+
+    /**
+     * <code>required string evaluateId = 10;</code>
+     *
+     * <pre>
+     *评价Id
+     * </pre>
+     */
+    boolean hasEvaluateId();
+    /**
+     * <code>required string evaluateId = 10;</code>
+     *
+     * <pre>
+     *评价Id
+     * </pre>
+     */
+    java.lang.String getEvaluateId();
+    /**
+     * <code>required string evaluateId = 10;</code>
+     *
+     * <pre>
+     *评价Id
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getEvaluateIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo}
@@ -15554,10 +15588,9 @@ public final class Product {
               headIconUrl_ = bs;
               break;
             }
-            case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 40: {
               bitField0_ |= 0x00000010;
-              userLevel_ = bs;
+              userLevel_ = input.readInt32();
               break;
             }
             case 50: {
@@ -15579,6 +15612,17 @@ public final class Product {
                 mutable_bitField0_ |= 0x00000080;
               }
               imageUrls_.add(bs);
+              break;
+            }
+            case 72: {
+              bitField0_ |= 0x00000080;
+              level_ = input.readInt32();
+              break;
+            }
+            case 82: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000100;
+              evaluateId_ = bs;
               break;
             }
           }
@@ -15810,9 +15854,9 @@ public final class Product {
     }
 
     public static final int USERLEVEL_FIELD_NUMBER = 5;
-    private java.lang.Object userLevel_;
+    private int userLevel_;
     /**
-     * <code>required string userLevel = 5;</code>
+     * <code>required int32 userLevel = 5;</code>
      *
      * <pre>
      *评价用户等级
@@ -15822,45 +15866,14 @@ public final class Product {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required string userLevel = 5;</code>
+     * <code>required int32 userLevel = 5;</code>
      *
      * <pre>
      *评价用户等级
      * </pre>
      */
-    public java.lang.String getUserLevel() {
-      java.lang.Object ref = userLevel_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          userLevel_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string userLevel = 5;</code>
-     *
-     * <pre>
-     *评价用户等级
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getUserLevelBytes() {
-      java.lang.Object ref = userLevel_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userLevel_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getUserLevel() {
+      return userLevel_;
     }
 
     public static final int RENTCATEGORYNAME_FIELD_NUMBER = 6;
@@ -16016,15 +16029,94 @@ public final class Product {
       return imageUrls_.getByteString(index);
     }
 
+    public static final int LEVEL_FIELD_NUMBER = 9;
+    private int level_;
+    /**
+     * <code>required int32 level = 9;</code>
+     *
+     * <pre>
+     *评价等级: 1星，2星，...5星最高
+     * </pre>
+     */
+    public boolean hasLevel() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>required int32 level = 9;</code>
+     *
+     * <pre>
+     *评价等级: 1星，2星，...5星最高
+     * </pre>
+     */
+    public int getLevel() {
+      return level_;
+    }
+
+    public static final int EVALUATEID_FIELD_NUMBER = 10;
+    private java.lang.Object evaluateId_;
+    /**
+     * <code>required string evaluateId = 10;</code>
+     *
+     * <pre>
+     *评价Id
+     * </pre>
+     */
+    public boolean hasEvaluateId() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>required string evaluateId = 10;</code>
+     *
+     * <pre>
+     *评价Id
+     * </pre>
+     */
+    public java.lang.String getEvaluateId() {
+      java.lang.Object ref = evaluateId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          evaluateId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string evaluateId = 10;</code>
+     *
+     * <pre>
+     *评价Id
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getEvaluateIdBytes() {
+      java.lang.Object ref = evaluateId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        evaluateId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       time_ = 0L;
       userId_ = "";
       userName_ = "";
       headIconUrl_ = "";
-      userLevel_ = "";
+      userLevel_ = 0;
       rentCategoryName_ = "";
       content_ = "";
       imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      level_ = 0;
+      evaluateId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -16060,6 +16152,14 @@ public final class Product {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasLevel()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasEvaluateId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -16080,7 +16180,7 @@ public final class Product {
         output.writeBytes(4, getHeadIconUrlBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getUserLevelBytes());
+        output.writeInt32(5, userLevel_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeBytes(6, getRentCategoryNameBytes());
@@ -16090,6 +16190,12 @@ public final class Product {
       }
       for (int i = 0; i < imageUrls_.size(); i++) {
         output.writeBytes(8, imageUrls_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeInt32(9, level_);
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeBytes(10, getEvaluateIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -16118,7 +16224,7 @@ public final class Product {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getUserLevelBytes());
+          .computeInt32Size(5, userLevel_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
@@ -16136,6 +16242,14 @@ public final class Product {
         }
         size += dataSize;
         size += 1 * getImageUrlsList().size();
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, level_);
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(10, getEvaluateIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -16266,7 +16380,7 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000004);
         headIconUrl_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        userLevel_ = "";
+        userLevel_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
         rentCategoryName_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -16274,6 +16388,10 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000040);
         imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000080);
+        level_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        evaluateId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -16335,6 +16453,14 @@ public final class Product {
           bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.imageUrls_ = imageUrls_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.level_ = level_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.evaluateId_ = evaluateId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -16370,9 +16496,7 @@ public final class Product {
           onChanged();
         }
         if (other.hasUserLevel()) {
-          bitField0_ |= 0x00000010;
-          userLevel_ = other.userLevel_;
-          onChanged();
+          setUserLevel(other.getUserLevel());
         }
         if (other.hasRentCategoryName()) {
           bitField0_ |= 0x00000020;
@@ -16392,6 +16516,14 @@ public final class Product {
             ensureImageUrlsIsMutable();
             imageUrls_.addAll(other.imageUrls_);
           }
+          onChanged();
+        }
+        if (other.hasLevel()) {
+          setLevel(other.getLevel());
+        }
+        if (other.hasEvaluateId()) {
+          bitField0_ |= 0x00000200;
+          evaluateId_ = other.evaluateId_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -16424,6 +16556,14 @@ public final class Product {
           return false;
         }
         if (!hasContent()) {
+          
+          return false;
+        }
+        if (!hasLevel()) {
+          
+          return false;
+        }
+        if (!hasEvaluateId()) {
           
           return false;
         }
@@ -16797,9 +16937,9 @@ public final class Product {
         return this;
       }
 
-      private java.lang.Object userLevel_ = "";
+      private int userLevel_ ;
       /**
-       * <code>required string userLevel = 5;</code>
+       * <code>required int32 userLevel = 5;</code>
        *
        * <pre>
        *评价用户等级
@@ -16809,65 +16949,30 @@ public final class Product {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required string userLevel = 5;</code>
+       * <code>required int32 userLevel = 5;</code>
        *
        * <pre>
        *评价用户等级
        * </pre>
        */
-      public java.lang.String getUserLevel() {
-        java.lang.Object ref = userLevel_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            userLevel_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getUserLevel() {
+        return userLevel_;
       }
       /**
-       * <code>required string userLevel = 5;</code>
+       * <code>required int32 userLevel = 5;</code>
        *
        * <pre>
        *评价用户等级
        * </pre>
        */
-      public com.google.protobuf.ByteString
-          getUserLevelBytes() {
-        java.lang.Object ref = userLevel_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userLevel_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string userLevel = 5;</code>
-       *
-       * <pre>
-       *评价用户等级
-       * </pre>
-       */
-      public Builder setUserLevel(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+      public Builder setUserLevel(int value) {
+        bitField0_ |= 0x00000010;
         userLevel_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string userLevel = 5;</code>
+       * <code>required int32 userLevel = 5;</code>
        *
        * <pre>
        *评价用户等级
@@ -16875,24 +16980,7 @@ public final class Product {
        */
       public Builder clearUserLevel() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        userLevel_ = getDefaultInstance().getUserLevel();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string userLevel = 5;</code>
-       *
-       * <pre>
-       *评价用户等级
-       * </pre>
-       */
-      public Builder setUserLevelBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        userLevel_ = value;
+        userLevel_ = 0;
         onChanged();
         return this;
       }
@@ -17226,6 +17314,154 @@ public final class Product {
         return this;
       }
 
+      private int level_ ;
+      /**
+       * <code>required int32 level = 9;</code>
+       *
+       * <pre>
+       *评价等级: 1星，2星，...5星最高
+       * </pre>
+       */
+      public boolean hasLevel() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>required int32 level = 9;</code>
+       *
+       * <pre>
+       *评价等级: 1星，2星，...5星最高
+       * </pre>
+       */
+      public int getLevel() {
+        return level_;
+      }
+      /**
+       * <code>required int32 level = 9;</code>
+       *
+       * <pre>
+       *评价等级: 1星，2星，...5星最高
+       * </pre>
+       */
+      public Builder setLevel(int value) {
+        bitField0_ |= 0x00000100;
+        level_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 level = 9;</code>
+       *
+       * <pre>
+       *评价等级: 1星，2星，...5星最高
+       * </pre>
+       */
+      public Builder clearLevel() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        level_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object evaluateId_ = "";
+      /**
+       * <code>required string evaluateId = 10;</code>
+       *
+       * <pre>
+       *评价Id
+       * </pre>
+       */
+      public boolean hasEvaluateId() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>required string evaluateId = 10;</code>
+       *
+       * <pre>
+       *评价Id
+       * </pre>
+       */
+      public java.lang.String getEvaluateId() {
+        java.lang.Object ref = evaluateId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            evaluateId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string evaluateId = 10;</code>
+       *
+       * <pre>
+       *评价Id
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getEvaluateIdBytes() {
+        java.lang.Object ref = evaluateId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          evaluateId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string evaluateId = 10;</code>
+       *
+       * <pre>
+       *评价Id
+       * </pre>
+       */
+      public Builder setEvaluateId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        evaluateId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string evaluateId = 10;</code>
+       *
+       * <pre>
+       *评价Id
+       * </pre>
+       */
+      public Builder clearEvaluateId() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        evaluateId_ = getDefaultInstance().getEvaluateId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string evaluateId = 10;</code>
+       *
+       * <pre>
+       *评价Id
+       * </pre>
+       */
+      public Builder setEvaluateIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        evaluateId_ = value;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo)
     }
 
@@ -17237,8 +17473,8 @@ public final class Product {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo)
   }
 
-  public interface getProductEvaluateListRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
+  public interface GetProductEvaluateListRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -17271,7 +17507,7 @@ public final class Product {
      * <code>required int32 evaluateType = 2;</code>
      *
      * <pre>
-     *评论类型：0：全部，1：只看有图评论
+     *评价类型：0：全部，1：只看有图评价
      * </pre>
      */
     boolean hasEvaluateType();
@@ -17279,7 +17515,7 @@ public final class Product {
      * <code>required int32 evaluateType = 2;</code>
      *
      * <pre>
-     *评论类型：0：全部，1：只看有图评论
+     *评价类型：0：全部，1：只看有图评价
      * </pre>
      */
     int getEvaluateType();
@@ -17302,29 +17538,29 @@ public final class Product {
     int getStartIndex();
   }
   /**
-   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest}
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetProductEvaluateListRequest}
    *
    * <pre>
-   *获取产品的评论列表
+   *获取产品的评价列表
    * </pre>
    */
-  public static final class getProductEvaluateListRequest extends
+  public static final class GetProductEvaluateListRequest extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
-      getProductEvaluateListRequestOrBuilder {
-    // Use getProductEvaluateListRequest.newBuilder() to construct.
-    private getProductEvaluateListRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListRequest)
+      GetProductEvaluateListRequestOrBuilder {
+    // Use GetProductEvaluateListRequest.newBuilder() to construct.
+    private GetProductEvaluateListRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private getProductEvaluateListRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private GetProductEvaluateListRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final getProductEvaluateListRequest defaultInstance;
-    public static getProductEvaluateListRequest getDefaultInstance() {
+    private static final GetProductEvaluateListRequest defaultInstance;
+    public static GetProductEvaluateListRequest getDefaultInstance() {
       return defaultInstance;
     }
 
-    public getProductEvaluateListRequest getDefaultInstanceForType() {
+    public GetProductEvaluateListRequest getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -17334,7 +17570,7 @@ public final class Product {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private getProductEvaluateListRequest(
+    private GetProductEvaluateListRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -17387,28 +17623,28 @@ public final class Product {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor;
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_fieldAccessorTable
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.class, com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.Builder.class);
+              com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest.class, com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<getProductEvaluateListRequest> PARSER =
-        new com.google.protobuf.AbstractParser<getProductEvaluateListRequest>() {
-      public getProductEvaluateListRequest parsePartialFrom(
+    public static com.google.protobuf.Parser<GetProductEvaluateListRequest> PARSER =
+        new com.google.protobuf.AbstractParser<GetProductEvaluateListRequest>() {
+      public GetProductEvaluateListRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new getProductEvaluateListRequest(input, extensionRegistry);
+        return new GetProductEvaluateListRequest(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<getProductEvaluateListRequest> getParserForType() {
+    public com.google.protobuf.Parser<GetProductEvaluateListRequest> getParserForType() {
       return PARSER;
     }
 
@@ -17473,7 +17709,7 @@ public final class Product {
      * <code>required int32 evaluateType = 2;</code>
      *
      * <pre>
-     *评论类型：0：全部，1：只看有图评论
+     *评价类型：0：全部，1：只看有图评价
      * </pre>
      */
     public boolean hasEvaluateType() {
@@ -17483,7 +17719,7 @@ public final class Product {
      * <code>required int32 evaluateType = 2;</code>
      *
      * <pre>
-     *评论类型：0：全部，1：只看有图评论
+     *评价类型：0：全部，1：只看有图评价
      * </pre>
      */
     public int getEvaluateType() {
@@ -17581,53 +17817,53 @@ public final class Product {
       return super.writeReplace();
     }
 
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(byte[] data)
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseDelimitedFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -17636,7 +17872,7 @@ public final class Product {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest prototype) {
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -17648,29 +17884,29 @@ public final class Product {
       return builder;
     }
     /**
-     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest}
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetProductEvaluateListRequest}
      *
      * <pre>
-     *获取产品的评论列表
+     *获取产品的评价列表
      * </pre>
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
-        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListRequest)
+        com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor;
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_fieldAccessorTable
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.class, com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.Builder.class);
+                com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest.class, com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest.Builder.class);
       }
 
-      // Construct using com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.newBuilder()
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -17705,23 +17941,23 @@ public final class Product {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor;
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor;
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest getDefaultInstanceForType() {
-        return com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.getDefaultInstance();
+      public com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest.getDefaultInstance();
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest build() {
-        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest result = buildPartial();
+      public com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest build() {
+        com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest buildPartial() {
-        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest result = new com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest(this);
+      public com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest result = new com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -17742,16 +17978,16 @@ public final class Product {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest) {
-          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest)other);
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest other) {
-        if (other == com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest.getDefaultInstance()) return this;
         if (other.hasProductId()) {
           bitField0_ |= 0x00000001;
           productId_ = other.productId_;
@@ -17783,11 +18019,11 @@ public final class Product {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest parsedMessage = null;
+        com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListRequest) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -17903,7 +18139,7 @@ public final class Product {
        * <code>required int32 evaluateType = 2;</code>
        *
        * <pre>
-       *评论类型：0：全部，1：只看有图评论
+       *评价类型：0：全部，1：只看有图评价
        * </pre>
        */
       public boolean hasEvaluateType() {
@@ -17913,7 +18149,7 @@ public final class Product {
        * <code>required int32 evaluateType = 2;</code>
        *
        * <pre>
-       *评论类型：0：全部，1：只看有图评论
+       *评价类型：0：全部，1：只看有图评价
        * </pre>
        */
       public int getEvaluateType() {
@@ -17923,7 +18159,7 @@ public final class Product {
        * <code>required int32 evaluateType = 2;</code>
        *
        * <pre>
-       *评论类型：0：全部，1：只看有图评论
+       *评价类型：0：全部，1：只看有图评价
        * </pre>
        */
       public Builder setEvaluateType(int value) {
@@ -17936,7 +18172,7 @@ public final class Product {
        * <code>required int32 evaluateType = 2;</code>
        *
        * <pre>
-       *评论类型：0：全部，1：只看有图评论
+       *评价类型：0：全部，1：只看有图评价
        * </pre>
        */
       public Builder clearEvaluateType() {
@@ -17994,19 +18230,19 @@ public final class Product {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListRequest)
     }
 
     static {
-      defaultInstance = new getProductEvaluateListRequest(true);
+      defaultInstance = new GetProductEvaluateListRequest(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.getProductEvaluateListRequest)
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListRequest)
   }
 
-  public interface getProductEvaluateListResultOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
+  public interface GetProductEvaluateListResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -18150,29 +18386,29 @@ public final class Product {
         int index);
   }
   /**
-   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult}
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetProductEvaluateListResult}
    *
    * <pre>
-   *获取产品的评论列表
+   *获取产品的评价列表
    * </pre>
    */
-  public static final class getProductEvaluateListResult extends
+  public static final class GetProductEvaluateListResult extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
-      getProductEvaluateListResultOrBuilder {
-    // Use getProductEvaluateListResult.newBuilder() to construct.
-    private getProductEvaluateListResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListResult)
+      GetProductEvaluateListResultOrBuilder {
+    // Use GetProductEvaluateListResult.newBuilder() to construct.
+    private GetProductEvaluateListResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private getProductEvaluateListResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private GetProductEvaluateListResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final getProductEvaluateListResult defaultInstance;
-    public static getProductEvaluateListResult getDefaultInstance() {
+    private static final GetProductEvaluateListResult defaultInstance;
+    public static GetProductEvaluateListResult getDefaultInstance() {
       return defaultInstance;
     }
 
-    public getProductEvaluateListResult getDefaultInstanceForType() {
+    public GetProductEvaluateListResult getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -18182,7 +18418,7 @@ public final class Product {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private getProductEvaluateListResult(
+    private GetProductEvaluateListResult(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -18262,28 +18498,28 @@ public final class Product {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor;
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_fieldAccessorTable
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.class, com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.Builder.class);
+              com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult.class, com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<getProductEvaluateListResult> PARSER =
-        new com.google.protobuf.AbstractParser<getProductEvaluateListResult>() {
-      public getProductEvaluateListResult parsePartialFrom(
+    public static com.google.protobuf.Parser<GetProductEvaluateListResult> PARSER =
+        new com.google.protobuf.AbstractParser<GetProductEvaluateListResult>() {
+      public GetProductEvaluateListResult parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new getProductEvaluateListResult(input, extensionRegistry);
+        return new GetProductEvaluateListResult(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<getProductEvaluateListResult> getParserForType() {
+    public com.google.protobuf.Parser<GetProductEvaluateListResult> getParserForType() {
       return PARSER;
     }
 
@@ -18637,53 +18873,53 @@ public final class Product {
       return super.writeReplace();
     }
 
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(byte[] data)
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseDelimitedFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseDelimitedFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -18692,7 +18928,7 @@ public final class Product {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult prototype) {
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -18704,29 +18940,29 @@ public final class Product {
       return builder;
     }
     /**
-     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult}
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetProductEvaluateListResult}
      *
      * <pre>
-     *获取产品的评论列表
+     *获取产品的评价列表
      * </pre>
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
-        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResultOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListResult)
+        com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor;
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_fieldAccessorTable
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.class, com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.Builder.class);
+                com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult.class, com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult.Builder.class);
       }
 
-      // Construct using com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.newBuilder()
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -18774,23 +19010,23 @@ public final class Product {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor;
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_descriptor;
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult getDefaultInstanceForType() {
-        return com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.getDefaultInstance();
+      public com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult.getDefaultInstance();
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult build() {
-        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult result = buildPartial();
+      public com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult build() {
+        com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult buildPartial() {
-        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult result = new com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult(this);
+      public com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult result = new com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -18832,16 +19068,16 @@ public final class Product {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult) {
-          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult)other);
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult other) {
-        if (other == com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult.getDefaultInstance()) return this;
         if (other.hasResultCode()) {
           bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
@@ -18928,11 +19164,11 @@ public final class Product {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult parsedMessage = null;
+        com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.getProductEvaluateListResult) e.getUnfinishedMessage();
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.GetProductEvaluateListResult) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -19599,15 +19835,15 @@ public final class Product {
         return productEvaluateInfoBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListResult)
     }
 
     static {
-      defaultInstance = new getProductEvaluateListResult(true);
+      defaultInstance = new GetProductEvaluateListResult(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.getProductEvaluateListResult)
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GetProductEvaluateListResult)
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
@@ -19666,15 +19902,15 @@ public final class Product {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor;
+    internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_fieldAccessorTable;
+      internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor;
+    internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_fieldAccessorTable;
+      internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -19729,20 +19965,21 @@ public final class Product {
       "\002(\001\022\031\n\021rentPricePerMonth\030\005 \002(\001\022\022\n\ntotalP" +
       "rice\030\006 \002(\001\"D\n\020ProductBaseParam\022\014\n\004code\030\001" +
       " \002(\t\022\017\n\007showKey\030\002 \002(\t\022\021\n\tshowValue\030\003 \002(\t" +
-      "\"\253\001\n\023ProductEvaluateInfo\022\014\n\004time\030\001 \002(\003\022\016" +
+      "\"\316\001\n\023ProductEvaluateInfo\022\014\n\004time\030\001 \002(\003\022\016" +
       "\n\006userId\030\002 \002(\t\022\020\n\010userName\030\003 \002(\t\022\023\n\013head" +
-      "IconUrl\030\004 \002(\t\022\021\n\tuserLevel\030\005 \002(\t\022\030\n\020rent" +
+      "IconUrl\030\004 \002(\t\022\021\n\tuserLevel\030\005 \002(\005\022\030\n\020rent" +
       "CategoryName\030\006 \002(\t\022\017\n\007content\030\007 \002(\t\022\021\n\ti" +
-      "mageUrls\030\010 \003(\t\"\\\n\035getProductEvaluateList",
-      "Request\022\021\n\tproductId\030\001 \002(\t\022\024\n\014evaluateTy" +
-      "pe\030\002 \002(\005\022\022\n\nstartIndex\030\003 \001(\005\"\346\001\n\034getProd" +
-      "uctEvaluateListResult\022\022\n\nresultCode\030\001 \002(" +
-      "\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017" +
-      "\n\007hasMore\030\004 \002(\010\022\022\n\ntotalCount\030\005 \002(\003\022\027\n\017t" +
-      "otalImageCount\030\006 \002(\003\022O\n\023productEvaluateI" +
-      "nfo\030\007 \003(\01322.com.qjoy.basjoo.core.model.p" +
-      "b.ProductEvaluateInfoB\037\n\035com.qjoy.basjoo" +
-      ".core.model.pb"
+      "mageUrls\030\010 \003(\t\022\r\n\005level\030\t \002(\005\022\022\n\nevaluat",
+      "eId\030\n \002(\t\"\\\n\035GetProductEvaluateListReque" +
+      "st\022\021\n\tproductId\030\001 \002(\t\022\024\n\014evaluateType\030\002 " +
+      "\002(\005\022\022\n\nstartIndex\030\003 \001(\005\"\346\001\n\034GetProductEv" +
+      "aluateListResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
+      "resultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007has" +
+      "More\030\004 \002(\010\022\022\n\ntotalCount\030\005 \002(\003\022\027\n\017totalI" +
+      "mageCount\030\006 \002(\003\022O\n\023productEvaluateInfo\030\007" +
+      " \003(\01322.com.qjoy.basjoo.core.model.pb.Pro" +
+      "ductEvaluateInfoB\037\n\035com.qjoy.basjoo.core" +
+      ".model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19821,18 +20058,18 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_descriptor,
-        new java.lang.String[] { "Time", "UserId", "UserName", "HeadIconUrl", "UserLevel", "RentCategoryName", "Content", "ImageUrls", });
-    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor =
+        new java.lang.String[] { "Time", "UserId", "UserName", "HeadIconUrl", "UserLevel", "RentCategoryName", "Content", "ImageUrls", "Level", "EvaluateId", });
+    internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor =
       getDescriptor().getMessageTypes().get(11);
-    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_fieldAccessorTable = new
+    internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListRequest_descriptor,
+        internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor,
         new java.lang.String[] { "ProductId", "EvaluateType", "StartIndex", });
-    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor =
+    internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_descriptor =
       getDescriptor().getMessageTypes().get(12);
-    internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_fieldAccessorTable = new
+    internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_qjoy_basjoo_core_model_pb_getProductEvaluateListResult_descriptor,
+        internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_descriptor,
         new java.lang.String[] { "ResultCode", "ResultMsg", "MaxIndex", "HasMore", "TotalCount", "TotalImageCount", "ProductEvaluateInfo", });
   }
 

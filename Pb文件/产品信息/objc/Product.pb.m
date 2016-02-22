@@ -1648,9 +1648,11 @@
     _userId = @"";
     _userName = @"";
     _headIconUrl = @"";
-    _userLevel = @"";
+    _userLevel = 0;
     _rentCategoryName = @"";
     _content = @"";
+    _level = 0;
+    _evaluateId = @"";
   }
   return self;
 }
@@ -1668,7 +1670,7 @@
     [output writeString:4 value:self.headIconUrl];
   }
   if (self.hasUserLevel) {
-    [output writeString:5 value:self.userLevel];
+    [output writeInt32:5 value:self.userLevel];
   }
   if (self.hasRentCategoryName) {
     [output writeString:6 value:self.rentCategoryName];
@@ -1679,6 +1681,12 @@
   [self.imageUrls enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
     [output writeString:8 value:element];
   }];
+  if (self.hasLevel) {
+    [output writeInt32:9 value:self.level];
+  }
+  if (self.hasEvaluateId) {
+    [output writeString:10 value:self.evaluateId];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -1698,7 +1706,7 @@
     size_ += computeStringSize(4, self.headIconUrl);
   }
   if (self.hasUserLevel) {
-    size_ += computeStringSize(5, self.userLevel);
+    size_ += computeInt32Size(5, self.userLevel);
   }
   if (self.hasRentCategoryName) {
     size_ += computeStringSize(6, self.rentCategoryName);
@@ -1714,6 +1722,12 @@
     }];
     size_ += dataSize;
     size_ += (SInt32)(1 * count);
+  }
+  if (self.hasLevel) {
+    size_ += computeInt32Size(9, self.level);
+  }
+  if (self.hasEvaluateId) {
+    size_ += computeStringSize(10, self.evaluateId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1738,7 +1752,7 @@
     [output appendFormat:@"%@%@: %@\n", indent, @"headIconUrl", self.headIconUrl];
   }
   if (self.hasUserLevel) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"userLevel", self.userLevel];
+    [output appendFormat:@"%@%@: %@\n", indent, @"userLevel", [NSNumber numberWithInteger:self.userLevel]];
   }
   if (self.hasRentCategoryName) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentCategoryName", self.rentCategoryName];
@@ -1749,6 +1763,12 @@
   [self.imageUrls enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@: %@\n", indent, @"imageUrls", obj];
   }];
+  if (self.hasLevel) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"level", [NSNumber numberWithInteger:self.level]];
+  }
+  if (self.hasEvaluateId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"evaluateId", self.evaluateId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -1768,7 +1788,7 @@
   _hasHeadIconUrl = YES;
   _headIconUrl = value;
 }
-- (void) setUserLevel:(NSString*) value {
+- (void) setUserLevel:(SInt32) value {
   _hasUserLevel = YES;
   _userLevel = value;
 }
@@ -1788,6 +1808,14 @@
     _imageUrls = [[NSMutableArray alloc]init];
   }
   [_imageUrls addObject:value];
+}
+- (void) setLevel:(SInt32) value {
+  _hasLevel = YES;
+  _level = value;
+}
+- (void) setEvaluateId:(NSString*) value {
+  _hasEvaluateId = YES;
+  _evaluateId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1820,8 +1848,8 @@
         [self setHeadIconUrl:[input readString]];
         break;
       }
-      case 42: {
-        [self setUserLevel:[input readString]];
+      case 40: {
+        [self setUserLevel:[input readInt32]];
         break;
       }
       case 50: {
@@ -1836,13 +1864,21 @@
         [self addImageUrls:[input readString]];
         break;
       }
+      case 72: {
+        [self setLevel:[input readInt32]];
+        break;
+      }
+      case 82: {
+        [self setEvaluateId:[input readString]];
+        break;
+      }
     }
   }
 }
 @end
 
 
-@implementation getProductEvaluateListRequest
+@implementation GetProductEvaluateListRequest
 
 - (instancetype) init {
   if ((self = [super init])) {
@@ -1881,8 +1917,8 @@
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (getProductEvaluateListRequest*) parseFromData:(NSData*) data {
-  getProductEvaluateListRequest* result = [[getProductEvaluateListRequest alloc] init];
++ (GetProductEvaluateListRequest*) parseFromData:(NSData*) data {
+  GetProductEvaluateListRequest* result = [[GetProductEvaluateListRequest alloc] init];
   [result mergeFromData:data];  return result;
 }
 #ifdef DEBUG
@@ -1944,7 +1980,7 @@
 @end
 
 
-@implementation getProductEvaluateListResult
+@implementation GetProductEvaluateListResult
 
 - (instancetype) init {
   if ((self = [super init])) {
@@ -2010,8 +2046,8 @@
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (getProductEvaluateListResult*) parseFromData:(NSData*) data {
-  getProductEvaluateListResult* result = [[getProductEvaluateListResult alloc] init];
++ (GetProductEvaluateListResult*) parseFromData:(NSData*) data {
+  GetProductEvaluateListResult* result = [[GetProductEvaluateListResult alloc] init];
   [result mergeFromData:data];  return result;
 }
 #ifdef DEBUG

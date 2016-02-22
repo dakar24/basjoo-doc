@@ -1,0 +1,81 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//添加评价请求
+message AddEvaluateRequest {   
+
+   //订单Id
+   required string                orderId = 1; 
+   
+   //评价内容
+   required string                content=2;
+ 
+   //图文参数地址（多图文）
+   repeated string                imageUrls=3; 
+ 
+   //评价等级: 1星，2星，...5星最高
+   required int32                 level = 4; 
+    
+}
+
+//添加评价结果
+message AddEvaluateResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   required string                 evaluateId = 3; 
+    
+}
+
+
+//修改评价请求
+message ModifyEvaluateRequest {   
+
+   //评价Id
+   required string                evaluateId = 1; 
+   
+   //评价内容
+   required string                content=2;
+ 
+   //图文参数地址（多图文）
+   repeated string                imageUrls=3; 
+ 
+   //评价等级: 1星，2星，...5星最高
+   required int32                 level = 4; 
+   
+}
+
+//修改评价结果
+message ModifyEvaluateResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+}
+
+
+//删除评价请求
+message DeleteEvaluateRequest {  
+
+   //评价Id
+   required string                evaluateId = 1;
+   
+}
+
+//删除评价结果
+message DeleteEvaluateResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;   
+    
+}
+
+
+
+

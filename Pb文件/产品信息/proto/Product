@@ -248,25 +248,31 @@ message ProductEvaluateInfo{
  required string                headIconUrl = 4; 
  
  //评价用户等级
- required string                userLevel = 5; 
+ required int32                 userLevel = 5; 
  
  //评价用户所购买的产品类目名称
  required string                rentCategoryName = 6; 
  
  //评价内容
- required string                content=7;
+ required string                content = 7;
  
  //图文参数地址（多图文）
- repeated string                imageUrls=8; 
+ repeated string                imageUrls = 8; 
+ 
+ //评价等级: 1星，2星，...5星最高
+ required int32                 level = 9;
+ 
+ //评价Id
+ required string                evaluateId = 10;
 }
 
 
-//获取产品的评论列表
-message getProductEvaluateListRequest{
+//获取产品的评价列表
+message GetProductEvaluateListRequest{
   //产品Id
   required string                 productId = 1; 
   
-  //评论类型：0：全部，1：只看有图评论
+  //评价类型：0：全部，1：只看有图评价
   required int32                  evaluateType = 2; 
   
   //起始index
@@ -274,8 +280,8 @@ message getProductEvaluateListRequest{
 }
 
 
-//获取产品的评论列表
-message getProductEvaluateListResult{
+//获取产品的评价列表
+message GetProductEvaluateListResult{
 
    required string                 resultCode = 1;
     
@@ -288,13 +294,13 @@ message getProductEvaluateListResult{
    required bool                   hasMore  = 4;
    
    //总评论条数
-   required int64                  totalCount=5;
+   required int64                  totalCount = 5;
    
    //有图评论总条数
-   required int64                  totalImageCount=6;
+   required int64                  totalImageCount = 6;
    
    //评论列表
-   repeated ProductEvaluateInfo    productEvaluateInfo=7;
+   repeated ProductEvaluateInfo    productEvaluateInfo = 7;
 }
 
 

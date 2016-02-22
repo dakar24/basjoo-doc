@@ -3,6 +3,8 @@
 #import <QJProtocolBuffers/ProtocolBuffers.h>
 
 @class CategoryInfo;
+@class GetProductEvaluateListRequest;
+@class GetProductEvaluateListResult;
 @class LongRentInfo;
 @class ProductBaseParam;
 @class ProductDetailInfo;
@@ -13,8 +15,6 @@
 @class SearchProductListRequest;
 @class SearchProductListResult;
 @class ShortRentInfo;
-@class getProductEvaluateListRequest;
-@class getProductEvaluateListResult;
 
 @interface SearchProductListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasKeywords;
@@ -166,17 +166,21 @@
 @property (readonly) BOOL hasUserLevel;
 @property (readonly) BOOL hasRentCategoryName;
 @property (readonly) BOOL hasContent;
+@property (readonly) BOOL hasLevel;
+@property (readonly) BOOL hasEvaluateId;
 @property (nonatomic)SInt64 time;
 @property (nonatomic,strong) NSString* userId;
 @property (nonatomic,strong) NSString* userName;
 @property (nonatomic,strong) NSString* headIconUrl;
-@property (nonatomic,strong) NSString* userLevel;
+@property (nonatomic)SInt32 userLevel;
 @property (nonatomic,strong) NSString* rentCategoryName;
 @property (nonatomic,strong) NSString* content;
 @property (nonatomic,strong) NSMutableArray * imageUrls;
+@property (nonatomic)SInt32 level;
+@property (nonatomic,strong) NSString* evaluateId;
 @end
 
-@interface getProductEvaluateListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@interface GetProductEvaluateListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasProductId;
 @property (readonly) BOOL hasEvaluateType;
 @property (readonly) BOOL hasStartIndex;
@@ -185,7 +189,7 @@
 @property (nonatomic)SInt32 startIndex;
 @end
 
-@interface getProductEvaluateListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@interface GetProductEvaluateListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasMaxIndex;

@@ -10,9 +10,9 @@ import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 获取产品的评论列表
+ * 获取产品的评价列表
  */
-public final class getProductEvaluateListRequest extends Message {
+public final class GetProductEvaluateListRequest extends Message {
 
   public static final int TAG_PRODUCTID = 1;
   public static final int TAG_EVALUATETYPE = 2;
@@ -29,7 +29,7 @@ public final class getProductEvaluateListRequest extends Message {
   public String productId;
 
   /**
-   * 评论类型：0：全部，1：只看有图评论
+   * 评价类型：0：全部，1：只看有图评价
    */
   @ProtoField(tag = 2, type = INT32, label = REQUIRED)
   public Integer evaluateType;
@@ -40,7 +40,7 @@ public final class getProductEvaluateListRequest extends Message {
   @ProtoField(tag = 3, type = INT32)
   public Integer startIndex;
 
-  public getProductEvaluateListRequest(getProductEvaluateListRequest message) {
+  public GetProductEvaluateListRequest(GetProductEvaluateListRequest message) {
     super(message);
     if (message == null) return;
     this.productId = message.productId;
@@ -48,10 +48,10 @@ public final class getProductEvaluateListRequest extends Message {
     this.startIndex = message.startIndex;
   }
 
-  public getProductEvaluateListRequest() {
+  public GetProductEvaluateListRequest() {
   }
 
-  public getProductEvaluateListRequest fillTagValue(int tag, Object value) {
+  public GetProductEvaluateListRequest fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_PRODUCTID:
         this.productId = (String)value;
@@ -70,8 +70,8 @@ public final class getProductEvaluateListRequest extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof getProductEvaluateListRequest)) return false;
-    getProductEvaluateListRequest o = (getProductEvaluateListRequest) other;
+    if (!(other instanceof GetProductEvaluateListRequest)) return false;
+    GetProductEvaluateListRequest o = (GetProductEvaluateListRequest) other;
     return equals(productId, o.productId)
         && equals(evaluateType, o.evaluateType)
         && equals(startIndex, o.startIndex);

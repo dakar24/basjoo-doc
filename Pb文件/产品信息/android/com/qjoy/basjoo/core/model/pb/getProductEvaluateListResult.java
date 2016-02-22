@@ -15,9 +15,9 @@ import static com.squareup.wire.Message.Label.REPEATED;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 获取产品的评论列表
+ * 获取产品的评价列表
  */
-public final class getProductEvaluateListResult extends Message {
+public final class GetProductEvaluateListResult extends Message {
 
   public static final int TAG_RESULTCODE = 1;
   public static final int TAG_RESULTMSG = 2;
@@ -71,7 +71,7 @@ public final class getProductEvaluateListResult extends Message {
   @ProtoField(tag = 7, label = REPEATED)
   public List<ProductEvaluateInfo> productEvaluateInfo;
 
-  public getProductEvaluateListResult(getProductEvaluateListResult message) {
+  public GetProductEvaluateListResult(GetProductEvaluateListResult message) {
     super(message);
     if (message == null) return;
     this.resultCode = message.resultCode;
@@ -83,10 +83,10 @@ public final class getProductEvaluateListResult extends Message {
     this.productEvaluateInfo = copyOf(message.productEvaluateInfo);
   }
 
-  public getProductEvaluateListResult() {
+  public GetProductEvaluateListResult() {
   }
 
-  public getProductEvaluateListResult fillTagValue(int tag, Object value) {
+  public GetProductEvaluateListResult fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_RESULTCODE:
         this.resultCode = (String)value;
@@ -117,8 +117,8 @@ public final class getProductEvaluateListResult extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof getProductEvaluateListResult)) return false;
-    getProductEvaluateListResult o = (getProductEvaluateListResult) other;
+    if (!(other instanceof GetProductEvaluateListResult)) return false;
+    GetProductEvaluateListResult o = (GetProductEvaluateListResult) other;
     return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
         && equals(maxIndex, o.maxIndex)
