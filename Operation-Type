@@ -29,3 +29,9 @@
 添加评价：qjoy.basjoo.addEvaluate
 修改评价：qjoy.basjoo.modifyEvaluate
 删除评价：qjoy.basjoo.deleteEvaluate
+
+##订单
+提交订单：qjoy.basjoo.commitOrder
+删除订单：qjoy.basjoo.deleteOrder
+获取订单详情：qjoy.basjoo.getOrderDetail
+获取订单列表：qjoy.basjoo.searchOrderList

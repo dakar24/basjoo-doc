@@ -1,0 +1,292 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//提交订单
+message CommitOrderRequest {   
+
+     //产品Id
+    required string                 productId = 1; 
+	
+	 //租用数量
+	required int32                  rentCount = 2;
+	
+	 //租金编码
+	required string                 rentCode = 3;
+	
+	//是否选择运费险
+	required bool                   insurance = 4;
+	
+	//运费险
+	optional double                 insurancePrice = 5;
+	
+	//买家留言
+	optional string                 message = 6;
+	
+	//支付渠道，0：微信支付，1：支付宝
+	required int32                  payChannel = 7;
+	
+	//类别信息
+	required string                 categoryId = 8;
+	
+	//用户选择的权益
+	repeated string                 vouchers = 9;
+	
+	//收货地址ID
+	required string                 receiveAddressId = 10;
+    
+}
+
+
+//提交订单结果
+message CommitOrderResult {  
+
+    required string                 resultCode = 1;
+    
+    required string                 resultMsg = 2; 
+	
+     //订单Id
+    optional string                 orderId = 3; 
+    
+}
+
+
+
+//搜索订单列表
+message SearchOrderListRequest{
+
+  //搜索关键字,订单ID
+  optional string keyWords = 1;
+  
+  //订单状态 0:全部订单,1:待付款，2:待发货，3：待收货，4：待归还，5：待退款，6：交易成功，7：交易关闭
+  optional int32 orderStatus = 2;
+  
+  //评价状态
+  optional bool  evaluateStauts =3;
+  
+  //起始index
+  optional int32 startIndex = 4;
+  
+  //订单起始时间
+  optional int64 startTime = 5;
+  
+  //订单结束时间
+  optional int64 endTime = 6;
+}
+
+
+//搜索订单结果
+message SearchOrderListResult{
+
+  required string   resultCode = 1;
+    
+  required string   resultMsg = 2; 
+  
+  //当前最大index
+  optional int32    maxIndex = 3;
+   
+  //是否还有更多数据
+  required bool     hasMore  = 4;
+  
+  //待付款
+  required int32    waitPayCount = 5;
+  
+  //待发货
+  required int32    waitDeliveryCount = 6;
+  
+  //待收货
+  required int32    waitReceiveCount = 7;
+  
+  //待归还
+  required int32    waitBackCount = 8;
+  
+  //待评价
+  required int32    waitEvaluateCount = 9;
+  
+  //总数
+  required int32    totalCount = 10;
+  
+  //订单简要信息
+  repeated OrderLiteInfo orderLiteInfo = 11;
+}
+
+//订单简要信息
+message OrderLiteInfo{
+   //产品Id
+   required string       orderId = 1; 
+   
+   //订单状态 0:全部订单,1:待付款，2:待发货，3：待收货，4：待归还，5：待退款，6：交易成功，7：交易关闭
+   required int32        orderStatus = 2; 
+   
+   //创建时间
+   required int64        createTime  = 3;
+   
+   //起租时间
+   required int64        rentStartTime =4;
+   
+   //到期时间
+   required int64        rentEndTime =5;   
+   
+   //租用天数
+   required int32        rentDays =6;
+   
+   //租用件数
+   required int32        rentCount = 7; 
+   
+   //租金总价
+   required double       rentPrice = 8; 
+   
+   //押金
+   required double       pledgePrice = 9; 
+   
+   //运费
+   optional double       transportationPrice = 10;
+ 
+   //该周期内总价
+   required double       totalPrice = 11; 
+
+   //物流ID
+   optional string       transportationId = 12;
+
+   //评价状态
+   optional bool  evaluateStauts = 13;      
+ 
+   //产品Id
+   required string      productId = 14;    
+     
+   //大图地址
+   required string      mainImageUrl = 15; 
+   
+   //描述
+   required string      desc = 16;    
+ 
+   //类别名称
+   required string      categoryName = 17; 
+ 
+}
+
+
+//删除订单请求
+message DeleteOrderRequest {      
+	
+    //订单ID
+    optional string                 orderId = 1; 	
+    
+}
+
+
+//删除订单结果
+message DeleteOrderResult {      
+	
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+}
+
+//获取订单详情请求
+message GetOrderDetailRequest {      
+	
+    //订单ID
+    optional string                 orderId = 1; 	
+    
+}
+
+
+//获取订单详情结果
+message GetOrderDetailResult{
+
+  required string   resultCode = 1;
+    
+  required string   resultMsg = 2; 
+  
+  //订单详细信息
+  required OrderDetailInfo orderDetailInfo = 3;
+}
+
+
+//订单详细信息
+message OrderDetailInfo{
+   //产品Id
+   required string       orderId = 1; 
+   
+   //订单状态 0:全部订单,1:待付款，2:待发货，3：待收货，4：待归还，5：待退款，6：交易成功，7：交易关闭
+   required int32        orderStatus = 2; 
+   
+   //创建时间
+   required int64        createTime  = 3;
+   
+   //起租时间
+   required int64        rentStartTime =4;
+   
+   //到期时间
+   required int64        rentEndTime =5;   
+   
+   //租用天数
+   required int32        rentDays =6;
+   
+   //租用件数
+   required int32        rentCount = 7; 
+   
+   //租金总价
+   required double       rentPrice = 8; 
+   
+   //押金
+   required double       pledgePrice = 9; 
+   
+   //运费
+   optional double       transportationPrice = 10;
+ 
+   //该周期内总价
+   required double       totalPrice = 11; 
+
+   //物流ID
+   optional string       transportationId = 12;
+
+   //评价状态
+   optional bool         evaluateStauts = 13;      
+ 
+   //产品Id
+   required string      productId = 14;    
+     
+   //大图地址
+   required string      mainImageUrl = 15; 
+   
+   //描述
+   required string      desc = 16;    
+ 
+   //类别名称
+   required string      categoryName = 17; 
+   
+   //支付时间
+   optional int64       payTime =18;
+   
+   //支付订单号
+   optional string      payId = 19;
+   
+   //支付渠道
+   optional string      payChannel = 20;
+   
+   //发货时间
+   optional int64      deliveryTime = 21;
+  
+   //收货时间
+   optional int64      receiveTime = 22;
+  
+   //待归时间
+   optional int64      backTime = 23;
+   
+   //成交时间（成功）
+   optional int64      completeTime = 24;
+   
+   //关闭时间
+   optional int64      closeTime = 25;
+    
+}
+
+
+
+
+
+
