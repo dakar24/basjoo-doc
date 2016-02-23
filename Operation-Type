@@ -23,3 +23,9 @@
 
 ##活动
 获取活动列表：qjoy.basjoo.getPromoList
+
+##评价
+获取评价列表：qjoy.basjoo.getEvaluateList
+添加评价：qjoy.basjoo.addEvaluate
+修改评价：qjoy.basjoo.modifyEvaluate
+删除评价：qjoy.basjoo.deleteEvaluate
