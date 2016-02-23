@@ -21,7 +21,7 @@ public final class AddressDetailInfo extends Message {
   public static final int TAG_DETAIL = 5;
   public static final int TAG_POSTCODE = 6;
   public static final int TAG_ADDRESSID = 7;
-  public static final int TAG_DEFAULT = 8;
+  public static final int TAG_DEFAULTADDRESS = 8;
 
   public static final String DEFAULT_RECEIVER = "";
   public static final String DEFAULT_MOBILENO = "";
@@ -30,7 +30,7 @@ public final class AddressDetailInfo extends Message {
   public static final String DEFAULT_DETAIL = "";
   public static final String DEFAULT_POSTCODE = "";
   public static final String DEFAULT_ADDRESSID = "";
-  public static final Boolean DEFAULT_DEFAULT = false;
+  public static final Boolean DEFAULT_DEFAULTADDRESS = false;
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String receiver;
@@ -69,10 +69,10 @@ public final class AddressDetailInfo extends Message {
   public String addressId;
 
   /**
-   * 是否默认
+   * 是否默认地址
    */
   @ProtoField(tag = 8, type = BOOL, label = REQUIRED)
-  public Boolean _default;
+  public Boolean defaultAddress;
 
   public AddressDetailInfo(AddressDetailInfo message) {
     super(message);
@@ -84,7 +84,7 @@ public final class AddressDetailInfo extends Message {
     this.detail = message.detail;
     this.postCode = message.postCode;
     this.addressId = message.addressId;
-    this._default = message._default;
+    this.defaultAddress = message.defaultAddress;
   }
 
   public AddressDetailInfo() {
@@ -113,8 +113,8 @@ public final class AddressDetailInfo extends Message {
         case TAG_ADDRESSID:
         this.addressId = (String)value;
         break;
-        case TAG_DEFAULT:
-        this._default = (Boolean)value;
+        case TAG_DEFAULTADDRESS:
+        this.defaultAddress = (Boolean)value;
         break;
         default: break;
         };
@@ -133,7 +133,7 @@ public final class AddressDetailInfo extends Message {
         && equals(detail, o.detail)
         && equals(postCode, o.postCode)
         && equals(addressId, o.addressId)
-        && equals(_default, o._default);
+        && equals(defaultAddress, o.defaultAddress);
   }
 
   @Override
@@ -147,7 +147,7 @@ public final class AddressDetailInfo extends Message {
       result = result * 37 + (detail != null ? detail.hashCode() : 0);
       result = result * 37 + (postCode != null ? postCode.hashCode() : 0);
       result = result * 37 + (addressId != null ? addressId.hashCode() : 0);
-      result = result * 37 + (_default != null ? _default.hashCode() : 0);
+      result = result * 37 + (defaultAddress != null ? defaultAddress.hashCode() : 0);
       hashCode = result;
     }
     return result;

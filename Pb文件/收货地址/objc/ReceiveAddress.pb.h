@@ -95,7 +95,7 @@
 @property (readonly) BOOL hasDetail;
 @property (readonly) BOOL hasPostCode;
 @property (readonly) BOOL hasAddressId;
-@property (readonly) BOOL hasDefault;
+@property (readonly) BOOL hasDefaultAddress;
 @property (nonatomic,strong) NSString* receiver;
 @property (nonatomic,strong) NSString* mobileNo;
 @property (nonatomic,strong) NSString* section;
@@ -103,7 +103,7 @@
 @property (nonatomic,strong) NSString* detail;
 @property (nonatomic,strong) NSString* postCode;
 @property (nonatomic,strong) NSString* addressId;
-@property (nonatomic)BOOL default;
+@property (nonatomic)BOOL defaultAddress;
 @end
 
 @interface SetDefaultRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>

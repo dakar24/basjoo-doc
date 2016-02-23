@@ -112,8 +112,8 @@ message AddressDetailInfo{
 	required string                 postCode=6;
     //地址ID
     optional string                 addressId = 7;
-	//是否默认
-	required bool                   default = 8;
+	//是否默认地址
+	required bool                   defaultAddress = 8;
 }
 
 

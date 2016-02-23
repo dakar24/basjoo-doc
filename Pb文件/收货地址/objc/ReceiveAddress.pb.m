@@ -856,7 +856,7 @@
     _detail = @"";
     _postCode = @"";
     _addressId = @"";
-    _default = NO;
+    _defaultAddress = NO;
   }
   return self;
 }
@@ -882,8 +882,8 @@
   if (self.hasAddressId) {
     [output writeString:7 value:self.addressId];
   }
-  if (self.hasDefault) {
-    [output writeBool:8 value:self.default];
+  if (self.hasDefaultAddress) {
+    [output writeBool:8 value:self.defaultAddress];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -912,8 +912,8 @@
   if (self.hasAddressId) {
     size_ += computeStringSize(7, self.addressId);
   }
-  if (self.hasDefault) {
-    size_ += computeBoolSize(8, self.default);
+  if (self.hasDefaultAddress) {
+    size_ += computeBoolSize(8, self.defaultAddress);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -946,8 +946,8 @@
   if (self.hasAddressId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
   }
-  if (self.hasDefault) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"default", [NSNumber numberWithBool:self.default]];
+  if (self.hasDefaultAddress) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"defaultAddress", [NSNumber numberWithBool:self.defaultAddress]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -980,9 +980,9 @@
   _hasAddressId = YES;
   _addressId = value;
 }
-- (void) setDefault:(BOOL) value {
-  _hasDefault = YES;
-  _default = value;
+- (void) setDefaultAddress:(BOOL) value {
+  _hasDefaultAddress = YES;
+  _defaultAddress = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1028,7 +1028,7 @@
         break;
       }
       case 64: {
-        [self setDefault:[input readBool]];
+        [self setDefaultAddress:[input readBool]];
         break;
       }
     }

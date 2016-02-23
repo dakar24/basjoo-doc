@@ -7753,21 +7753,21 @@ public final class ReceiveAddress {
         getAddressIdBytes();
 
     /**
-     * <code>required bool default = 8;</code>
+     * <code>required bool defaultAddress = 8;</code>
      *
      * <pre>
-     *是否默认
+     *是否默认地址
      * </pre>
      */
-    boolean hasDefault();
+    boolean hasDefaultAddress();
     /**
-     * <code>required bool default = 8;</code>
+     * <code>required bool defaultAddress = 8;</code>
      *
      * <pre>
-     *是否默认
+     *是否默认地址
      * </pre>
      */
-    boolean getDefault();
+    boolean getDefaultAddress();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.AddressDetailInfo}
@@ -7869,7 +7869,7 @@ public final class ReceiveAddress {
             }
             case 64: {
               bitField0_ |= 0x00000080;
-              default_ = input.readBool();
+              defaultAddress_ = input.readBool();
               break;
             }
           }
@@ -8266,27 +8266,27 @@ public final class ReceiveAddress {
       }
     }
 
-    public static final int DEFAULT_FIELD_NUMBER = 8;
-    private boolean default_;
+    public static final int DEFAULTADDRESS_FIELD_NUMBER = 8;
+    private boolean defaultAddress_;
     /**
-     * <code>required bool default = 8;</code>
+     * <code>required bool defaultAddress = 8;</code>
      *
      * <pre>
-     *是否默认
+     *是否默认地址
      * </pre>
      */
-    public boolean hasDefault() {
+    public boolean hasDefaultAddress() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>required bool default = 8;</code>
+     * <code>required bool defaultAddress = 8;</code>
      *
      * <pre>
-     *是否默认
+     *是否默认地址
      * </pre>
      */
-    public boolean getDefault() {
-      return default_;
+    public boolean getDefaultAddress() {
+      return defaultAddress_;
     }
 
     private void initFields() {
@@ -8297,7 +8297,7 @@ public final class ReceiveAddress {
       detail_ = "";
       postCode_ = "";
       addressId_ = "";
-      default_ = false;
+      defaultAddress_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -8329,7 +8329,7 @@ public final class ReceiveAddress {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasDefault()) {
+      if (!hasDefaultAddress()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -8362,7 +8362,7 @@ public final class ReceiveAddress {
         output.writeBytes(7, getAddressIdBytes());
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBool(8, default_);
+        output.writeBool(8, defaultAddress_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -8403,7 +8403,7 @@ public final class ReceiveAddress {
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, default_);
+          .computeBoolSize(8, defaultAddress_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -8540,7 +8540,7 @@ public final class ReceiveAddress {
         bitField0_ = (bitField0_ & ~0x00000020);
         addressId_ = "";
         bitField0_ = (bitField0_ & ~0x00000040);
-        default_ = false;
+        defaultAddress_ = false;
         bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
@@ -8601,7 +8601,7 @@ public final class ReceiveAddress {
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.default_ = default_;
+        result.defaultAddress_ = defaultAddress_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -8653,8 +8653,8 @@ public final class ReceiveAddress {
           addressId_ = other.addressId_;
           onChanged();
         }
-        if (other.hasDefault()) {
-          setDefault(other.getDefault());
+        if (other.hasDefaultAddress()) {
+          setDefaultAddress(other.getDefaultAddress());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -8685,7 +8685,7 @@ public final class ReceiveAddress {
           
           return false;
         }
-        if (!hasDefault()) {
+        if (!hasDefaultAddress()) {
           
           return false;
         }
@@ -9363,50 +9363,50 @@ public final class ReceiveAddress {
         return this;
       }
 
-      private boolean default_ ;
+      private boolean defaultAddress_ ;
       /**
-       * <code>required bool default = 8;</code>
+       * <code>required bool defaultAddress = 8;</code>
        *
        * <pre>
-       *是否默认
+       *是否默认地址
        * </pre>
        */
-      public boolean hasDefault() {
+      public boolean hasDefaultAddress() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>required bool default = 8;</code>
+       * <code>required bool defaultAddress = 8;</code>
        *
        * <pre>
-       *是否默认
+       *是否默认地址
        * </pre>
        */
-      public boolean getDefault() {
-        return default_;
+      public boolean getDefaultAddress() {
+        return defaultAddress_;
       }
       /**
-       * <code>required bool default = 8;</code>
+       * <code>required bool defaultAddress = 8;</code>
        *
        * <pre>
-       *是否默认
+       *是否默认地址
        * </pre>
        */
-      public Builder setDefault(boolean value) {
+      public Builder setDefaultAddress(boolean value) {
         bitField0_ |= 0x00000080;
-        default_ = value;
+        defaultAddress_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required bool default = 8;</code>
+       * <code>required bool defaultAddress = 8;</code>
        *
        * <pre>
-       *是否默认
+       *是否默认地址
        * </pre>
        */
-      public Builder clearDefault() {
+      public Builder clearDefaultAddress() {
         bitField0_ = (bitField0_ & ~0x00000080);
-        default_ = false;
+        defaultAddress_ = false;
         onChanged();
         return this;
       }
@@ -10693,15 +10693,15 @@ public final class ReceiveAddress {
       "Request\"\212\001\n\024GetAddressListResult\022\022\n\nresu" +
       "ltCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022K\n\021addre" +
       "ssDetailInfo\030\003 \003(\01320.com.qjoy.basjoo.cor" +
-      "e.model.pb.AddressDetailInfo\"\236\001\n\021Address" +
+      "e.model.pb.AddressDetailInfo\"\245\001\n\021Address" +
       "DetailInfo\022\020\n\010receiver\030\001 \002(\t\022\020\n\010mobileNo",
       "\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006street\030\004 \002(\t\022" +
       "\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 \002(\t\022\021\n\tadd" +
-      "ressId\030\007 \001(\t\022\017\n\007default\030\010 \002(\010\"&\n\021SetDefa" +
-      "ultRequest\022\021\n\taddressId\030\001 \001(\t\"9\n\020SetDefa" +
-      "ultResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultM" +
-      "sg\030\002 \002(\tB\037\n\035com.qjoy.basjoo.core.model.p" +
-      "b"
+      "ressId\030\007 \001(\t\022\026\n\016defaultAddress\030\010 \002(\010\"&\n\021" +
+      "SetDefaultRequest\022\021\n\taddressId\030\001 \001(\t\"9\n\020" +
+      "SetDefaultResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
+      "resultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo.core." +
+      "model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10768,7 +10768,7 @@ public final class ReceiveAddress {
     internal_static_com_qjoy_basjoo_core_model_pb_AddressDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_AddressDetailInfo_descriptor,
-        new java.lang.String[] { "Receiver", "MobileNo", "Section", "Street", "Detail", "PostCode", "AddressId", "Default", });
+        new java.lang.String[] { "Receiver", "MobileNo", "Section", "Street", "Detail", "PostCode", "AddressId", "DefaultAddress", });
     internal_static_com_qjoy_basjoo_core_model_pb_SetDefaultRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_com_qjoy_basjoo_core_model_pb_SetDefaultRequest_fieldAccessorTable = new
