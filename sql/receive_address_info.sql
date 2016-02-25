@@ -15,4 +15,4 @@ CREATE table receive_address_info (
 	gmt_modified timestamp  null  comment '修改时间',
 	PRIMARY KEY (address_id),
 	INDEX  user_id_index (user_id)
-) comment='收货地址表';
+) comment='收货地址表' DEFAULT CHARSET=utf8;
