@@ -3,7 +3,7 @@ CREATE TABLE `product_lite` (
   `product_type` varchar(2) NOT NULL DEFAULT '' COMMENT '产品类型',
   `brand` varchar(5) NOT NULL DEFAULT '' COMMENT '品牌',
   `main_image_url` varchar(255) NOT NULL DEFAULT '' COMMENT '大图地址',
-  `desc` varchar(255) NOT NULL DEFAULT '' COMMENT '描述',
+  `depict` varchar(255) NOT NULL DEFAULT '' COMMENT '描述',
   `lowest_rent` double(9,2) DEFAULT NULL COMMENT '最低租金',
   `unit` varchar(1) DEFAULT NULL COMMENT '最低租金单位 1：天。2：月',
   `rent_count` int(11) DEFAULT NULL COMMENT '已租件数',
