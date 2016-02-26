@@ -1,2 +1,2 @@
 # basjoo-doc
-docs for basjoo
+this is docs for basjoo
