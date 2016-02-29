@@ -27,6 +27,7 @@
 ##评价
 获取评价列表：qjoy.basjoo.getEvaluateList
 添加评价：qjoy.basjoo.addEvaluate
+添加评价回复：qjoy.basjoo.addEvaluateReply
 修改评价：qjoy.basjoo.modifyEvaluate
 删除评价：qjoy.basjoo.deleteEvaluate
 
