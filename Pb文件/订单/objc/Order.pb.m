@@ -7,14 +7,11 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _productId = @"";
+    _categoryId = @"";
     _rentCount = 0;
     _rentCode = @"";
     _insurance = NO;
-    _insurancePrice = 0;
-    _message = @"";
-    _payChannel = 0;
-    _categoryId = @"";
-    _receiveAddressId = @"";
+    _orderId = @"";
   }
   return self;
 }
@@ -22,32 +19,20 @@
   if (self.hasProductId) {
     [output writeString:1 value:self.productId];
   }
+  if (self.hasCategoryId) {
+    [output writeString:2 value:self.categoryId];
+  }
   if (self.hasRentCount) {
-    [output writeInt32:2 value:self.rentCount];
+    [output writeInt32:3 value:self.rentCount];
   }
   if (self.hasRentCode) {
-    [output writeString:3 value:self.rentCode];
+    [output writeString:4 value:self.rentCode];
   }
   if (self.hasInsurance) {
-    [output writeBool:4 value:self.insurance];
+    [output writeBool:5 value:self.insurance];
   }
-  if (self.hasInsurancePrice) {
-    [output writeDouble:5 value:self.insurancePrice];
-  }
-  if (self.hasMessage) {
-    [output writeString:6 value:self.message];
-  }
-  if (self.hasPayChannel) {
-    [output writeInt32:7 value:self.payChannel];
-  }
-  if (self.hasCategoryId) {
-    [output writeString:8 value:self.categoryId];
-  }
-  [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
-    [output writeString:9 value:element];
-  }];
-  if (self.hasReceiveAddressId) {
-    [output writeString:10 value:self.receiveAddressId];
+  if (self.hasOrderId) {
+    [output writeString:6 value:self.orderId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -58,38 +43,20 @@
   if (self.hasProductId) {
     size_ += computeStringSize(1, self.productId);
   }
+  if (self.hasCategoryId) {
+    size_ += computeStringSize(2, self.categoryId);
+  }
   if (self.hasRentCount) {
-    size_ += computeInt32Size(2, self.rentCount);
+    size_ += computeInt32Size(3, self.rentCount);
   }
   if (self.hasRentCode) {
-    size_ += computeStringSize(3, self.rentCode);
+    size_ += computeStringSize(4, self.rentCode);
   }
   if (self.hasInsurance) {
-    size_ += computeBoolSize(4, self.insurance);
+    size_ += computeBoolSize(5, self.insurance);
   }
-  if (self.hasInsurancePrice) {
-    size_ += computeDoubleSize(5, self.insurancePrice);
-  }
-  if (self.hasMessage) {
-    size_ += computeStringSize(6, self.message);
-  }
-  if (self.hasPayChannel) {
-    size_ += computeInt32Size(7, self.payChannel);
-  }
-  if (self.hasCategoryId) {
-    size_ += computeStringSize(8, self.categoryId);
-  }
-  {
-    __block SInt32 dataSize = 0;
-    const NSUInteger count = self.vouchers.count;
-    [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
-      dataSize += computeStringSizeNoTag(element);
-    }];
-    size_ += dataSize;
-    size_ += (SInt32)(1 * count);
-  }
-  if (self.hasReceiveAddressId) {
-    size_ += computeStringSize(10, self.receiveAddressId);
+  if (self.hasOrderId) {
+    size_ += computeStringSize(6, self.orderId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -104,6 +71,9 @@
   if (self.hasProductId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"productId", self.productId];
   }
+  if (self.hasCategoryId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryId", self.categoryId];
+  }
   if (self.hasRentCount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentCount", [NSNumber numberWithInteger:self.rentCount]];
   }
@@ -113,23 +83,8 @@
   if (self.hasInsurance) {
     [output appendFormat:@"%@%@: %@\n", indent, @"insurance", [NSNumber numberWithBool:self.insurance]];
   }
-  if (self.hasInsurancePrice) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"insurancePrice", [NSNumber numberWithDouble:self.insurancePrice]];
-  }
-  if (self.hasMessage) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"message", self.message];
-  }
-  if (self.hasPayChannel) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"payChannel", [NSNumber numberWithInteger:self.payChannel]];
-  }
-  if (self.hasCategoryId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"categoryId", self.categoryId];
-  }
-  [self.vouchers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"vouchers", obj];
-  }];
-  if (self.hasReceiveAddressId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"receiveAddressId", self.receiveAddressId];
+  if (self.hasOrderId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -137,6 +92,10 @@
 - (void) setProductId:(NSString*) value {
   _hasProductId = YES;
   _productId = value;
+}
+- (void) setCategoryId:(NSString*) value {
+  _hasCategoryId = YES;
+  _categoryId = value;
 }
 - (void) setRentCount:(SInt32) value {
   _hasRentCount = YES;
@@ -150,34 +109,9 @@
   _hasInsurance = YES;
   _insurance = value;
 }
-- (void) setInsurancePrice:(Float64) value {
-  _hasInsurancePrice = YES;
-  _insurancePrice = value;
-}
-- (void) setMessage:(NSString*) value {
-  _hasMessage = YES;
-  _message = value;
-}
-- (void) setPayChannel:(SInt32) value {
-  _hasPayChannel = YES;
-  _payChannel = value;
-}
-- (void) setCategoryId:(NSString*) value {
-  _hasCategoryId = YES;
-  _categoryId = value;
-}
-- (void)setVouchersArray:(NSArray *)array {
-  _vouchers = [[NSMutableArray alloc] initWithArray:array];
-}
-- (void)addVouchers:(NSString*)value {
-  if (_vouchers == nil) {
-    _vouchers = [[NSMutableArray alloc]init];
-  }
-  [_vouchers addObject:value];
-}
-- (void) setReceiveAddressId:(NSString*) value {
-  _hasReceiveAddressId = YES;
-  _receiveAddressId = value;
+- (void) setOrderId:(NSString*) value {
+  _hasOrderId = YES;
+  _orderId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -198,40 +132,24 @@
         [self setProductId:[input readString]];
         break;
       }
-      case 16: {
-        [self setRentCount:[input readInt32]];
-        break;
-      }
-      case 26: {
-        [self setRentCode:[input readString]];
-        break;
-      }
-      case 32: {
-        [self setInsurance:[input readBool]];
-        break;
-      }
-      case 41: {
-        [self setInsurancePrice:[input readDouble]];
-        break;
-      }
-      case 50: {
-        [self setMessage:[input readString]];
-        break;
-      }
-      case 56: {
-        [self setPayChannel:[input readInt32]];
-        break;
-      }
-      case 66: {
+      case 18: {
         [self setCategoryId:[input readString]];
         break;
       }
-      case 74: {
-        [self addVouchers:[input readString]];
+      case 24: {
+        [self setRentCount:[input readInt32]];
         break;
       }
-      case 82: {
-        [self setReceiveAddressId:[input readString]];
+      case 34: {
+        [self setRentCode:[input readString]];
+        break;
+      }
+      case 40: {
+        [self setInsurance:[input readBool]];
+        break;
+      }
+      case 50: {
+        [self setOrderId:[input readString]];
         break;
       }
     }
@@ -241,6 +159,650 @@
 
 
 @implementation CommitOrderResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+    _orderId = @"";
+    _categoryId = @"";
+    _rentCount = 0;
+    _rentCode = @"";
+    _insurance = NO;
+    _insurancePrice = 0;
+    _pledgePrice = 0;
+    _transportationPrice = 0;
+    _totalRentPrice = 0;
+    _hasVoucher = NO;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  if (self.hasOrderId) {
+    [output writeString:3 value:self.orderId];
+  }
+  if (self.hasCategoryId) {
+    [output writeString:4 value:self.categoryId];
+  }
+  if (self.hasRentCount) {
+    [output writeInt32:5 value:self.rentCount];
+  }
+  if (self.hasRentCode) {
+    [output writeString:6 value:self.rentCode];
+  }
+  if (self.hasInsurance) {
+    [output writeBool:7 value:self.insurance];
+  }
+  if (self.hasInsurancePrice) {
+    [output writeDouble:8 value:self.insurancePrice];
+  }
+  if (self.hasPledgePrice) {
+    [output writeDouble:9 value:self.pledgePrice];
+  }
+  if (self.hasTransportationPrice) {
+    [output writeDouble:10 value:self.transportationPrice];
+  }
+  if (self.hasTotalRentPrice) {
+    [output writeDouble:11 value:self.totalRentPrice];
+  }
+  if (self.hasHasVoucher) {
+    [output writeBool:12 value:self.hasVoucher];
+  }
+  if (self.hasDefaultReceiveAddressInfo) {
+    [output writeMessage:13 value:self.defaultReceiveAddressInfo];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  if (self.hasOrderId) {
+    size_ += computeStringSize(3, self.orderId);
+  }
+  if (self.hasCategoryId) {
+    size_ += computeStringSize(4, self.categoryId);
+  }
+  if (self.hasRentCount) {
+    size_ += computeInt32Size(5, self.rentCount);
+  }
+  if (self.hasRentCode) {
+    size_ += computeStringSize(6, self.rentCode);
+  }
+  if (self.hasInsurance) {
+    size_ += computeBoolSize(7, self.insurance);
+  }
+  if (self.hasInsurancePrice) {
+    size_ += computeDoubleSize(8, self.insurancePrice);
+  }
+  if (self.hasPledgePrice) {
+    size_ += computeDoubleSize(9, self.pledgePrice);
+  }
+  if (self.hasTransportationPrice) {
+    size_ += computeDoubleSize(10, self.transportationPrice);
+  }
+  if (self.hasTotalRentPrice) {
+    size_ += computeDoubleSize(11, self.totalRentPrice);
+  }
+  if (self.hasHasVoucher) {
+    size_ += computeBoolSize(12, self.hasVoucher);
+  }
+  if (self.hasDefaultReceiveAddressInfo) {
+    size_ += computeMessageSize(13, self.defaultReceiveAddressInfo);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CommitOrderResult*) parseFromData:(NSData*) data {
+  CommitOrderResult* result = [[CommitOrderResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  if (self.hasOrderId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
+  }
+  if (self.hasCategoryId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryId", self.categoryId];
+  }
+  if (self.hasRentCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCount", [NSNumber numberWithInteger:self.rentCount]];
+  }
+  if (self.hasRentCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCode", self.rentCode];
+  }
+  if (self.hasInsurance) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"insurance", [NSNumber numberWithBool:self.insurance]];
+  }
+  if (self.hasInsurancePrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"insurancePrice", [NSNumber numberWithDouble:self.insurancePrice]];
+  }
+  if (self.hasPledgePrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"pledgePrice", [NSNumber numberWithDouble:self.pledgePrice]];
+  }
+  if (self.hasTransportationPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"transportationPrice", [NSNumber numberWithDouble:self.transportationPrice]];
+  }
+  if (self.hasTotalRentPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalRentPrice", [NSNumber numberWithDouble:self.totalRentPrice]];
+  }
+  if (self.hasHasVoucher) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"hasVoucher", [NSNumber numberWithBool:self.hasVoucher]];
+  }
+  if (self.hasDefaultReceiveAddressInfo) {
+    [output appendFormat:@"%@%@ {\n", indent, @"defaultReceiveAddressInfo"];
+    [self.defaultReceiveAddressInfo writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) setOrderId:(NSString*) value {
+  _hasOrderId = YES;
+  _orderId = value;
+}
+- (void) setCategoryId:(NSString*) value {
+  _hasCategoryId = YES;
+  _categoryId = value;
+}
+- (void) setRentCount:(SInt32) value {
+  _hasRentCount = YES;
+  _rentCount = value;
+}
+- (void) setRentCode:(NSString*) value {
+  _hasRentCode = YES;
+  _rentCode = value;
+}
+- (void) setInsurance:(BOOL) value {
+  _hasInsurance = YES;
+  _insurance = value;
+}
+- (void) setInsurancePrice:(Float64) value {
+  _hasInsurancePrice = YES;
+  _insurancePrice = value;
+}
+- (void) setPledgePrice:(Float64) value {
+  _hasPledgePrice = YES;
+  _pledgePrice = value;
+}
+- (void) setTransportationPrice:(Float64) value {
+  _hasTransportationPrice = YES;
+  _transportationPrice = value;
+}
+- (void) setTotalRentPrice:(Float64) value {
+  _hasTotalRentPrice = YES;
+  _totalRentPrice = value;
+}
+- (void) setHasVoucher:(BOOL) value {
+  _hasHasVoucher = YES;
+  _hasVoucher = value;
+}
+- (void) setDefaultReceiveAddressInfo:(DefaultReceiveAddressInfo*) value {
+  _hasDefaultReceiveAddressInfo = YES;
+  _defaultReceiveAddressInfo = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setOrderId:[input readString]];
+        break;
+      }
+      case 34: {
+        [self setCategoryId:[input readString]];
+        break;
+      }
+      case 40: {
+        [self setRentCount:[input readInt32]];
+        break;
+      }
+      case 50: {
+        [self setRentCode:[input readString]];
+        break;
+      }
+      case 56: {
+        [self setInsurance:[input readBool]];
+        break;
+      }
+      case 65: {
+        [self setInsurancePrice:[input readDouble]];
+        break;
+      }
+      case 73: {
+        [self setPledgePrice:[input readDouble]];
+        break;
+      }
+      case 81: {
+        [self setTransportationPrice:[input readDouble]];
+        break;
+      }
+      case 89: {
+        [self setTotalRentPrice:[input readDouble]];
+        break;
+      }
+      case 96: {
+        [self setHasVoucher:[input readBool]];
+        break;
+      }
+      case 106: {
+        DefaultReceiveAddressInfo* sub = [[DefaultReceiveAddressInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self setDefaultReceiveAddressInfo:sub];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation DefaultReceiveAddressInfo
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _addressId = @"";
+    _receiver = @"";
+    _mobileNo = @"";
+    _addressDetail = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasAddressId) {
+    [output writeString:1 value:self.addressId];
+  }
+  if (self.hasReceiver) {
+    [output writeString:2 value:self.receiver];
+  }
+  if (self.hasMobileNo) {
+    [output writeString:3 value:self.mobileNo];
+  }
+  if (self.hasAddressDetail) {
+    [output writeString:4 value:self.addressDetail];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasAddressId) {
+    size_ += computeStringSize(1, self.addressId);
+  }
+  if (self.hasReceiver) {
+    size_ += computeStringSize(2, self.receiver);
+  }
+  if (self.hasMobileNo) {
+    size_ += computeStringSize(3, self.mobileNo);
+  }
+  if (self.hasAddressDetail) {
+    size_ += computeStringSize(4, self.addressDetail);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (DefaultReceiveAddressInfo*) parseFromData:(NSData*) data {
+  DefaultReceiveAddressInfo* result = [[DefaultReceiveAddressInfo alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasAddressId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
+  }
+  if (self.hasReceiver) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"receiver", self.receiver];
+  }
+  if (self.hasMobileNo) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"mobileNo", self.mobileNo];
+  }
+  if (self.hasAddressDetail) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"addressDetail", self.addressDetail];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setAddressId:(NSString*) value {
+  _hasAddressId = YES;
+  _addressId = value;
+}
+- (void) setReceiver:(NSString*) value {
+  _hasReceiver = YES;
+  _receiver = value;
+}
+- (void) setMobileNo:(NSString*) value {
+  _hasMobileNo = YES;
+  _mobileNo = value;
+}
+- (void) setAddressDetail:(NSString*) value {
+  _hasAddressDetail = YES;
+  _addressDetail = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setAddressId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setReceiver:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setMobileNo:[input readString]];
+        break;
+      }
+      case 34: {
+        [self setAddressDetail:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ConfirmOrderRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _productId = @"";
+    _categoryId = @"";
+    _rentCount = 0;
+    _rentCode = @"";
+    _insurance = NO;
+    _orderId = @"";
+    _addressId = @"";
+    _userMessage = @"";
+    _payChannel = 0;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasProductId) {
+    [output writeString:1 value:self.productId];
+  }
+  if (self.hasCategoryId) {
+    [output writeString:2 value:self.categoryId];
+  }
+  if (self.hasRentCount) {
+    [output writeInt32:3 value:self.rentCount];
+  }
+  if (self.hasRentCode) {
+    [output writeString:4 value:self.rentCode];
+  }
+  if (self.hasInsurance) {
+    [output writeBool:5 value:self.insurance];
+  }
+  if (self.hasOrderId) {
+    [output writeString:6 value:self.orderId];
+  }
+  if (self.hasAddressId) {
+    [output writeString:7 value:self.addressId];
+  }
+  [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:8 value:element];
+  }];
+  if (self.hasUserMessage) {
+    [output writeString:9 value:self.userMessage];
+  }
+  if (self.hasPayChannel) {
+    [output writeInt32:10 value:self.payChannel];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasProductId) {
+    size_ += computeStringSize(1, self.productId);
+  }
+  if (self.hasCategoryId) {
+    size_ += computeStringSize(2, self.categoryId);
+  }
+  if (self.hasRentCount) {
+    size_ += computeInt32Size(3, self.rentCount);
+  }
+  if (self.hasRentCode) {
+    size_ += computeStringSize(4, self.rentCode);
+  }
+  if (self.hasInsurance) {
+    size_ += computeBoolSize(5, self.insurance);
+  }
+  if (self.hasOrderId) {
+    size_ += computeStringSize(6, self.orderId);
+  }
+  if (self.hasAddressId) {
+    size_ += computeStringSize(7, self.addressId);
+  }
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.vouchers.count;
+    [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(1 * count);
+  }
+  if (self.hasUserMessage) {
+    size_ += computeStringSize(9, self.userMessage);
+  }
+  if (self.hasPayChannel) {
+    size_ += computeInt32Size(10, self.payChannel);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ConfirmOrderRequest*) parseFromData:(NSData*) data {
+  ConfirmOrderRequest* result = [[ConfirmOrderRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasProductId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"productId", self.productId];
+  }
+  if (self.hasCategoryId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryId", self.categoryId];
+  }
+  if (self.hasRentCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCount", [NSNumber numberWithInteger:self.rentCount]];
+  }
+  if (self.hasRentCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCode", self.rentCode];
+  }
+  if (self.hasInsurance) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"insurance", [NSNumber numberWithBool:self.insurance]];
+  }
+  if (self.hasOrderId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
+  }
+  if (self.hasAddressId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
+  }
+  [self.vouchers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"vouchers", obj];
+  }];
+  if (self.hasUserMessage) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userMessage", self.userMessage];
+  }
+  if (self.hasPayChannel) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"payChannel", [NSNumber numberWithInteger:self.payChannel]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setProductId:(NSString*) value {
+  _hasProductId = YES;
+  _productId = value;
+}
+- (void) setCategoryId:(NSString*) value {
+  _hasCategoryId = YES;
+  _categoryId = value;
+}
+- (void) setRentCount:(SInt32) value {
+  _hasRentCount = YES;
+  _rentCount = value;
+}
+- (void) setRentCode:(NSString*) value {
+  _hasRentCode = YES;
+  _rentCode = value;
+}
+- (void) setInsurance:(BOOL) value {
+  _hasInsurance = YES;
+  _insurance = value;
+}
+- (void) setOrderId:(NSString*) value {
+  _hasOrderId = YES;
+  _orderId = value;
+}
+- (void) setAddressId:(NSString*) value {
+  _hasAddressId = YES;
+  _addressId = value;
+}
+- (void)setVouchersArray:(NSArray *)array {
+  _vouchers = [[NSMutableArray alloc] initWithArray:array];
+}
+- (void)addVouchers:(NSString*)value {
+  if (_vouchers == nil) {
+    _vouchers = [[NSMutableArray alloc]init];
+  }
+  [_vouchers addObject:value];
+}
+- (void) setUserMessage:(NSString*) value {
+  _hasUserMessage = YES;
+  _userMessage = value;
+}
+- (void) setPayChannel:(SInt32) value {
+  _hasPayChannel = YES;
+  _payChannel = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setProductId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setCategoryId:[input readString]];
+        break;
+      }
+      case 24: {
+        [self setRentCount:[input readInt32]];
+        break;
+      }
+      case 34: {
+        [self setRentCode:[input readString]];
+        break;
+      }
+      case 40: {
+        [self setInsurance:[input readBool]];
+        break;
+      }
+      case 50: {
+        [self setOrderId:[input readString]];
+        break;
+      }
+      case 58: {
+        [self setAddressId:[input readString]];
+        break;
+      }
+      case 66: {
+        [self addVouchers:[input readString]];
+        break;
+      }
+      case 74: {
+        [self setUserMessage:[input readString]];
+        break;
+      }
+      case 80: {
+        [self setPayChannel:[input readInt32]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ConfirmOrderResult
 
 - (instancetype) init {
   if ((self = [super init])) {
@@ -279,8 +841,8 @@
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (CommitOrderResult*) parseFromData:(NSData*) data {
-  CommitOrderResult* result = [[CommitOrderResult alloc] init];
++ (ConfirmOrderResult*) parseFromData:(NSData*) data {
+  ConfirmOrderResult* result = [[ConfirmOrderResult alloc] init];
   [result mergeFromData:data];  return result;
 }
 #ifdef DEBUG

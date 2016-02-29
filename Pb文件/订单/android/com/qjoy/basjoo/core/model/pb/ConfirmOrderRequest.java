@@ -4,16 +4,19 @@ package com.qjoy.basjoo.core.model.pb;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 
 import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REPEATED;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 提交订单
+ * 确认订单
  */
-public final class CommitOrderRequest extends Message {
+public final class ConfirmOrderRequest extends Message {
 
   public static final int TAG_PRODUCTID = 1;
   public static final int TAG_CATEGORYID = 2;
@@ -21,6 +24,10 @@ public final class CommitOrderRequest extends Message {
   public static final int TAG_RENTCODE = 4;
   public static final int TAG_INSURANCE = 5;
   public static final int TAG_ORDERID = 6;
+  public static final int TAG_ADDRESSID = 7;
+  public static final int TAG_VOUCHERS = 8;
+  public static final int TAG_USERMESSAGE = 9;
+  public static final int TAG_PAYCHANNEL = 10;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_CATEGORYID = "";
@@ -28,6 +35,10 @@ public final class CommitOrderRequest extends Message {
   public static final String DEFAULT_RENTCODE = "";
   public static final Boolean DEFAULT_INSURANCE = false;
   public static final String DEFAULT_ORDERID = "";
+  public static final String DEFAULT_ADDRESSID = "";
+  public static final List<String> DEFAULT_VOUCHERS = Collections.emptyList();
+  public static final String DEFAULT_USERMESSAGE = "";
+  public static final Integer DEFAULT_PAYCHANNEL = 0;
 
   /**
    * 产品Id
@@ -60,12 +71,36 @@ public final class CommitOrderRequest extends Message {
   public Boolean insurance;
 
   /**
-   * 订单Id（如果对已提交的订单进行修改时需要带之前返回的orderId）
+   * 订单Id
    */
-  @ProtoField(tag = 6, type = STRING)
+  @ProtoField(tag = 6, type = STRING, label = REQUIRED)
   public String orderId;
 
-  public CommitOrderRequest(CommitOrderRequest message) {
+  /**
+   * 用户选择的地址ID
+   */
+  @ProtoField(tag = 7, type = STRING, label = REQUIRED)
+  public String addressId;
+
+  /**
+   * 用户选择的权益
+   */
+  @ProtoField(tag = 8, type = STRING, label = REPEATED)
+  public List<String> vouchers;
+
+  /**
+   * 用户留言（买家留言）
+   */
+  @ProtoField(tag = 9, type = STRING)
+  public String userMessage;
+
+  /**
+   * 支付渠道，0：微信支付，1：支付宝
+   */
+  @ProtoField(tag = 10, type = INT32, label = REQUIRED)
+  public Integer payChannel;
+
+  public ConfirmOrderRequest(ConfirmOrderRequest message) {
     super(message);
     if (message == null) return;
     this.productId = message.productId;
@@ -74,12 +109,16 @@ public final class CommitOrderRequest extends Message {
     this.rentCode = message.rentCode;
     this.insurance = message.insurance;
     this.orderId = message.orderId;
+    this.addressId = message.addressId;
+    this.vouchers = copyOf(message.vouchers);
+    this.userMessage = message.userMessage;
+    this.payChannel = message.payChannel;
   }
 
-  public CommitOrderRequest() {
+  public ConfirmOrderRequest() {
   }
 
-  public CommitOrderRequest fillTagValue(int tag, Object value) {
+  public ConfirmOrderRequest fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_PRODUCTID:
         this.productId = (String)value;
@@ -99,6 +138,18 @@ public final class CommitOrderRequest extends Message {
         case TAG_ORDERID:
         this.orderId = (String)value;
         break;
+        case TAG_ADDRESSID:
+        this.addressId = (String)value;
+        break;
+        case TAG_VOUCHERS:
+        this.vouchers = immutableCopyOf((List<String>)value);
+        break;
+        case TAG_USERMESSAGE:
+        this.userMessage = (String)value;
+        break;
+        case TAG_PAYCHANNEL:
+        this.payChannel = (Integer)value;
+        break;
         default: break;
         };
     return this;
@@ -107,14 +158,18 @@ public final class CommitOrderRequest extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof CommitOrderRequest)) return false;
-    CommitOrderRequest o = (CommitOrderRequest) other;
+    if (!(other instanceof ConfirmOrderRequest)) return false;
+    ConfirmOrderRequest o = (ConfirmOrderRequest) other;
     return equals(productId, o.productId)
         && equals(categoryId, o.categoryId)
         && equals(rentCount, o.rentCount)
         && equals(rentCode, o.rentCode)
         && equals(insurance, o.insurance)
-        && equals(orderId, o.orderId);
+        && equals(orderId, o.orderId)
+        && equals(addressId, o.addressId)
+        && equals(vouchers, o.vouchers)
+        && equals(userMessage, o.userMessage)
+        && equals(payChannel, o.payChannel);
   }
 
   @Override
@@ -127,6 +182,10 @@ public final class CommitOrderRequest extends Message {
       result = result * 37 + (rentCode != null ? rentCode.hashCode() : 0);
       result = result * 37 + (insurance != null ? insurance.hashCode() : 0);
       result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
+      result = result * 37 + (addressId != null ? addressId.hashCode() : 0);
+      result = result * 37 + (vouchers != null ? vouchers.hashCode() : 1);
+      result = result * 37 + (userMessage != null ? userMessage.hashCode() : 0);
+      result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
       hashCode = result;
     }
     return result;

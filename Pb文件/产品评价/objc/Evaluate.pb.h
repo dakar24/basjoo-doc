@@ -2,6 +2,8 @@
 
 #import <QJProtocolBuffers/ProtocolBuffers.h>
 
+@class AddEvaluateReplyRequest;
+@class AddEvaluateReplyResult;
 @class AddEvaluateRequest;
 @class AddEvaluateResult;
 @class DeleteEvaluateRequest;
@@ -26,6 +28,22 @@
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* evaluateId;
+@end
+
+@interface AddEvaluateReplyRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasEvaluateId;
+@property (readonly) BOOL hasContent;
+@property (nonatomic,strong) NSString* evaluateId;
+@property (nonatomic,strong) NSString* content;
+@end
+
+@interface AddEvaluateReplyResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasReplyId;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic,strong) NSString* replyId;
 @end
 
 @interface ModifyEvaluateRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>

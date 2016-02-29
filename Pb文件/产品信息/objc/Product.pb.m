@@ -1167,6 +1167,7 @@
     _categoryCode = @"";
     _categoryName = @"";
     _stockCount = 0L;
+    _categoryImgUrl = @"";
   }
   return self;
 }
@@ -1179,6 +1180,9 @@
   }
   if (self.hasStockCount) {
     [output writeInt64:3 value:self.stockCount];
+  }
+  if (self.hasCategoryImgUrl) {
+    [output writeString:4 value:self.categoryImgUrl];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1194,6 +1198,9 @@
   }
   if (self.hasStockCount) {
     size_ += computeInt64Size(3, self.stockCount);
+  }
+  if (self.hasCategoryImgUrl) {
+    size_ += computeStringSize(4, self.categoryImgUrl);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1214,6 +1221,9 @@
   if (self.hasStockCount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"stockCount", [NSNumber numberWithLongLong:self.stockCount]];
   }
+  if (self.hasCategoryImgUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryImgUrl", self.categoryImgUrl];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -1228,6 +1238,10 @@
 - (void) setStockCount:(SInt64) value {
   _hasStockCount = YES;
   _stockCount = value;
+}
+- (void) setCategoryImgUrl:(NSString*) value {
+  _hasCategoryImgUrl = YES;
+  _categoryImgUrl = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1254,6 +1268,10 @@
       }
       case 24: {
         [self setStockCount:[input readInt64]];
+        break;
+      }
+      case 34: {
+        [self setCategoryImgUrl:[input readString]];
         break;
       }
     }
@@ -1687,6 +1705,9 @@
   if (self.hasEvaluateId) {
     [output writeString:10 value:self.evaluateId];
   }
+  [self.evaluateReplyInfo enumerateObjectsUsingBlock:^(EvaluateReplyInfo *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:11 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -1729,6 +1750,9 @@
   if (self.hasEvaluateId) {
     size_ += computeStringSize(10, self.evaluateId);
   }
+  [self.evaluateReplyInfo enumerateObjectsUsingBlock:^(EvaluateReplyInfo *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(11, element);
+  }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -1769,6 +1793,12 @@
   if (self.hasEvaluateId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"evaluateId", self.evaluateId];
   }
+  [self.evaluateReplyInfo enumerateObjectsUsingBlock:^(EvaluateReplyInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"evaluateReplyInfo"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -1816,6 +1846,15 @@
 - (void) setEvaluateId:(NSString*) value {
   _hasEvaluateId = YES;
   _evaluateId = value;
+}
+- (void)setEvaluateReplyInfoArray:(NSArray *)array {
+  _evaluateReplyInfo = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addEvaluateReplyInfo:(EvaluateReplyInfo*)value {
+  if (_evaluateReplyInfo == nil) {
+    _evaluateReplyInfo = [[NSMutableArray alloc]init];
+  }
+  [_evaluateReplyInfo addObject:value];
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1870,6 +1909,132 @@
       }
       case 82: {
         [self setEvaluateId:[input readString]];
+        break;
+      }
+      case 90: {
+        EvaluateReplyInfo* sub = [[EvaluateReplyInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addEvaluateReplyInfo:sub];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation EvaluateReplyInfo
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _replyId = @"";
+    _content = @"";
+    _time = 0L;
+    _fromMechant = NO;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasReplyId) {
+    [output writeString:1 value:self.replyId];
+  }
+  if (self.hasContent) {
+    [output writeString:2 value:self.content];
+  }
+  if (self.hasTime) {
+    [output writeInt64:3 value:self.time];
+  }
+  if (self.hasFromMechant) {
+    [output writeBool:4 value:self.fromMechant];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasReplyId) {
+    size_ += computeStringSize(1, self.replyId);
+  }
+  if (self.hasContent) {
+    size_ += computeStringSize(2, self.content);
+  }
+  if (self.hasTime) {
+    size_ += computeInt64Size(3, self.time);
+  }
+  if (self.hasFromMechant) {
+    size_ += computeBoolSize(4, self.fromMechant);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (EvaluateReplyInfo*) parseFromData:(NSData*) data {
+  EvaluateReplyInfo* result = [[EvaluateReplyInfo alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasReplyId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"replyId", self.replyId];
+  }
+  if (self.hasContent) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"content", self.content];
+  }
+  if (self.hasTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"time", [NSNumber numberWithLongLong:self.time]];
+  }
+  if (self.hasFromMechant) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"fromMechant", [NSNumber numberWithBool:self.fromMechant]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setReplyId:(NSString*) value {
+  _hasReplyId = YES;
+  _replyId = value;
+}
+- (void) setContent:(NSString*) value {
+  _hasContent = YES;
+  _content = value;
+}
+- (void) setTime:(SInt64) value {
+  _hasTime = YES;
+  _time = value;
+}
+- (void) setFromMechant:(BOOL) value {
+  _hasFromMechant = YES;
+  _fromMechant = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setReplyId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setContent:[input readString]];
+        break;
+      }
+      case 24: {
+        [self setTime:[input readInt64]];
+        break;
+      }
+      case 32: {
+        [self setFromMechant:[input readBool]];
         break;
       }
     }

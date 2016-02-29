@@ -5,6 +5,9 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.BOOL;
+import static com.squareup.wire.Message.Datatype.DOUBLE;
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
@@ -16,10 +19,29 @@ public final class CommitOrderResult extends Message {
   public static final int TAG_RESULTCODE = 1;
   public static final int TAG_RESULTMSG = 2;
   public static final int TAG_ORDERID = 3;
+  public static final int TAG_CATEGORYID = 4;
+  public static final int TAG_RENTCOUNT = 5;
+  public static final int TAG_RENTCODE = 6;
+  public static final int TAG_INSURANCE = 7;
+  public static final int TAG_INSURANCEPRICE = 8;
+  public static final int TAG_PLEDGEPRICE = 9;
+  public static final int TAG_TRANSPORTATIONPRICE = 10;
+  public static final int TAG_TOTALRENTPRICE = 11;
+  public static final int TAG_HASVOUCHER = 12;
+  public static final int TAG_DEFAULTRECEIVEADDRESSINFO = 13;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
   public static final String DEFAULT_ORDERID = "";
+  public static final String DEFAULT_CATEGORYID = "";
+  public static final Integer DEFAULT_RENTCOUNT = 0;
+  public static final String DEFAULT_RENTCODE = "";
+  public static final Boolean DEFAULT_INSURANCE = false;
+  public static final Double DEFAULT_INSURANCEPRICE = 0D;
+  public static final Double DEFAULT_PLEDGEPRICE = 0D;
+  public static final Double DEFAULT_TRANSPORTATIONPRICE = 0D;
+  public static final Double DEFAULT_TOTALRENTPRICE = 0D;
+  public static final Boolean DEFAULT_HASVOUCHER = false;
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
@@ -33,12 +55,82 @@ public final class CommitOrderResult extends Message {
   @ProtoField(tag = 3, type = STRING)
   public String orderId;
 
+  /**
+   * 用户提交订单时所选的类别信息
+   */
+  @ProtoField(tag = 4, type = STRING, label = REQUIRED)
+  public String categoryId;
+
+  /**
+   * 用户提交订单时所选的租用数量
+   */
+  @ProtoField(tag = 5, type = INT32, label = REQUIRED)
+  public Integer rentCount;
+
+  /**
+   * 用户提交订单时所选的租金的编码
+   */
+  @ProtoField(tag = 6, type = STRING, label = REQUIRED)
+  public String rentCode;
+
+  /**
+   * 是否选择运费险
+   */
+  @ProtoField(tag = 7, type = BOOL, label = REQUIRED)
+  public Boolean insurance;
+
+  /**
+   * 运费险金额
+   */
+  @ProtoField(tag = 8, type = DOUBLE)
+  public Double insurancePrice;
+
+  /**
+   * 押金
+   */
+  @ProtoField(tag = 9, type = DOUBLE)
+  public Double pledgePrice;
+
+  /**
+   * 运费
+   */
+  @ProtoField(tag = 10, type = DOUBLE)
+  public Double transportationPrice;
+
+  /**
+   * 该周期内总租金
+   */
+  @ProtoField(tag = 11, type = DOUBLE, label = REQUIRED)
+  public Double totalRentPrice;
+
+  /**
+   * 是否有可使用的权益
+   */
+  @ProtoField(tag = 12, type = BOOL, label = REQUIRED)
+  public Boolean hasVoucher;
+
+  /**
+   * 默认收货地址信息
+   */
+  @ProtoField(tag = 13)
+  public DefaultReceiveAddressInfo defaultReceiveAddressInfo;
+
   public CommitOrderResult(CommitOrderResult message) {
     super(message);
     if (message == null) return;
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
     this.orderId = message.orderId;
+    this.categoryId = message.categoryId;
+    this.rentCount = message.rentCount;
+    this.rentCode = message.rentCode;
+    this.insurance = message.insurance;
+    this.insurancePrice = message.insurancePrice;
+    this.pledgePrice = message.pledgePrice;
+    this.transportationPrice = message.transportationPrice;
+    this.totalRentPrice = message.totalRentPrice;
+    this.hasVoucher = message.hasVoucher;
+    this.defaultReceiveAddressInfo = message.defaultReceiveAddressInfo;
   }
 
   public CommitOrderResult() {
@@ -55,6 +147,36 @@ public final class CommitOrderResult extends Message {
         case TAG_ORDERID:
         this.orderId = (String)value;
         break;
+        case TAG_CATEGORYID:
+        this.categoryId = (String)value;
+        break;
+        case TAG_RENTCOUNT:
+        this.rentCount = (Integer)value;
+        break;
+        case TAG_RENTCODE:
+        this.rentCode = (String)value;
+        break;
+        case TAG_INSURANCE:
+        this.insurance = (Boolean)value;
+        break;
+        case TAG_INSURANCEPRICE:
+        this.insurancePrice = (Double)value;
+        break;
+        case TAG_PLEDGEPRICE:
+        this.pledgePrice = (Double)value;
+        break;
+        case TAG_TRANSPORTATIONPRICE:
+        this.transportationPrice = (Double)value;
+        break;
+        case TAG_TOTALRENTPRICE:
+        this.totalRentPrice = (Double)value;
+        break;
+        case TAG_HASVOUCHER:
+        this.hasVoucher = (Boolean)value;
+        break;
+        case TAG_DEFAULTRECEIVEADDRESSINFO:
+        this.defaultReceiveAddressInfo = (DefaultReceiveAddressInfo)value;
+        break;
         default: break;
         };
     return this;
@@ -67,7 +189,17 @@ public final class CommitOrderResult extends Message {
     CommitOrderResult o = (CommitOrderResult) other;
     return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
-        && equals(orderId, o.orderId);
+        && equals(orderId, o.orderId)
+        && equals(categoryId, o.categoryId)
+        && equals(rentCount, o.rentCount)
+        && equals(rentCode, o.rentCode)
+        && equals(insurance, o.insurance)
+        && equals(insurancePrice, o.insurancePrice)
+        && equals(pledgePrice, o.pledgePrice)
+        && equals(transportationPrice, o.transportationPrice)
+        && equals(totalRentPrice, o.totalRentPrice)
+        && equals(hasVoucher, o.hasVoucher)
+        && equals(defaultReceiveAddressInfo, o.defaultReceiveAddressInfo);
   }
 
   @Override
@@ -77,6 +209,16 @@ public final class CommitOrderResult extends Message {
       result = resultCode != null ? resultCode.hashCode() : 0;
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
+      result = result * 37 + (categoryId != null ? categoryId.hashCode() : 0);
+      result = result * 37 + (rentCount != null ? rentCount.hashCode() : 0);
+      result = result * 37 + (rentCode != null ? rentCode.hashCode() : 0);
+      result = result * 37 + (insurance != null ? insurance.hashCode() : 0);
+      result = result * 37 + (insurancePrice != null ? insurancePrice.hashCode() : 0);
+      result = result * 37 + (pledgePrice != null ? pledgePrice.hashCode() : 0);
+      result = result * 37 + (transportationPrice != null ? transportationPrice.hashCode() : 0);
+      result = result * 37 + (totalRentPrice != null ? totalRentPrice.hashCode() : 0);
+      result = result * 37 + (hasVoucher != null ? hasVoucher.hashCode() : 0);
+      result = result * 37 + (defaultReceiveAddressInfo != null ? defaultReceiveAddressInfo.hashCode() : 0);
       hashCode = result;
     }
     return result;

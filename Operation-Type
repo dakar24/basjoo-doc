@@ -32,6 +32,7 @@
 
 ##订单
 提交订单：qjoy.basjoo.commitOrder
+确认订单：qjoy.basjoo.confirmOrder
 删除订单：qjoy.basjoo.deleteOrder
 获取订单详情：qjoy.basjoo.getOrderDetail
 获取订单列表：qjoy.basjoo.searchOrderList

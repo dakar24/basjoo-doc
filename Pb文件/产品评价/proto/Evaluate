@@ -16,8 +16,8 @@ message AddEvaluateRequest {
    repeated string                imageUrls=3; 
  
    //评价等级: 1星，2星，...5星最高
-   required int32                 level = 4; 
-    
+   required int32                 level = 4;    
+     
 }
 
 //添加评价结果
@@ -28,6 +28,29 @@ message AddEvaluateResult {
    required string                 resultMsg = 2;
    
    required string                 evaluateId = 3; 
+    
+}
+
+//针对评价添加回复请求
+message AddEvaluateReplyRequest {   
+
+   //对应的评价Id
+   required string                evaluateId = 1; 
+   
+   //回复内容
+   required string                content=2; 
+   
+     
+}
+
+//针对评价添加回复结果
+message AddEvaluateReplyResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   required string                 replyId = 3; 
     
 }
 

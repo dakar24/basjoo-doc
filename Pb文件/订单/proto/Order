@@ -9,32 +9,20 @@ message CommitOrderRequest {
      //产品Id
     required string                 productId = 1; 
 	
-	 //租用数量
-	required int32                  rentCount = 2;
+	//类别信息
+	required string                 categoryId = 2;	
 	
-	 //租金编码
-	required string                 rentCode = 3;
+	 //租用数量
+	required int32                  rentCount = 3;
+	
+	 //选择租金的编码
+	required string                 rentCode = 4;
 	
 	//是否选择运费险
-	required bool                   insurance = 4;
+	required bool                   insurance = 5;
 	
-	//运费险
-	optional double                 insurancePrice = 5;
-	
-	//买家留言
-	optional string                 message = 6;
-	
-	//支付渠道，0：微信支付，1：支付宝
-	required int32                  payChannel = 7;
-	
-	//类别信息
-	required string                 categoryId = 8;
-	
-	//用户选择的权益
-	repeated string                 vouchers = 9;
-	
-	//收货地址ID
-	required string                 receiveAddressId = 10;
+	//订单Id（如果对已提交的订单进行修改时需要带之前返回的orderId）
+    optional string                 orderId = 6; 
     
 }
 
@@ -46,9 +34,98 @@ message CommitOrderResult {
     
     required string                 resultMsg = 2; 
 	
-     //订单Id
+    //订单Id
     optional string                 orderId = 3; 
+	 
+	//用户提交订单时所选的类别信息
+	required string                 categoryId = 4;	
+	
+	 //用户提交订单时所选的租用数量
+	required int32                  rentCount = 5;
+	
+	 //用户提交订单时所选的租金的编码
+	required string                 rentCode = 6;
+	
+	//是否选择运费险
+	required bool                   insurance = 7;
+	
+	//运费险金额
+    optional double                 insurancePrice = 8; 
+	
+	 //押金
+    optional double                 pledgePrice = 9; 
+   
+    //运费
+    optional double                 transportationPrice = 10; 
+	
+	//该周期内总租金
+    required double                 totalRentPrice = 11; 
+	
+	//是否有可使用的权益
+	required bool                   hasVoucher  = 12;
+	
+	//默认收货地址信息
+	optional DefaultReceiveAddressInfo defaultReceiveAddressInfo = 13;
     
+}
+
+message DefaultReceiveAddressInfo{
+    //地址ID
+    required string                 addressId = 1; 
+	//收件人
+    required string                 receiver = 2;
+	//手机号
+	required string                 mobileNo = 3;	
+	//详细地址
+	required string                 addressDetail = 4;
+}
+
+
+//确认订单
+message ConfirmOrderRequest {   
+
+     //产品Id
+    required string                 productId = 1; 
+	
+	//类别信息
+	required string                 categoryId = 2;	
+	
+	 //租用数量
+	required int32                  rentCount = 3;
+	
+	 //选择租金的编码
+	required string                 rentCode = 4;
+	
+	//是否选择运费险
+	required bool                   insurance = 5;
+	
+	//订单Id
+    required string                 orderId = 6; 
+	
+	 //用户选择的地址ID
+    required string                 addressId = 7;
+	
+	//用户选择的权益
+	repeated string                 vouchers = 8;
+	
+	//用户留言（买家留言）
+	optional string                 userMessage = 9;
+	
+	//支付渠道，0：微信支付，1：支付宝
+	required int32                  payChannel = 10;
+    
+}
+
+
+//确认订单结果（支付信息待补充）
+message ConfirmOrderResult {
+
+    required string                 resultCode = 1;
+    
+    required string                 resultMsg = 2; 
+
+    //订单Id
+    optional string                 orderId = 3; 	
 }
 
 

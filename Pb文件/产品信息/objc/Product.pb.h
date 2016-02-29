@@ -3,6 +3,7 @@
 #import <QJProtocolBuffers/ProtocolBuffers.h>
 
 @class CategoryInfo;
+@class EvaluateReplyInfo;
 @class GetProductEvaluateListRequest;
 @class GetProductEvaluateListResult;
 @class LongRentInfo;
@@ -118,9 +119,11 @@
 @property (readonly) BOOL hasCategoryCode;
 @property (readonly) BOOL hasCategoryName;
 @property (readonly) BOOL hasStockCount;
+@property (readonly) BOOL hasCategoryImgUrl;
 @property (nonatomic,strong) NSString* categoryCode;
 @property (nonatomic,strong) NSString* categoryName;
 @property (nonatomic)SInt64 stockCount;
+@property (nonatomic,strong) NSString* categoryImgUrl;
 @end
 
 @interface ShortRentInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -178,6 +181,18 @@
 @property (nonatomic,strong) NSMutableArray * imageUrls;
 @property (nonatomic)SInt32 level;
 @property (nonatomic,strong) NSString* evaluateId;
+@property (nonatomic,strong) NSMutableArray * evaluateReplyInfo;
+@end
+
+@interface EvaluateReplyInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasReplyId;
+@property (readonly) BOOL hasContent;
+@property (readonly) BOOL hasTime;
+@property (readonly) BOOL hasFromMechant;
+@property (nonatomic,strong) NSString* replyId;
+@property (nonatomic,strong) NSString* content;
+@property (nonatomic)SInt64 time;
+@property (nonatomic)BOOL fromMechant;
 @end
 
 @interface GetProductEvaluateListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>

@@ -28,6 +28,7 @@ public final class ProductEvaluateInfo extends Message {
   public static final int TAG_IMAGEURLS = 8;
   public static final int TAG_LEVEL = 9;
   public static final int TAG_EVALUATEID = 10;
+  public static final int TAG_EVALUATEREPLYINFO = 11;
 
   public static final Long DEFAULT_TIME = 0L;
   public static final String DEFAULT_USERID = "";
@@ -39,6 +40,7 @@ public final class ProductEvaluateInfo extends Message {
   public static final List<String> DEFAULT_IMAGEURLS = Collections.emptyList();
   public static final Integer DEFAULT_LEVEL = 0;
   public static final String DEFAULT_EVALUATEID = "";
+  public static final List<EvaluateReplyInfo> DEFAULT_EVALUATEREPLYINFO = Collections.emptyList();
 
   /**
    * 评价时间
@@ -100,6 +102,12 @@ public final class ProductEvaluateInfo extends Message {
   @ProtoField(tag = 10, type = STRING, label = REQUIRED)
   public String evaluateId;
 
+  /**
+   * 该条评价的回复内容
+   */
+  @ProtoField(tag = 11, label = REPEATED)
+  public List<EvaluateReplyInfo> evaluateReplyInfo;
+
   public ProductEvaluateInfo(ProductEvaluateInfo message) {
     super(message);
     if (message == null) return;
@@ -113,6 +121,7 @@ public final class ProductEvaluateInfo extends Message {
     this.imageUrls = copyOf(message.imageUrls);
     this.level = message.level;
     this.evaluateId = message.evaluateId;
+    this.evaluateReplyInfo = copyOf(message.evaluateReplyInfo);
   }
 
   public ProductEvaluateInfo() {
@@ -150,6 +159,9 @@ public final class ProductEvaluateInfo extends Message {
         case TAG_EVALUATEID:
         this.evaluateId = (String)value;
         break;
+        case TAG_EVALUATEREPLYINFO:
+        this.evaluateReplyInfo = immutableCopyOf((List<EvaluateReplyInfo>)value);
+        break;
         default: break;
         };
     return this;
@@ -169,7 +181,8 @@ public final class ProductEvaluateInfo extends Message {
         && equals(content, o.content)
         && equals(imageUrls, o.imageUrls)
         && equals(level, o.level)
-        && equals(evaluateId, o.evaluateId);
+        && equals(evaluateId, o.evaluateId)
+        && equals(evaluateReplyInfo, o.evaluateReplyInfo);
   }
 
   @Override
@@ -186,6 +199,7 @@ public final class ProductEvaluateInfo extends Message {
       result = result * 37 + (imageUrls != null ? imageUrls.hashCode() : 1);
       result = result * 37 + (level != null ? level.hashCode() : 0);
       result = result * 37 + (evaluateId != null ? evaluateId.hashCode() : 0);
+      result = result * 37 + (evaluateReplyInfo != null ? evaluateReplyInfo.hashCode() : 1);
       hashCode = result;
     }
     return result;

@@ -11197,6 +11197,32 @@ public final class Product {
      * </pre>
      */
     long getStockCount();
+
+    /**
+     * <code>optional string categoryImgUrl = 4;</code>
+     *
+     * <pre>
+     *类目图片地址
+     * </pre>
+     */
+    boolean hasCategoryImgUrl();
+    /**
+     * <code>optional string categoryImgUrl = 4;</code>
+     *
+     * <pre>
+     *类目图片地址
+     * </pre>
+     */
+    java.lang.String getCategoryImgUrl();
+    /**
+     * <code>optional string categoryImgUrl = 4;</code>
+     *
+     * <pre>
+     *类目图片地址
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCategoryImgUrlBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CategoryInfo}
@@ -11269,6 +11295,12 @@ public final class Product {
             case 24: {
               bitField0_ |= 0x00000004;
               stockCount_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              categoryImgUrl_ = bs;
               break;
             }
           }
@@ -11442,10 +11474,65 @@ public final class Product {
       return stockCount_;
     }
 
+    public static final int CATEGORYIMGURL_FIELD_NUMBER = 4;
+    private java.lang.Object categoryImgUrl_;
+    /**
+     * <code>optional string categoryImgUrl = 4;</code>
+     *
+     * <pre>
+     *类目图片地址
+     * </pre>
+     */
+    public boolean hasCategoryImgUrl() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string categoryImgUrl = 4;</code>
+     *
+     * <pre>
+     *类目图片地址
+     * </pre>
+     */
+    public java.lang.String getCategoryImgUrl() {
+      java.lang.Object ref = categoryImgUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          categoryImgUrl_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string categoryImgUrl = 4;</code>
+     *
+     * <pre>
+     *类目图片地址
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCategoryImgUrlBytes() {
+      java.lang.Object ref = categoryImgUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        categoryImgUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       categoryCode_ = "";
       categoryName_ = "";
       stockCount_ = 0L;
+      categoryImgUrl_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -11477,6 +11564,9 @@ public final class Product {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt64(3, stockCount_);
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getCategoryImgUrlBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -11497,6 +11587,10 @@ public final class Product {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, stockCount_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getCategoryImgUrlBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -11625,6 +11719,8 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000002);
         stockCount_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
+        categoryImgUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -11665,6 +11761,10 @@ public final class Product {
           to_bitField0_ |= 0x00000004;
         }
         result.stockCount_ = stockCount_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.categoryImgUrl_ = categoryImgUrl_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -11693,6 +11793,11 @@ public final class Product {
         }
         if (other.hasStockCount()) {
           setStockCount(other.getStockCount());
+        }
+        if (other.hasCategoryImgUrl()) {
+          bitField0_ |= 0x00000008;
+          categoryImgUrl_ = other.categoryImgUrl_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -11973,6 +12078,106 @@ public final class Product {
       public Builder clearStockCount() {
         bitField0_ = (bitField0_ & ~0x00000004);
         stockCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object categoryImgUrl_ = "";
+      /**
+       * <code>optional string categoryImgUrl = 4;</code>
+       *
+       * <pre>
+       *类目图片地址
+       * </pre>
+       */
+      public boolean hasCategoryImgUrl() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string categoryImgUrl = 4;</code>
+       *
+       * <pre>
+       *类目图片地址
+       * </pre>
+       */
+      public java.lang.String getCategoryImgUrl() {
+        java.lang.Object ref = categoryImgUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            categoryImgUrl_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string categoryImgUrl = 4;</code>
+       *
+       * <pre>
+       *类目图片地址
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCategoryImgUrlBytes() {
+        java.lang.Object ref = categoryImgUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          categoryImgUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string categoryImgUrl = 4;</code>
+       *
+       * <pre>
+       *类目图片地址
+       * </pre>
+       */
+      public Builder setCategoryImgUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        categoryImgUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string categoryImgUrl = 4;</code>
+       *
+       * <pre>
+       *类目图片地址
+       * </pre>
+       */
+      public Builder clearCategoryImgUrl() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        categoryImgUrl_ = getDefaultInstance().getCategoryImgUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string categoryImgUrl = 4;</code>
+       *
+       * <pre>
+       *类目图片地址
+       * </pre>
+       */
+      public Builder setCategoryImgUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        categoryImgUrl_ = value;
         onChanged();
         return this;
       }
@@ -15508,6 +15713,50 @@ public final class Product {
      */
     com.google.protobuf.ByteString
         getEvaluateIdBytes();
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo> 
+        getEvaluateReplyInfoList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo getEvaluateReplyInfo(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    int getEvaluateReplyInfoCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder> 
+        getEvaluateReplyInfoOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder getEvaluateReplyInfoOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo}
@@ -15625,6 +15874,14 @@ public final class Product {
               evaluateId_ = bs;
               break;
             }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                evaluateReplyInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              evaluateReplyInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.PARSER, extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -15635,6 +15892,9 @@ public final class Product {
       } finally {
         if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           imageUrls_ = imageUrls_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          evaluateReplyInfo_ = java.util.Collections.unmodifiableList(evaluateReplyInfo_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -16106,6 +16366,61 @@ public final class Product {
       }
     }
 
+    public static final int EVALUATEREPLYINFO_FIELD_NUMBER = 11;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo> evaluateReplyInfo_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo> getEvaluateReplyInfoList() {
+      return evaluateReplyInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder> 
+        getEvaluateReplyInfoOrBuilderList() {
+      return evaluateReplyInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    public int getEvaluateReplyInfoCount() {
+      return evaluateReplyInfo_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo getEvaluateReplyInfo(int index) {
+      return evaluateReplyInfo_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+     *
+     * <pre>
+     *该条评价的回复内容
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder getEvaluateReplyInfoOrBuilder(
+        int index) {
+      return evaluateReplyInfo_.get(index);
+    }
+
     private void initFields() {
       time_ = 0L;
       userId_ = "";
@@ -16117,6 +16432,7 @@ public final class Product {
       imageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       level_ = 0;
       evaluateId_ = "";
+      evaluateReplyInfo_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -16160,6 +16476,12 @@ public final class Product {
         memoizedIsInitialized = 0;
         return false;
       }
+      for (int i = 0; i < getEvaluateReplyInfoCount(); i++) {
+        if (!getEvaluateReplyInfo(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -16196,6 +16518,9 @@ public final class Product {
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeBytes(10, getEvaluateIdBytes());
+      }
+      for (int i = 0; i < evaluateReplyInfo_.size(); i++) {
+        output.writeMessage(11, evaluateReplyInfo_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -16250,6 +16575,10 @@ public final class Product {
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(10, getEvaluateIdBytes());
+      }
+      for (int i = 0; i < evaluateReplyInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, evaluateReplyInfo_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -16364,6 +16693,7 @@ public final class Product {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getEvaluateReplyInfoFieldBuilder();
         }
       }
       private static Builder create() {
@@ -16392,6 +16722,12 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000100);
         evaluateId_ = "";
         bitField0_ = (bitField0_ & ~0x00000200);
+        if (evaluateReplyInfoBuilder_ == null) {
+          evaluateReplyInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          evaluateReplyInfoBuilder_.clear();
+        }
         return this;
       }
 
@@ -16461,6 +16797,15 @@ public final class Product {
           to_bitField0_ |= 0x00000100;
         }
         result.evaluateId_ = evaluateId_;
+        if (evaluateReplyInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+            evaluateReplyInfo_ = java.util.Collections.unmodifiableList(evaluateReplyInfo_);
+            bitField0_ = (bitField0_ & ~0x00000400);
+          }
+          result.evaluateReplyInfo_ = evaluateReplyInfo_;
+        } else {
+          result.evaluateReplyInfo_ = evaluateReplyInfoBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -16526,6 +16871,32 @@ public final class Product {
           evaluateId_ = other.evaluateId_;
           onChanged();
         }
+        if (evaluateReplyInfoBuilder_ == null) {
+          if (!other.evaluateReplyInfo_.isEmpty()) {
+            if (evaluateReplyInfo_.isEmpty()) {
+              evaluateReplyInfo_ = other.evaluateReplyInfo_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+            } else {
+              ensureEvaluateReplyInfoIsMutable();
+              evaluateReplyInfo_.addAll(other.evaluateReplyInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.evaluateReplyInfo_.isEmpty()) {
+            if (evaluateReplyInfoBuilder_.isEmpty()) {
+              evaluateReplyInfoBuilder_.dispose();
+              evaluateReplyInfoBuilder_ = null;
+              evaluateReplyInfo_ = other.evaluateReplyInfo_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+              evaluateReplyInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getEvaluateReplyInfoFieldBuilder() : null;
+            } else {
+              evaluateReplyInfoBuilder_.addAllMessages(other.evaluateReplyInfo_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -16566,6 +16937,12 @@ public final class Product {
         if (!hasEvaluateId()) {
           
           return false;
+        }
+        for (int i = 0; i < getEvaluateReplyInfoCount(); i++) {
+          if (!getEvaluateReplyInfo(i).isInitialized()) {
+            
+            return false;
+          }
         }
         return true;
       }
@@ -17462,6 +17839,318 @@ public final class Product {
         return this;
       }
 
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo> evaluateReplyInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureEvaluateReplyInfoIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          evaluateReplyInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo>(evaluateReplyInfo_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder> evaluateReplyInfoBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo> getEvaluateReplyInfoList() {
+        if (evaluateReplyInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(evaluateReplyInfo_);
+        } else {
+          return evaluateReplyInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public int getEvaluateReplyInfoCount() {
+        if (evaluateReplyInfoBuilder_ == null) {
+          return evaluateReplyInfo_.size();
+        } else {
+          return evaluateReplyInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo getEvaluateReplyInfo(int index) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          return evaluateReplyInfo_.get(index);
+        } else {
+          return evaluateReplyInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public Builder setEvaluateReplyInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo value) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEvaluateReplyInfoIsMutable();
+          evaluateReplyInfo_.set(index, value);
+          onChanged();
+        } else {
+          evaluateReplyInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public Builder setEvaluateReplyInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder builderForValue) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          ensureEvaluateReplyInfoIsMutable();
+          evaluateReplyInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          evaluateReplyInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public Builder addEvaluateReplyInfo(com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo value) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEvaluateReplyInfoIsMutable();
+          evaluateReplyInfo_.add(value);
+          onChanged();
+        } else {
+          evaluateReplyInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public Builder addEvaluateReplyInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo value) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEvaluateReplyInfoIsMutable();
+          evaluateReplyInfo_.add(index, value);
+          onChanged();
+        } else {
+          evaluateReplyInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public Builder addEvaluateReplyInfo(
+          com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder builderForValue) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          ensureEvaluateReplyInfoIsMutable();
+          evaluateReplyInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          evaluateReplyInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public Builder addEvaluateReplyInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder builderForValue) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          ensureEvaluateReplyInfoIsMutable();
+          evaluateReplyInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          evaluateReplyInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public Builder addAllEvaluateReplyInfo(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo> values) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          ensureEvaluateReplyInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, evaluateReplyInfo_);
+          onChanged();
+        } else {
+          evaluateReplyInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public Builder clearEvaluateReplyInfo() {
+        if (evaluateReplyInfoBuilder_ == null) {
+          evaluateReplyInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+          onChanged();
+        } else {
+          evaluateReplyInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public Builder removeEvaluateReplyInfo(int index) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          ensureEvaluateReplyInfoIsMutable();
+          evaluateReplyInfo_.remove(index);
+          onChanged();
+        } else {
+          evaluateReplyInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder getEvaluateReplyInfoBuilder(
+          int index) {
+        return getEvaluateReplyInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder getEvaluateReplyInfoOrBuilder(
+          int index) {
+        if (evaluateReplyInfoBuilder_ == null) {
+          return evaluateReplyInfo_.get(index);  } else {
+          return evaluateReplyInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder> 
+           getEvaluateReplyInfoOrBuilderList() {
+        if (evaluateReplyInfoBuilder_ != null) {
+          return evaluateReplyInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(evaluateReplyInfo_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder addEvaluateReplyInfoBuilder() {
+        return getEvaluateReplyInfoFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder addEvaluateReplyInfoBuilder(
+          int index) {
+        return getEvaluateReplyInfoFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo evaluateReplyInfo = 11;</code>
+       *
+       * <pre>
+       *该条评价的回复内容
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder> 
+           getEvaluateReplyInfoBuilderList() {
+        return getEvaluateReplyInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder> 
+          getEvaluateReplyInfoFieldBuilder() {
+        if (evaluateReplyInfoBuilder_ == null) {
+          evaluateReplyInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder>(
+                  evaluateReplyInfo_,
+                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  getParentForChildren(),
+                  isClean());
+          evaluateReplyInfo_ = null;
+        }
+        return evaluateReplyInfoBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo)
     }
 
@@ -17471,6 +18160,995 @@ public final class Product {
     }
 
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ProductEvaluateInfo)
+  }
+
+  public interface EvaluateReplyInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string replyId = 1;</code>
+     *
+     * <pre>
+     *回复Id
+     * </pre>
+     */
+    boolean hasReplyId();
+    /**
+     * <code>required string replyId = 1;</code>
+     *
+     * <pre>
+     *回复Id
+     * </pre>
+     */
+    java.lang.String getReplyId();
+    /**
+     * <code>required string replyId = 1;</code>
+     *
+     * <pre>
+     *回复Id
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getReplyIdBytes();
+
+    /**
+     * <code>required string content = 2;</code>
+     *
+     * <pre>
+     *回复内容
+     * </pre>
+     */
+    boolean hasContent();
+    /**
+     * <code>required string content = 2;</code>
+     *
+     * <pre>
+     *回复内容
+     * </pre>
+     */
+    java.lang.String getContent();
+    /**
+     * <code>required string content = 2;</code>
+     *
+     * <pre>
+     *回复内容
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getContentBytes();
+
+    /**
+     * <code>required int64 time = 3;</code>
+     *
+     * <pre>
+     *回复时间
+     * </pre>
+     */
+    boolean hasTime();
+    /**
+     * <code>required int64 time = 3;</code>
+     *
+     * <pre>
+     *回复时间
+     * </pre>
+     */
+    long getTime();
+
+    /**
+     * <code>required bool fromMechant = 4;</code>
+     *
+     * <pre>
+     *是否为掌柜回复（商家回复）
+     * </pre>
+     */
+    boolean hasFromMechant();
+    /**
+     * <code>required bool fromMechant = 4;</code>
+     *
+     * <pre>
+     *是否为掌柜回复（商家回复）
+     * </pre>
+     */
+    boolean getFromMechant();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo}
+   *
+   * <pre>
+   *评价回复信息
+   * </pre>
+   */
+  public static final class EvaluateReplyInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo)
+      EvaluateReplyInfoOrBuilder {
+    // Use EvaluateReplyInfo.newBuilder() to construct.
+    private EvaluateReplyInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private EvaluateReplyInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final EvaluateReplyInfo defaultInstance;
+    public static EvaluateReplyInfo getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public EvaluateReplyInfo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EvaluateReplyInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              replyId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              content_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              time_ = input.readInt64();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              fromMechant_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.class, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<EvaluateReplyInfo> PARSER =
+        new com.google.protobuf.AbstractParser<EvaluateReplyInfo>() {
+      public EvaluateReplyInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EvaluateReplyInfo(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EvaluateReplyInfo> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int REPLYID_FIELD_NUMBER = 1;
+    private java.lang.Object replyId_;
+    /**
+     * <code>required string replyId = 1;</code>
+     *
+     * <pre>
+     *回复Id
+     * </pre>
+     */
+    public boolean hasReplyId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string replyId = 1;</code>
+     *
+     * <pre>
+     *回复Id
+     * </pre>
+     */
+    public java.lang.String getReplyId() {
+      java.lang.Object ref = replyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          replyId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string replyId = 1;</code>
+     *
+     * <pre>
+     *回复Id
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getReplyIdBytes() {
+      java.lang.Object ref = replyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        replyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 2;
+    private java.lang.Object content_;
+    /**
+     * <code>required string content = 2;</code>
+     *
+     * <pre>
+     *回复内容
+     * </pre>
+     */
+    public boolean hasContent() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string content = 2;</code>
+     *
+     * <pre>
+     *回复内容
+     * </pre>
+     */
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          content_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string content = 2;</code>
+     *
+     * <pre>
+     *回复内容
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIME_FIELD_NUMBER = 3;
+    private long time_;
+    /**
+     * <code>required int64 time = 3;</code>
+     *
+     * <pre>
+     *回复时间
+     * </pre>
+     */
+    public boolean hasTime() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int64 time = 3;</code>
+     *
+     * <pre>
+     *回复时间
+     * </pre>
+     */
+    public long getTime() {
+      return time_;
+    }
+
+    public static final int FROMMECHANT_FIELD_NUMBER = 4;
+    private boolean fromMechant_;
+    /**
+     * <code>required bool fromMechant = 4;</code>
+     *
+     * <pre>
+     *是否为掌柜回复（商家回复）
+     * </pre>
+     */
+    public boolean hasFromMechant() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required bool fromMechant = 4;</code>
+     *
+     * <pre>
+     *是否为掌柜回复（商家回复）
+     * </pre>
+     */
+    public boolean getFromMechant() {
+      return fromMechant_;
+    }
+
+    private void initFields() {
+      replyId_ = "";
+      content_ = "";
+      time_ = 0L;
+      fromMechant_ = false;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasReplyId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasContent()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasFromMechant()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getReplyIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getContentBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, time_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBool(4, fromMechant_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getReplyIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getContentBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, time_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, fromMechant_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo}
+     *
+     * <pre>
+     *评价回复信息
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo)
+        com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.class, com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        replyId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        content_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        time_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fromMechant_ = false;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo build() {
+        com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo result = new com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.replyId_ = replyId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.content_ = content_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.time_ = time_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.fromMechant_ = fromMechant_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo.getDefaultInstance()) return this;
+        if (other.hasReplyId()) {
+          bitField0_ |= 0x00000001;
+          replyId_ = other.replyId_;
+          onChanged();
+        }
+        if (other.hasContent()) {
+          bitField0_ |= 0x00000002;
+          content_ = other.content_;
+          onChanged();
+        }
+        if (other.hasTime()) {
+          setTime(other.getTime());
+        }
+        if (other.hasFromMechant()) {
+          setFromMechant(other.getFromMechant());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasReplyId()) {
+          
+          return false;
+        }
+        if (!hasContent()) {
+          
+          return false;
+        }
+        if (!hasTime()) {
+          
+          return false;
+        }
+        if (!hasFromMechant()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Product.EvaluateReplyInfo) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object replyId_ = "";
+      /**
+       * <code>required string replyId = 1;</code>
+       *
+       * <pre>
+       *回复Id
+       * </pre>
+       */
+      public boolean hasReplyId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string replyId = 1;</code>
+       *
+       * <pre>
+       *回复Id
+       * </pre>
+       */
+      public java.lang.String getReplyId() {
+        java.lang.Object ref = replyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            replyId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string replyId = 1;</code>
+       *
+       * <pre>
+       *回复Id
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getReplyIdBytes() {
+        java.lang.Object ref = replyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          replyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string replyId = 1;</code>
+       *
+       * <pre>
+       *回复Id
+       * </pre>
+       */
+      public Builder setReplyId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        replyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string replyId = 1;</code>
+       *
+       * <pre>
+       *回复Id
+       * </pre>
+       */
+      public Builder clearReplyId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        replyId_ = getDefaultInstance().getReplyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string replyId = 1;</code>
+       *
+       * <pre>
+       *回复Id
+       * </pre>
+       */
+      public Builder setReplyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        replyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object content_ = "";
+      /**
+       * <code>required string content = 2;</code>
+       *
+       * <pre>
+       *回复内容
+       * </pre>
+       */
+      public boolean hasContent() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string content = 2;</code>
+       *
+       * <pre>
+       *回复内容
+       * </pre>
+       */
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            content_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string content = 2;</code>
+       *
+       * <pre>
+       *回复内容
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string content = 2;</code>
+       *
+       * <pre>
+       *回复内容
+       * </pre>
+       */
+      public Builder setContent(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string content = 2;</code>
+       *
+       * <pre>
+       *回复内容
+       * </pre>
+       */
+      public Builder clearContent() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string content = 2;</code>
+       *
+       * <pre>
+       *回复内容
+       * </pre>
+       */
+      public Builder setContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long time_ ;
+      /**
+       * <code>required int64 time = 3;</code>
+       *
+       * <pre>
+       *回复时间
+       * </pre>
+       */
+      public boolean hasTime() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int64 time = 3;</code>
+       *
+       * <pre>
+       *回复时间
+       * </pre>
+       */
+      public long getTime() {
+        return time_;
+      }
+      /**
+       * <code>required int64 time = 3;</code>
+       *
+       * <pre>
+       *回复时间
+       * </pre>
+       */
+      public Builder setTime(long value) {
+        bitField0_ |= 0x00000004;
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 time = 3;</code>
+       *
+       * <pre>
+       *回复时间
+       * </pre>
+       */
+      public Builder clearTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        time_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean fromMechant_ ;
+      /**
+       * <code>required bool fromMechant = 4;</code>
+       *
+       * <pre>
+       *是否为掌柜回复（商家回复）
+       * </pre>
+       */
+      public boolean hasFromMechant() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required bool fromMechant = 4;</code>
+       *
+       * <pre>
+       *是否为掌柜回复（商家回复）
+       * </pre>
+       */
+      public boolean getFromMechant() {
+        return fromMechant_;
+      }
+      /**
+       * <code>required bool fromMechant = 4;</code>
+       *
+       * <pre>
+       *是否为掌柜回复（商家回复）
+       * </pre>
+       */
+      public Builder setFromMechant(boolean value) {
+        bitField0_ |= 0x00000008;
+        fromMechant_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bool fromMechant = 4;</code>
+       *
+       * <pre>
+       *是否为掌柜回复（商家回复）
+       * </pre>
+       */
+      public Builder clearFromMechant() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        fromMechant_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo)
+    }
+
+    static {
+      defaultInstance = new EvaluateReplyInfo(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.EvaluateReplyInfo)
   }
 
   public interface GetProductEvaluateListRequestOrBuilder extends
@@ -19902,6 +21580,11 @@ public final class Product {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -19955,31 +21638,35 @@ public final class Product {
       "ParamUrls\030\023 \003(\t\022\025\n\revaluateCount\030\024 \001(\003\022O" +
       "\n\023productEvaluateInfo\030\025 \003(\01322.com.qjoy.b" +
       "asjoo.core.model.pb.ProductEvaluateInfo\"" +
-      "N\n\014CategoryInfo\022\024\n\014categoryCode\030\001 \002(\t\022\024\n" +
-      "\014categoryName\030\002 \002(\t\022\022\n\nstockCount\030\003 \001(\003\"" +
-      "b\n\rShortRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nre" +
-      "ntPeriod\030\002 \002(\t\022\027\n\017rentPricePerDay\030\003 \002(\001\022" +
-      "\022\n\ntotalPrice\030\004 \002(\001\"\224\001\n\014LongRentInfo\022\020\n\010",
-      "rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\026\n\016re" +
-      "ntPeriodName\030\003 \002(\t\022\027\n\017rentPricePerDay\030\004 " +
-      "\002(\001\022\031\n\021rentPricePerMonth\030\005 \002(\001\022\022\n\ntotalP" +
-      "rice\030\006 \002(\001\"D\n\020ProductBaseParam\022\014\n\004code\030\001" +
-      " \002(\t\022\017\n\007showKey\030\002 \002(\t\022\021\n\tshowValue\030\003 \002(\t" +
-      "\"\316\001\n\023ProductEvaluateInfo\022\014\n\004time\030\001 \002(\003\022\016" +
-      "\n\006userId\030\002 \002(\t\022\020\n\010userName\030\003 \002(\t\022\023\n\013head" +
-      "IconUrl\030\004 \002(\t\022\021\n\tuserLevel\030\005 \002(\005\022\030\n\020rent" +
-      "CategoryName\030\006 \002(\t\022\017\n\007content\030\007 \002(\t\022\021\n\ti" +
-      "mageUrls\030\010 \003(\t\022\r\n\005level\030\t \002(\005\022\022\n\nevaluat",
-      "eId\030\n \002(\t\"\\\n\035GetProductEvaluateListReque" +
-      "st\022\021\n\tproductId\030\001 \002(\t\022\024\n\014evaluateType\030\002 " +
-      "\002(\005\022\022\n\nstartIndex\030\003 \001(\005\"\346\001\n\034GetProductEv" +
-      "aluateListResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
-      "resultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007has" +
-      "More\030\004 \002(\010\022\022\n\ntotalCount\030\005 \002(\003\022\027\n\017totalI" +
-      "mageCount\030\006 \002(\003\022O\n\023productEvaluateInfo\030\007" +
-      " \003(\01322.com.qjoy.basjoo.core.model.pb.Pro" +
-      "ductEvaluateInfoB\037\n\035com.qjoy.basjoo.core" +
-      ".model.pb"
+      "f\n\014CategoryInfo\022\024\n\014categoryCode\030\001 \002(\t\022\024\n" +
+      "\014categoryName\030\002 \002(\t\022\022\n\nstockCount\030\003 \001(\003\022" +
+      "\026\n\016categoryImgUrl\030\004 \001(\t\"b\n\rShortRentInfo" +
+      "\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\027" +
+      "\n\017rentPricePerDay\030\003 \002(\001\022\022\n\ntotalPrice\030\004 ",
+      "\002(\001\"\224\001\n\014LongRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022" +
+      "\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002" +
+      "(\t\022\027\n\017rentPricePerDay\030\004 \002(\001\022\031\n\021rentPrice" +
+      "PerMonth\030\005 \002(\001\022\022\n\ntotalPrice\030\006 \002(\001\"D\n\020Pr" +
+      "oductBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030" +
+      "\002 \002(\t\022\021\n\tshowValue\030\003 \002(\t\"\233\002\n\023ProductEval" +
+      "uateInfo\022\014\n\004time\030\001 \002(\003\022\016\n\006userId\030\002 \002(\t\022\020" +
+      "\n\010userName\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \002(\t\022\021\n" +
+      "\tuserLevel\030\005 \002(\005\022\030\n\020rentCategoryName\030\006 \002" +
+      "(\t\022\017\n\007content\030\007 \002(\t\022\021\n\timageUrls\030\010 \003(\t\022\r",
+      "\n\005level\030\t \002(\005\022\022\n\nevaluateId\030\n \002(\t\022K\n\021eva" +
+      "luateReplyInfo\030\013 \003(\01320.com.qjoy.basjoo.c" +
+      "ore.model.pb.EvaluateReplyInfo\"X\n\021Evalua" +
+      "teReplyInfo\022\017\n\007replyId\030\001 \002(\t\022\017\n\007content\030" +
+      "\002 \002(\t\022\014\n\004time\030\003 \002(\003\022\023\n\013fromMechant\030\004 \002(\010" +
+      "\"\\\n\035GetProductEvaluateListRequest\022\021\n\tpro" +
+      "ductId\030\001 \002(\t\022\024\n\014evaluateType\030\002 \002(\005\022\022\n\nst" +
+      "artIndex\030\003 \001(\005\"\346\001\n\034GetProductEvaluateLis" +
+      "tResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg" +
+      "\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(",
+      "\010\022\022\n\ntotalCount\030\005 \002(\003\022\027\n\017totalImageCount" +
+      "\030\006 \002(\003\022O\n\023productEvaluateInfo\030\007 \003(\01322.co" +
+      "m.qjoy.basjoo.core.model.pb.ProductEvalu" +
+      "ateInfoB\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20034,7 +21721,7 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor,
-        new java.lang.String[] { "CategoryCode", "CategoryName", "StockCount", });
+        new java.lang.String[] { "CategoryCode", "CategoryName", "StockCount", "CategoryImgUrl", });
     internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_qjoy_basjoo_core_model_pb_ShortRentInfo_fieldAccessorTable = new
@@ -20058,15 +21745,21 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductEvaluateInfo_descriptor,
-        new java.lang.String[] { "Time", "UserId", "UserName", "HeadIconUrl", "UserLevel", "RentCategoryName", "Content", "ImageUrls", "Level", "EvaluateId", });
-    internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor =
+        new java.lang.String[] { "Time", "UserId", "UserName", "HeadIconUrl", "UserLevel", "RentCategoryName", "Content", "ImageUrls", "Level", "EvaluateId", "EvaluateReplyInfo", });
+    internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_descriptor =
       getDescriptor().getMessageTypes().get(11);
+    internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_EvaluateReplyInfo_descriptor,
+        new java.lang.String[] { "ReplyId", "Content", "Time", "FromMechant", });
+    internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
     internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListRequest_descriptor,
         new java.lang.String[] { "ProductId", "EvaluateType", "StartIndex", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetProductEvaluateListResult_descriptor,
