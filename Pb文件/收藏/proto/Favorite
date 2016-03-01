@@ -1,0 +1,108 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取收藏（产品）列表
+message GetFavoriteListRequest {   
+  
+  //起始index
+  optional int32 startIndex = 1;   
+    
+}
+
+//获取收藏（产品）结果
+message GetFavoriteListResult {   
+   
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;     
+   
+   //当前最大index
+   optional int32                  maxIndex = 3;
+   
+   //是否还有更多数据
+   required bool                   hasMore  = 4;
+   
+   //收藏简要信息列表
+   repeated FavoriteLiteInfo	   favoriteLiteInfo = 5;
+
+}
+
+//收藏简要信息
+message FavoriteLiteInfo {   
+
+   //产品Id
+   required string                 productId = 1; 
+   
+   //产品类型
+   required string                 productType = 2; 
+    
+   //品牌
+   required string                 brand = 3; 
+   
+   //大图地址
+   required string                 mainImageUrl = 4; 
+   
+   //描述
+   required string                 desc = 5; 
+   
+   //最低租金
+   optional double                 lowestRent = 6; 
+
+   //最低租金单位 1：天。2：月
+   optional int32                  unit = 7; 
+   
+   //已租件数
+   optional int64                  rentCount = 8; 
+   
+   //市场价
+   optional double                 marketPrice = 9; 
+   
+   //押金
+   optional double                 pledgePrice = 10; 
+   
+   //收藏Id
+   required string                 favoriteId = 11; 
+    
+}
+
+
+//添加收藏
+message AddFavoriteRequest {     
+  
+  //产品Id
+   required string                 productId = 1; 
+    
+}
+
+//添加收藏结果
+message AddFavoriteResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;   
+   
+  //收藏Id
+   required string                 favoriteId = 3; 
+    
+}
+
+//删除收藏列表
+message DeleteFavoriteRequest {     
+  
+  //产品Id
+   repeated string                 favoriteIds = 1; 
+    
+}
+
+//删除收藏列表结果
+message DeleteFavoriteResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;   
+ 
+    
+}
+

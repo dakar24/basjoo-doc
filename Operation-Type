@@ -40,3 +40,10 @@
 
 ##权益
 获取权益列表：qjoy.basjoo.getVoucherList
+
+##收藏
+获取收藏列表：qjoy.basjoo.getFavoriteList
+添加收藏：qjoy.basjoo.addFavorite
+删除收藏：qjoy.basjoo.deleteFavorite
+
+
