@@ -1,0 +1,56 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取押金（订单）列表
+message GetPledgeListRequest {   
+  
+  //起始index
+  optional int32 startIndex = 1;   
+    
+}
+
+//获取押金（订单）结果
+message GetPledgeListResult {   
+   
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;     
+   
+   //当前最大index
+   optional int32                  maxIndex = 3;
+   
+   //是否还有更多数据
+   required bool                   hasMore  = 4;
+   
+   //总共押金金额
+   required double                 totalPledgeAmount = 5;
+   
+   //押金简要信息列表
+   repeated PledgeLiteInfo	       pledgeLiteInfo = 6;
+
+}
+
+//押金简要信息
+message PledgeLiteInfo {   
+
+   //订单Id
+   required string                 orderId = 1;    
+   
+   //图片地址
+   required string                 imageUrl = 2; 
+   
+   //描述
+   required string                 desc = 3;   
+   
+   //押金
+   required double                 pledgePrice = 4; 
+   
+   //到期时间
+   required int64                  endTime = 5;       
+    
+}
+
+
+

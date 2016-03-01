@@ -46,4 +46,7 @@
 添加收藏：qjoy.basjoo.addFavorite
 删除收藏：qjoy.basjoo.deleteFavorite
 
+##押金
+我的押金列表：qjoy.basjoo.getPledgeList
+
 
