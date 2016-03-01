@@ -28,7 +28,8 @@ public final class CommitOrderResult extends Message {
   public static final int TAG_TRANSPORTATIONPRICE = 10;
   public static final int TAG_TOTALRENTPRICE = 11;
   public static final int TAG_HASVOUCHER = 12;
-  public static final int TAG_DEFAULTRECEIVEADDRESSINFO = 13;
+  public static final int TAG_TOTALPRICE = 13;
+  public static final int TAG_DEFAULTRECEIVEADDRESSINFO = 14;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
@@ -42,6 +43,7 @@ public final class CommitOrderResult extends Message {
   public static final Double DEFAULT_TRANSPORTATIONPRICE = 0D;
   public static final Double DEFAULT_TOTALRENTPRICE = 0D;
   public static final Boolean DEFAULT_HASVOUCHER = false;
+  public static final Double DEFAULT_TOTALPRICE = 0D;
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
@@ -110,9 +112,15 @@ public final class CommitOrderResult extends Message {
   public Boolean hasVoucher;
 
   /**
+   * 总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
+   */
+  @ProtoField(tag = 13, type = DOUBLE, label = REQUIRED)
+  public Double totalPrice;
+
+  /**
    * 默认收货地址信息
    */
-  @ProtoField(tag = 13)
+  @ProtoField(tag = 14)
   public DefaultReceiveAddressInfo defaultReceiveAddressInfo;
 
   public CommitOrderResult(CommitOrderResult message) {
@@ -130,6 +138,7 @@ public final class CommitOrderResult extends Message {
     this.transportationPrice = message.transportationPrice;
     this.totalRentPrice = message.totalRentPrice;
     this.hasVoucher = message.hasVoucher;
+    this.totalPrice = message.totalPrice;
     this.defaultReceiveAddressInfo = message.defaultReceiveAddressInfo;
   }
 
@@ -174,6 +183,9 @@ public final class CommitOrderResult extends Message {
         case TAG_HASVOUCHER:
         this.hasVoucher = (Boolean)value;
         break;
+        case TAG_TOTALPRICE:
+        this.totalPrice = (Double)value;
+        break;
         case TAG_DEFAULTRECEIVEADDRESSINFO:
         this.defaultReceiveAddressInfo = (DefaultReceiveAddressInfo)value;
         break;
@@ -199,6 +211,7 @@ public final class CommitOrderResult extends Message {
         && equals(transportationPrice, o.transportationPrice)
         && equals(totalRentPrice, o.totalRentPrice)
         && equals(hasVoucher, o.hasVoucher)
+        && equals(totalPrice, o.totalPrice)
         && equals(defaultReceiveAddressInfo, o.defaultReceiveAddressInfo);
   }
 
@@ -218,6 +231,7 @@ public final class CommitOrderResult extends Message {
       result = result * 37 + (transportationPrice != null ? transportationPrice.hashCode() : 0);
       result = result * 37 + (totalRentPrice != null ? totalRentPrice.hashCode() : 0);
       result = result * 37 + (hasVoucher != null ? hasVoucher.hashCode() : 0);
+      result = result * 37 + (totalPrice != null ? totalPrice.hashCode() : 0);
       result = result * 37 + (defaultReceiveAddressInfo != null ? defaultReceiveAddressInfo.hashCode() : 0);
       hashCode = result;
     }

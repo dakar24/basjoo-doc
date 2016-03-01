@@ -12,6 +12,7 @@
     _rentCode = @"";
     _insurance = NO;
     _orderId = @"";
+    _onlyCalPrice = NO;
   }
   return self;
 }
@@ -33,6 +34,9 @@
   }
   if (self.hasOrderId) {
     [output writeString:6 value:self.orderId];
+  }
+  if (self.hasOnlyCalPrice) {
+    [output writeBool:7 value:self.onlyCalPrice];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -57,6 +61,9 @@
   }
   if (self.hasOrderId) {
     size_ += computeStringSize(6, self.orderId);
+  }
+  if (self.hasOnlyCalPrice) {
+    size_ += computeBoolSize(7, self.onlyCalPrice);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -86,6 +93,9 @@
   if (self.hasOrderId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
   }
+  if (self.hasOnlyCalPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"onlyCalPrice", [NSNumber numberWithBool:self.onlyCalPrice]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -112,6 +122,10 @@
 - (void) setOrderId:(NSString*) value {
   _hasOrderId = YES;
   _orderId = value;
+}
+- (void) setOnlyCalPrice:(BOOL) value {
+  _hasOnlyCalPrice = YES;
+  _onlyCalPrice = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -152,6 +166,10 @@
         [self setOrderId:[input readString]];
         break;
       }
+      case 56: {
+        [self setOnlyCalPrice:[input readBool]];
+        break;
+      }
     }
   }
 }
@@ -174,6 +192,7 @@
     _transportationPrice = 0;
     _totalRentPrice = 0;
     _hasVoucher = NO;
+    _totalPrice = 0;
   }
   return self;
 }
@@ -214,8 +233,11 @@
   if (self.hasHasVoucher) {
     [output writeBool:12 value:self.hasVoucher];
   }
+  if (self.hasTotalPrice) {
+    [output writeDouble:13 value:self.totalPrice];
+  }
   if (self.hasDefaultReceiveAddressInfo) {
-    [output writeMessage:13 value:self.defaultReceiveAddressInfo];
+    [output writeMessage:14 value:self.defaultReceiveAddressInfo];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -259,8 +281,11 @@
   if (self.hasHasVoucher) {
     size_ += computeBoolSize(12, self.hasVoucher);
   }
+  if (self.hasTotalPrice) {
+    size_ += computeDoubleSize(13, self.totalPrice);
+  }
   if (self.hasDefaultReceiveAddressInfo) {
-    size_ += computeMessageSize(13, self.defaultReceiveAddressInfo);
+    size_ += computeMessageSize(14, self.defaultReceiveAddressInfo);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -307,6 +332,9 @@
   }
   if (self.hasHasVoucher) {
     [output appendFormat:@"%@%@: %@\n", indent, @"hasVoucher", [NSNumber numberWithBool:self.hasVoucher]];
+  }
+  if (self.hasTotalPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalPrice", [NSNumber numberWithDouble:self.totalPrice]];
   }
   if (self.hasDefaultReceiveAddressInfo) {
     [output appendFormat:@"%@%@ {\n", indent, @"defaultReceiveAddressInfo"];
@@ -364,6 +392,10 @@
 - (void) setHasVoucher:(BOOL) value {
   _hasHasVoucher = YES;
   _hasVoucher = value;
+}
+- (void) setTotalPrice:(Float64) value {
+  _hasTotalPrice = YES;
+  _totalPrice = value;
 }
 - (void) setDefaultReceiveAddressInfo:(DefaultReceiveAddressInfo*) value {
   _hasDefaultReceiveAddressInfo = YES;
@@ -432,7 +464,11 @@
         [self setHasVoucher:[input readBool]];
         break;
       }
-      case 106: {
+      case 105: {
+        [self setTotalPrice:[input readDouble]];
+        break;
+      }
+      case 114: {
         DefaultReceiveAddressInfo* sub = [[DefaultReceiveAddressInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self setDefaultReceiveAddressInfo:sub];

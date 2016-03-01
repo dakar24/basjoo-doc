@@ -21,6 +21,7 @@ public final class CommitOrderRequest extends Message {
   public static final int TAG_RENTCODE = 4;
   public static final int TAG_INSURANCE = 5;
   public static final int TAG_ORDERID = 6;
+  public static final int TAG_ONLYCALPRICE = 7;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_CATEGORYID = "";
@@ -28,6 +29,7 @@ public final class CommitOrderRequest extends Message {
   public static final String DEFAULT_RENTCODE = "";
   public static final Boolean DEFAULT_INSURANCE = false;
   public static final String DEFAULT_ORDERID = "";
+  public static final Boolean DEFAULT_ONLYCALPRICE = false;
 
   /**
    * 产品Id
@@ -65,6 +67,12 @@ public final class CommitOrderRequest extends Message {
   @ProtoField(tag = 6, type = STRING)
   public String orderId;
 
+  /**
+   * 只计算价格，不需要返回权益和收货地址等信息
+   */
+  @ProtoField(tag = 7, type = BOOL, label = REQUIRED)
+  public Boolean onlyCalPrice;
+
   public CommitOrderRequest(CommitOrderRequest message) {
     super(message);
     if (message == null) return;
@@ -74,6 +82,7 @@ public final class CommitOrderRequest extends Message {
     this.rentCode = message.rentCode;
     this.insurance = message.insurance;
     this.orderId = message.orderId;
+    this.onlyCalPrice = message.onlyCalPrice;
   }
 
   public CommitOrderRequest() {
@@ -99,6 +108,9 @@ public final class CommitOrderRequest extends Message {
         case TAG_ORDERID:
         this.orderId = (String)value;
         break;
+        case TAG_ONLYCALPRICE:
+        this.onlyCalPrice = (Boolean)value;
+        break;
         default: break;
         };
     return this;
@@ -114,7 +126,8 @@ public final class CommitOrderRequest extends Message {
         && equals(rentCount, o.rentCount)
         && equals(rentCode, o.rentCode)
         && equals(insurance, o.insurance)
-        && equals(orderId, o.orderId);
+        && equals(orderId, o.orderId)
+        && equals(onlyCalPrice, o.onlyCalPrice);
   }
 
   @Override
@@ -127,6 +140,7 @@ public final class CommitOrderRequest extends Message {
       result = result * 37 + (rentCode != null ? rentCode.hashCode() : 0);
       result = result * 37 + (insurance != null ? insurance.hashCode() : 0);
       result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
+      result = result * 37 + (onlyCalPrice != null ? onlyCalPrice.hashCode() : 0);
       hashCode = result;
     }
     return result;

@@ -23,6 +23,9 @@ message CommitOrderRequest {
 	
 	//订单Id（如果对已提交的订单进行修改时需要带之前返回的orderId）
     optional string                 orderId = 6; 
+	
+	//只计算价格，不需要返回权益和收货地址等信息
+	required bool                   onlyCalPrice = 7;
     
 }
 
@@ -64,8 +67,12 @@ message CommitOrderResult {
 	//是否有可使用的权益
 	required bool                   hasVoucher  = 12;
 	
+	//总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
+	required double                 totalPrice = 13;
+	
+	
 	//默认收货地址信息
-	optional DefaultReceiveAddressInfo defaultReceiveAddressInfo = 13;
+	optional DefaultReceiveAddressInfo defaultReceiveAddressInfo = 14;
     
 }
 

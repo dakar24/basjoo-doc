@@ -29,9 +29,15 @@ public final class ModifyAddressRequest extends Message {
   public static final String DEFAULT_POSTCODE = "";
   public static final String DEFAULT_ADDRESSID = "";
 
+  /**
+   * 收货人
+   */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String receiver;
 
+  /**
+   * 联系电话
+   */
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String mobileNo;
 

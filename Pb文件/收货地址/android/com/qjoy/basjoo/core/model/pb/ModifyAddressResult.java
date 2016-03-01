@@ -9,7 +9,7 @@ import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 添加收货结果
+ * 添加收货地址结果
  */
 public final class ModifyAddressResult extends Message {
 

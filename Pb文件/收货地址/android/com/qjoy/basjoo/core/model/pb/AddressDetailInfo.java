@@ -32,9 +32,15 @@ public final class AddressDetailInfo extends Message {
   public static final String DEFAULT_ADDRESSID = "";
   public static final Boolean DEFAULT_DEFAULTADDRESS = false;
 
+  /**
+   * 收货人
+   */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String receiver;
 
+  /**
+   * 联系电话
+   */
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String mobileNo;
 

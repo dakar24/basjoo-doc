@@ -2481,28 +2481,52 @@ public final class ReceiveAddress {
 
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     boolean hasReceiver();
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     java.lang.String getReceiver();
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     com.google.protobuf.ByteString
         getReceiverBytes();
 
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     boolean hasMobileNo();
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     java.lang.String getMobileNo();
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     com.google.protobuf.ByteString
         getMobileNoBytes();
@@ -2779,12 +2803,20 @@ public final class ReceiveAddress {
     private java.lang.Object receiver_;
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     public boolean hasReceiver() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     public java.lang.String getReceiver() {
       java.lang.Object ref = receiver_;
@@ -2802,6 +2834,10 @@ public final class ReceiveAddress {
     }
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     public com.google.protobuf.ByteString
         getReceiverBytes() {
@@ -2821,12 +2857,20 @@ public final class ReceiveAddress {
     private java.lang.Object mobileNo_;
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     public boolean hasMobileNo() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     public java.lang.String getMobileNo() {
       java.lang.Object ref = mobileNo_;
@@ -2844,6 +2888,10 @@ public final class ReceiveAddress {
     }
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     public com.google.protobuf.ByteString
         getMobileNoBytes() {
@@ -3529,12 +3577,20 @@ public final class ReceiveAddress {
       private java.lang.Object receiver_ = "";
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public boolean hasReceiver() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public java.lang.String getReceiver() {
         java.lang.Object ref = receiver_;
@@ -3552,6 +3608,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public com.google.protobuf.ByteString
           getReceiverBytes() {
@@ -3568,6 +3628,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public Builder setReceiver(
           java.lang.String value) {
@@ -3581,6 +3645,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public Builder clearReceiver() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3590,6 +3658,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public Builder setReceiverBytes(
           com.google.protobuf.ByteString value) {
@@ -3605,12 +3677,20 @@ public final class ReceiveAddress {
       private java.lang.Object mobileNo_ = "";
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public boolean hasMobileNo() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public java.lang.String getMobileNo() {
         java.lang.Object ref = mobileNo_;
@@ -3628,6 +3708,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public com.google.protobuf.ByteString
           getMobileNoBytes() {
@@ -3644,6 +3728,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public Builder setMobileNo(
           java.lang.String value) {
@@ -3657,6 +3745,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public Builder clearMobileNo() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3666,6 +3758,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public Builder setMobileNoBytes(
           com.google.protobuf.ByteString value) {
@@ -4251,7 +4347,7 @@ public final class ReceiveAddress {
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ModifyAddressResult}
    *
    * <pre>
-   *添加收货结果
+   *添加收货地址结果
    * </pre>
    */
   public static final class ModifyAddressResult extends
@@ -4637,7 +4733,7 @@ public final class ReceiveAddress {
      * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ModifyAddressResult}
      *
      * <pre>
-     *添加收货结果
+     *添加收货地址结果
      * </pre>
      */
     public static final class Builder extends
@@ -7596,28 +7692,52 @@ public final class ReceiveAddress {
 
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     boolean hasReceiver();
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     java.lang.String getReceiver();
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     com.google.protobuf.ByteString
         getReceiverBytes();
 
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     boolean hasMobileNo();
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     java.lang.String getMobileNo();
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     com.google.protobuf.ByteString
         getMobileNoBytes();
@@ -7916,12 +8036,20 @@ public final class ReceiveAddress {
     private java.lang.Object receiver_;
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     public boolean hasReceiver() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     public java.lang.String getReceiver() {
       java.lang.Object ref = receiver_;
@@ -7939,6 +8067,10 @@ public final class ReceiveAddress {
     }
     /**
      * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
      */
     public com.google.protobuf.ByteString
         getReceiverBytes() {
@@ -7958,12 +8090,20 @@ public final class ReceiveAddress {
     private java.lang.Object mobileNo_;
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     public boolean hasMobileNo() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     public java.lang.String getMobileNo() {
       java.lang.Object ref = mobileNo_;
@@ -7981,6 +8121,10 @@ public final class ReceiveAddress {
     }
     /**
      * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
      */
     public com.google.protobuf.ByteString
         getMobileNoBytes() {
@@ -8714,12 +8858,20 @@ public final class ReceiveAddress {
       private java.lang.Object receiver_ = "";
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public boolean hasReceiver() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public java.lang.String getReceiver() {
         java.lang.Object ref = receiver_;
@@ -8737,6 +8889,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public com.google.protobuf.ByteString
           getReceiverBytes() {
@@ -8753,6 +8909,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public Builder setReceiver(
           java.lang.String value) {
@@ -8766,6 +8926,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public Builder clearReceiver() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -8775,6 +8939,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
        */
       public Builder setReceiverBytes(
           com.google.protobuf.ByteString value) {
@@ -8790,12 +8958,20 @@ public final class ReceiveAddress {
       private java.lang.Object mobileNo_ = "";
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public boolean hasMobileNo() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public java.lang.String getMobileNo() {
         java.lang.Object ref = mobileNo_;
@@ -8813,6 +8989,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public com.google.protobuf.ByteString
           getMobileNoBytes() {
@@ -8829,6 +9009,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public Builder setMobileNo(
           java.lang.String value) {
@@ -8842,6 +9026,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public Builder clearMobileNo() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -8851,6 +9039,10 @@ public final class ReceiveAddress {
       }
       /**
        * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
        */
       public Builder setMobileNoBytes(
           com.google.protobuf.ByteString value) {
