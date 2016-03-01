@@ -1,0 +1,66 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取优惠券（代金券、折扣券）列表
+message GetVoucherListRequest {   
+
+  //优惠券状态 0:全部优惠券,1:仅显示有效券，2:仅显示无效（过期、已使用等）券，
+  optional int32 voucherStatus = 1;
+  
+  //优惠券类型 0：全部优惠券,1:抵价券，2：折扣券
+  optional int32 voucherType = 2;
+  
+  //起始index
+  optional int32 startIndex = 3;  
+ 
+    
+}
+
+//获取优惠券结果
+message GetVoucherListResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   //是否有更多
+   required bool                   hasMore = 3;
+   
+   //当前最大index
+   optional int32                  maxIndex = 4;
+   
+   //券详细内容
+   repeated VoucherInfo            voucherInfo = 5;
+   
+}
+
+//优惠券信息
+message VoucherInfo{
+   
+   //优惠券Id
+   required  string  voucherId = 1;
+   
+   //优惠券标题
+   required  string  voucherTitle = 2;
+   
+   //优惠券类型 1:抵价券，2：折扣券
+   required  string  voucherType = 3;
+   
+   //优惠券状态 1:有效券，2:已使用，3:已过期
+   required  string  voucherStatus = 4;
+   
+   //有效期开始时间
+   required  int64   validStartTime = 5;
+   
+   //有效期结束时间 
+   required  int64   validEndTime = 6;
+   
+   //券描述
+   required  string  voucherDesc = 7;
+   
+   //券的用法\好处（如：10元、8.8折）
+   required  string  voucherBenefit = 8;
+}
+
