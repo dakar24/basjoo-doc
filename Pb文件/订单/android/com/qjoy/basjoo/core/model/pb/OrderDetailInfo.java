@@ -39,7 +39,7 @@ public final class OrderDetailInfo extends Message {
   public static final int TAG_PAYCHANNEL = 20;
   public static final int TAG_DELIVERYTIME = 21;
   public static final int TAG_RECEIVETIME = 22;
-  public static final int TAG_BACKTIME = 23;
+  public static final int TAG_REVERTTIME = 23;
   public static final int TAG_COMPLETETIME = 24;
   public static final int TAG_CLOSETIME = 25;
 
@@ -65,7 +65,7 @@ public final class OrderDetailInfo extends Message {
   public static final String DEFAULT_PAYCHANNEL = "";
   public static final Long DEFAULT_DELIVERYTIME = 0L;
   public static final Long DEFAULT_RECEIVETIME = 0L;
-  public static final Long DEFAULT_BACKTIME = 0L;
+  public static final Long DEFAULT_REVERTTIME = 0L;
   public static final Long DEFAULT_COMPLETETIME = 0L;
   public static final Long DEFAULT_CLOSETIME = 0L;
 
@@ -202,10 +202,10 @@ public final class OrderDetailInfo extends Message {
   public Long receiveTime;
 
   /**
-   * 待归时间
+   * 归还时间
    */
   @ProtoField(tag = 23, type = INT64)
-  public Long backTime;
+  public Long revertTime;
 
   /**
    * 成交时间（成功）
@@ -244,7 +244,7 @@ public final class OrderDetailInfo extends Message {
     this.payChannel = message.payChannel;
     this.deliveryTime = message.deliveryTime;
     this.receiveTime = message.receiveTime;
-    this.backTime = message.backTime;
+    this.revertTime = message.revertTime;
     this.completeTime = message.completeTime;
     this.closeTime = message.closeTime;
   }
@@ -320,8 +320,8 @@ public final class OrderDetailInfo extends Message {
         case TAG_RECEIVETIME:
         this.receiveTime = (Long)value;
         break;
-        case TAG_BACKTIME:
-        this.backTime = (Long)value;
+        case TAG_REVERTTIME:
+        this.revertTime = (Long)value;
         break;
         case TAG_COMPLETETIME:
         this.completeTime = (Long)value;
@@ -361,7 +361,7 @@ public final class OrderDetailInfo extends Message {
         && equals(payChannel, o.payChannel)
         && equals(deliveryTime, o.deliveryTime)
         && equals(receiveTime, o.receiveTime)
-        && equals(backTime, o.backTime)
+        && equals(revertTime, o.revertTime)
         && equals(completeTime, o.completeTime)
         && equals(closeTime, o.closeTime);
   }
@@ -392,7 +392,7 @@ public final class OrderDetailInfo extends Message {
       result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
       result = result * 37 + (deliveryTime != null ? deliveryTime.hashCode() : 0);
       result = result * 37 + (receiveTime != null ? receiveTime.hashCode() : 0);
-      result = result * 37 + (backTime != null ? backTime.hashCode() : 0);
+      result = result * 37 + (revertTime != null ? revertTime.hashCode() : 0);
       result = result * 37 + (completeTime != null ? completeTime.hashCode() : 0);
       result = result * 37 + (closeTime != null ? closeTime.hashCode() : 0);
       hashCode = result;

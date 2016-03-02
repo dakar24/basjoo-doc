@@ -1107,7 +1107,7 @@
     _waitPayCount = 0;
     _waitDeliveryCount = 0;
     _waitReceiveCount = 0;
-    _waitBackCount = 0;
+    _waitRevertCount = 0;
     _waitEvaluateCount = 0;
     _totalCount = 0;
   }
@@ -1135,8 +1135,8 @@
   if (self.hasWaitReceiveCount) {
     [output writeInt32:7 value:self.waitReceiveCount];
   }
-  if (self.hasWaitBackCount) {
-    [output writeInt32:8 value:self.waitBackCount];
+  if (self.hasWaitRevertCount) {
+    [output writeInt32:8 value:self.waitRevertCount];
   }
   if (self.hasWaitEvaluateCount) {
     [output writeInt32:9 value:self.waitEvaluateCount];
@@ -1174,8 +1174,8 @@
   if (self.hasWaitReceiveCount) {
     size_ += computeInt32Size(7, self.waitReceiveCount);
   }
-  if (self.hasWaitBackCount) {
-    size_ += computeInt32Size(8, self.waitBackCount);
+  if (self.hasWaitRevertCount) {
+    size_ += computeInt32Size(8, self.waitRevertCount);
   }
   if (self.hasWaitEvaluateCount) {
     size_ += computeInt32Size(9, self.waitEvaluateCount);
@@ -1217,8 +1217,8 @@
   if (self.hasWaitReceiveCount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"waitReceiveCount", [NSNumber numberWithInteger:self.waitReceiveCount]];
   }
-  if (self.hasWaitBackCount) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"waitBackCount", [NSNumber numberWithInteger:self.waitBackCount]];
+  if (self.hasWaitRevertCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"waitRevertCount", [NSNumber numberWithInteger:self.waitRevertCount]];
   }
   if (self.hasWaitEvaluateCount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"waitEvaluateCount", [NSNumber numberWithInteger:self.waitEvaluateCount]];
@@ -1263,9 +1263,9 @@
   _hasWaitReceiveCount = YES;
   _waitReceiveCount = value;
 }
-- (void) setWaitBackCount:(SInt32) value {
-  _hasWaitBackCount = YES;
-  _waitBackCount = value;
+- (void) setWaitRevertCount:(SInt32) value {
+  _hasWaitRevertCount = YES;
+  _waitRevertCount = value;
 }
 - (void) setWaitEvaluateCount:(SInt32) value {
   _hasWaitEvaluateCount = YES;
@@ -1328,7 +1328,7 @@
         break;
       }
       case 64: {
-        [self setWaitBackCount:[input readInt32]];
+        [self setWaitRevertCount:[input readInt32]];
         break;
       }
       case 72: {
@@ -1855,6 +1855,360 @@
 @end
 
 
+@implementation ConfirmReceiveRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _orderId = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasOrderId) {
+    [output writeString:1 value:self.orderId];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasOrderId) {
+    size_ += computeStringSize(1, self.orderId);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ConfirmReceiveRequest*) parseFromData:(NSData*) data {
+  ConfirmReceiveRequest* result = [[ConfirmReceiveRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasOrderId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setOrderId:(NSString*) value {
+  _hasOrderId = YES;
+  _orderId = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setOrderId:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ConfirmReceiveResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ConfirmReceiveResult*) parseFromData:(NSData*) data {
+  ConfirmReceiveResult* result = [[ConfirmReceiveResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ApplyRevertRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _orderId = @"";
+    _applyRevertType = @"";
+    _transportationId = @"";
+    _transportationCompany = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasOrderId) {
+    [output writeString:1 value:self.orderId];
+  }
+  if (self.hasApplyRevertType) {
+    [output writeString:2 value:self.applyRevertType];
+  }
+  if (self.hasTransportationId) {
+    [output writeString:3 value:self.transportationId];
+  }
+  if (self.hasTransportationCompany) {
+    [output writeString:4 value:self.transportationCompany];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasOrderId) {
+    size_ += computeStringSize(1, self.orderId);
+  }
+  if (self.hasApplyRevertType) {
+    size_ += computeStringSize(2, self.applyRevertType);
+  }
+  if (self.hasTransportationId) {
+    size_ += computeStringSize(3, self.transportationId);
+  }
+  if (self.hasTransportationCompany) {
+    size_ += computeStringSize(4, self.transportationCompany);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ApplyRevertRequest*) parseFromData:(NSData*) data {
+  ApplyRevertRequest* result = [[ApplyRevertRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasOrderId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
+  }
+  if (self.hasApplyRevertType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"applyRevertType", self.applyRevertType];
+  }
+  if (self.hasTransportationId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"transportationId", self.transportationId];
+  }
+  if (self.hasTransportationCompany) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"transportationCompany", self.transportationCompany];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setOrderId:(NSString*) value {
+  _hasOrderId = YES;
+  _orderId = value;
+}
+- (void) setApplyRevertType:(NSString*) value {
+  _hasApplyRevertType = YES;
+  _applyRevertType = value;
+}
+- (void) setTransportationId:(NSString*) value {
+  _hasTransportationId = YES;
+  _transportationId = value;
+}
+- (void) setTransportationCompany:(NSString*) value {
+  _hasTransportationCompany = YES;
+  _transportationCompany = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setOrderId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setApplyRevertType:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setTransportationId:[input readString]];
+        break;
+      }
+      case 34: {
+        [self setTransportationCompany:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ApplyRevertResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ApplyRevertResult*) parseFromData:(NSData*) data {
+  ApplyRevertResult* result = [[ApplyRevertResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
 @implementation GetOrderDetailRequest
 
 - (instancetype) init {
@@ -2053,7 +2407,7 @@
     _payChannel = @"";
     _deliveryTime = 0L;
     _receiveTime = 0L;
-    _backTime = 0L;
+    _revertTime = 0L;
     _completeTime = 0L;
     _closeTime = 0L;
   }
@@ -2126,8 +2480,8 @@
   if (self.hasReceiveTime) {
     [output writeInt64:22 value:self.receiveTime];
   }
-  if (self.hasBackTime) {
-    [output writeInt64:23 value:self.backTime];
+  if (self.hasRevertTime) {
+    [output writeInt64:23 value:self.revertTime];
   }
   if (self.hasCompleteTime) {
     [output writeInt64:24 value:self.completeTime];
@@ -2207,8 +2561,8 @@
   if (self.hasReceiveTime) {
     size_ += computeInt64Size(22, self.receiveTime);
   }
-  if (self.hasBackTime) {
-    size_ += computeInt64Size(23, self.backTime);
+  if (self.hasRevertTime) {
+    size_ += computeInt64Size(23, self.revertTime);
   }
   if (self.hasCompleteTime) {
     size_ += computeInt64Size(24, self.completeTime);
@@ -2292,8 +2646,8 @@
   if (self.hasReceiveTime) {
     [output appendFormat:@"%@%@: %@\n", indent, @"receiveTime", [NSNumber numberWithLongLong:self.receiveTime]];
   }
-  if (self.hasBackTime) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"backTime", [NSNumber numberWithLongLong:self.backTime]];
+  if (self.hasRevertTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"revertTime", [NSNumber numberWithLongLong:self.revertTime]];
   }
   if (self.hasCompleteTime) {
     [output appendFormat:@"%@%@: %@\n", indent, @"completeTime", [NSNumber numberWithLongLong:self.completeTime]];
@@ -2392,9 +2746,9 @@
   _hasReceiveTime = YES;
   _receiveTime = value;
 }
-- (void) setBackTime:(SInt64) value {
-  _hasBackTime = YES;
-  _backTime = value;
+- (void) setRevertTime:(SInt64) value {
+  _hasRevertTime = YES;
+  _revertTime = value;
 }
 - (void) setCompleteTime:(SInt64) value {
   _hasCompleteTime = YES;
@@ -2508,7 +2862,7 @@
         break;
       }
       case 184: {
-        [self setBackTime:[input readInt64]];
+        [self setRevertTime:[input readInt64]];
         break;
       }
       case 192: {

@@ -9,9 +9,9 @@ import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 删除订单请求
+ * 确认收货请求
  */
-public final class DeleteOrderRequest extends Message {
+public final class ConfirmReceiveRequest extends Message {
 
   public static final int TAG_ORDERID = 1;
 
@@ -23,16 +23,16 @@ public final class DeleteOrderRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String orderId;
 
-  public DeleteOrderRequest(DeleteOrderRequest message) {
+  public ConfirmReceiveRequest(ConfirmReceiveRequest message) {
     super(message);
     if (message == null) return;
     this.orderId = message.orderId;
   }
 
-  public DeleteOrderRequest() {
+  public ConfirmReceiveRequest() {
   }
 
-  public DeleteOrderRequest fillTagValue(int tag, Object value) {
+  public ConfirmReceiveRequest fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_ORDERID:
         this.orderId = (String)value;
@@ -45,8 +45,8 @@ public final class DeleteOrderRequest extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof DeleteOrderRequest)) return false;
-    return equals(orderId, ((DeleteOrderRequest) other).orderId);
+    if (!(other instanceof ConfirmReceiveRequest)) return false;
+    return equals(orderId, ((ConfirmReceiveRequest) other).orderId);
   }
 
   @Override

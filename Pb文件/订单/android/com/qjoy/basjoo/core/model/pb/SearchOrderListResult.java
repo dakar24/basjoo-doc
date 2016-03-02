@@ -25,7 +25,7 @@ public final class SearchOrderListResult extends Message {
   public static final int TAG_WAITPAYCOUNT = 5;
   public static final int TAG_WAITDELIVERYCOUNT = 6;
   public static final int TAG_WAITRECEIVECOUNT = 7;
-  public static final int TAG_WAITBACKCOUNT = 8;
+  public static final int TAG_WAITREVERTCOUNT = 8;
   public static final int TAG_WAITEVALUATECOUNT = 9;
   public static final int TAG_TOTALCOUNT = 10;
   public static final int TAG_ORDERLITEINFO = 11;
@@ -37,7 +37,7 @@ public final class SearchOrderListResult extends Message {
   public static final Integer DEFAULT_WAITPAYCOUNT = 0;
   public static final Integer DEFAULT_WAITDELIVERYCOUNT = 0;
   public static final Integer DEFAULT_WAITRECEIVECOUNT = 0;
-  public static final Integer DEFAULT_WAITBACKCOUNT = 0;
+  public static final Integer DEFAULT_WAITREVERTCOUNT = 0;
   public static final Integer DEFAULT_WAITEVALUATECOUNT = 0;
   public static final Integer DEFAULT_TOTALCOUNT = 0;
   public static final List<OrderLiteInfo> DEFAULT_ORDERLITEINFO = Collections.emptyList();
@@ -82,7 +82,7 @@ public final class SearchOrderListResult extends Message {
    * 待归还
    */
   @ProtoField(tag = 8, type = INT32, label = REQUIRED)
-  public Integer waitBackCount;
+  public Integer waitRevertCount;
 
   /**
    * 待评价
@@ -112,7 +112,7 @@ public final class SearchOrderListResult extends Message {
     this.waitPayCount = message.waitPayCount;
     this.waitDeliveryCount = message.waitDeliveryCount;
     this.waitReceiveCount = message.waitReceiveCount;
-    this.waitBackCount = message.waitBackCount;
+    this.waitRevertCount = message.waitRevertCount;
     this.waitEvaluateCount = message.waitEvaluateCount;
     this.totalCount = message.totalCount;
     this.orderLiteInfo = copyOf(message.orderLiteInfo);
@@ -144,8 +144,8 @@ public final class SearchOrderListResult extends Message {
         case TAG_WAITRECEIVECOUNT:
         this.waitReceiveCount = (Integer)value;
         break;
-        case TAG_WAITBACKCOUNT:
-        this.waitBackCount = (Integer)value;
+        case TAG_WAITREVERTCOUNT:
+        this.waitRevertCount = (Integer)value;
         break;
         case TAG_WAITEVALUATECOUNT:
         this.waitEvaluateCount = (Integer)value;
@@ -173,7 +173,7 @@ public final class SearchOrderListResult extends Message {
         && equals(waitPayCount, o.waitPayCount)
         && equals(waitDeliveryCount, o.waitDeliveryCount)
         && equals(waitReceiveCount, o.waitReceiveCount)
-        && equals(waitBackCount, o.waitBackCount)
+        && equals(waitRevertCount, o.waitRevertCount)
         && equals(waitEvaluateCount, o.waitEvaluateCount)
         && equals(totalCount, o.totalCount)
         && equals(orderLiteInfo, o.orderLiteInfo);
@@ -190,7 +190,7 @@ public final class SearchOrderListResult extends Message {
       result = result * 37 + (waitPayCount != null ? waitPayCount.hashCode() : 0);
       result = result * 37 + (waitDeliveryCount != null ? waitDeliveryCount.hashCode() : 0);
       result = result * 37 + (waitReceiveCount != null ? waitReceiveCount.hashCode() : 0);
-      result = result * 37 + (waitBackCount != null ? waitBackCount.hashCode() : 0);
+      result = result * 37 + (waitRevertCount != null ? waitRevertCount.hashCode() : 0);
       result = result * 37 + (waitEvaluateCount != null ? waitEvaluateCount.hashCode() : 0);
       result = result * 37 + (totalCount != null ? totalCount.hashCode() : 0);
       result = result * 37 + (orderLiteInfo != null ? orderLiteInfo.hashCode() : 1);

@@ -2,10 +2,14 @@
 
 #import <QJProtocolBuffers/ProtocolBuffers.h>
 
+@class ApplyRevertRequest;
+@class ApplyRevertResult;
 @class CommitOrderRequest;
 @class CommitOrderResult;
 @class ConfirmOrderRequest;
 @class ConfirmOrderResult;
+@class ConfirmReceiveRequest;
+@class ConfirmReceiveResult;
 @class DefaultReceiveAddressInfo;
 @class DeleteOrderRequest;
 @class DeleteOrderResult;
@@ -129,7 +133,7 @@
 @property (readonly) BOOL hasWaitPayCount;
 @property (readonly) BOOL hasWaitDeliveryCount;
 @property (readonly) BOOL hasWaitReceiveCount;
-@property (readonly) BOOL hasWaitBackCount;
+@property (readonly) BOOL hasWaitRevertCount;
 @property (readonly) BOOL hasWaitEvaluateCount;
 @property (readonly) BOOL hasTotalCount;
 @property (nonatomic,strong) NSString* resultCode;
@@ -139,7 +143,7 @@
 @property (nonatomic)SInt32 waitPayCount;
 @property (nonatomic)SInt32 waitDeliveryCount;
 @property (nonatomic)SInt32 waitReceiveCount;
-@property (nonatomic)SInt32 waitBackCount;
+@property (nonatomic)SInt32 waitRevertCount;
 @property (nonatomic)SInt32 waitEvaluateCount;
 @property (nonatomic)SInt32 totalCount;
 @property (nonatomic,strong) NSMutableArray * orderLiteInfo;
@@ -194,6 +198,36 @@
 @property (nonatomic,strong) NSString* resultMsg;
 @end
 
+@interface ConfirmReceiveRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasOrderId;
+@property (nonatomic,strong) NSString* orderId;
+@end
+
+@interface ConfirmReceiveResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@end
+
+@interface ApplyRevertRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasApplyRevertType;
+@property (readonly) BOOL hasTransportationId;
+@property (readonly) BOOL hasTransportationCompany;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic,strong) NSString* applyRevertType;
+@property (nonatomic,strong) NSString* transportationId;
+@property (nonatomic,strong) NSString* transportationCompany;
+@end
+
+@interface ApplyRevertResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@end
+
 @interface GetOrderDetailRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOrderId;
 @property (nonatomic,strong) NSString* orderId;
@@ -231,7 +265,7 @@
 @property (readonly) BOOL hasPayChannel;
 @property (readonly) BOOL hasDeliveryTime;
 @property (readonly) BOOL hasReceiveTime;
-@property (readonly) BOOL hasBackTime;
+@property (readonly) BOOL hasRevertTime;
 @property (readonly) BOOL hasCompleteTime;
 @property (readonly) BOOL hasCloseTime;
 @property (nonatomic,strong) NSString* orderId;
@@ -256,7 +290,7 @@
 @property (nonatomic,strong) NSString* payChannel;
 @property (nonatomic)SInt64 deliveryTime;
 @property (nonatomic)SInt64 receiveTime;
-@property (nonatomic)SInt64 backTime;
+@property (nonatomic)SInt64 revertTime;
 @property (nonatomic)SInt64 completeTime;
 @property (nonatomic)SInt64 closeTime;
 @end

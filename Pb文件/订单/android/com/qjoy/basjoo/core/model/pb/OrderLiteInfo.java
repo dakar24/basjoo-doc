@@ -54,7 +54,7 @@ public final class OrderLiteInfo extends Message {
   public static final String DEFAULT_CATEGORYNAME = "";
 
   /**
-   * 产品Id
+   * 订单Id
    */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String orderId;

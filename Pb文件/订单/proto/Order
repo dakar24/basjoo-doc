@@ -183,7 +183,7 @@ message SearchOrderListResult{
   required int32    waitReceiveCount = 7;
   
   //待归还
-  required int32    waitBackCount = 8;
+  required int32    waitRevertCount = 8;
   
   //待评价
   required int32    waitEvaluateCount = 9;
@@ -234,7 +234,7 @@ message OrderLiteInfo{
    optional string       transportationId = 12;
 
    //评价状态
-   optional bool  evaluateStauts = 13;      
+   optional bool         evaluateStauts = 13;      
  
    //产品Id
    required string      productId = 14;    
@@ -255,7 +255,7 @@ message OrderLiteInfo{
 message DeleteOrderRequest {      
 	
     //订单ID
-    optional string                 orderId = 1; 	
+    required string                 orderId = 1; 	
     
 }
 
@@ -268,6 +268,53 @@ message DeleteOrderResult {
    required string                 resultMsg = 2;
     
 }
+
+//确认收货请求
+message ConfirmReceiveRequest {      
+	
+    //订单ID
+    required string                 orderId = 1; 	
+    
+}
+
+
+//确认收货结果
+message ConfirmReceiveResult {      
+	
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+}
+
+//申请归还请求
+message ApplyRevertRequest {      
+	
+    //订单ID
+    required string                 orderId = 1; 
+
+    //退还方式 1：快递归还，2：现场归还
+    required string                 applyRevertType = 2; 	
+	
+	//快递号
+    optional string                 transportationId = 3; 	
+	
+	//快递公司
+    optional string                 transportationCompany = 4; 
+    
+    
+}
+
+
+//申请归还结果
+message ApplyRevertResult {      
+	
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+}
+
 
 //获取订单详情请求
 message GetOrderDetailRequest {      
@@ -358,8 +405,8 @@ message OrderDetailInfo{
    //收货时间
    optional int64      receiveTime = 22;
   
-   //待归时间
-   optional int64      backTime = 23;
+   //归还时间
+   optional int64      revertTime = 23;
    
    //成交时间（成功）
    optional int64      completeTime = 24;

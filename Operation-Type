@@ -37,6 +37,8 @@
 删除订单：qjoy.basjoo.deleteOrder
 获取订单详情：qjoy.basjoo.getOrderDetail
 获取订单列表：qjoy.basjoo.searchOrderList
+申请归还：qjoy.basjoo.applyRevert
+确认收货：qjoy.basjoo.confirmReceive
 
 ##权益
 获取权益列表：qjoy.basjoo.getVoucherList
