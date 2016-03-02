@@ -5273,7 +5273,7 @@ public final class Order {
         getRentCodeBytes();
 
     /**
-     * <code>required bool insurance = 5;</code>
+     * <code>optional bool insurance = 5;</code>
      *
      * <pre>
      *是否选择运费险
@@ -5281,7 +5281,7 @@ public final class Order {
      */
     boolean hasInsurance();
     /**
-     * <code>required bool insurance = 5;</code>
+     * <code>optional bool insurance = 5;</code>
      *
      * <pre>
      *是否选择运费险
@@ -5403,7 +5403,7 @@ public final class Order {
         getUserMessageBytes();
 
     /**
-     * <code>required int32 payChannel = 10;</code>
+     * <code>optional int32 payChannel = 10;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -5411,7 +5411,7 @@ public final class Order {
      */
     boolean hasPayChannel();
     /**
-     * <code>required int32 payChannel = 10;</code>
+     * <code>optional int32 payChannel = 10;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -5766,7 +5766,7 @@ public final class Order {
     public static final int INSURANCE_FIELD_NUMBER = 5;
     private boolean insurance_;
     /**
-     * <code>required bool insurance = 5;</code>
+     * <code>optional bool insurance = 5;</code>
      *
      * <pre>
      *是否选择运费险
@@ -5776,7 +5776,7 @@ public final class Order {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required bool insurance = 5;</code>
+     * <code>optional bool insurance = 5;</code>
      *
      * <pre>
      *是否选择运费险
@@ -5996,7 +5996,7 @@ public final class Order {
     public static final int PAYCHANNEL_FIELD_NUMBER = 10;
     private int payChannel_;
     /**
-     * <code>required int32 payChannel = 10;</code>
+     * <code>optional int32 payChannel = 10;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -6006,7 +6006,7 @@ public final class Order {
       return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
-     * <code>required int32 payChannel = 10;</code>
+     * <code>optional int32 payChannel = 10;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -6050,19 +6050,11 @@ public final class Order {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasInsurance()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasOrderId()) {
         memoizedIsInitialized = 0;
         return false;
       }
       if (!hasAddressId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPayChannel()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -6453,19 +6445,11 @@ public final class Order {
           
           return false;
         }
-        if (!hasInsurance()) {
-          
-          return false;
-        }
         if (!hasOrderId()) {
           
           return false;
         }
         if (!hasAddressId()) {
-          
-          return false;
-        }
-        if (!hasPayChannel()) {
           
           return false;
         }
@@ -6841,7 +6825,7 @@ public final class Order {
 
       private boolean insurance_ ;
       /**
-       * <code>required bool insurance = 5;</code>
+       * <code>optional bool insurance = 5;</code>
        *
        * <pre>
        *是否选择运费险
@@ -6851,7 +6835,7 @@ public final class Order {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required bool insurance = 5;</code>
+       * <code>optional bool insurance = 5;</code>
        *
        * <pre>
        *是否选择运费险
@@ -6861,7 +6845,7 @@ public final class Order {
         return insurance_;
       }
       /**
-       * <code>required bool insurance = 5;</code>
+       * <code>optional bool insurance = 5;</code>
        *
        * <pre>
        *是否选择运费险
@@ -6874,7 +6858,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required bool insurance = 5;</code>
+       * <code>optional bool insurance = 5;</code>
        *
        * <pre>
        *是否选择运费险
@@ -7318,7 +7302,7 @@ public final class Order {
 
       private int payChannel_ ;
       /**
-       * <code>required int32 payChannel = 10;</code>
+       * <code>optional int32 payChannel = 10;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
@@ -7328,7 +7312,7 @@ public final class Order {
         return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>required int32 payChannel = 10;</code>
+       * <code>optional int32 payChannel = 10;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
@@ -7338,7 +7322,7 @@ public final class Order {
         return payChannel_;
       }
       /**
-       * <code>required int32 payChannel = 10;</code>
+       * <code>optional int32 payChannel = 10;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
@@ -7351,7 +7335,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required int32 payChannel = 10;</code>
+       * <code>optional int32 payChannel = 10;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
@@ -24006,9 +23990,9 @@ public final class Order {
       "l\030\004 \002(\t\"\323\001\n\023ConfirmOrderRequest\022\021\n\tprodu" +
       "ctId\030\001 \002(\t\022\022\n\ncategoryId\030\002 \002(\t\022\021\n\trentCo" +
       "unt\030\003 \002(\005\022\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance",
-      "\030\005 \002(\010\022\017\n\007orderId\030\006 \002(\t\022\021\n\taddressId\030\007 \002" +
+      "\030\005 \001(\010\022\017\n\007orderId\030\006 \002(\t\022\021\n\taddressId\030\007 \002" +
       "(\t\022\020\n\010vouchers\030\010 \003(\t\022\023\n\013userMessage\030\t \001(" +
-      "\t\022\022\n\npayChannel\030\n \002(\005\"L\n\022ConfirmOrderRes" +
+      "\t\022\022\n\npayChannel\030\n \001(\005\"L\n\022ConfirmOrderRes" +
       "ult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002" +
       "(\t\022\017\n\007orderId\030\003 \001(\t\"\217\001\n\026SearchOrderListR" +
       "equest\022\020\n\010keyWords\030\001 \001(\t\022\023\n\013orderStatus\030" +

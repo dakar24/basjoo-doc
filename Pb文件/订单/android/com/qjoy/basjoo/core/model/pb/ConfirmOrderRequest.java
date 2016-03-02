@@ -67,7 +67,7 @@ public final class ConfirmOrderRequest extends Message {
   /**
    * 是否选择运费险
    */
-  @ProtoField(tag = 5, type = BOOL, label = REQUIRED)
+  @ProtoField(tag = 5, type = BOOL)
   public Boolean insurance;
 
   /**
@@ -97,7 +97,7 @@ public final class ConfirmOrderRequest extends Message {
   /**
    * 支付渠道，0：微信支付，1：支付宝
    */
-  @ProtoField(tag = 10, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 10, type = INT32)
   public Integer payChannel;
 
   public ConfirmOrderRequest(ConfirmOrderRequest message) {
