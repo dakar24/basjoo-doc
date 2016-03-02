@@ -51,4 +51,8 @@
 ##押金
 我的押金列表：qjoy.basjoo.getPledgeList
 
+##推荐
+注册推荐码：qjoy.basjoo.registerRecommendCode
+显示推荐码信息：qjoy.basjoo.getRecommendInfo
+
 

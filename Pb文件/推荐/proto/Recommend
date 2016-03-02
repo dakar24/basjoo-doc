@@ -1,0 +1,79 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//注册推荐码
+message RegisterRecommendCodeRequest {     
+  
+  //推荐码
+   required string                 recommendCode = 1; 
+    
+}
+
+//注册推荐码结果
+message RegisterRecommendCodeResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+}
+
+//获取推荐码相关信息
+message GetRecommendInfoRequest {    
+  
+  //起始index
+  optional int32 startIndex = 1;  
+}
+
+
+
+//获取推荐码结果
+message GetRecommendInfoResult {   
+   
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   //推荐码
+   optional string                 recommendCode = 3;   
+   
+   //推荐标题
+   optional string                 recommendTitle = 4;   
+   
+   //推荐描述
+   optional string                 recommendDesc = 5;   
+
+   //已推荐人数
+   optional int32                  recommendCount = 6;
+   
+   //当前最大index
+   optional int32                  maxIndex = 7;
+   
+   //是否还有更多数据
+   optional bool                   hasMore  = 8;
+   
+   //推荐用户信息
+   repeated RecommendUserInfo	   recommendUsers = 9;
+
+}
+
+
+message RecommendUserInfo{
+  
+  //用户ID
+  required string                 userId = 1;
+  
+  //用户名称
+  required string                 userName = 2;
+  
+  //注册推荐时间
+  required int64                 recommendTime = 3;
+}
+
+
+
+
+
+
