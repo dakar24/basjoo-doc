@@ -1,7 +1,7 @@
-/*---- create table receive_address_info---------*/
-/*---- 收货地址表 ----*/
+/*---- create table imgage_info---------*/
+/*---- 图片信息址表 ----*/
 
-CREATE table receive_address_info (
+CREATE table imgage_info (
 	address_id varchar(64)  not null  comment '地址ID',
 	user_id varchar(64)  not null  comment '用户ID',
 	receiver varchar(64)  not null  comment '收件人',
