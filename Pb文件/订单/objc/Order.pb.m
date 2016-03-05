@@ -236,8 +236,8 @@
   if (self.hasTotalPrice) {
     [output writeDouble:13 value:self.totalPrice];
   }
-  if (self.hasDefaultReceiveAddressInfo) {
-    [output writeMessage:14 value:self.defaultReceiveAddressInfo];
+  if (self.hasOrderReceiveAddressInfo) {
+    [output writeMessage:14 value:self.orderReceiveAddressInfo];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -284,8 +284,8 @@
   if (self.hasTotalPrice) {
     size_ += computeDoubleSize(13, self.totalPrice);
   }
-  if (self.hasDefaultReceiveAddressInfo) {
-    size_ += computeMessageSize(14, self.defaultReceiveAddressInfo);
+  if (self.hasOrderReceiveAddressInfo) {
+    size_ += computeMessageSize(14, self.orderReceiveAddressInfo);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -336,9 +336,9 @@
   if (self.hasTotalPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"totalPrice", [NSNumber numberWithDouble:self.totalPrice]];
   }
-  if (self.hasDefaultReceiveAddressInfo) {
-    [output appendFormat:@"%@%@ {\n", indent, @"defaultReceiveAddressInfo"];
-    [self.defaultReceiveAddressInfo writeDescriptionTo:output
+  if (self.hasOrderReceiveAddressInfo) {
+    [output appendFormat:@"%@%@ {\n", indent, @"orderReceiveAddressInfo"];
+    [self.orderReceiveAddressInfo writeDescriptionTo:output
                          withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }
@@ -397,9 +397,9 @@
   _hasTotalPrice = YES;
   _totalPrice = value;
 }
-- (void) setDefaultReceiveAddressInfo:(DefaultReceiveAddressInfo*) value {
-  _hasDefaultReceiveAddressInfo = YES;
-  _defaultReceiveAddressInfo = value;
+- (void) setOrderReceiveAddressInfo:(OrderReceiveAddressInfo*) value {
+  _hasOrderReceiveAddressInfo = YES;
+  _orderReceiveAddressInfo = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -469,9 +469,9 @@
         break;
       }
       case 114: {
-        DefaultReceiveAddressInfo* sub = [[DefaultReceiveAddressInfo alloc] init];
+        OrderReceiveAddressInfo* sub = [[OrderReceiveAddressInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
-        [self setDefaultReceiveAddressInfo:sub];
+        [self setOrderReceiveAddressInfo:sub];
         break;
       }
     }
@@ -480,7 +480,7 @@
 @end
 
 
-@implementation DefaultReceiveAddressInfo
+@implementation OrderReceiveAddressInfo
 
 - (instancetype) init {
   if ((self = [super init])) {
@@ -526,8 +526,8 @@
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (DefaultReceiveAddressInfo*) parseFromData:(NSData*) data {
-  DefaultReceiveAddressInfo* result = [[DefaultReceiveAddressInfo alloc] init];
++ (OrderReceiveAddressInfo*) parseFromData:(NSData*) data {
+  OrderReceiveAddressInfo* result = [[OrderReceiveAddressInfo alloc] init];
   [result mergeFromData:data];  return result;
 }
 #ifdef DEBUG
@@ -2489,6 +2489,12 @@
   if (self.hasCloseTime) {
     [output writeInt64:25 value:self.closeTime];
   }
+  [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:26 value:element];
+  }];
+  if (self.hasOrderReceiveAddressInfo) {
+    [output writeMessage:27 value:self.orderReceiveAddressInfo];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -2569,6 +2575,18 @@
   }
   if (self.hasCloseTime) {
     size_ += computeInt64Size(25, self.closeTime);
+  }
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.vouchers.count;
+    [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(2 * count);
+  }
+  if (self.hasOrderReceiveAddressInfo) {
+    size_ += computeMessageSize(27, self.orderReceiveAddressInfo);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -2654,6 +2672,15 @@
   }
   if (self.hasCloseTime) {
     [output appendFormat:@"%@%@: %@\n", indent, @"closeTime", [NSNumber numberWithLongLong:self.closeTime]];
+  }
+  [self.vouchers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"vouchers", obj];
+  }];
+  if (self.hasOrderReceiveAddressInfo) {
+    [output appendFormat:@"%@%@ {\n", indent, @"orderReceiveAddressInfo"];
+    [self.orderReceiveAddressInfo writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -2757,6 +2784,19 @@
 - (void) setCloseTime:(SInt64) value {
   _hasCloseTime = YES;
   _closeTime = value;
+}
+- (void)setVouchersArray:(NSArray *)array {
+  _vouchers = [[NSMutableArray alloc] initWithArray:array];
+}
+- (void)addVouchers:(NSString*)value {
+  if (_vouchers == nil) {
+    _vouchers = [[NSMutableArray alloc]init];
+  }
+  [_vouchers addObject:value];
+}
+- (void) setOrderReceiveAddressInfo:(OrderReceiveAddressInfo*) value {
+  _hasOrderReceiveAddressInfo = YES;
+  _orderReceiveAddressInfo = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -2871,6 +2911,16 @@
       }
       case 200: {
         [self setCloseTime:[input readInt64]];
+        break;
+      }
+      case 210: {
+        [self addVouchers:[input readString]];
+        break;
+      }
+      case 218: {
+        OrderReceiveAddressInfo* sub = [[OrderReceiveAddressInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self setOrderReceiveAddressInfo:sub];
         break;
       }
     }

@@ -10,13 +10,13 @@
 @class ConfirmOrderResult;
 @class ConfirmReceiveRequest;
 @class ConfirmReceiveResult;
-@class DefaultReceiveAddressInfo;
 @class DeleteOrderRequest;
 @class DeleteOrderResult;
 @class GetOrderDetailRequest;
 @class GetOrderDetailResult;
 @class OrderDetailInfo;
 @class OrderLiteInfo;
+@class OrderReceiveAddressInfo;
 @class SearchOrderListRequest;
 @class SearchOrderListResult;
 
@@ -51,7 +51,7 @@
 @property (readonly) BOOL hasTotalRentPrice;
 @property (readonly) BOOL hasHasVoucher;
 @property (readonly) BOOL hasTotalPrice;
-@property (readonly) BOOL hasDefaultReceiveAddressInfo;
+@property (readonly) BOOL hasOrderReceiveAddressInfo;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* orderId;
@@ -65,10 +65,10 @@
 @property (nonatomic)Float64 totalRentPrice;
 @property (nonatomic)BOOL hasVoucher;
 @property (nonatomic)Float64 totalPrice;
-@property (nonatomic,strong) DefaultReceiveAddressInfo* defaultReceiveAddressInfo;
+@property (nonatomic,strong) OrderReceiveAddressInfo* orderReceiveAddressInfo;
 @end
 
-@interface DefaultReceiveAddressInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@interface OrderReceiveAddressInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasAddressId;
 @property (readonly) BOOL hasReceiver;
 @property (readonly) BOOL hasMobileNo;
@@ -268,6 +268,7 @@
 @property (readonly) BOOL hasRevertTime;
 @property (readonly) BOOL hasCompleteTime;
 @property (readonly) BOOL hasCloseTime;
+@property (readonly) BOOL hasOrderReceiveAddressInfo;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)SInt32 orderStatus;
 @property (nonatomic)SInt64 createTime;
@@ -293,5 +294,7 @@
 @property (nonatomic)SInt64 revertTime;
 @property (nonatomic)SInt64 completeTime;
 @property (nonatomic)SInt64 closeTime;
+@property (nonatomic,strong) NSMutableArray * vouchers;
+@property (nonatomic,strong) OrderReceiveAddressInfo* orderReceiveAddressInfo;
 @end
 

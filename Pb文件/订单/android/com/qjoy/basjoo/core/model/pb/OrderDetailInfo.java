@@ -4,12 +4,15 @@ package com.qjoy.basjoo.core.model.pb;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 
 import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.DOUBLE;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.INT64;
 import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REPEATED;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
@@ -42,6 +45,8 @@ public final class OrderDetailInfo extends Message {
   public static final int TAG_REVERTTIME = 23;
   public static final int TAG_COMPLETETIME = 24;
   public static final int TAG_CLOSETIME = 25;
+  public static final int TAG_VOUCHERS = 26;
+  public static final int TAG_ORDERRECEIVEADDRESSINFO = 27;
 
   public static final String DEFAULT_ORDERID = "";
   public static final Integer DEFAULT_ORDERSTATUS = 0;
@@ -68,6 +73,7 @@ public final class OrderDetailInfo extends Message {
   public static final Long DEFAULT_REVERTTIME = 0L;
   public static final Long DEFAULT_COMPLETETIME = 0L;
   public static final Long DEFAULT_CLOSETIME = 0L;
+  public static final List<String> DEFAULT_VOUCHERS = Collections.emptyList();
 
   /**
    * 产品Id
@@ -219,6 +225,18 @@ public final class OrderDetailInfo extends Message {
   @ProtoField(tag = 25, type = INT64)
   public Long closeTime;
 
+  /**
+   * 用户选择的权益
+   */
+  @ProtoField(tag = 26, type = STRING, label = REPEATED)
+  public List<String> vouchers;
+
+  /**
+   * 订单收货地址信息
+   */
+  @ProtoField(tag = 27)
+  public OrderReceiveAddressInfo orderReceiveAddressInfo;
+
   public OrderDetailInfo(OrderDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -247,6 +265,8 @@ public final class OrderDetailInfo extends Message {
     this.revertTime = message.revertTime;
     this.completeTime = message.completeTime;
     this.closeTime = message.closeTime;
+    this.vouchers = copyOf(message.vouchers);
+    this.orderReceiveAddressInfo = message.orderReceiveAddressInfo;
   }
 
   public OrderDetailInfo() {
@@ -329,6 +349,12 @@ public final class OrderDetailInfo extends Message {
         case TAG_CLOSETIME:
         this.closeTime = (Long)value;
         break;
+        case TAG_VOUCHERS:
+        this.vouchers = immutableCopyOf((List<String>)value);
+        break;
+        case TAG_ORDERRECEIVEADDRESSINFO:
+        this.orderReceiveAddressInfo = (OrderReceiveAddressInfo)value;
+        break;
         default: break;
         };
     return this;
@@ -363,7 +389,9 @@ public final class OrderDetailInfo extends Message {
         && equals(receiveTime, o.receiveTime)
         && equals(revertTime, o.revertTime)
         && equals(completeTime, o.completeTime)
-        && equals(closeTime, o.closeTime);
+        && equals(closeTime, o.closeTime)
+        && equals(vouchers, o.vouchers)
+        && equals(orderReceiveAddressInfo, o.orderReceiveAddressInfo);
   }
 
   @Override
@@ -395,6 +423,8 @@ public final class OrderDetailInfo extends Message {
       result = result * 37 + (revertTime != null ? revertTime.hashCode() : 0);
       result = result * 37 + (completeTime != null ? completeTime.hashCode() : 0);
       result = result * 37 + (closeTime != null ? closeTime.hashCode() : 0);
+      result = result * 37 + (vouchers != null ? vouchers.hashCode() : 1);
+      result = result * 37 + (orderReceiveAddressInfo != null ? orderReceiveAddressInfo.hashCode() : 0);
       hashCode = result;
     }
     return result;

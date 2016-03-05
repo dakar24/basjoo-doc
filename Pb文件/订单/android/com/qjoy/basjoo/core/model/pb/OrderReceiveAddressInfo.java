@@ -8,7 +8,7 @@ import com.squareup.wire.ProtoField;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
-public final class DefaultReceiveAddressInfo extends Message {
+public final class OrderReceiveAddressInfo extends Message {
 
   public static final int TAG_ADDRESSID = 1;
   public static final int TAG_RECEIVER = 2;
@@ -44,7 +44,7 @@ public final class DefaultReceiveAddressInfo extends Message {
   @ProtoField(tag = 4, type = STRING, label = REQUIRED)
   public String addressDetail;
 
-  public DefaultReceiveAddressInfo(DefaultReceiveAddressInfo message) {
+  public OrderReceiveAddressInfo(OrderReceiveAddressInfo message) {
     super(message);
     if (message == null) return;
     this.addressId = message.addressId;
@@ -53,10 +53,10 @@ public final class DefaultReceiveAddressInfo extends Message {
     this.addressDetail = message.addressDetail;
   }
 
-  public DefaultReceiveAddressInfo() {
+  public OrderReceiveAddressInfo() {
   }
 
-  public DefaultReceiveAddressInfo fillTagValue(int tag, Object value) {
+  public OrderReceiveAddressInfo fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_ADDRESSID:
         this.addressId = (String)value;
@@ -78,8 +78,8 @@ public final class DefaultReceiveAddressInfo extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof DefaultReceiveAddressInfo)) return false;
-    DefaultReceiveAddressInfo o = (DefaultReceiveAddressInfo) other;
+    if (!(other instanceof OrderReceiveAddressInfo)) return false;
+    OrderReceiveAddressInfo o = (OrderReceiveAddressInfo) other;
     return equals(addressId, o.addressId)
         && equals(receiver, o.receiver)
         && equals(mobileNo, o.mobileNo)

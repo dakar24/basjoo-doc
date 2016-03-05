@@ -29,7 +29,7 @@ public final class CommitOrderResult extends Message {
   public static final int TAG_TOTALRENTPRICE = 11;
   public static final int TAG_HASVOUCHER = 12;
   public static final int TAG_TOTALPRICE = 13;
-  public static final int TAG_DEFAULTRECEIVEADDRESSINFO = 14;
+  public static final int TAG_ORDERRECEIVEADDRESSINFO = 14;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
@@ -118,10 +118,10 @@ public final class CommitOrderResult extends Message {
   public Double totalPrice;
 
   /**
-   * 默认收货地址信息
+   * 订单收货地址信息
    */
   @ProtoField(tag = 14)
-  public DefaultReceiveAddressInfo defaultReceiveAddressInfo;
+  public OrderReceiveAddressInfo orderReceiveAddressInfo;
 
   public CommitOrderResult(CommitOrderResult message) {
     super(message);
@@ -139,7 +139,7 @@ public final class CommitOrderResult extends Message {
     this.totalRentPrice = message.totalRentPrice;
     this.hasVoucher = message.hasVoucher;
     this.totalPrice = message.totalPrice;
-    this.defaultReceiveAddressInfo = message.defaultReceiveAddressInfo;
+    this.orderReceiveAddressInfo = message.orderReceiveAddressInfo;
   }
 
   public CommitOrderResult() {
@@ -186,8 +186,8 @@ public final class CommitOrderResult extends Message {
         case TAG_TOTALPRICE:
         this.totalPrice = (Double)value;
         break;
-        case TAG_DEFAULTRECEIVEADDRESSINFO:
-        this.defaultReceiveAddressInfo = (DefaultReceiveAddressInfo)value;
+        case TAG_ORDERRECEIVEADDRESSINFO:
+        this.orderReceiveAddressInfo = (OrderReceiveAddressInfo)value;
         break;
         default: break;
         };
@@ -212,7 +212,7 @@ public final class CommitOrderResult extends Message {
         && equals(totalRentPrice, o.totalRentPrice)
         && equals(hasVoucher, o.hasVoucher)
         && equals(totalPrice, o.totalPrice)
-        && equals(defaultReceiveAddressInfo, o.defaultReceiveAddressInfo);
+        && equals(orderReceiveAddressInfo, o.orderReceiveAddressInfo);
   }
 
   @Override
@@ -232,7 +232,7 @@ public final class CommitOrderResult extends Message {
       result = result * 37 + (totalRentPrice != null ? totalRentPrice.hashCode() : 0);
       result = result * 37 + (hasVoucher != null ? hasVoucher.hashCode() : 0);
       result = result * 37 + (totalPrice != null ? totalPrice.hashCode() : 0);
-      result = result * 37 + (defaultReceiveAddressInfo != null ? defaultReceiveAddressInfo.hashCode() : 0);
+      result = result * 37 + (orderReceiveAddressInfo != null ? orderReceiveAddressInfo.hashCode() : 0);
       hashCode = result;
     }
     return result;

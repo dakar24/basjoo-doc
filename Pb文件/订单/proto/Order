@@ -71,12 +71,12 @@ message CommitOrderResult {
 	required double                 totalPrice = 13;
 	
 	
-	//默认收货地址信息
-	optional DefaultReceiveAddressInfo defaultReceiveAddressInfo = 14;
+	//订单收货地址信息
+	optional OrderReceiveAddressInfo orderReceiveAddressInfo = 14;
     
 }
 
-message DefaultReceiveAddressInfo{
+message OrderReceiveAddressInfo{
     //地址ID
     required string                 addressId = 1; 
 	//收件人
@@ -412,7 +412,12 @@ message OrderDetailInfo{
    optional int64      completeTime = 24;
    
    //关闭时间
-   optional int64      closeTime = 25;
+   optional int64      closeTime = 25;   
+   
+   //用户选择的权益
+   repeated string     vouchers = 26;
+   //订单收货地址信息
+   optional OrderReceiveAddressInfo orderReceiveAddressInfo = 27;
     
 }
 
