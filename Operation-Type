@@ -55,4 +55,7 @@
 注册推荐码：qjoy.basjoo.registerRecommendCode
 显示推荐码信息：qjoy.basjoo.getRecommendInfo
 
+##图片
+图片资源杀上传：qjoy.basjoo.resourceUpload
+
 

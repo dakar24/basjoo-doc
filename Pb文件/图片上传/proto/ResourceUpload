@@ -1,0 +1,31 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//资源上传请求
+message ResourceUploadRequest {   
+
+ //业务场景
+ optional string                 bizScene = 1;
+ //资源类型
+ required string                 resourceType= 2;
+ //资源内容 byte[] 通过Base64转 String
+ required string                 content= 3;
+    
+}
+
+//资源上传结果
+message ResourceUploadResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   //返回的路径
+   optional string                 url = 3;
+   
+}
+
+
+
