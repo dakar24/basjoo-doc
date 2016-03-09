@@ -13,5 +13,7 @@ CREATE TABLE `product_detail` (
   `pledge_price` double(9,2) DEFAULT '0.00' COMMENT '押金',
   `transportation_price` double(9,2) DEFAULT '0.00' COMMENT '运费',
   `location` varchar(255) DEFAULT NULL COMMENT '所在地',
+  `gmt_create` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `gmt_modified` timestamp NULL DEFAULT NULL COMMENT '修改时间',
   KEY `index_product_detail_productid` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品详细信息';
