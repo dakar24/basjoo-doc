@@ -1,0 +1,120 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取个人信息
+message GetUserInfoRequest {   
+    
+}
+
+//获取个人信息结果
+message GetUserInfoResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   required string                 userId = 3;
+   //头像
+   optional string                 headIconUrl = 4;
+   //手机号
+   required string                 mobileNo = 5;
+   //用户名
+   required string                 userName = 6; 
+   //昵称
+   required string                 nickName = 7; 
+   
+   //推荐码，类似Uber
+   optional string                 recommendCode=8;
+    
+}
+
+//修改头像请求
+message ChangeHeadIconRequest {   
+
+   //头像地址
+   required string                 headIconUrl = 1;
+    
+}
+
+//修改头像结果
+message ChangeHeadIconResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;  
+    
+}
+
+//修改昵称请求
+message ChangeNickNameRequest {   
+
+   //昵称
+   required string                 nickName = 1;    
+      
+}
+
+//修改昵称结果
+message ChangeNickNameResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;  
+    
+}
+
+//修改密码请求
+message ChangePasswordRequest {  
+
+   //旧密码
+   required string                 oldPassword = 1;
+   
+   //新密码
+   required string                 newPassword = 2;
+   
+   //确认密码
+   required string                 confirmPassword = 3;
+    
+    
+}
+
+//修改密码结果
+message ChangePasswordResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+}
+
+
+
+
+
+//修改手机号请求
+message ChangeMobileNoRequest {   
+
+    //手机验证码
+    required string                checkCode = 1;
+    //新手机号
+    required string                newMobileNo = 2;  
+      
+}
+
+//修改手机号结果
+message ChangeMobileNoResult {   
+
+    required string                 resultCode = 1;
+    
+    required string                 resultMsg = 2;  
+      
+}
+
+
+
+
+
+
+
+
+

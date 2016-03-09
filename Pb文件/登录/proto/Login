@@ -1,0 +1,42 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//登录请求
+message LoginRequest {   
+
+   //登录ID，一期只有手机号，后续可能会有email，或者其他类型账号
+    required string                 loginId = 1;
+	
+	required string                 password = 2;
+    
+}
+
+//登录结果
+message LoginResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   optional string                 sessionId = 3;
+   //用户ID
+   optional string                 userId = 4;
+    //头像
+   optional string                 headIconUrl = 5;
+   //手机号
+   required string                 mobileNo = 6;
+   //用户名
+   required string                 userName = 7; 
+   //昵称
+   required string                 nickName = 8; 
+   
+   //推荐码，类似Uber
+   optional string                 recommendCode=9;
+    
+}
+
+
+
+

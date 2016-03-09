@@ -1,0 +1,25 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//发送验证码
+message SendCheckCodeRequest {   
+
+    required string                 mobileNo = 1;
+	
+	//业务场景 1:注册，2：修改绑定手机
+	required int32                 bizScene = 2;
+    
+}
+
+//发送验证码结果
+message SendCheckCodeResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+}
+
+
