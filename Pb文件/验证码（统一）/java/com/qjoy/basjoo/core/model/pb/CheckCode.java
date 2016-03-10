@@ -13,15 +13,27 @@ public final class CheckCode {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string mobileNo = 1;</code>
+     * <code>optional string mobileNo = 1;</code>
+     *
+     * <pre>
+     *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+     * </pre>
      */
     boolean hasMobileNo();
     /**
-     * <code>required string mobileNo = 1;</code>
+     * <code>optional string mobileNo = 1;</code>
+     *
+     * <pre>
+     *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+     * </pre>
      */
     java.lang.String getMobileNo();
     /**
-     * <code>required string mobileNo = 1;</code>
+     * <code>optional string mobileNo = 1;</code>
+     *
+     * <pre>
+     *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+     * </pre>
      */
     com.google.protobuf.ByteString
         getMobileNoBytes();
@@ -153,13 +165,21 @@ public final class CheckCode {
     public static final int MOBILENO_FIELD_NUMBER = 1;
     private java.lang.Object mobileNo_;
     /**
-     * <code>required string mobileNo = 1;</code>
+     * <code>optional string mobileNo = 1;</code>
+     *
+     * <pre>
+     *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+     * </pre>
      */
     public boolean hasMobileNo() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string mobileNo = 1;</code>
+     * <code>optional string mobileNo = 1;</code>
+     *
+     * <pre>
+     *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+     * </pre>
      */
     public java.lang.String getMobileNo() {
       java.lang.Object ref = mobileNo_;
@@ -176,7 +196,11 @@ public final class CheckCode {
       }
     }
     /**
-     * <code>required string mobileNo = 1;</code>
+     * <code>optional string mobileNo = 1;</code>
+     *
+     * <pre>
+     *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+     * </pre>
      */
     public com.google.protobuf.ByteString
         getMobileNoBytes() {
@@ -225,10 +249,6 @@ public final class CheckCode {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasMobileNo()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasBizScene()) {
         memoizedIsInitialized = 0;
         return false;
@@ -453,10 +473,6 @@ public final class CheckCode {
       }
 
       public final boolean isInitialized() {
-        if (!hasMobileNo()) {
-          
-          return false;
-        }
         if (!hasBizScene()) {
           
           return false;
@@ -485,13 +501,21 @@ public final class CheckCode {
 
       private java.lang.Object mobileNo_ = "";
       /**
-       * <code>required string mobileNo = 1;</code>
+       * <code>optional string mobileNo = 1;</code>
+       *
+       * <pre>
+       *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+       * </pre>
        */
       public boolean hasMobileNo() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string mobileNo = 1;</code>
+       * <code>optional string mobileNo = 1;</code>
+       *
+       * <pre>
+       *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+       * </pre>
        */
       public java.lang.String getMobileNo() {
         java.lang.Object ref = mobileNo_;
@@ -508,7 +532,11 @@ public final class CheckCode {
         }
       }
       /**
-       * <code>required string mobileNo = 1;</code>
+       * <code>optional string mobileNo = 1;</code>
+       *
+       * <pre>
+       *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+       * </pre>
        */
       public com.google.protobuf.ByteString
           getMobileNoBytes() {
@@ -524,7 +552,11 @@ public final class CheckCode {
         }
       }
       /**
-       * <code>required string mobileNo = 1;</code>
+       * <code>optional string mobileNo = 1;</code>
+       *
+       * <pre>
+       *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+       * </pre>
        */
       public Builder setMobileNo(
           java.lang.String value) {
@@ -537,7 +569,11 @@ public final class CheckCode {
         return this;
       }
       /**
-       * <code>required string mobileNo = 1;</code>
+       * <code>optional string mobileNo = 1;</code>
+       *
+       * <pre>
+       *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+       * </pre>
        */
       public Builder clearMobileNo() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -546,7 +582,11 @@ public final class CheckCode {
         return this;
       }
       /**
-       * <code>required string mobileNo = 1;</code>
+       * <code>optional string mobileNo = 1;</code>
+       *
+       * <pre>
+       *注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+       * </pre>
        */
       public Builder setMobileNoBytes(
           com.google.protobuf.ByteString value) {
@@ -1296,7 +1336,7 @@ public final class CheckCode {
     java.lang.String[] descriptorData = {
       "\n\tCheckCode\022\035com.qjoy.basjoo.core.model." +
       "pb\":\n\024SendCheckCodeRequest\022\020\n\010mobileNo\030\001" +
-      " \002(\t\022\020\n\010bizScene\030\002 \002(\005\"<\n\023SendCheckCodeR" +
+      " \001(\t\022\020\n\010bizScene\030\002 \002(\005\"<\n\023SendCheckCodeR" +
       "esult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002" +
       " \002(\tB\037\n\035com.qjoy.basjoo.core.model.pb"
     };

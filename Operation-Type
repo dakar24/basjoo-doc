@@ -4,6 +4,9 @@
 登陆：qjoy.basjoo.login
 修改密码：qjoy.basjoo.changePassword
 
+#验证码（统一接口）
+发送验证码：qjoy.basjoo.sendCheckCode
+
 ##产品
 搜索产品列表：qjoy.basjoo.searchProductList
 产品详情：qjoy.basjoo.productDetail
@@ -20,6 +23,10 @@
 
 ##个人信息
 获取个人信息：qjoy.basjoo.getUserInfo
+修改头像：qjoy.basjoo.changeHeadIcon
+修改昵称：qjoy.basjoo.changeNickName
+修改手机号：qjoy.basjoo.changeMobileNo
+
 
 ##活动
 获取活动列表：qjoy.basjoo.getPromoList

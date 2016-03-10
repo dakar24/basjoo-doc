@@ -20,7 +20,10 @@ public final class SendCheckCodeRequest extends Message {
   public static final String DEFAULT_MOBILENO = "";
   public static final Integer DEFAULT_BIZSCENE = 0;
 
-  @ProtoField(tag = 1, type = STRING, label = REQUIRED)
+  /**
+   * 注册验证码，必填。修改绑定手机场景，由服务端获取，可以不填。
+   */
+  @ProtoField(tag = 1, type = STRING)
   public String mobileNo;
 
   /**
