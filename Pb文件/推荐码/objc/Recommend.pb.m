@@ -427,7 +427,7 @@
       }
       case 74: {
         RecommendUserInfo* sub = [[RecommendUserInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addRecommendUsers:sub];
         break;
       }
