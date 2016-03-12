@@ -1,0 +1,263 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取话题列表
+message GetTopicListRequest {   
+ 
+  //话题类型 1: 热门话题，2：圈子话题
+  required int32                  topicType = 1;
+  
+  //起始index
+  optional int32                  startIndex = 2;
+  
+  //所属圈子ID(可选)
+  optional string                 columnId =  3;
+}
+
+//获取话题结果
+message GetTopicListResult {  
+
+   //是否成功
+   required bool                   success = 1; 
+
+   required string                 resultCode = 2;
+    
+   required string                 resultMsg = 3;  
+   
+   //话题简要信息列表
+   repeated TopicLiteInfo          topicLiteInfo = 4;  
+   
+   //当前最大index
+   optional int32                  maxIndex = 5;
+   
+   //是否还有更多数据
+   required bool                   hasMore  = 6;   
+    
+}
+
+message TopicLiteInfo{
+
+   //话题ID;
+   required string                 topicId = 1;
+   
+   //话题类型。1: 热门话题，2：圈子话题
+   optional int32                 topicType = 2;   
+  
+   //是否置顶
+   required bool                   setTop = 3;
+   
+  
+   
+   //话题标题
+   required string                 topicTitle = 4;
+   
+   //话题描述
+   optional string                 topicDesc= 5;   
+   
+   //阅读数
+   required int64                  readCount= 6;   
+   
+   //点赞数
+   required int64                  praiseCount= 7;   
+   
+   //回复（评论）数
+   required int64                  replyCount= 8;      
+   
+   //创建时间
+   required int64                  createTime= 9; 
+
+   //最后回复时间
+   optional int64                  lastReplyTime= 10;    
+   
+   //用户本人是否已点赞
+   required bool                   praised = 11;
+}
+
+
+//获取话题详情
+message GetTopicDetailRequest {   
+ 
+  //话题ID;
+  required string                 topicId = 1;  
+  
+}
+
+//获取话题详情
+message GetTopicDetailResult {   
+ 
+   //是否成功
+   required bool                   success = 1; 
+
+   required string                 resultCode = 2;
+    
+   required string                 resultMsg = 3;     
+   
+   //话题详细
+   optional TopicDetailInfo        topicDetailInfo = 4;   
+  
+}
+
+//话题详细信息
+message TopicDetailInfo{
+
+   //话题ID;
+   required string                 topicId = 1;
+   
+   //话题类型。1: 热门话题，2：圈子话题
+   optional int32                 topicType = 2;    
+  
+   //是否置顶
+   required bool                   setTop = 3;
+   
+   //话题标题
+   required string                 topicTitle = 4;
+   
+   //话题描述
+   optional string                 topicDesc= 5;   
+   
+   //话题描述
+   optional string                 topicContent= 6;   
+   
+   //阅读数
+   required int64                  readCount= 7;   
+   
+   //点赞数
+   required int64                  praiseCount= 8;   
+   
+   //回复（评论）数
+   required int64                  replyCount= 9;      
+   
+   //创建时间
+   required int64                  createTime= 10; 
+
+   //最后回复时间
+   required int64                  lastReplyTime= 11;  
+   
+   //点赞的头像地址
+   repeated string                 praiseHeadIconUrls = 12;   
+   
+   //回复(评论)信息
+   repeated TopicReplyInfo         topicReplyInfo = 13;  
+   
+   //用户本人是否已点赞
+   required bool                   praised = 14;
+          
+}
+
+//回复信息
+message TopicReplyInfo{
+
+  //回复ID;
+  required string                 replyId = 1;
+  
+  //回复用户ID
+  required string                 replyUserId = 2;
+  
+  //回复用户昵称
+  required string                 replyNickName = 3;
+  
+  //回复用户的头像地址
+  optional string                 replyUserHeadIconUrl = 4;
+  
+  //指向某人的用户ID
+  optional string                 replyToUserId = 5;
+  
+  //指向某人的用户昵称
+  optional string                 replyToNickName = 6;
+  
+  //回复内容
+  required string                 replyContent = 7;
+  
+  //回复时间
+  required int64                  replyTime = 8;
+
+}
+
+
+//话题点赞请求
+message AddTopicPraiseRequest {   
+ 
+  //话题ID;
+  required string                 topicId = 1;  
+  
+}
+
+//话题点赞结果
+message AddTopicPraiseResult {  
+ 
+  
+  //是否成功
+   required bool                   success = 1; 
+
+   required string                 resultCode = 2;
+    
+   required string                 resultMsg = 3;     
+   
+  
+}
+
+
+//取消点赞请求
+message CancelTopicPraiseRequest {   
+ 
+  //话题ID;
+  required string                 topicId = 1;  
+  
+}
+
+//话题点赞结果
+message CancelTopicPraiseResult {  
+ 
+  
+  //是否成功
+   required bool                   success = 1; 
+
+   required string                 resultCode = 2;
+    
+   required string                 resultMsg = 3;     
+   
+  
+}
+
+//回复话题请求
+message AddTopicReplyRequest {   
+ 
+  //话题ID;
+  required string                 topicId = 1;  
+  
+  //定向回复ID;
+  required string                 replyToId = 2;
+  
+  //回复内容
+  required string                 replyContent = 3;
+  
+}
+
+//回复话题结果
+message AddTopicReplyResult {   
+  
+   //是否成功
+   required bool                   success = 1;
+   //结果
+   required string                 resultCode = 2;
+   //结果码
+   required string                 resultMsg = 3;        
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

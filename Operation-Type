@@ -66,4 +66,15 @@
 ##图片
 图片资源上传：qjoy.basjoo.resourceUpload
 
+##话题
+获取话题列表：qjoy.basjoo.getTopicList
+获取话题详情：qjoy.basjoo.getTopicDetail
+话题点赞：qjoy.basjoo.addTopicPraise
+取消点赞：qjoy.basjoo.cancelTopicPraise
+话题回复：qjoy.basjoo.addTopicReply
+
+##常见问题
+获取场景问题列表：qjoy.basjoo.getFAQList
+
+
 
