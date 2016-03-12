@@ -7,12 +7,16 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _promoClass = @"";
+    _startIndex = 0;
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
   if (self.hasPromoClass) {
     [output writeString:1 value:self.promoClass];
+  }
+  if (self.hasStartIndex) {
+    [output writeInt32:2 value:self.startIndex];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -22,6 +26,9 @@
   size_ = 0;
   if (self.hasPromoClass) {
     size_ += computeStringSize(1, self.promoClass);
+  }
+  if (self.hasStartIndex) {
+    size_ += computeInt32Size(2, self.startIndex);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -36,12 +43,19 @@
   if (self.hasPromoClass) {
     [output appendFormat:@"%@%@: %@\n", indent, @"promoClass", self.promoClass];
   }
+  if (self.hasStartIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"startIndex", [NSNumber numberWithInteger:self.startIndex]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
 - (void) setPromoClass:(NSString*) value {
   _hasPromoClass = YES;
   _promoClass = value;
+}
+- (void) setStartIndex:(SInt32) value {
+  _hasStartIndex = YES;
+  _startIndex = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -62,6 +76,10 @@
         [self setPromoClass:[input readString]];
         break;
       }
+      case 16: {
+        [self setStartIndex:[input readInt32]];
+        break;
+      }
     }
   }
 }
@@ -74,6 +92,8 @@
   if ((self = [super init])) {
     _resultCode = @"";
     _resultMsg = @"";
+    _maxIndex = 0;
+    _hasMore = NO;
   }
   return self;
 }
@@ -87,6 +107,12 @@
   [self.promoInfo enumerateObjectsUsingBlock:^(PromoInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:3 value:element];
   }];
+  if (self.hasMaxIndex) {
+    [output writeInt32:4 value:self.maxIndex];
+  }
+  if (self.hasHasMore) {
+    [output writeBool:5 value:self.hasMore];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -102,6 +128,12 @@
   [self.promoInfo enumerateObjectsUsingBlock:^(PromoInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(3, element);
   }];
+  if (self.hasMaxIndex) {
+    size_ += computeInt32Size(4, self.maxIndex);
+  }
+  if (self.hasHasMore) {
+    size_ += computeBoolSize(5, self.hasMore);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -124,6 +156,12 @@
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }];
+  if (self.hasMaxIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"maxIndex", [NSNumber numberWithInteger:self.maxIndex]];
+  }
+  if (self.hasHasMore) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"hasMore", [NSNumber numberWithBool:self.hasMore]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -143,6 +181,14 @@
     _promoInfo = [[NSMutableArray alloc]init];
   }
   [_promoInfo addObject:value];
+}
+- (void) setMaxIndex:(SInt32) value {
+  _hasMaxIndex = YES;
+  _maxIndex = value;
+}
+- (void) setHasMore:(BOOL) value {
+  _hasHasMore = YES;
+  _hasMore = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -171,6 +217,14 @@
         PromoInfo* sub = [[PromoInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addPromoInfo:sub];
+        break;
+      }
+      case 32: {
+        [self setMaxIndex:[input readInt32]];
+        break;
+      }
+      case 40: {
+        [self setHasMore:[input readBool]];
         break;
       }
     }

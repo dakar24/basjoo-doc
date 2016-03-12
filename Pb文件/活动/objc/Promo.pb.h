@@ -9,15 +9,21 @@
 
 @interface GetPromoListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasPromoClass;
+@property (readonly) BOOL hasStartIndex;
 @property (nonatomic,strong) NSString* promoClass;
+@property (nonatomic)SInt32 startIndex;
 @end
 
 @interface GetPromoListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasMaxIndex;
+@property (readonly) BOOL hasHasMore;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSMutableArray * promoInfo;
+@property (nonatomic)SInt32 maxIndex;
+@property (nonatomic)BOOL hasMore;
 @end
 
 @interface PromoInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>

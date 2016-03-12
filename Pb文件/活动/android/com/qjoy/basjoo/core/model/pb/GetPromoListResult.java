@@ -7,6 +7,8 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
+import static com.squareup.wire.Message.Datatype.BOOL;
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REPEATED;
 import static com.squareup.wire.Message.Label.REQUIRED;
@@ -19,10 +21,14 @@ public final class GetPromoListResult extends Message {
   public static final int TAG_RESULTCODE = 1;
   public static final int TAG_RESULTMSG = 2;
   public static final int TAG_PROMOINFO = 3;
+  public static final int TAG_MAXINDEX = 4;
+  public static final int TAG_HASMORE = 5;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
   public static final List<PromoInfo> DEFAULT_PROMOINFO = Collections.emptyList();
+  public static final Integer DEFAULT_MAXINDEX = 0;
+  public static final Boolean DEFAULT_HASMORE = false;
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
@@ -30,8 +36,23 @@ public final class GetPromoListResult extends Message {
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String resultMsg;
 
+  /**
+   * 活动列表
+   */
   @ProtoField(tag = 3, label = REPEATED)
   public List<PromoInfo> promoInfo;
+
+  /**
+   * 当前最大index
+   */
+  @ProtoField(tag = 4, type = INT32)
+  public Integer maxIndex;
+
+  /**
+   * 是否还有更多数据
+   */
+  @ProtoField(tag = 5, type = BOOL, label = REQUIRED)
+  public Boolean hasMore;
 
   public GetPromoListResult(GetPromoListResult message) {
     super(message);
@@ -39,6 +60,8 @@ public final class GetPromoListResult extends Message {
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
     this.promoInfo = copyOf(message.promoInfo);
+    this.maxIndex = message.maxIndex;
+    this.hasMore = message.hasMore;
   }
 
   public GetPromoListResult() {
@@ -55,6 +78,12 @@ public final class GetPromoListResult extends Message {
         case TAG_PROMOINFO:
         this.promoInfo = immutableCopyOf((List<PromoInfo>)value);
         break;
+        case TAG_MAXINDEX:
+        this.maxIndex = (Integer)value;
+        break;
+        case TAG_HASMORE:
+        this.hasMore = (Boolean)value;
+        break;
         default: break;
         };
     return this;
@@ -67,7 +96,9 @@ public final class GetPromoListResult extends Message {
     GetPromoListResult o = (GetPromoListResult) other;
     return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
-        && equals(promoInfo, o.promoInfo);
+        && equals(promoInfo, o.promoInfo)
+        && equals(maxIndex, o.maxIndex)
+        && equals(hasMore, o.hasMore);
   }
 
   @Override
@@ -77,6 +108,8 @@ public final class GetPromoListResult extends Message {
       result = resultCode != null ? resultCode.hashCode() : 0;
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       result = result * 37 + (promoInfo != null ? promoInfo.hashCode() : 1);
+      result = result * 37 + (maxIndex != null ? maxIndex.hashCode() : 0);
+      result = result * 37 + (hasMore != null ? hasMore.hashCode() : 0);
       hashCode = result;
     }
     return result;

@@ -8,6 +8,9 @@ message GetPromoListRequest {
  
   //活动分类。0：启动页活动，1：首页主活动， 2：推荐商品活动，3：热门活动 ,4.....等
   required string                 promoClass = 1;
+  
+   //起始index
+  optional int32                   startIndex = 2;
 }
 
 //获取活动信息结果
@@ -17,7 +20,14 @@ message GetPromoListResult {
     
    required string                 resultMsg = 2;  
    
-   repeated PromoInfo              promoInfo = 3;
+   //活动列表
+   repeated PromoInfo              promoInfo = 3;  
+   
+   //当前最大index
+   optional int32                  maxIndex = 4;
+   
+   //是否还有更多数据
+   required bool                   hasMore  = 5;
    
     
 }

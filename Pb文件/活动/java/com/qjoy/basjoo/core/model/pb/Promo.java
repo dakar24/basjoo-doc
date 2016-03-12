@@ -37,6 +37,23 @@ public final class Promo {
      */
     com.google.protobuf.ByteString
         getPromoClassBytes();
+
+    /**
+     * <code>optional int32 startIndex = 2;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    boolean hasStartIndex();
+    /**
+     * <code>optional int32 startIndex = 2;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    int getStartIndex();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetPromoListRequest}
@@ -98,6 +115,11 @@ public final class Promo {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               promoClass_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              startIndex_ = input.readInt32();
               break;
             }
           }
@@ -194,8 +216,32 @@ public final class Promo {
       }
     }
 
+    public static final int STARTINDEX_FIELD_NUMBER = 2;
+    private int startIndex_;
+    /**
+     * <code>optional int32 startIndex = 2;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    public boolean hasStartIndex() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 startIndex = 2;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    public int getStartIndex() {
+      return startIndex_;
+    }
+
     private void initFields() {
       promoClass_ = "";
+      startIndex_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -217,6 +263,9 @@ public final class Promo {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getPromoClassBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, startIndex_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -229,6 +278,10 @@ public final class Promo {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getPromoClassBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, startIndex_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -353,6 +406,8 @@ public final class Promo {
         super.clear();
         promoClass_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        startIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -385,6 +440,10 @@ public final class Promo {
           to_bitField0_ |= 0x00000001;
         }
         result.promoClass_ = promoClass_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.startIndex_ = startIndex_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -405,6 +464,9 @@ public final class Promo {
           bitField0_ |= 0x00000001;
           promoClass_ = other.promoClass_;
           onChanged();
+        }
+        if (other.hasStartIndex()) {
+          setStartIndex(other.getStartIndex());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -537,6 +599,54 @@ public final class Promo {
         return this;
       }
 
+      private int startIndex_ ;
+      /**
+       * <code>optional int32 startIndex = 2;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public boolean hasStartIndex() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 startIndex = 2;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public int getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       * <code>optional int32 startIndex = 2;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public Builder setStartIndex(int value) {
+        bitField0_ |= 0x00000002;
+        startIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 startIndex = 2;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public Builder clearStartIndex() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetPromoListRequest)
     }
 
@@ -582,27 +692,81 @@ public final class Promo {
 
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     java.util.List<com.qjoy.basjoo.core.model.pb.Promo.PromoInfo> 
         getPromoInfoList();
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Promo.PromoInfo getPromoInfo(int index);
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     int getPromoInfoCount();
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     java.util.List<? extends com.qjoy.basjoo.core.model.pb.Promo.PromoInfoOrBuilder> 
         getPromoInfoOrBuilderList();
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Promo.PromoInfoOrBuilder getPromoInfoOrBuilder(
         int index);
+
+    /**
+     * <code>optional int32 maxIndex = 4;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    boolean hasMaxIndex();
+    /**
+     * <code>optional int32 maxIndex = 4;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    int getMaxIndex();
+
+    /**
+     * <code>required bool hasMore = 5;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    boolean hasHasMore();
+    /**
+     * <code>required bool hasMore = 5;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    boolean getHasMore();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetPromoListResult}
@@ -678,6 +842,16 @@ public final class Promo {
                 mutable_bitField0_ |= 0x00000004;
               }
               promoInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Promo.PromoInfo.PARSER, extensionRegistry));
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000004;
+              maxIndex_ = input.readInt32();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000008;
+              hasMore_ = input.readBool();
               break;
             }
           }
@@ -811,12 +985,20 @@ public final class Promo {
     private java.util.List<com.qjoy.basjoo.core.model.pb.Promo.PromoInfo> promoInfo_;
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     public java.util.List<com.qjoy.basjoo.core.model.pb.Promo.PromoInfo> getPromoInfoList() {
       return promoInfo_;
     }
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Promo.PromoInfoOrBuilder> 
         getPromoInfoOrBuilderList() {
@@ -824,28 +1006,88 @@ public final class Promo {
     }
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     public int getPromoInfoCount() {
       return promoInfo_.size();
     }
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Promo.PromoInfo getPromoInfo(int index) {
       return promoInfo_.get(index);
     }
     /**
      * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+     *
+     * <pre>
+     *活动列表
+     * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Promo.PromoInfoOrBuilder getPromoInfoOrBuilder(
         int index) {
       return promoInfo_.get(index);
     }
 
+    public static final int MAXINDEX_FIELD_NUMBER = 4;
+    private int maxIndex_;
+    /**
+     * <code>optional int32 maxIndex = 4;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    public boolean hasMaxIndex() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 maxIndex = 4;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    public int getMaxIndex() {
+      return maxIndex_;
+    }
+
+    public static final int HASMORE_FIELD_NUMBER = 5;
+    private boolean hasMore_;
+    /**
+     * <code>required bool hasMore = 5;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    public boolean hasHasMore() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required bool hasMore = 5;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    public boolean getHasMore() {
+      return hasMore_;
+    }
+
     private void initFields() {
       resultCode_ = "";
       resultMsg_ = "";
       promoInfo_ = java.util.Collections.emptyList();
+      maxIndex_ = 0;
+      hasMore_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -858,6 +1100,10 @@ public final class Promo {
         return false;
       }
       if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasHasMore()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -883,6 +1129,12 @@ public final class Promo {
       for (int i = 0; i < promoInfo_.size(); i++) {
         output.writeMessage(3, promoInfo_.get(i));
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(4, maxIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBool(5, hasMore_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -903,6 +1155,14 @@ public final class Promo {
       for (int i = 0; i < promoInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, promoInfo_.get(i));
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, maxIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, hasMore_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1036,6 +1296,10 @@ public final class Promo {
         } else {
           promoInfoBuilder_.clear();
         }
+        maxIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        hasMore_ = false;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1081,6 +1345,14 @@ public final class Promo {
         } else {
           result.promoInfo_ = promoInfoBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.maxIndex_ = maxIndex_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.hasMore_ = hasMore_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1133,6 +1405,12 @@ public final class Promo {
             }
           }
         }
+        if (other.hasMaxIndex()) {
+          setMaxIndex(other.getMaxIndex());
+        }
+        if (other.hasHasMore()) {
+          setHasMore(other.getHasMore());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -1143,6 +1421,10 @@ public final class Promo {
           return false;
         }
         if (!hasResultMsg()) {
+          
+          return false;
+        }
+        if (!hasHasMore()) {
           
           return false;
         }
@@ -1340,6 +1622,10 @@ public final class Promo {
 
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public java.util.List<com.qjoy.basjoo.core.model.pb.Promo.PromoInfo> getPromoInfoList() {
         if (promoInfoBuilder_ == null) {
@@ -1350,6 +1636,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public int getPromoInfoCount() {
         if (promoInfoBuilder_ == null) {
@@ -1360,6 +1650,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Promo.PromoInfo getPromoInfo(int index) {
         if (promoInfoBuilder_ == null) {
@@ -1370,6 +1664,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public Builder setPromoInfo(
           int index, com.qjoy.basjoo.core.model.pb.Promo.PromoInfo value) {
@@ -1387,6 +1685,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public Builder setPromoInfo(
           int index, com.qjoy.basjoo.core.model.pb.Promo.PromoInfo.Builder builderForValue) {
@@ -1401,6 +1703,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public Builder addPromoInfo(com.qjoy.basjoo.core.model.pb.Promo.PromoInfo value) {
         if (promoInfoBuilder_ == null) {
@@ -1417,6 +1723,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public Builder addPromoInfo(
           int index, com.qjoy.basjoo.core.model.pb.Promo.PromoInfo value) {
@@ -1434,6 +1744,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public Builder addPromoInfo(
           com.qjoy.basjoo.core.model.pb.Promo.PromoInfo.Builder builderForValue) {
@@ -1448,6 +1762,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public Builder addPromoInfo(
           int index, com.qjoy.basjoo.core.model.pb.Promo.PromoInfo.Builder builderForValue) {
@@ -1462,6 +1780,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public Builder addAllPromoInfo(
           java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Promo.PromoInfo> values) {
@@ -1477,6 +1799,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public Builder clearPromoInfo() {
         if (promoInfoBuilder_ == null) {
@@ -1490,6 +1816,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public Builder removePromoInfo(int index) {
         if (promoInfoBuilder_ == null) {
@@ -1503,6 +1833,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Promo.PromoInfo.Builder getPromoInfoBuilder(
           int index) {
@@ -1510,6 +1844,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Promo.PromoInfoOrBuilder getPromoInfoOrBuilder(
           int index) {
@@ -1520,6 +1858,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Promo.PromoInfoOrBuilder> 
            getPromoInfoOrBuilderList() {
@@ -1531,6 +1873,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Promo.PromoInfo.Builder addPromoInfoBuilder() {
         return getPromoInfoFieldBuilder().addBuilder(
@@ -1538,6 +1884,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Promo.PromoInfo.Builder addPromoInfoBuilder(
           int index) {
@@ -1546,6 +1896,10 @@ public final class Promo {
       }
       /**
        * <code>repeated .com.qjoy.basjoo.core.model.pb.PromoInfo promoInfo = 3;</code>
+       *
+       * <pre>
+       *活动列表
+       * </pre>
        */
       public java.util.List<com.qjoy.basjoo.core.model.pb.Promo.PromoInfo.Builder> 
            getPromoInfoBuilderList() {
@@ -1564,6 +1918,102 @@ public final class Promo {
           promoInfo_ = null;
         }
         return promoInfoBuilder_;
+      }
+
+      private int maxIndex_ ;
+      /**
+       * <code>optional int32 maxIndex = 4;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public boolean hasMaxIndex() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 maxIndex = 4;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public int getMaxIndex() {
+        return maxIndex_;
+      }
+      /**
+       * <code>optional int32 maxIndex = 4;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public Builder setMaxIndex(int value) {
+        bitField0_ |= 0x00000008;
+        maxIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 maxIndex = 4;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public Builder clearMaxIndex() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        maxIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasMore_ ;
+      /**
+       * <code>required bool hasMore = 5;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public boolean hasHasMore() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required bool hasMore = 5;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public boolean getHasMore() {
+        return hasMore_;
+      }
+      /**
+       * <code>required bool hasMore = 5;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public Builder setHasMore(boolean value) {
+        bitField0_ |= 0x00000010;
+        hasMore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bool hasMore = 5;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public Builder clearHasMore() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        hasMore_ = false;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetPromoListResult)
@@ -4408,18 +4858,20 @@ public final class Promo {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\005Promo\022\035com.qjoy.basjoo.core.model.pb\")" +
+      "\n\005Promo\022\035com.qjoy.basjoo.core.model.pb\"=" +
       "\n\023GetPromoListRequest\022\022\n\npromoClass\030\001 \002(" +
-      "\t\"x\n\022GetPromoListResult\022\022\n\nresultCode\030\001 " +
-      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022;\n\tpromoInfo\030\003 \003(" +
-      "\0132(.com.qjoy.basjoo.core.model.pb.PromoI" +
-      "nfo\"\302\001\n\tPromoInfo\022\017\n\007promoId\030\001 \002(\t\022\021\n\tpr" +
-      "omoType\030\002 \002(\t\022\022\n\npromoClass\030\003 \002(\t\022\025\n\rpro" +
-      "moImageUrl\030\004 \001(\t\022\021\n\tpromoDesc\030\005 \001(\t\022\020\n\010p" +
-      "romoUrl\030\006 \001(\t\022A\n\014promoExtInfo\030\007 \003(\0132+.co" +
-      "m.qjoy.basjoo.core.model.pb.PromoExtInfo",
-      "\"*\n\014PromoExtInfo\022\013\n\003key\030\001 \002(\t\022\r\n\005value\030\002" +
-      " \002(\tB\037\n\035com.qjoy.basjoo.core.model.pb"
+      "\t\022\022\n\nstartIndex\030\002 \001(\005\"\233\001\n\022GetPromoListRe" +
+      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 " +
+      "\002(\t\022;\n\tpromoInfo\030\003 \003(\0132(.com.qjoy.basjoo" +
+      ".core.model.pb.PromoInfo\022\020\n\010maxIndex\030\004 \001" +
+      "(\005\022\017\n\007hasMore\030\005 \002(\010\"\302\001\n\tPromoInfo\022\017\n\007pro" +
+      "moId\030\001 \002(\t\022\021\n\tpromoType\030\002 \002(\t\022\022\n\npromoCl" +
+      "ass\030\003 \002(\t\022\025\n\rpromoImageUrl\030\004 \001(\t\022\021\n\tprom" +
+      "oDesc\030\005 \001(\t\022\020\n\010promoUrl\030\006 \001(\t\022A\n\014promoEx",
+      "tInfo\030\007 \003(\0132+.com.qjoy.basjoo.core.model" +
+      ".pb.PromoExtInfo\"*\n\014PromoExtInfo\022\013\n\003key\030" +
+      "\001 \002(\t\022\r\n\005value\030\002 \002(\tB\037\n\035com.qjoy.basjoo." +
+      "core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4438,13 +4890,13 @@ public final class Promo {
     internal_static_com_qjoy_basjoo_core_model_pb_GetPromoListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetPromoListRequest_descriptor,
-        new java.lang.String[] { "PromoClass", });
+        new java.lang.String[] { "PromoClass", "StartIndex", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetPromoListResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_GetPromoListResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetPromoListResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMsg", "PromoInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "PromoInfo", "MaxIndex", "HasMore", });
     internal_static_com_qjoy_basjoo_core_model_pb_PromoInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_PromoInfo_fieldAccessorTable = new

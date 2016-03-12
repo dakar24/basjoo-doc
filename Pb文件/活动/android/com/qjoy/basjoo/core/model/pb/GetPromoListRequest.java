@@ -5,6 +5,7 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
@@ -14,8 +15,10 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 public final class GetPromoListRequest extends Message {
 
   public static final int TAG_PROMOCLASS = 1;
+  public static final int TAG_STARTINDEX = 2;
 
   public static final String DEFAULT_PROMOCLASS = "";
+  public static final Integer DEFAULT_STARTINDEX = 0;
 
   /**
    * 活动分类。0：启动页活动，1：首页主活动， 2：推荐商品活动，3：热门活动 ,4.....等
@@ -23,10 +26,17 @@ public final class GetPromoListRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String promoClass;
 
+  /**
+   * 起始index
+   */
+  @ProtoField(tag = 2, type = INT32)
+  public Integer startIndex;
+
   public GetPromoListRequest(GetPromoListRequest message) {
     super(message);
     if (message == null) return;
     this.promoClass = message.promoClass;
+    this.startIndex = message.startIndex;
   }
 
   public GetPromoListRequest() {
@@ -37,6 +47,9 @@ public final class GetPromoListRequest extends Message {
         case TAG_PROMOCLASS:
         this.promoClass = (String)value;
         break;
+        case TAG_STARTINDEX:
+        this.startIndex = (Integer)value;
+        break;
         default: break;
         };
     return this;
@@ -46,12 +59,19 @@ public final class GetPromoListRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof GetPromoListRequest)) return false;
-    return equals(promoClass, ((GetPromoListRequest) other).promoClass);
+    GetPromoListRequest o = (GetPromoListRequest) other;
+    return equals(promoClass, o.promoClass)
+        && equals(startIndex, o.startIndex);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = promoClass != null ? promoClass.hashCode() : 0);
+    if (result == 0) {
+      result = promoClass != null ? promoClass.hashCode() : 0;
+      result = result * 37 + (startIndex != null ? startIndex.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }
