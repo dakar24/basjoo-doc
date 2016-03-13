@@ -5,6 +5,8 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.BOOL;
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
@@ -13,32 +15,58 @@ import static com.squareup.wire.Message.Label.REQUIRED;
  */
 public final class ConfirmOrderResult extends Message {
 
-  public static final int TAG_RESULTCODE = 1;
-  public static final int TAG_RESULTMSG = 2;
-  public static final int TAG_ORDERID = 3;
+  public static final int TAG_SUCCESS = 1;
+  public static final int TAG_RESULTCODE = 2;
+  public static final int TAG_RESULTMSG = 3;
+  public static final int TAG_ORDERID = 4;
+  public static final int TAG_PAYCHANNEL = 5;
+  public static final int TAG_WXPAYINFO = 6;
 
+  public static final Boolean DEFAULT_SUCCESS = false;
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
   public static final String DEFAULT_ORDERID = "";
+  public static final Integer DEFAULT_PAYCHANNEL = 0;
 
-  @ProtoField(tag = 1, type = STRING, label = REQUIRED)
-  public String resultCode;
+  /**
+   * 是否成功
+   */
+  @ProtoField(tag = 1, type = BOOL, label = REQUIRED)
+  public Boolean success;
 
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String resultCode;
+
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
   public String resultMsg;
 
   /**
    * 订单Id
    */
-  @ProtoField(tag = 3, type = STRING)
+  @ProtoField(tag = 4, type = STRING)
   public String orderId;
+
+  /**
+   * 支付渠道，0：微信支付，1：支付宝
+   */
+  @ProtoField(tag = 5, type = INT32)
+  public Integer payChannel;
+
+  /**
+   * 微信订单支付信息
+   */
+  @ProtoField(tag = 6)
+  public WxPayInfo wxPayInfo;
 
   public ConfirmOrderResult(ConfirmOrderResult message) {
     super(message);
     if (message == null) return;
+    this.success = message.success;
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
     this.orderId = message.orderId;
+    this.payChannel = message.payChannel;
+    this.wxPayInfo = message.wxPayInfo;
   }
 
   public ConfirmOrderResult() {
@@ -46,6 +74,9 @@ public final class ConfirmOrderResult extends Message {
 
   public ConfirmOrderResult fillTagValue(int tag, Object value) {
     switch(tag) {
+        case TAG_SUCCESS:
+        this.success = (Boolean)value;
+        break;
         case TAG_RESULTCODE:
         this.resultCode = (String)value;
         break;
@@ -54,6 +85,12 @@ public final class ConfirmOrderResult extends Message {
         break;
         case TAG_ORDERID:
         this.orderId = (String)value;
+        break;
+        case TAG_PAYCHANNEL:
+        this.payChannel = (Integer)value;
+        break;
+        case TAG_WXPAYINFO:
+        this.wxPayInfo = (WxPayInfo)value;
         break;
         default: break;
         };
@@ -65,18 +102,24 @@ public final class ConfirmOrderResult extends Message {
     if (other == this) return true;
     if (!(other instanceof ConfirmOrderResult)) return false;
     ConfirmOrderResult o = (ConfirmOrderResult) other;
-    return equals(resultCode, o.resultCode)
+    return equals(success, o.success)
+        && equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
-        && equals(orderId, o.orderId);
+        && equals(orderId, o.orderId)
+        && equals(payChannel, o.payChannel)
+        && equals(wxPayInfo, o.wxPayInfo);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
     if (result == 0) {
-      result = resultCode != null ? resultCode.hashCode() : 0;
+      result = success != null ? success.hashCode() : 0;
+      result = result * 37 + (resultCode != null ? resultCode.hashCode() : 0);
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
+      result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
+      result = result * 37 + (wxPayInfo != null ? wxPayInfo.hashCode() : 0);
       hashCode = result;
     }
     return result;

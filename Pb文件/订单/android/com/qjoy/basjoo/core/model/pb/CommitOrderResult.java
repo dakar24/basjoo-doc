@@ -16,21 +16,23 @@ import static com.squareup.wire.Message.Label.REQUIRED;
  */
 public final class CommitOrderResult extends Message {
 
-  public static final int TAG_RESULTCODE = 1;
-  public static final int TAG_RESULTMSG = 2;
-  public static final int TAG_ORDERID = 3;
-  public static final int TAG_CATEGORYID = 4;
-  public static final int TAG_RENTCOUNT = 5;
-  public static final int TAG_RENTCODE = 6;
-  public static final int TAG_INSURANCE = 7;
-  public static final int TAG_INSURANCEPRICE = 8;
-  public static final int TAG_PLEDGEPRICE = 9;
-  public static final int TAG_TRANSPORTATIONPRICE = 10;
-  public static final int TAG_TOTALRENTPRICE = 11;
-  public static final int TAG_HASVOUCHER = 12;
-  public static final int TAG_TOTALPRICE = 13;
-  public static final int TAG_ORDERRECEIVEADDRESSINFO = 14;
+  public static final int TAG_SUCCESS = 1;
+  public static final int TAG_RESULTCODE = 2;
+  public static final int TAG_RESULTMSG = 3;
+  public static final int TAG_ORDERID = 4;
+  public static final int TAG_CATEGORYID = 5;
+  public static final int TAG_RENTCOUNT = 6;
+  public static final int TAG_RENTCODE = 7;
+  public static final int TAG_INSURANCE = 8;
+  public static final int TAG_INSURANCEPRICE = 9;
+  public static final int TAG_PLEDGEPRICE = 10;
+  public static final int TAG_TRANSPORTATIONPRICE = 11;
+  public static final int TAG_TOTALRENTPRICE = 12;
+  public static final int TAG_HASVOUCHER = 13;
+  public static final int TAG_TOTALPRICE = 14;
+  public static final int TAG_ORDERRECEIVEADDRESSINFO = 15;
 
+  public static final Boolean DEFAULT_SUCCESS = false;
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
   public static final String DEFAULT_ORDERID = "";
@@ -45,87 +47,94 @@ public final class CommitOrderResult extends Message {
   public static final Boolean DEFAULT_HASVOUCHER = false;
   public static final Double DEFAULT_TOTALPRICE = 0D;
 
-  @ProtoField(tag = 1, type = STRING, label = REQUIRED)
-  public String resultCode;
+  /**
+   * 是否成功
+   */
+  @ProtoField(tag = 1, type = BOOL, label = REQUIRED)
+  public Boolean success;
 
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String resultCode;
+
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
   public String resultMsg;
 
   /**
    * 订单Id
    */
-  @ProtoField(tag = 3, type = STRING)
+  @ProtoField(tag = 4, type = STRING)
   public String orderId;
 
   /**
    * 用户提交订单时所选的类别信息
    */
-  @ProtoField(tag = 4, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 5, type = STRING, label = REQUIRED)
   public String categoryId;
 
   /**
    * 用户提交订单时所选的租用数量
    */
-  @ProtoField(tag = 5, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 6, type = INT32, label = REQUIRED)
   public Integer rentCount;
 
   /**
    * 用户提交订单时所选的租金的编码
    */
-  @ProtoField(tag = 6, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 7, type = STRING, label = REQUIRED)
   public String rentCode;
 
   /**
    * 是否选择运费险
    */
-  @ProtoField(tag = 7, type = BOOL, label = REQUIRED)
+  @ProtoField(tag = 8, type = BOOL, label = REQUIRED)
   public Boolean insurance;
 
   /**
    * 运费险金额
    */
-  @ProtoField(tag = 8, type = DOUBLE)
+  @ProtoField(tag = 9, type = DOUBLE)
   public Double insurancePrice;
 
   /**
    * 押金
    */
-  @ProtoField(tag = 9, type = DOUBLE)
+  @ProtoField(tag = 10, type = DOUBLE)
   public Double pledgePrice;
 
   /**
    * 运费
    */
-  @ProtoField(tag = 10, type = DOUBLE)
+  @ProtoField(tag = 11, type = DOUBLE)
   public Double transportationPrice;
 
   /**
    * 该周期内总租金
    */
-  @ProtoField(tag = 11, type = DOUBLE, label = REQUIRED)
+  @ProtoField(tag = 12, type = DOUBLE, label = REQUIRED)
   public Double totalRentPrice;
 
   /**
    * 是否有可使用的权益
    */
-  @ProtoField(tag = 12, type = BOOL, label = REQUIRED)
+  @ProtoField(tag = 13, type = BOOL, label = REQUIRED)
   public Boolean hasVoucher;
 
   /**
    * 总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
    */
-  @ProtoField(tag = 13, type = DOUBLE, label = REQUIRED)
+  @ProtoField(tag = 14, type = DOUBLE, label = REQUIRED)
   public Double totalPrice;
 
   /**
    * 订单收货地址信息
    */
-  @ProtoField(tag = 14)
+  @ProtoField(tag = 15)
   public OrderReceiveAddressInfo orderReceiveAddressInfo;
 
   public CommitOrderResult(CommitOrderResult message) {
     super(message);
     if (message == null) return;
+    this.success = message.success;
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
     this.orderId = message.orderId;
@@ -147,6 +156,9 @@ public final class CommitOrderResult extends Message {
 
   public CommitOrderResult fillTagValue(int tag, Object value) {
     switch(tag) {
+        case TAG_SUCCESS:
+        this.success = (Boolean)value;
+        break;
         case TAG_RESULTCODE:
         this.resultCode = (String)value;
         break;
@@ -199,7 +211,8 @@ public final class CommitOrderResult extends Message {
     if (other == this) return true;
     if (!(other instanceof CommitOrderResult)) return false;
     CommitOrderResult o = (CommitOrderResult) other;
-    return equals(resultCode, o.resultCode)
+    return equals(success, o.success)
+        && equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
         && equals(orderId, o.orderId)
         && equals(categoryId, o.categoryId)
@@ -219,7 +232,8 @@ public final class CommitOrderResult extends Message {
   public int hashCode() {
     int result = hashCode;
     if (result == 0) {
-      result = resultCode != null ? resultCode.hashCode() : 0;
+      result = success != null ? success.hashCode() : 0;
+      result = result * 37 + (resultCode != null ? resultCode.hashCode() : 0);
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
       result = result * 37 + (categoryId != null ? categoryId.hashCode() : 0);

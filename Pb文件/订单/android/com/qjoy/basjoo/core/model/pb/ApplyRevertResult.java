@@ -5,6 +5,7 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
@@ -13,21 +14,30 @@ import static com.squareup.wire.Message.Label.REQUIRED;
  */
 public final class ApplyRevertResult extends Message {
 
-  public static final int TAG_RESULTCODE = 1;
-  public static final int TAG_RESULTMSG = 2;
+  public static final int TAG_SUCCESS = 1;
+  public static final int TAG_RESULTCODE = 2;
+  public static final int TAG_RESULTMSG = 3;
 
+  public static final Boolean DEFAULT_SUCCESS = false;
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
 
-  @ProtoField(tag = 1, type = STRING, label = REQUIRED)
-  public String resultCode;
+  /**
+   * 是否成功
+   */
+  @ProtoField(tag = 1, type = BOOL, label = REQUIRED)
+  public Boolean success;
 
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String resultCode;
+
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
   public String resultMsg;
 
   public ApplyRevertResult(ApplyRevertResult message) {
     super(message);
     if (message == null) return;
+    this.success = message.success;
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
   }
@@ -37,6 +47,9 @@ public final class ApplyRevertResult extends Message {
 
   public ApplyRevertResult fillTagValue(int tag, Object value) {
     switch(tag) {
+        case TAG_SUCCESS:
+        this.success = (Boolean)value;
+        break;
         case TAG_RESULTCODE:
         this.resultCode = (String)value;
         break;
@@ -53,7 +66,8 @@ public final class ApplyRevertResult extends Message {
     if (other == this) return true;
     if (!(other instanceof ApplyRevertResult)) return false;
     ApplyRevertResult o = (ApplyRevertResult) other;
-    return equals(resultCode, o.resultCode)
+    return equals(success, o.success)
+        && equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg);
   }
 
@@ -61,7 +75,8 @@ public final class ApplyRevertResult extends Message {
   public int hashCode() {
     int result = hashCode;
     if (result == 0) {
-      result = resultCode != null ? resultCode.hashCode() : 0;
+      result = success != null ? success.hashCode() : 0;
+      result = result * 37 + (resultCode != null ? resultCode.hashCode() : 0);
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       hashCode = result;
     }

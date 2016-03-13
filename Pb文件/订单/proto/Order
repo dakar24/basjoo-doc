@@ -33,46 +33,51 @@ message CommitOrderRequest {
 //提交订单结果
 message CommitOrderResult {  
 
-    required string                 resultCode = 1;
+	//是否成功
+	required bool                   success = 1;
+
+    required string                 resultCode = 2;
     
-    required string                 resultMsg = 2; 
+    required string                 resultMsg = 3; 
 	
     //订单Id
-    optional string                 orderId = 3; 
+    optional string                 orderId = 4; 
 	 
 	//用户提交订单时所选的类别信息
-	required string                 categoryId = 4;	
+	required string                 categoryId = 5;	
 	
 	 //用户提交订单时所选的租用数量
-	required int32                  rentCount = 5;
+	required int32                  rentCount = 6;
 	
 	 //用户提交订单时所选的租金的编码
-	required string                 rentCode = 6;
+	required string                 rentCode = 7;
 	
 	//是否选择运费险
-	required bool                   insurance = 7;
+	required bool                   insurance = 8;
 	
 	//运费险金额
-    optional double                 insurancePrice = 8; 
+    optional double                 insurancePrice = 9; 
 	
 	 //押金
-    optional double                 pledgePrice = 9; 
+    optional double                 pledgePrice = 10; 
    
     //运费
-    optional double                 transportationPrice = 10; 
+    optional double                 transportationPrice = 11; 
 	
 	//该周期内总租金
-    required double                 totalRentPrice = 11; 
+    required double                 totalRentPrice = 12; 
 	
 	//是否有可使用的权益
-	required bool                   hasVoucher  = 12;
+	required bool                   hasVoucher  = 13;
 	
 	//总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
-	required double                 totalPrice = 13;
+	required double                 totalPrice = 14;
 	
 	
 	//订单收货地址信息
-	optional OrderReceiveAddressInfo orderReceiveAddressInfo = 14;
+	optional OrderReceiveAddressInfo orderReceiveAddressInfo = 15;
+	
+
     
 }
 
@@ -123,18 +128,78 @@ message ConfirmOrderRequest {
     
 }
 
-
 //确认订单结果（支付信息待补充）
 message ConfirmOrderResult {
+  
+    //是否成功
+	required bool                   success = 1;
 
-    required string                 resultCode = 1;
+    required string                 resultCode = 2;
     
-    required string                 resultMsg = 2; 
+    required string                 resultMsg = 3; 
 
     //订单Id
-    optional string                 orderId = 3; 	
+    optional string                 orderId = 4; 
+	
+	//支付渠道，0：微信支付，1：支付宝
+	optional int32                  payChannel = 5;
+
+    //微信订单支付信息
+    optional WxPayInfo              wxPayInfo = 6; 
+
+	
 }
 
+//微信订单支付信息
+message WxPayInfo{
+
+    //商户ID
+    required string                 partnerId = 1;
+    //微信预支付ID
+    required string                 prepayId = 2; 
+	//微信包Sign=WXPay
+	required string                 package = 3;
+    //唯一ID随机数
+    required string                 nonceStr = 4; 
+	//时间戳
+	required string                 timeStamp = 5;
+    //签名
+    required string                 sign = 6; 
+}
+
+
+
+//确认付款（从未付款的订单提交）
+message ConfirmPayRequest {   
+
+     //订单ID
+    required string                 orderId = 1; 	
+	
+   //支付渠道，0：微信支付，1：支付宝
+	optional int32                  payChannel = 2;	
+    
+}
+
+//确认付款结果（从未付款的订单提交）
+message ConfirmPayResult {   
+
+    //是否成功
+	required bool                   success = 1;
+
+    required string                 resultCode = 2;
+    
+    required string                 resultMsg = 3; 
+
+    //订单Id
+    optional string                 orderId = 4; 
+	
+	//支付渠道，0：微信支付，1：支付宝
+	optional int32                  payChannel = 5;
+
+    //微信订单支付信息
+    optional WxPayInfo              wxPayInfo = 6; 		
+    
+}
 
 
 //搜索订单列表
@@ -163,36 +228,39 @@ message SearchOrderListRequest{
 //搜索订单结果
 message SearchOrderListResult{
 
-  required string   resultCode = 1;
+  //是否成功
+  required bool     success = 1;
+
+  required string   resultCode = 2;
     
-  required string   resultMsg = 2; 
+  required string   resultMsg = 3; 
   
   //当前最大index
-  optional int32    maxIndex = 3;
+  optional int32    maxIndex = 4;
    
   //是否还有更多数据
-  required bool     hasMore  = 4;
+  required bool     hasMore  = 5;
   
   //待付款
-  required int32    waitPayCount = 5;
+  required int32    waitPayCount = 6;
   
   //待发货
-  required int32    waitDeliveryCount = 6;
+  required int32    waitDeliveryCount = 7;
   
   //待收货
-  required int32    waitReceiveCount = 7;
+  required int32    waitReceiveCount = 8;
   
   //待归还
-  required int32    waitRevertCount = 8;
+  required int32    waitRevertCount = 9;
   
   //待评价
-  required int32    waitEvaluateCount = 9;
+  required int32    waitEvaluateCount = 10;
   
   //总数
-  required int32    totalCount = 10;
+  required int32    totalCount = 11;
   
   //订单简要信息
-  repeated OrderLiteInfo orderLiteInfo = 11;
+  repeated OrderLiteInfo orderLiteInfo = 12;
 }
 
 //订单简要信息
@@ -261,11 +329,14 @@ message DeleteOrderRequest {
 
 
 //删除订单结果
-message DeleteOrderResult {      
+message DeleteOrderResult { 
+   
+   //是否成功
+   required bool                   success = 1;     
 	
-   required string                 resultCode = 1;
+   required string                 resultCode = 2;
     
-   required string                 resultMsg = 2;
+   required string                 resultMsg = 3;
     
 }
 
@@ -279,11 +350,14 @@ message ConfirmReceiveRequest {
 
 
 //确认收货结果
-message ConfirmReceiveResult {      
+message ConfirmReceiveResult {
+      
+   //是否成功
+   required bool                   success = 1;
 	
-   required string                 resultCode = 1;
+   required string                 resultCode = 2;
     
-   required string                 resultMsg = 2;
+   required string                 resultMsg = 3;
     
 }
 
@@ -307,11 +381,14 @@ message ApplyRevertRequest {
 
 
 //申请归还结果
-message ApplyRevertResult {      
+message ApplyRevertResult {  
+
+   //是否成功
+   required bool                   success = 1;    
 	
-   required string                 resultCode = 1;
+   required string                 resultCode = 2;
     
-   required string                 resultMsg = 2;
+   required string                 resultMsg = 3;
     
 }
 
@@ -328,12 +405,15 @@ message GetOrderDetailRequest {
 //获取订单详情结果
 message GetOrderDetailResult{
 
-  required string   resultCode = 1;
+  //是否成功
+  required bool     success = 1;
+
+  required string   resultCode = 2;
     
-  required string   resultMsg = 2; 
+  required string   resultMsg = 3; 
   
   //订单详细信息
-  required OrderDetailInfo orderDetailInfo = 3;
+  required OrderDetailInfo orderDetailInfo = 4;
 }
 
 

@@ -6,21 +6,27 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 import static com.squareup.wire.Message.Datatype.BOOL;
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 确认收货结果
+ * 确认付款结果（从未付款的订单提交）
  */
-public final class ConfirmReceiveResult extends Message {
+public final class ConfirmPayResult extends Message {
 
   public static final int TAG_SUCCESS = 1;
   public static final int TAG_RESULTCODE = 2;
   public static final int TAG_RESULTMSG = 3;
+  public static final int TAG_ORDERID = 4;
+  public static final int TAG_PAYCHANNEL = 5;
+  public static final int TAG_WXPAYINFO = 6;
 
   public static final Boolean DEFAULT_SUCCESS = false;
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
+  public static final String DEFAULT_ORDERID = "";
+  public static final Integer DEFAULT_PAYCHANNEL = 0;
 
   /**
    * 是否成功
@@ -34,18 +40,39 @@ public final class ConfirmReceiveResult extends Message {
   @ProtoField(tag = 3, type = STRING, label = REQUIRED)
   public String resultMsg;
 
-  public ConfirmReceiveResult(ConfirmReceiveResult message) {
+  /**
+   * 订单Id
+   */
+  @ProtoField(tag = 4, type = STRING)
+  public String orderId;
+
+  /**
+   * 支付渠道，0：微信支付，1：支付宝
+   */
+  @ProtoField(tag = 5, type = INT32)
+  public Integer payChannel;
+
+  /**
+   * 微信订单支付信息
+   */
+  @ProtoField(tag = 6)
+  public WxPayInfo wxPayInfo;
+
+  public ConfirmPayResult(ConfirmPayResult message) {
     super(message);
     if (message == null) return;
     this.success = message.success;
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
+    this.orderId = message.orderId;
+    this.payChannel = message.payChannel;
+    this.wxPayInfo = message.wxPayInfo;
   }
 
-  public ConfirmReceiveResult() {
+  public ConfirmPayResult() {
   }
 
-  public ConfirmReceiveResult fillTagValue(int tag, Object value) {
+  public ConfirmPayResult fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_SUCCESS:
         this.success = (Boolean)value;
@@ -56,6 +83,15 @@ public final class ConfirmReceiveResult extends Message {
         case TAG_RESULTMSG:
         this.resultMsg = (String)value;
         break;
+        case TAG_ORDERID:
+        this.orderId = (String)value;
+        break;
+        case TAG_PAYCHANNEL:
+        this.payChannel = (Integer)value;
+        break;
+        case TAG_WXPAYINFO:
+        this.wxPayInfo = (WxPayInfo)value;
+        break;
         default: break;
         };
     return this;
@@ -64,11 +100,14 @@ public final class ConfirmReceiveResult extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof ConfirmReceiveResult)) return false;
-    ConfirmReceiveResult o = (ConfirmReceiveResult) other;
+    if (!(other instanceof ConfirmPayResult)) return false;
+    ConfirmPayResult o = (ConfirmPayResult) other;
     return equals(success, o.success)
         && equals(resultCode, o.resultCode)
-        && equals(resultMsg, o.resultMsg);
+        && equals(resultMsg, o.resultMsg)
+        && equals(orderId, o.orderId)
+        && equals(payChannel, o.payChannel)
+        && equals(wxPayInfo, o.wxPayInfo);
   }
 
   @Override
@@ -78,6 +117,9 @@ public final class ConfirmReceiveResult extends Message {
       result = success != null ? success.hashCode() : 0;
       result = result * 37 + (resultCode != null ? resultCode.hashCode() : 0);
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
+      result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
+      result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
+      result = result * 37 + (wxPayInfo != null ? wxPayInfo.hashCode() : 0);
       hashCode = result;
     }
     return result;
