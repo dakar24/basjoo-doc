@@ -93,6 +93,7 @@
 @property (readonly) BOOL hasCreateTime;
 @property (readonly) BOOL hasLastReplyTime;
 @property (readonly) BOOL hasPraised;
+@property (readonly) BOOL hasTopicImageUrls;
 @property (nonatomic,strong) NSString* topicId;
 @property (nonatomic)SInt32 topicType;
 @property (nonatomic)BOOL setTop;
@@ -107,6 +108,7 @@
 @property (nonatomic,strong) NSMutableArray * praiseHeadIconUrls;
 @property (nonatomic,strong) NSMutableArray * topicReplyInfo;
 @property (nonatomic)BOOL praised;
+@property (nonatomic,strong) NSString* topicImageUrls;
 @end
 
 @interface TopicReplyInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>

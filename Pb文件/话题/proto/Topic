@@ -143,6 +143,9 @@ message TopicDetailInfo{
    
    //用户本人是否已点赞
    required bool                   praised = 14;
+   
+   //话题图片地址
+   optional string                 topicImageUrls = 15;
           
 }
 

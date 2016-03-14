@@ -33,6 +33,7 @@ public final class TopicDetailInfo extends Message {
   public static final int TAG_PRAISEHEADICONURLS = 12;
   public static final int TAG_TOPICREPLYINFO = 13;
   public static final int TAG_PRAISED = 14;
+  public static final int TAG_TOPICIMAGEURLS = 15;
 
   public static final String DEFAULT_TOPICID = "";
   public static final Integer DEFAULT_TOPICTYPE = 0;
@@ -48,6 +49,7 @@ public final class TopicDetailInfo extends Message {
   public static final List<String> DEFAULT_PRAISEHEADICONURLS = Collections.emptyList();
   public static final List<TopicReplyInfo> DEFAULT_TOPICREPLYINFO = Collections.emptyList();
   public static final Boolean DEFAULT_PRAISED = false;
+  public static final String DEFAULT_TOPICIMAGEURLS = "";
 
   /**
    * 话题ID;
@@ -133,6 +135,12 @@ public final class TopicDetailInfo extends Message {
   @ProtoField(tag = 14, type = BOOL, label = REQUIRED)
   public Boolean praised;
 
+  /**
+   * 话题图片地址
+   */
+  @ProtoField(tag = 15, type = STRING)
+  public String topicImageUrls;
+
   public TopicDetailInfo(TopicDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -150,6 +158,7 @@ public final class TopicDetailInfo extends Message {
     this.praiseHeadIconUrls = copyOf(message.praiseHeadIconUrls);
     this.topicReplyInfo = copyOf(message.topicReplyInfo);
     this.praised = message.praised;
+    this.topicImageUrls = message.topicImageUrls;
   }
 
   public TopicDetailInfo() {
@@ -199,6 +208,9 @@ public final class TopicDetailInfo extends Message {
         case TAG_PRAISED:
         this.praised = (Boolean)value;
         break;
+        case TAG_TOPICIMAGEURLS:
+        this.topicImageUrls = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -222,7 +234,8 @@ public final class TopicDetailInfo extends Message {
         && equals(lastReplyTime, o.lastReplyTime)
         && equals(praiseHeadIconUrls, o.praiseHeadIconUrls)
         && equals(topicReplyInfo, o.topicReplyInfo)
-        && equals(praised, o.praised);
+        && equals(praised, o.praised)
+        && equals(topicImageUrls, o.topicImageUrls);
   }
 
   @Override
@@ -243,6 +256,7 @@ public final class TopicDetailInfo extends Message {
       result = result * 37 + (praiseHeadIconUrls != null ? praiseHeadIconUrls.hashCode() : 1);
       result = result * 37 + (topicReplyInfo != null ? topicReplyInfo.hashCode() : 1);
       result = result * 37 + (praised != null ? praised.hashCode() : 0);
+      result = result * 37 + (topicImageUrls != null ? topicImageUrls.hashCode() : 0);
       hashCode = result;
     }
     return result;

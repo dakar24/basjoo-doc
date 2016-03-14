@@ -721,6 +721,7 @@
     _createTime = 0L;
     _lastReplyTime = 0L;
     _praised = NO;
+    _topicImageUrls = @"";
   }
   return self;
 }
@@ -766,6 +767,9 @@
   }];
   if (self.hasPraised) {
     [output writeBool:14 value:self.praised];
+  }
+  if (self.hasTopicImageUrls) {
+    [output writeString:15 value:self.topicImageUrls];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -821,6 +825,9 @@
   if (self.hasPraised) {
     size_ += computeBoolSize(14, self.praised);
   }
+  if (self.hasTopicImageUrls) {
+    size_ += computeStringSize(15, self.topicImageUrls);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -875,6 +882,9 @@
   }];
   if (self.hasPraised) {
     [output appendFormat:@"%@%@: %@\n", indent, @"praised", [NSNumber numberWithBool:self.praised]];
+  }
+  if (self.hasTopicImageUrls) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"topicImageUrls", self.topicImageUrls];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -944,6 +954,10 @@
 - (void) setPraised:(BOOL) value {
   _hasPraised = YES;
   _praised = value;
+}
+- (void) setTopicImageUrls:(NSString*) value {
+  _hasTopicImageUrls = YES;
+  _topicImageUrls = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1016,6 +1030,10 @@
       }
       case 112: {
         [self setPraised:[input readBool]];
+        break;
+      }
+      case 122: {
+        [self setTopicImageUrls:[input readString]];
         break;
       }
     }
