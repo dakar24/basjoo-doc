@@ -202,6 +202,36 @@ message ConfirmPayResult {
 }
 
 
+//查询支付状态结果
+message GetPayStatusRequest {   
+
+     //订单ID
+    required string                 orderId = 1; 
+    
+}
+
+
+//查询支付状态结果
+message GetPayStatusResult {   
+    
+	
+	//是否成功
+	required bool                   success = 1;
+
+	//100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
+    required string                 resultCode = 2;
+    
+    required string                 resultMsg = 3; 
+	
+	 //订单ID
+    required string                 orderId = 4; 
+	
+	//支付渠道，0：微信支付，1：支付宝
+	optional int32                  payChannel = 5;
+    
+}
+
+
 //搜索订单列表
 message SearchOrderListRequest{
 

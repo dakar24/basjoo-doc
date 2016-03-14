@@ -16,6 +16,8 @@
 @class DeleteOrderResult;
 @class GetOrderDetailRequest;
 @class GetOrderDetailResult;
+@class GetPayStatusRequest;
+@class GetPayStatusResult;
 @class OrderDetailInfo;
 @class OrderLiteInfo;
 @class OrderReceiveAddressInfo;
@@ -156,6 +158,24 @@
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)SInt32 payChannel;
 @property (nonatomic,strong) WxPayInfo* wxPayInfo;
+@end
+
+@interface GetPayStatusRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasOrderId;
+@property (nonatomic,strong) NSString* orderId;
+@end
+
+@interface GetPayStatusResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasSuccess;
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasPayChannel;
+@property (nonatomic)BOOL success;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic)SInt32 payChannel;
 @end
 
 @interface SearchOrderListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
