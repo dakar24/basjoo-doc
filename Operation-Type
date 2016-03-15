@@ -47,6 +47,7 @@
 获取订单列表：qjoy.basjoo.searchOrderList
 申请归还：qjoy.basjoo.applyRevert
 确认收货：qjoy.basjoo.confirmReceive
+获取支付状态（微信收银台返回成功后）：qjoy.basjoo.getPayStatus
 
 ##权益
 获取权益列表：qjoy.basjoo.getVoucherList
