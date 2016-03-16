@@ -19,6 +19,7 @@ public final class WxPayInfo extends Message {
   public static final int TAG_NONCESTR = 4;
   public static final int TAG_TIMESTAMP = 5;
   public static final int TAG_SIGN = 6;
+  public static final int TAG_APPID = 7;
 
   public static final String DEFAULT_PARTNERID = "";
   public static final String DEFAULT_PREPAYID = "";
@@ -26,6 +27,7 @@ public final class WxPayInfo extends Message {
   public static final String DEFAULT_NONCESTR = "";
   public static final String DEFAULT_TIMESTAMP = "";
   public static final String DEFAULT_SIGN = "";
+  public static final String DEFAULT_APPID = "";
 
   /**
    * 商户ID
@@ -63,6 +65,12 @@ public final class WxPayInfo extends Message {
   @ProtoField(tag = 6, type = STRING, label = REQUIRED)
   public String sign;
 
+  /**
+   * appid
+   */
+  @ProtoField(tag = 7, type = STRING, label = REQUIRED)
+  public String appid;
+
   public WxPayInfo(WxPayInfo message) {
     super(message);
     if (message == null) return;
@@ -72,6 +80,7 @@ public final class WxPayInfo extends Message {
     this.nonceStr = message.nonceStr;
     this.timeStamp = message.timeStamp;
     this.sign = message.sign;
+    this.appid = message.appid;
   }
 
   public WxPayInfo() {
@@ -97,6 +106,9 @@ public final class WxPayInfo extends Message {
         case TAG_SIGN:
         this.sign = (String)value;
         break;
+        case TAG_APPID:
+        this.appid = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -112,7 +124,8 @@ public final class WxPayInfo extends Message {
         && equals(_package, o._package)
         && equals(nonceStr, o.nonceStr)
         && equals(timeStamp, o.timeStamp)
-        && equals(sign, o.sign);
+        && equals(sign, o.sign)
+        && equals(appid, o.appid);
   }
 
   @Override
@@ -125,6 +138,7 @@ public final class WxPayInfo extends Message {
       result = result * 37 + (nonceStr != null ? nonceStr.hashCode() : 0);
       result = result * 37 + (timeStamp != null ? timeStamp.hashCode() : 0);
       result = result * 37 + (sign != null ? sign.hashCode() : 0);
+      result = result * 37 + (appid != null ? appid.hashCode() : 0);
       hashCode = result;
     }
     return result;

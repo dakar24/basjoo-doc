@@ -8987,6 +8987,32 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getSignBytes();
+
+    /**
+     * <code>required string appid = 7;</code>
+     *
+     * <pre>
+     *appid
+     * </pre>
+     */
+    boolean hasAppid();
+    /**
+     * <code>required string appid = 7;</code>
+     *
+     * <pre>
+     *appid
+     * </pre>
+     */
+    java.lang.String getAppid();
+    /**
+     * <code>required string appid = 7;</code>
+     *
+     * <pre>
+     *appid
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getAppidBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.WxPayInfo}
@@ -9078,6 +9104,12 @@ public final class Order {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
               sign_ = bs;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              appid_ = bs;
               break;
             }
           }
@@ -9444,6 +9476,60 @@ public final class Order {
       }
     }
 
+    public static final int APPID_FIELD_NUMBER = 7;
+    private java.lang.Object appid_;
+    /**
+     * <code>required string appid = 7;</code>
+     *
+     * <pre>
+     *appid
+     * </pre>
+     */
+    public boolean hasAppid() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>required string appid = 7;</code>
+     *
+     * <pre>
+     *appid
+     * </pre>
+     */
+    public java.lang.String getAppid() {
+      java.lang.Object ref = appid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          appid_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string appid = 7;</code>
+     *
+     * <pre>
+     *appid
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getAppidBytes() {
+      java.lang.Object ref = appid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       partnerId_ = "";
       prepayId_ = "";
@@ -9451,6 +9537,7 @@ public final class Order {
       nonceStr_ = "";
       timeStamp_ = "";
       sign_ = "";
+      appid_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9482,6 +9569,10 @@ public final class Order {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasAppid()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -9506,6 +9597,9 @@ public final class Order {
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeBytes(6, getSignBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getAppidBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -9539,6 +9633,10 @@ public final class Order {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, getSignBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getAppidBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9673,6 +9771,8 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000010);
         sign_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
+        appid_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -9725,6 +9825,10 @@ public final class Order {
           to_bitField0_ |= 0x00000020;
         }
         result.sign_ = sign_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.appid_ = appid_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -9771,6 +9875,11 @@ public final class Order {
           sign_ = other.sign_;
           onChanged();
         }
+        if (other.hasAppid()) {
+          bitField0_ |= 0x00000040;
+          appid_ = other.appid_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -9797,6 +9906,10 @@ public final class Order {
           return false;
         }
         if (!hasSign()) {
+          
+          return false;
+        }
+        if (!hasAppid()) {
           
           return false;
         }
@@ -10418,6 +10531,106 @@ public final class Order {
   }
   bitField0_ |= 0x00000020;
         sign_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object appid_ = "";
+      /**
+       * <code>required string appid = 7;</code>
+       *
+       * <pre>
+       *appid
+       * </pre>
+       */
+      public boolean hasAppid() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>required string appid = 7;</code>
+       *
+       * <pre>
+       *appid
+       * </pre>
+       */
+      public java.lang.String getAppid() {
+        java.lang.Object ref = appid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            appid_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string appid = 7;</code>
+       *
+       * <pre>
+       *appid
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getAppidBytes() {
+        java.lang.Object ref = appid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          appid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string appid = 7;</code>
+       *
+       * <pre>
+       *appid
+       * </pre>
+       */
+      public Builder setAppid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        appid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string appid = 7;</code>
+       *
+       * <pre>
+       *appid
+       * </pre>
+       */
+      public Builder clearAppid() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        appid_ = getDefaultInstance().getAppid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string appid = 7;</code>
+       *
+       * <pre>
+       *appid
+       * </pre>
+       */
+      public Builder setAppidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        appid_ = value;
         onChanged();
         return this;
       }
@@ -31023,73 +31236,74 @@ public final class Order {
       "ltCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022\017\n\007order" +
       "Id\030\004 \001(\t\022\022\n\npayChannel\030\005 \001(\005\022;\n\twxPayInf" +
       "o\030\006 \001(\0132(.com.qjoy.basjoo.core.model.pb." +
-      "WxPayInfo\"t\n\tWxPayInfo\022\021\n\tpartnerId\030\001 \002(" +
-      "\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t\022\020\n\010" +
-      "nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n\004sig",
-      "n\030\006 \002(\t\"8\n\021ConfirmPayRequest\022\017\n\007orderId\030" +
-      "\001 \002(\t\022\022\n\npayChannel\030\002 \001(\005\"\254\001\n\020ConfirmPay" +
-      "Result\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 " +
-      "\002(\t\022\021\n\tresultMsg\030\003 \002(\t\022\017\n\007orderId\030\004 \001(\t\022" +
-      "\022\n\npayChannel\030\005 \001(\005\022;\n\twxPayInfo\030\006 \001(\0132(" +
-      ".com.qjoy.basjoo.core.model.pb.WxPayInfo" +
-      "\"&\n\023GetPayStatusRequest\022\017\n\007orderId\030\001 \002(\t" +
-      "\"q\n\022GetPayStatusResult\022\017\n\007success\030\001 \002(\010\022" +
+      "WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId\030\001 \002" +
+      "(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t\022\020\n" +
+      "\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n\004si",
+      "gn\030\006 \002(\t\022\r\n\005appid\030\007 \002(\t\"8\n\021ConfirmPayReq" +
+      "uest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030\002 \001(" +
+      "\005\"\254\001\n\020ConfirmPayResult\022\017\n\007success\030\001 \002(\010\022" +
       "\022\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022\017" +
-      "\n\007orderId\030\004 \002(\t\022\022\n\npayChannel\030\005 \001(\005\"\217\001\n\026",
-      "SearchOrderListRequest\022\020\n\010keyWords\030\001 \001(\t" +
-      "\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016evaluateStauts\030" +
-      "\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022\021\n\tstartTime\030\005" +
-      " \001(\003\022\017\n\007endTime\030\006 \001(\003\"\312\002\n\025SearchOrderLis" +
-      "tResult\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002" +
-      " \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022\020\n\010maxIndex\030\004 \001(" +
-      "\005\022\017\n\007hasMore\030\005 \002(\010\022\024\n\014waitPayCount\030\006 \002(\005" +
-      "\022\031\n\021waitDeliveryCount\030\007 \002(\005\022\030\n\020waitRecei" +
-      "veCount\030\010 \002(\005\022\027\n\017waitRevertCount\030\t \002(\005\022\031" +
-      "\n\021waitEvaluateCount\030\n \002(\005\022\022\n\ntotalCount\030",
-      "\013 \002(\005\022C\n\rorderLiteInfo\030\014 \003(\0132,.com.qjoy." +
-      "basjoo.core.model.pb.OrderLiteInfo\"\362\002\n\rO" +
-      "rderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orderSt" +
-      "atus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rrentSt" +
-      "artTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010re" +
-      "ntDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\trentP" +
-      "rice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033\n\023trans" +
-      "portationPrice\030\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001" +
-      "\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016evaluateSt" +
-      "auts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014mainIma",
-      "geUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014categoryNam" +
-      "e\030\021 \002(\t\"%\n\022DeleteOrderRequest\022\017\n\007orderId" +
-      "\030\001 \002(\t\"K\n\021DeleteOrderResult\022\017\n\007success\030\001" +
-      " \002(\010\022\022\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 " +
-      "\002(\t\"(\n\025ConfirmReceiveRequest\022\017\n\007orderId\030" +
-      "\001 \002(\t\"N\n\024ConfirmReceiveResult\022\017\n\007success" +
-      "\030\001 \002(\010\022\022\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg\030" +
-      "\003 \002(\t\"w\n\022ApplyRevertRequest\022\017\n\007orderId\030\001" +
-      " \002(\t\022\027\n\017applyRevertType\030\002 \002(\t\022\030\n\020transpo" +
-      "rtationId\030\003 \001(\t\022\035\n\025transportationCompany",
-      "\030\004 \001(\t\"K\n\021ApplyRevertResult\022\017\n\007success\030\001" +
-      " \002(\010\022\022\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 " +
-      "\002(\t\"(\n\025GetOrderDetailRequest\022\017\n\007orderId\030" +
-      "\001 \001(\t\"\227\001\n\024GetOrderDetailResult\022\017\n\007succes" +
-      "s\030\001 \002(\010\022\022\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg" +
-      "\030\003 \002(\t\022G\n\017orderDetailInfo\030\004 \002(\0132..com.qj" +
-      "oy.basjoo.core.model.pb.OrderDetailInfo\"" +
-      "\373\004\n\017OrderDetailInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013" +
-      "orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n" +
-      "\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(",
-      "\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021" +
-      "\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033" +
-      "\n\023transportationPrice\030\n \001(\001\022\022\n\ntotalPric" +
-      "e\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016eva" +
-      "luateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014" +
-      "mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014cate" +
-      "goryName\030\021 \002(\t\022\017\n\007payTime\030\022 \001(\003\022\r\n\005payId" +
-      "\030\023 \001(\t\022\022\n\npayChannel\030\024 \001(\t\022\024\n\014deliveryTi" +
-      "me\030\025 \001(\003\022\023\n\013receiveTime\030\026 \001(\003\022\022\n\nrevertT" +
-      "ime\030\027 \001(\003\022\024\n\014completeTime\030\030 \001(\003\022\021\n\tclose",
-      "Time\030\031 \001(\003\022\020\n\010vouchers\030\032 \003(\t\022W\n\027orderRec" +
-      "eiveAddressInfo\030\033 \001(\01326.com.qjoy.basjoo." +
-      "core.model.pb.OrderReceiveAddressInfoB\037\n" +
-      "\035com.qjoy.basjoo.core.model.pb"
+      "\n\007orderId\030\004 \001(\t\022\022\n\npayChannel\030\005 \001(\005\022;\n\tw" +
+      "xPayInfo\030\006 \001(\0132(.com.qjoy.basjoo.core.mo" +
+      "del.pb.WxPayInfo\"&\n\023GetPayStatusRequest\022" +
+      "\017\n\007orderId\030\001 \002(\t\"q\n\022GetPayStatusResult\022\017" +
+      "\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 \002(\t\022\021\n\tr" +
+      "esultMsg\030\003 \002(\t\022\017\n\007orderId\030\004 \002(\t\022\022\n\npayCh",
+      "annel\030\005 \001(\005\"\217\001\n\026SearchOrderListRequest\022\020" +
+      "\n\010keyWords\030\001 \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n" +
+      "\016evaluateStauts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(" +
+      "\005\022\021\n\tstartTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\"\312\002" +
+      "\n\025SearchOrderListResult\022\017\n\007success\030\001 \002(\010" +
+      "\022\022\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022" +
+      "\020\n\010maxIndex\030\004 \001(\005\022\017\n\007hasMore\030\005 \002(\010\022\024\n\014wa" +
+      "itPayCount\030\006 \002(\005\022\031\n\021waitDeliveryCount\030\007 " +
+      "\002(\005\022\030\n\020waitReceiveCount\030\010 \002(\005\022\027\n\017waitRev" +
+      "ertCount\030\t \002(\005\022\031\n\021waitEvaluateCount\030\n \002(",
+      "\005\022\022\n\ntotalCount\030\013 \002(\005\022C\n\rorderLiteInfo\030\014" +
+      " \003(\0132,.com.qjoy.basjoo.core.model.pb.Ord" +
+      "erLiteInfo\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030" +
+      "\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime" +
+      "\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEnd" +
+      "Time\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCoun" +
+      "t\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePric" +
+      "e\030\t \002(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022\n\n" +
+      "totalPrice\030\013 \002(\001\022\030\n\020transportationId\030\014 \001" +
+      "(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tproductId\030",
+      "\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(" +
+      "\t\022\024\n\014categoryName\030\021 \002(\t\"%\n\022DeleteOrderRe" +
+      "quest\022\017\n\007orderId\030\001 \002(\t\"K\n\021DeleteOrderRes" +
+      "ult\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 \002(\t" +
+      "\022\021\n\tresultMsg\030\003 \002(\t\"(\n\025ConfirmReceiveReq" +
+      "uest\022\017\n\007orderId\030\001 \002(\t\"N\n\024ConfirmReceiveR" +
+      "esult\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 \002" +
+      "(\t\022\021\n\tresultMsg\030\003 \002(\t\"w\n\022ApplyRevertRequ" +
+      "est\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType\030" +
+      "\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025trans",
+      "portationCompany\030\004 \001(\t\"K\n\021ApplyRevertRes" +
+      "ult\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 \002(\t" +
+      "\022\021\n\tresultMsg\030\003 \002(\t\"(\n\025GetOrderDetailReq" +
+      "uest\022\017\n\007orderId\030\001 \001(\t\"\227\001\n\024GetOrderDetail" +
+      "Result\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 " +
+      "\002(\t\022\021\n\tresultMsg\030\003 \002(\t\022G\n\017orderDetailInf" +
+      "o\030\004 \002(\0132..com.qjoy.basjoo.core.model.pb." +
+      "OrderDetailInfo\"\373\004\n\017OrderDetailInfo\022\017\n\007o" +
+      "rderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncre" +
+      "ateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013",
+      "rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\tr" +
+      "entCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013ple" +
+      "dgePrice\030\t \002(\001\022\033\n\023transportationPrice\030\n " +
+      "\001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportatio" +
+      "nId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tpro" +
+      "ductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004de" +
+      "sc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTim" +
+      "e\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 \001" +
+      "(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTime\030" +
+      "\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTim",
+      "e\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030\032" +
+      " \003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001(\01326." +
+      "com.qjoy.basjoo.core.model.pb.OrderRecei" +
+      "veAddressInfoB\037\n\035com.qjoy.basjoo.core.mo" +
+      "del.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -31138,7 +31352,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_WxPayInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_WxPayInfo_descriptor,
-        new java.lang.String[] { "PartnerId", "PrepayId", "Package", "NonceStr", "TimeStamp", "Sign", });
+        new java.lang.String[] { "PartnerId", "PrepayId", "Package", "NonceStr", "TimeStamp", "Sign", "Appid", });
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRequest_fieldAccessorTable = new

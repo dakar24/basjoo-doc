@@ -165,6 +165,9 @@ message WxPayInfo{
 	required string                 timeStamp = 5;
     //签名
     required string                 sign = 6; 
+	//appid
+    required string                 appid = 7; 
+	
 }
 
 
