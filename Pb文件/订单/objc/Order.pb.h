@@ -130,14 +130,14 @@
 @property (readonly) BOOL hasNonceStr;
 @property (readonly) BOOL hasTimeStamp;
 @property (readonly) BOOL hasSign;
-@property (readonly) BOOL hasAppid;
+@property (readonly) BOOL hasAppId;
 @property (nonatomic,strong) NSString* partnerId;
 @property (nonatomic,strong) NSString* prepayId;
 @property (nonatomic,strong) NSString* package;
 @property (nonatomic,strong) NSString* nonceStr;
 @property (nonatomic,strong) NSString* timeStamp;
 @property (nonatomic,strong) NSString* sign;
-@property (nonatomic,strong) NSString* appid;
+@property (nonatomic,strong) NSString* appId;
 @end
 
 @interface ConfirmPayRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>

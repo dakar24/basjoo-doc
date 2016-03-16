@@ -1026,7 +1026,7 @@
     _nonceStr = @"";
     _timeStamp = @"";
     _sign = @"";
-    _appid = @"";
+    _appId = @"";
   }
   return self;
 }
@@ -1049,8 +1049,8 @@
   if (self.hasSign) {
     [output writeString:6 value:self.sign];
   }
-  if (self.hasAppid) {
-    [output writeString:7 value:self.appid];
+  if (self.hasAppId) {
+    [output writeString:7 value:self.appId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1076,8 +1076,8 @@
   if (self.hasSign) {
     size_ += computeStringSize(6, self.sign);
   }
-  if (self.hasAppid) {
-    size_ += computeStringSize(7, self.appid);
+  if (self.hasAppId) {
+    size_ += computeStringSize(7, self.appId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1107,8 +1107,8 @@
   if (self.hasSign) {
     [output appendFormat:@"%@%@: %@\n", indent, @"sign", self.sign];
   }
-  if (self.hasAppid) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"appid", self.appid];
+  if (self.hasAppId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"appId", self.appId];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -1137,9 +1137,9 @@
   _hasSign = YES;
   _sign = value;
 }
-- (void) setAppid:(NSString*) value {
-  _hasAppid = YES;
-  _appid = value;
+- (void) setAppId:(NSString*) value {
+  _hasAppId = YES;
+  _appId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1181,7 +1181,7 @@
         break;
       }
       case 58: {
-        [self setAppid:[input readString]];
+        [self setAppId:[input readString]];
         break;
       }
     }

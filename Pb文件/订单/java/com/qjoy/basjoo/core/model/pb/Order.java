@@ -8989,30 +8989,30 @@ public final class Order {
         getSignBytes();
 
     /**
-     * <code>required string appid = 7;</code>
+     * <code>required string appId = 7;</code>
      *
      * <pre>
-     *appid
+     *appId
      * </pre>
      */
-    boolean hasAppid();
+    boolean hasAppId();
     /**
-     * <code>required string appid = 7;</code>
+     * <code>required string appId = 7;</code>
      *
      * <pre>
-     *appid
+     *appId
      * </pre>
      */
-    java.lang.String getAppid();
+    java.lang.String getAppId();
     /**
-     * <code>required string appid = 7;</code>
+     * <code>required string appId = 7;</code>
      *
      * <pre>
-     *appid
+     *appId
      * </pre>
      */
     com.google.protobuf.ByteString
-        getAppidBytes();
+        getAppIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.WxPayInfo}
@@ -9109,7 +9109,7 @@ public final class Order {
             case 58: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000040;
-              appid_ = bs;
+              appId_ = bs;
               break;
             }
           }
@@ -9477,26 +9477,26 @@ public final class Order {
     }
 
     public static final int APPID_FIELD_NUMBER = 7;
-    private java.lang.Object appid_;
+    private java.lang.Object appId_;
     /**
-     * <code>required string appid = 7;</code>
+     * <code>required string appId = 7;</code>
      *
      * <pre>
-     *appid
+     *appId
      * </pre>
      */
-    public boolean hasAppid() {
+    public boolean hasAppId() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required string appid = 7;</code>
+     * <code>required string appId = 7;</code>
      *
      * <pre>
-     *appid
+     *appId
      * </pre>
      */
-    public java.lang.String getAppid() {
-      java.lang.Object ref = appid_;
+    public java.lang.String getAppId() {
+      java.lang.Object ref = appId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -9504,26 +9504,26 @@ public final class Order {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          appid_ = s;
+          appId_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string appid = 7;</code>
+     * <code>required string appId = 7;</code>
      *
      * <pre>
-     *appid
+     *appId
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getAppidBytes() {
-      java.lang.Object ref = appid_;
+        getAppIdBytes() {
+      java.lang.Object ref = appId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        appid_ = b;
+        appId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -9537,7 +9537,7 @@ public final class Order {
       nonceStr_ = "";
       timeStamp_ = "";
       sign_ = "";
-      appid_ = "";
+      appId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9569,7 +9569,7 @@ public final class Order {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasAppid()) {
+      if (!hasAppId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -9599,7 +9599,7 @@ public final class Order {
         output.writeBytes(6, getSignBytes());
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(7, getAppidBytes());
+        output.writeBytes(7, getAppIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -9636,7 +9636,7 @@ public final class Order {
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getAppidBytes());
+          .computeBytesSize(7, getAppIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9771,7 +9771,7 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000010);
         sign_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
-        appid_ = "";
+        appId_ = "";
         bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
@@ -9828,7 +9828,7 @@ public final class Order {
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.appid_ = appid_;
+        result.appId_ = appId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -9875,9 +9875,9 @@ public final class Order {
           sign_ = other.sign_;
           onChanged();
         }
-        if (other.hasAppid()) {
+        if (other.hasAppId()) {
           bitField0_ |= 0x00000040;
-          appid_ = other.appid_;
+          appId_ = other.appId_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -9909,7 +9909,7 @@ public final class Order {
           
           return false;
         }
-        if (!hasAppid()) {
+        if (!hasAppId()) {
           
           return false;
         }
@@ -10535,32 +10535,32 @@ public final class Order {
         return this;
       }
 
-      private java.lang.Object appid_ = "";
+      private java.lang.Object appId_ = "";
       /**
-       * <code>required string appid = 7;</code>
+       * <code>required string appId = 7;</code>
        *
        * <pre>
-       *appid
+       *appId
        * </pre>
        */
-      public boolean hasAppid() {
+      public boolean hasAppId() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required string appid = 7;</code>
+       * <code>required string appId = 7;</code>
        *
        * <pre>
-       *appid
+       *appId
        * </pre>
        */
-      public java.lang.String getAppid() {
-        java.lang.Object ref = appid_;
+      public java.lang.String getAppId() {
+        java.lang.Object ref = appId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            appid_ = s;
+            appId_ = s;
           }
           return s;
         } else {
@@ -10568,69 +10568,69 @@ public final class Order {
         }
       }
       /**
-       * <code>required string appid = 7;</code>
+       * <code>required string appId = 7;</code>
        *
        * <pre>
-       *appid
+       *appId
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getAppidBytes() {
-        java.lang.Object ref = appid_;
+          getAppIdBytes() {
+        java.lang.Object ref = appId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          appid_ = b;
+          appId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string appid = 7;</code>
+       * <code>required string appId = 7;</code>
        *
        * <pre>
-       *appid
+       *appId
        * </pre>
        */
-      public Builder setAppid(
+      public Builder setAppId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000040;
-        appid_ = value;
+        appId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string appid = 7;</code>
+       * <code>required string appId = 7;</code>
        *
        * <pre>
-       *appid
+       *appId
        * </pre>
        */
-      public Builder clearAppid() {
+      public Builder clearAppId() {
         bitField0_ = (bitField0_ & ~0x00000040);
-        appid_ = getDefaultInstance().getAppid();
+        appId_ = getDefaultInstance().getAppId();
         onChanged();
         return this;
       }
       /**
-       * <code>required string appid = 7;</code>
+       * <code>required string appId = 7;</code>
        *
        * <pre>
-       *appid
+       *appId
        * </pre>
        */
-      public Builder setAppidBytes(
+      public Builder setAppIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000040;
-        appid_ = value;
+        appId_ = value;
         onChanged();
         return this;
       }
@@ -31239,7 +31239,7 @@ public final class Order {
       "WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId\030\001 \002" +
       "(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t\022\020\n" +
       "\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n\004si",
-      "gn\030\006 \002(\t\022\r\n\005appid\030\007 \002(\t\"8\n\021ConfirmPayReq" +
+      "gn\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"8\n\021ConfirmPayReq" +
       "uest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030\002 \001(" +
       "\005\"\254\001\n\020ConfirmPayResult\022\017\n\007success\030\001 \002(\010\022" +
       "\022\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022\017" +
@@ -31352,7 +31352,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_WxPayInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_WxPayInfo_descriptor,
-        new java.lang.String[] { "PartnerId", "PrepayId", "Package", "NonceStr", "TimeStamp", "Sign", "Appid", });
+        new java.lang.String[] { "PartnerId", "PrepayId", "Package", "NonceStr", "TimeStamp", "Sign", "AppId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRequest_fieldAccessorTable = new

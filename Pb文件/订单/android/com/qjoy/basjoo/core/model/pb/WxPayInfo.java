@@ -66,10 +66,10 @@ public final class WxPayInfo extends Message {
   public String sign;
 
   /**
-   * appid
+   * appId
    */
   @ProtoField(tag = 7, type = STRING, label = REQUIRED)
-  public String appid;
+  public String appId;
 
   public WxPayInfo(WxPayInfo message) {
     super(message);
@@ -80,7 +80,7 @@ public final class WxPayInfo extends Message {
     this.nonceStr = message.nonceStr;
     this.timeStamp = message.timeStamp;
     this.sign = message.sign;
-    this.appid = message.appid;
+    this.appId = message.appId;
   }
 
   public WxPayInfo() {
@@ -107,7 +107,7 @@ public final class WxPayInfo extends Message {
         this.sign = (String)value;
         break;
         case TAG_APPID:
-        this.appid = (String)value;
+        this.appId = (String)value;
         break;
         default: break;
         };
@@ -125,7 +125,7 @@ public final class WxPayInfo extends Message {
         && equals(nonceStr, o.nonceStr)
         && equals(timeStamp, o.timeStamp)
         && equals(sign, o.sign)
-        && equals(appid, o.appid);
+        && equals(appId, o.appId);
   }
 
   @Override
@@ -138,7 +138,7 @@ public final class WxPayInfo extends Message {
       result = result * 37 + (nonceStr != null ? nonceStr.hashCode() : 0);
       result = result * 37 + (timeStamp != null ? timeStamp.hashCode() : 0);
       result = result * 37 + (sign != null ? sign.hashCode() : 0);
-      result = result * 37 + (appid != null ? appid.hashCode() : 0);
+      result = result * 37 + (appId != null ? appId.hashCode() : 0);
       hashCode = result;
     }
     return result;
