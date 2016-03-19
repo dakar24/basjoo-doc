@@ -259,7 +259,7 @@
       }
       case 42: {
         ProductLiteInfo* sub = [[ProductLiteInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self addProductLiteInfo:sub];
         break;
       }
@@ -283,6 +283,7 @@
     _rentCount = 0L;
     _marketPrice = 0;
     _pledgePrice = 0;
+    _favorited = NO;
   }
   return self;
 }
@@ -316,6 +317,9 @@
   }
   if (self.hasPledgePrice) {
     [output writeDouble:10 value:self.pledgePrice];
+  }
+  if (self.hasFavorited) {
+    [output writeBool:11 value:self.favorited];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -352,6 +356,9 @@
   }
   if (self.hasPledgePrice) {
     size_ += computeDoubleSize(10, self.pledgePrice);
+  }
+  if (self.hasFavorited) {
+    size_ += computeBoolSize(11, self.favorited);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -392,6 +399,9 @@
   }
   if (self.hasPledgePrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"pledgePrice", [NSNumber numberWithDouble:self.pledgePrice]];
+  }
+  if (self.hasFavorited) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"favorited", [NSNumber numberWithBool:self.favorited]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -435,6 +445,10 @@
 - (void) setPledgePrice:(Float64) value {
   _hasPledgePrice = YES;
   _pledgePrice = value;
+}
+- (void) setFavorited:(BOOL) value {
+  _hasFavorited = YES;
+  _favorited = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -489,6 +503,10 @@
       }
       case 81: {
         [self setPledgePrice:[input readDouble]];
+        break;
+      }
+      case 88: {
+        [self setFavorited:[input readBool]];
         break;
       }
     }
@@ -659,7 +677,7 @@
       }
       case 26: {
         ProductDetailInfo* sub = [[ProductDetailInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self setProductDetailInfo:sub];
         break;
       }
@@ -687,6 +705,7 @@
     _transportationPrice = 0;
     _location = @"";
     _evaluateCount = 0L;
+    _favorited = NO;
   }
   return self;
 }
@@ -754,6 +773,9 @@
   [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:21 value:element];
   }];
+  if (self.hasFavorited) {
+    [output writeBool:22 value:self.favorited];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -835,6 +857,9 @@
   [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(21, element);
   }];
+  if (self.hasFavorited) {
+    size_ += computeBoolSize(22, self.favorited);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -923,6 +948,9 @@
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }];
+  if (self.hasFavorited) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"favorited", [NSNumber numberWithBool:self.favorited]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -1045,6 +1073,10 @@
   }
   [_productEvaluateInfo addObject:value];
 }
+- (void) setFavorited:(BOOL) value {
+  _hasFavorited = YES;
+  _favorited = value;
+}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -1118,25 +1150,25 @@
       }
       case 122: {
         CategoryInfo* sub = [[CategoryInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self addCategoryInfo:sub];
         break;
       }
       case 130: {
         ShortRentInfo* sub = [[ShortRentInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self addShortRentInfo:sub];
         break;
       }
       case 138: {
         LongRentInfo* sub = [[LongRentInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self addLongRentInfo:sub];
         break;
       }
       case 146: {
         ProductBaseParam* sub = [[ProductBaseParam alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self addBaseParam:sub];
         break;
       }
@@ -1150,8 +1182,12 @@
       }
       case 170: {
         ProductEvaluateInfo* sub = [[ProductEvaluateInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self addProductEvaluateInfo:sub];
+        break;
+      }
+      case 176: {
+        [self setFavorited:[input readBool]];
         break;
       }
     }
@@ -1913,7 +1949,7 @@
       }
       case 90: {
         EvaluateReplyInfo* sub = [[EvaluateReplyInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self addEvaluateReplyInfo:sub];
         break;
       }
@@ -2318,7 +2354,7 @@
       }
       case 58: {
         ProductEvaluateInfo* sub = [[ProductEvaluateInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self addProductEvaluateInfo:sub];
         break;
       }

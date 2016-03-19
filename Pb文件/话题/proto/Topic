@@ -19,21 +19,18 @@ message GetTopicListRequest {
 //获取话题结果
 message GetTopicListResult {  
 
-   //是否成功
-   required bool                   success = 1; 
-
-   required string                 resultCode = 2;
+   required string                 resultCode = 1;
     
-   required string                 resultMsg = 3;  
+   required string                 resultMsg = 2;  
    
    //话题简要信息列表
-   repeated TopicLiteInfo          topicLiteInfo = 4;  
+   repeated TopicLiteInfo          topicLiteInfo = 3;  
    
    //当前最大index
-   optional int32                  maxIndex = 5;
+   optional int32                  maxIndex = 4;
    
    //是否还有更多数据
-   required bool                   hasMore  = 6;   
+   required bool                   hasMore  = 5;   
     
 }
 
@@ -86,16 +83,14 @@ message GetTopicDetailRequest {
 
 //获取话题详情
 message GetTopicDetailResult {   
- 
-   //是否成功
-   required bool                   success = 1; 
 
-   required string                 resultCode = 2;
+
+   required string                 resultCode = 1;
     
-   required string                 resultMsg = 3;     
+   required string                 resultMsg = 2;     
    
    //话题详细
-   optional TopicDetailInfo        topicDetailInfo = 4;   
+   optional TopicDetailInfo        topicDetailInfo = 3;   
   
 }
 
@@ -188,15 +183,12 @@ message AddTopicPraiseRequest {
 }
 
 //话题点赞结果
-message AddTopicPraiseResult {  
- 
-  
-  //是否成功
-   required bool                   success = 1; 
+message AddTopicPraiseResult {    
 
-   required string                 resultCode = 2;
+
+   required string                 resultCode = 1;
     
-   required string                 resultMsg = 3;     
+   required string                 resultMsg = 2;     
    
   
 }
@@ -212,14 +204,11 @@ message CancelTopicPraiseRequest {
 
 //话题点赞结果
 message CancelTopicPraiseResult {  
- 
-  
-  //是否成功
-   required bool                   success = 1; 
 
-   required string                 resultCode = 2;
+
+   required string                 resultCode = 1;
     
-   required string                 resultMsg = 3;     
+   required string                 resultMsg = 2;     
    
   
 }
@@ -241,14 +230,61 @@ message AddTopicReplyRequest {
 //回复话题结果
 message AddTopicReplyResult {   
   
-   //是否成功
-   required bool                   success = 1;
+
    //结果
-   required string                 resultCode = 2;
+   required string                 resultCode = 1;
    //结果码
-   required string                 resultMsg = 3;        
+   required string                 resultMsg = 2;        
   
 }
+
+
+//获取话题称赞者列表
+message GetTopicPraiseUsersRequest {   
+ 
+  //话题ID;
+  required string                 topicId = 1;  
+  
+  //起始index
+  optional int32                  startIndex = 2;  
+ 
+}
+
+
+
+//获取话题称赞者列表
+message GetTopicPraiseUsersResult {    
+  
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;  
+   
+      //当前最大index
+   optional int32                  maxIndex = 3;
+   
+   //是否还有更多数据
+   required bool                   hasMore  = 4;  
+
+  //点赞用户列表
+  repeated TopicPraiseUser         praiseUsers = 5;      
+   
+   
+ 
+}
+
+message TopicPraiseUser{
+
+   required string                 userId = 1;
+   
+   required string                 userNickName = 2;
+   
+   required string                 headIconUrl = 3;
+   
+   required int64                  praiseTime = 4;   
+
+}
+
 
 
 

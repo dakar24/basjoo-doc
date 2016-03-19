@@ -5,7 +5,7 @@ CREATE table user_info (
  user_id    varchar(64)  not null,
  login_id  varchar(64)   not null,
  user_type bigint not null,
- user_stauts bigint not null,
+ user_status bigint not null,
  user_name    varchar(64) not null,
  mobile_no    varchar(32) not null,
  nick_name    varchar(64),

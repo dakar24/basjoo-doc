@@ -12,8 +12,11 @@
 @class GetTopicDetailResult;
 @class GetTopicListRequest;
 @class GetTopicListResult;
+@class GetTopicPraiseUsersRequest;
+@class GetTopicPraiseUsersResult;
 @class TopicDetailInfo;
 @class TopicLiteInfo;
+@class TopicPraiseUser;
 @class TopicReplyInfo;
 
 @interface GetTopicListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -26,12 +29,10 @@
 @end
 
 @interface GetTopicListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasMaxIndex;
 @property (readonly) BOOL hasHasMore;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSMutableArray * topicLiteInfo;
@@ -70,11 +71,9 @@
 @end
 
 @interface GetTopicDetailResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasTopicDetailInfo;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) TopicDetailInfo* topicDetailInfo;
@@ -136,10 +135,8 @@
 @end
 
 @interface AddTopicPraiseResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @end
@@ -150,10 +147,8 @@
 @end
 
 @interface CancelTopicPraiseResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @end
@@ -168,11 +163,39 @@
 @end
 
 @interface AddTopicReplyResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
+@end
+
+@interface GetTopicPraiseUsersRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasTopicId;
+@property (readonly) BOOL hasStartIndex;
+@property (nonatomic,strong) NSString* topicId;
+@property (nonatomic)SInt32 startIndex;
+@end
+
+@interface GetTopicPraiseUsersResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasMaxIndex;
+@property (readonly) BOOL hasHasMore;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic)SInt32 maxIndex;
+@property (nonatomic)BOOL hasMore;
+@property (nonatomic,strong) NSMutableArray * praiseUsers;
+@end
+
+@interface TopicPraiseUser : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasUserNickName;
+@property (readonly) BOOL hasHeadIconUrl;
+@property (readonly) BOOL hasPraiseTime;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSString* userNickName;
+@property (nonatomic,strong) NSString* headIconUrl;
+@property (nonatomic)SInt64 praiseTime;
 @end
 

@@ -108,7 +108,6 @@
 
 - (instancetype) init {
   if ((self = [super init])) {
-    _success = NO;
     _resultCode = @"";
     _resultMsg = @"";
     _maxIndex = 0;
@@ -117,23 +116,20 @@
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasSuccess) {
-    [output writeBool:1 value:self.success];
-  }
   if (self.hasResultCode) {
-    [output writeString:2 value:self.resultCode];
+    [output writeString:1 value:self.resultCode];
   }
   if (self.hasResultMsg) {
-    [output writeString:3 value:self.resultMsg];
+    [output writeString:2 value:self.resultMsg];
   }
   [self.topicLiteInfo enumerateObjectsUsingBlock:^(TopicLiteInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:4 value:element];
+    [output writeMessage:3 value:element];
   }];
   if (self.hasMaxIndex) {
-    [output writeInt32:5 value:self.maxIndex];
+    [output writeInt32:4 value:self.maxIndex];
   }
   if (self.hasHasMore) {
-    [output writeBool:6 value:self.hasMore];
+    [output writeBool:5 value:self.hasMore];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -141,23 +137,20 @@
   __block SInt32 size_ = memoizedSerializedSize;
 
   size_ = 0;
-  if (self.hasSuccess) {
-    size_ += computeBoolSize(1, self.success);
-  }
   if (self.hasResultCode) {
-    size_ += computeStringSize(2, self.resultCode);
+    size_ += computeStringSize(1, self.resultCode);
   }
   if (self.hasResultMsg) {
-    size_ += computeStringSize(3, self.resultMsg);
+    size_ += computeStringSize(2, self.resultMsg);
   }
   [self.topicLiteInfo enumerateObjectsUsingBlock:^(TopicLiteInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(4, element);
+    size_ += computeMessageSize(3, element);
   }];
   if (self.hasMaxIndex) {
-    size_ += computeInt32Size(5, self.maxIndex);
+    size_ += computeInt32Size(4, self.maxIndex);
   }
   if (self.hasHasMore) {
-    size_ += computeBoolSize(6, self.hasMore);
+    size_ += computeBoolSize(5, self.hasMore);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -169,9 +162,6 @@
 }
 #ifdef DEBUG
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasSuccess) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"success", [NSNumber numberWithBool:self.success]];
-  }
   if (self.hasResultCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
   }
@@ -193,10 +183,6 @@
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
-- (void) setSuccess:(BOOL) value {
-  _hasSuccess = YES;
-  _success = value;
-}
 - (void) setResultCode:(NSString*) value {
   _hasResultCode = YES;
   _resultCode = value;
@@ -237,29 +223,25 @@
         }
         break;
       }
-      case 8: {
-        [self setSuccess:[input readBool]];
-        break;
-      }
-      case 18: {
+      case 10: {
         [self setResultCode:[input readString]];
         break;
       }
-      case 26: {
+      case 18: {
         [self setResultMsg:[input readString]];
         break;
       }
-      case 34: {
+      case 26: {
         TopicLiteInfo* sub = [[TopicLiteInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addTopicLiteInfo:sub];
         break;
       }
-      case 40: {
+      case 32: {
         [self setMaxIndex:[input readInt32]];
         break;
       }
-      case 48: {
+      case 40: {
         [self setHasMore:[input readBool]];
         break;
       }
@@ -585,24 +567,20 @@
 
 - (instancetype) init {
   if ((self = [super init])) {
-    _success = NO;
     _resultCode = @"";
     _resultMsg = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasSuccess) {
-    [output writeBool:1 value:self.success];
-  }
   if (self.hasResultCode) {
-    [output writeString:2 value:self.resultCode];
+    [output writeString:1 value:self.resultCode];
   }
   if (self.hasResultMsg) {
-    [output writeString:3 value:self.resultMsg];
+    [output writeString:2 value:self.resultMsg];
   }
   if (self.hasTopicDetailInfo) {
-    [output writeMessage:4 value:self.topicDetailInfo];
+    [output writeMessage:3 value:self.topicDetailInfo];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -610,17 +588,14 @@
   __block SInt32 size_ = memoizedSerializedSize;
 
   size_ = 0;
-  if (self.hasSuccess) {
-    size_ += computeBoolSize(1, self.success);
-  }
   if (self.hasResultCode) {
-    size_ += computeStringSize(2, self.resultCode);
+    size_ += computeStringSize(1, self.resultCode);
   }
   if (self.hasResultMsg) {
-    size_ += computeStringSize(3, self.resultMsg);
+    size_ += computeStringSize(2, self.resultMsg);
   }
   if (self.hasTopicDetailInfo) {
-    size_ += computeMessageSize(4, self.topicDetailInfo);
+    size_ += computeMessageSize(3, self.topicDetailInfo);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -632,9 +607,6 @@
 }
 #ifdef DEBUG
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasSuccess) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"success", [NSNumber numberWithBool:self.success]];
-  }
   if (self.hasResultCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
   }
@@ -650,10 +622,6 @@
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
-- (void) setSuccess:(BOOL) value {
-  _hasSuccess = YES;
-  _success = value;
-}
 - (void) setResultCode:(NSString*) value {
   _hasResultCode = YES;
   _resultCode = value;
@@ -681,19 +649,15 @@
         }
         break;
       }
-      case 8: {
-        [self setSuccess:[input readBool]];
-        break;
-      }
-      case 18: {
+      case 10: {
         [self setResultCode:[input readString]];
         break;
       }
-      case 26: {
+      case 18: {
         [self setResultMsg:[input readString]];
         break;
       }
-      case 34: {
+      case 26: {
         TopicDetailInfo* sub = [[TopicDetailInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self setTopicDetailInfo:sub];
@@ -1304,21 +1268,17 @@
 
 - (instancetype) init {
   if ((self = [super init])) {
-    _success = NO;
     _resultCode = @"";
     _resultMsg = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasSuccess) {
-    [output writeBool:1 value:self.success];
-  }
   if (self.hasResultCode) {
-    [output writeString:2 value:self.resultCode];
+    [output writeString:1 value:self.resultCode];
   }
   if (self.hasResultMsg) {
-    [output writeString:3 value:self.resultMsg];
+    [output writeString:2 value:self.resultMsg];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1326,14 +1286,11 @@
   __block SInt32 size_ = memoizedSerializedSize;
 
   size_ = 0;
-  if (self.hasSuccess) {
-    size_ += computeBoolSize(1, self.success);
-  }
   if (self.hasResultCode) {
-    size_ += computeStringSize(2, self.resultCode);
+    size_ += computeStringSize(1, self.resultCode);
   }
   if (self.hasResultMsg) {
-    size_ += computeStringSize(3, self.resultMsg);
+    size_ += computeStringSize(2, self.resultMsg);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1345,9 +1302,6 @@
 }
 #ifdef DEBUG
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasSuccess) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"success", [NSNumber numberWithBool:self.success]];
-  }
   if (self.hasResultCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
   }
@@ -1357,10 +1311,6 @@
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
-- (void) setSuccess:(BOOL) value {
-  _hasSuccess = YES;
-  _success = value;
-}
 - (void) setResultCode:(NSString*) value {
   _hasResultCode = YES;
   _resultCode = value;
@@ -1384,15 +1334,11 @@
         }
         break;
       }
-      case 8: {
-        [self setSuccess:[input readBool]];
-        break;
-      }
-      case 18: {
+      case 10: {
         [self setResultCode:[input readString]];
         break;
       }
-      case 26: {
+      case 18: {
         [self setResultMsg:[input readString]];
         break;
       }
@@ -1472,21 +1418,17 @@
 
 - (instancetype) init {
   if ((self = [super init])) {
-    _success = NO;
     _resultCode = @"";
     _resultMsg = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasSuccess) {
-    [output writeBool:1 value:self.success];
-  }
   if (self.hasResultCode) {
-    [output writeString:2 value:self.resultCode];
+    [output writeString:1 value:self.resultCode];
   }
   if (self.hasResultMsg) {
-    [output writeString:3 value:self.resultMsg];
+    [output writeString:2 value:self.resultMsg];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1494,14 +1436,11 @@
   __block SInt32 size_ = memoizedSerializedSize;
 
   size_ = 0;
-  if (self.hasSuccess) {
-    size_ += computeBoolSize(1, self.success);
-  }
   if (self.hasResultCode) {
-    size_ += computeStringSize(2, self.resultCode);
+    size_ += computeStringSize(1, self.resultCode);
   }
   if (self.hasResultMsg) {
-    size_ += computeStringSize(3, self.resultMsg);
+    size_ += computeStringSize(2, self.resultMsg);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1513,9 +1452,6 @@
 }
 #ifdef DEBUG
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasSuccess) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"success", [NSNumber numberWithBool:self.success]];
-  }
   if (self.hasResultCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
   }
@@ -1525,10 +1461,6 @@
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
-- (void) setSuccess:(BOOL) value {
-  _hasSuccess = YES;
-  _success = value;
-}
 - (void) setResultCode:(NSString*) value {
   _hasResultCode = YES;
   _resultCode = value;
@@ -1552,15 +1484,11 @@
         }
         break;
       }
-      case 8: {
-        [self setSuccess:[input readBool]];
-        break;
-      }
-      case 18: {
+      case 10: {
         [self setResultCode:[input readString]];
         break;
       }
-      case 26: {
+      case 18: {
         [self setResultMsg:[input readString]];
         break;
       }
@@ -1676,21 +1604,17 @@
 
 - (instancetype) init {
   if ((self = [super init])) {
-    _success = NO;
     _resultCode = @"";
     _resultMsg = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasSuccess) {
-    [output writeBool:1 value:self.success];
-  }
   if (self.hasResultCode) {
-    [output writeString:2 value:self.resultCode];
+    [output writeString:1 value:self.resultCode];
   }
   if (self.hasResultMsg) {
-    [output writeString:3 value:self.resultMsg];
+    [output writeString:2 value:self.resultMsg];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1698,14 +1622,11 @@
   __block SInt32 size_ = memoizedSerializedSize;
 
   size_ = 0;
-  if (self.hasSuccess) {
-    size_ += computeBoolSize(1, self.success);
-  }
   if (self.hasResultCode) {
-    size_ += computeStringSize(2, self.resultCode);
+    size_ += computeStringSize(1, self.resultCode);
   }
   if (self.hasResultMsg) {
-    size_ += computeStringSize(3, self.resultMsg);
+    size_ += computeStringSize(2, self.resultMsg);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1717,9 +1638,6 @@
 }
 #ifdef DEBUG
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasSuccess) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"success", [NSNumber numberWithBool:self.success]];
-  }
   if (self.hasResultCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
   }
@@ -1729,10 +1647,6 @@
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
-- (void) setSuccess:(BOOL) value {
-  _hasSuccess = YES;
-  _success = value;
-}
 - (void) setResultCode:(NSString*) value {
   _hasResultCode = YES;
   _resultCode = value;
@@ -1756,16 +1670,363 @@
         }
         break;
       }
-      case 8: {
-        [self setSuccess:[input readBool]];
-        break;
-      }
-      case 18: {
+      case 10: {
         [self setResultCode:[input readString]];
         break;
       }
-      case 26: {
+      case 18: {
         [self setResultMsg:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation GetTopicPraiseUsersRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _topicId = @"";
+    _startIndex = 0;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasTopicId) {
+    [output writeString:1 value:self.topicId];
+  }
+  if (self.hasStartIndex) {
+    [output writeInt32:2 value:self.startIndex];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasTopicId) {
+    size_ += computeStringSize(1, self.topicId);
+  }
+  if (self.hasStartIndex) {
+    size_ += computeInt32Size(2, self.startIndex);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (GetTopicPraiseUsersRequest*) parseFromData:(NSData*) data {
+  GetTopicPraiseUsersRequest* result = [[GetTopicPraiseUsersRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasTopicId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"topicId", self.topicId];
+  }
+  if (self.hasStartIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"startIndex", [NSNumber numberWithInteger:self.startIndex]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setTopicId:(NSString*) value {
+  _hasTopicId = YES;
+  _topicId = value;
+}
+- (void) setStartIndex:(SInt32) value {
+  _hasStartIndex = YES;
+  _startIndex = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setTopicId:[input readString]];
+        break;
+      }
+      case 16: {
+        [self setStartIndex:[input readInt32]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation GetTopicPraiseUsersResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+    _maxIndex = 0;
+    _hasMore = NO;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  if (self.hasMaxIndex) {
+    [output writeInt32:3 value:self.maxIndex];
+  }
+  if (self.hasHasMore) {
+    [output writeBool:4 value:self.hasMore];
+  }
+  [self.praiseUsers enumerateObjectsUsingBlock:^(TopicPraiseUser *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:5 value:element];
+  }];
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  if (self.hasMaxIndex) {
+    size_ += computeInt32Size(3, self.maxIndex);
+  }
+  if (self.hasHasMore) {
+    size_ += computeBoolSize(4, self.hasMore);
+  }
+  [self.praiseUsers enumerateObjectsUsingBlock:^(TopicPraiseUser *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(5, element);
+  }];
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (GetTopicPraiseUsersResult*) parseFromData:(NSData*) data {
+  GetTopicPraiseUsersResult* result = [[GetTopicPraiseUsersResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  if (self.hasMaxIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"maxIndex", [NSNumber numberWithInteger:self.maxIndex]];
+  }
+  if (self.hasHasMore) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"hasMore", [NSNumber numberWithBool:self.hasMore]];
+  }
+  [self.praiseUsers enumerateObjectsUsingBlock:^(TopicPraiseUser *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"praiseUsers"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) setMaxIndex:(SInt32) value {
+  _hasMaxIndex = YES;
+  _maxIndex = value;
+}
+- (void) setHasMore:(BOOL) value {
+  _hasHasMore = YES;
+  _hasMore = value;
+}
+- (void)setPraiseUsersArray:(NSArray *)array {
+  _praiseUsers = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addPraiseUsers:(TopicPraiseUser*)value {
+  if (_praiseUsers == nil) {
+    _praiseUsers = [[NSMutableArray alloc]init];
+  }
+  [_praiseUsers addObject:value];
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+      case 24: {
+        [self setMaxIndex:[input readInt32]];
+        break;
+      }
+      case 32: {
+        [self setHasMore:[input readBool]];
+        break;
+      }
+      case 42: {
+        TopicPraiseUser* sub = [[TopicPraiseUser alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addPraiseUsers:sub];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation TopicPraiseUser
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _userId = @"";
+    _userNickName = @"";
+    _headIconUrl = @"";
+    _praiseTime = 0L;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUserId) {
+    [output writeString:1 value:self.userId];
+  }
+  if (self.hasUserNickName) {
+    [output writeString:2 value:self.userNickName];
+  }
+  if (self.hasHeadIconUrl) {
+    [output writeString:3 value:self.headIconUrl];
+  }
+  if (self.hasPraiseTime) {
+    [output writeInt64:4 value:self.praiseTime];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasUserId) {
+    size_ += computeStringSize(1, self.userId);
+  }
+  if (self.hasUserNickName) {
+    size_ += computeStringSize(2, self.userNickName);
+  }
+  if (self.hasHeadIconUrl) {
+    size_ += computeStringSize(3, self.headIconUrl);
+  }
+  if (self.hasPraiseTime) {
+    size_ += computeInt64Size(4, self.praiseTime);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (TopicPraiseUser*) parseFromData:(NSData*) data {
+  TopicPraiseUser* result = [[TopicPraiseUser alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
+  if (self.hasUserNickName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userNickName", self.userNickName];
+  }
+  if (self.hasHeadIconUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"headIconUrl", self.headIconUrl];
+  }
+  if (self.hasPraiseTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"praiseTime", [NSNumber numberWithLongLong:self.praiseTime]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
+- (void) setUserNickName:(NSString*) value {
+  _hasUserNickName = YES;
+  _userNickName = value;
+}
+- (void) setHeadIconUrl:(NSString*) value {
+  _hasHeadIconUrl = YES;
+  _headIconUrl = value;
+}
+- (void) setPraiseTime:(SInt64) value {
+  _hasPraiseTime = YES;
+  _praiseTime = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setUserId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setUserNickName:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setHeadIconUrl:[input readString]];
+        break;
+      }
+      case 32: {
+        [self setPraiseTime:[input readInt64]];
         break;
       }
     }

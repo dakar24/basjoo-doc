@@ -2552,6 +2552,23 @@ public final class Product {
      * </pre>
      */
     double getPledgePrice();
+
+    /**
+     * <code>optional bool favorited = 11;</code>
+     *
+     * <pre>
+     *用户是否已收藏
+     * </pre>
+     */
+    boolean hasFavorited();
+    /**
+     * <code>optional bool favorited = 11;</code>
+     *
+     * <pre>
+     *用户是否已收藏
+     * </pre>
+     */
+    boolean getFavorited();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductLiteInfo}
@@ -2662,6 +2679,11 @@ public final class Product {
             case 81: {
               bitField0_ |= 0x00000200;
               pledgePrice_ = input.readDouble();
+              break;
+            }
+            case 88: {
+              bitField0_ |= 0x00000400;
+              favorited_ = input.readBool();
               break;
             }
           }
@@ -3089,6 +3111,29 @@ public final class Product {
       return pledgePrice_;
     }
 
+    public static final int FAVORITED_FIELD_NUMBER = 11;
+    private boolean favorited_;
+    /**
+     * <code>optional bool favorited = 11;</code>
+     *
+     * <pre>
+     *用户是否已收藏
+     * </pre>
+     */
+    public boolean hasFavorited() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    /**
+     * <code>optional bool favorited = 11;</code>
+     *
+     * <pre>
+     *用户是否已收藏
+     * </pre>
+     */
+    public boolean getFavorited() {
+      return favorited_;
+    }
+
     private void initFields() {
       productId_ = "";
       productType_ = "";
@@ -3100,6 +3145,7 @@ public final class Product {
       rentCount_ = 0L;
       marketPrice_ = 0D;
       pledgePrice_ = 0D;
+      favorited_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3164,6 +3210,9 @@ public final class Product {
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeDouble(10, pledgePrice_);
       }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeBool(11, favorited_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3212,6 +3261,10 @@ public final class Product {
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(10, pledgePrice_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, favorited_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3354,6 +3407,8 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000100);
         pledgePrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000200);
+        favorited_ = false;
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
@@ -3422,6 +3477,10 @@ public final class Product {
           to_bitField0_ |= 0x00000200;
         }
         result.pledgePrice_ = pledgePrice_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.favorited_ = favorited_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3477,6 +3536,9 @@ public final class Product {
         }
         if (other.hasPledgePrice()) {
           setPledgePrice(other.getPledgePrice());
+        }
+        if (other.hasFavorited()) {
+          setFavorited(other.getFavorited());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -4261,6 +4323,54 @@ public final class Product {
       public Builder clearPledgePrice() {
         bitField0_ = (bitField0_ & ~0x00000200);
         pledgePrice_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private boolean favorited_ ;
+      /**
+       * <code>optional bool favorited = 11;</code>
+       *
+       * <pre>
+       *用户是否已收藏
+       * </pre>
+       */
+      public boolean hasFavorited() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional bool favorited = 11;</code>
+       *
+       * <pre>
+       *用户是否已收藏
+       * </pre>
+       */
+      public boolean getFavorited() {
+        return favorited_;
+      }
+      /**
+       * <code>optional bool favorited = 11;</code>
+       *
+       * <pre>
+       *用户是否已收藏
+       * </pre>
+       */
+      public Builder setFavorited(boolean value) {
+        bitField0_ |= 0x00000400;
+        favorited_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool favorited = 11;</code>
+       *
+       * <pre>
+       *用户是否已收藏
+       * </pre>
+       */
+      public Builder clearFavorited() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        favorited_ = false;
         onChanged();
         return this;
       }
@@ -6319,6 +6429,23 @@ public final class Product {
      */
     com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfoOrBuilder getProductEvaluateInfoOrBuilder(
         int index);
+
+    /**
+     * <code>optional bool favorited = 22;</code>
+     *
+     * <pre>
+     *用户是否已收藏
+     * </pre>
+     */
+    boolean hasFavorited();
+    /**
+     * <code>optional bool favorited = 22;</code>
+     *
+     * <pre>
+     *用户是否已收藏
+     * </pre>
+     */
+    boolean getFavorited();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductDetailInfo}
@@ -6508,6 +6635,11 @@ public final class Product {
                 mutable_bitField0_ |= 0x00100000;
               }
               productEvaluateInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.ProductEvaluateInfo.PARSER, extensionRegistry));
+              break;
+            }
+            case 176: {
+              bitField0_ |= 0x00004000;
+              favorited_ = input.readBool();
               break;
             }
           }
@@ -7444,6 +7576,29 @@ public final class Product {
       return productEvaluateInfo_.get(index);
     }
 
+    public static final int FAVORITED_FIELD_NUMBER = 22;
+    private boolean favorited_;
+    /**
+     * <code>optional bool favorited = 22;</code>
+     *
+     * <pre>
+     *用户是否已收藏
+     * </pre>
+     */
+    public boolean hasFavorited() {
+      return ((bitField0_ & 0x00004000) == 0x00004000);
+    }
+    /**
+     * <code>optional bool favorited = 22;</code>
+     *
+     * <pre>
+     *用户是否已收藏
+     * </pre>
+     */
+    public boolean getFavorited() {
+      return favorited_;
+    }
+
     private void initFields() {
       productId_ = "";
       productType_ = "";
@@ -7466,6 +7621,7 @@ public final class Product {
       imageParamUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       evaluateCount_ = 0L;
       productEvaluateInfo_ = java.util.Collections.emptyList();
+      favorited_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7589,6 +7745,9 @@ public final class Product {
       for (int i = 0; i < productEvaluateInfo_.size(); i++) {
         output.writeMessage(21, productEvaluateInfo_.get(i));
       }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        output.writeBool(22, favorited_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7691,6 +7850,10 @@ public final class Product {
       for (int i = 0; i < productEvaluateInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(21, productEvaluateInfo_.get(i));
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(22, favorited_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7880,6 +8043,8 @@ public final class Product {
         } else {
           productEvaluateInfoBuilder_.clear();
         }
+        favorited_ = false;
+        bitField0_ = (bitField0_ & ~0x00200000);
         return this;
       }
 
@@ -8019,6 +8184,10 @@ public final class Product {
         } else {
           result.productEvaluateInfo_ = productEvaluateInfoBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.favorited_ = favorited_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -8238,6 +8407,9 @@ public final class Product {
               productEvaluateInfoBuilder_.addAllMessages(other.productEvaluateInfo_);
             }
           }
+        }
+        if (other.hasFavorited()) {
+          setFavorited(other.getFavorited());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -11112,6 +11284,54 @@ public final class Product {
           productEvaluateInfo_ = null;
         }
         return productEvaluateInfoBuilder_;
+      }
+
+      private boolean favorited_ ;
+      /**
+       * <code>optional bool favorited = 22;</code>
+       *
+       * <pre>
+       *用户是否已收藏
+       * </pre>
+       */
+      public boolean hasFavorited() {
+        return ((bitField0_ & 0x00200000) == 0x00200000);
+      }
+      /**
+       * <code>optional bool favorited = 22;</code>
+       *
+       * <pre>
+       *用户是否已收藏
+       * </pre>
+       */
+      public boolean getFavorited() {
+        return favorited_;
+      }
+      /**
+       * <code>optional bool favorited = 22;</code>
+       *
+       * <pre>
+       *用户是否已收藏
+       * </pre>
+       */
+      public Builder setFavorited(boolean value) {
+        bitField0_ |= 0x00200000;
+        favorited_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool favorited = 22;</code>
+       *
+       * <pre>
+       *用户是否已收藏
+       * </pre>
+       */
+      public Builder clearFavorited() {
+        bitField0_ = (bitField0_ & ~0x00200000);
+        favorited_ = false;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ProductDetailInfo)
@@ -21610,63 +21830,64 @@ public final class Product {
       "tListResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
       "tMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030" +
       "\004 \002(\010\022G\n\017productLiteInfo\030\005 \003(\0132..com.qjo" +
-      "y.basjoo.core.model.pb.ProductLiteInfo\"\313" +
+      "y.basjoo.core.model.pb.ProductLiteInfo\"\336" +
       "\001\n\017ProductLiteInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n" +
       "\013productType\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\024\n\014mai",
       "nImageUrl\030\004 \002(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowestR" +
       "ent\030\006 \001(\001\022\014\n\004unit\030\007 \001(\005\022\021\n\trentCount\030\010 \001" +
       "(\003\022\023\n\013marketPrice\030\t \001(\001\022\023\n\013pledgePrice\030\n" +
-      " \001(\001\")\n\024ProductDetailRequest\022\021\n\tproductI" +
-      "d\030\001 \002(\t\"\211\001\n\023ProductDetailResult\022\022\n\nresul" +
-      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022K\n\021produc" +
-      "tDetailInfo\030\003 \001(\01320.com.qjoy.basjoo.core" +
-      ".model.pb.ProductDetailInfo\"\261\005\n\021ProductD" +
-      "etailInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productT" +
-      "ype\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\020\n\010imageUrl\030\004 \003",
-      "(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nageBracket\030\006 \001(\t\022\022\n\n" +
-      "lowestRent\030\007 \001(\001\022\014\n\004unit\030\010 \001(\005\022\021\n\trentCo" +
-      "unt\030\t \001(\003\022\024\n\014maxAvailable\030\n \001(\003\022\023\n\013marke" +
-      "tPrice\030\013 \001(\001\022\023\n\013pledgePrice\030\014 \001(\001\022\033\n\023tra" +
-      "nsportationPrice\030\r \001(\001\022\020\n\010location\030\016 \001(\t" +
-      "\022A\n\014categoryInfo\030\017 \003(\0132+.com.qjoy.basjoo" +
-      ".core.model.pb.CategoryInfo\022C\n\rshortRent" +
-      "Info\030\020 \003(\0132,.com.qjoy.basjoo.core.model." +
-      "pb.ShortRentInfo\022A\n\014longRentInfo\030\021 \003(\0132+" +
-      ".com.qjoy.basjoo.core.model.pb.LongRentI",
-      "nfo\022B\n\tbaseParam\030\022 \003(\0132/.com.qjoy.basjoo" +
-      ".core.model.pb.ProductBaseParam\022\026\n\016image" +
-      "ParamUrls\030\023 \003(\t\022\025\n\revaluateCount\030\024 \001(\003\022O" +
-      "\n\023productEvaluateInfo\030\025 \003(\01322.com.qjoy.b" +
-      "asjoo.core.model.pb.ProductEvaluateInfo\"" +
-      "f\n\014CategoryInfo\022\024\n\014categoryCode\030\001 \002(\t\022\024\n" +
-      "\014categoryName\030\002 \002(\t\022\022\n\nstockCount\030\003 \001(\003\022" +
-      "\026\n\016categoryImgUrl\030\004 \001(\t\"b\n\rShortRentInfo" +
-      "\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\027" +
-      "\n\017rentPricePerDay\030\003 \002(\001\022\022\n\ntotalPrice\030\004 ",
-      "\002(\001\"\224\001\n\014LongRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022" +
-      "\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002" +
-      "(\t\022\027\n\017rentPricePerDay\030\004 \002(\001\022\031\n\021rentPrice" +
-      "PerMonth\030\005 \002(\001\022\022\n\ntotalPrice\030\006 \002(\001\"D\n\020Pr" +
-      "oductBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030" +
-      "\002 \002(\t\022\021\n\tshowValue\030\003 \002(\t\"\233\002\n\023ProductEval" +
-      "uateInfo\022\014\n\004time\030\001 \002(\003\022\016\n\006userId\030\002 \002(\t\022\020" +
-      "\n\010userName\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \002(\t\022\021\n" +
-      "\tuserLevel\030\005 \002(\005\022\030\n\020rentCategoryName\030\006 \002" +
-      "(\t\022\017\n\007content\030\007 \002(\t\022\021\n\timageUrls\030\010 \003(\t\022\r",
-      "\n\005level\030\t \002(\005\022\022\n\nevaluateId\030\n \002(\t\022K\n\021eva" +
-      "luateReplyInfo\030\013 \003(\01320.com.qjoy.basjoo.c" +
-      "ore.model.pb.EvaluateReplyInfo\"X\n\021Evalua" +
-      "teReplyInfo\022\017\n\007replyId\030\001 \002(\t\022\017\n\007content\030" +
-      "\002 \002(\t\022\014\n\004time\030\003 \002(\003\022\023\n\013fromMechant\030\004 \002(\010" +
-      "\"\\\n\035GetProductEvaluateListRequest\022\021\n\tpro" +
-      "ductId\030\001 \002(\t\022\024\n\014evaluateType\030\002 \002(\005\022\022\n\nst" +
-      "artIndex\030\003 \001(\005\"\346\001\n\034GetProductEvaluateLis" +
-      "tResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg" +
-      "\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(",
-      "\010\022\022\n\ntotalCount\030\005 \002(\003\022\027\n\017totalImageCount" +
-      "\030\006 \002(\003\022O\n\023productEvaluateInfo\030\007 \003(\01322.co" +
-      "m.qjoy.basjoo.core.model.pb.ProductEvalu" +
-      "ateInfoB\037\n\035com.qjoy.basjoo.core.model.pb"
+      " \001(\001\022\021\n\tfavorited\030\013 \001(\010\")\n\024ProductDetail" +
+      "Request\022\021\n\tproductId\030\001 \002(\t\"\211\001\n\023ProductDe" +
+      "tailResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresult" +
+      "Msg\030\002 \002(\t\022K\n\021productDetailInfo\030\003 \001(\01320.c" +
+      "om.qjoy.basjoo.core.model.pb.ProductDeta" +
+      "ilInfo\"\304\005\n\021ProductDetailInfo\022\021\n\tproductI" +
+      "d\030\001 \002(\t\022\023\n\013productType\030\002 \002(\t\022\r\n\005brand\030\003 ",
+      "\002(\t\022\020\n\010imageUrl\030\004 \003(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\na" +
+      "geBracket\030\006 \001(\t\022\022\n\nlowestRent\030\007 \001(\001\022\014\n\004u" +
+      "nit\030\010 \001(\005\022\021\n\trentCount\030\t \001(\003\022\024\n\014maxAvail" +
+      "able\030\n \001(\003\022\023\n\013marketPrice\030\013 \001(\001\022\023\n\013pledg" +
+      "ePrice\030\014 \001(\001\022\033\n\023transportationPrice\030\r \001(" +
+      "\001\022\020\n\010location\030\016 \001(\t\022A\n\014categoryInfo\030\017 \003(" +
+      "\0132+.com.qjoy.basjoo.core.model.pb.Catego" +
+      "ryInfo\022C\n\rshortRentInfo\030\020 \003(\0132,.com.qjoy" +
+      ".basjoo.core.model.pb.ShortRentInfo\022A\n\014l" +
+      "ongRentInfo\030\021 \003(\0132+.com.qjoy.basjoo.core",
+      ".model.pb.LongRentInfo\022B\n\tbaseParam\030\022 \003(" +
+      "\0132/.com.qjoy.basjoo.core.model.pb.Produc" +
+      "tBaseParam\022\026\n\016imageParamUrls\030\023 \003(\t\022\025\n\rev" +
+      "aluateCount\030\024 \001(\003\022O\n\023productEvaluateInfo" +
+      "\030\025 \003(\01322.com.qjoy.basjoo.core.model.pb.P" +
+      "roductEvaluateInfo\022\021\n\tfavorited\030\026 \001(\010\"f\n" +
+      "\014CategoryInfo\022\024\n\014categoryCode\030\001 \002(\t\022\024\n\014c" +
+      "ategoryName\030\002 \002(\t\022\022\n\nstockCount\030\003 \001(\003\022\026\n" +
+      "\016categoryImgUrl\030\004 \001(\t\"b\n\rShortRentInfo\022\020" +
+      "\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\027\n\017",
+      "rentPricePerDay\030\003 \002(\001\022\022\n\ntotalPrice\030\004 \002(" +
+      "\001\"\224\001\n\014LongRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\n" +
+      "rentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002(\t" +
+      "\022\027\n\017rentPricePerDay\030\004 \002(\001\022\031\n\021rentPricePe" +
+      "rMonth\030\005 \002(\001\022\022\n\ntotalPrice\030\006 \002(\001\"D\n\020Prod" +
+      "uctBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030\002 " +
+      "\002(\t\022\021\n\tshowValue\030\003 \002(\t\"\233\002\n\023ProductEvalua" +
+      "teInfo\022\014\n\004time\030\001 \002(\003\022\016\n\006userId\030\002 \002(\t\022\020\n\010" +
+      "userName\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \002(\t\022\021\n\tu" +
+      "serLevel\030\005 \002(\005\022\030\n\020rentCategoryName\030\006 \002(\t",
+      "\022\017\n\007content\030\007 \002(\t\022\021\n\timageUrls\030\010 \003(\t\022\r\n\005" +
+      "level\030\t \002(\005\022\022\n\nevaluateId\030\n \002(\t\022K\n\021evalu" +
+      "ateReplyInfo\030\013 \003(\01320.com.qjoy.basjoo.cor" +
+      "e.model.pb.EvaluateReplyInfo\"X\n\021Evaluate" +
+      "ReplyInfo\022\017\n\007replyId\030\001 \002(\t\022\017\n\007content\030\002 " +
+      "\002(\t\022\014\n\004time\030\003 \002(\003\022\023\n\013fromMechant\030\004 \002(\010\"\\" +
+      "\n\035GetProductEvaluateListRequest\022\021\n\tprodu" +
+      "ctId\030\001 \002(\t\022\024\n\014evaluateType\030\002 \002(\005\022\022\n\nstar" +
+      "tIndex\030\003 \001(\005\"\346\001\n\034GetProductEvaluateListR" +
+      "esult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002",
+      " \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022" +
+      "\022\n\ntotalCount\030\005 \002(\003\022\027\n\017totalImageCount\030\006" +
+      " \002(\003\022O\n\023productEvaluateInfo\030\007 \003(\01322.com." +
+      "qjoy.basjoo.core.model.pb.ProductEvaluat" +
+      "eInfoB\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21697,7 +21918,7 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductLiteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductLiteInfo_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "Brand", "MainImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MarketPrice", "PledgePrice", });
+        new java.lang.String[] { "ProductId", "ProductType", "Brand", "MainImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MarketPrice", "PledgePrice", "Favorited", });
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailRequest_fieldAccessorTable = new
@@ -21715,7 +21936,7 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "AgeBracket", "LowestRent", "Unit", "RentCount", "MaxAvailable", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "CategoryInfo", "ShortRentInfo", "LongRentInfo", "BaseParam", "ImageParamUrls", "EvaluateCount", "ProductEvaluateInfo", });
+        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "AgeBracket", "LowestRent", "Unit", "RentCount", "MaxAvailable", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "CategoryInfo", "ShortRentInfo", "LongRentInfo", "BaseParam", "ImageParamUrls", "EvaluateCount", "ProductEvaluateInfo", "Favorited", });
     internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_fieldAccessorTable = new

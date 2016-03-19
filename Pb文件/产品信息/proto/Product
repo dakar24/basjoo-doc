@@ -69,6 +69,9 @@ message ProductLiteInfo {
    
    //押金
    optional double                 pledgePrice = 10; 
+   
+   //用户是否已收藏
+   optional bool                  favorited = 11; 
     
 }
 
@@ -158,6 +161,9 @@ message ProductDetailInfo {
    
    //前N个评价信息
    repeated ProductEvaluateInfo    productEvaluateInfo=21;
+   
+   //用户是否已收藏
+   optional bool                  favorited = 22; 
    
 
     

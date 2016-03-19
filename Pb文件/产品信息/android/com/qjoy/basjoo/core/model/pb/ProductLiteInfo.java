@@ -5,6 +5,7 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.DOUBLE;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.INT64;
@@ -26,6 +27,7 @@ public final class ProductLiteInfo extends Message {
   public static final int TAG_RENTCOUNT = 8;
   public static final int TAG_MARKETPRICE = 9;
   public static final int TAG_PLEDGEPRICE = 10;
+  public static final int TAG_FAVORITED = 11;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -37,6 +39,7 @@ public final class ProductLiteInfo extends Message {
   public static final Long DEFAULT_RENTCOUNT = 0L;
   public static final Double DEFAULT_MARKETPRICE = 0D;
   public static final Double DEFAULT_PLEDGEPRICE = 0D;
+  public static final Boolean DEFAULT_FAVORITED = false;
 
   /**
    * 产品Id
@@ -98,6 +101,12 @@ public final class ProductLiteInfo extends Message {
   @ProtoField(tag = 10, type = DOUBLE)
   public Double pledgePrice;
 
+  /**
+   * 用户是否已收藏
+   */
+  @ProtoField(tag = 11, type = BOOL)
+  public Boolean favorited;
+
   public ProductLiteInfo(ProductLiteInfo message) {
     super(message);
     if (message == null) return;
@@ -111,6 +120,7 @@ public final class ProductLiteInfo extends Message {
     this.rentCount = message.rentCount;
     this.marketPrice = message.marketPrice;
     this.pledgePrice = message.pledgePrice;
+    this.favorited = message.favorited;
   }
 
   public ProductLiteInfo() {
@@ -148,6 +158,9 @@ public final class ProductLiteInfo extends Message {
         case TAG_PLEDGEPRICE:
         this.pledgePrice = (Double)value;
         break;
+        case TAG_FAVORITED:
+        this.favorited = (Boolean)value;
+        break;
         default: break;
         };
     return this;
@@ -167,7 +180,8 @@ public final class ProductLiteInfo extends Message {
         && equals(unit, o.unit)
         && equals(rentCount, o.rentCount)
         && equals(marketPrice, o.marketPrice)
-        && equals(pledgePrice, o.pledgePrice);
+        && equals(pledgePrice, o.pledgePrice)
+        && equals(favorited, o.favorited);
   }
 
   @Override
@@ -184,6 +198,7 @@ public final class ProductLiteInfo extends Message {
       result = result * 37 + (rentCount != null ? rentCount.hashCode() : 0);
       result = result * 37 + (marketPrice != null ? marketPrice.hashCode() : 0);
       result = result * 37 + (pledgePrice != null ? pledgePrice.hashCode() : 0);
+      result = result * 37 + (favorited != null ? favorited.hashCode() : 0);
       hashCode = result;
     }
     return result;

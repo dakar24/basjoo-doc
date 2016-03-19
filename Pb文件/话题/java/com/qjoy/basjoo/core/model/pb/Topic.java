@@ -773,52 +773,35 @@ public final class Topic {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
 
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -827,7 +810,7 @@ public final class Topic {
     java.util.List<com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo> 
         getTopicLiteInfoList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -835,7 +818,7 @@ public final class Topic {
      */
     com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo getTopicLiteInfo(int index);
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -843,7 +826,7 @@ public final class Topic {
      */
     int getTopicLiteInfoCount();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -852,7 +835,7 @@ public final class Topic {
     java.util.List<? extends com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfoOrBuilder> 
         getTopicLiteInfoOrBuilderList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -862,7 +845,7 @@ public final class Topic {
         int index);
 
     /**
-     * <code>optional int32 maxIndex = 5;</code>
+     * <code>optional int32 maxIndex = 4;</code>
      *
      * <pre>
      *当前最大index
@@ -870,7 +853,7 @@ public final class Topic {
      */
     boolean hasMaxIndex();
     /**
-     * <code>optional int32 maxIndex = 5;</code>
+     * <code>optional int32 maxIndex = 4;</code>
      *
      * <pre>
      *当前最大index
@@ -879,7 +862,7 @@ public final class Topic {
     int getMaxIndex();
 
     /**
-     * <code>required bool hasMore = 6;</code>
+     * <code>required bool hasMore = 5;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -887,7 +870,7 @@ public final class Topic {
      */
     boolean hasHasMore();
     /**
-     * <code>required bool hasMore = 6;</code>
+     * <code>required bool hasMore = 5;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -951,38 +934,33 @@ public final class Topic {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
               resultMsg_ = bs;
               break;
             }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 topicLiteInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               topicLiteInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo.PARSER, extensionRegistry));
               break;
             }
-            case 40: {
-              bitField0_ |= 0x00000008;
+            case 32: {
+              bitField0_ |= 0x00000004;
               maxIndex_ = input.readInt32();
               break;
             }
-            case 48: {
-              bitField0_ |= 0x00000010;
+            case 40: {
+              bitField0_ |= 0x00000008;
               hasMore_ = input.readBool();
               break;
             }
@@ -994,7 +972,7 @@ public final class Topic {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           topicLiteInfo_ = java.util.Collections.unmodifiableList(topicLiteInfo_);
         }
         this.unknownFields = unknownFields.build();
@@ -1029,39 +1007,16 @@ public final class Topic {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -1078,7 +1033,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -1094,16 +1049,16 @@ public final class Topic {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -1120,7 +1075,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -1136,10 +1091,10 @@ public final class Topic {
       }
     }
 
-    public static final int TOPICLITEINFO_FIELD_NUMBER = 4;
+    public static final int TOPICLITEINFO_FIELD_NUMBER = 3;
     private java.util.List<com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo> topicLiteInfo_;
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -1149,7 +1104,7 @@ public final class Topic {
       return topicLiteInfo_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -1160,7 +1115,7 @@ public final class Topic {
       return topicLiteInfo_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -1170,7 +1125,7 @@ public final class Topic {
       return topicLiteInfo_.size();
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -1180,7 +1135,7 @@ public final class Topic {
       return topicLiteInfo_.get(index);
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
      *
      * <pre>
      *话题简要信息列表
@@ -1191,20 +1146,20 @@ public final class Topic {
       return topicLiteInfo_.get(index);
     }
 
-    public static final int MAXINDEX_FIELD_NUMBER = 5;
+    public static final int MAXINDEX_FIELD_NUMBER = 4;
     private int maxIndex_;
     /**
-     * <code>optional int32 maxIndex = 5;</code>
+     * <code>optional int32 maxIndex = 4;</code>
      *
      * <pre>
      *当前最大index
      * </pre>
      */
     public boolean hasMaxIndex() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional int32 maxIndex = 5;</code>
+     * <code>optional int32 maxIndex = 4;</code>
      *
      * <pre>
      *当前最大index
@@ -1214,20 +1169,20 @@ public final class Topic {
       return maxIndex_;
     }
 
-    public static final int HASMORE_FIELD_NUMBER = 6;
+    public static final int HASMORE_FIELD_NUMBER = 5;
     private boolean hasMore_;
     /**
-     * <code>required bool hasMore = 6;</code>
+     * <code>required bool hasMore = 5;</code>
      *
      * <pre>
      *是否还有更多数据
      * </pre>
      */
     public boolean hasHasMore() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required bool hasMore = 6;</code>
+     * <code>required bool hasMore = 5;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -1238,7 +1193,6 @@ public final class Topic {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
       topicLiteInfo_ = java.util.Collections.emptyList();
@@ -1251,10 +1205,6 @@ public final class Topic {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -1281,22 +1231,19 @@ public final class Topic {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       for (int i = 0; i < topicLiteInfo_.size(); i++) {
-        output.writeMessage(4, topicLiteInfo_.get(i));
+        output.writeMessage(3, topicLiteInfo_.get(i));
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(4, maxIndex_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt32(5, maxIndex_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBool(6, hasMore_);
+        output.writeBool(5, hasMore_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1309,27 +1256,23 @@ public final class Topic {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       for (int i = 0; i < topicLiteInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, topicLiteInfo_.get(i));
+          .computeMessageSize(3, topicLiteInfo_.get(i));
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, maxIndex_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, maxIndex_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, hasMore_);
+          .computeBoolSize(5, hasMore_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1453,22 +1396,20 @@ public final class Topic {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (topicLiteInfoBuilder_ == null) {
           topicLiteInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           topicLiteInfoBuilder_.clear();
         }
         maxIndex_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         hasMore_ = false;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1500,30 +1441,26 @@ public final class Topic {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultCode_ = resultCode_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
         result.resultMsg_ = resultMsg_;
         if (topicLiteInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
             topicLiteInfo_ = java.util.Collections.unmodifiableList(topicLiteInfo_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.topicLiteInfo_ = topicLiteInfo_;
         } else {
           result.topicLiteInfo_ = topicLiteInfoBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000008;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
         }
         result.maxIndex_ = maxIndex_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000010;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
         }
         result.hasMore_ = hasMore_;
         result.bitField0_ = to_bitField0_;
@@ -1542,16 +1479,13 @@ public final class Topic {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Topic.GetTopicListResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Topic.GetTopicListResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -1559,7 +1493,7 @@ public final class Topic {
           if (!other.topicLiteInfo_.isEmpty()) {
             if (topicLiteInfo_.isEmpty()) {
               topicLiteInfo_ = other.topicLiteInfo_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureTopicLiteInfoIsMutable();
               topicLiteInfo_.addAll(other.topicLiteInfo_);
@@ -1572,7 +1506,7 @@ public final class Topic {
               topicLiteInfoBuilder_.dispose();
               topicLiteInfoBuilder_ = null;
               topicLiteInfo_ = other.topicLiteInfo_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
               topicLiteInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getTopicLiteInfoFieldBuilder() : null;
@@ -1592,10 +1526,6 @@ public final class Topic {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -1636,63 +1566,15 @@ public final class Topic {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -1709,7 +1591,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -1725,36 +1607,36 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -1762,13 +1644,13 @@ public final class Topic {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -1785,7 +1667,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -1801,36 +1683,36 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -1839,9 +1721,9 @@ public final class Topic {
       private java.util.List<com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo> topicLiteInfo_ =
         java.util.Collections.emptyList();
       private void ensureTopicLiteInfoIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           topicLiteInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo>(topicLiteInfo_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1849,7 +1731,7 @@ public final class Topic {
           com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo, com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo.Builder, com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfoOrBuilder> topicLiteInfoBuilder_;
 
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -1863,7 +1745,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -1877,7 +1759,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -1891,7 +1773,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -1912,7 +1794,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -1930,7 +1812,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -1950,7 +1832,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -1971,7 +1853,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -1989,7 +1871,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2007,7 +1889,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2026,7 +1908,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2035,7 +1917,7 @@ public final class Topic {
       public Builder clearTopicLiteInfo() {
         if (topicLiteInfoBuilder_ == null) {
           topicLiteInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           topicLiteInfoBuilder_.clear();
@@ -2043,7 +1925,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2060,7 +1942,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2071,7 +1953,7 @@ public final class Topic {
         return getTopicLiteInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2085,7 +1967,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2100,7 +1982,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2111,7 +1993,7 @@ public final class Topic {
             com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2123,7 +2005,7 @@ public final class Topic {
             index, com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 4;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicLiteInfo topicLiteInfo = 3;</code>
        *
        * <pre>
        *话题简要信息列表
@@ -2140,7 +2022,7 @@ public final class Topic {
           topicLiteInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo, com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfo.Builder, com.qjoy.basjoo.core.model.pb.Topic.TopicLiteInfoOrBuilder>(
                   topicLiteInfo_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
           topicLiteInfo_ = null;
@@ -2150,17 +2032,17 @@ public final class Topic {
 
       private int maxIndex_ ;
       /**
-       * <code>optional int32 maxIndex = 5;</code>
+       * <code>optional int32 maxIndex = 4;</code>
        *
        * <pre>
        *当前最大index
        * </pre>
        */
       public boolean hasMaxIndex() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional int32 maxIndex = 5;</code>
+       * <code>optional int32 maxIndex = 4;</code>
        *
        * <pre>
        *当前最大index
@@ -2170,27 +2052,27 @@ public final class Topic {
         return maxIndex_;
       }
       /**
-       * <code>optional int32 maxIndex = 5;</code>
+       * <code>optional int32 maxIndex = 4;</code>
        *
        * <pre>
        *当前最大index
        * </pre>
        */
       public Builder setMaxIndex(int value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         maxIndex_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 maxIndex = 5;</code>
+       * <code>optional int32 maxIndex = 4;</code>
        *
        * <pre>
        *当前最大index
        * </pre>
        */
       public Builder clearMaxIndex() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         maxIndex_ = 0;
         onChanged();
         return this;
@@ -2198,17 +2080,17 @@ public final class Topic {
 
       private boolean hasMore_ ;
       /**
-       * <code>required bool hasMore = 6;</code>
+       * <code>required bool hasMore = 5;</code>
        *
        * <pre>
        *是否还有更多数据
        * </pre>
        */
       public boolean hasHasMore() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required bool hasMore = 6;</code>
+       * <code>required bool hasMore = 5;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -2218,27 +2100,27 @@ public final class Topic {
         return hasMore_;
       }
       /**
-       * <code>required bool hasMore = 6;</code>
+       * <code>required bool hasMore = 5;</code>
        *
        * <pre>
        *是否还有更多数据
        * </pre>
        */
       public Builder setHasMore(boolean value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         hasMore_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required bool hasMore = 6;</code>
+       * <code>required bool hasMore = 5;</code>
        *
        * <pre>
        *是否还有更多数据
        * </pre>
        */
       public Builder clearHasMore() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         hasMore_ = false;
         onChanged();
         return this;
@@ -4678,52 +4560,35 @@ public final class Topic {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
 
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
      *
      * <pre>
      *话题详细
@@ -4731,7 +4596,7 @@ public final class Topic {
      */
     boolean hasTopicDetailInfo();
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
      *
      * <pre>
      *话题详细
@@ -4739,7 +4604,7 @@ public final class Topic {
      */
     com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo getTopicDetailInfo();
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
      *
      * <pre>
      *话题详细
@@ -4803,26 +4668,21 @@ public final class Topic {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
               resultMsg_ = bs;
               break;
             }
-            case 34: {
+            case 26: {
               com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = topicDetailInfo_.toBuilder();
               }
               topicDetailInfo_ = input.readMessage(com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo.PARSER, extensionRegistry);
@@ -4830,7 +4690,7 @@ public final class Topic {
                 subBuilder.mergeFrom(topicDetailInfo_);
                 topicDetailInfo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               break;
             }
           }
@@ -4873,39 +4733,16 @@ public final class Topic {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -4922,7 +4759,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -4938,16 +4775,16 @@ public final class Topic {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -4964,7 +4801,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -4980,20 +4817,20 @@ public final class Topic {
       }
     }
 
-    public static final int TOPICDETAILINFO_FIELD_NUMBER = 4;
+    public static final int TOPICDETAILINFO_FIELD_NUMBER = 3;
     private com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo topicDetailInfo_;
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
      *
      * <pre>
      *话题详细
      * </pre>
      */
     public boolean hasTopicDetailInfo() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
      *
      * <pre>
      *话题详细
@@ -5003,7 +4840,7 @@ public final class Topic {
       return topicDetailInfo_;
     }
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
      *
      * <pre>
      *话题详细
@@ -5014,7 +4851,6 @@ public final class Topic {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
       topicDetailInfo_ = com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo.getDefaultInstance();
@@ -5025,10 +4861,6 @@ public final class Topic {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -5051,16 +4883,13 @@ public final class Topic {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(4, topicDetailInfo_);
+        output.writeMessage(3, topicDetailInfo_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -5073,19 +4902,15 @@ public final class Topic {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, topicDetailInfo_);
+          .computeMessageSize(3, topicDetailInfo_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5209,18 +5034,16 @@ public final class Topic {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (topicDetailInfoBuilder_ == null) {
           topicDetailInfo_ = com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo.getDefaultInstance();
         } else {
           topicDetailInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -5252,17 +5075,13 @@ public final class Topic {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultCode_ = resultCode_;
+        result.resultMsg_ = resultMsg_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
-        }
-        result.resultMsg_ = resultMsg_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
         }
         if (topicDetailInfoBuilder_ == null) {
           result.topicDetailInfo_ = topicDetailInfo_;
@@ -5285,16 +5104,13 @@ public final class Topic {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Topic.GetTopicDetailResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Topic.GetTopicDetailResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -5306,10 +5122,6 @@ public final class Topic {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -5346,63 +5158,15 @@ public final class Topic {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -5419,7 +5183,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -5435,36 +5199,36 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -5472,13 +5236,13 @@ public final class Topic {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -5495,7 +5259,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -5511,36 +5275,36 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -5550,17 +5314,17 @@ public final class Topic {
       private com.google.protobuf.SingleFieldBuilder<
           com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo, com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo.Builder, com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfoOrBuilder> topicDetailInfoBuilder_;
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
        *
        * <pre>
        *话题详细
        * </pre>
        */
       public boolean hasTopicDetailInfo() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
        *
        * <pre>
        *话题详细
@@ -5574,7 +5338,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
        *
        * <pre>
        *话题详细
@@ -5590,11 +5354,11 @@ public final class Topic {
         } else {
           topicDetailInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
        *
        * <pre>
        *话题详细
@@ -5608,11 +5372,11 @@ public final class Topic {
         } else {
           topicDetailInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
        *
        * <pre>
        *话题详细
@@ -5620,7 +5384,7 @@ public final class Topic {
        */
       public Builder mergeTopicDetailInfo(com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo value) {
         if (topicDetailInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
               topicDetailInfo_ != com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo.getDefaultInstance()) {
             topicDetailInfo_ =
               com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo.newBuilder(topicDetailInfo_).mergeFrom(value).buildPartial();
@@ -5631,11 +5395,11 @@ public final class Topic {
         } else {
           topicDetailInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
        *
        * <pre>
        *话题详细
@@ -5648,23 +5412,23 @@ public final class Topic {
         } else {
           topicDetailInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
        *
        * <pre>
        *话题详细
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Topic.TopicDetailInfo.Builder getTopicDetailInfoBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTopicDetailInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
        *
        * <pre>
        *话题详细
@@ -5678,7 +5442,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 4;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.TopicDetailInfo topicDetailInfo = 3;</code>
        *
        * <pre>
        *话题详细
@@ -11205,46 +10969,29 @@ public final class Topic {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
@@ -11305,20 +11052,15 @@ public final class Topic {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
               resultMsg_ = bs;
               break;
             }
@@ -11362,39 +11104,16 @@ public final class Topic {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -11411,7 +11130,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -11427,16 +11146,16 @@ public final class Topic {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -11453,7 +11172,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -11470,7 +11189,6 @@ public final class Topic {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
     }
@@ -11480,10 +11198,6 @@ public final class Topic {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -11500,13 +11214,10 @@ public final class Topic {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -11519,15 +11230,11 @@ public final class Topic {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -11650,12 +11357,10 @@ public final class Topic {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -11687,13 +11392,9 @@ public final class Topic {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
-        }
-        result.resultCode_ = resultCode_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
         }
         result.resultMsg_ = resultMsg_;
         result.bitField0_ = to_bitField0_;
@@ -11712,16 +11413,13 @@ public final class Topic {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Topic.AddTopicPraiseResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Topic.AddTopicPraiseResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -11730,10 +11428,6 @@ public final class Topic {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -11764,63 +11458,15 @@ public final class Topic {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -11837,7 +11483,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -11853,36 +11499,36 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -11890,13 +11536,13 @@ public final class Topic {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -11913,7 +11559,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -11929,36 +11575,36 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -12520,46 +12166,29 @@ public final class Topic {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
@@ -12620,20 +12249,15 @@ public final class Topic {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
               resultMsg_ = bs;
               break;
             }
@@ -12677,39 +12301,16 @@ public final class Topic {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -12726,7 +12327,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -12742,16 +12343,16 @@ public final class Topic {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -12768,7 +12369,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -12785,7 +12386,6 @@ public final class Topic {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
     }
@@ -12795,10 +12395,6 @@ public final class Topic {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -12815,13 +12411,10 @@ public final class Topic {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -12834,15 +12427,11 @@ public final class Topic {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -12965,12 +12554,10 @@ public final class Topic {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -13002,13 +12589,9 @@ public final class Topic {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
-        }
-        result.resultCode_ = resultCode_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
         }
         result.resultMsg_ = resultMsg_;
         result.bitField0_ = to_bitField0_;
@@ -13027,16 +12610,13 @@ public final class Topic {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Topic.CancelTopicPraiseResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Topic.CancelTopicPraiseResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -13045,10 +12625,6 @@ public final class Topic {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -13079,63 +12655,15 @@ public final class Topic {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -13152,7 +12680,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -13168,36 +12696,36 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -13205,13 +12733,13 @@ public final class Topic {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -13228,7 +12756,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -13244,36 +12772,36 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -14261,24 +13789,7 @@ public final class Topic {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *结果
@@ -14286,7 +13797,7 @@ public final class Topic {
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *结果
@@ -14294,7 +13805,7 @@ public final class Topic {
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *结果
@@ -14304,7 +13815,7 @@ public final class Topic {
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      *
      * <pre>
      *结果码
@@ -14312,7 +13823,7 @@ public final class Topic {
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      *
      * <pre>
      *结果码
@@ -14320,7 +13831,7 @@ public final class Topic {
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      *
      * <pre>
      *结果码
@@ -14385,20 +13896,15 @@ public final class Topic {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
               resultMsg_ = bs;
               break;
             }
@@ -14442,43 +13948,20 @@ public final class Topic {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean hasSuccess() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
     private java.lang.Object resultCode_;
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *结果
      * </pre>
      */
     public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *结果
@@ -14499,7 +13982,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *结果
@@ -14519,20 +14002,20 @@ public final class Topic {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      *
      * <pre>
      *结果码
      * </pre>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      *
      * <pre>
      *结果码
@@ -14553,7 +14036,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      *
      * <pre>
      *结果码
@@ -14574,7 +14057,6 @@ public final class Topic {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
     }
@@ -14584,10 +14066,6 @@ public final class Topic {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -14604,13 +14082,10 @@ public final class Topic {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -14623,15 +14098,11 @@ public final class Topic {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -14754,12 +14225,10 @@ public final class Topic {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -14791,13 +14260,9 @@ public final class Topic {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
-        }
-        result.resultCode_ = resultCode_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
         }
         result.resultMsg_ = resultMsg_;
         result.bitField0_ = to_bitField0_;
@@ -14816,16 +14281,13 @@ public final class Topic {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Topic.AddTopicReplyResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Topic.AddTopicReplyResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -14834,10 +14296,6 @@ public final class Topic {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -14868,67 +14326,19 @@ public final class Topic {
       }
       private int bitField0_;
 
-      private boolean success_ ;
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean hasSuccess() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object resultCode_ = "";
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *结果
        * </pre>
        */
       public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *结果
@@ -14949,7 +14359,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *结果
@@ -14969,7 +14379,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *结果
@@ -14980,26 +14390,26 @@ public final class Topic {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *结果
        * </pre>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *结果
@@ -15010,7 +14420,7 @@ public final class Topic {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -15018,17 +14428,17 @@ public final class Topic {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        *
        * <pre>
        *结果码
        * </pre>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        *
        * <pre>
        *结果码
@@ -15049,7 +14459,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        *
        * <pre>
        *结果码
@@ -15069,7 +14479,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        *
        * <pre>
        *结果码
@@ -15080,26 +14490,26 @@ public final class Topic {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        *
        * <pre>
        *结果码
        * </pre>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        *
        * <pre>
        *结果码
@@ -15110,7 +14520,7 @@ public final class Topic {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -15125,6 +14535,2925 @@ public final class Topic {
     }
 
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.AddTopicReplyResult)
+  }
+
+  public interface GetTopicPraiseUsersRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string topicId = 1;</code>
+     *
+     * <pre>
+     *话题ID;
+     * </pre>
+     */
+    boolean hasTopicId();
+    /**
+     * <code>required string topicId = 1;</code>
+     *
+     * <pre>
+     *话题ID;
+     * </pre>
+     */
+    java.lang.String getTopicId();
+    /**
+     * <code>required string topicId = 1;</code>
+     *
+     * <pre>
+     *话题ID;
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getTopicIdBytes();
+
+    /**
+     * <code>optional int32 startIndex = 2;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    boolean hasStartIndex();
+    /**
+     * <code>optional int32 startIndex = 2;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    int getStartIndex();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersRequest}
+   *
+   * <pre>
+   *获取话题称赞者列表
+   * </pre>
+   */
+  public static final class GetTopicPraiseUsersRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersRequest)
+      GetTopicPraiseUsersRequestOrBuilder {
+    // Use GetTopicPraiseUsersRequest.newBuilder() to construct.
+    private GetTopicPraiseUsersRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private GetTopicPraiseUsersRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final GetTopicPraiseUsersRequest defaultInstance;
+    public static GetTopicPraiseUsersRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public GetTopicPraiseUsersRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetTopicPraiseUsersRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              topicId_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              startIndex_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest.class, com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<GetTopicPraiseUsersRequest> PARSER =
+        new com.google.protobuf.AbstractParser<GetTopicPraiseUsersRequest>() {
+      public GetTopicPraiseUsersRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetTopicPraiseUsersRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetTopicPraiseUsersRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int TOPICID_FIELD_NUMBER = 1;
+    private java.lang.Object topicId_;
+    /**
+     * <code>required string topicId = 1;</code>
+     *
+     * <pre>
+     *话题ID;
+     * </pre>
+     */
+    public boolean hasTopicId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string topicId = 1;</code>
+     *
+     * <pre>
+     *话题ID;
+     * </pre>
+     */
+    public java.lang.String getTopicId() {
+      java.lang.Object ref = topicId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          topicId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string topicId = 1;</code>
+     *
+     * <pre>
+     *话题ID;
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getTopicIdBytes() {
+      java.lang.Object ref = topicId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        topicId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STARTINDEX_FIELD_NUMBER = 2;
+    private int startIndex_;
+    /**
+     * <code>optional int32 startIndex = 2;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    public boolean hasStartIndex() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 startIndex = 2;</code>
+     *
+     * <pre>
+     *起始index
+     * </pre>
+     */
+    public int getStartIndex() {
+      return startIndex_;
+    }
+
+    private void initFields() {
+      topicId_ = "";
+      startIndex_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasTopicId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getTopicIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, startIndex_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getTopicIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, startIndex_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersRequest}
+     *
+     * <pre>
+     *获取话题称赞者列表
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersRequest)
+        com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest.class, com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        topicId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        startIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest build() {
+        com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest result = new com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.topicId_ = topicId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.startIndex_ = startIndex_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest.getDefaultInstance()) return this;
+        if (other.hasTopicId()) {
+          bitField0_ |= 0x00000001;
+          topicId_ = other.topicId_;
+          onChanged();
+        }
+        if (other.hasStartIndex()) {
+          setStartIndex(other.getStartIndex());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasTopicId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object topicId_ = "";
+      /**
+       * <code>required string topicId = 1;</code>
+       *
+       * <pre>
+       *话题ID;
+       * </pre>
+       */
+      public boolean hasTopicId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string topicId = 1;</code>
+       *
+       * <pre>
+       *话题ID;
+       * </pre>
+       */
+      public java.lang.String getTopicId() {
+        java.lang.Object ref = topicId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            topicId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string topicId = 1;</code>
+       *
+       * <pre>
+       *话题ID;
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getTopicIdBytes() {
+        java.lang.Object ref = topicId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          topicId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string topicId = 1;</code>
+       *
+       * <pre>
+       *话题ID;
+       * </pre>
+       */
+      public Builder setTopicId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        topicId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string topicId = 1;</code>
+       *
+       * <pre>
+       *话题ID;
+       * </pre>
+       */
+      public Builder clearTopicId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        topicId_ = getDefaultInstance().getTopicId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string topicId = 1;</code>
+       *
+       * <pre>
+       *话题ID;
+       * </pre>
+       */
+      public Builder setTopicIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        topicId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int startIndex_ ;
+      /**
+       * <code>optional int32 startIndex = 2;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public boolean hasStartIndex() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 startIndex = 2;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public int getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       * <code>optional int32 startIndex = 2;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public Builder setStartIndex(int value) {
+        bitField0_ |= 0x00000002;
+        startIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 startIndex = 2;</code>
+       *
+       * <pre>
+       *起始index
+       * </pre>
+       */
+      public Builder clearStartIndex() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersRequest)
+    }
+
+    static {
+      defaultInstance = new GetTopicPraiseUsersRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersRequest)
+  }
+
+  public interface GetTopicPraiseUsersResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    boolean hasMaxIndex();
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    int getMaxIndex();
+
+    /**
+     * <code>required bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    boolean hasHasMore();
+    /**
+     * <code>required bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    boolean getHasMore();
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser> 
+        getPraiseUsersList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser getPraiseUsers(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    int getPraiseUsersCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder> 
+        getPraiseUsersOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder getPraiseUsersOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersResult}
+   *
+   * <pre>
+   *获取话题称赞者列表
+   * </pre>
+   */
+  public static final class GetTopicPraiseUsersResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersResult)
+      GetTopicPraiseUsersResultOrBuilder {
+    // Use GetTopicPraiseUsersResult.newBuilder() to construct.
+    private GetTopicPraiseUsersResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private GetTopicPraiseUsersResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final GetTopicPraiseUsersResult defaultInstance;
+    public static GetTopicPraiseUsersResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public GetTopicPraiseUsersResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetTopicPraiseUsersResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              maxIndex_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              hasMore_ = input.readBool();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                praiseUsers_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              praiseUsers_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          praiseUsers_ = java.util.Collections.unmodifiableList(praiseUsers_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult.class, com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<GetTopicPraiseUsersResult> PARSER =
+        new com.google.protobuf.AbstractParser<GetTopicPraiseUsersResult>() {
+      public GetTopicPraiseUsersResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetTopicPraiseUsersResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetTopicPraiseUsersResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAXINDEX_FIELD_NUMBER = 3;
+    private int maxIndex_;
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    public boolean hasMaxIndex() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 maxIndex = 3;</code>
+     *
+     * <pre>
+     *当前最大index
+     * </pre>
+     */
+    public int getMaxIndex() {
+      return maxIndex_;
+    }
+
+    public static final int HASMORE_FIELD_NUMBER = 4;
+    private boolean hasMore_;
+    /**
+     * <code>required bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    public boolean hasHasMore() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required bool hasMore = 4;</code>
+     *
+     * <pre>
+     *是否还有更多数据
+     * </pre>
+     */
+    public boolean getHasMore() {
+      return hasMore_;
+    }
+
+    public static final int PRAISEUSERS_FIELD_NUMBER = 5;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser> praiseUsers_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser> getPraiseUsersList() {
+      return praiseUsers_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder> 
+        getPraiseUsersOrBuilderList() {
+      return praiseUsers_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    public int getPraiseUsersCount() {
+      return praiseUsers_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser getPraiseUsers(int index) {
+      return praiseUsers_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+     *
+     * <pre>
+     *点赞用户列表
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder getPraiseUsersOrBuilder(
+        int index) {
+      return praiseUsers_.get(index);
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+      maxIndex_ = 0;
+      hasMore_ = false;
+      praiseUsers_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasHasMore()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getPraiseUsersCount(); i++) {
+        if (!getPraiseUsers(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, maxIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBool(4, hasMore_);
+      }
+      for (int i = 0; i < praiseUsers_.size(); i++) {
+        output.writeMessage(5, praiseUsers_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, maxIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, hasMore_);
+      }
+      for (int i = 0; i < praiseUsers_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, praiseUsers_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersResult}
+     *
+     * <pre>
+     *获取话题称赞者列表
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersResult)
+        com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult.class, com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getPraiseUsersFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        hasMore_ = false;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (praiseUsersBuilder_ == null) {
+          praiseUsers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          praiseUsersBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult build() {
+        com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult result = new com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.maxIndex_ = maxIndex_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.hasMore_ = hasMore_;
+        if (praiseUsersBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            praiseUsers_ = java.util.Collections.unmodifiableList(praiseUsers_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.praiseUsers_ = praiseUsers_;
+        } else {
+          result.praiseUsers_ = praiseUsersBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        if (other.hasMaxIndex()) {
+          setMaxIndex(other.getMaxIndex());
+        }
+        if (other.hasHasMore()) {
+          setHasMore(other.getHasMore());
+        }
+        if (praiseUsersBuilder_ == null) {
+          if (!other.praiseUsers_.isEmpty()) {
+            if (praiseUsers_.isEmpty()) {
+              praiseUsers_ = other.praiseUsers_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensurePraiseUsersIsMutable();
+              praiseUsers_.addAll(other.praiseUsers_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.praiseUsers_.isEmpty()) {
+            if (praiseUsersBuilder_.isEmpty()) {
+              praiseUsersBuilder_.dispose();
+              praiseUsersBuilder_ = null;
+              praiseUsers_ = other.praiseUsers_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              praiseUsersBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getPraiseUsersFieldBuilder() : null;
+            } else {
+              praiseUsersBuilder_.addAllMessages(other.praiseUsers_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        if (!hasHasMore()) {
+          
+          return false;
+        }
+        for (int i = 0; i < getPraiseUsersCount(); i++) {
+          if (!getPraiseUsers(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Topic.GetTopicPraiseUsersResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int maxIndex_ ;
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public boolean hasMaxIndex() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public int getMaxIndex() {
+        return maxIndex_;
+      }
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public Builder setMaxIndex(int value) {
+        bitField0_ |= 0x00000004;
+        maxIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 maxIndex = 3;</code>
+       *
+       * <pre>
+       *当前最大index
+       * </pre>
+       */
+      public Builder clearMaxIndex() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        maxIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasMore_ ;
+      /**
+       * <code>required bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public boolean hasHasMore() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public boolean getHasMore() {
+        return hasMore_;
+      }
+      /**
+       * <code>required bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public Builder setHasMore(boolean value) {
+        bitField0_ |= 0x00000008;
+        hasMore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bool hasMore = 4;</code>
+       *
+       * <pre>
+       *是否还有更多数据
+       * </pre>
+       */
+      public Builder clearHasMore() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        hasMore_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser> praiseUsers_ =
+        java.util.Collections.emptyList();
+      private void ensurePraiseUsersIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          praiseUsers_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser>(praiseUsers_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder> praiseUsersBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser> getPraiseUsersList() {
+        if (praiseUsersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(praiseUsers_);
+        } else {
+          return praiseUsersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public int getPraiseUsersCount() {
+        if (praiseUsersBuilder_ == null) {
+          return praiseUsers_.size();
+        } else {
+          return praiseUsersBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser getPraiseUsers(int index) {
+        if (praiseUsersBuilder_ == null) {
+          return praiseUsers_.get(index);
+        } else {
+          return praiseUsersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public Builder setPraiseUsers(
+          int index, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser value) {
+        if (praiseUsersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePraiseUsersIsMutable();
+          praiseUsers_.set(index, value);
+          onChanged();
+        } else {
+          praiseUsersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public Builder setPraiseUsers(
+          int index, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder builderForValue) {
+        if (praiseUsersBuilder_ == null) {
+          ensurePraiseUsersIsMutable();
+          praiseUsers_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          praiseUsersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public Builder addPraiseUsers(com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser value) {
+        if (praiseUsersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePraiseUsersIsMutable();
+          praiseUsers_.add(value);
+          onChanged();
+        } else {
+          praiseUsersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public Builder addPraiseUsers(
+          int index, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser value) {
+        if (praiseUsersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePraiseUsersIsMutable();
+          praiseUsers_.add(index, value);
+          onChanged();
+        } else {
+          praiseUsersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public Builder addPraiseUsers(
+          com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder builderForValue) {
+        if (praiseUsersBuilder_ == null) {
+          ensurePraiseUsersIsMutable();
+          praiseUsers_.add(builderForValue.build());
+          onChanged();
+        } else {
+          praiseUsersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public Builder addPraiseUsers(
+          int index, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder builderForValue) {
+        if (praiseUsersBuilder_ == null) {
+          ensurePraiseUsersIsMutable();
+          praiseUsers_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          praiseUsersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public Builder addAllPraiseUsers(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser> values) {
+        if (praiseUsersBuilder_ == null) {
+          ensurePraiseUsersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, praiseUsers_);
+          onChanged();
+        } else {
+          praiseUsersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public Builder clearPraiseUsers() {
+        if (praiseUsersBuilder_ == null) {
+          praiseUsers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          praiseUsersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public Builder removePraiseUsers(int index) {
+        if (praiseUsersBuilder_ == null) {
+          ensurePraiseUsersIsMutable();
+          praiseUsers_.remove(index);
+          onChanged();
+        } else {
+          praiseUsersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder getPraiseUsersBuilder(
+          int index) {
+        return getPraiseUsersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder getPraiseUsersOrBuilder(
+          int index) {
+        if (praiseUsersBuilder_ == null) {
+          return praiseUsers_.get(index);  } else {
+          return praiseUsersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder> 
+           getPraiseUsersOrBuilderList() {
+        if (praiseUsersBuilder_ != null) {
+          return praiseUsersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(praiseUsers_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder addPraiseUsersBuilder() {
+        return getPraiseUsersFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder addPraiseUsersBuilder(
+          int index) {
+        return getPraiseUsersFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.TopicPraiseUser praiseUsers = 5;</code>
+       *
+       * <pre>
+       *点赞用户列表
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder> 
+           getPraiseUsersBuilderList() {
+        return getPraiseUsersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder> 
+          getPraiseUsersFieldBuilder() {
+        if (praiseUsersBuilder_ == null) {
+          praiseUsersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder>(
+                  praiseUsers_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          praiseUsers_ = null;
+        }
+        return praiseUsersBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersResult)
+    }
+
+    static {
+      defaultInstance = new GetTopicPraiseUsersResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GetTopicPraiseUsersResult)
+  }
+
+  public interface TopicPraiseUserOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.TopicPraiseUser)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string userId = 1;</code>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>required string userNickName = 2;</code>
+     */
+    boolean hasUserNickName();
+    /**
+     * <code>required string userNickName = 2;</code>
+     */
+    java.lang.String getUserNickName();
+    /**
+     * <code>required string userNickName = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getUserNickNameBytes();
+
+    /**
+     * <code>required string headIconUrl = 3;</code>
+     */
+    boolean hasHeadIconUrl();
+    /**
+     * <code>required string headIconUrl = 3;</code>
+     */
+    java.lang.String getHeadIconUrl();
+    /**
+     * <code>required string headIconUrl = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getHeadIconUrlBytes();
+
+    /**
+     * <code>required int64 praiseTime = 4;</code>
+     */
+    boolean hasPraiseTime();
+    /**
+     * <code>required int64 praiseTime = 4;</code>
+     */
+    long getPraiseTime();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.TopicPraiseUser}
+   */
+  public static final class TopicPraiseUser extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.TopicPraiseUser)
+      TopicPraiseUserOrBuilder {
+    // Use TopicPraiseUser.newBuilder() to construct.
+    private TopicPraiseUser(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private TopicPraiseUser(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final TopicPraiseUser defaultInstance;
+    public static TopicPraiseUser getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public TopicPraiseUser getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TopicPraiseUser(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              userId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userNickName_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              headIconUrl_ = bs;
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              praiseTime_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.class, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<TopicPraiseUser> PARSER =
+        new com.google.protobuf.AbstractParser<TopicPraiseUser>() {
+      public TopicPraiseUser parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TopicPraiseUser(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TopicPraiseUser> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int USERID_FIELD_NUMBER = 1;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 1;</code>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERNICKNAME_FIELD_NUMBER = 2;
+    private java.lang.Object userNickName_;
+    /**
+     * <code>required string userNickName = 2;</code>
+     */
+    public boolean hasUserNickName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userNickName = 2;</code>
+     */
+    public java.lang.String getUserNickName() {
+      java.lang.Object ref = userNickName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userNickName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userNickName = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserNickNameBytes() {
+      java.lang.Object ref = userNickName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userNickName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HEADICONURL_FIELD_NUMBER = 3;
+    private java.lang.Object headIconUrl_;
+    /**
+     * <code>required string headIconUrl = 3;</code>
+     */
+    public boolean hasHeadIconUrl() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string headIconUrl = 3;</code>
+     */
+    public java.lang.String getHeadIconUrl() {
+      java.lang.Object ref = headIconUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          headIconUrl_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string headIconUrl = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHeadIconUrlBytes() {
+      java.lang.Object ref = headIconUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        headIconUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRAISETIME_FIELD_NUMBER = 4;
+    private long praiseTime_;
+    /**
+     * <code>required int64 praiseTime = 4;</code>
+     */
+    public boolean hasPraiseTime() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required int64 praiseTime = 4;</code>
+     */
+    public long getPraiseTime() {
+      return praiseTime_;
+    }
+
+    private void initFields() {
+      userId_ = "";
+      userNickName_ = "";
+      headIconUrl_ = "";
+      praiseTime_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserNickName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasHeadIconUrl()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPraiseTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserNickNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getHeadIconUrlBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt64(4, praiseTime_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserNickNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getHeadIconUrlBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, praiseTime_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.TopicPraiseUser}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.TopicPraiseUser)
+        com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUserOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.class, com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userNickName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        headIconUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        praiseTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Topic.internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser build() {
+        com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser result = new com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userId_ = userId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userNickName_ = userNickName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.headIconUrl_ = headIconUrl_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.praiseTime_ = praiseTime_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser.getDefaultInstance()) return this;
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000001;
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (other.hasUserNickName()) {
+          bitField0_ |= 0x00000002;
+          userNickName_ = other.userNickName_;
+          onChanged();
+        }
+        if (other.hasHeadIconUrl()) {
+          bitField0_ |= 0x00000004;
+          headIconUrl_ = other.headIconUrl_;
+          onChanged();
+        }
+        if (other.hasPraiseTime()) {
+          setPraiseTime(other.getPraiseTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
+        if (!hasUserNickName()) {
+          
+          return false;
+        }
+        if (!hasHeadIconUrl()) {
+          
+          return false;
+        }
+        if (!hasPraiseTime()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Topic.TopicPraiseUser) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 1;</code>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userNickName_ = "";
+      /**
+       * <code>required string userNickName = 2;</code>
+       */
+      public boolean hasUserNickName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userNickName = 2;</code>
+       */
+      public java.lang.String getUserNickName() {
+        java.lang.Object ref = userNickName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userNickName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userNickName = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUserNickNameBytes() {
+        java.lang.Object ref = userNickName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userNickName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userNickName = 2;</code>
+       */
+      public Builder setUserNickName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userNickName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userNickName = 2;</code>
+       */
+      public Builder clearUserNickName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userNickName_ = getDefaultInstance().getUserNickName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userNickName = 2;</code>
+       */
+      public Builder setUserNickNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userNickName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object headIconUrl_ = "";
+      /**
+       * <code>required string headIconUrl = 3;</code>
+       */
+      public boolean hasHeadIconUrl() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string headIconUrl = 3;</code>
+       */
+      public java.lang.String getHeadIconUrl() {
+        java.lang.Object ref = headIconUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            headIconUrl_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string headIconUrl = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHeadIconUrlBytes() {
+        java.lang.Object ref = headIconUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          headIconUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string headIconUrl = 3;</code>
+       */
+      public Builder setHeadIconUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        headIconUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string headIconUrl = 3;</code>
+       */
+      public Builder clearHeadIconUrl() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        headIconUrl_ = getDefaultInstance().getHeadIconUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string headIconUrl = 3;</code>
+       */
+      public Builder setHeadIconUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        headIconUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long praiseTime_ ;
+      /**
+       * <code>required int64 praiseTime = 4;</code>
+       */
+      public boolean hasPraiseTime() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required int64 praiseTime = 4;</code>
+       */
+      public long getPraiseTime() {
+        return praiseTime_;
+      }
+      /**
+       * <code>required int64 praiseTime = 4;</code>
+       */
+      public Builder setPraiseTime(long value) {
+        bitField0_ |= 0x00000008;
+        praiseTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 praiseTime = 4;</code>
+       */
+      public Builder clearPraiseTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        praiseTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.TopicPraiseUser)
+    }
+
+    static {
+      defaultInstance = new TopicPraiseUser(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.TopicPraiseUser)
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
@@ -15192,6 +17521,21 @@ public final class Topic {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_AddTopicReplyResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -15203,48 +17547,54 @@ public final class Topic {
     java.lang.String[] descriptorData = {
       "\n\005Topic\022\035com.qjoy.basjoo.core.model.pb\"N" +
       "\n\023GetTopicListRequest\022\021\n\ttopicType\030\001 \002(\005" +
-      "\022\022\n\nstartIndex\030\002 \001(\005\022\020\n\010columnId\030\003 \001(\t\"\264" +
-      "\001\n\022GetTopicListResult\022\017\n\007success\030\001 \002(\010\022\022" +
-      "\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022C\n" +
-      "\rtopicLiteInfo\030\004 \003(\0132,.com.qjoy.basjoo.c" +
-      "ore.model.pb.TopicLiteInfo\022\020\n\010maxIndex\030\005" +
-      " \001(\005\022\017\n\007hasMore\030\006 \002(\010\"\342\001\n\rTopicLiteInfo\022" +
-      "\017\n\007topicId\030\001 \002(\t\022\021\n\ttopicType\030\002 \001(\005\022\016\n\006s" +
-      "etTop\030\003 \002(\010\022\022\n\ntopicTitle\030\004 \002(\t\022\021\n\ttopic",
-      "Desc\030\005 \001(\t\022\021\n\treadCount\030\006 \002(\003\022\023\n\013praiseC" +
-      "ount\030\007 \002(\003\022\022\n\nreplyCount\030\010 \002(\003\022\022\n\ncreate" +
-      "Time\030\t \002(\003\022\025\n\rlastReplyTime\030\n \001(\003\022\017\n\007pra" +
-      "ised\030\013 \002(\010\"(\n\025GetTopicDetailRequest\022\017\n\007t" +
-      "opicId\030\001 \002(\t\"\227\001\n\024GetTopicDetailResult\022\017\n" +
-      "\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 \002(\t\022\021\n\tre" +
-      "sultMsg\030\003 \002(\t\022G\n\017topicDetailInfo\030\004 \001(\0132." +
-      ".com.qjoy.basjoo.core.model.pb.TopicDeta" +
-      "ilInfo\"\365\002\n\017TopicDetailInfo\022\017\n\007topicId\030\001 " +
-      "\002(\t\022\021\n\ttopicType\030\002 \001(\005\022\016\n\006setTop\030\003 \002(\010\022\022",
-      "\n\ntopicTitle\030\004 \002(\t\022\021\n\ttopicDesc\030\005 \001(\t\022\024\n" +
-      "\014topicContent\030\006 \001(\t\022\021\n\treadCount\030\007 \002(\003\022\023" +
-      "\n\013praiseCount\030\010 \002(\003\022\022\n\nreplyCount\030\t \002(\003\022" +
-      "\022\n\ncreateTime\030\n \002(\003\022\025\n\rlastReplyTime\030\013 \002" +
-      "(\003\022\032\n\022praiseHeadIconUrls\030\014 \003(\t\022E\n\016topicR" +
-      "eplyInfo\030\r \003(\0132-.com.qjoy.basjoo.core.mo" +
-      "del.pb.TopicReplyInfo\022\017\n\007praised\030\016 \002(\010\022\026" +
-      "\n\016topicImageUrls\030\017 \001(\t\"\304\001\n\016TopicReplyInf" +
-      "o\022\017\n\007replyId\030\001 \002(\t\022\023\n\013replyUserId\030\002 \002(\t\022" +
-      "\025\n\rreplyNickName\030\003 \002(\t\022\034\n\024replyUserHeadI",
-      "conUrl\030\004 \001(\t\022\025\n\rreplyToUserId\030\005 \001(\t\022\027\n\017r" +
-      "eplyToNickName\030\006 \001(\t\022\024\n\014replyContent\030\007 \002" +
-      "(\t\022\021\n\treplyTime\030\010 \002(\003\"(\n\025AddTopicPraiseR" +
-      "equest\022\017\n\007topicId\030\001 \002(\t\"N\n\024AddTopicPrais" +
-      "eResult\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002" +
-      " \002(\t\022\021\n\tresultMsg\030\003 \002(\t\"+\n\030CancelTopicPr" +
-      "aiseRequest\022\017\n\007topicId\030\001 \002(\t\"Q\n\027CancelTo" +
-      "picPraiseResult\022\017\n\007success\030\001 \002(\010\022\022\n\nresu" +
-      "ltCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\"P\n\024AddTo" +
-      "picReplyRequest\022\017\n\007topicId\030\001 \002(\t\022\021\n\trepl",
-      "yToId\030\002 \002(\t\022\024\n\014replyContent\030\003 \002(\t\"M\n\023Add" +
-      "TopicReplyResult\022\017\n\007success\030\001 \002(\010\022\022\n\nres" +
-      "ultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\tB\037\n\035com." +
-      "qjoy.basjoo.core.model.pb"
+      "\022\022\n\nstartIndex\030\002 \001(\005\022\020\n\010columnId\030\003 \001(\t\"\243" +
+      "\001\n\022GetTopicListResult\022\022\n\nresultCode\030\001 \002(" +
+      "\t\022\021\n\tresultMsg\030\002 \002(\t\022C\n\rtopicLiteInfo\030\003 " +
+      "\003(\0132,.com.qjoy.basjoo.core.model.pb.Topi" +
+      "cLiteInfo\022\020\n\010maxIndex\030\004 \001(\005\022\017\n\007hasMore\030\005" +
+      " \002(\010\"\342\001\n\rTopicLiteInfo\022\017\n\007topicId\030\001 \002(\t\022" +
+      "\021\n\ttopicType\030\002 \001(\005\022\016\n\006setTop\030\003 \002(\010\022\022\n\nto" +
+      "picTitle\030\004 \002(\t\022\021\n\ttopicDesc\030\005 \001(\t\022\021\n\trea",
+      "dCount\030\006 \002(\003\022\023\n\013praiseCount\030\007 \002(\003\022\022\n\nrep" +
+      "lyCount\030\010 \002(\003\022\022\n\ncreateTime\030\t \002(\003\022\025\n\rlas" +
+      "tReplyTime\030\n \001(\003\022\017\n\007praised\030\013 \002(\010\"(\n\025Get" +
+      "TopicDetailRequest\022\017\n\007topicId\030\001 \002(\t\"\206\001\n\024" +
+      "GetTopicDetailResult\022\022\n\nresultCode\030\001 \002(\t" +
+      "\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017topicDetailInfo\030\003" +
+      " \001(\0132..com.qjoy.basjoo.core.model.pb.Top" +
+      "icDetailInfo\"\365\002\n\017TopicDetailInfo\022\017\n\007topi" +
+      "cId\030\001 \002(\t\022\021\n\ttopicType\030\002 \001(\005\022\016\n\006setTop\030\003" +
+      " \002(\010\022\022\n\ntopicTitle\030\004 \002(\t\022\021\n\ttopicDesc\030\005 ",
+      "\001(\t\022\024\n\014topicContent\030\006 \001(\t\022\021\n\treadCount\030\007" +
+      " \002(\003\022\023\n\013praiseCount\030\010 \002(\003\022\022\n\nreplyCount\030" +
+      "\t \002(\003\022\022\n\ncreateTime\030\n \002(\003\022\025\n\rlastReplyTi" +
+      "me\030\013 \002(\003\022\032\n\022praiseHeadIconUrls\030\014 \003(\t\022E\n\016" +
+      "topicReplyInfo\030\r \003(\0132-.com.qjoy.basjoo.c" +
+      "ore.model.pb.TopicReplyInfo\022\017\n\007praised\030\016" +
+      " \002(\010\022\026\n\016topicImageUrls\030\017 \001(\t\"\304\001\n\016TopicRe" +
+      "plyInfo\022\017\n\007replyId\030\001 \002(\t\022\023\n\013replyUserId\030" +
+      "\002 \002(\t\022\025\n\rreplyNickName\030\003 \002(\t\022\034\n\024replyUse" +
+      "rHeadIconUrl\030\004 \001(\t\022\025\n\rreplyToUserId\030\005 \001(",
+      "\t\022\027\n\017replyToNickName\030\006 \001(\t\022\024\n\014replyConte" +
+      "nt\030\007 \002(\t\022\021\n\treplyTime\030\010 \002(\003\"(\n\025AddTopicP" +
+      "raiseRequest\022\017\n\007topicId\030\001 \002(\t\"=\n\024AddTopi" +
+      "cPraiseResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
+      "ultMsg\030\002 \002(\t\"+\n\030CancelTopicPraiseRequest" +
+      "\022\017\n\007topicId\030\001 \002(\t\"@\n\027CancelTopicPraiseRe" +
+      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 " +
+      "\002(\t\"P\n\024AddTopicReplyRequest\022\017\n\007topicId\030\001" +
+      " \002(\t\022\021\n\treplyToId\030\002 \002(\t\022\024\n\014replyContent\030" +
+      "\003 \002(\t\"<\n\023AddTopicReplyResult\022\022\n\nresultCo",
+      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"A\n\032GetTopicP" +
+      "raiseUsersRequest\022\017\n\007topicId\030\001 \002(\t\022\022\n\nst" +
+      "artIndex\030\002 \001(\005\"\252\001\n\031GetTopicPraiseUsersRe" +
+      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 " +
+      "\002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022C" +
+      "\n\013praiseUsers\030\005 \003(\0132..com.qjoy.basjoo.co" +
+      "re.model.pb.TopicPraiseUser\"`\n\017TopicPrai" +
+      "seUser\022\016\n\006userId\030\001 \002(\t\022\024\n\014userNickName\030\002" +
+      " \002(\t\022\023\n\013headIconUrl\030\003 \002(\t\022\022\n\npraiseTime\030" +
+      "\004 \002(\003B\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15269,7 +17619,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicListResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetTopicListResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", "TopicLiteInfo", "MaxIndex", "HasMore", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "TopicLiteInfo", "MaxIndex", "HasMore", });
     internal_static_com_qjoy_basjoo_core_model_pb_TopicLiteInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_TopicLiteInfo_fieldAccessorTable = new
@@ -15287,7 +17637,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicDetailResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetTopicDetailResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", "TopicDetailInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "TopicDetailInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_TopicDetailInfo_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_com_qjoy_basjoo_core_model_pb_TopicDetailInfo_fieldAccessorTable = new
@@ -15311,7 +17661,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicPraiseResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_AddTopicPraiseResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
     internal_static_com_qjoy_basjoo_core_model_pb_CancelTopicPraiseRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_com_qjoy_basjoo_core_model_pb_CancelTopicPraiseRequest_fieldAccessorTable = new
@@ -15323,7 +17673,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_CancelTopicPraiseResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CancelTopicPraiseResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicReplyRequest_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicReplyRequest_fieldAccessorTable = new
@@ -15335,7 +17685,25 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicReplyResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_AddTopicReplyResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
+    internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersRequest_descriptor,
+        new java.lang.String[] { "TopicId", "StartIndex", });
+    internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_GetTopicPraiseUsersResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", "MaxIndex", "HasMore", "PraiseUsers", });
+    internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_TopicPraiseUser_descriptor,
+        new java.lang.String[] { "UserId", "UserNickName", "HeadIconUrl", "PraiseTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

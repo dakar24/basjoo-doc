@@ -7,6 +7,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
+import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.DOUBLE;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.INT64;
@@ -40,6 +41,7 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_IMAGEPARAMURLS = 19;
   public static final int TAG_EVALUATECOUNT = 20;
   public static final int TAG_PRODUCTEVALUATEINFO = 21;
+  public static final int TAG_FAVORITED = 22;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -62,6 +64,7 @@ public final class ProductDetailInfo extends Message {
   public static final List<String> DEFAULT_IMAGEPARAMURLS = Collections.emptyList();
   public static final Long DEFAULT_EVALUATECOUNT = 0L;
   public static final List<ProductEvaluateInfo> DEFAULT_PRODUCTEVALUATEINFO = Collections.emptyList();
+  public static final Boolean DEFAULT_FAVORITED = false;
 
   /**
    * 产品Id
@@ -189,6 +192,12 @@ public final class ProductDetailInfo extends Message {
   @ProtoField(tag = 21, label = REPEATED)
   public List<ProductEvaluateInfo> productEvaluateInfo;
 
+  /**
+   * 用户是否已收藏
+   */
+  @ProtoField(tag = 22, type = BOOL)
+  public Boolean favorited;
+
   public ProductDetailInfo(ProductDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -213,6 +222,7 @@ public final class ProductDetailInfo extends Message {
     this.imageParamUrls = copyOf(message.imageParamUrls);
     this.evaluateCount = message.evaluateCount;
     this.productEvaluateInfo = copyOf(message.productEvaluateInfo);
+    this.favorited = message.favorited;
   }
 
   public ProductDetailInfo() {
@@ -283,6 +293,9 @@ public final class ProductDetailInfo extends Message {
         case TAG_PRODUCTEVALUATEINFO:
         this.productEvaluateInfo = immutableCopyOf((List<ProductEvaluateInfo>)value);
         break;
+        case TAG_FAVORITED:
+        this.favorited = (Boolean)value;
+        break;
         default: break;
         };
     return this;
@@ -313,7 +326,8 @@ public final class ProductDetailInfo extends Message {
         && equals(baseParam, o.baseParam)
         && equals(imageParamUrls, o.imageParamUrls)
         && equals(evaluateCount, o.evaluateCount)
-        && equals(productEvaluateInfo, o.productEvaluateInfo);
+        && equals(productEvaluateInfo, o.productEvaluateInfo)
+        && equals(favorited, o.favorited);
   }
 
   @Override
@@ -341,6 +355,7 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (imageParamUrls != null ? imageParamUrls.hashCode() : 1);
       result = result * 37 + (evaluateCount != null ? evaluateCount.hashCode() : 0);
       result = result * 37 + (productEvaluateInfo != null ? productEvaluateInfo.hashCode() : 1);
+      result = result * 37 + (favorited != null ? favorited.hashCode() : 0);
       hashCode = result;
     }
     return result;
