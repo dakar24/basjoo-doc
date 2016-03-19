@@ -259,7 +259,7 @@
       }
       case 42: {
         ProductLiteInfo* sub = [[ProductLiteInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addProductLiteInfo:sub];
         break;
       }
@@ -677,7 +677,7 @@
       }
       case 26: {
         ProductDetailInfo* sub = [[ProductDetailInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self setProductDetailInfo:sub];
         break;
       }
@@ -1150,25 +1150,25 @@
       }
       case 122: {
         CategoryInfo* sub = [[CategoryInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addCategoryInfo:sub];
         break;
       }
       case 130: {
         ShortRentInfo* sub = [[ShortRentInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addShortRentInfo:sub];
         break;
       }
       case 138: {
         LongRentInfo* sub = [[LongRentInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addLongRentInfo:sub];
         break;
       }
       case 146: {
         ProductBaseParam* sub = [[ProductBaseParam alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addBaseParam:sub];
         break;
       }
@@ -1182,7 +1182,7 @@
       }
       case 170: {
         ProductEvaluateInfo* sub = [[ProductEvaluateInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addProductEvaluateInfo:sub];
         break;
       }
@@ -1949,7 +1949,7 @@
       }
       case 90: {
         EvaluateReplyInfo* sub = [[EvaluateReplyInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addEvaluateReplyInfo:sub];
         break;
       }
@@ -2354,7 +2354,7 @@
       }
       case 58: {
         ProductEvaluateInfo* sub = [[ProductEvaluateInfo alloc] init];
-        [input readAPMessage:sub extensionRegistry:extensionRegistry];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addProductEvaluateInfo:sub];
         break;
       }
