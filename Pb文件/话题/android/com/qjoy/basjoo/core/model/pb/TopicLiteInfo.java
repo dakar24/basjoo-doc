@@ -24,6 +24,7 @@ public final class TopicLiteInfo extends Message {
   public static final int TAG_CREATETIME = 9;
   public static final int TAG_LASTREPLYTIME = 10;
   public static final int TAG_PRAISED = 11;
+  public static final int TAG_TOPICIMAGEURL = 12;
 
   public static final String DEFAULT_TOPICID = "";
   public static final Integer DEFAULT_TOPICTYPE = 0;
@@ -36,6 +37,7 @@ public final class TopicLiteInfo extends Message {
   public static final Long DEFAULT_CREATETIME = 0L;
   public static final Long DEFAULT_LASTREPLYTIME = 0L;
   public static final Boolean DEFAULT_PRAISED = false;
+  public static final String DEFAULT_TOPICIMAGEURL = "";
 
   /**
    * 话题ID;
@@ -103,6 +105,12 @@ public final class TopicLiteInfo extends Message {
   @ProtoField(tag = 11, type = BOOL, label = REQUIRED)
   public Boolean praised;
 
+  /**
+   * 话题图片地址
+   */
+  @ProtoField(tag = 12, type = STRING)
+  public String topicImageUrl;
+
   public TopicLiteInfo(TopicLiteInfo message) {
     super(message);
     if (message == null) return;
@@ -117,6 +125,7 @@ public final class TopicLiteInfo extends Message {
     this.createTime = message.createTime;
     this.lastReplyTime = message.lastReplyTime;
     this.praised = message.praised;
+    this.topicImageUrl = message.topicImageUrl;
   }
 
   public TopicLiteInfo() {
@@ -157,6 +166,9 @@ public final class TopicLiteInfo extends Message {
         case TAG_PRAISED:
         this.praised = (Boolean)value;
         break;
+        case TAG_TOPICIMAGEURL:
+        this.topicImageUrl = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -177,7 +189,8 @@ public final class TopicLiteInfo extends Message {
         && equals(replyCount, o.replyCount)
         && equals(createTime, o.createTime)
         && equals(lastReplyTime, o.lastReplyTime)
-        && equals(praised, o.praised);
+        && equals(praised, o.praised)
+        && equals(topicImageUrl, o.topicImageUrl);
   }
 
   @Override
@@ -195,6 +208,7 @@ public final class TopicLiteInfo extends Message {
       result = result * 37 + (createTime != null ? createTime.hashCode() : 0);
       result = result * 37 + (lastReplyTime != null ? lastReplyTime.hashCode() : 0);
       result = result * 37 + (praised != null ? praised.hashCode() : 0);
+      result = result * 37 + (topicImageUrl != null ? topicImageUrl.hashCode() : 0);
       hashCode = result;
     }
     return result;

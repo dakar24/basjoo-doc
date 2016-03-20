@@ -18,20 +18,18 @@ import static com.squareup.wire.Message.Label.REQUIRED;
  */
 public final class SearchOrderListResult extends Message {
 
-  public static final int TAG_SUCCESS = 1;
-  public static final int TAG_RESULTCODE = 2;
-  public static final int TAG_RESULTMSG = 3;
-  public static final int TAG_MAXINDEX = 4;
-  public static final int TAG_HASMORE = 5;
-  public static final int TAG_WAITPAYCOUNT = 6;
-  public static final int TAG_WAITDELIVERYCOUNT = 7;
-  public static final int TAG_WAITRECEIVECOUNT = 8;
-  public static final int TAG_WAITREVERTCOUNT = 9;
-  public static final int TAG_WAITEVALUATECOUNT = 10;
-  public static final int TAG_TOTALCOUNT = 11;
-  public static final int TAG_ORDERLITEINFO = 12;
+  public static final int TAG_RESULTCODE = 1;
+  public static final int TAG_RESULTMSG = 2;
+  public static final int TAG_MAXINDEX = 3;
+  public static final int TAG_HASMORE = 4;
+  public static final int TAG_WAITPAYCOUNT = 5;
+  public static final int TAG_WAITDELIVERYCOUNT = 6;
+  public static final int TAG_WAITRECEIVECOUNT = 7;
+  public static final int TAG_WAITREVERTCOUNT = 8;
+  public static final int TAG_WAITEVALUATECOUNT = 9;
+  public static final int TAG_TOTALCOUNT = 10;
+  public static final int TAG_ORDERLITEINFO = 11;
 
-  public static final Boolean DEFAULT_SUCCESS = false;
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
   public static final Integer DEFAULT_MAXINDEX = 0;
@@ -44,76 +42,69 @@ public final class SearchOrderListResult extends Message {
   public static final Integer DEFAULT_TOTALCOUNT = 0;
   public static final List<OrderLiteInfo> DEFAULT_ORDERLITEINFO = Collections.emptyList();
 
-  /**
-   * 是否成功
-   */
-  @ProtoField(tag = 1, type = BOOL, label = REQUIRED)
-  public Boolean success;
-
-  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
 
-  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String resultMsg;
 
   /**
    * 当前最大index
    */
-  @ProtoField(tag = 4, type = INT32)
+  @ProtoField(tag = 3, type = INT32)
   public Integer maxIndex;
 
   /**
    * 是否还有更多数据
    */
-  @ProtoField(tag = 5, type = BOOL, label = REQUIRED)
+  @ProtoField(tag = 4, type = BOOL, label = REQUIRED)
   public Boolean hasMore;
 
   /**
    * 待付款
    */
-  @ProtoField(tag = 6, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 5, type = INT32, label = REQUIRED)
   public Integer waitPayCount;
 
   /**
    * 待发货
    */
-  @ProtoField(tag = 7, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 6, type = INT32, label = REQUIRED)
   public Integer waitDeliveryCount;
 
   /**
    * 待收货
    */
-  @ProtoField(tag = 8, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 7, type = INT32, label = REQUIRED)
   public Integer waitReceiveCount;
 
   /**
    * 待归还
    */
-  @ProtoField(tag = 9, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 8, type = INT32, label = REQUIRED)
   public Integer waitRevertCount;
 
   /**
    * 待评价
    */
-  @ProtoField(tag = 10, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 9, type = INT32, label = REQUIRED)
   public Integer waitEvaluateCount;
 
   /**
    * 总数
    */
-  @ProtoField(tag = 11, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 10, type = INT32, label = REQUIRED)
   public Integer totalCount;
 
   /**
    * 订单简要信息
    */
-  @ProtoField(tag = 12, label = REPEATED)
+  @ProtoField(tag = 11, label = REPEATED)
   public List<OrderLiteInfo> orderLiteInfo;
 
   public SearchOrderListResult(SearchOrderListResult message) {
     super(message);
     if (message == null) return;
-    this.success = message.success;
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
     this.maxIndex = message.maxIndex;
@@ -132,9 +123,6 @@ public final class SearchOrderListResult extends Message {
 
   public SearchOrderListResult fillTagValue(int tag, Object value) {
     switch(tag) {
-        case TAG_SUCCESS:
-        this.success = (Boolean)value;
-        break;
         case TAG_RESULTCODE:
         this.resultCode = (String)value;
         break;
@@ -178,8 +166,7 @@ public final class SearchOrderListResult extends Message {
     if (other == this) return true;
     if (!(other instanceof SearchOrderListResult)) return false;
     SearchOrderListResult o = (SearchOrderListResult) other;
-    return equals(success, o.success)
-        && equals(resultCode, o.resultCode)
+    return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
         && equals(maxIndex, o.maxIndex)
         && equals(hasMore, o.hasMore)
@@ -196,8 +183,7 @@ public final class SearchOrderListResult extends Message {
   public int hashCode() {
     int result = hashCode;
     if (result == 0) {
-      result = success != null ? success.hashCode() : 0;
-      result = result * 37 + (resultCode != null ? resultCode.hashCode() : 0);
+      result = resultCode != null ? resultCode.hashCode() : 0;
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       result = result * 37 + (maxIndex != null ? maxIndex.hashCode() : 0);
       result = result * 37 + (hasMore != null ? hasMore.hashCode() : 0);

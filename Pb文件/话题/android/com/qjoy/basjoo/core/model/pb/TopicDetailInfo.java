@@ -49,7 +49,7 @@ public final class TopicDetailInfo extends Message {
   public static final List<String> DEFAULT_PRAISEHEADICONURLS = Collections.emptyList();
   public static final List<TopicReplyInfo> DEFAULT_TOPICREPLYINFO = Collections.emptyList();
   public static final Boolean DEFAULT_PRAISED = false;
-  public static final String DEFAULT_TOPICIMAGEURLS = "";
+  public static final List<String> DEFAULT_TOPICIMAGEURLS = Collections.emptyList();
 
   /**
    * 话题ID;
@@ -138,8 +138,8 @@ public final class TopicDetailInfo extends Message {
   /**
    * 话题图片地址
    */
-  @ProtoField(tag = 15, type = STRING)
-  public String topicImageUrls;
+  @ProtoField(tag = 15, type = STRING, label = REPEATED)
+  public List<String> topicImageUrls;
 
   public TopicDetailInfo(TopicDetailInfo message) {
     super(message);
@@ -158,7 +158,7 @@ public final class TopicDetailInfo extends Message {
     this.praiseHeadIconUrls = copyOf(message.praiseHeadIconUrls);
     this.topicReplyInfo = copyOf(message.topicReplyInfo);
     this.praised = message.praised;
-    this.topicImageUrls = message.topicImageUrls;
+    this.topicImageUrls = copyOf(message.topicImageUrls);
   }
 
   public TopicDetailInfo() {
@@ -209,7 +209,7 @@ public final class TopicDetailInfo extends Message {
         this.praised = (Boolean)value;
         break;
         case TAG_TOPICIMAGEURLS:
-        this.topicImageUrls = (String)value;
+        this.topicImageUrls = immutableCopyOf((List<String>)value);
         break;
         default: break;
         };
@@ -256,7 +256,7 @@ public final class TopicDetailInfo extends Message {
       result = result * 37 + (praiseHeadIconUrls != null ? praiseHeadIconUrls.hashCode() : 1);
       result = result * 37 + (topicReplyInfo != null ? topicReplyInfo.hashCode() : 1);
       result = result * 37 + (praised != null ? praised.hashCode() : 0);
-      result = result * 37 + (topicImageUrls != null ? topicImageUrls.hashCode() : 0);
+      result = result * 37 + (topicImageUrls != null ? topicImageUrls.hashCode() : 1);
       hashCode = result;
     }
     return result;

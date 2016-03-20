@@ -2354,6 +2354,32 @@ public final class Topic {
      * </pre>
      */
     boolean getPraised();
+
+    /**
+     * <code>optional string topicImageUrl = 12;</code>
+     *
+     * <pre>
+     *话题图片地址
+     * </pre>
+     */
+    boolean hasTopicImageUrl();
+    /**
+     * <code>optional string topicImageUrl = 12;</code>
+     *
+     * <pre>
+     *话题图片地址
+     * </pre>
+     */
+    java.lang.String getTopicImageUrl();
+    /**
+     * <code>optional string topicImageUrl = 12;</code>
+     *
+     * <pre>
+     *话题图片地址
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getTopicImageUrlBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.TopicLiteInfo}
@@ -2463,6 +2489,12 @@ public final class Topic {
             case 88: {
               bitField0_ |= 0x00000400;
               praised_ = input.readBool();
+              break;
+            }
+            case 98: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000800;
+              topicImageUrl_ = bs;
               break;
             }
           }
@@ -2851,6 +2883,60 @@ public final class Topic {
       return praised_;
     }
 
+    public static final int TOPICIMAGEURL_FIELD_NUMBER = 12;
+    private java.lang.Object topicImageUrl_;
+    /**
+     * <code>optional string topicImageUrl = 12;</code>
+     *
+     * <pre>
+     *话题图片地址
+     * </pre>
+     */
+    public boolean hasTopicImageUrl() {
+      return ((bitField0_ & 0x00000800) == 0x00000800);
+    }
+    /**
+     * <code>optional string topicImageUrl = 12;</code>
+     *
+     * <pre>
+     *话题图片地址
+     * </pre>
+     */
+    public java.lang.String getTopicImageUrl() {
+      java.lang.Object ref = topicImageUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          topicImageUrl_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string topicImageUrl = 12;</code>
+     *
+     * <pre>
+     *话题图片地址
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getTopicImageUrlBytes() {
+      java.lang.Object ref = topicImageUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        topicImageUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       topicId_ = "";
       topicType_ = 0;
@@ -2863,6 +2949,7 @@ public final class Topic {
       createTime_ = 0L;
       lastReplyTime_ = 0L;
       praised_ = false;
+      topicImageUrl_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2942,6 +3029,9 @@ public final class Topic {
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeBool(11, praised_);
       }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        output.writeBytes(12, getTopicImageUrlBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2994,6 +3084,10 @@ public final class Topic {
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, praised_);
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, getTopicImageUrlBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3134,6 +3228,8 @@ public final class Topic {
         bitField0_ = (bitField0_ & ~0x00000200);
         praised_ = false;
         bitField0_ = (bitField0_ & ~0x00000400);
+        topicImageUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
 
@@ -3206,6 +3302,10 @@ public final class Topic {
           to_bitField0_ |= 0x00000400;
         }
         result.praised_ = praised_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.topicImageUrl_ = topicImageUrl_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3260,6 +3360,11 @@ public final class Topic {
         }
         if (other.hasPraised()) {
           setPraised(other.getPraised());
+        }
+        if (other.hasTopicImageUrl()) {
+          bitField0_ |= 0x00000800;
+          topicImageUrl_ = other.topicImageUrl_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -4000,6 +4105,106 @@ public final class Topic {
       public Builder clearPraised() {
         bitField0_ = (bitField0_ & ~0x00000400);
         praised_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object topicImageUrl_ = "";
+      /**
+       * <code>optional string topicImageUrl = 12;</code>
+       *
+       * <pre>
+       *话题图片地址
+       * </pre>
+       */
+      public boolean hasTopicImageUrl() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional string topicImageUrl = 12;</code>
+       *
+       * <pre>
+       *话题图片地址
+       * </pre>
+       */
+      public java.lang.String getTopicImageUrl() {
+        java.lang.Object ref = topicImageUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            topicImageUrl_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string topicImageUrl = 12;</code>
+       *
+       * <pre>
+       *话题图片地址
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getTopicImageUrlBytes() {
+        java.lang.Object ref = topicImageUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          topicImageUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string topicImageUrl = 12;</code>
+       *
+       * <pre>
+       *话题图片地址
+       * </pre>
+       */
+      public Builder setTopicImageUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        topicImageUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string topicImageUrl = 12;</code>
+       *
+       * <pre>
+       *话题图片地址
+       * </pre>
+       */
+      public Builder clearTopicImageUrl() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        topicImageUrl_ = getDefaultInstance().getTopicImageUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string topicImageUrl = 12;</code>
+       *
+       * <pre>
+       *话题图片地址
+       * </pre>
+       */
+      public Builder setTopicImageUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        topicImageUrl_ = value;
         onChanged();
         return this;
       }
@@ -5797,30 +6002,39 @@ public final class Topic {
     boolean getPraised();
 
     /**
-     * <code>optional string topicImageUrls = 15;</code>
+     * <code>repeated string topicImageUrls = 15;</code>
      *
      * <pre>
      *话题图片地址
      * </pre>
      */
-    boolean hasTopicImageUrls();
+    com.google.protobuf.ProtocolStringList
+        getTopicImageUrlsList();
     /**
-     * <code>optional string topicImageUrls = 15;</code>
+     * <code>repeated string topicImageUrls = 15;</code>
      *
      * <pre>
      *话题图片地址
      * </pre>
      */
-    java.lang.String getTopicImageUrls();
+    int getTopicImageUrlsCount();
     /**
-     * <code>optional string topicImageUrls = 15;</code>
+     * <code>repeated string topicImageUrls = 15;</code>
+     *
+     * <pre>
+     *话题图片地址
+     * </pre>
+     */
+    java.lang.String getTopicImageUrls(int index);
+    /**
+     * <code>repeated string topicImageUrls = 15;</code>
      *
      * <pre>
      *话题图片地址
      * </pre>
      */
     com.google.protobuf.ByteString
-        getTopicImageUrlsBytes();
+        getTopicImageUrlsBytes(int index);
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.TopicDetailInfo}
@@ -5961,8 +6175,11 @@ public final class Topic {
             }
             case 122: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00001000;
-              topicImageUrls_ = bs;
+              if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+                topicImageUrls_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00004000;
+              }
+              topicImageUrls_.add(bs);
               break;
             }
           }
@@ -5978,6 +6195,9 @@ public final class Topic {
         }
         if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
           topicReplyInfo_ = java.util.Collections.unmodifiableList(topicReplyInfo_);
+        }
+        if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+          topicImageUrls_ = topicImageUrls_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6512,57 +6732,48 @@ public final class Topic {
     }
 
     public static final int TOPICIMAGEURLS_FIELD_NUMBER = 15;
-    private java.lang.Object topicImageUrls_;
+    private com.google.protobuf.LazyStringList topicImageUrls_;
     /**
-     * <code>optional string topicImageUrls = 15;</code>
+     * <code>repeated string topicImageUrls = 15;</code>
      *
      * <pre>
      *话题图片地址
      * </pre>
      */
-    public boolean hasTopicImageUrls() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+    public com.google.protobuf.ProtocolStringList
+        getTopicImageUrlsList() {
+      return topicImageUrls_;
     }
     /**
-     * <code>optional string topicImageUrls = 15;</code>
+     * <code>repeated string topicImageUrls = 15;</code>
      *
      * <pre>
      *话题图片地址
      * </pre>
      */
-    public java.lang.String getTopicImageUrls() {
-      java.lang.Object ref = topicImageUrls_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          topicImageUrls_ = s;
-        }
-        return s;
-      }
+    public int getTopicImageUrlsCount() {
+      return topicImageUrls_.size();
     }
     /**
-     * <code>optional string topicImageUrls = 15;</code>
+     * <code>repeated string topicImageUrls = 15;</code>
+     *
+     * <pre>
+     *话题图片地址
+     * </pre>
+     */
+    public java.lang.String getTopicImageUrls(int index) {
+      return topicImageUrls_.get(index);
+    }
+    /**
+     * <code>repeated string topicImageUrls = 15;</code>
      *
      * <pre>
      *话题图片地址
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getTopicImageUrlsBytes() {
-      java.lang.Object ref = topicImageUrls_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        topicImageUrls_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getTopicImageUrlsBytes(int index) {
+      return topicImageUrls_.getByteString(index);
     }
 
     private void initFields() {
@@ -6580,7 +6791,7 @@ public final class Topic {
       praiseHeadIconUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       topicReplyInfo_ = java.util.Collections.emptyList();
       praised_ = false;
-      topicImageUrls_ = "";
+      topicImageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -6679,8 +6890,8 @@ public final class Topic {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeBool(14, praised_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        output.writeBytes(15, getTopicImageUrlsBytes());
+      for (int i = 0; i < topicImageUrls_.size(); i++) {
+        output.writeBytes(15, topicImageUrls_.getByteString(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -6752,9 +6963,14 @@ public final class Topic {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, praised_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(15, getTopicImageUrlsBytes());
+      {
+        int dataSize = 0;
+        for (int i = 0; i < topicImageUrls_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(topicImageUrls_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getTopicImageUrlsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -6910,7 +7126,7 @@ public final class Topic {
         }
         praised_ = false;
         bitField0_ = (bitField0_ & ~0x00002000);
-        topicImageUrls_ = "";
+        topicImageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00004000);
         return this;
       }
@@ -7002,8 +7218,9 @@ public final class Topic {
           to_bitField0_ |= 0x00000800;
         }
         result.praised_ = praised_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-          to_bitField0_ |= 0x00001000;
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+          topicImageUrls_ = topicImageUrls_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.topicImageUrls_ = topicImageUrls_;
         result.bitField0_ = to_bitField0_;
@@ -7102,9 +7319,14 @@ public final class Topic {
         if (other.hasPraised()) {
           setPraised(other.getPraised());
         }
-        if (other.hasTopicImageUrls()) {
-          bitField0_ |= 0x00004000;
-          topicImageUrls_ = other.topicImageUrls_;
+        if (!other.topicImageUrls_.isEmpty()) {
+          if (topicImageUrls_.isEmpty()) {
+            topicImageUrls_ = other.topicImageUrls_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensureTopicImageUrlsIsMutable();
+            topicImageUrls_.addAll(other.topicImageUrls_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -8401,102 +8623,131 @@ public final class Topic {
         return this;
       }
 
-      private java.lang.Object topicImageUrls_ = "";
+      private com.google.protobuf.LazyStringList topicImageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTopicImageUrlsIsMutable() {
+        if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+          topicImageUrls_ = new com.google.protobuf.LazyStringArrayList(topicImageUrls_);
+          bitField0_ |= 0x00004000;
+         }
+      }
       /**
-       * <code>optional string topicImageUrls = 15;</code>
+       * <code>repeated string topicImageUrls = 15;</code>
        *
        * <pre>
        *话题图片地址
        * </pre>
        */
-      public boolean hasTopicImageUrls() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+      public com.google.protobuf.ProtocolStringList
+          getTopicImageUrlsList() {
+        return topicImageUrls_.getUnmodifiableView();
       }
       /**
-       * <code>optional string topicImageUrls = 15;</code>
+       * <code>repeated string topicImageUrls = 15;</code>
        *
        * <pre>
        *话题图片地址
        * </pre>
        */
-      public java.lang.String getTopicImageUrls() {
-        java.lang.Object ref = topicImageUrls_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            topicImageUrls_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getTopicImageUrlsCount() {
+        return topicImageUrls_.size();
       }
       /**
-       * <code>optional string topicImageUrls = 15;</code>
+       * <code>repeated string topicImageUrls = 15;</code>
+       *
+       * <pre>
+       *话题图片地址
+       * </pre>
+       */
+      public java.lang.String getTopicImageUrls(int index) {
+        return topicImageUrls_.get(index);
+      }
+      /**
+       * <code>repeated string topicImageUrls = 15;</code>
        *
        * <pre>
        *话题图片地址
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getTopicImageUrlsBytes() {
-        java.lang.Object ref = topicImageUrls_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          topicImageUrls_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getTopicImageUrlsBytes(int index) {
+        return topicImageUrls_.getByteString(index);
       }
       /**
-       * <code>optional string topicImageUrls = 15;</code>
+       * <code>repeated string topicImageUrls = 15;</code>
        *
        * <pre>
        *话题图片地址
        * </pre>
        */
       public Builder setTopicImageUrls(
-          java.lang.String value) {
+          int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00004000;
-        topicImageUrls_ = value;
+  ensureTopicImageUrlsIsMutable();
+        topicImageUrls_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string topicImageUrls = 15;</code>
+       * <code>repeated string topicImageUrls = 15;</code>
+       *
+       * <pre>
+       *话题图片地址
+       * </pre>
+       */
+      public Builder addTopicImageUrls(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTopicImageUrlsIsMutable();
+        topicImageUrls_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string topicImageUrls = 15;</code>
+       *
+       * <pre>
+       *话题图片地址
+       * </pre>
+       */
+      public Builder addAllTopicImageUrls(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTopicImageUrlsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, topicImageUrls_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string topicImageUrls = 15;</code>
        *
        * <pre>
        *话题图片地址
        * </pre>
        */
       public Builder clearTopicImageUrls() {
+        topicImageUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00004000);
-        topicImageUrls_ = getDefaultInstance().getTopicImageUrls();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string topicImageUrls = 15;</code>
+       * <code>repeated string topicImageUrls = 15;</code>
        *
        * <pre>
        *话题图片地址
        * </pre>
        */
-      public Builder setTopicImageUrlsBytes(
+      public Builder addTopicImageUrlsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00004000;
-        topicImageUrls_ = value;
+  ensureTopicImageUrlsIsMutable();
+        topicImageUrls_.add(value);
         onChanged();
         return this;
       }
@@ -17552,49 +17803,50 @@ public final class Topic {
       "\t\022\021\n\tresultMsg\030\002 \002(\t\022C\n\rtopicLiteInfo\030\003 " +
       "\003(\0132,.com.qjoy.basjoo.core.model.pb.Topi" +
       "cLiteInfo\022\020\n\010maxIndex\030\004 \001(\005\022\017\n\007hasMore\030\005" +
-      " \002(\010\"\342\001\n\rTopicLiteInfo\022\017\n\007topicId\030\001 \002(\t\022" +
+      " \002(\010\"\371\001\n\rTopicLiteInfo\022\017\n\007topicId\030\001 \002(\t\022" +
       "\021\n\ttopicType\030\002 \001(\005\022\016\n\006setTop\030\003 \002(\010\022\022\n\nto" +
       "picTitle\030\004 \002(\t\022\021\n\ttopicDesc\030\005 \001(\t\022\021\n\trea",
       "dCount\030\006 \002(\003\022\023\n\013praiseCount\030\007 \002(\003\022\022\n\nrep" +
       "lyCount\030\010 \002(\003\022\022\n\ncreateTime\030\t \002(\003\022\025\n\rlas" +
-      "tReplyTime\030\n \001(\003\022\017\n\007praised\030\013 \002(\010\"(\n\025Get" +
-      "TopicDetailRequest\022\017\n\007topicId\030\001 \002(\t\"\206\001\n\024" +
-      "GetTopicDetailResult\022\022\n\nresultCode\030\001 \002(\t" +
-      "\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017topicDetailInfo\030\003" +
-      " \001(\0132..com.qjoy.basjoo.core.model.pb.Top" +
-      "icDetailInfo\"\365\002\n\017TopicDetailInfo\022\017\n\007topi" +
-      "cId\030\001 \002(\t\022\021\n\ttopicType\030\002 \001(\005\022\016\n\006setTop\030\003" +
-      " \002(\010\022\022\n\ntopicTitle\030\004 \002(\t\022\021\n\ttopicDesc\030\005 ",
-      "\001(\t\022\024\n\014topicContent\030\006 \001(\t\022\021\n\treadCount\030\007" +
-      " \002(\003\022\023\n\013praiseCount\030\010 \002(\003\022\022\n\nreplyCount\030" +
-      "\t \002(\003\022\022\n\ncreateTime\030\n \002(\003\022\025\n\rlastReplyTi" +
-      "me\030\013 \002(\003\022\032\n\022praiseHeadIconUrls\030\014 \003(\t\022E\n\016" +
-      "topicReplyInfo\030\r \003(\0132-.com.qjoy.basjoo.c" +
-      "ore.model.pb.TopicReplyInfo\022\017\n\007praised\030\016" +
-      " \002(\010\022\026\n\016topicImageUrls\030\017 \001(\t\"\304\001\n\016TopicRe" +
-      "plyInfo\022\017\n\007replyId\030\001 \002(\t\022\023\n\013replyUserId\030" +
-      "\002 \002(\t\022\025\n\rreplyNickName\030\003 \002(\t\022\034\n\024replyUse" +
-      "rHeadIconUrl\030\004 \001(\t\022\025\n\rreplyToUserId\030\005 \001(",
-      "\t\022\027\n\017replyToNickName\030\006 \001(\t\022\024\n\014replyConte" +
-      "nt\030\007 \002(\t\022\021\n\treplyTime\030\010 \002(\003\"(\n\025AddTopicP" +
-      "raiseRequest\022\017\n\007topicId\030\001 \002(\t\"=\n\024AddTopi" +
-      "cPraiseResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
-      "ultMsg\030\002 \002(\t\"+\n\030CancelTopicPraiseRequest" +
-      "\022\017\n\007topicId\030\001 \002(\t\"@\n\027CancelTopicPraiseRe" +
-      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 " +
-      "\002(\t\"P\n\024AddTopicReplyRequest\022\017\n\007topicId\030\001" +
-      " \002(\t\022\021\n\treplyToId\030\002 \002(\t\022\024\n\014replyContent\030" +
-      "\003 \002(\t\"<\n\023AddTopicReplyResult\022\022\n\nresultCo",
-      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"A\n\032GetTopicP" +
-      "raiseUsersRequest\022\017\n\007topicId\030\001 \002(\t\022\022\n\nst" +
-      "artIndex\030\002 \001(\005\"\252\001\n\031GetTopicPraiseUsersRe" +
-      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 " +
-      "\002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022C" +
-      "\n\013praiseUsers\030\005 \003(\0132..com.qjoy.basjoo.co" +
-      "re.model.pb.TopicPraiseUser\"`\n\017TopicPrai" +
-      "seUser\022\016\n\006userId\030\001 \002(\t\022\024\n\014userNickName\030\002" +
-      " \002(\t\022\023\n\013headIconUrl\030\003 \002(\t\022\022\n\npraiseTime\030" +
-      "\004 \002(\003B\037\n\035com.qjoy.basjoo.core.model.pb"
+      "tReplyTime\030\n \001(\003\022\017\n\007praised\030\013 \002(\010\022\025\n\rtop" +
+      "icImageUrl\030\014 \001(\t\"(\n\025GetTopicDetailReques" +
+      "t\022\017\n\007topicId\030\001 \002(\t\"\206\001\n\024GetTopicDetailRes" +
+      "ult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002" +
+      "(\t\022G\n\017topicDetailInfo\030\003 \001(\0132..com.qjoy.b" +
+      "asjoo.core.model.pb.TopicDetailInfo\"\365\002\n\017" +
+      "TopicDetailInfo\022\017\n\007topicId\030\001 \002(\t\022\021\n\ttopi" +
+      "cType\030\002 \001(\005\022\016\n\006setTop\030\003 \002(\010\022\022\n\ntopicTitl",
+      "e\030\004 \002(\t\022\021\n\ttopicDesc\030\005 \001(\t\022\024\n\014topicConte" +
+      "nt\030\006 \001(\t\022\021\n\treadCount\030\007 \002(\003\022\023\n\013praiseCou" +
+      "nt\030\010 \002(\003\022\022\n\nreplyCount\030\t \002(\003\022\022\n\ncreateTi" +
+      "me\030\n \002(\003\022\025\n\rlastReplyTime\030\013 \002(\003\022\032\n\022prais" +
+      "eHeadIconUrls\030\014 \003(\t\022E\n\016topicReplyInfo\030\r " +
+      "\003(\0132-.com.qjoy.basjoo.core.model.pb.Topi" +
+      "cReplyInfo\022\017\n\007praised\030\016 \002(\010\022\026\n\016topicImag" +
+      "eUrls\030\017 \003(\t\"\304\001\n\016TopicReplyInfo\022\017\n\007replyI" +
+      "d\030\001 \002(\t\022\023\n\013replyUserId\030\002 \002(\t\022\025\n\rreplyNic" +
+      "kName\030\003 \002(\t\022\034\n\024replyUserHeadIconUrl\030\004 \001(",
+      "\t\022\025\n\rreplyToUserId\030\005 \001(\t\022\027\n\017replyToNickN" +
+      "ame\030\006 \001(\t\022\024\n\014replyContent\030\007 \002(\t\022\021\n\treply" +
+      "Time\030\010 \002(\003\"(\n\025AddTopicPraiseRequest\022\017\n\007t" +
+      "opicId\030\001 \002(\t\"=\n\024AddTopicPraiseResult\022\022\n\n" +
+      "resultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"+\n\030C" +
+      "ancelTopicPraiseRequest\022\017\n\007topicId\030\001 \002(\t" +
+      "\"@\n\027CancelTopicPraiseResult\022\022\n\nresultCod" +
+      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"P\n\024AddTopicRe" +
+      "plyRequest\022\017\n\007topicId\030\001 \002(\t\022\021\n\treplyToId" +
+      "\030\002 \002(\t\022\024\n\014replyContent\030\003 \002(\t\"<\n\023AddTopic",
+      "ReplyResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
+      "tMsg\030\002 \002(\t\"A\n\032GetTopicPraiseUsersRequest" +
+      "\022\017\n\007topicId\030\001 \002(\t\022\022\n\nstartIndex\030\002 \001(\005\"\252\001" +
+      "\n\031GetTopicPraiseUsersResult\022\022\n\nresultCod" +
+      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003" +
+      " \001(\005\022\017\n\007hasMore\030\004 \002(\010\022C\n\013praiseUsers\030\005 \003" +
+      "(\0132..com.qjoy.basjoo.core.model.pb.Topic" +
+      "PraiseUser\"`\n\017TopicPraiseUser\022\016\n\006userId\030" +
+      "\001 \002(\t\022\024\n\014userNickName\030\002 \002(\t\022\023\n\013headIconU" +
+      "rl\030\003 \002(\t\022\022\n\npraiseTime\030\004 \002(\003B\037\n\035com.qjoy",
+      ".basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17625,7 +17877,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_TopicLiteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_TopicLiteInfo_descriptor,
-        new java.lang.String[] { "TopicId", "TopicType", "SetTop", "TopicTitle", "TopicDesc", "ReadCount", "PraiseCount", "ReplyCount", "CreateTime", "LastReplyTime", "Praised", });
+        new java.lang.String[] { "TopicId", "TopicType", "SetTop", "TopicTitle", "TopicDesc", "ReadCount", "PraiseCount", "ReplyCount", "CreateTime", "LastReplyTime", "Praised", "TopicImageUrl", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicDetailRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicDetailRequest_fieldAccessorTable = new

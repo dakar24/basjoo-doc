@@ -1538,52 +1538,35 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
 
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -1591,7 +1574,7 @@ public final class Order {
      */
     boolean hasOrderId();
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -1599,7 +1582,7 @@ public final class Order {
      */
     java.lang.String getOrderId();
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -1609,7 +1592,7 @@ public final class Order {
         getOrderIdBytes();
 
     /**
-     * <code>required string categoryId = 5;</code>
+     * <code>required string categoryId = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -1617,7 +1600,7 @@ public final class Order {
      */
     boolean hasCategoryId();
     /**
-     * <code>required string categoryId = 5;</code>
+     * <code>required string categoryId = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -1625,7 +1608,7 @@ public final class Order {
      */
     java.lang.String getCategoryId();
     /**
-     * <code>required string categoryId = 5;</code>
+     * <code>required string categoryId = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -1635,7 +1618,7 @@ public final class Order {
         getCategoryIdBytes();
 
     /**
-     * <code>required int32 rentCount = 6;</code>
+     * <code>required int32 rentCount = 5;</code>
      *
      * <pre>
      *用户提交订单时所选的租用数量
@@ -1643,7 +1626,7 @@ public final class Order {
      */
     boolean hasRentCount();
     /**
-     * <code>required int32 rentCount = 6;</code>
+     * <code>required int32 rentCount = 5;</code>
      *
      * <pre>
      *用户提交订单时所选的租用数量
@@ -1652,7 +1635,7 @@ public final class Order {
     int getRentCount();
 
     /**
-     * <code>required string rentCode = 7;</code>
+     * <code>required string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -1660,7 +1643,7 @@ public final class Order {
      */
     boolean hasRentCode();
     /**
-     * <code>required string rentCode = 7;</code>
+     * <code>required string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -1668,7 +1651,7 @@ public final class Order {
      */
     java.lang.String getRentCode();
     /**
-     * <code>required string rentCode = 7;</code>
+     * <code>required string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -1678,7 +1661,7 @@ public final class Order {
         getRentCodeBytes();
 
     /**
-     * <code>required bool insurance = 8;</code>
+     * <code>required bool insurance = 7;</code>
      *
      * <pre>
      *是否选择运费险
@@ -1686,7 +1669,7 @@ public final class Order {
      */
     boolean hasInsurance();
     /**
-     * <code>required bool insurance = 8;</code>
+     * <code>required bool insurance = 7;</code>
      *
      * <pre>
      *是否选择运费险
@@ -1695,7 +1678,7 @@ public final class Order {
     boolean getInsurance();
 
     /**
-     * <code>optional double insurancePrice = 9;</code>
+     * <code>optional double insurancePrice = 8;</code>
      *
      * <pre>
      *运费险金额
@@ -1703,7 +1686,7 @@ public final class Order {
      */
     boolean hasInsurancePrice();
     /**
-     * <code>optional double insurancePrice = 9;</code>
+     * <code>optional double insurancePrice = 8;</code>
      *
      * <pre>
      *运费险金额
@@ -1712,7 +1695,7 @@ public final class Order {
     double getInsurancePrice();
 
     /**
-     * <code>optional double pledgePrice = 10;</code>
+     * <code>optional double pledgePrice = 9;</code>
      *
      * <pre>
      *押金
@@ -1720,7 +1703,7 @@ public final class Order {
      */
     boolean hasPledgePrice();
     /**
-     * <code>optional double pledgePrice = 10;</code>
+     * <code>optional double pledgePrice = 9;</code>
      *
      * <pre>
      *押金
@@ -1729,7 +1712,7 @@ public final class Order {
     double getPledgePrice();
 
     /**
-     * <code>optional double transportationPrice = 11;</code>
+     * <code>optional double transportationPrice = 10;</code>
      *
      * <pre>
      *运费
@@ -1737,7 +1720,7 @@ public final class Order {
      */
     boolean hasTransportationPrice();
     /**
-     * <code>optional double transportationPrice = 11;</code>
+     * <code>optional double transportationPrice = 10;</code>
      *
      * <pre>
      *运费
@@ -1746,7 +1729,7 @@ public final class Order {
     double getTransportationPrice();
 
     /**
-     * <code>required double totalRentPrice = 12;</code>
+     * <code>required double totalRentPrice = 11;</code>
      *
      * <pre>
      *该周期内总租金
@@ -1754,7 +1737,7 @@ public final class Order {
      */
     boolean hasTotalRentPrice();
     /**
-     * <code>required double totalRentPrice = 12;</code>
+     * <code>required double totalRentPrice = 11;</code>
      *
      * <pre>
      *该周期内总租金
@@ -1763,7 +1746,7 @@ public final class Order {
     double getTotalRentPrice();
 
     /**
-     * <code>required bool hasVoucher = 13;</code>
+     * <code>required bool hasVoucher = 12;</code>
      *
      * <pre>
      *是否有可使用的权益
@@ -1771,7 +1754,7 @@ public final class Order {
      */
     boolean hasHasVoucher();
     /**
-     * <code>required bool hasVoucher = 13;</code>
+     * <code>required bool hasVoucher = 12;</code>
      *
      * <pre>
      *是否有可使用的权益
@@ -1780,7 +1763,7 @@ public final class Order {
     boolean getHasVoucher();
 
     /**
-     * <code>required double totalPrice = 14;</code>
+     * <code>required double totalPrice = 13;</code>
      *
      * <pre>
      *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -1788,7 +1771,7 @@ public final class Order {
      */
     boolean hasTotalPrice();
     /**
-     * <code>required double totalPrice = 14;</code>
+     * <code>required double totalPrice = 13;</code>
      *
      * <pre>
      *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -1797,7 +1780,7 @@ public final class Order {
     double getTotalPrice();
 
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
      *订单收货地址信息
@@ -1805,7 +1788,7 @@ public final class Order {
      */
     boolean hasOrderReceiveAddressInfo();
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
      *订单收货地址信息
@@ -1813,7 +1796,7 @@ public final class Order {
      */
     com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo getOrderReceiveAddressInfo();
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
      *订单收货地址信息
@@ -1877,84 +1860,79 @@ public final class Order {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
+              resultMsg_ = bs;
               break;
             }
             case 26: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              resultMsg_ = bs;
+              orderId_ = bs;
               break;
             }
             case 34: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              orderId_ = bs;
-              break;
-            }
-            case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000010;
               categoryId_ = bs;
               break;
             }
-            case 48: {
-              bitField0_ |= 0x00000020;
+            case 40: {
+              bitField0_ |= 0x00000010;
               rentCount_ = input.readInt32();
               break;
             }
-            case 58: {
+            case 50: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               rentCode_ = bs;
               break;
             }
-            case 64: {
-              bitField0_ |= 0x00000080;
+            case 56: {
+              bitField0_ |= 0x00000040;
               insurance_ = input.readBool();
+              break;
+            }
+            case 65: {
+              bitField0_ |= 0x00000080;
+              insurancePrice_ = input.readDouble();
               break;
             }
             case 73: {
               bitField0_ |= 0x00000100;
-              insurancePrice_ = input.readDouble();
+              pledgePrice_ = input.readDouble();
               break;
             }
             case 81: {
               bitField0_ |= 0x00000200;
-              pledgePrice_ = input.readDouble();
+              transportationPrice_ = input.readDouble();
               break;
             }
             case 89: {
               bitField0_ |= 0x00000400;
-              transportationPrice_ = input.readDouble();
-              break;
-            }
-            case 97: {
-              bitField0_ |= 0x00000800;
               totalRentPrice_ = input.readDouble();
               break;
             }
-            case 104: {
-              bitField0_ |= 0x00001000;
+            case 96: {
+              bitField0_ |= 0x00000800;
               hasVoucher_ = input.readBool();
               break;
             }
-            case 113: {
-              bitField0_ |= 0x00002000;
+            case 105: {
+              bitField0_ |= 0x00001000;
               totalPrice_ = input.readDouble();
               break;
             }
-            case 122: {
+            case 114: {
               com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00004000) == 0x00004000)) {
+              if (((bitField0_ & 0x00002000) == 0x00002000)) {
                 subBuilder = orderReceiveAddressInfo_.toBuilder();
               }
               orderReceiveAddressInfo_ = input.readMessage(com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.PARSER, extensionRegistry);
@@ -1962,7 +1940,7 @@ public final class Order {
                 subBuilder.mergeFrom(orderReceiveAddressInfo_);
                 orderReceiveAddressInfo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00002000;
               break;
             }
           }
@@ -2005,39 +1983,16 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -2054,7 +2009,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -2070,16 +2025,16 @@ public final class Order {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -2096,7 +2051,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -2112,20 +2067,20 @@ public final class Order {
       }
     }
 
-    public static final int ORDERID_FIELD_NUMBER = 4;
+    public static final int ORDERID_FIELD_NUMBER = 3;
     private java.lang.Object orderId_;
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
      * </pre>
      */
     public boolean hasOrderId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -2146,7 +2101,7 @@ public final class Order {
       }
     }
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -2166,20 +2121,20 @@ public final class Order {
       }
     }
 
-    public static final int CATEGORYID_FIELD_NUMBER = 5;
+    public static final int CATEGORYID_FIELD_NUMBER = 4;
     private java.lang.Object categoryId_;
     /**
-     * <code>required string categoryId = 5;</code>
+     * <code>required string categoryId = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
      * </pre>
      */
     public boolean hasCategoryId() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required string categoryId = 5;</code>
+     * <code>required string categoryId = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -2200,7 +2155,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string categoryId = 5;</code>
+     * <code>required string categoryId = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -2220,20 +2175,20 @@ public final class Order {
       }
     }
 
-    public static final int RENTCOUNT_FIELD_NUMBER = 6;
+    public static final int RENTCOUNT_FIELD_NUMBER = 5;
     private int rentCount_;
     /**
-     * <code>required int32 rentCount = 6;</code>
+     * <code>required int32 rentCount = 5;</code>
      *
      * <pre>
      *用户提交订单时所选的租用数量
      * </pre>
      */
     public boolean hasRentCount() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required int32 rentCount = 6;</code>
+     * <code>required int32 rentCount = 5;</code>
      *
      * <pre>
      *用户提交订单时所选的租用数量
@@ -2243,20 +2198,20 @@ public final class Order {
       return rentCount_;
     }
 
-    public static final int RENTCODE_FIELD_NUMBER = 7;
+    public static final int RENTCODE_FIELD_NUMBER = 6;
     private java.lang.Object rentCode_;
     /**
-     * <code>required string rentCode = 7;</code>
+     * <code>required string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
      * </pre>
      */
     public boolean hasRentCode() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required string rentCode = 7;</code>
+     * <code>required string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -2277,7 +2232,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string rentCode = 7;</code>
+     * <code>required string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -2297,20 +2252,20 @@ public final class Order {
       }
     }
 
-    public static final int INSURANCE_FIELD_NUMBER = 8;
+    public static final int INSURANCE_FIELD_NUMBER = 7;
     private boolean insurance_;
     /**
-     * <code>required bool insurance = 8;</code>
+     * <code>required bool insurance = 7;</code>
      *
      * <pre>
      *是否选择运费险
      * </pre>
      */
     public boolean hasInsurance() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required bool insurance = 8;</code>
+     * <code>required bool insurance = 7;</code>
      *
      * <pre>
      *是否选择运费险
@@ -2320,20 +2275,20 @@ public final class Order {
       return insurance_;
     }
 
-    public static final int INSURANCEPRICE_FIELD_NUMBER = 9;
+    public static final int INSURANCEPRICE_FIELD_NUMBER = 8;
     private double insurancePrice_;
     /**
-     * <code>optional double insurancePrice = 9;</code>
+     * <code>optional double insurancePrice = 8;</code>
      *
      * <pre>
      *运费险金额
      * </pre>
      */
     public boolean hasInsurancePrice() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>optional double insurancePrice = 9;</code>
+     * <code>optional double insurancePrice = 8;</code>
      *
      * <pre>
      *运费险金额
@@ -2343,20 +2298,20 @@ public final class Order {
       return insurancePrice_;
     }
 
-    public static final int PLEDGEPRICE_FIELD_NUMBER = 10;
+    public static final int PLEDGEPRICE_FIELD_NUMBER = 9;
     private double pledgePrice_;
     /**
-     * <code>optional double pledgePrice = 10;</code>
+     * <code>optional double pledgePrice = 9;</code>
      *
      * <pre>
      *押金
      * </pre>
      */
     public boolean hasPledgePrice() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
-     * <code>optional double pledgePrice = 10;</code>
+     * <code>optional double pledgePrice = 9;</code>
      *
      * <pre>
      *押金
@@ -2366,20 +2321,20 @@ public final class Order {
       return pledgePrice_;
     }
 
-    public static final int TRANSPORTATIONPRICE_FIELD_NUMBER = 11;
+    public static final int TRANSPORTATIONPRICE_FIELD_NUMBER = 10;
     private double transportationPrice_;
     /**
-     * <code>optional double transportationPrice = 11;</code>
+     * <code>optional double transportationPrice = 10;</code>
      *
      * <pre>
      *运费
      * </pre>
      */
     public boolean hasTransportationPrice() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
-     * <code>optional double transportationPrice = 11;</code>
+     * <code>optional double transportationPrice = 10;</code>
      *
      * <pre>
      *运费
@@ -2389,20 +2344,20 @@ public final class Order {
       return transportationPrice_;
     }
 
-    public static final int TOTALRENTPRICE_FIELD_NUMBER = 12;
+    public static final int TOTALRENTPRICE_FIELD_NUMBER = 11;
     private double totalRentPrice_;
     /**
-     * <code>required double totalRentPrice = 12;</code>
+     * <code>required double totalRentPrice = 11;</code>
      *
      * <pre>
      *该周期内总租金
      * </pre>
      */
     public boolean hasTotalRentPrice() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>required double totalRentPrice = 12;</code>
+     * <code>required double totalRentPrice = 11;</code>
      *
      * <pre>
      *该周期内总租金
@@ -2412,20 +2367,20 @@ public final class Order {
       return totalRentPrice_;
     }
 
-    public static final int HASVOUCHER_FIELD_NUMBER = 13;
+    public static final int HASVOUCHER_FIELD_NUMBER = 12;
     private boolean hasVoucher_;
     /**
-     * <code>required bool hasVoucher = 13;</code>
+     * <code>required bool hasVoucher = 12;</code>
      *
      * <pre>
      *是否有可使用的权益
      * </pre>
      */
     public boolean hasHasVoucher() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>required bool hasVoucher = 13;</code>
+     * <code>required bool hasVoucher = 12;</code>
      *
      * <pre>
      *是否有可使用的权益
@@ -2435,20 +2390,20 @@ public final class Order {
       return hasVoucher_;
     }
 
-    public static final int TOTALPRICE_FIELD_NUMBER = 14;
+    public static final int TOTALPRICE_FIELD_NUMBER = 13;
     private double totalPrice_;
     /**
-     * <code>required double totalPrice = 14;</code>
+     * <code>required double totalPrice = 13;</code>
      *
      * <pre>
      *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
      * </pre>
      */
     public boolean hasTotalPrice() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
-     * <code>required double totalPrice = 14;</code>
+     * <code>required double totalPrice = 13;</code>
      *
      * <pre>
      *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -2458,20 +2413,20 @@ public final class Order {
       return totalPrice_;
     }
 
-    public static final int ORDERRECEIVEADDRESSINFO_FIELD_NUMBER = 15;
+    public static final int ORDERRECEIVEADDRESSINFO_FIELD_NUMBER = 14;
     private com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo orderReceiveAddressInfo_;
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
      *订单收货地址信息
      * </pre>
      */
     public boolean hasOrderReceiveAddressInfo() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
      *订单收货地址信息
@@ -2481,7 +2436,7 @@ public final class Order {
       return orderReceiveAddressInfo_;
     }
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
      *订单收货地址信息
@@ -2492,7 +2447,6 @@ public final class Order {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
       orderId_ = "";
@@ -2514,10 +2468,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -2568,49 +2518,46 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(3, getOrderIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getOrderIdBytes());
+        output.writeBytes(4, getCategoryIdBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getCategoryIdBytes());
+        output.writeInt32(5, rentCount_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt32(6, rentCount_);
+        output.writeBytes(6, getRentCodeBytes());
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(7, getRentCodeBytes());
+        output.writeBool(7, insurance_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBool(8, insurance_);
+        output.writeDouble(8, insurancePrice_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeDouble(9, insurancePrice_);
+        output.writeDouble(9, pledgePrice_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeDouble(10, pledgePrice_);
+        output.writeDouble(10, transportationPrice_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeDouble(11, transportationPrice_);
+        output.writeDouble(11, totalRentPrice_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeDouble(12, totalRentPrice_);
+        output.writeBool(12, hasVoucher_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        output.writeBool(13, hasVoucher_);
+        output.writeDouble(13, totalPrice_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        output.writeDouble(14, totalPrice_);
-      }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        output.writeMessage(15, orderReceiveAddressInfo_);
+        output.writeMessage(14, orderReceiveAddressInfo_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2623,63 +2570,59 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(3, getOrderIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getOrderIdBytes());
+          .computeBytesSize(4, getCategoryIdBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getCategoryIdBytes());
+          .computeInt32Size(5, rentCount_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, rentCount_);
+          .computeBytesSize(6, getRentCodeBytes());
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getRentCodeBytes());
+          .computeBoolSize(7, insurance_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, insurance_);
+          .computeDoubleSize(8, insurancePrice_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, insurancePrice_);
+          .computeDoubleSize(9, pledgePrice_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, pledgePrice_);
+          .computeDoubleSize(10, transportationPrice_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, transportationPrice_);
+          .computeDoubleSize(11, totalRentPrice_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(12, totalRentPrice_);
+          .computeBoolSize(12, hasVoucher_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, hasVoucher_);
+          .computeDoubleSize(13, totalPrice_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(14, totalPrice_);
-      }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, orderReceiveAddressInfo_);
+          .computeMessageSize(14, orderReceiveAddressInfo_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2803,40 +2746,38 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         orderId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         categoryId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         rentCount_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         rentCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         insurance_ = false;
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         insurancePrice_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         pledgePrice_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         transportationPrice_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         totalRentPrice_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
         hasVoucher_ = false;
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         totalPrice_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         if (orderReceiveAddressInfoBuilder_ == null) {
           orderReceiveAddressInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance();
         } else {
           orderReceiveAddressInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
 
@@ -2868,61 +2809,57 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultCode_ = resultCode_;
+        result.resultMsg_ = resultMsg_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.resultMsg_ = resultMsg_;
+        result.orderId_ = orderId_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.orderId_ = orderId_;
+        result.categoryId_ = categoryId_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.categoryId_ = categoryId_;
+        result.rentCount_ = rentCount_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.rentCount_ = rentCount_;
+        result.rentCode_ = rentCode_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.rentCode_ = rentCode_;
+        result.insurance_ = insurance_;
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.insurance_ = insurance_;
+        result.insurancePrice_ = insurancePrice_;
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.insurancePrice_ = insurancePrice_;
+        result.pledgePrice_ = pledgePrice_;
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.pledgePrice_ = pledgePrice_;
+        result.transportationPrice_ = transportationPrice_;
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.transportationPrice_ = transportationPrice_;
+        result.totalRentPrice_ = totalRentPrice_;
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.totalRentPrice_ = totalRentPrice_;
+        result.hasVoucher_ = hasVoucher_;
         if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00001000;
         }
-        result.hasVoucher_ = hasVoucher_;
+        result.totalPrice_ = totalPrice_;
         if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00002000;
-        }
-        result.totalPrice_ = totalPrice_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-          to_bitField0_ |= 0x00004000;
         }
         if (orderReceiveAddressInfoBuilder_ == null) {
           result.orderReceiveAddressInfo_ = orderReceiveAddressInfo_;
@@ -2945,26 +2882,23 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.CommitOrderResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.CommitOrderResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
         if (other.hasOrderId()) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
           orderId_ = other.orderId_;
           onChanged();
         }
         if (other.hasCategoryId()) {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000008;
           categoryId_ = other.categoryId_;
           onChanged();
         }
@@ -2972,7 +2906,7 @@ public final class Order {
           setRentCount(other.getRentCount());
         }
         if (other.hasRentCode()) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000020;
           rentCode_ = other.rentCode_;
           onChanged();
         }
@@ -3005,10 +2939,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -3073,63 +3003,15 @@ public final class Order {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -3146,7 +3028,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -3162,36 +3044,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -3199,13 +3081,13 @@ public final class Order {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -3222,7 +3104,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -3238,36 +3120,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -3275,17 +3157,17 @@ public final class Order {
 
       private java.lang.Object orderId_ = "";
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
        * </pre>
        */
       public boolean hasOrderId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -3306,7 +3188,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -3326,7 +3208,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -3337,26 +3219,26 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         orderId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
        * </pre>
        */
       public Builder clearOrderId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         orderId_ = getDefaultInstance().getOrderId();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -3367,7 +3249,7 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         orderId_ = value;
         onChanged();
         return this;
@@ -3375,17 +3257,17 @@ public final class Order {
 
       private java.lang.Object categoryId_ = "";
       /**
-       * <code>required string categoryId = 5;</code>
+       * <code>required string categoryId = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
        * </pre>
        */
       public boolean hasCategoryId() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required string categoryId = 5;</code>
+       * <code>required string categoryId = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3406,7 +3288,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string categoryId = 5;</code>
+       * <code>required string categoryId = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3426,7 +3308,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string categoryId = 5;</code>
+       * <code>required string categoryId = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3437,26 +3319,26 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  bitField0_ |= 0x00000008;
         categoryId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string categoryId = 5;</code>
+       * <code>required string categoryId = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
        * </pre>
        */
       public Builder clearCategoryId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         categoryId_ = getDefaultInstance().getCategoryId();
         onChanged();
         return this;
       }
       /**
-       * <code>required string categoryId = 5;</code>
+       * <code>required string categoryId = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3467,7 +3349,7 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  bitField0_ |= 0x00000008;
         categoryId_ = value;
         onChanged();
         return this;
@@ -3475,17 +3357,17 @@ public final class Order {
 
       private int rentCount_ ;
       /**
-       * <code>required int32 rentCount = 6;</code>
+       * <code>required int32 rentCount = 5;</code>
        *
        * <pre>
        *用户提交订单时所选的租用数量
        * </pre>
        */
       public boolean hasRentCount() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required int32 rentCount = 6;</code>
+       * <code>required int32 rentCount = 5;</code>
        *
        * <pre>
        *用户提交订单时所选的租用数量
@@ -3495,27 +3377,27 @@ public final class Order {
         return rentCount_;
       }
       /**
-       * <code>required int32 rentCount = 6;</code>
+       * <code>required int32 rentCount = 5;</code>
        *
        * <pre>
        *用户提交订单时所选的租用数量
        * </pre>
        */
       public Builder setRentCount(int value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         rentCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 rentCount = 6;</code>
+       * <code>required int32 rentCount = 5;</code>
        *
        * <pre>
        *用户提交订单时所选的租用数量
        * </pre>
        */
       public Builder clearRentCount() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         rentCount_ = 0;
         onChanged();
         return this;
@@ -3523,17 +3405,17 @@ public final class Order {
 
       private java.lang.Object rentCode_ = "";
       /**
-       * <code>required string rentCode = 7;</code>
+       * <code>required string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
        * </pre>
        */
       public boolean hasRentCode() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required string rentCode = 7;</code>
+       * <code>required string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3554,7 +3436,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string rentCode = 7;</code>
+       * <code>required string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3574,7 +3456,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string rentCode = 7;</code>
+       * <code>required string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3585,26 +3467,26 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  bitField0_ |= 0x00000020;
         rentCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string rentCode = 7;</code>
+       * <code>required string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
        * </pre>
        */
       public Builder clearRentCode() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         rentCode_ = getDefaultInstance().getRentCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string rentCode = 7;</code>
+       * <code>required string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3615,7 +3497,7 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  bitField0_ |= 0x00000020;
         rentCode_ = value;
         onChanged();
         return this;
@@ -3623,17 +3505,17 @@ public final class Order {
 
       private boolean insurance_ ;
       /**
-       * <code>required bool insurance = 8;</code>
+       * <code>required bool insurance = 7;</code>
        *
        * <pre>
        *是否选择运费险
        * </pre>
        */
       public boolean hasInsurance() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required bool insurance = 8;</code>
+       * <code>required bool insurance = 7;</code>
        *
        * <pre>
        *是否选择运费险
@@ -3643,27 +3525,27 @@ public final class Order {
         return insurance_;
       }
       /**
-       * <code>required bool insurance = 8;</code>
+       * <code>required bool insurance = 7;</code>
        *
        * <pre>
        *是否选择运费险
        * </pre>
        */
       public Builder setInsurance(boolean value) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         insurance_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required bool insurance = 8;</code>
+       * <code>required bool insurance = 7;</code>
        *
        * <pre>
        *是否选择运费险
        * </pre>
        */
       public Builder clearInsurance() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         insurance_ = false;
         onChanged();
         return this;
@@ -3671,17 +3553,17 @@ public final class Order {
 
       private double insurancePrice_ ;
       /**
-       * <code>optional double insurancePrice = 9;</code>
+       * <code>optional double insurancePrice = 8;</code>
        *
        * <pre>
        *运费险金额
        * </pre>
        */
       public boolean hasInsurancePrice() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>optional double insurancePrice = 9;</code>
+       * <code>optional double insurancePrice = 8;</code>
        *
        * <pre>
        *运费险金额
@@ -3691,27 +3573,27 @@ public final class Order {
         return insurancePrice_;
       }
       /**
-       * <code>optional double insurancePrice = 9;</code>
+       * <code>optional double insurancePrice = 8;</code>
        *
        * <pre>
        *运费险金额
        * </pre>
        */
       public Builder setInsurancePrice(double value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         insurancePrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double insurancePrice = 9;</code>
+       * <code>optional double insurancePrice = 8;</code>
        *
        * <pre>
        *运费险金额
        * </pre>
        */
       public Builder clearInsurancePrice() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         insurancePrice_ = 0D;
         onChanged();
         return this;
@@ -3719,17 +3601,17 @@ public final class Order {
 
       private double pledgePrice_ ;
       /**
-       * <code>optional double pledgePrice = 10;</code>
+       * <code>optional double pledgePrice = 9;</code>
        *
        * <pre>
        *押金
        * </pre>
        */
       public boolean hasPledgePrice() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
-       * <code>optional double pledgePrice = 10;</code>
+       * <code>optional double pledgePrice = 9;</code>
        *
        * <pre>
        *押金
@@ -3739,27 +3621,27 @@ public final class Order {
         return pledgePrice_;
       }
       /**
-       * <code>optional double pledgePrice = 10;</code>
+       * <code>optional double pledgePrice = 9;</code>
        *
        * <pre>
        *押金
        * </pre>
        */
       public Builder setPledgePrice(double value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         pledgePrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double pledgePrice = 10;</code>
+       * <code>optional double pledgePrice = 9;</code>
        *
        * <pre>
        *押金
        * </pre>
        */
       public Builder clearPledgePrice() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         pledgePrice_ = 0D;
         onChanged();
         return this;
@@ -3767,17 +3649,17 @@ public final class Order {
 
       private double transportationPrice_ ;
       /**
-       * <code>optional double transportationPrice = 11;</code>
+       * <code>optional double transportationPrice = 10;</code>
        *
        * <pre>
        *运费
        * </pre>
        */
       public boolean hasTransportationPrice() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>optional double transportationPrice = 11;</code>
+       * <code>optional double transportationPrice = 10;</code>
        *
        * <pre>
        *运费
@@ -3787,27 +3669,27 @@ public final class Order {
         return transportationPrice_;
       }
       /**
-       * <code>optional double transportationPrice = 11;</code>
+       * <code>optional double transportationPrice = 10;</code>
        *
        * <pre>
        *运费
        * </pre>
        */
       public Builder setTransportationPrice(double value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         transportationPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double transportationPrice = 11;</code>
+       * <code>optional double transportationPrice = 10;</code>
        *
        * <pre>
        *运费
        * </pre>
        */
       public Builder clearTransportationPrice() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         transportationPrice_ = 0D;
         onChanged();
         return this;
@@ -3815,17 +3697,17 @@ public final class Order {
 
       private double totalRentPrice_ ;
       /**
-       * <code>required double totalRentPrice = 12;</code>
+       * <code>required double totalRentPrice = 11;</code>
        *
        * <pre>
        *该周期内总租金
        * </pre>
        */
       public boolean hasTotalRentPrice() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>required double totalRentPrice = 12;</code>
+       * <code>required double totalRentPrice = 11;</code>
        *
        * <pre>
        *该周期内总租金
@@ -3835,27 +3717,27 @@ public final class Order {
         return totalRentPrice_;
       }
       /**
-       * <code>required double totalRentPrice = 12;</code>
+       * <code>required double totalRentPrice = 11;</code>
        *
        * <pre>
        *该周期内总租金
        * </pre>
        */
       public Builder setTotalRentPrice(double value) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         totalRentPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double totalRentPrice = 12;</code>
+       * <code>required double totalRentPrice = 11;</code>
        *
        * <pre>
        *该周期内总租金
        * </pre>
        */
       public Builder clearTotalRentPrice() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
         totalRentPrice_ = 0D;
         onChanged();
         return this;
@@ -3863,17 +3745,17 @@ public final class Order {
 
       private boolean hasVoucher_ ;
       /**
-       * <code>required bool hasVoucher = 13;</code>
+       * <code>required bool hasVoucher = 12;</code>
        *
        * <pre>
        *是否有可使用的权益
        * </pre>
        */
       public boolean hasHasVoucher() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
-       * <code>required bool hasVoucher = 13;</code>
+       * <code>required bool hasVoucher = 12;</code>
        *
        * <pre>
        *是否有可使用的权益
@@ -3883,27 +3765,27 @@ public final class Order {
         return hasVoucher_;
       }
       /**
-       * <code>required bool hasVoucher = 13;</code>
+       * <code>required bool hasVoucher = 12;</code>
        *
        * <pre>
        *是否有可使用的权益
        * </pre>
        */
       public Builder setHasVoucher(boolean value) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         hasVoucher_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required bool hasVoucher = 13;</code>
+       * <code>required bool hasVoucher = 12;</code>
        *
        * <pre>
        *是否有可使用的权益
        * </pre>
        */
       public Builder clearHasVoucher() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         hasVoucher_ = false;
         onChanged();
         return this;
@@ -3911,17 +3793,17 @@ public final class Order {
 
       private double totalPrice_ ;
       /**
-       * <code>required double totalPrice = 14;</code>
+       * <code>required double totalPrice = 13;</code>
        *
        * <pre>
        *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
        * </pre>
        */
       public boolean hasTotalPrice() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
-       * <code>required double totalPrice = 14;</code>
+       * <code>required double totalPrice = 13;</code>
        *
        * <pre>
        *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -3931,27 +3813,27 @@ public final class Order {
         return totalPrice_;
       }
       /**
-       * <code>required double totalPrice = 14;</code>
+       * <code>required double totalPrice = 13;</code>
        *
        * <pre>
        *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
        * </pre>
        */
       public Builder setTotalPrice(double value) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         totalPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double totalPrice = 14;</code>
+       * <code>required double totalPrice = 13;</code>
        *
        * <pre>
        *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
        * </pre>
        */
       public Builder clearTotalPrice() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         totalPrice_ = 0D;
         onChanged();
         return this;
@@ -3961,17 +3843,17 @@ public final class Order {
       private com.google.protobuf.SingleFieldBuilder<
           com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo, com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder> orderReceiveAddressInfoBuilder_;
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
        *订单收货地址信息
        * </pre>
        */
       public boolean hasOrderReceiveAddressInfo() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
        *订单收货地址信息
@@ -3985,7 +3867,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
        *订单收货地址信息
@@ -4001,11 +3883,11 @@ public final class Order {
         } else {
           orderReceiveAddressInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
        *订单收货地址信息
@@ -4019,11 +3901,11 @@ public final class Order {
         } else {
           orderReceiveAddressInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
        *订单收货地址信息
@@ -4031,7 +3913,7 @@ public final class Order {
        */
       public Builder mergeOrderReceiveAddressInfo(com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo value) {
         if (orderReceiveAddressInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00004000) == 0x00004000) &&
+          if (((bitField0_ & 0x00002000) == 0x00002000) &&
               orderReceiveAddressInfo_ != com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance()) {
             orderReceiveAddressInfo_ =
               com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.newBuilder(orderReceiveAddressInfo_).mergeFrom(value).buildPartial();
@@ -4042,11 +3924,11 @@ public final class Order {
         } else {
           orderReceiveAddressInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
        *订单收货地址信息
@@ -4059,23 +3941,23 @@ public final class Order {
         } else {
           orderReceiveAddressInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
        *订单收货地址信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder getOrderReceiveAddressInfoBuilder() {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return getOrderReceiveAddressInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
        *订单收货地址信息
@@ -4089,7 +3971,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 15;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
        *订单收货地址信息
@@ -7482,52 +7364,35 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
 
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -7535,7 +7400,7 @@ public final class Order {
      */
     boolean hasOrderId();
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -7543,7 +7408,7 @@ public final class Order {
      */
     java.lang.String getOrderId();
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -7553,7 +7418,7 @@ public final class Order {
         getOrderIdBytes();
 
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -7561,7 +7426,7 @@ public final class Order {
      */
     boolean hasPayChannel();
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -7570,7 +7435,7 @@ public final class Order {
     int getPayChannel();
 
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -7578,7 +7443,7 @@ public final class Order {
      */
     boolean hasWxPayInfo();
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -7586,7 +7451,7 @@ public final class Order {
      */
     com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo();
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -7650,37 +7515,32 @@ public final class Order {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
+              resultMsg_ = bs;
               break;
             }
             case 26: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              resultMsg_ = bs;
-              break;
-            }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
               orderId_ = bs;
               break;
             }
-            case 40: {
-              bitField0_ |= 0x00000010;
+            case 32: {
+              bitField0_ |= 0x00000008;
               payChannel_ = input.readInt32();
               break;
             }
-            case 50: {
+            case 42: {
               com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
                 subBuilder = wxPayInfo_.toBuilder();
               }
               wxPayInfo_ = input.readMessage(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.PARSER, extensionRegistry);
@@ -7688,7 +7548,7 @@ public final class Order {
                 subBuilder.mergeFrom(wxPayInfo_);
                 wxPayInfo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000010;
               break;
             }
           }
@@ -7731,39 +7591,16 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -7780,7 +7617,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -7796,16 +7633,16 @@ public final class Order {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -7822,7 +7659,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -7838,20 +7675,20 @@ public final class Order {
       }
     }
 
-    public static final int ORDERID_FIELD_NUMBER = 4;
+    public static final int ORDERID_FIELD_NUMBER = 3;
     private java.lang.Object orderId_;
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
      * </pre>
      */
     public boolean hasOrderId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -7872,7 +7709,7 @@ public final class Order {
       }
     }
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -7892,20 +7729,20 @@ public final class Order {
       }
     }
 
-    public static final int PAYCHANNEL_FIELD_NUMBER = 5;
+    public static final int PAYCHANNEL_FIELD_NUMBER = 4;
     private int payChannel_;
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
      * </pre>
      */
     public boolean hasPayChannel() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -7915,20 +7752,20 @@ public final class Order {
       return payChannel_;
     }
 
-    public static final int WXPAYINFO_FIELD_NUMBER = 6;
+    public static final int WXPAYINFO_FIELD_NUMBER = 5;
     private com.qjoy.basjoo.core.model.pb.Order.WxPayInfo wxPayInfo_;
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
      * </pre>
      */
     public boolean hasWxPayInfo() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -7938,7 +7775,7 @@ public final class Order {
       return wxPayInfo_;
     }
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -7949,7 +7786,6 @@ public final class Order {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
       orderId_ = "";
@@ -7962,10 +7798,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -7988,22 +7820,19 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(3, getOrderIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getOrderIdBytes());
+        output.writeInt32(4, payChannel_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt32(5, payChannel_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeMessage(6, wxPayInfo_);
+        output.writeMessage(5, wxPayInfo_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -8016,27 +7845,23 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(3, getOrderIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getOrderIdBytes());
+          .computeInt32Size(4, payChannel_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, payChannel_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, wxPayInfo_);
+          .computeMessageSize(5, wxPayInfo_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -8160,22 +7985,20 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         orderId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         payChannel_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (wxPayInfoBuilder_ == null) {
           wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
         } else {
           wxPayInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -8207,25 +8030,21 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultCode_ = resultCode_;
+        result.resultMsg_ = resultMsg_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.resultMsg_ = resultMsg_;
+        result.orderId_ = orderId_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.orderId_ = orderId_;
+        result.payChannel_ = payChannel_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
-        }
-        result.payChannel_ = payChannel_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
         }
         if (wxPayInfoBuilder_ == null) {
           result.wxPayInfo_ = wxPayInfo_;
@@ -8248,21 +8067,18 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ConfirmOrderResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.ConfirmOrderResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
         if (other.hasOrderId()) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
           orderId_ = other.orderId_;
           onChanged();
         }
@@ -8277,10 +8093,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -8317,63 +8129,15 @@ public final class Order {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -8390,7 +8154,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -8406,36 +8170,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -8443,13 +8207,13 @@ public final class Order {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -8466,7 +8230,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -8482,36 +8246,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -8519,17 +8283,17 @@ public final class Order {
 
       private java.lang.Object orderId_ = "";
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
        * </pre>
        */
       public boolean hasOrderId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -8550,7 +8314,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -8570,7 +8334,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -8581,26 +8345,26 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         orderId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
        * </pre>
        */
       public Builder clearOrderId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         orderId_ = getDefaultInstance().getOrderId();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -8611,7 +8375,7 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         orderId_ = value;
         onChanged();
         return this;
@@ -8619,17 +8383,17 @@ public final class Order {
 
       private int payChannel_ ;
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
        * </pre>
        */
       public boolean hasPayChannel() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
@@ -8639,27 +8403,27 @@ public final class Order {
         return payChannel_;
       }
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
        * </pre>
        */
       public Builder setPayChannel(int value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         payChannel_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
        * </pre>
        */
       public Builder clearPayChannel() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         payChannel_ = 0;
         onChanged();
         return this;
@@ -8669,17 +8433,17 @@ public final class Order {
       private com.google.protobuf.SingleFieldBuilder<
           com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder> wxPayInfoBuilder_;
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
        * </pre>
        */
       public boolean hasWxPayInfo() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -8693,7 +8457,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -8709,11 +8473,11 @@ public final class Order {
         } else {
           wxPayInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -8727,11 +8491,11 @@ public final class Order {
         } else {
           wxPayInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -8739,7 +8503,7 @@ public final class Order {
        */
       public Builder mergeWxPayInfo(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo value) {
         if (wxPayInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
               wxPayInfo_ != com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance()) {
             wxPayInfo_ =
               com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.newBuilder(wxPayInfo_).mergeFrom(value).buildPartial();
@@ -8750,11 +8514,11 @@ public final class Order {
         } else {
           wxPayInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -8767,23 +8531,23 @@ public final class Order {
         } else {
           wxPayInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder getWxPayInfoBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getWxPayInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -8797,7 +8561,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -11301,52 +11065,35 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
 
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -11354,7 +11101,7 @@ public final class Order {
      */
     boolean hasOrderId();
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -11362,7 +11109,7 @@ public final class Order {
      */
     java.lang.String getOrderId();
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -11372,7 +11119,7 @@ public final class Order {
         getOrderIdBytes();
 
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -11380,7 +11127,7 @@ public final class Order {
      */
     boolean hasPayChannel();
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -11389,7 +11136,7 @@ public final class Order {
     int getPayChannel();
 
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -11397,7 +11144,7 @@ public final class Order {
      */
     boolean hasWxPayInfo();
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -11405,7 +11152,7 @@ public final class Order {
      */
     com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo();
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -11469,37 +11216,32 @@ public final class Order {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
+              resultMsg_ = bs;
               break;
             }
             case 26: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              resultMsg_ = bs;
-              break;
-            }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
               orderId_ = bs;
               break;
             }
-            case 40: {
-              bitField0_ |= 0x00000010;
+            case 32: {
+              bitField0_ |= 0x00000008;
               payChannel_ = input.readInt32();
               break;
             }
-            case 50: {
+            case 42: {
               com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
                 subBuilder = wxPayInfo_.toBuilder();
               }
               wxPayInfo_ = input.readMessage(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.PARSER, extensionRegistry);
@@ -11507,7 +11249,7 @@ public final class Order {
                 subBuilder.mergeFrom(wxPayInfo_);
                 wxPayInfo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000010;
               break;
             }
           }
@@ -11550,39 +11292,16 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -11599,7 +11318,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -11615,16 +11334,16 @@ public final class Order {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -11641,7 +11360,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -11657,20 +11376,20 @@ public final class Order {
       }
     }
 
-    public static final int ORDERID_FIELD_NUMBER = 4;
+    public static final int ORDERID_FIELD_NUMBER = 3;
     private java.lang.Object orderId_;
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
      * </pre>
      */
     public boolean hasOrderId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -11691,7 +11410,7 @@ public final class Order {
       }
     }
     /**
-     * <code>optional string orderId = 4;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单Id
@@ -11711,20 +11430,20 @@ public final class Order {
       }
     }
 
-    public static final int PAYCHANNEL_FIELD_NUMBER = 5;
+    public static final int PAYCHANNEL_FIELD_NUMBER = 4;
     private int payChannel_;
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
      * </pre>
      */
     public boolean hasPayChannel() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -11734,20 +11453,20 @@ public final class Order {
       return payChannel_;
     }
 
-    public static final int WXPAYINFO_FIELD_NUMBER = 6;
+    public static final int WXPAYINFO_FIELD_NUMBER = 5;
     private com.qjoy.basjoo.core.model.pb.Order.WxPayInfo wxPayInfo_;
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
      * </pre>
      */
     public boolean hasWxPayInfo() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -11757,7 +11476,7 @@ public final class Order {
       return wxPayInfo_;
     }
     /**
-     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
      *
      * <pre>
      *微信订单支付信息
@@ -11768,7 +11487,6 @@ public final class Order {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
       orderId_ = "";
@@ -11781,10 +11499,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -11807,22 +11521,19 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(3, getOrderIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getOrderIdBytes());
+        output.writeInt32(4, payChannel_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt32(5, payChannel_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeMessage(6, wxPayInfo_);
+        output.writeMessage(5, wxPayInfo_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -11835,27 +11546,23 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(3, getOrderIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getOrderIdBytes());
+          .computeInt32Size(4, payChannel_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, payChannel_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, wxPayInfo_);
+          .computeMessageSize(5, wxPayInfo_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -11979,22 +11686,20 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         orderId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         payChannel_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (wxPayInfoBuilder_ == null) {
           wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
         } else {
           wxPayInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -12026,25 +11731,21 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultCode_ = resultCode_;
+        result.resultMsg_ = resultMsg_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.resultMsg_ = resultMsg_;
+        result.orderId_ = orderId_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.orderId_ = orderId_;
+        result.payChannel_ = payChannel_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
-        }
-        result.payChannel_ = payChannel_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
         }
         if (wxPayInfoBuilder_ == null) {
           result.wxPayInfo_ = wxPayInfo_;
@@ -12067,21 +11768,18 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ConfirmPayResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.ConfirmPayResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
         if (other.hasOrderId()) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
           orderId_ = other.orderId_;
           onChanged();
         }
@@ -12096,10 +11794,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -12136,63 +11830,15 @@ public final class Order {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -12209,7 +11855,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -12225,36 +11871,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -12262,13 +11908,13 @@ public final class Order {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -12285,7 +11931,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -12301,36 +11947,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -12338,17 +11984,17 @@ public final class Order {
 
       private java.lang.Object orderId_ = "";
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
        * </pre>
        */
       public boolean hasOrderId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -12369,7 +12015,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -12389,7 +12035,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -12400,26 +12046,26 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         orderId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
        * </pre>
        */
       public Builder clearOrderId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         orderId_ = getDefaultInstance().getOrderId();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderId = 4;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单Id
@@ -12430,7 +12076,7 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         orderId_ = value;
         onChanged();
         return this;
@@ -12438,17 +12084,17 @@ public final class Order {
 
       private int payChannel_ ;
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
        * </pre>
        */
       public boolean hasPayChannel() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
@@ -12458,27 +12104,27 @@ public final class Order {
         return payChannel_;
       }
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
        * </pre>
        */
       public Builder setPayChannel(int value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         payChannel_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
        * </pre>
        */
       public Builder clearPayChannel() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         payChannel_ = 0;
         onChanged();
         return this;
@@ -12488,17 +12134,17 @@ public final class Order {
       private com.google.protobuf.SingleFieldBuilder<
           com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder> wxPayInfoBuilder_;
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
        * </pre>
        */
       public boolean hasWxPayInfo() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -12512,7 +12158,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -12528,11 +12174,11 @@ public final class Order {
         } else {
           wxPayInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -12546,11 +12192,11 @@ public final class Order {
         } else {
           wxPayInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -12558,7 +12204,7 @@ public final class Order {
        */
       public Builder mergeWxPayInfo(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo value) {
         if (wxPayInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
               wxPayInfo_ != com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance()) {
             wxPayInfo_ =
               com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.newBuilder(wxPayInfo_).mergeFrom(value).buildPartial();
@@ -12569,11 +12215,11 @@ public final class Order {
         } else {
           wxPayInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -12586,23 +12232,23 @@ public final class Order {
         } else {
           wxPayInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder getWxPayInfoBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getWxPayInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -12616,7 +12262,7 @@ public final class Order {
         }
       }
       /**
-       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 6;</code>
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
        *
        * <pre>
        *微信订单支付信息
@@ -13192,24 +12838,7 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -13217,7 +12846,7 @@ public final class Order {
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -13225,7 +12854,7 @@ public final class Order {
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -13235,21 +12864,21 @@ public final class Order {
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
 
     /**
-     * <code>required string orderId = 4;</code>
+     * <code>required string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -13257,7 +12886,7 @@ public final class Order {
      */
     boolean hasOrderId();
     /**
-     * <code>required string orderId = 4;</code>
+     * <code>required string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -13265,7 +12894,7 @@ public final class Order {
      */
     java.lang.String getOrderId();
     /**
-     * <code>required string orderId = 4;</code>
+     * <code>required string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -13275,7 +12904,7 @@ public final class Order {
         getOrderIdBytes();
 
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -13283,7 +12912,7 @@ public final class Order {
      */
     boolean hasPayChannel();
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -13347,31 +12976,26 @@ public final class Order {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
+              resultMsg_ = bs;
               break;
             }
             case 26: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              resultMsg_ = bs;
-              break;
-            }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
               orderId_ = bs;
               break;
             }
-            case 40: {
-              bitField0_ |= 0x00000010;
+            case 32: {
+              bitField0_ |= 0x00000008;
               payChannel_ = input.readInt32();
               break;
             }
@@ -13415,43 +13039,20 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean hasSuccess() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
     private java.lang.Object resultCode_;
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
      * </pre>
      */
     public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -13472,7 +13073,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      *
      * <pre>
      *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -13492,16 +13093,16 @@ public final class Order {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -13518,7 +13119,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -13534,20 +13135,20 @@ public final class Order {
       }
     }
 
-    public static final int ORDERID_FIELD_NUMBER = 4;
+    public static final int ORDERID_FIELD_NUMBER = 3;
     private java.lang.Object orderId_;
     /**
-     * <code>required string orderId = 4;</code>
+     * <code>required string orderId = 3;</code>
      *
      * <pre>
      *订单ID
      * </pre>
      */
     public boolean hasOrderId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string orderId = 4;</code>
+     * <code>required string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -13568,7 +13169,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string orderId = 4;</code>
+     * <code>required string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -13588,20 +13189,20 @@ public final class Order {
       }
     }
 
-    public static final int PAYCHANNEL_FIELD_NUMBER = 5;
+    public static final int PAYCHANNEL_FIELD_NUMBER = 4;
     private int payChannel_;
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
      * </pre>
      */
     public boolean hasPayChannel() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional int32 payChannel = 5;</code>
+     * <code>optional int32 payChannel = 4;</code>
      *
      * <pre>
      *支付渠道，0：微信支付，1：支付宝
@@ -13612,7 +13213,6 @@ public final class Order {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
       orderId_ = "";
@@ -13624,10 +13224,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -13648,19 +13244,16 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(3, getOrderIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getOrderIdBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt32(5, payChannel_);
+        output.writeInt32(4, payChannel_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -13673,23 +13266,19 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(3, getOrderIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getOrderIdBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, payChannel_);
+          .computeInt32Size(4, payChannel_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -13812,16 +13401,14 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         orderId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         payChannel_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -13853,21 +13440,17 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultCode_ = resultCode_;
+        result.resultMsg_ = resultMsg_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.resultMsg_ = resultMsg_;
+        result.orderId_ = orderId_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
-        }
-        result.orderId_ = orderId_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
         }
         result.payChannel_ = payChannel_;
         result.bitField0_ = to_bitField0_;
@@ -13886,21 +13469,18 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.GetPayStatusResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.GetPayStatusResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
         if (other.hasOrderId()) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
           orderId_ = other.orderId_;
           onChanged();
         }
@@ -13912,10 +13492,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -13950,67 +13526,19 @@ public final class Order {
       }
       private int bitField0_;
 
-      private boolean success_ ;
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean hasSuccess() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object resultCode_ = "";
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
        * </pre>
        */
       public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -14031,7 +13559,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -14051,7 +13579,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -14062,26 +13590,26 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
        * </pre>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        *
        * <pre>
        *100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -14092,7 +13620,7 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -14100,13 +13628,13 @@ public final class Order {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -14123,7 +13651,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -14139,36 +13667,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -14176,17 +13704,17 @@ public final class Order {
 
       private java.lang.Object orderId_ = "";
       /**
-       * <code>required string orderId = 4;</code>
+       * <code>required string orderId = 3;</code>
        *
        * <pre>
        *订单ID
        * </pre>
        */
       public boolean hasOrderId() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string orderId = 4;</code>
+       * <code>required string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -14207,7 +13735,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string orderId = 4;</code>
+       * <code>required string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -14227,7 +13755,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string orderId = 4;</code>
+       * <code>required string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -14238,26 +13766,26 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         orderId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string orderId = 4;</code>
+       * <code>required string orderId = 3;</code>
        *
        * <pre>
        *订单ID
        * </pre>
        */
       public Builder clearOrderId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         orderId_ = getDefaultInstance().getOrderId();
         onChanged();
         return this;
       }
       /**
-       * <code>required string orderId = 4;</code>
+       * <code>required string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -14268,7 +13796,7 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000004;
         orderId_ = value;
         onChanged();
         return this;
@@ -14276,17 +13804,17 @@ public final class Order {
 
       private int payChannel_ ;
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
        * </pre>
        */
       public boolean hasPayChannel() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
@@ -14296,27 +13824,27 @@ public final class Order {
         return payChannel_;
       }
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
        * </pre>
        */
       public Builder setPayChannel(int value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         payChannel_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 payChannel = 5;</code>
+       * <code>optional int32 payChannel = 4;</code>
        *
        * <pre>
        *支付渠道，0：微信支付，1：支付宝
        * </pre>
        */
       public Builder clearPayChannel() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         payChannel_ = 0;
         onChanged();
         return this;
@@ -15420,52 +14948,35 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
 
     /**
-     * <code>optional int32 maxIndex = 4;</code>
+     * <code>optional int32 maxIndex = 3;</code>
      *
      * <pre>
      *当前最大index
@@ -15473,7 +14984,7 @@ public final class Order {
      */
     boolean hasMaxIndex();
     /**
-     * <code>optional int32 maxIndex = 4;</code>
+     * <code>optional int32 maxIndex = 3;</code>
      *
      * <pre>
      *当前最大index
@@ -15482,7 +14993,7 @@ public final class Order {
     int getMaxIndex();
 
     /**
-     * <code>required bool hasMore = 5;</code>
+     * <code>required bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -15490,7 +15001,7 @@ public final class Order {
      */
     boolean hasHasMore();
     /**
-     * <code>required bool hasMore = 5;</code>
+     * <code>required bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -15499,7 +15010,7 @@ public final class Order {
     boolean getHasMore();
 
     /**
-     * <code>required int32 waitPayCount = 6;</code>
+     * <code>required int32 waitPayCount = 5;</code>
      *
      * <pre>
      *待付款
@@ -15507,7 +15018,7 @@ public final class Order {
      */
     boolean hasWaitPayCount();
     /**
-     * <code>required int32 waitPayCount = 6;</code>
+     * <code>required int32 waitPayCount = 5;</code>
      *
      * <pre>
      *待付款
@@ -15516,7 +15027,7 @@ public final class Order {
     int getWaitPayCount();
 
     /**
-     * <code>required int32 waitDeliveryCount = 7;</code>
+     * <code>required int32 waitDeliveryCount = 6;</code>
      *
      * <pre>
      *待发货
@@ -15524,7 +15035,7 @@ public final class Order {
      */
     boolean hasWaitDeliveryCount();
     /**
-     * <code>required int32 waitDeliveryCount = 7;</code>
+     * <code>required int32 waitDeliveryCount = 6;</code>
      *
      * <pre>
      *待发货
@@ -15533,7 +15044,7 @@ public final class Order {
     int getWaitDeliveryCount();
 
     /**
-     * <code>required int32 waitReceiveCount = 8;</code>
+     * <code>required int32 waitReceiveCount = 7;</code>
      *
      * <pre>
      *待收货
@@ -15541,7 +15052,7 @@ public final class Order {
      */
     boolean hasWaitReceiveCount();
     /**
-     * <code>required int32 waitReceiveCount = 8;</code>
+     * <code>required int32 waitReceiveCount = 7;</code>
      *
      * <pre>
      *待收货
@@ -15550,7 +15061,7 @@ public final class Order {
     int getWaitReceiveCount();
 
     /**
-     * <code>required int32 waitRevertCount = 9;</code>
+     * <code>required int32 waitRevertCount = 8;</code>
      *
      * <pre>
      *待归还
@@ -15558,7 +15069,7 @@ public final class Order {
      */
     boolean hasWaitRevertCount();
     /**
-     * <code>required int32 waitRevertCount = 9;</code>
+     * <code>required int32 waitRevertCount = 8;</code>
      *
      * <pre>
      *待归还
@@ -15567,7 +15078,7 @@ public final class Order {
     int getWaitRevertCount();
 
     /**
-     * <code>required int32 waitEvaluateCount = 10;</code>
+     * <code>required int32 waitEvaluateCount = 9;</code>
      *
      * <pre>
      *待评价
@@ -15575,7 +15086,7 @@ public final class Order {
      */
     boolean hasWaitEvaluateCount();
     /**
-     * <code>required int32 waitEvaluateCount = 10;</code>
+     * <code>required int32 waitEvaluateCount = 9;</code>
      *
      * <pre>
      *待评价
@@ -15584,7 +15095,7 @@ public final class Order {
     int getWaitEvaluateCount();
 
     /**
-     * <code>required int32 totalCount = 11;</code>
+     * <code>required int32 totalCount = 10;</code>
      *
      * <pre>
      *总数
@@ -15592,7 +15103,7 @@ public final class Order {
      */
     boolean hasTotalCount();
     /**
-     * <code>required int32 totalCount = 11;</code>
+     * <code>required int32 totalCount = 10;</code>
      *
      * <pre>
      *总数
@@ -15601,7 +15112,7 @@ public final class Order {
     int getTotalCount();
 
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -15610,7 +15121,7 @@ public final class Order {
     java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo> 
         getOrderLiteInfoList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -15618,7 +15129,7 @@ public final class Order {
      */
     com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo getOrderLiteInfo(int index);
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -15626,7 +15137,7 @@ public final class Order {
      */
     int getOrderLiteInfoCount();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -15635,7 +15146,7 @@ public final class Order {
     java.util.List<? extends com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfoOrBuilder> 
         getOrderLiteInfoOrBuilderList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -15700,67 +15211,62 @@ public final class Order {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
+              resultMsg_ = bs;
               break;
             }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 24: {
               bitField0_ |= 0x00000004;
-              resultMsg_ = bs;
+              maxIndex_ = input.readInt32();
               break;
             }
             case 32: {
               bitField0_ |= 0x00000008;
-              maxIndex_ = input.readInt32();
+              hasMore_ = input.readBool();
               break;
             }
             case 40: {
               bitField0_ |= 0x00000010;
-              hasMore_ = input.readBool();
+              waitPayCount_ = input.readInt32();
               break;
             }
             case 48: {
               bitField0_ |= 0x00000020;
-              waitPayCount_ = input.readInt32();
+              waitDeliveryCount_ = input.readInt32();
               break;
             }
             case 56: {
               bitField0_ |= 0x00000040;
-              waitDeliveryCount_ = input.readInt32();
+              waitReceiveCount_ = input.readInt32();
               break;
             }
             case 64: {
               bitField0_ |= 0x00000080;
-              waitReceiveCount_ = input.readInt32();
+              waitRevertCount_ = input.readInt32();
               break;
             }
             case 72: {
               bitField0_ |= 0x00000100;
-              waitRevertCount_ = input.readInt32();
+              waitEvaluateCount_ = input.readInt32();
               break;
             }
             case 80: {
               bitField0_ |= 0x00000200;
-              waitEvaluateCount_ = input.readInt32();
-              break;
-            }
-            case 88: {
-              bitField0_ |= 0x00000400;
               totalCount_ = input.readInt32();
               break;
             }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                 orderLiteInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo>();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00000400;
               }
               orderLiteInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo.PARSER, extensionRegistry));
               break;
@@ -15773,7 +15279,7 @@ public final class Order {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
           orderLiteInfo_ = java.util.Collections.unmodifiableList(orderLiteInfo_);
         }
         this.unknownFields = unknownFields.build();
@@ -15808,39 +15314,16 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -15857,7 +15340,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -15873,16 +15356,16 @@ public final class Order {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -15899,7 +15382,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -15915,20 +15398,20 @@ public final class Order {
       }
     }
 
-    public static final int MAXINDEX_FIELD_NUMBER = 4;
+    public static final int MAXINDEX_FIELD_NUMBER = 3;
     private int maxIndex_;
     /**
-     * <code>optional int32 maxIndex = 4;</code>
+     * <code>optional int32 maxIndex = 3;</code>
      *
      * <pre>
      *当前最大index
      * </pre>
      */
     public boolean hasMaxIndex() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional int32 maxIndex = 4;</code>
+     * <code>optional int32 maxIndex = 3;</code>
      *
      * <pre>
      *当前最大index
@@ -15938,20 +15421,20 @@ public final class Order {
       return maxIndex_;
     }
 
-    public static final int HASMORE_FIELD_NUMBER = 5;
+    public static final int HASMORE_FIELD_NUMBER = 4;
     private boolean hasMore_;
     /**
-     * <code>required bool hasMore = 5;</code>
+     * <code>required bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
      * </pre>
      */
     public boolean hasHasMore() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required bool hasMore = 5;</code>
+     * <code>required bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -15961,20 +15444,20 @@ public final class Order {
       return hasMore_;
     }
 
-    public static final int WAITPAYCOUNT_FIELD_NUMBER = 6;
+    public static final int WAITPAYCOUNT_FIELD_NUMBER = 5;
     private int waitPayCount_;
     /**
-     * <code>required int32 waitPayCount = 6;</code>
+     * <code>required int32 waitPayCount = 5;</code>
      *
      * <pre>
      *待付款
      * </pre>
      */
     public boolean hasWaitPayCount() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required int32 waitPayCount = 6;</code>
+     * <code>required int32 waitPayCount = 5;</code>
      *
      * <pre>
      *待付款
@@ -15984,20 +15467,20 @@ public final class Order {
       return waitPayCount_;
     }
 
-    public static final int WAITDELIVERYCOUNT_FIELD_NUMBER = 7;
+    public static final int WAITDELIVERYCOUNT_FIELD_NUMBER = 6;
     private int waitDeliveryCount_;
     /**
-     * <code>required int32 waitDeliveryCount = 7;</code>
+     * <code>required int32 waitDeliveryCount = 6;</code>
      *
      * <pre>
      *待发货
      * </pre>
      */
     public boolean hasWaitDeliveryCount() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required int32 waitDeliveryCount = 7;</code>
+     * <code>required int32 waitDeliveryCount = 6;</code>
      *
      * <pre>
      *待发货
@@ -16007,20 +15490,20 @@ public final class Order {
       return waitDeliveryCount_;
     }
 
-    public static final int WAITRECEIVECOUNT_FIELD_NUMBER = 8;
+    public static final int WAITRECEIVECOUNT_FIELD_NUMBER = 7;
     private int waitReceiveCount_;
     /**
-     * <code>required int32 waitReceiveCount = 8;</code>
+     * <code>required int32 waitReceiveCount = 7;</code>
      *
      * <pre>
      *待收货
      * </pre>
      */
     public boolean hasWaitReceiveCount() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required int32 waitReceiveCount = 8;</code>
+     * <code>required int32 waitReceiveCount = 7;</code>
      *
      * <pre>
      *待收货
@@ -16030,20 +15513,20 @@ public final class Order {
       return waitReceiveCount_;
     }
 
-    public static final int WAITREVERTCOUNT_FIELD_NUMBER = 9;
+    public static final int WAITREVERTCOUNT_FIELD_NUMBER = 8;
     private int waitRevertCount_;
     /**
-     * <code>required int32 waitRevertCount = 9;</code>
+     * <code>required int32 waitRevertCount = 8;</code>
      *
      * <pre>
      *待归还
      * </pre>
      */
     public boolean hasWaitRevertCount() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>required int32 waitRevertCount = 9;</code>
+     * <code>required int32 waitRevertCount = 8;</code>
      *
      * <pre>
      *待归还
@@ -16053,20 +15536,20 @@ public final class Order {
       return waitRevertCount_;
     }
 
-    public static final int WAITEVALUATECOUNT_FIELD_NUMBER = 10;
+    public static final int WAITEVALUATECOUNT_FIELD_NUMBER = 9;
     private int waitEvaluateCount_;
     /**
-     * <code>required int32 waitEvaluateCount = 10;</code>
+     * <code>required int32 waitEvaluateCount = 9;</code>
      *
      * <pre>
      *待评价
      * </pre>
      */
     public boolean hasWaitEvaluateCount() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
-     * <code>required int32 waitEvaluateCount = 10;</code>
+     * <code>required int32 waitEvaluateCount = 9;</code>
      *
      * <pre>
      *待评价
@@ -16076,20 +15559,20 @@ public final class Order {
       return waitEvaluateCount_;
     }
 
-    public static final int TOTALCOUNT_FIELD_NUMBER = 11;
+    public static final int TOTALCOUNT_FIELD_NUMBER = 10;
     private int totalCount_;
     /**
-     * <code>required int32 totalCount = 11;</code>
+     * <code>required int32 totalCount = 10;</code>
      *
      * <pre>
      *总数
      * </pre>
      */
     public boolean hasTotalCount() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
-     * <code>required int32 totalCount = 11;</code>
+     * <code>required int32 totalCount = 10;</code>
      *
      * <pre>
      *总数
@@ -16099,10 +15582,10 @@ public final class Order {
       return totalCount_;
     }
 
-    public static final int ORDERLITEINFO_FIELD_NUMBER = 12;
+    public static final int ORDERLITEINFO_FIELD_NUMBER = 11;
     private java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo> orderLiteInfo_;
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -16112,7 +15595,7 @@ public final class Order {
       return orderLiteInfo_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -16123,7 +15606,7 @@ public final class Order {
       return orderLiteInfo_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -16133,7 +15616,7 @@ public final class Order {
       return orderLiteInfo_.size();
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -16143,7 +15626,7 @@ public final class Order {
       return orderLiteInfo_.get(index);
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
      *
      * <pre>
      *订单简要信息
@@ -16155,7 +15638,6 @@ public final class Order {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
       maxIndex_ = 0;
@@ -16174,10 +15656,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -16228,40 +15706,37 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeInt32(3, maxIndex_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt32(4, maxIndex_);
+        output.writeBool(4, hasMore_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBool(5, hasMore_);
+        output.writeInt32(5, waitPayCount_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeInt32(6, waitPayCount_);
+        output.writeInt32(6, waitDeliveryCount_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeInt32(7, waitDeliveryCount_);
+        output.writeInt32(7, waitReceiveCount_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeInt32(8, waitReceiveCount_);
+        output.writeInt32(8, waitRevertCount_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeInt32(9, waitRevertCount_);
+        output.writeInt32(9, waitEvaluateCount_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeInt32(10, waitEvaluateCount_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeInt32(11, totalCount_);
+        output.writeInt32(10, totalCount_);
       }
       for (int i = 0; i < orderLiteInfo_.size(); i++) {
-        output.writeMessage(12, orderLiteInfo_.get(i));
+        output.writeMessage(11, orderLiteInfo_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -16274,51 +15749,47 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeInt32Size(3, maxIndex_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, maxIndex_);
+          .computeBoolSize(4, hasMore_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, hasMore_);
+          .computeInt32Size(5, waitPayCount_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, waitPayCount_);
+          .computeInt32Size(6, waitDeliveryCount_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, waitDeliveryCount_);
+          .computeInt32Size(7, waitReceiveCount_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, waitReceiveCount_);
+          .computeInt32Size(8, waitRevertCount_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, waitRevertCount_);
+          .computeInt32Size(9, waitEvaluateCount_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, waitEvaluateCount_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, totalCount_);
+          .computeInt32Size(10, totalCount_);
       }
       for (int i = 0; i < orderLiteInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, orderLiteInfo_.get(i));
+          .computeMessageSize(11, orderLiteInfo_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -16442,31 +15913,29 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         maxIndex_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         hasMore_ = false;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         waitPayCount_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         waitDeliveryCount_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         waitReceiveCount_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         waitRevertCount_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         waitEvaluateCount_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         totalCount_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         if (orderLiteInfoBuilder_ == null) {
           orderLiteInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           orderLiteInfoBuilder_.clear();
         }
@@ -16501,51 +15970,47 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultCode_ = resultCode_;
+        result.resultMsg_ = resultMsg_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.resultMsg_ = resultMsg_;
+        result.maxIndex_ = maxIndex_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.maxIndex_ = maxIndex_;
+        result.hasMore_ = hasMore_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.hasMore_ = hasMore_;
+        result.waitPayCount_ = waitPayCount_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.waitPayCount_ = waitPayCount_;
+        result.waitDeliveryCount_ = waitDeliveryCount_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.waitDeliveryCount_ = waitDeliveryCount_;
+        result.waitReceiveCount_ = waitReceiveCount_;
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.waitReceiveCount_ = waitReceiveCount_;
+        result.waitRevertCount_ = waitRevertCount_;
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.waitRevertCount_ = waitRevertCount_;
+        result.waitEvaluateCount_ = waitEvaluateCount_;
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.waitEvaluateCount_ = waitEvaluateCount_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000400;
-        }
         result.totalCount_ = totalCount_;
         if (orderLiteInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
             orderLiteInfo_ = java.util.Collections.unmodifiableList(orderLiteInfo_);
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000400);
           }
           result.orderLiteInfo_ = orderLiteInfo_;
         } else {
@@ -16567,16 +16032,13 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.SearchOrderListResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.SearchOrderListResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -16608,7 +16070,7 @@ public final class Order {
           if (!other.orderLiteInfo_.isEmpty()) {
             if (orderLiteInfo_.isEmpty()) {
               orderLiteInfo_ = other.orderLiteInfo_;
-              bitField0_ = (bitField0_ & ~0x00000800);
+              bitField0_ = (bitField0_ & ~0x00000400);
             } else {
               ensureOrderLiteInfoIsMutable();
               orderLiteInfo_.addAll(other.orderLiteInfo_);
@@ -16621,7 +16083,7 @@ public final class Order {
               orderLiteInfoBuilder_.dispose();
               orderLiteInfoBuilder_ = null;
               orderLiteInfo_ = other.orderLiteInfo_;
-              bitField0_ = (bitField0_ & ~0x00000800);
+              bitField0_ = (bitField0_ & ~0x00000400);
               orderLiteInfoBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getOrderLiteInfoFieldBuilder() : null;
@@ -16635,10 +16097,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -16703,63 +16161,15 @@ public final class Order {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -16776,7 +16186,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -16792,36 +16202,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -16829,13 +16239,13 @@ public final class Order {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -16852,7 +16262,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -16868,36 +16278,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -16905,17 +16315,17 @@ public final class Order {
 
       private int maxIndex_ ;
       /**
-       * <code>optional int32 maxIndex = 4;</code>
+       * <code>optional int32 maxIndex = 3;</code>
        *
        * <pre>
        *当前最大index
        * </pre>
        */
       public boolean hasMaxIndex() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional int32 maxIndex = 4;</code>
+       * <code>optional int32 maxIndex = 3;</code>
        *
        * <pre>
        *当前最大index
@@ -16925,27 +16335,27 @@ public final class Order {
         return maxIndex_;
       }
       /**
-       * <code>optional int32 maxIndex = 4;</code>
+       * <code>optional int32 maxIndex = 3;</code>
        *
        * <pre>
        *当前最大index
        * </pre>
        */
       public Builder setMaxIndex(int value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         maxIndex_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 maxIndex = 4;</code>
+       * <code>optional int32 maxIndex = 3;</code>
        *
        * <pre>
        *当前最大index
        * </pre>
        */
       public Builder clearMaxIndex() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         maxIndex_ = 0;
         onChanged();
         return this;
@@ -16953,17 +16363,17 @@ public final class Order {
 
       private boolean hasMore_ ;
       /**
-       * <code>required bool hasMore = 5;</code>
+       * <code>required bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
        * </pre>
        */
       public boolean hasHasMore() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required bool hasMore = 5;</code>
+       * <code>required bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -16973,27 +16383,27 @@ public final class Order {
         return hasMore_;
       }
       /**
-       * <code>required bool hasMore = 5;</code>
+       * <code>required bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
        * </pre>
        */
       public Builder setHasMore(boolean value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         hasMore_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required bool hasMore = 5;</code>
+       * <code>required bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
        * </pre>
        */
       public Builder clearHasMore() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         hasMore_ = false;
         onChanged();
         return this;
@@ -17001,17 +16411,17 @@ public final class Order {
 
       private int waitPayCount_ ;
       /**
-       * <code>required int32 waitPayCount = 6;</code>
+       * <code>required int32 waitPayCount = 5;</code>
        *
        * <pre>
        *待付款
        * </pre>
        */
       public boolean hasWaitPayCount() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required int32 waitPayCount = 6;</code>
+       * <code>required int32 waitPayCount = 5;</code>
        *
        * <pre>
        *待付款
@@ -17021,27 +16431,27 @@ public final class Order {
         return waitPayCount_;
       }
       /**
-       * <code>required int32 waitPayCount = 6;</code>
+       * <code>required int32 waitPayCount = 5;</code>
        *
        * <pre>
        *待付款
        * </pre>
        */
       public Builder setWaitPayCount(int value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         waitPayCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 waitPayCount = 6;</code>
+       * <code>required int32 waitPayCount = 5;</code>
        *
        * <pre>
        *待付款
        * </pre>
        */
       public Builder clearWaitPayCount() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         waitPayCount_ = 0;
         onChanged();
         return this;
@@ -17049,17 +16459,17 @@ public final class Order {
 
       private int waitDeliveryCount_ ;
       /**
-       * <code>required int32 waitDeliveryCount = 7;</code>
+       * <code>required int32 waitDeliveryCount = 6;</code>
        *
        * <pre>
        *待发货
        * </pre>
        */
       public boolean hasWaitDeliveryCount() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required int32 waitDeliveryCount = 7;</code>
+       * <code>required int32 waitDeliveryCount = 6;</code>
        *
        * <pre>
        *待发货
@@ -17069,27 +16479,27 @@ public final class Order {
         return waitDeliveryCount_;
       }
       /**
-       * <code>required int32 waitDeliveryCount = 7;</code>
+       * <code>required int32 waitDeliveryCount = 6;</code>
        *
        * <pre>
        *待发货
        * </pre>
        */
       public Builder setWaitDeliveryCount(int value) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         waitDeliveryCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 waitDeliveryCount = 7;</code>
+       * <code>required int32 waitDeliveryCount = 6;</code>
        *
        * <pre>
        *待发货
        * </pre>
        */
       public Builder clearWaitDeliveryCount() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         waitDeliveryCount_ = 0;
         onChanged();
         return this;
@@ -17097,17 +16507,17 @@ public final class Order {
 
       private int waitReceiveCount_ ;
       /**
-       * <code>required int32 waitReceiveCount = 8;</code>
+       * <code>required int32 waitReceiveCount = 7;</code>
        *
        * <pre>
        *待收货
        * </pre>
        */
       public boolean hasWaitReceiveCount() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required int32 waitReceiveCount = 8;</code>
+       * <code>required int32 waitReceiveCount = 7;</code>
        *
        * <pre>
        *待收货
@@ -17117,27 +16527,27 @@ public final class Order {
         return waitReceiveCount_;
       }
       /**
-       * <code>required int32 waitReceiveCount = 8;</code>
+       * <code>required int32 waitReceiveCount = 7;</code>
        *
        * <pre>
        *待收货
        * </pre>
        */
       public Builder setWaitReceiveCount(int value) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         waitReceiveCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 waitReceiveCount = 8;</code>
+       * <code>required int32 waitReceiveCount = 7;</code>
        *
        * <pre>
        *待收货
        * </pre>
        */
       public Builder clearWaitReceiveCount() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         waitReceiveCount_ = 0;
         onChanged();
         return this;
@@ -17145,17 +16555,17 @@ public final class Order {
 
       private int waitRevertCount_ ;
       /**
-       * <code>required int32 waitRevertCount = 9;</code>
+       * <code>required int32 waitRevertCount = 8;</code>
        *
        * <pre>
        *待归还
        * </pre>
        */
       public boolean hasWaitRevertCount() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>required int32 waitRevertCount = 9;</code>
+       * <code>required int32 waitRevertCount = 8;</code>
        *
        * <pre>
        *待归还
@@ -17165,27 +16575,27 @@ public final class Order {
         return waitRevertCount_;
       }
       /**
-       * <code>required int32 waitRevertCount = 9;</code>
+       * <code>required int32 waitRevertCount = 8;</code>
        *
        * <pre>
        *待归还
        * </pre>
        */
       public Builder setWaitRevertCount(int value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         waitRevertCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 waitRevertCount = 9;</code>
+       * <code>required int32 waitRevertCount = 8;</code>
        *
        * <pre>
        *待归还
        * </pre>
        */
       public Builder clearWaitRevertCount() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         waitRevertCount_ = 0;
         onChanged();
         return this;
@@ -17193,17 +16603,17 @@ public final class Order {
 
       private int waitEvaluateCount_ ;
       /**
-       * <code>required int32 waitEvaluateCount = 10;</code>
+       * <code>required int32 waitEvaluateCount = 9;</code>
        *
        * <pre>
        *待评价
        * </pre>
        */
       public boolean hasWaitEvaluateCount() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
-       * <code>required int32 waitEvaluateCount = 10;</code>
+       * <code>required int32 waitEvaluateCount = 9;</code>
        *
        * <pre>
        *待评价
@@ -17213,27 +16623,27 @@ public final class Order {
         return waitEvaluateCount_;
       }
       /**
-       * <code>required int32 waitEvaluateCount = 10;</code>
+       * <code>required int32 waitEvaluateCount = 9;</code>
        *
        * <pre>
        *待评价
        * </pre>
        */
       public Builder setWaitEvaluateCount(int value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         waitEvaluateCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 waitEvaluateCount = 10;</code>
+       * <code>required int32 waitEvaluateCount = 9;</code>
        *
        * <pre>
        *待评价
        * </pre>
        */
       public Builder clearWaitEvaluateCount() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         waitEvaluateCount_ = 0;
         onChanged();
         return this;
@@ -17241,17 +16651,17 @@ public final class Order {
 
       private int totalCount_ ;
       /**
-       * <code>required int32 totalCount = 11;</code>
+       * <code>required int32 totalCount = 10;</code>
        *
        * <pre>
        *总数
        * </pre>
        */
       public boolean hasTotalCount() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>required int32 totalCount = 11;</code>
+       * <code>required int32 totalCount = 10;</code>
        *
        * <pre>
        *总数
@@ -17261,27 +16671,27 @@ public final class Order {
         return totalCount_;
       }
       /**
-       * <code>required int32 totalCount = 11;</code>
+       * <code>required int32 totalCount = 10;</code>
        *
        * <pre>
        *总数
        * </pre>
        */
       public Builder setTotalCount(int value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         totalCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 totalCount = 11;</code>
+       * <code>required int32 totalCount = 10;</code>
        *
        * <pre>
        *总数
        * </pre>
        */
       public Builder clearTotalCount() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         totalCount_ = 0;
         onChanged();
         return this;
@@ -17290,9 +16700,9 @@ public final class Order {
       private java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo> orderLiteInfo_ =
         java.util.Collections.emptyList();
       private void ensureOrderLiteInfoIsMutable() {
-        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
           orderLiteInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo>(orderLiteInfo_);
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00000400;
          }
       }
 
@@ -17300,7 +16710,7 @@ public final class Order {
           com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo, com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfoOrBuilder> orderLiteInfoBuilder_;
 
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17314,7 +16724,7 @@ public final class Order {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17328,7 +16738,7 @@ public final class Order {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17342,7 +16752,7 @@ public final class Order {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17363,7 +16773,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17381,7 +16791,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17401,7 +16811,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17422,7 +16832,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17440,7 +16850,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17458,7 +16868,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17477,7 +16887,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17486,7 +16896,7 @@ public final class Order {
       public Builder clearOrderLiteInfo() {
         if (orderLiteInfoBuilder_ == null) {
           orderLiteInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000400);
           onChanged();
         } else {
           orderLiteInfoBuilder_.clear();
@@ -17494,7 +16904,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17511,7 +16921,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17522,7 +16932,7 @@ public final class Order {
         return getOrderLiteInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17536,7 +16946,7 @@ public final class Order {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17551,7 +16961,7 @@ public final class Order {
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17562,7 +16972,7 @@ public final class Order {
             com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17574,7 +16984,7 @@ public final class Order {
             index, com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 12;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderLiteInfo orderLiteInfo = 11;</code>
        *
        * <pre>
        *订单简要信息
@@ -17591,7 +17001,7 @@ public final class Order {
           orderLiteInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo, com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderLiteInfoOrBuilder>(
                   orderLiteInfo_,
-                  ((bitField0_ & 0x00000800) == 0x00000800),
+                  ((bitField0_ & 0x00000400) == 0x00000400),
                   getParentForChildren(),
                   isClean());
           orderLiteInfo_ = null;
@@ -21034,46 +20444,29 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
@@ -21134,20 +20527,15 @@ public final class Order {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
               resultMsg_ = bs;
               break;
             }
@@ -21191,39 +20579,16 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -21240,7 +20605,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -21256,16 +20621,16 @@ public final class Order {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -21282,7 +20647,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -21299,7 +20664,6 @@ public final class Order {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
     }
@@ -21309,10 +20673,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -21329,13 +20689,10 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -21348,15 +20705,11 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -21479,12 +20832,10 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -21516,13 +20867,9 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
-        }
-        result.resultCode_ = resultCode_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
         }
         result.resultMsg_ = resultMsg_;
         result.bitField0_ = to_bitField0_;
@@ -21541,16 +20888,13 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.DeleteOrderResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.DeleteOrderResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -21559,10 +20903,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -21593,63 +20933,15 @@ public final class Order {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -21666,7 +20958,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -21682,36 +20974,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -21719,13 +21011,13 @@ public final class Order {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -21742,7 +21034,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -21758,36 +21050,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -21802,6 +21094,1416 @@ public final class Order {
     }
 
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.DeleteOrderResult)
+  }
+
+  public interface CancelOrderRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.CancelOrderRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    java.lang.String getOrderId();
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getOrderIdBytes();
+
+    /**
+     * <code>required string reason = 2;</code>
+     *
+     * <pre>
+     *取消理由
+     * </pre>
+     */
+    boolean hasReason();
+    /**
+     * <code>required string reason = 2;</code>
+     *
+     * <pre>
+     *取消理由
+     * </pre>
+     */
+    java.lang.String getReason();
+    /**
+     * <code>required string reason = 2;</code>
+     *
+     * <pre>
+     *取消理由
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getReasonBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CancelOrderRequest}
+   *
+   * <pre>
+   *取消订单请求
+   * </pre>
+   */
+  public static final class CancelOrderRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.CancelOrderRequest)
+      CancelOrderRequestOrBuilder {
+    // Use CancelOrderRequest.newBuilder() to construct.
+    private CancelOrderRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private CancelOrderRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final CancelOrderRequest defaultInstance;
+    public static CancelOrderRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public CancelOrderRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CancelOrderRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              orderId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              reason_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest.class, com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<CancelOrderRequest> PARSER =
+        new com.google.protobuf.AbstractParser<CancelOrderRequest>() {
+      public CancelOrderRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CancelOrderRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CancelOrderRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int ORDERID_FIELD_NUMBER = 1;
+    private java.lang.Object orderId_;
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    public java.lang.String getOrderId() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          orderId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getOrderIdBytes() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REASON_FIELD_NUMBER = 2;
+    private java.lang.Object reason_;
+    /**
+     * <code>required string reason = 2;</code>
+     *
+     * <pre>
+     *取消理由
+     * </pre>
+     */
+    public boolean hasReason() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string reason = 2;</code>
+     *
+     * <pre>
+     *取消理由
+     * </pre>
+     */
+    public java.lang.String getReason() {
+      java.lang.Object ref = reason_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          reason_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string reason = 2;</code>
+     *
+     * <pre>
+     *取消理由
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getReasonBytes() {
+      java.lang.Object ref = reason_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      orderId_ = "";
+      reason_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasOrderId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasReason()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getReasonBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getReasonBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CancelOrderRequest}
+     *
+     * <pre>
+     *取消订单请求
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.CancelOrderRequest)
+        com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest.class, com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        orderId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        reason_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest build() {
+        com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest result = new com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.orderId_ = orderId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.reason_ = reason_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest.getDefaultInstance()) return this;
+        if (other.hasOrderId()) {
+          bitField0_ |= 0x00000001;
+          orderId_ = other.orderId_;
+          onChanged();
+        }
+        if (other.hasReason()) {
+          bitField0_ |= 0x00000002;
+          reason_ = other.reason_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasOrderId()) {
+          
+          return false;
+        }
+        if (!hasReason()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Order.CancelOrderRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object orderId_ = "";
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public java.lang.String getOrderId() {
+        java.lang.Object ref = orderId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            orderId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getOrderIdBytes() {
+        java.lang.Object ref = orderId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public Builder setOrderId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        orderId_ = getDefaultInstance().getOrderId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public Builder setOrderIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object reason_ = "";
+      /**
+       * <code>required string reason = 2;</code>
+       *
+       * <pre>
+       *取消理由
+       * </pre>
+       */
+      public boolean hasReason() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string reason = 2;</code>
+       *
+       * <pre>
+       *取消理由
+       * </pre>
+       */
+      public java.lang.String getReason() {
+        java.lang.Object ref = reason_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            reason_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string reason = 2;</code>
+       *
+       * <pre>
+       *取消理由
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getReasonBytes() {
+        java.lang.Object ref = reason_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reason_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string reason = 2;</code>
+       *
+       * <pre>
+       *取消理由
+       * </pre>
+       */
+      public Builder setReason(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        reason_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string reason = 2;</code>
+       *
+       * <pre>
+       *取消理由
+       * </pre>
+       */
+      public Builder clearReason() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        reason_ = getDefaultInstance().getReason();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string reason = 2;</code>
+       *
+       * <pre>
+       *取消理由
+       * </pre>
+       */
+      public Builder setReasonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        reason_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.CancelOrderRequest)
+    }
+
+    static {
+      defaultInstance = new CancelOrderRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.CancelOrderRequest)
+  }
+
+  public interface CancelOrderResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.CancelOrderResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CancelOrderResult}
+   *
+   * <pre>
+   *取消订单结果
+   * </pre>
+   */
+  public static final class CancelOrderResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.CancelOrderResult)
+      CancelOrderResultOrBuilder {
+    // Use CancelOrderResult.newBuilder() to construct.
+    private CancelOrderResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private CancelOrderResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final CancelOrderResult defaultInstance;
+    public static CancelOrderResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public CancelOrderResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CancelOrderResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult.class, com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<CancelOrderResult> PARSER =
+        new com.google.protobuf.AbstractParser<CancelOrderResult>() {
+      public CancelOrderResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CancelOrderResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CancelOrderResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CancelOrderResult}
+     *
+     * <pre>
+     *取消订单结果
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.CancelOrderResult)
+        com.qjoy.basjoo.core.model.pb.Order.CancelOrderResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult.class, com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult build() {
+        com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult result = new com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Order.CancelOrderResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.CancelOrderResult)
+    }
+
+    static {
+      defaultInstance = new CancelOrderResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.CancelOrderResult)
   }
 
   public interface ConfirmReceiveRequestOrBuilder extends
@@ -22349,46 +23051,29 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
@@ -22449,20 +23134,15 @@ public final class Order {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
               resultMsg_ = bs;
               break;
             }
@@ -22506,39 +23186,16 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -22555,7 +23212,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -22571,16 +23228,16 @@ public final class Order {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -22597,7 +23254,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -22614,7 +23271,6 @@ public final class Order {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
     }
@@ -22624,10 +23280,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -22644,13 +23296,10 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -22663,15 +23312,11 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -22794,12 +23439,10 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -22831,13 +23474,9 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
-        }
-        result.resultCode_ = resultCode_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
         }
         result.resultMsg_ = resultMsg_;
         result.bitField0_ = to_bitField0_;
@@ -22856,16 +23495,13 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ConfirmReceiveResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.ConfirmReceiveResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -22874,10 +23510,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -22908,63 +23540,15 @@ public final class Order {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -22981,7 +23565,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -22997,36 +23581,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -23034,13 +23618,13 @@ public final class Order {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -23057,7 +23641,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -23073,36 +23657,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -24287,46 +24871,29 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
@@ -24387,20 +24954,15 @@ public final class Order {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
               resultMsg_ = bs;
               break;
             }
@@ -24444,39 +25006,16 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -24493,7 +25032,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -24509,16 +25048,16 @@ public final class Order {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -24535,7 +25074,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -24552,7 +25091,6 @@ public final class Order {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
     }
@@ -24562,10 +25100,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -24582,13 +25116,10 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -24601,15 +25132,11 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -24732,12 +25259,10 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -24769,13 +25294,9 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
-        }
-        result.resultCode_ = resultCode_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
         }
         result.resultMsg_ = resultMsg_;
         result.bitField0_ = to_bitField0_;
@@ -24794,16 +25315,13 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ApplyRevertResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.ApplyRevertResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -24812,10 +25330,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -24846,63 +25360,15 @@ public final class Order {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -24919,7 +25385,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -24935,36 +25401,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -24972,13 +25438,13 @@ public final class Order {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -24995,7 +25461,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -25011,36 +25477,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -25594,52 +26060,35 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean hasSuccess();
-    /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    boolean getSuccess();
-
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     boolean hasResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     java.lang.String getResultCode();
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     com.google.protobuf.ByteString
         getResultCodeBytes();
 
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     boolean hasResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     java.lang.String getResultMsg();
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     com.google.protobuf.ByteString
         getResultMsgBytes();
 
     /**
-     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
      *
      * <pre>
      *订单详细信息
@@ -25647,7 +26096,7 @@ public final class Order {
      */
     boolean hasOrderDetailInfo();
     /**
-     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
      *
      * <pre>
      *订单详细信息
@@ -25655,7 +26104,7 @@ public final class Order {
      */
     com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo getOrderDetailInfo();
     /**
-     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
      *
      * <pre>
      *订单详细信息
@@ -25719,26 +26168,21 @@ public final class Order {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              success_ = input.readBool();
+              resultCode_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              resultCode_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
               resultMsg_ = bs;
               break;
             }
-            case 34: {
+            case 26: {
               com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = orderDetailInfo_.toBuilder();
               }
               orderDetailInfo_ = input.readMessage(com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo.PARSER, extensionRegistry);
@@ -25746,7 +26190,7 @@ public final class Order {
                 subBuilder.mergeFrom(orderDetailInfo_);
                 orderDetailInfo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               break;
             }
           }
@@ -25789,39 +26233,16 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int SUCCESS_FIELD_NUMBER = 1;
-    private boolean success_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
+     * <code>required string resultCode = 1;</code>
      */
-    public boolean hasSuccess() {
+    public boolean hasResultCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required bool success = 1;</code>
-     *
-     * <pre>
-     *是否成功
-     * </pre>
-     */
-    public boolean getSuccess() {
-      return success_;
-    }
-
-    public static final int RESULTCODE_FIELD_NUMBER = 2;
-    private java.lang.Object resultCode_;
-    /**
-     * <code>required string resultCode = 2;</code>
-     */
-    public boolean hasResultCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public java.lang.String getResultCode() {
       java.lang.Object ref = resultCode_;
@@ -25838,7 +26259,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultCode = 2;</code>
+     * <code>required string resultCode = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResultCodeBytes() {
@@ -25854,16 +26275,16 @@ public final class Order {
       }
     }
 
-    public static final int RESULTMSG_FIELD_NUMBER = 3;
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
     private java.lang.Object resultMsg_;
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public boolean hasResultMsg() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public java.lang.String getResultMsg() {
       java.lang.Object ref = resultMsg_;
@@ -25880,7 +26301,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string resultMsg = 3;</code>
+     * <code>required string resultMsg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResultMsgBytes() {
@@ -25896,20 +26317,20 @@ public final class Order {
       }
     }
 
-    public static final int ORDERDETAILINFO_FIELD_NUMBER = 4;
+    public static final int ORDERDETAILINFO_FIELD_NUMBER = 3;
     private com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo orderDetailInfo_;
     /**
-     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
      *
      * <pre>
      *订单详细信息
      * </pre>
      */
     public boolean hasOrderDetailInfo() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
      *
      * <pre>
      *订单详细信息
@@ -25919,7 +26340,7 @@ public final class Order {
       return orderDetailInfo_;
     }
     /**
-     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+     * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
      *
      * <pre>
      *订单详细信息
@@ -25930,7 +26351,6 @@ public final class Order {
     }
 
     private void initFields() {
-      success_ = false;
       resultCode_ = "";
       resultMsg_ = "";
       orderDetailInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo.getDefaultInstance();
@@ -25941,10 +26361,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasSuccess()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
         return false;
@@ -25969,16 +26385,13 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBool(1, success_);
+        output.writeBytes(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getResultCodeBytes());
+        output.writeBytes(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getResultMsgBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(4, orderDetailInfo_);
+        output.writeMessage(3, orderDetailInfo_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -25991,19 +26404,15 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, success_);
+          .computeBytesSize(1, getResultCodeBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getResultCodeBytes());
+          .computeBytesSize(2, getResultMsgBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getResultMsgBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, orderDetailInfo_);
+          .computeMessageSize(3, orderDetailInfo_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -26127,18 +26536,16 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        success_ = false;
-        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultMsg_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (orderDetailInfoBuilder_ == null) {
           orderDetailInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo.getDefaultInstance();
         } else {
           orderDetailInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -26170,17 +26577,13 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.success_ = success_;
+        result.resultCode_ = resultCode_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.resultCode_ = resultCode_;
+        result.resultMsg_ = resultMsg_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
-        }
-        result.resultMsg_ = resultMsg_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
         }
         if (orderDetailInfoBuilder_ == null) {
           result.orderDetailInfo_ = orderDetailInfo_;
@@ -26203,16 +26606,13 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.GetOrderDetailResult other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.GetOrderDetailResult.getDefaultInstance()) return this;
-        if (other.hasSuccess()) {
-          setSuccess(other.getSuccess());
-        }
         if (other.hasResultCode()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           resultCode_ = other.resultCode_;
           onChanged();
         }
         if (other.hasResultMsg()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           resultMsg_ = other.resultMsg_;
           onChanged();
         }
@@ -26224,10 +26624,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasSuccess()) {
-          
-          return false;
-        }
         if (!hasResultCode()) {
           
           return false;
@@ -26266,63 +26662,15 @@ public final class Order {
       }
       private int bitField0_;
 
-      private boolean success_ ;
+      private java.lang.Object resultCode_ = "";
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
+       * <code>required string resultCode = 1;</code>
        */
-      public boolean hasSuccess() {
+      public boolean hasResultCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public boolean getSuccess() {
-        return success_;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder setSuccess(boolean value) {
-        bitField0_ |= 0x00000001;
-        success_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required bool success = 1;</code>
-       *
-       * <pre>
-       *是否成功
-       * </pre>
-       */
-      public Builder clearSuccess() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        success_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object resultCode_ = "";
-      /**
-       * <code>required string resultCode = 2;</code>
-       */
-      public boolean hasResultCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public java.lang.String getResultCode() {
         java.lang.Object ref = resultCode_;
@@ -26339,7 +26687,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public com.google.protobuf.ByteString
           getResultCodeBytes() {
@@ -26355,36 +26703,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder clearResultCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         resultCode_ = getDefaultInstance().getResultCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultCode = 2;</code>
+       * <code>required string resultCode = 1;</code>
        */
       public Builder setResultCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         resultCode_ = value;
         onChanged();
         return this;
@@ -26392,13 +26740,13 @@ public final class Order {
 
       private java.lang.Object resultMsg_ = "";
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public boolean hasResultMsg() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public java.lang.String getResultMsg() {
         java.lang.Object ref = resultMsg_;
@@ -26415,7 +26763,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResultMsgBytes() {
@@ -26431,36 +26779,36 @@ public final class Order {
         }
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder clearResultMsg() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         resultMsg_ = getDefaultInstance().getResultMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>required string resultMsg = 3;</code>
+       * <code>required string resultMsg = 2;</code>
        */
       public Builder setResultMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000002;
         resultMsg_ = value;
         onChanged();
         return this;
@@ -26470,17 +26818,17 @@ public final class Order {
       private com.google.protobuf.SingleFieldBuilder<
           com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo, com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfoOrBuilder> orderDetailInfoBuilder_;
       /**
-       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
        *
        * <pre>
        *订单详细信息
        * </pre>
        */
       public boolean hasOrderDetailInfo() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
        *
        * <pre>
        *订单详细信息
@@ -26494,7 +26842,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
        *
        * <pre>
        *订单详细信息
@@ -26510,11 +26858,11 @@ public final class Order {
         } else {
           orderDetailInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
        *
        * <pre>
        *订单详细信息
@@ -26528,11 +26876,11 @@ public final class Order {
         } else {
           orderDetailInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
        *
        * <pre>
        *订单详细信息
@@ -26540,7 +26888,7 @@ public final class Order {
        */
       public Builder mergeOrderDetailInfo(com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo value) {
         if (orderDetailInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
               orderDetailInfo_ != com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo.getDefaultInstance()) {
             orderDetailInfo_ =
               com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo.newBuilder(orderDetailInfo_).mergeFrom(value).buildPartial();
@@ -26551,11 +26899,11 @@ public final class Order {
         } else {
           orderDetailInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
        *
        * <pre>
        *订单详细信息
@@ -26568,23 +26916,23 @@ public final class Order {
         } else {
           orderDetailInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
-       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
        *
        * <pre>
        *订单详细信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo.Builder getOrderDetailInfoBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
         return getOrderDetailInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
        *
        * <pre>
        *订单详细信息
@@ -26598,7 +26946,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 4;</code>
+       * <code>required .com.qjoy.basjoo.core.model.pb.OrderDetailInfo orderDetailInfo = 3;</code>
        *
        * <pre>
        *订单详细信息
@@ -31166,6 +31514,16 @@ public final class Order {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_DeleteOrderResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmReceiveRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -31213,97 +31571,96 @@ public final class Order {
       "\001\n\022CommitOrderRequest\022\021\n\tproductId\030\001 \002(\t" +
       "\022\022\n\ncategoryId\030\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022" +
       "\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance\030\005 \002(\010\022\017\n\007" +
-      "orderId\030\006 \001(\t\022\024\n\014onlyCalPrice\030\007 \002(\010\"\213\003\n\021" +
-      "CommitOrderResult\022\017\n\007success\030\001 \002(\010\022\022\n\nre" +
-      "sultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022\017\n\007ord" +
-      "erId\030\004 \001(\t\022\022\n\ncategoryId\030\005 \002(\t\022\021\n\trentCo" +
-      "unt\030\006 \002(\005\022\020\n\010rentCode\030\007 \002(\t\022\021\n\tinsurance" +
-      "\030\010 \002(\010\022\026\n\016insurancePrice\030\t \001(\001\022\023\n\013pledge",
-      "Price\030\n \001(\001\022\033\n\023transportationPrice\030\013 \001(\001" +
-      "\022\026\n\016totalRentPrice\030\014 \002(\001\022\022\n\nhasVoucher\030\r" +
-      " \002(\010\022\022\n\ntotalPrice\030\016 \002(\001\022W\n\027orderReceive" +
-      "AddressInfo\030\017 \001(\01326.com.qjoy.basjoo.core" +
-      ".model.pb.OrderReceiveAddressInfo\"g\n\027Ord" +
-      "erReceiveAddressInfo\022\021\n\taddressId\030\001 \002(\t\022" +
-      "\020\n\010receiver\030\002 \002(\t\022\020\n\010mobileNo\030\003 \002(\t\022\025\n\ra" +
-      "ddressDetail\030\004 \002(\t\"\323\001\n\023ConfirmOrderReque" +
-      "st\022\021\n\tproductId\030\001 \002(\t\022\022\n\ncategoryId\030\002 \002(" +
-      "\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030\004 \002(\t\022\021",
-      "\n\tinsurance\030\005 \001(\010\022\017\n\007orderId\030\006 \002(\t\022\021\n\tad" +
-      "dressId\030\007 \002(\t\022\020\n\010vouchers\030\010 \003(\t\022\023\n\013userM" +
-      "essage\030\t \001(\t\022\022\n\npayChannel\030\n \001(\005\"\256\001\n\022Con" +
-      "firmOrderResult\022\017\n\007success\030\001 \002(\010\022\022\n\nresu" +
-      "ltCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022\017\n\007order" +
-      "Id\030\004 \001(\t\022\022\n\npayChannel\030\005 \001(\005\022;\n\twxPayInf" +
-      "o\030\006 \001(\0132(.com.qjoy.basjoo.core.model.pb." +
-      "WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId\030\001 \002" +
-      "(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t\022\020\n" +
-      "\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n\004si",
-      "gn\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"8\n\021ConfirmPayReq" +
-      "uest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030\002 \001(" +
-      "\005\"\254\001\n\020ConfirmPayResult\022\017\n\007success\030\001 \002(\010\022" +
-      "\022\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022\017" +
-      "\n\007orderId\030\004 \001(\t\022\022\n\npayChannel\030\005 \001(\005\022;\n\tw" +
-      "xPayInfo\030\006 \001(\0132(.com.qjoy.basjoo.core.mo" +
-      "del.pb.WxPayInfo\"&\n\023GetPayStatusRequest\022" +
-      "\017\n\007orderId\030\001 \002(\t\"q\n\022GetPayStatusResult\022\017" +
-      "\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 \002(\t\022\021\n\tr" +
-      "esultMsg\030\003 \002(\t\022\017\n\007orderId\030\004 \002(\t\022\022\n\npayCh",
-      "annel\030\005 \001(\005\"\217\001\n\026SearchOrderListRequest\022\020" +
-      "\n\010keyWords\030\001 \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n" +
-      "\016evaluateStauts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(" +
-      "\005\022\021\n\tstartTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\"\312\002" +
-      "\n\025SearchOrderListResult\022\017\n\007success\030\001 \002(\010" +
-      "\022\022\n\nresultCode\030\002 \002(\t\022\021\n\tresultMsg\030\003 \002(\t\022" +
-      "\020\n\010maxIndex\030\004 \001(\005\022\017\n\007hasMore\030\005 \002(\010\022\024\n\014wa" +
-      "itPayCount\030\006 \002(\005\022\031\n\021waitDeliveryCount\030\007 " +
-      "\002(\005\022\030\n\020waitReceiveCount\030\010 \002(\005\022\027\n\017waitRev" +
-      "ertCount\030\t \002(\005\022\031\n\021waitEvaluateCount\030\n \002(",
-      "\005\022\022\n\ntotalCount\030\013 \002(\005\022C\n\rorderLiteInfo\030\014" +
-      " \003(\0132,.com.qjoy.basjoo.core.model.pb.Ord" +
-      "erLiteInfo\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030" +
-      "\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime" +
-      "\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEnd" +
-      "Time\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCoun" +
-      "t\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePric" +
-      "e\030\t \002(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022\n\n" +
-      "totalPrice\030\013 \002(\001\022\030\n\020transportationId\030\014 \001" +
-      "(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tproductId\030",
-      "\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(" +
-      "\t\022\024\n\014categoryName\030\021 \002(\t\"%\n\022DeleteOrderRe" +
-      "quest\022\017\n\007orderId\030\001 \002(\t\"K\n\021DeleteOrderRes" +
-      "ult\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 \002(\t" +
-      "\022\021\n\tresultMsg\030\003 \002(\t\"(\n\025ConfirmReceiveReq" +
-      "uest\022\017\n\007orderId\030\001 \002(\t\"N\n\024ConfirmReceiveR" +
-      "esult\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 \002" +
-      "(\t\022\021\n\tresultMsg\030\003 \002(\t\"w\n\022ApplyRevertRequ" +
-      "est\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType\030" +
-      "\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025trans",
-      "portationCompany\030\004 \001(\t\"K\n\021ApplyRevertRes" +
-      "ult\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 \002(\t" +
-      "\022\021\n\tresultMsg\030\003 \002(\t\"(\n\025GetOrderDetailReq" +
-      "uest\022\017\n\007orderId\030\001 \001(\t\"\227\001\n\024GetOrderDetail" +
-      "Result\022\017\n\007success\030\001 \002(\010\022\022\n\nresultCode\030\002 " +
-      "\002(\t\022\021\n\tresultMsg\030\003 \002(\t\022G\n\017orderDetailInf" +
-      "o\030\004 \002(\0132..com.qjoy.basjoo.core.model.pb." +
-      "OrderDetailInfo\"\373\004\n\017OrderDetailInfo\022\017\n\007o" +
-      "rderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncre" +
-      "ateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013",
-      "rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\tr" +
-      "entCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013ple" +
-      "dgePrice\030\t \002(\001\022\033\n\023transportationPrice\030\n " +
-      "\001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportatio" +
-      "nId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tpro" +
-      "ductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004de" +
-      "sc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTim" +
-      "e\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 \001" +
-      "(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTime\030" +
-      "\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTim",
-      "e\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030\032" +
-      " \003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001(\01326." +
-      "com.qjoy.basjoo.core.model.pb.OrderRecei" +
-      "veAddressInfoB\037\n\035com.qjoy.basjoo.core.mo" +
-      "del.pb"
+      "orderId\030\006 \001(\t\022\024\n\014onlyCalPrice\030\007 \002(\010\"\372\002\n\021" +
+      "CommitOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
+      "\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\ncat" +
+      "egoryId\030\004 \002(\t\022\021\n\trentCount\030\005 \002(\005\022\020\n\010rent" +
+      "Code\030\006 \002(\t\022\021\n\tinsurance\030\007 \002(\010\022\026\n\016insuran" +
+      "cePrice\030\010 \001(\001\022\023\n\013pledgePrice\030\t \001(\001\022\033\n\023tr",
+      "ansportationPrice\030\n \001(\001\022\026\n\016totalRentPric" +
+      "e\030\013 \002(\001\022\022\n\nhasVoucher\030\014 \002(\010\022\022\n\ntotalPric" +
+      "e\030\r \002(\001\022W\n\027orderReceiveAddressInfo\030\016 \001(\013" +
+      "26.com.qjoy.basjoo.core.model.pb.OrderRe" +
+      "ceiveAddressInfo\"g\n\027OrderReceiveAddressI" +
+      "nfo\022\021\n\taddressId\030\001 \002(\t\022\020\n\010receiver\030\002 \002(\t" +
+      "\022\020\n\010mobileNo\030\003 \002(\t\022\025\n\raddressDetail\030\004 \002(" +
+      "\t\"\323\001\n\023ConfirmOrderRequest\022\021\n\tproductId\030\001" +
+      " \002(\t\022\022\n\ncategoryId\030\002 \002(\t\022\021\n\trentCount\030\003 " +
+      "\002(\005\022\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance\030\005 \001(\010",
+      "\022\017\n\007orderId\030\006 \002(\t\022\021\n\taddressId\030\007 \002(\t\022\020\n\010" +
+      "vouchers\030\010 \003(\t\022\023\n\013userMessage\030\t \001(\t\022\022\n\np" +
+      "ayChannel\030\n \001(\005\"\235\001\n\022ConfirmOrderResult\022\022" +
+      "\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n" +
+      "\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twx" +
+      "PayInfo\030\005 \001(\0132(.com.qjoy.basjoo.core.mod" +
+      "el.pb.WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartner" +
+      "Id\030\001 \002(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 " +
+      "\002(\t\022\020\n\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t" +
+      "\022\014\n\004sign\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"8\n\021Confirm",
+      "PayRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChanne" +
+      "l\030\002 \001(\005\"\233\001\n\020ConfirmPayResult\022\022\n\nresultCo" +
+      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003" +
+      " \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPayInfo\030\005 " +
+      "\001(\0132(.com.qjoy.basjoo.core.model.pb.WxPa" +
+      "yInfo\"&\n\023GetPayStatusRequest\022\017\n\007orderId\030" +
+      "\001 \002(\t\"`\n\022GetPayStatusResult\022\022\n\nresultCod" +
+      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 " +
+      "\002(\t\022\022\n\npayChannel\030\004 \001(\005\"\217\001\n\026SearchOrderL" +
+      "istRequest\022\020\n\010keyWords\030\001 \001(\t\022\023\n\013orderSta",
+      "tus\030\002 \001(\005\022\026\n\016evaluateStauts\030\003 \001(\010\022\022\n\nsta" +
+      "rtIndex\030\004 \001(\005\022\021\n\tstartTime\030\005 \001(\003\022\017\n\007endT" +
+      "ime\030\006 \001(\003\"\271\002\n\025SearchOrderListResult\022\022\n\nr" +
+      "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010ma" +
+      "xIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\024\n\014waitPay" +
+      "Count\030\005 \002(\005\022\031\n\021waitDeliveryCount\030\006 \002(\005\022\030" +
+      "\n\020waitReceiveCount\030\007 \002(\005\022\027\n\017waitRevertCo" +
+      "unt\030\010 \002(\005\022\031\n\021waitEvaluateCount\030\t \002(\005\022\022\n\n" +
+      "totalCount\030\n \002(\005\022C\n\rorderLiteInfo\030\013 \003(\0132" +
+      ",.com.qjoy.basjoo.core.model.pb.OrderLit",
+      "eInfo\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t" +
+      "\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(" +
+      "\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030" +
+      "\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002" +
+      "(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002" +
+      "(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022\n\ntotal" +
+      "Price\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n" +
+      "\016evaluateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t" +
+      "\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014" +
+      "categoryName\030\021 \002(\t\"%\n\022DeleteOrderRequest",
+      "\022\017\n\007orderId\030\001 \002(\t\":\n\021DeleteOrderResult\022\022" +
+      "\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"5\n" +
+      "\022CancelOrderRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006" +
+      "reason\030\002 \002(\t\":\n\021CancelOrderResult\022\022\n\nres" +
+      "ultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"(\n\025Conf" +
+      "irmReceiveRequest\022\017\n\007orderId\030\001 \002(\t\"=\n\024Co" +
+      "nfirmReceiveResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
+      "\n\tresultMsg\030\002 \002(\t\"w\n\022ApplyRevertRequest\022" +
+      "\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType\030\002 \002(" +
+      "\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025transport",
+      "ationCompany\030\004 \001(\t\":\n\021ApplyRevertResult\022" +
+      "\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"(" +
+      "\n\025GetOrderDetailRequest\022\017\n\007orderId\030\001 \001(\t" +
+      "\"\206\001\n\024GetOrderDetailResult\022\022\n\nresultCode\030" +
+      "\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDetailI" +
+      "nfo\030\003 \002(\0132..com.qjoy.basjoo.core.model.p" +
+      "b.OrderDetailInfo\"\373\004\n\017OrderDetailInfo\022\017\n" +
+      "\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\nc" +
+      "reateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023" +
+      "\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n",
+      "\trentCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013p" +
+      "ledgePrice\030\t \002(\001\022\033\n\023transportationPrice\030" +
+      "\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportat" +
+      "ionId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tp" +
+      "roductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004" +
+      "desc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payT" +
+      "ime\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024" +
+      " \001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTim" +
+      "e\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeT" +
+      "ime\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers",
+      "\030\032 \003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001(\0132" +
+      "6.com.qjoy.basjoo.core.model.pb.OrderRec" +
+      "eiveAddressInfoB\037\n\035com.qjoy.basjoo.core." +
+      "model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -31328,7 +31685,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", "OrderId", "CategoryId", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "CategoryId", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_fieldAccessorTable = new
@@ -31346,7 +31703,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", "OrderId", "PayChannel", "WxPayInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "PayChannel", "WxPayInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_WxPayInfo_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_com_qjoy_basjoo_core_model_pb_WxPayInfo_fieldAccessorTable = new
@@ -31364,7 +31721,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", "OrderId", "PayChannel", "WxPayInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "PayChannel", "WxPayInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusRequest_fieldAccessorTable = new
@@ -31376,7 +31733,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", "OrderId", "PayChannel", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "PayChannel", });
     internal_static_com_qjoy_basjoo_core_model_pb_SearchOrderListRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_com_qjoy_basjoo_core_model_pb_SearchOrderListRequest_fieldAccessorTable = new
@@ -31388,7 +31745,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_SearchOrderListResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_SearchOrderListResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", "MaxIndex", "HasMore", "WaitPayCount", "WaitDeliveryCount", "WaitReceiveCount", "WaitRevertCount", "WaitEvaluateCount", "TotalCount", "OrderLiteInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "MaxIndex", "HasMore", "WaitPayCount", "WaitDeliveryCount", "WaitReceiveCount", "WaitRevertCount", "WaitEvaluateCount", "TotalCount", "OrderLiteInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderLiteInfo_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderLiteInfo_fieldAccessorTable = new
@@ -31406,45 +31763,57 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteOrderResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_DeleteOrderResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", });
-    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmReceiveRequest_descriptor =
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
+    internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_descriptor =
       getDescriptor().getMessageTypes().get(15);
+    internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderRequest_descriptor,
+        new java.lang.String[] { "OrderId", "Reason", });
+    internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_CancelOrderResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmReceiveRequest_descriptor =
+      getDescriptor().getMessageTypes().get(17);
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmReceiveRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ConfirmReceiveRequest_descriptor,
         new java.lang.String[] { "OrderId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmReceiveResult_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmReceiveResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ConfirmReceiveResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertRequest_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertRequest_descriptor,
         new java.lang.String[] { "OrderId", "ApplyRevertType", "TransportationId", "TransportationCompany", });
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertResult_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetOrderDetailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_com_qjoy_basjoo_core_model_pb_GetOrderDetailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetOrderDetailRequest_descriptor,
         new java.lang.String[] { "OrderId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetOrderDetailResult_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_com_qjoy_basjoo_core_model_pb_GetOrderDetailResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetOrderDetailResult_descriptor,
-        new java.lang.String[] { "Success", "ResultCode", "ResultMsg", "OrderDetailInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderDetailInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_descriptor,

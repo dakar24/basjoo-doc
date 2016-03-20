@@ -70,6 +70,9 @@ message TopicLiteInfo{
    
    //用户本人是否已点赞
    required bool                   praised = 11;
+   
+   //话题图片地址
+   optional string                 topicImageUrl = 12;
 }
 
 
@@ -140,7 +143,7 @@ message TopicDetailInfo{
    required bool                   praised = 14;
    
    //话题图片地址
-   optional string                 topicImageUrls = 15;
+   repeated string                 topicImageUrls = 15;
           
 }
 

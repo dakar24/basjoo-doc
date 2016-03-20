@@ -4,6 +4,8 @@
 
 @class ApplyRevertRequest;
 @class ApplyRevertResult;
+@class CancelOrderRequest;
+@class CancelOrderResult;
 @class CommitOrderRequest;
 @class CommitOrderResult;
 @class ConfirmOrderRequest;
@@ -43,7 +45,6 @@
 @end
 
 @interface CommitOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasOrderId;
@@ -58,7 +59,6 @@
 @property (readonly) BOOL hasHasVoucher;
 @property (readonly) BOOL hasTotalPrice;
 @property (readonly) BOOL hasOrderReceiveAddressInfo;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* orderId;
@@ -109,13 +109,11 @@
 @end
 
 @interface ConfirmOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasOrderId;
 @property (readonly) BOOL hasPayChannel;
 @property (readonly) BOOL hasWxPayInfo;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* orderId;
@@ -148,13 +146,11 @@
 @end
 
 @interface ConfirmPayResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasOrderId;
 @property (readonly) BOOL hasPayChannel;
 @property (readonly) BOOL hasWxPayInfo;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* orderId;
@@ -168,12 +164,10 @@
 @end
 
 @interface GetPayStatusResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasOrderId;
 @property (readonly) BOOL hasPayChannel;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* orderId;
@@ -196,7 +190,6 @@
 @end
 
 @interface SearchOrderListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasMaxIndex;
@@ -207,7 +200,6 @@
 @property (readonly) BOOL hasWaitRevertCount;
 @property (readonly) BOOL hasWaitEvaluateCount;
 @property (readonly) BOOL hasTotalCount;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic)SInt32 maxIndex;
@@ -264,10 +256,22 @@
 @end
 
 @interface DeleteOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
-@property (nonatomic)BOOL success;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@end
+
+@interface CancelOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasReason;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic,strong) NSString* reason;
+@end
+
+@interface CancelOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @end
@@ -278,10 +282,8 @@
 @end
 
 @interface ConfirmReceiveResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @end
@@ -298,10 +300,8 @@
 @end
 
 @interface ApplyRevertResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @end
@@ -312,11 +312,9 @@
 @end
 
 @interface GetOrderDetailResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasSuccess;
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasOrderDetailInfo;
-@property (nonatomic)BOOL success;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) OrderDetailInfo* orderDetailInfo;

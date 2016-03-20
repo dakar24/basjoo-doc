@@ -266,6 +266,7 @@
     _createTime = 0L;
     _lastReplyTime = 0L;
     _praised = NO;
+    _topicImageUrl = @"";
   }
   return self;
 }
@@ -302,6 +303,9 @@
   }
   if (self.hasPraised) {
     [output writeBool:11 value:self.praised];
+  }
+  if (self.hasTopicImageUrl) {
+    [output writeString:12 value:self.topicImageUrl];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -341,6 +345,9 @@
   }
   if (self.hasPraised) {
     size_ += computeBoolSize(11, self.praised);
+  }
+  if (self.hasTopicImageUrl) {
+    size_ += computeStringSize(12, self.topicImageUrl);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -384,6 +391,9 @@
   }
   if (self.hasPraised) {
     [output appendFormat:@"%@%@: %@\n", indent, @"praised", [NSNumber numberWithBool:self.praised]];
+  }
+  if (self.hasTopicImageUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"topicImageUrl", self.topicImageUrl];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -431,6 +441,10 @@
 - (void) setPraised:(BOOL) value {
   _hasPraised = YES;
   _praised = value;
+}
+- (void) setTopicImageUrl:(NSString*) value {
+  _hasTopicImageUrl = YES;
+  _topicImageUrl = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -489,6 +503,10 @@
       }
       case 88: {
         [self setPraised:[input readBool]];
+        break;
+      }
+      case 98: {
+        [self setTopicImageUrl:[input readString]];
         break;
       }
     }
@@ -685,7 +703,6 @@
     _createTime = 0L;
     _lastReplyTime = 0L;
     _praised = NO;
-    _topicImageUrls = @"";
   }
   return self;
 }
@@ -732,9 +749,9 @@
   if (self.hasPraised) {
     [output writeBool:14 value:self.praised];
   }
-  if (self.hasTopicImageUrls) {
-    [output writeString:15 value:self.topicImageUrls];
-  }
+  [self.topicImageUrls enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:15 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -789,8 +806,14 @@
   if (self.hasPraised) {
     size_ += computeBoolSize(14, self.praised);
   }
-  if (self.hasTopicImageUrls) {
-    size_ += computeStringSize(15, self.topicImageUrls);
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.topicImageUrls.count;
+    [self.topicImageUrls enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(1 * count);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -847,9 +870,9 @@
   if (self.hasPraised) {
     [output appendFormat:@"%@%@: %@\n", indent, @"praised", [NSNumber numberWithBool:self.praised]];
   }
-  if (self.hasTopicImageUrls) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"topicImageUrls", self.topicImageUrls];
-  }
+  [self.topicImageUrls enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"topicImageUrls", obj];
+  }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -919,9 +942,14 @@
   _hasPraised = YES;
   _praised = value;
 }
-- (void) setTopicImageUrls:(NSString*) value {
-  _hasTopicImageUrls = YES;
-  _topicImageUrls = value;
+- (void)setTopicImageUrlsArray:(NSArray *)array {
+  _topicImageUrls = [[NSMutableArray alloc] initWithArray:array];
+}
+- (void)addTopicImageUrls:(NSString*)value {
+  if (_topicImageUrls == nil) {
+    _topicImageUrls = [[NSMutableArray alloc]init];
+  }
+  [_topicImageUrls addObject:value];
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -997,7 +1025,7 @@
         break;
       }
       case 122: {
-        [self setTopicImageUrls:[input readString]];
+        [self addTopicImageUrls:[input readString]];
         break;
       }
     }

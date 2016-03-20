@@ -9,9 +9,9 @@ import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 确认收货结果
+ * 取消订单结果
  */
-public final class ConfirmReceiveResult extends Message {
+public final class CancelOrderResult extends Message {
 
   public static final int TAG_RESULTCODE = 1;
   public static final int TAG_RESULTMSG = 2;
@@ -25,17 +25,17 @@ public final class ConfirmReceiveResult extends Message {
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String resultMsg;
 
-  public ConfirmReceiveResult(ConfirmReceiveResult message) {
+  public CancelOrderResult(CancelOrderResult message) {
     super(message);
     if (message == null) return;
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
   }
 
-  public ConfirmReceiveResult() {
+  public CancelOrderResult() {
   }
 
-  public ConfirmReceiveResult fillTagValue(int tag, Object value) {
+  public CancelOrderResult fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_RESULTCODE:
         this.resultCode = (String)value;
@@ -51,8 +51,8 @@ public final class ConfirmReceiveResult extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof ConfirmReceiveResult)) return false;
-    ConfirmReceiveResult o = (ConfirmReceiveResult) other;
+    if (!(other instanceof CancelOrderResult)) return false;
+    CancelOrderResult o = (CancelOrderResult) other;
     return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg);
   }
