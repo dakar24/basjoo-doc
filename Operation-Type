@@ -48,6 +48,7 @@
 申请归还：qjoy.basjoo.applyRevert
 确认收货：qjoy.basjoo.confirmReceive
 确认支付：qjoy.basjoo.confirmPay
+取消订单：qjoy.basjoo.cancelOrder
 获取支付状态（微信收银台返回成功后）：qjoy.basjoo.getPayStatus
 
 ##权益
