@@ -1,0 +1,116 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取通知
+message GetNotifyRequest {  
+
+    
+}
+
+//获取通知结果
+message GetNotifyResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   //通知总数
+   required int32                  totalNotifyCount = 3;
+   
+   //订单通知数
+   optional int32                  orderNotifyCount = 4;
+   
+   //权益通知数
+   optional int32                  voucherNotifyCount = 5;
+   
+   //评论（系统评价/话题评论）通知数
+   optional int32                  commentNotifyCount = 6;
+   
+   //系统通知数
+   optional int32                  systemNotifyCount = 7;
+    
+}
+
+
+//获取通知列表
+message GetNotifyLiteInfoListRequest {  
+
+  //通知类型 0：订单通知,1:权益通知,2：评论通知,3:系统通知
+  required int32 notifyType = 1;
+  
+  //起始index
+  optional int32 startIndex = 2;  
+    
+}
+
+
+//获取通知列表
+message GetNotifyLiteInfoListResult {  
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   //是否有更多
+   required bool                   hasMore = 3;
+   
+   //当前最大index
+   optional int32                  maxIndex = 4;
+   
+   //通知概要信息
+   repeated NotifyLiteInfo         notifyLiteInfo = 5;
+}
+
+
+//通知概要信息
+message NotifyLiteInfo{
+
+  //ID
+  required string                 notifyId = 1;
+  
+  //通知时间
+  required int64                  notifyTime = 2;
+  
+  //通知标题
+  required string                 notifyTitle = 3;
+  
+  //通知描述
+  required string                 notifyDesc = 4;
+  
+  //通知类型
+  optional int32                  notifyType = 5;
+  
+  //通知子类型 1,话题评论通知；2,产品评论通知
+  optional int32                  notifySubType = 6;
+    
+  //通知的图片路径	
+  optional string                 notifyImgUrl = 7;
+  
+  //扩展信息，产品ID，话题ID，订单ID等
+  repeated NotifyExtInfo          notifyExtInfo =8;
+   
+}
+
+//扩展信息
+message NotifyExtInfo{
+
+  //key
+  required string                 key = 1;
+  
+  //value
+  required string                 value = 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
