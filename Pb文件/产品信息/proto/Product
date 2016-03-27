@@ -12,11 +12,18 @@ message SearchProductListRequest {
 	 //0：默认综合，1：品牌，2：类型
 	optional string                 searchType = 2;
 	
+	
 	 //排序方式，0：默认综合，1：年龄，2：价格，3：销量
 	optional int32                  orderBy = 3;
 	
 	//起始index
 	optional int32                  startIndex = 4;
+	
+	//升降序方式 0:降序,1:升序
+	optional int32                  sort = 5;
+	
+	 //产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+	optional string                 productType = 6;
     
 }
 
@@ -72,6 +79,11 @@ message ProductLiteInfo {
    
    //用户是否已收藏
    optional bool                  favorited = 11; 
+   
+   
+   //产品标题
+   required string                 productTitle = 12; 
+   
     
 }
 
@@ -164,6 +176,9 @@ message ProductDetailInfo {
    
    //用户是否已收藏
    optional bool                  favorited = 22; 
+   
+   //产品标题
+   required string                productTitle = 23; 
    
 
     

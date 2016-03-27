@@ -17,11 +17,15 @@ public final class SearchProductListRequest extends Message {
   public static final int TAG_SEARCHTYPE = 2;
   public static final int TAG_ORDERBY = 3;
   public static final int TAG_STARTINDEX = 4;
+  public static final int TAG_SORT = 5;
+  public static final int TAG_PRODUCTTYPE = 6;
 
   public static final String DEFAULT_KEYWORDS = "";
   public static final String DEFAULT_SEARCHTYPE = "";
   public static final Integer DEFAULT_ORDERBY = 0;
   public static final Integer DEFAULT_STARTINDEX = 0;
+  public static final Integer DEFAULT_SORT = 0;
+  public static final String DEFAULT_PRODUCTTYPE = "";
 
   /**
    * 关键字
@@ -47,6 +51,18 @@ public final class SearchProductListRequest extends Message {
   @ProtoField(tag = 4, type = INT32)
   public Integer startIndex;
 
+  /**
+   * 升降序方式 0:降序,1:升序
+   */
+  @ProtoField(tag = 5, type = INT32)
+  public Integer sort;
+
+  /**
+   * 产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+   */
+  @ProtoField(tag = 6, type = STRING)
+  public String productType;
+
   public SearchProductListRequest(SearchProductListRequest message) {
     super(message);
     if (message == null) return;
@@ -54,6 +70,8 @@ public final class SearchProductListRequest extends Message {
     this.searchType = message.searchType;
     this.orderBy = message.orderBy;
     this.startIndex = message.startIndex;
+    this.sort = message.sort;
+    this.productType = message.productType;
   }
 
   public SearchProductListRequest() {
@@ -73,6 +91,12 @@ public final class SearchProductListRequest extends Message {
         case TAG_STARTINDEX:
         this.startIndex = (Integer)value;
         break;
+        case TAG_SORT:
+        this.sort = (Integer)value;
+        break;
+        case TAG_PRODUCTTYPE:
+        this.productType = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -86,7 +110,9 @@ public final class SearchProductListRequest extends Message {
     return equals(keywords, o.keywords)
         && equals(searchType, o.searchType)
         && equals(orderBy, o.orderBy)
-        && equals(startIndex, o.startIndex);
+        && equals(startIndex, o.startIndex)
+        && equals(sort, o.sort)
+        && equals(productType, o.productType);
   }
 
   @Override
@@ -97,6 +123,8 @@ public final class SearchProductListRequest extends Message {
       result = result * 37 + (searchType != null ? searchType.hashCode() : 0);
       result = result * 37 + (orderBy != null ? orderBy.hashCode() : 0);
       result = result * 37 + (startIndex != null ? startIndex.hashCode() : 0);
+      result = result * 37 + (sort != null ? sort.hashCode() : 0);
+      result = result * 37 + (productType != null ? productType.hashCode() : 0);
       hashCode = result;
     }
     return result;

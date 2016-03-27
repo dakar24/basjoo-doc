@@ -28,6 +28,7 @@ public final class ProductLiteInfo extends Message {
   public static final int TAG_MARKETPRICE = 9;
   public static final int TAG_PLEDGEPRICE = 10;
   public static final int TAG_FAVORITED = 11;
+  public static final int TAG_PRODUCTTITLE = 12;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -40,6 +41,7 @@ public final class ProductLiteInfo extends Message {
   public static final Double DEFAULT_MARKETPRICE = 0D;
   public static final Double DEFAULT_PLEDGEPRICE = 0D;
   public static final Boolean DEFAULT_FAVORITED = false;
+  public static final String DEFAULT_PRODUCTTITLE = "";
 
   /**
    * 产品Id
@@ -107,6 +109,12 @@ public final class ProductLiteInfo extends Message {
   @ProtoField(tag = 11, type = BOOL)
   public Boolean favorited;
 
+  /**
+   * 产品标题
+   */
+  @ProtoField(tag = 12, type = STRING, label = REQUIRED)
+  public String productTitle;
+
   public ProductLiteInfo(ProductLiteInfo message) {
     super(message);
     if (message == null) return;
@@ -121,6 +129,7 @@ public final class ProductLiteInfo extends Message {
     this.marketPrice = message.marketPrice;
     this.pledgePrice = message.pledgePrice;
     this.favorited = message.favorited;
+    this.productTitle = message.productTitle;
   }
 
   public ProductLiteInfo() {
@@ -161,6 +170,9 @@ public final class ProductLiteInfo extends Message {
         case TAG_FAVORITED:
         this.favorited = (Boolean)value;
         break;
+        case TAG_PRODUCTTITLE:
+        this.productTitle = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -181,7 +193,8 @@ public final class ProductLiteInfo extends Message {
         && equals(rentCount, o.rentCount)
         && equals(marketPrice, o.marketPrice)
         && equals(pledgePrice, o.pledgePrice)
-        && equals(favorited, o.favorited);
+        && equals(favorited, o.favorited)
+        && equals(productTitle, o.productTitle);
   }
 
   @Override
@@ -199,6 +212,7 @@ public final class ProductLiteInfo extends Message {
       result = result * 37 + (marketPrice != null ? marketPrice.hashCode() : 0);
       result = result * 37 + (pledgePrice != null ? pledgePrice.hashCode() : 0);
       result = result * 37 + (favorited != null ? favorited.hashCode() : 0);
+      result = result * 37 + (productTitle != null ? productTitle.hashCode() : 0);
       hashCode = result;
     }
     return result;

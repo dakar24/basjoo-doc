@@ -22,10 +22,14 @@
 @property (readonly) BOOL hasSearchType;
 @property (readonly) BOOL hasOrderBy;
 @property (readonly) BOOL hasStartIndex;
+@property (readonly) BOOL hasSort;
+@property (readonly) BOOL hasProductType;
 @property (nonatomic,strong) NSString* keywords;
 @property (nonatomic,strong) NSString* searchType;
 @property (nonatomic)SInt32 orderBy;
 @property (nonatomic)SInt32 startIndex;
+@property (nonatomic)SInt32 sort;
+@property (nonatomic,strong) NSString* productType;
 @end
 
 @interface SearchProductListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -52,6 +56,7 @@
 @property (readonly) BOOL hasMarketPrice;
 @property (readonly) BOOL hasPledgePrice;
 @property (readonly) BOOL hasFavorited;
+@property (readonly) BOOL hasProductTitle;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic,strong) NSString* brand;
@@ -63,6 +68,7 @@
 @property (nonatomic)Float64 marketPrice;
 @property (nonatomic)Float64 pledgePrice;
 @property (nonatomic)BOOL favorited;
+@property (nonatomic,strong) NSString* productTitle;
 @end
 
 @interface ProductDetailRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -95,6 +101,7 @@
 @property (readonly) BOOL hasLocation;
 @property (readonly) BOOL hasEvaluateCount;
 @property (readonly) BOOL hasFavorited;
+@property (readonly) BOOL hasProductTitle;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic,strong) NSString* brand;
@@ -117,6 +124,7 @@
 @property (nonatomic)SInt64 evaluateCount;
 @property (nonatomic,strong) NSMutableArray * productEvaluateInfo;
 @property (nonatomic)BOOL favorited;
+@property (nonatomic,strong) NSString* productTitle;
 @end
 
 @interface CategoryInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>

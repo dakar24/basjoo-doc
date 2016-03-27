@@ -10,6 +10,8 @@
     _searchType = @"";
     _orderBy = 0;
     _startIndex = 0;
+    _sort = 0;
+    _productType = @"";
   }
   return self;
 }
@@ -25,6 +27,12 @@
   }
   if (self.hasStartIndex) {
     [output writeInt32:4 value:self.startIndex];
+  }
+  if (self.hasSort) {
+    [output writeInt32:5 value:self.sort];
+  }
+  if (self.hasProductType) {
+    [output writeString:6 value:self.productType];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -43,6 +51,12 @@
   }
   if (self.hasStartIndex) {
     size_ += computeInt32Size(4, self.startIndex);
+  }
+  if (self.hasSort) {
+    size_ += computeInt32Size(5, self.sort);
+  }
+  if (self.hasProductType) {
+    size_ += computeStringSize(6, self.productType);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -66,6 +80,12 @@
   if (self.hasStartIndex) {
     [output appendFormat:@"%@%@: %@\n", indent, @"startIndex", [NSNumber numberWithInteger:self.startIndex]];
   }
+  if (self.hasSort) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"sort", [NSNumber numberWithInteger:self.sort]];
+  }
+  if (self.hasProductType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"productType", self.productType];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -84,6 +104,14 @@
 - (void) setStartIndex:(SInt32) value {
   _hasStartIndex = YES;
   _startIndex = value;
+}
+- (void) setSort:(SInt32) value {
+  _hasSort = YES;
+  _sort = value;
+}
+- (void) setProductType:(NSString*) value {
+  _hasProductType = YES;
+  _productType = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -114,6 +142,14 @@
       }
       case 32: {
         [self setStartIndex:[input readInt32]];
+        break;
+      }
+      case 40: {
+        [self setSort:[input readInt32]];
+        break;
+      }
+      case 50: {
+        [self setProductType:[input readString]];
         break;
       }
     }
@@ -284,6 +320,7 @@
     _marketPrice = 0;
     _pledgePrice = 0;
     _favorited = NO;
+    _productTitle = @"";
   }
   return self;
 }
@@ -320,6 +357,9 @@
   }
   if (self.hasFavorited) {
     [output writeBool:11 value:self.favorited];
+  }
+  if (self.hasProductTitle) {
+    [output writeString:12 value:self.productTitle];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -359,6 +399,9 @@
   }
   if (self.hasFavorited) {
     size_ += computeBoolSize(11, self.favorited);
+  }
+  if (self.hasProductTitle) {
+    size_ += computeStringSize(12, self.productTitle);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -402,6 +445,9 @@
   }
   if (self.hasFavorited) {
     [output appendFormat:@"%@%@: %@\n", indent, @"favorited", [NSNumber numberWithBool:self.favorited]];
+  }
+  if (self.hasProductTitle) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"productTitle", self.productTitle];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -449,6 +495,10 @@
 - (void) setFavorited:(BOOL) value {
   _hasFavorited = YES;
   _favorited = value;
+}
+- (void) setProductTitle:(NSString*) value {
+  _hasProductTitle = YES;
+  _productTitle = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -507,6 +557,10 @@
       }
       case 88: {
         [self setFavorited:[input readBool]];
+        break;
+      }
+      case 98: {
+        [self setProductTitle:[input readString]];
         break;
       }
     }
@@ -706,6 +760,7 @@
     _location = @"";
     _evaluateCount = 0L;
     _favorited = NO;
+    _productTitle = @"";
   }
   return self;
 }
@@ -775,6 +830,9 @@
   }];
   if (self.hasFavorited) {
     [output writeBool:22 value:self.favorited];
+  }
+  if (self.hasProductTitle) {
+    [output writeString:23 value:self.productTitle];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -859,6 +917,9 @@
   }];
   if (self.hasFavorited) {
     size_ += computeBoolSize(22, self.favorited);
+  }
+  if (self.hasProductTitle) {
+    size_ += computeStringSize(23, self.productTitle);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -950,6 +1011,9 @@
   }];
   if (self.hasFavorited) {
     [output appendFormat:@"%@%@: %@\n", indent, @"favorited", [NSNumber numberWithBool:self.favorited]];
+  }
+  if (self.hasProductTitle) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"productTitle", self.productTitle];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -1077,6 +1141,10 @@
   _hasFavorited = YES;
   _favorited = value;
 }
+- (void) setProductTitle:(NSString*) value {
+  _hasProductTitle = YES;
+  _productTitle = value;
+}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -1188,6 +1256,10 @@
       }
       case 176: {
         [self setFavorited:[input readBool]];
+        break;
+      }
+      case 186: {
+        [self setProductTitle:[input readString]];
         break;
       }
     }
