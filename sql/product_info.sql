@@ -15,6 +15,6 @@ CREATE TABLE `product_info` (
   `trans_price` double(9,2) DEFAULT '0.00' COMMENT '运费',
   `location` varchar(255) DEFAULT NULL COMMENT '所在地',
   `gmt_create` timestamp NULL DEFAULT NULL COMMENT '创建时间',
-  `gmt_modified` timestamp NULL DEFAULT NULL COMMENT '修改时间',
+  `gmt_modify` timestamp NULL DEFAULT NULL COMMENT '修改时间',
   KEY `index_product_info_product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品信息';
