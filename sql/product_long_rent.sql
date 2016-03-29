@@ -8,5 +8,6 @@ CREATE TABLE `product_long_rent` (
   `total_price` DOUBLE(9,2) NOT NULL DEFAULT '0.00' COMMENT '该周期内总价',  
   `gmt_create` TIMESTAMP NULL DEFAULT NULL COMMENT '创建时间',
   `gmt_modify` TIMESTAMP NULL DEFAULT NULL COMMENT '修改时间',
-  KEY `index_product_long_rent_product_id` (`product_id`)
+  INDEX `index_product_long_rent_product_id` (`product_id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='长租信息';
+

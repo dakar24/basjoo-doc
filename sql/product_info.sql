@@ -16,5 +16,5 @@ CREATE TABLE `product_info` (
   `location` varchar(255) DEFAULT NULL COMMENT '所在地',
   `gmt_create` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   `gmt_modify` timestamp NULL DEFAULT NULL COMMENT '修改时间',
-  KEY `index_product_info_product_id` (`product_id`)
+  INDEX `index_product_info_product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品信息';
