@@ -5,6 +5,7 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.DOUBLE;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
@@ -18,11 +19,14 @@ public final class GetPayStatusResult extends Message {
   public static final int TAG_RESULTMSG = 2;
   public static final int TAG_ORDERID = 3;
   public static final int TAG_PAYCHANNEL = 4;
+  public static final int TAG_TOTALPAYFEE = 5;
+  public static final int TAG_ORDERRECEIVEADDRESSINFO = 6;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
   public static final String DEFAULT_ORDERID = "";
   public static final Integer DEFAULT_PAYCHANNEL = 0;
+  public static final Double DEFAULT_TOTALPAYFEE = 0D;
 
   /**
    * 100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
@@ -45,6 +49,18 @@ public final class GetPayStatusResult extends Message {
   @ProtoField(tag = 4, type = INT32)
   public Integer payChannel;
 
+  /**
+   * 总共支付费用
+   */
+  @ProtoField(tag = 5, type = DOUBLE)
+  public Double totalPayFee;
+
+  /**
+   * 订单收货地址信息
+   */
+  @ProtoField(tag = 6)
+  public OrderReceiveAddressInfo orderReceiveAddressInfo;
+
   public GetPayStatusResult(GetPayStatusResult message) {
     super(message);
     if (message == null) return;
@@ -52,6 +68,8 @@ public final class GetPayStatusResult extends Message {
     this.resultMsg = message.resultMsg;
     this.orderId = message.orderId;
     this.payChannel = message.payChannel;
+    this.totalPayFee = message.totalPayFee;
+    this.orderReceiveAddressInfo = message.orderReceiveAddressInfo;
   }
 
   public GetPayStatusResult() {
@@ -71,6 +89,12 @@ public final class GetPayStatusResult extends Message {
         case TAG_PAYCHANNEL:
         this.payChannel = (Integer)value;
         break;
+        case TAG_TOTALPAYFEE:
+        this.totalPayFee = (Double)value;
+        break;
+        case TAG_ORDERRECEIVEADDRESSINFO:
+        this.orderReceiveAddressInfo = (OrderReceiveAddressInfo)value;
+        break;
         default: break;
         };
     return this;
@@ -84,7 +108,9 @@ public final class GetPayStatusResult extends Message {
     return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
         && equals(orderId, o.orderId)
-        && equals(payChannel, o.payChannel);
+        && equals(payChannel, o.payChannel)
+        && equals(totalPayFee, o.totalPayFee)
+        && equals(orderReceiveAddressInfo, o.orderReceiveAddressInfo);
   }
 
   @Override
@@ -95,6 +121,8 @@ public final class GetPayStatusResult extends Message {
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
       result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
+      result = result * 37 + (totalPayFee != null ? totalPayFee.hashCode() : 0);
+      result = result * 37 + (orderReceiveAddressInfo != null ? orderReceiveAddressInfo.hashCode() : 0);
       hashCode = result;
     }
     return result;

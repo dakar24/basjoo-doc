@@ -209,20 +209,25 @@ message GetPayStatusRequest {
 
 
 //查询支付状态结果
-message GetPayStatusResult {   
-    
-	
+message GetPayStatusResult { 	
 
-	//100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
+    //100 支付成功，101 支付失败，999系统异常（网络繁忙未捕获异常等）
     required string                 resultCode = 1;
     
     required string                 resultMsg = 2; 
 	
-	 //订单ID
+    //订单ID
     required string                 orderId = 3; 
 	
-	//支付渠道，0：微信支付，1：支付宝
-	optional int32                  payChannel = 4;
+    //支付渠道，0：微信支付，1：支付宝
+    optional int32                  payChannel = 4;
+
+    //总共支付费用
+    optional double                 totalPayFee = 5;
+
+
+    //订单收货地址信息
+    optional OrderReceiveAddressInfo orderReceiveAddressInfo = 6;
     
 }
 

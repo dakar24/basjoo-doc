@@ -168,10 +168,14 @@
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasOrderId;
 @property (readonly) BOOL hasPayChannel;
+@property (readonly) BOOL hasTotalPayFee;
+@property (readonly) BOOL hasOrderReceiveAddressInfo;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)SInt32 payChannel;
+@property (nonatomic)Float64 totalPayFee;
+@property (nonatomic,strong) OrderReceiveAddressInfo* orderReceiveAddressInfo;
 @end
 
 @interface SearchOrderListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>

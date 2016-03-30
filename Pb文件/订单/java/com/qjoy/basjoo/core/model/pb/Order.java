@@ -12919,6 +12919,48 @@ public final class Order {
      * </pre>
      */
     int getPayChannel();
+
+    /**
+     * <code>optional double totalPayFee = 5;</code>
+     *
+     * <pre>
+     *总共支付费用
+     * </pre>
+     */
+    boolean hasTotalPayFee();
+    /**
+     * <code>optional double totalPayFee = 5;</code>
+     *
+     * <pre>
+     *总共支付费用
+     * </pre>
+     */
+    double getTotalPayFee();
+
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+     *
+     * <pre>
+     *订单收货地址信息
+     * </pre>
+     */
+    boolean hasOrderReceiveAddressInfo();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+     *
+     * <pre>
+     *订单收货地址信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo getOrderReceiveAddressInfo();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+     *
+     * <pre>
+     *订单收货地址信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder getOrderReceiveAddressInfoOrBuilder();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetPayStatusResult}
@@ -12997,6 +13039,24 @@ public final class Order {
             case 32: {
               bitField0_ |= 0x00000008;
               payChannel_ = input.readInt32();
+              break;
+            }
+            case 41: {
+              bitField0_ |= 0x00000010;
+              totalPayFee_ = input.readDouble();
+              break;
+            }
+            case 50: {
+              com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                subBuilder = orderReceiveAddressInfo_.toBuilder();
+              }
+              orderReceiveAddressInfo_ = input.readMessage(com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(orderReceiveAddressInfo_);
+                orderReceiveAddressInfo_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000020;
               break;
             }
           }
@@ -13212,11 +13272,69 @@ public final class Order {
       return payChannel_;
     }
 
+    public static final int TOTALPAYFEE_FIELD_NUMBER = 5;
+    private double totalPayFee_;
+    /**
+     * <code>optional double totalPayFee = 5;</code>
+     *
+     * <pre>
+     *总共支付费用
+     * </pre>
+     */
+    public boolean hasTotalPayFee() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional double totalPayFee = 5;</code>
+     *
+     * <pre>
+     *总共支付费用
+     * </pre>
+     */
+    public double getTotalPayFee() {
+      return totalPayFee_;
+    }
+
+    public static final int ORDERRECEIVEADDRESSINFO_FIELD_NUMBER = 6;
+    private com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo orderReceiveAddressInfo_;
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+     *
+     * <pre>
+     *订单收货地址信息
+     * </pre>
+     */
+    public boolean hasOrderReceiveAddressInfo() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+     *
+     * <pre>
+     *订单收货地址信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo getOrderReceiveAddressInfo() {
+      return orderReceiveAddressInfo_;
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+     *
+     * <pre>
+     *订单收货地址信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder getOrderReceiveAddressInfoOrBuilder() {
+      return orderReceiveAddressInfo_;
+    }
+
     private void initFields() {
       resultCode_ = "";
       resultMsg_ = "";
       orderId_ = "";
       payChannel_ = 0;
+      totalPayFee_ = 0D;
+      orderReceiveAddressInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -13236,6 +13354,12 @@ public final class Order {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (hasOrderReceiveAddressInfo()) {
+        if (!getOrderReceiveAddressInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -13254,6 +13378,12 @@ public final class Order {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt32(4, payChannel_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeDouble(5, totalPayFee_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeMessage(6, orderReceiveAddressInfo_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -13279,6 +13409,14 @@ public final class Order {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, payChannel_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, totalPayFee_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, orderReceiveAddressInfo_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -13393,6 +13531,7 @@ public final class Order {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getOrderReceiveAddressInfoFieldBuilder();
         }
       }
       private static Builder create() {
@@ -13409,6 +13548,14 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000004);
         payChannel_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
+        totalPayFee_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (orderReceiveAddressInfoBuilder_ == null) {
+          orderReceiveAddressInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance();
+        } else {
+          orderReceiveAddressInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -13453,6 +13600,18 @@ public final class Order {
           to_bitField0_ |= 0x00000008;
         }
         result.payChannel_ = payChannel_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.totalPayFee_ = totalPayFee_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        if (orderReceiveAddressInfoBuilder_ == null) {
+          result.orderReceiveAddressInfo_ = orderReceiveAddressInfo_;
+        } else {
+          result.orderReceiveAddressInfo_ = orderReceiveAddressInfoBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -13487,6 +13646,12 @@ public final class Order {
         if (other.hasPayChannel()) {
           setPayChannel(other.getPayChannel());
         }
+        if (other.hasTotalPayFee()) {
+          setTotalPayFee(other.getTotalPayFee());
+        }
+        if (other.hasOrderReceiveAddressInfo()) {
+          mergeOrderReceiveAddressInfo(other.getOrderReceiveAddressInfo());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -13503,6 +13668,12 @@ public final class Order {
         if (!hasOrderId()) {
           
           return false;
+        }
+        if (hasOrderReceiveAddressInfo()) {
+          if (!getOrderReceiveAddressInfo().isInitialized()) {
+            
+            return false;
+          }
         }
         return true;
       }
@@ -13848,6 +14019,206 @@ public final class Order {
         payChannel_ = 0;
         onChanged();
         return this;
+      }
+
+      private double totalPayFee_ ;
+      /**
+       * <code>optional double totalPayFee = 5;</code>
+       *
+       * <pre>
+       *总共支付费用
+       * </pre>
+       */
+      public boolean hasTotalPayFee() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional double totalPayFee = 5;</code>
+       *
+       * <pre>
+       *总共支付费用
+       * </pre>
+       */
+      public double getTotalPayFee() {
+        return totalPayFee_;
+      }
+      /**
+       * <code>optional double totalPayFee = 5;</code>
+       *
+       * <pre>
+       *总共支付费用
+       * </pre>
+       */
+      public Builder setTotalPayFee(double value) {
+        bitField0_ |= 0x00000010;
+        totalPayFee_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double totalPayFee = 5;</code>
+       *
+       * <pre>
+       *总共支付费用
+       * </pre>
+       */
+      public Builder clearTotalPayFee() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        totalPayFee_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo orderReceiveAddressInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo, com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder> orderReceiveAddressInfoBuilder_;
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+       *
+       * <pre>
+       *订单收货地址信息
+       * </pre>
+       */
+      public boolean hasOrderReceiveAddressInfo() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+       *
+       * <pre>
+       *订单收货地址信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo getOrderReceiveAddressInfo() {
+        if (orderReceiveAddressInfoBuilder_ == null) {
+          return orderReceiveAddressInfo_;
+        } else {
+          return orderReceiveAddressInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+       *
+       * <pre>
+       *订单收货地址信息
+       * </pre>
+       */
+      public Builder setOrderReceiveAddressInfo(com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo value) {
+        if (orderReceiveAddressInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          orderReceiveAddressInfo_ = value;
+          onChanged();
+        } else {
+          orderReceiveAddressInfoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+       *
+       * <pre>
+       *订单收货地址信息
+       * </pre>
+       */
+      public Builder setOrderReceiveAddressInfo(
+          com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder builderForValue) {
+        if (orderReceiveAddressInfoBuilder_ == null) {
+          orderReceiveAddressInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          orderReceiveAddressInfoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+       *
+       * <pre>
+       *订单收货地址信息
+       * </pre>
+       */
+      public Builder mergeOrderReceiveAddressInfo(com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo value) {
+        if (orderReceiveAddressInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+              orderReceiveAddressInfo_ != com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance()) {
+            orderReceiveAddressInfo_ =
+              com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.newBuilder(orderReceiveAddressInfo_).mergeFrom(value).buildPartial();
+          } else {
+            orderReceiveAddressInfo_ = value;
+          }
+          onChanged();
+        } else {
+          orderReceiveAddressInfoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+       *
+       * <pre>
+       *订单收货地址信息
+       * </pre>
+       */
+      public Builder clearOrderReceiveAddressInfo() {
+        if (orderReceiveAddressInfoBuilder_ == null) {
+          orderReceiveAddressInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance();
+          onChanged();
+        } else {
+          orderReceiveAddressInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+       *
+       * <pre>
+       *订单收货地址信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder getOrderReceiveAddressInfoBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getOrderReceiveAddressInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+       *
+       * <pre>
+       *订单收货地址信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder getOrderReceiveAddressInfoOrBuilder() {
+        if (orderReceiveAddressInfoBuilder_ != null) {
+          return orderReceiveAddressInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return orderReceiveAddressInfo_;
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 6;</code>
+       *
+       * <pre>
+       *订单收货地址信息
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo, com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder> 
+          getOrderReceiveAddressInfoFieldBuilder() {
+        if (orderReceiveAddressInfoBuilder_ == null) {
+          orderReceiveAddressInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo, com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder>(
+                  getOrderReceiveAddressInfo(),
+                  getParentForChildren(),
+                  isClean());
+          orderReceiveAddressInfo_ = null;
+        }
+        return orderReceiveAddressInfoBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetPayStatusResult)
@@ -31603,64 +31974,66 @@ public final class Order {
       " \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPayInfo\030\005 " +
       "\001(\0132(.com.qjoy.basjoo.core.model.pb.WxPa" +
       "yInfo\"&\n\023GetPayStatusRequest\022\017\n\007orderId\030" +
-      "\001 \002(\t\"`\n\022GetPayStatusResult\022\022\n\nresultCod" +
-      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 " +
-      "\002(\t\022\022\n\npayChannel\030\004 \001(\005\"\217\001\n\026SearchOrderL" +
-      "istRequest\022\020\n\010keyWords\030\001 \001(\t\022\023\n\013orderSta",
-      "tus\030\002 \001(\005\022\026\n\016evaluateStauts\030\003 \001(\010\022\022\n\nsta" +
-      "rtIndex\030\004 \001(\005\022\021\n\tstartTime\030\005 \001(\003\022\017\n\007endT" +
-      "ime\030\006 \001(\003\"\271\002\n\025SearchOrderListResult\022\022\n\nr" +
-      "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010ma" +
-      "xIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\024\n\014waitPay" +
-      "Count\030\005 \002(\005\022\031\n\021waitDeliveryCount\030\006 \002(\005\022\030" +
-      "\n\020waitReceiveCount\030\007 \002(\005\022\027\n\017waitRevertCo" +
-      "unt\030\010 \002(\005\022\031\n\021waitEvaluateCount\030\t \002(\005\022\022\n\n" +
-      "totalCount\030\n \002(\005\022C\n\rorderLiteInfo\030\013 \003(\0132" +
-      ",.com.qjoy.basjoo.core.model.pb.OrderLit",
-      "eInfo\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t" +
-      "\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(" +
-      "\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030" +
-      "\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002" +
-      "(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002" +
-      "(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022\n\ntotal" +
-      "Price\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n" +
-      "\016evaluateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t" +
-      "\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014" +
-      "categoryName\030\021 \002(\t\"%\n\022DeleteOrderRequest",
-      "\022\017\n\007orderId\030\001 \002(\t\":\n\021DeleteOrderResult\022\022" +
-      "\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"5\n" +
-      "\022CancelOrderRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006" +
-      "reason\030\002 \002(\t\":\n\021CancelOrderResult\022\022\n\nres" +
-      "ultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"(\n\025Conf" +
-      "irmReceiveRequest\022\017\n\007orderId\030\001 \002(\t\"=\n\024Co" +
-      "nfirmReceiveResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
-      "\n\tresultMsg\030\002 \002(\t\"w\n\022ApplyRevertRequest\022" +
-      "\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType\030\002 \002(" +
-      "\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025transport",
-      "ationCompany\030\004 \001(\t\":\n\021ApplyRevertResult\022" +
-      "\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"(" +
-      "\n\025GetOrderDetailRequest\022\017\n\007orderId\030\001 \001(\t" +
-      "\"\206\001\n\024GetOrderDetailResult\022\022\n\nresultCode\030" +
-      "\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDetailI" +
-      "nfo\030\003 \002(\0132..com.qjoy.basjoo.core.model.p" +
-      "b.OrderDetailInfo\"\373\004\n\017OrderDetailInfo\022\017\n" +
-      "\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\nc" +
-      "reateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023" +
-      "\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n",
-      "\trentCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013p" +
-      "ledgePrice\030\t \002(\001\022\033\n\023transportationPrice\030" +
-      "\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportat" +
-      "ionId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tp" +
-      "roductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004" +
-      "desc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payT" +
-      "ime\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024" +
-      " \001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTim" +
-      "e\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeT" +
-      "ime\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers",
-      "\030\032 \003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001(\0132" +
-      "6.com.qjoy.basjoo.core.model.pb.OrderRec" +
-      "eiveAddressInfoB\037\n\035com.qjoy.basjoo.core." +
-      "model.pb"
+      "\001 \002(\t\"\316\001\n\022GetPayStatusResult\022\022\n\nresultCo" +
+      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003" +
+      " \002(\t\022\022\n\npayChannel\030\004 \001(\005\022\023\n\013totalPayFee\030" +
+      "\005 \001(\001\022W\n\027orderReceiveAddressInfo\030\006 \001(\01326",
+      ".com.qjoy.basjoo.core.model.pb.OrderRece" +
+      "iveAddressInfo\"\217\001\n\026SearchOrderListReques" +
+      "t\022\020\n\010keyWords\030\001 \001(\t\022\023\n\013orderStatus\030\002 \001(\005" +
+      "\022\026\n\016evaluateStauts\030\003 \001(\010\022\022\n\nstartIndex\030\004" +
+      " \001(\005\022\021\n\tstartTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003" +
+      "\"\271\002\n\025SearchOrderListResult\022\022\n\nresultCode" +
+      "\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 " +
+      "\001(\005\022\017\n\007hasMore\030\004 \002(\010\022\024\n\014waitPayCount\030\005 \002" +
+      "(\005\022\031\n\021waitDeliveryCount\030\006 \002(\005\022\030\n\020waitRec" +
+      "eiveCount\030\007 \002(\005\022\027\n\017waitRevertCount\030\010 \002(\005",
+      "\022\031\n\021waitEvaluateCount\030\t \002(\005\022\022\n\ntotalCoun" +
+      "t\030\n \002(\005\022C\n\rorderLiteInfo\030\013 \003(\0132,.com.qjo" +
+      "y.basjoo.core.model.pb.OrderLiteInfo\"\362\002\n" +
+      "\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013order" +
+      "Status\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rrent" +
+      "StartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010" +
+      "rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\tren" +
+      "tPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033\n\023tra" +
+      "nsportationPrice\030\n \001(\001\022\022\n\ntotalPrice\030\013 \002" +
+      "(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016evaluate",
+      "Stauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014mainI" +
+      "mageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014categoryN" +
+      "ame\030\021 \002(\t\"%\n\022DeleteOrderRequest\022\017\n\007order" +
+      "Id\030\001 \002(\t\":\n\021DeleteOrderResult\022\022\n\nresultC" +
+      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"5\n\022CancelOr" +
+      "derRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006reason\030\002 " +
+      "\002(\t\":\n\021CancelOrderResult\022\022\n\nresultCode\030\001" +
+      " \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"(\n\025ConfirmReceiv" +
+      "eRequest\022\017\n\007orderId\030\001 \002(\t\"=\n\024ConfirmRece" +
+      "iveResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultM",
+      "sg\030\002 \002(\t\"w\n\022ApplyRevertRequest\022\017\n\007orderI" +
+      "d\030\001 \002(\t\022\027\n\017applyRevertType\030\002 \002(\t\022\030\n\020tran" +
+      "sportationId\030\003 \001(\t\022\035\n\025transportationComp" +
+      "any\030\004 \001(\t\":\n\021ApplyRevertResult\022\022\n\nresult" +
+      "Code\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"(\n\025GetOrde" +
+      "rDetailRequest\022\017\n\007orderId\030\001 \001(\t\"\206\001\n\024GetO" +
+      "rderDetailResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
+      "resultMsg\030\002 \002(\t\022G\n\017orderDetailInfo\030\003 \002(\013" +
+      "2..com.qjoy.basjoo.core.model.pb.OrderDe" +
+      "tailInfo\"\373\004\n\017OrderDetailInfo\022\017\n\007orderId\030",
+      "\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime" +
+      "\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEnd" +
+      "Time\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCoun" +
+      "t\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePric" +
+      "e\030\t \002(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022\n\n" +
+      "totalPrice\030\013 \002(\001\022\030\n\020transportationId\030\014 \001" +
+      "(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tproductId\030" +
+      "\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(" +
+      "\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTime\030\022 \001(\003" +
+      "\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 \001(\t\022\024\n\014d",
+      "eliveryTime\030\025 \001(\003\022\023\n\013receiveTime\030\026 \001(\003\022\022" +
+      "\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTime\030\030 \001(\003" +
+      "\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030\032 \003(\t\022W\n" +
+      "\027orderReceiveAddressInfo\030\033 \001(\01326.com.qjo" +
+      "y.basjoo.core.model.pb.OrderReceiveAddre" +
+      "ssInfoB\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -31733,7 +32106,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "PayChannel", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "PayChannel", "TotalPayFee", "OrderReceiveAddressInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_SearchOrderListRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_com_qjoy_basjoo_core_model_pb_SearchOrderListRequest_fieldAccessorTable = new

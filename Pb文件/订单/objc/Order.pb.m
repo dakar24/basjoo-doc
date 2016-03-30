@@ -1454,6 +1454,7 @@
     _resultMsg = @"";
     _orderId = @"";
     _payChannel = 0;
+    _totalPayFee = 0;
   }
   return self;
 }
@@ -1469,6 +1470,12 @@
   }
   if (self.hasPayChannel) {
     [output writeInt32:4 value:self.payChannel];
+  }
+  if (self.hasTotalPayFee) {
+    [output writeDouble:5 value:self.totalPayFee];
+  }
+  if (self.hasOrderReceiveAddressInfo) {
+    [output writeMessage:6 value:self.orderReceiveAddressInfo];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1487,6 +1494,12 @@
   }
   if (self.hasPayChannel) {
     size_ += computeInt32Size(4, self.payChannel);
+  }
+  if (self.hasTotalPayFee) {
+    size_ += computeDoubleSize(5, self.totalPayFee);
+  }
+  if (self.hasOrderReceiveAddressInfo) {
+    size_ += computeMessageSize(6, self.orderReceiveAddressInfo);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1510,6 +1523,15 @@
   if (self.hasPayChannel) {
     [output appendFormat:@"%@%@: %@\n", indent, @"payChannel", [NSNumber numberWithInteger:self.payChannel]];
   }
+  if (self.hasTotalPayFee) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalPayFee", [NSNumber numberWithDouble:self.totalPayFee]];
+  }
+  if (self.hasOrderReceiveAddressInfo) {
+    [output appendFormat:@"%@%@ {\n", indent, @"orderReceiveAddressInfo"];
+    [self.orderReceiveAddressInfo writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -1528,6 +1550,14 @@
 - (void) setPayChannel:(SInt32) value {
   _hasPayChannel = YES;
   _payChannel = value;
+}
+- (void) setTotalPayFee:(Float64) value {
+  _hasTotalPayFee = YES;
+  _totalPayFee = value;
+}
+- (void) setOrderReceiveAddressInfo:(OrderReceiveAddressInfo*) value {
+  _hasOrderReceiveAddressInfo = YES;
+  _orderReceiveAddressInfo = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1558,6 +1588,16 @@
       }
       case 32: {
         [self setPayChannel:[input readInt32]];
+        break;
+      }
+      case 41: {
+        [self setTotalPayFee:[input readDouble]];
+        break;
+      }
+      case 50: {
+        OrderReceiveAddressInfo* sub = [[OrderReceiveAddressInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self setOrderReceiveAddressInfo:sub];
         break;
       }
     }
