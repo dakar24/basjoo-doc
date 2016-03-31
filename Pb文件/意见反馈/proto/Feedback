@@ -1,0 +1,25 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+//提交意见请求
+message CommitFeedbackRequest {
+
+    //内容
+    required string                 content= 1;
+
+    //联系方式
+    optional string                 contact = 2;
+    
+}
+
+//提交意见结果
+message CommitFeedbackResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;   
+    
+}
+
+
