@@ -15,9 +15,11 @@ public final class ChangeMobileNoRequest extends Message {
 
   public static final int TAG_CHECKCODE = 1;
   public static final int TAG_NEWMOBILENO = 2;
+  public static final int TAG_USERID = 3;
 
   public static final String DEFAULT_CHECKCODE = "";
   public static final String DEFAULT_NEWMOBILENO = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 手机验证码
@@ -31,11 +33,18 @@ public final class ChangeMobileNoRequest extends Message {
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String newMobileNo;
 
+  /**
+   * 客户端上传本地的UserID，服务端与session做校验
+   */
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  public String userId;
+
   public ChangeMobileNoRequest(ChangeMobileNoRequest message) {
     super(message);
     if (message == null) return;
     this.checkCode = message.checkCode;
     this.newMobileNo = message.newMobileNo;
+    this.userId = message.userId;
   }
 
   public ChangeMobileNoRequest() {
@@ -49,6 +58,9 @@ public final class ChangeMobileNoRequest extends Message {
         case TAG_NEWMOBILENO:
         this.newMobileNo = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -60,7 +72,8 @@ public final class ChangeMobileNoRequest extends Message {
     if (!(other instanceof ChangeMobileNoRequest)) return false;
     ChangeMobileNoRequest o = (ChangeMobileNoRequest) other;
     return equals(checkCode, o.checkCode)
-        && equals(newMobileNo, o.newMobileNo);
+        && equals(newMobileNo, o.newMobileNo)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -69,6 +82,7 @@ public final class ChangeMobileNoRequest extends Message {
     if (result == 0) {
       result = checkCode != null ? checkCode.hashCode() : 0;
       result = result * 37 + (newMobileNo != null ? newMobileNo.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

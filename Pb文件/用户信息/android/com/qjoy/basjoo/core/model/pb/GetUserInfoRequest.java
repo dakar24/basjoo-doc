@@ -3,15 +3,30 @@
 package com.qjoy.basjoo.core.model.pb;
 
 import com.squareup.wire.Message;
+import com.squareup.wire.ProtoField;
+
+import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
  * 获取个人信息
  */
 public final class GetUserInfoRequest extends Message {
 
+  public static final int TAG_USERID = 1;
+
+  public static final String DEFAULT_USERID = "";
+
+  /**
+   * 客户端上传本地的UserID，服务端与session做校验
+   */
+  @ProtoField(tag = 1, type = STRING, label = REQUIRED)
+  public String userId;
 
   public GetUserInfoRequest(GetUserInfoRequest message) {
     super(message);
+    if (message == null) return;
+    this.userId = message.userId;
   }
 
   public GetUserInfoRequest() {
@@ -19,6 +34,9 @@ public final class GetUserInfoRequest extends Message {
 
   public GetUserInfoRequest fillTagValue(int tag, Object value) {
     switch(tag) {
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -26,11 +44,14 @@ public final class GetUserInfoRequest extends Message {
 
   @Override
   public boolean equals(Object other) {
-    return other instanceof GetUserInfoRequest;
+    if (other == this) return true;
+    if (!(other instanceof GetUserInfoRequest)) return false;
+    return equals(userId, ((GetUserInfoRequest) other).userId);
   }
 
   @Override
   public int hashCode() {
-    return 0;
+    int result = hashCode;
+    return result != 0 ? result : (hashCode = userId != null ? userId.hashCode() : 0);
   }
 }

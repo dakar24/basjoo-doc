@@ -11,6 +11,32 @@ public final class User {
   public interface GetUserInfoRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetUserInfoRequest)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetUserInfoRequest}
@@ -50,6 +76,7 @@ public final class User {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -65,6 +92,12 @@ public final class User {
                                      extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              userId_ = bs;
               break;
             }
           }
@@ -106,7 +139,63 @@ public final class User {
       return PARSER;
     }
 
+    private int bitField0_;
+    public static final int USERID_FIELD_NUMBER = 1;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -114,6 +203,10 @@ public final class User {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -121,6 +214,9 @@ public final class User {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -130,6 +226,10 @@ public final class User {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getUserIdBytes());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -251,6 +351,8 @@ public final class User {
 
       public Builder clear() {
         super.clear();
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -277,6 +379,13 @@ public final class User {
 
       public com.qjoy.basjoo.core.model.pb.User.GetUserInfoRequest buildPartial() {
         com.qjoy.basjoo.core.model.pb.User.GetUserInfoRequest result = new com.qjoy.basjoo.core.model.pb.User.GetUserInfoRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userId_ = userId_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -292,11 +401,20 @@ public final class User {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.User.GetUserInfoRequest other) {
         if (other == com.qjoy.basjoo.core.model.pb.User.GetUserInfoRequest.getDefaultInstance()) return this;
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000001;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -315,6 +433,107 @@ public final class User {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
         return this;
       }
 
@@ -2229,6 +2448,32 @@ public final class User {
      */
     com.google.protobuf.ByteString
         getHeadIconUrlBytes();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ChangeHeadIconRequest}
@@ -2290,6 +2535,12 @@ public final class User {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               headIconUrl_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -2386,8 +2637,63 @@ public final class User {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       headIconUrl_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2396,6 +2702,10 @@ public final class User {
       if (isInitialized == 0) return false;
 
       if (!hasHeadIconUrl()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -2409,6 +2719,9 @@ public final class User {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getHeadIconUrlBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2421,6 +2734,10 @@ public final class User {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getHeadIconUrlBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2545,6 +2862,8 @@ public final class User {
         super.clear();
         headIconUrl_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -2577,6 +2896,10 @@ public final class User {
           to_bitField0_ |= 0x00000001;
         }
         result.headIconUrl_ = headIconUrl_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2598,12 +2921,21 @@ public final class User {
           headIconUrl_ = other.headIconUrl_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasHeadIconUrl()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -2725,6 +3057,106 @@ public final class User {
   }
   bitField0_ |= 0x00000001;
         headIconUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -3426,6 +3858,32 @@ public final class User {
      */
     com.google.protobuf.ByteString
         getNickNameBytes();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ChangeNickNameRequest}
@@ -3487,6 +3945,12 @@ public final class User {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               nickName_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -3583,8 +4047,63 @@ public final class User {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       nickName_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3593,6 +4112,10 @@ public final class User {
       if (isInitialized == 0) return false;
 
       if (!hasNickName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3606,6 +4129,9 @@ public final class User {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getNickNameBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3618,6 +4144,10 @@ public final class User {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getNickNameBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3742,6 +4272,8 @@ public final class User {
         super.clear();
         nickName_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -3774,6 +4306,10 @@ public final class User {
           to_bitField0_ |= 0x00000001;
         }
         result.nickName_ = nickName_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3795,12 +4331,21 @@ public final class User {
           nickName_ = other.nickName_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasNickName()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -3922,6 +4467,106 @@ public final class User {
   }
   bitField0_ |= 0x00000001;
         nickName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -4675,6 +5320,32 @@ public final class User {
      */
     com.google.protobuf.ByteString
         getConfirmPasswordBytes();
+
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ChangePasswordRequest}
@@ -4748,6 +5419,12 @@ public final class User {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
               confirmPassword_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              userId_ = bs;
               break;
             }
           }
@@ -4952,10 +5629,65 @@ public final class User {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 4;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       oldPassword_ = "";
       newPassword_ = "";
       confirmPassword_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4975,6 +5707,10 @@ public final class User {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -4990,6 +5726,9 @@ public final class User {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getConfirmPasswordBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -5011,6 +5750,10 @@ public final class User {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, getConfirmPasswordBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5139,6 +5882,8 @@ public final class User {
         bitField0_ = (bitField0_ & ~0x00000002);
         confirmPassword_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -5179,6 +5924,10 @@ public final class User {
           to_bitField0_ |= 0x00000004;
         }
         result.confirmPassword_ = confirmPassword_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -5210,6 +5959,11 @@ public final class User {
           confirmPassword_ = other.confirmPassword_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000008;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -5224,6 +5978,10 @@ public final class User {
           return false;
         }
         if (!hasConfirmPassword()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -5545,6 +6303,106 @@ public final class User {
   }
   bitField0_ |= 0x00000004;
         confirmPassword_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -6272,6 +7130,32 @@ public final class User {
      */
     com.google.protobuf.ByteString
         getNewMobileNoBytes();
+
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ChangeMobileNoRequest}
@@ -6339,6 +7223,12 @@ public final class User {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
               newMobileNo_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              userId_ = bs;
               break;
             }
           }
@@ -6489,9 +7379,64 @@ public final class User {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 3;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *客户端上传本地的UserID，服务端与session做校验
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       checkCode_ = "";
       newMobileNo_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -6507,6 +7452,10 @@ public final class User {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -6519,6 +7468,9 @@ public final class User {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getNewMobileNoBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -6536,6 +7488,10 @@ public final class User {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getNewMobileNoBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -6662,6 +7618,8 @@ public final class User {
         bitField0_ = (bitField0_ & ~0x00000001);
         newMobileNo_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -6698,6 +7656,10 @@ public final class User {
           to_bitField0_ |= 0x00000002;
         }
         result.newMobileNo_ = newMobileNo_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -6724,6 +7686,11 @@ public final class User {
           newMobileNo_ = other.newMobileNo_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000004;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -6734,6 +7701,10 @@ public final class User {
           return false;
         }
         if (!hasNewMobileNo()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -6955,6 +7926,106 @@ public final class User {
   }
   bitField0_ |= 0x00000002;
         newMobileNo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *客户端上传本地的UserID，服务端与session做校验
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -7686,24 +8757,26 @@ public final class User {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\004User\022\035com.qjoy.basjoo.core.model.pb\"\024\n" +
-      "\022GetUserInfoRequest\"\254\001\n\021GetUserInfoResul" +
-      "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
-      "\022\016\n\006userId\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \001(\t\022\020\n" +
-      "\010mobileNo\030\005 \002(\t\022\020\n\010userName\030\006 \002(\t\022\020\n\010nic" +
-      "kName\030\007 \002(\t\022\025\n\rrecommendCode\030\010 \001(\t\",\n\025Ch" +
-      "angeHeadIconRequest\022\023\n\013headIconUrl\030\001 \002(\t" +
-      "\"=\n\024ChangeHeadIconResult\022\022\n\nresultCode\030\001" +
-      " \002(\t\022\021\n\tresultMsg\030\002 \002(\t\")\n\025ChangeNickNam" +
-      "eRequest\022\020\n\010nickName\030\001 \002(\t\"=\n\024ChangeNick",
-      "NameResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresult" +
-      "Msg\030\002 \002(\t\"Z\n\025ChangePasswordRequest\022\023\n\013ol" +
-      "dPassword\030\001 \002(\t\022\023\n\013newPassword\030\002 \002(\t\022\027\n\017" +
-      "confirmPassword\030\003 \002(\t\"=\n\024ChangePasswordR" +
-      "esult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002" +
-      " \002(\t\"?\n\025ChangeMobileNoRequest\022\021\n\tcheckCo" +
-      "de\030\001 \002(\t\022\023\n\013newMobileNo\030\002 \002(\t\"=\n\024ChangeM" +
-      "obileNoResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
+      "\n\004User\022\035com.qjoy.basjoo.core.model.pb\"$\n" +
+      "\022GetUserInfoRequest\022\016\n\006userId\030\001 \002(\t\"\254\001\n\021" +
+      "GetUserInfoResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
+      "\tresultMsg\030\002 \002(\t\022\016\n\006userId\030\003 \002(\t\022\023\n\013head" +
+      "IconUrl\030\004 \001(\t\022\020\n\010mobileNo\030\005 \002(\t\022\020\n\010userN" +
+      "ame\030\006 \002(\t\022\020\n\010nickName\030\007 \002(\t\022\025\n\rrecommend" +
+      "Code\030\010 \001(\t\"<\n\025ChangeHeadIconRequest\022\023\n\013h" +
+      "eadIconUrl\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"=\n\024Chan" +
+      "geHeadIconResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
+      "resultMsg\030\002 \002(\t\"9\n\025ChangeNickNameRequest",
+      "\022\020\n\010nickName\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"=\n\024Ch" +
+      "angeNickNameResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
+      "\n\tresultMsg\030\002 \002(\t\"j\n\025ChangePasswordReque" +
+      "st\022\023\n\013oldPassword\030\001 \002(\t\022\023\n\013newPassword\030\002" +
+      " \002(\t\022\027\n\017confirmPassword\030\003 \002(\t\022\016\n\006userId\030" +
+      "\004 \002(\t\"=\n\024ChangePasswordResult\022\022\n\nresultC" +
+      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"O\n\025ChangeMo" +
+      "bileNoRequest\022\021\n\tcheckCode\030\001 \002(\t\022\023\n\013newM" +
+      "obileNo\030\002 \002(\t\022\016\n\006userId\030\003 \002(\t\"=\n\024ChangeM" +
+      "obileNoResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres",
       "ultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo.core.mod" +
       "el.pb"
     };
@@ -7724,7 +8797,7 @@ public final class User {
     internal_static_com_qjoy_basjoo_core_model_pb_GetUserInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetUserInfoRequest_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetUserInfoResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_GetUserInfoResult_fieldAccessorTable = new
@@ -7736,7 +8809,7 @@ public final class User {
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeHeadIconRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ChangeHeadIconRequest_descriptor,
-        new java.lang.String[] { "HeadIconUrl", });
+        new java.lang.String[] { "HeadIconUrl", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeHeadIconResult_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeHeadIconResult_fieldAccessorTable = new
@@ -7748,7 +8821,7 @@ public final class User {
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeNickNameRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ChangeNickNameRequest_descriptor,
-        new java.lang.String[] { "NickName", });
+        new java.lang.String[] { "NickName", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeNickNameResult_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeNickNameResult_fieldAccessorTable = new
@@ -7760,7 +8833,7 @@ public final class User {
     internal_static_com_qjoy_basjoo_core_model_pb_ChangePasswordRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ChangePasswordRequest_descriptor,
-        new java.lang.String[] { "OldPassword", "NewPassword", "ConfirmPassword", });
+        new java.lang.String[] { "OldPassword", "NewPassword", "ConfirmPassword", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ChangePasswordResult_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_qjoy_basjoo_core_model_pb_ChangePasswordResult_fieldAccessorTable = new
@@ -7772,7 +8845,7 @@ public final class User {
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoRequest_descriptor,
-        new java.lang.String[] { "CheckCode", "NewMobileNo", });
+        new java.lang.String[] { "CheckCode", "NewMobileNo", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoResult_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoResult_fieldAccessorTable = new

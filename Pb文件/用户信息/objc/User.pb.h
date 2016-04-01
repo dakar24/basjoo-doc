@@ -14,6 +14,8 @@
 @class GetUserInfoResult;
 
 @interface GetUserInfoRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasUserId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetUserInfoResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -37,7 +39,9 @@
 
 @interface ChangeHeadIconRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasHeadIconUrl;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* headIconUrl;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ChangeHeadIconResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -49,7 +53,9 @@
 
 @interface ChangeNickNameRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasNickName;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* nickName;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ChangeNickNameResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -63,9 +69,11 @@
 @property (readonly) BOOL hasOldPassword;
 @property (readonly) BOOL hasPbNewPassword;
 @property (readonly) BOOL hasConfirmPassword;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* oldPassword;
 @property (nonatomic,strong) NSString* pbNewPassword;
 @property (nonatomic,strong) NSString* confirmPassword;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ChangePasswordResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -78,8 +86,10 @@
 @interface ChangeMobileNoRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasCheckCode;
 @property (readonly) BOOL hasPbNewMobileNo;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* checkCode;
 @property (nonatomic,strong) NSString* pbNewMobileNo;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ChangeMobileNoResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

@@ -14,8 +14,10 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 public final class ChangeHeadIconRequest extends Message {
 
   public static final int TAG_HEADICONURL = 1;
+  public static final int TAG_USERID = 2;
 
   public static final String DEFAULT_HEADICONURL = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 头像地址
@@ -23,10 +25,17 @@ public final class ChangeHeadIconRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String headIconUrl;
 
+  /**
+   * 客户端上传本地的UserID，服务端与session做校验
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String userId;
+
   public ChangeHeadIconRequest(ChangeHeadIconRequest message) {
     super(message);
     if (message == null) return;
     this.headIconUrl = message.headIconUrl;
+    this.userId = message.userId;
   }
 
   public ChangeHeadIconRequest() {
@@ -37,6 +46,9 @@ public final class ChangeHeadIconRequest extends Message {
         case TAG_HEADICONURL:
         this.headIconUrl = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -46,12 +58,19 @@ public final class ChangeHeadIconRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof ChangeHeadIconRequest)) return false;
-    return equals(headIconUrl, ((ChangeHeadIconRequest) other).headIconUrl);
+    ChangeHeadIconRequest o = (ChangeHeadIconRequest) other;
+    return equals(headIconUrl, o.headIconUrl)
+        && equals(userId, o.userId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = headIconUrl != null ? headIconUrl.hashCode() : 0);
+    if (result == 0) {
+      result = headIconUrl != null ? headIconUrl.hashCode() : 0;
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }

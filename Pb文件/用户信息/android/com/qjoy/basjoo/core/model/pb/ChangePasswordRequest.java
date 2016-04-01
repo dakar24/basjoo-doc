@@ -16,10 +16,12 @@ public final class ChangePasswordRequest extends Message {
   public static final int TAG_OLDPASSWORD = 1;
   public static final int TAG_NEWPASSWORD = 2;
   public static final int TAG_CONFIRMPASSWORD = 3;
+  public static final int TAG_USERID = 4;
 
   public static final String DEFAULT_OLDPASSWORD = "";
   public static final String DEFAULT_NEWPASSWORD = "";
   public static final String DEFAULT_CONFIRMPASSWORD = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 旧密码
@@ -39,12 +41,19 @@ public final class ChangePasswordRequest extends Message {
   @ProtoField(tag = 3, type = STRING, label = REQUIRED)
   public String confirmPassword;
 
+  /**
+   * 客户端上传本地的UserID，服务端与session做校验
+   */
+  @ProtoField(tag = 4, type = STRING, label = REQUIRED)
+  public String userId;
+
   public ChangePasswordRequest(ChangePasswordRequest message) {
     super(message);
     if (message == null) return;
     this.oldPassword = message.oldPassword;
     this.newPassword = message.newPassword;
     this.confirmPassword = message.confirmPassword;
+    this.userId = message.userId;
   }
 
   public ChangePasswordRequest() {
@@ -61,6 +70,9 @@ public final class ChangePasswordRequest extends Message {
         case TAG_CONFIRMPASSWORD:
         this.confirmPassword = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -73,7 +85,8 @@ public final class ChangePasswordRequest extends Message {
     ChangePasswordRequest o = (ChangePasswordRequest) other;
     return equals(oldPassword, o.oldPassword)
         && equals(newPassword, o.newPassword)
-        && equals(confirmPassword, o.confirmPassword);
+        && equals(confirmPassword, o.confirmPassword)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -83,6 +96,7 @@ public final class ChangePasswordRequest extends Message {
       result = oldPassword != null ? oldPassword.hashCode() : 0;
       result = result * 37 + (newPassword != null ? newPassword.hashCode() : 0);
       result = result * 37 + (confirmPassword != null ? confirmPassword.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

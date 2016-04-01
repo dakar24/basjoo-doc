@@ -14,8 +14,10 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 public final class ChangeNickNameRequest extends Message {
 
   public static final int TAG_NICKNAME = 1;
+  public static final int TAG_USERID = 2;
 
   public static final String DEFAULT_NICKNAME = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 昵称
@@ -23,10 +25,17 @@ public final class ChangeNickNameRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String nickName;
 
+  /**
+   * 客户端上传本地的UserID，服务端与session做校验
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String userId;
+
   public ChangeNickNameRequest(ChangeNickNameRequest message) {
     super(message);
     if (message == null) return;
     this.nickName = message.nickName;
+    this.userId = message.userId;
   }
 
   public ChangeNickNameRequest() {
@@ -37,6 +46,9 @@ public final class ChangeNickNameRequest extends Message {
         case TAG_NICKNAME:
         this.nickName = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -46,12 +58,19 @@ public final class ChangeNickNameRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof ChangeNickNameRequest)) return false;
-    return equals(nickName, ((ChangeNickNameRequest) other).nickName);
+    ChangeNickNameRequest o = (ChangeNickNameRequest) other;
+    return equals(nickName, o.nickName)
+        && equals(userId, o.userId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = nickName != null ? nickName.hashCode() : 0);
+    if (result == 0) {
+      result = nickName != null ? nickName.hashCode() : 0;
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }

@@ -5,6 +5,9 @@ option java_package="com.qjoy.basjoo.core.model.pb";
 
 //获取个人信息
 message GetUserInfoRequest {   
+
+   //客户端上传本地的UserID，服务端与session做校验
+   required string                userId = 1;
     
 }
 
@@ -35,6 +38,8 @@ message ChangeHeadIconRequest {
 
    //头像地址
    required string                 headIconUrl = 1;
+   //客户端上传本地的UserID，服务端与session做校验
+   required string                 userId = 2;
     
 }
 
@@ -52,6 +57,8 @@ message ChangeNickNameRequest {
 
    //昵称
    required string                 nickName = 1;    
+   //客户端上传本地的UserID，服务端与session做校验
+   required string                 userId = 2;
       
 }
 
@@ -75,6 +82,9 @@ message ChangePasswordRequest {
    
    //确认密码
    required string                 confirmPassword = 3;
+
+   //客户端上传本地的UserID，服务端与session做校验
+   required string                 userId = 4;
     
     
 }
@@ -98,6 +108,9 @@ message ChangeMobileNoRequest {
     required string                checkCode = 1;
     //新手机号
     required string                newMobileNo = 2;  
+
+    //客户端上传本地的UserID，服务端与session做校验
+   required string                 userId = 3;
       
 }
 
