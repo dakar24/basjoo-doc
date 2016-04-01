@@ -54,6 +54,32 @@ public final class CheckCode {
      * </pre>
      */
     int getBizScene();
+
+    /**
+     * <code>optional string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID，2：修改绑定手机时 必填
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>optional string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID，2：修改绑定手机时 必填
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>optional string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID，2：修改绑定手机时 必填
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.SendCheckCodeRequest}
@@ -120,6 +146,12 @@ public final class CheckCode {
             case 16: {
               bitField0_ |= 0x00000002;
               bizScene_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              userId_ = bs;
               break;
             }
           }
@@ -239,9 +271,64 @@ public final class CheckCode {
       return bizScene_;
     }
 
+    public static final int USERID_FIELD_NUMBER = 3;
+    private java.lang.Object userId_;
+    /**
+     * <code>optional string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID，2：修改绑定手机时 必填
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID，2：修改绑定手机时 必填
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID，2：修改绑定手机时 必填
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       mobileNo_ = "";
       bizScene_ = 0;
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -266,6 +353,9 @@ public final class CheckCode {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, bizScene_);
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -282,6 +372,10 @@ public final class CheckCode {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, bizScene_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -408,6 +502,8 @@ public final class CheckCode {
         bitField0_ = (bitField0_ & ~0x00000001);
         bizScene_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -444,6 +540,10 @@ public final class CheckCode {
           to_bitField0_ |= 0x00000002;
         }
         result.bizScene_ = bizScene_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -467,6 +567,11 @@ public final class CheckCode {
         }
         if (other.hasBizScene()) {
           setBizScene(other.getBizScene());
+        }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000004;
+          userId_ = other.userId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -643,6 +748,106 @@ public final class CheckCode {
       public Builder clearBizScene() {
         bitField0_ = (bitField0_ & ~0x00000002);
         bizScene_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>optional string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID，2：修改绑定手机时 必填
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID，2：修改绑定手机时 必填
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID，2：修改绑定手机时 必填
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID，2：修改绑定手机时 必填
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID，2：修改绑定手机时 必填
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID，2：修改绑定手机时 必填
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -1335,10 +1540,11 @@ public final class CheckCode {
   static {
     java.lang.String[] descriptorData = {
       "\n\tCheckCode\022\035com.qjoy.basjoo.core.model." +
-      "pb\":\n\024SendCheckCodeRequest\022\020\n\010mobileNo\030\001" +
-      " \001(\t\022\020\n\010bizScene\030\002 \002(\005\"<\n\023SendCheckCodeR" +
-      "esult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002" +
-      " \002(\tB\037\n\035com.qjoy.basjoo.core.model.pb"
+      "pb\"J\n\024SendCheckCodeRequest\022\020\n\010mobileNo\030\001" +
+      " \001(\t\022\020\n\010bizScene\030\002 \002(\005\022\016\n\006userId\030\003 \001(\t\"<" +
+      "\n\023SendCheckCodeResult\022\022\n\nresultCode\030\001 \002(" +
+      "\t\022\021\n\tresultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo." +
+      "core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1357,7 +1563,7 @@ public final class CheckCode {
     internal_static_com_qjoy_basjoo_core_model_pb_SendCheckCodeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_SendCheckCodeRequest_descriptor,
-        new java.lang.String[] { "MobileNo", "BizScene", });
+        new java.lang.String[] { "MobileNo", "BizScene", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_SendCheckCodeResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_SendCheckCodeResult_fieldAccessorTable = new

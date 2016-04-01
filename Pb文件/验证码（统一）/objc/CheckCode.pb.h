@@ -8,8 +8,10 @@
 @interface SendCheckCodeRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasMobileNo;
 @property (readonly) BOOL hasBizScene;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* mobileNo;
 @property (nonatomic)SInt32 bizScene;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface SendCheckCodeResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

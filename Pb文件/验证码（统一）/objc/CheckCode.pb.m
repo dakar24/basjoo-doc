@@ -8,6 +8,7 @@
   if ((self = [super init])) {
     _mobileNo = @"";
     _bizScene = 0;
+    _userId = @"";
   }
   return self;
 }
@@ -17,6 +18,9 @@
   }
   if (self.hasBizScene) {
     [output writeInt32:2 value:self.bizScene];
+  }
+  if (self.hasUserId) {
+    [output writeString:3 value:self.userId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -29,6 +33,9 @@
   }
   if (self.hasBizScene) {
     size_ += computeInt32Size(2, self.bizScene);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(3, self.userId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -46,6 +53,9 @@
   if (self.hasBizScene) {
     [output appendFormat:@"%@%@: %@\n", indent, @"bizScene", [NSNumber numberWithInteger:self.bizScene]];
   }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -56,6 +66,10 @@
 - (void) setBizScene:(SInt32) value {
   _hasBizScene = YES;
   _bizScene = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -78,6 +92,10 @@
       }
       case 16: {
         [self setBizScene:[input readInt32]];
+        break;
+      }
+      case 26: {
+        [self setUserId:[input readString]];
         break;
       }
     }
