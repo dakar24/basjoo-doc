@@ -21,12 +21,14 @@
 @property (readonly) BOOL hasStreet;
 @property (readonly) BOOL hasDetail;
 @property (readonly) BOOL hasPostCode;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* receiver;
 @property (nonatomic,strong) NSString* mobileNo;
 @property (nonatomic,strong) NSString* section;
 @property (nonatomic,strong) NSString* street;
 @property (nonatomic,strong) NSString* detail;
 @property (nonatomic,strong) NSString* postCode;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface AddAddressResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -46,6 +48,7 @@
 @property (readonly) BOOL hasDetail;
 @property (readonly) BOOL hasPostCode;
 @property (readonly) BOOL hasAddressId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* receiver;
 @property (nonatomic,strong) NSString* mobileNo;
 @property (nonatomic,strong) NSString* section;
@@ -53,6 +56,7 @@
 @property (nonatomic,strong) NSString* detail;
 @property (nonatomic,strong) NSString* postCode;
 @property (nonatomic,strong) NSString* addressId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ModifyAddressResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -66,7 +70,9 @@
 
 @interface DeleteAddressRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasAddressId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* addressId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface DeleteAddressResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -77,6 +83,8 @@
 @end
 
 @interface GetAddressListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasUserId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetAddressListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -108,7 +116,9 @@
 
 @interface SetDefaultRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasAddressId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* addressId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface SetDefaultResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

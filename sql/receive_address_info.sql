@@ -12,7 +12,7 @@ CREATE table receive_address_info (
 	post_code varchar(16) comment '邮编',
 	is_default bigint comment '是否默认',
 	gmt_create timestamp  null  comment '创建时间',
-	gmt_modified timestamp  null  comment '修改时间',
+	gmt_modify timestamp  null  comment '修改时间',
 	PRIMARY KEY (address_id),
 	INDEX  user_id_index (user_id)
 ) ENGINE=InnoDB comment='收货地址表' DEFAULT CHARSET=utf8;

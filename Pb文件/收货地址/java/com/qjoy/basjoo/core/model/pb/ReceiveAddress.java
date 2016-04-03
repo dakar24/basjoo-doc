@@ -167,6 +167,32 @@ public final class ReceiveAddress {
      */
     com.google.protobuf.ByteString
         getPostCodeBytes();
+
+    /**
+     * <code>required string userId = 7;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 7;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 7;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.AddAddressRequest}
@@ -258,6 +284,12 @@ public final class ReceiveAddress {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
               postCode_ = bs;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              userId_ = bs;
               break;
             }
           }
@@ -624,6 +656,60 @@ public final class ReceiveAddress {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 7;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 7;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>required string userId = 7;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 7;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       receiver_ = "";
       mobileNo_ = "";
@@ -631,6 +717,7 @@ public final class ReceiveAddress {
       street_ = "";
       detail_ = "";
       postCode_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -662,6 +749,10 @@ public final class ReceiveAddress {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -686,6 +777,9 @@ public final class ReceiveAddress {
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeBytes(6, getPostCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -719,6 +813,10 @@ public final class ReceiveAddress {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, getPostCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -853,6 +951,8 @@ public final class ReceiveAddress {
         bitField0_ = (bitField0_ & ~0x00000010);
         postCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -905,6 +1005,10 @@ public final class ReceiveAddress {
           to_bitField0_ |= 0x00000020;
         }
         result.postCode_ = postCode_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -951,6 +1055,11 @@ public final class ReceiveAddress {
           postCode_ = other.postCode_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000040;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -977,6 +1086,10 @@ public final class ReceiveAddress {
           return false;
         }
         if (!hasPostCode()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -1598,6 +1711,106 @@ public final class ReceiveAddress {
   }
   bitField0_ |= 0x00000020;
         postCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 7;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>required string userId = 7;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 7;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 7;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 7;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 7;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -2660,6 +2873,32 @@ public final class ReceiveAddress {
      */
     com.google.protobuf.ByteString
         getAddressIdBytes();
+
+    /**
+     * <code>required string userId = 8;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 8;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 8;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ModifyAddressRequest}
@@ -2757,6 +2996,12 @@ public final class ReceiveAddress {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000040;
               addressId_ = bs;
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000080;
+              userId_ = bs;
               break;
             }
           }
@@ -3177,6 +3422,60 @@ public final class ReceiveAddress {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 8;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 8;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>required string userId = 8;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 8;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       receiver_ = "";
       mobileNo_ = "";
@@ -3185,6 +3484,7 @@ public final class ReceiveAddress {
       detail_ = "";
       postCode_ = "";
       addressId_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3216,6 +3516,10 @@ public final class ReceiveAddress {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -3243,6 +3547,9 @@ public final class ReceiveAddress {
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBytes(7, getAddressIdBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeBytes(8, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -3280,6 +3587,10 @@ public final class ReceiveAddress {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(7, getAddressIdBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3416,6 +3727,8 @@ public final class ReceiveAddress {
         bitField0_ = (bitField0_ & ~0x00000020);
         addressId_ = "";
         bitField0_ = (bitField0_ & ~0x00000040);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -3472,6 +3785,10 @@ public final class ReceiveAddress {
           to_bitField0_ |= 0x00000040;
         }
         result.addressId_ = addressId_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3523,6 +3840,11 @@ public final class ReceiveAddress {
           addressId_ = other.addressId_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000080;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -3549,6 +3871,10 @@ public final class ReceiveAddress {
           return false;
         }
         if (!hasPostCode()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -4270,6 +4596,106 @@ public final class ReceiveAddress {
   }
   bitField0_ |= 0x00000040;
         addressId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 8;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>required string userId = 8;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 8;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 8;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 8;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 8;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -5176,6 +5602,32 @@ public final class ReceiveAddress {
      */
     com.google.protobuf.ByteString
         getAddressIdBytes();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.DeleteAddressRequest}
@@ -5237,6 +5689,12 @@ public final class ReceiveAddress {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               addressId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -5333,8 +5791,63 @@ public final class ReceiveAddress {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       addressId_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -5342,6 +5855,10 @@ public final class ReceiveAddress {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -5351,6 +5868,9 @@ public final class ReceiveAddress {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getAddressIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -5364,6 +5884,10 @@ public final class ReceiveAddress {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getAddressIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5488,6 +6012,8 @@ public final class ReceiveAddress {
         super.clear();
         addressId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -5520,6 +6046,10 @@ public final class ReceiveAddress {
           to_bitField0_ |= 0x00000001;
         }
         result.addressId_ = addressId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -5541,11 +6071,20 @@ public final class ReceiveAddress {
           addressId_ = other.addressId_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -5664,6 +6203,106 @@ public final class ReceiveAddress {
   }
   bitField0_ |= 0x00000001;
         addressId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -6339,6 +6978,32 @@ public final class ReceiveAddress {
   public interface GetAddressListRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetAddressListRequest)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetAddressListRequest}
@@ -6378,6 +7043,7 @@ public final class ReceiveAddress {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6393,6 +7059,12 @@ public final class ReceiveAddress {
                                      extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              userId_ = bs;
               break;
             }
           }
@@ -6434,7 +7106,63 @@ public final class ReceiveAddress {
       return PARSER;
     }
 
+    private int bitField0_;
+    public static final int USERID_FIELD_NUMBER = 1;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -6442,6 +7170,10 @@ public final class ReceiveAddress {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -6449,6 +7181,9 @@ public final class ReceiveAddress {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6458,6 +7193,10 @@ public final class ReceiveAddress {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getUserIdBytes());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -6579,6 +7318,8 @@ public final class ReceiveAddress {
 
       public Builder clear() {
         super.clear();
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -6605,6 +7346,13 @@ public final class ReceiveAddress {
 
       public com.qjoy.basjoo.core.model.pb.ReceiveAddress.GetAddressListRequest buildPartial() {
         com.qjoy.basjoo.core.model.pb.ReceiveAddress.GetAddressListRequest result = new com.qjoy.basjoo.core.model.pb.ReceiveAddress.GetAddressListRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userId_ = userId_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -6620,11 +7368,20 @@ public final class ReceiveAddress {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.ReceiveAddress.GetAddressListRequest other) {
         if (other == com.qjoy.basjoo.core.model.pb.ReceiveAddress.GetAddressListRequest.getDefaultInstance()) return this;
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000001;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -6643,6 +7400,107 @@ public final class ReceiveAddress {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
         return this;
       }
 
@@ -9643,6 +10501,32 @@ public final class ReceiveAddress {
      */
     com.google.protobuf.ByteString
         getAddressIdBytes();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.SetDefaultRequest}
@@ -9704,6 +10588,12 @@ public final class ReceiveAddress {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               addressId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -9800,8 +10690,63 @@ public final class ReceiveAddress {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       addressId_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9809,6 +10754,10 @@ public final class ReceiveAddress {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -9818,6 +10767,9 @@ public final class ReceiveAddress {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getAddressIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -9831,6 +10783,10 @@ public final class ReceiveAddress {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getAddressIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9955,6 +10911,8 @@ public final class ReceiveAddress {
         super.clear();
         addressId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -9987,6 +10945,10 @@ public final class ReceiveAddress {
           to_bitField0_ |= 0x00000001;
         }
         result.addressId_ = addressId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -10008,11 +10970,20 @@ public final class ReceiveAddress {
           addressId_ = other.addressId_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -10131,6 +11102,106 @@ public final class ReceiveAddress {
   }
   bitField0_ |= 0x00000001;
         addressId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -10868,32 +11939,34 @@ public final class ReceiveAddress {
   static {
     java.lang.String[] descriptorData = {
       "\n\016ReceiveAddress\022\035com.qjoy.basjoo.core.m" +
-      "odel.pb\"z\n\021AddAddressRequest\022\020\n\010receiver" +
-      "\030\001 \002(\t\022\020\n\010mobileNo\030\002 \002(\t\022\017\n\007section\030\003 \002(" +
-      "\t\022\016\n\006street\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010pos" +
-      "tCode\030\006 \002(\t\"L\n\020AddAddressResult\022\022\n\nresul" +
-      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\021\n\taddres" +
-      "sId\030\003 \001(\t\"\220\001\n\024ModifyAddressRequest\022\020\n\010re" +
-      "ceiver\030\001 \002(\t\022\020\n\010mobileNo\030\002 \002(\t\022\017\n\007sectio" +
-      "n\030\003 \002(\t\022\016\n\006street\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022" +
-      "\020\n\010postCode\030\006 \002(\t\022\021\n\taddressId\030\007 \001(\t\"O\n\023",
-      "ModifyAddressResult\022\022\n\nresultCode\030\001 \002(\t\022" +
-      "\021\n\tresultMsg\030\002 \002(\t\022\021\n\taddressId\030\003 \001(\t\")\n" +
-      "\024DeleteAddressRequest\022\021\n\taddressId\030\001 \001(\t" +
-      "\"<\n\023DeleteAddressResult\022\022\n\nresultCode\030\001 " +
-      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\027\n\025GetAddressList" +
-      "Request\"\212\001\n\024GetAddressListResult\022\022\n\nresu" +
-      "ltCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022K\n\021addre" +
-      "ssDetailInfo\030\003 \003(\01320.com.qjoy.basjoo.cor" +
-      "e.model.pb.AddressDetailInfo\"\245\001\n\021Address" +
-      "DetailInfo\022\020\n\010receiver\030\001 \002(\t\022\020\n\010mobileNo",
-      "\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006street\030\004 \002(\t\022" +
-      "\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 \002(\t\022\021\n\tadd" +
-      "ressId\030\007 \001(\t\022\026\n\016defaultAddress\030\010 \002(\010\"&\n\021" +
-      "SetDefaultRequest\022\021\n\taddressId\030\001 \001(\t\"9\n\020" +
-      "SetDefaultResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
-      "resultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo.core." +
-      "model.pb"
+      "odel.pb\"\212\001\n\021AddAddressRequest\022\020\n\010receive" +
+      "r\030\001 \002(\t\022\020\n\010mobileNo\030\002 \002(\t\022\017\n\007section\030\003 \002" +
+      "(\t\022\016\n\006street\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010po" +
+      "stCode\030\006 \002(\t\022\016\n\006userId\030\007 \002(\t\"L\n\020AddAddre" +
+      "ssResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMs" +
+      "g\030\002 \002(\t\022\021\n\taddressId\030\003 \001(\t\"\240\001\n\024ModifyAdd" +
+      "ressRequest\022\020\n\010receiver\030\001 \002(\t\022\020\n\010mobileN" +
+      "o\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006street\030\004 \002(\t" +
+      "\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 \002(\t\022\021\n\tad",
+      "dressId\030\007 \001(\t\022\016\n\006userId\030\010 \002(\t\"O\n\023ModifyA" +
+      "ddressResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresu" +
+      "ltMsg\030\002 \002(\t\022\021\n\taddressId\030\003 \001(\t\"9\n\024Delete" +
+      "AddressRequest\022\021\n\taddressId\030\001 \001(\t\022\016\n\006use" +
+      "rId\030\002 \002(\t\"<\n\023DeleteAddressResult\022\022\n\nresu" +
+      "ltCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\'\n\025GetAd" +
+      "dressListRequest\022\016\n\006userId\030\001 \002(\t\"\212\001\n\024Get" +
+      "AddressListResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
+      "\tresultMsg\030\002 \002(\t\022K\n\021addressDetailInfo\030\003 " +
+      "\003(\01320.com.qjoy.basjoo.core.model.pb.Addr",
+      "essDetailInfo\"\245\001\n\021AddressDetailInfo\022\020\n\010r" +
+      "eceiver\030\001 \002(\t\022\020\n\010mobileNo\030\002 \002(\t\022\017\n\007secti" +
+      "on\030\003 \002(\t\022\016\n\006street\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t" +
+      "\022\020\n\010postCode\030\006 \002(\t\022\021\n\taddressId\030\007 \001(\t\022\026\n" +
+      "\016defaultAddress\030\010 \002(\010\"6\n\021SetDefaultReque" +
+      "st\022\021\n\taddressId\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"9\n" +
+      "\020SetDefaultResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
+      "\tresultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo.core" +
+      ".model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10912,7 +11985,7 @@ public final class ReceiveAddress {
     internal_static_com_qjoy_basjoo_core_model_pb_AddAddressRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_AddAddressRequest_descriptor,
-        new java.lang.String[] { "Receiver", "MobileNo", "Section", "Street", "Detail", "PostCode", });
+        new java.lang.String[] { "Receiver", "MobileNo", "Section", "Street", "Detail", "PostCode", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_AddAddressResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_AddAddressResult_fieldAccessorTable = new
@@ -10924,7 +11997,7 @@ public final class ReceiveAddress {
     internal_static_com_qjoy_basjoo_core_model_pb_ModifyAddressRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ModifyAddressRequest_descriptor,
-        new java.lang.String[] { "Receiver", "MobileNo", "Section", "Street", "Detail", "PostCode", "AddressId", });
+        new java.lang.String[] { "Receiver", "MobileNo", "Section", "Street", "Detail", "PostCode", "AddressId", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ModifyAddressResult_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_ModifyAddressResult_fieldAccessorTable = new
@@ -10936,7 +12009,7 @@ public final class ReceiveAddress {
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteAddressRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_DeleteAddressRequest_descriptor,
-        new java.lang.String[] { "AddressId", });
+        new java.lang.String[] { "AddressId", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteAddressResult_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteAddressResult_fieldAccessorTable = new
@@ -10948,7 +12021,7 @@ public final class ReceiveAddress {
     internal_static_com_qjoy_basjoo_core_model_pb_GetAddressListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetAddressListRequest_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetAddressListResult_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_qjoy_basjoo_core_model_pb_GetAddressListResult_fieldAccessorTable = new
@@ -10966,7 +12039,7 @@ public final class ReceiveAddress {
     internal_static_com_qjoy_basjoo_core_model_pb_SetDefaultRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_SetDefaultRequest_descriptor,
-        new java.lang.String[] { "AddressId", });
+        new java.lang.String[] { "AddressId", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_SetDefaultResult_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_com_qjoy_basjoo_core_model_pb_SetDefaultResult_fieldAccessorTable = new

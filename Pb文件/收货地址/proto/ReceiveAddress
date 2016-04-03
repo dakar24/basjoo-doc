@@ -18,6 +18,8 @@ message AddAddressRequest {
 	required string                 detail=5;
 	//邮编
 	required string                 postCode=6;
+	//用户ID
+	required string                 userId=7;
 	
 }
 
@@ -48,6 +50,8 @@ message ModifyAddressRequest {
 	required string                 postCode=6;
     //地址ID
     optional string                 addressId = 7; 	
+    //用户ID
+	required string                 userId=8;
     
 }
 
@@ -66,6 +70,9 @@ message ModifyAddressResult {
 message DeleteAddressRequest {     	
     //地址ID
     optional string                 addressId = 1; 	
+
+    //用户ID
+	required string                 userId=2;
     
 }
 
@@ -82,8 +89,10 @@ message DeleteAddressResult {
 
 //获取收货地址列表请求
 message GetAddressListRequest {  
-    
+     //用户ID
+	required string                 userId=1;
 }
+
 
 //获取收货地址列表结果
 message GetAddressListResult {  
@@ -120,6 +129,9 @@ message AddressDetailInfo{
 message SetDefaultRequest {
     //地址ID
     optional string                 addressId = 1;
+
+    //用户ID
+    required string                 userId=2;
     
 }
 

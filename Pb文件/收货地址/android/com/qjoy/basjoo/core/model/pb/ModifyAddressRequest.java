@@ -20,6 +20,7 @@ public final class ModifyAddressRequest extends Message {
   public static final int TAG_DETAIL = 5;
   public static final int TAG_POSTCODE = 6;
   public static final int TAG_ADDRESSID = 7;
+  public static final int TAG_USERID = 8;
 
   public static final String DEFAULT_RECEIVER = "";
   public static final String DEFAULT_MOBILENO = "";
@@ -28,6 +29,7 @@ public final class ModifyAddressRequest extends Message {
   public static final String DEFAULT_DETAIL = "";
   public static final String DEFAULT_POSTCODE = "";
   public static final String DEFAULT_ADDRESSID = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 收货人
@@ -71,6 +73,12 @@ public final class ModifyAddressRequest extends Message {
   @ProtoField(tag = 7, type = STRING)
   public String addressId;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 8, type = STRING, label = REQUIRED)
+  public String userId;
+
   public ModifyAddressRequest(ModifyAddressRequest message) {
     super(message);
     if (message == null) return;
@@ -81,6 +89,7 @@ public final class ModifyAddressRequest extends Message {
     this.detail = message.detail;
     this.postCode = message.postCode;
     this.addressId = message.addressId;
+    this.userId = message.userId;
   }
 
   public ModifyAddressRequest() {
@@ -109,6 +118,9 @@ public final class ModifyAddressRequest extends Message {
         case TAG_ADDRESSID:
         this.addressId = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -125,7 +137,8 @@ public final class ModifyAddressRequest extends Message {
         && equals(street, o.street)
         && equals(detail, o.detail)
         && equals(postCode, o.postCode)
-        && equals(addressId, o.addressId);
+        && equals(addressId, o.addressId)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -139,6 +152,7 @@ public final class ModifyAddressRequest extends Message {
       result = result * 37 + (detail != null ? detail.hashCode() : 0);
       result = result * 37 + (postCode != null ? postCode.hashCode() : 0);
       result = result * 37 + (addressId != null ? addressId.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

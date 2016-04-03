@@ -12,6 +12,7 @@
     _street = @"";
     _detail = @"";
     _postCode = @"";
+    _userId = @"";
   }
   return self;
 }
@@ -33,6 +34,9 @@
   }
   if (self.hasPostCode) {
     [output writeString:6 value:self.postCode];
+  }
+  if (self.hasUserId) {
+    [output writeString:7 value:self.userId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -57,6 +61,9 @@
   }
   if (self.hasPostCode) {
     size_ += computeStringSize(6, self.postCode);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(7, self.userId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -86,6 +93,9 @@
   if (self.hasPostCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"postCode", self.postCode];
   }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -112,6 +122,10 @@
 - (void) setPostCode:(NSString*) value {
   _hasPostCode = YES;
   _postCode = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -150,6 +164,10 @@
       }
       case 50: {
         [self setPostCode:[input readString]];
+        break;
+      }
+      case 58: {
+        [self setUserId:[input readString]];
         break;
       }
     }
@@ -271,6 +289,7 @@
     _detail = @"";
     _postCode = @"";
     _addressId = @"";
+    _userId = @"";
   }
   return self;
 }
@@ -295,6 +314,9 @@
   }
   if (self.hasAddressId) {
     [output writeString:7 value:self.addressId];
+  }
+  if (self.hasUserId) {
+    [output writeString:8 value:self.userId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -322,6 +344,9 @@
   }
   if (self.hasAddressId) {
     size_ += computeStringSize(7, self.addressId);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(8, self.userId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -354,6 +379,9 @@
   if (self.hasAddressId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
   }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -384,6 +412,10 @@
 - (void) setAddressId:(NSString*) value {
   _hasAddressId = YES;
   _addressId = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -426,6 +458,10 @@
       }
       case 58: {
         [self setAddressId:[input readString]];
+        break;
+      }
+      case 66: {
+        [self setUserId:[input readString]];
         break;
       }
     }
@@ -541,12 +577,16 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _addressId = @"";
+    _userId = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
   if (self.hasAddressId) {
     [output writeString:1 value:self.addressId];
+  }
+  if (self.hasUserId) {
+    [output writeString:2 value:self.userId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -556,6 +596,9 @@
   size_ = 0;
   if (self.hasAddressId) {
     size_ += computeStringSize(1, self.addressId);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(2, self.userId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -570,12 +613,19 @@
   if (self.hasAddressId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
   }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
 - (void) setAddressId:(NSString*) value {
   _hasAddressId = YES;
   _addressId = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -594,6 +644,10 @@
       }
       case 10: {
         [self setAddressId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setUserId:[input readString]];
         break;
       }
     }
@@ -690,16 +744,23 @@
 
 - (instancetype) init {
   if ((self = [super init])) {
+    _userId = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUserId) {
+    [output writeString:1 value:self.userId];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
   __block SInt32 size_ = memoizedSerializedSize;
 
   size_ = 0;
+  if (self.hasUserId) {
+    size_ += computeStringSize(1, self.userId);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -710,9 +771,16 @@
 }
 #ifdef DEBUG
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -726,6 +794,10 @@
           [self setUnknownFields:[unknownFields_ build]];
           return ;
         }
+        break;
+      }
+      case 10: {
+        [self setUserId:[input readString]];
         break;
       }
     }
@@ -1042,12 +1114,16 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _addressId = @"";
+    _userId = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
   if (self.hasAddressId) {
     [output writeString:1 value:self.addressId];
+  }
+  if (self.hasUserId) {
+    [output writeString:2 value:self.userId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1057,6 +1133,9 @@
   size_ = 0;
   if (self.hasAddressId) {
     size_ += computeStringSize(1, self.addressId);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(2, self.userId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1071,12 +1150,19 @@
   if (self.hasAddressId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
   }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
 - (void) setAddressId:(NSString*) value {
   _hasAddressId = YES;
   _addressId = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1095,6 +1181,10 @@
       }
       case 10: {
         [self setAddressId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setUserId:[input readString]];
         break;
       }
     }

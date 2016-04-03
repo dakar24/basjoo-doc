@@ -6,6 +6,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
  * 删除收货地址请求
@@ -13,8 +14,10 @@ import static com.squareup.wire.Message.Datatype.STRING;
 public final class DeleteAddressRequest extends Message {
 
   public static final int TAG_ADDRESSID = 1;
+  public static final int TAG_USERID = 2;
 
   public static final String DEFAULT_ADDRESSID = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 地址ID
@@ -22,10 +25,17 @@ public final class DeleteAddressRequest extends Message {
   @ProtoField(tag = 1, type = STRING)
   public String addressId;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String userId;
+
   public DeleteAddressRequest(DeleteAddressRequest message) {
     super(message);
     if (message == null) return;
     this.addressId = message.addressId;
+    this.userId = message.userId;
   }
 
   public DeleteAddressRequest() {
@@ -36,6 +46,9 @@ public final class DeleteAddressRequest extends Message {
         case TAG_ADDRESSID:
         this.addressId = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -45,12 +58,19 @@ public final class DeleteAddressRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof DeleteAddressRequest)) return false;
-    return equals(addressId, ((DeleteAddressRequest) other).addressId);
+    DeleteAddressRequest o = (DeleteAddressRequest) other;
+    return equals(addressId, o.addressId)
+        && equals(userId, o.userId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = addressId != null ? addressId.hashCode() : 0);
+    if (result == 0) {
+      result = addressId != null ? addressId.hashCode() : 0;
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }

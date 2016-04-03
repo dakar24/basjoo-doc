@@ -3,15 +3,30 @@
 package com.qjoy.basjoo.core.model.pb;
 
 import com.squareup.wire.Message;
+import com.squareup.wire.ProtoField;
+
+import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
  * 获取收货地址列表请求
  */
 public final class GetAddressListRequest extends Message {
 
+  public static final int TAG_USERID = 1;
+
+  public static final String DEFAULT_USERID = "";
+
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 1, type = STRING, label = REQUIRED)
+  public String userId;
 
   public GetAddressListRequest(GetAddressListRequest message) {
     super(message);
+    if (message == null) return;
+    this.userId = message.userId;
   }
 
   public GetAddressListRequest() {
@@ -19,6 +34,9 @@ public final class GetAddressListRequest extends Message {
 
   public GetAddressListRequest fillTagValue(int tag, Object value) {
     switch(tag) {
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -26,11 +44,14 @@ public final class GetAddressListRequest extends Message {
 
   @Override
   public boolean equals(Object other) {
-    return other instanceof GetAddressListRequest;
+    if (other == this) return true;
+    if (!(other instanceof GetAddressListRequest)) return false;
+    return equals(userId, ((GetAddressListRequest) other).userId);
   }
 
   @Override
   public int hashCode() {
-    return 0;
+    int result = hashCode;
+    return result != 0 ? result : (hashCode = userId != null ? userId.hashCode() : 0);
   }
 }
