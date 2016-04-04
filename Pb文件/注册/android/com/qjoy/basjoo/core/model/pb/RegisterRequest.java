@@ -17,11 +17,13 @@ public final class RegisterRequest extends Message {
   public static final int TAG_CHECKCODE = 2;
   public static final int TAG_PASSWORD = 3;
   public static final int TAG_HEADICONURL = 4;
+  public static final int TAG_RECOMMENDCODE = 5;
 
   public static final String DEFAULT_MOBILENO = "";
   public static final String DEFAULT_CHECKCODE = "";
   public static final String DEFAULT_PASSWORD = "";
   public static final String DEFAULT_HEADICONURL = "";
+  public static final String DEFAULT_RECOMMENDCODE = "";
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String mobileNo;
@@ -35,6 +37,9 @@ public final class RegisterRequest extends Message {
   @ProtoField(tag = 4, type = STRING)
   public String headIconUrl;
 
+  @ProtoField(tag = 5, type = STRING)
+  public String recommendCode;
+
   public RegisterRequest(RegisterRequest message) {
     super(message);
     if (message == null) return;
@@ -42,6 +47,7 @@ public final class RegisterRequest extends Message {
     this.checkCode = message.checkCode;
     this.password = message.password;
     this.headIconUrl = message.headIconUrl;
+    this.recommendCode = message.recommendCode;
   }
 
   public RegisterRequest() {
@@ -61,6 +67,9 @@ public final class RegisterRequest extends Message {
         case TAG_HEADICONURL:
         this.headIconUrl = (String)value;
         break;
+        case TAG_RECOMMENDCODE:
+        this.recommendCode = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -74,7 +83,8 @@ public final class RegisterRequest extends Message {
     return equals(mobileNo, o.mobileNo)
         && equals(checkCode, o.checkCode)
         && equals(password, o.password)
-        && equals(headIconUrl, o.headIconUrl);
+        && equals(headIconUrl, o.headIconUrl)
+        && equals(recommendCode, o.recommendCode);
   }
 
   @Override
@@ -85,6 +95,7 @@ public final class RegisterRequest extends Message {
       result = result * 37 + (checkCode != null ? checkCode.hashCode() : 0);
       result = result * 37 + (password != null ? password.hashCode() : 0);
       result = result * 37 + (headIconUrl != null ? headIconUrl.hashCode() : 0);
+      result = result * 37 + (recommendCode != null ? recommendCode.hashCode() : 0);
       hashCode = result;
     }
     return result;

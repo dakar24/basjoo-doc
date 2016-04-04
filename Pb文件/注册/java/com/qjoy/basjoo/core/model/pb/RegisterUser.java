@@ -1216,6 +1216,20 @@ public final class RegisterUser {
      */
     com.google.protobuf.ByteString
         getHeadIconUrlBytes();
+
+    /**
+     * <code>optional string recommendCode = 5;</code>
+     */
+    boolean hasRecommendCode();
+    /**
+     * <code>optional string recommendCode = 5;</code>
+     */
+    java.lang.String getRecommendCode();
+    /**
+     * <code>optional string recommendCode = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getRecommendCodeBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.RegisterRequest}
@@ -1295,6 +1309,12 @@ public final class RegisterUser {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
               headIconUrl_ = bs;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              recommendCode_ = bs;
               break;
             }
           }
@@ -1505,11 +1525,54 @@ public final class RegisterUser {
       }
     }
 
+    public static final int RECOMMENDCODE_FIELD_NUMBER = 5;
+    private java.lang.Object recommendCode_;
+    /**
+     * <code>optional string recommendCode = 5;</code>
+     */
+    public boolean hasRecommendCode() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string recommendCode = 5;</code>
+     */
+    public java.lang.String getRecommendCode() {
+      java.lang.Object ref = recommendCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          recommendCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string recommendCode = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRecommendCodeBytes() {
+      java.lang.Object ref = recommendCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        recommendCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       mobileNo_ = "";
       checkCode_ = "";
       password_ = "";
       headIconUrl_ = "";
+      recommendCode_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1548,6 +1611,9 @@ public final class RegisterUser {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(4, getHeadIconUrlBytes());
       }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getRecommendCodeBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1572,6 +1638,10 @@ public final class RegisterUser {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, getHeadIconUrlBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getRecommendCodeBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1702,6 +1772,8 @@ public final class RegisterUser {
         bitField0_ = (bitField0_ & ~0x00000004);
         headIconUrl_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
+        recommendCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1746,6 +1818,10 @@ public final class RegisterUser {
           to_bitField0_ |= 0x00000008;
         }
         result.headIconUrl_ = headIconUrl_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.recommendCode_ = recommendCode_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1780,6 +1856,11 @@ public final class RegisterUser {
         if (other.hasHeadIconUrl()) {
           bitField0_ |= 0x00000008;
           headIconUrl_ = other.headIconUrl_;
+          onChanged();
+        }
+        if (other.hasRecommendCode()) {
+          bitField0_ |= 0x00000010;
+          recommendCode_ = other.recommendCode_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2121,6 +2202,82 @@ public final class RegisterUser {
   }
   bitField0_ |= 0x00000008;
         headIconUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object recommendCode_ = "";
+      /**
+       * <code>optional string recommendCode = 5;</code>
+       */
+      public boolean hasRecommendCode() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string recommendCode = 5;</code>
+       */
+      public java.lang.String getRecommendCode() {
+        java.lang.Object ref = recommendCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            recommendCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string recommendCode = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRecommendCodeBytes() {
+        java.lang.Object ref = recommendCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          recommendCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string recommendCode = 5;</code>
+       */
+      public Builder setRecommendCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        recommendCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string recommendCode = 5;</code>
+       */
+      public Builder clearRecommendCode() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        recommendCode_ = getDefaultInstance().getRecommendCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string recommendCode = 5;</code>
+       */
+      public Builder setRecommendCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        recommendCode_ = value;
         onChanged();
         return this;
       }
@@ -2826,11 +2983,12 @@ public final class RegisterUser {
       "el.pb\"0\n\034SendRegisterCheckCodeRequest\022\020\n" +
       "\010mobileNo\030\001 \002(\t\"D\n\033SendRegisterCheckCode" +
       "Result\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030" +
-      "\002 \002(\t\"]\n\017RegisterRequest\022\020\n\010mobileNo\030\001 \002" +
+      "\002 \002(\t\"t\n\017RegisterRequest\022\020\n\010mobileNo\030\001 \002" +
       "(\t\022\021\n\tcheckCode\030\002 \002(\t\022\020\n\010password\030\003 \002(\t\022" +
-      "\023\n\013headIconUrl\030\004 \001(\t\"7\n\016RegisterResult\022\022" +
-      "\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\tB\037\n" +
-      "\035com.qjoy.basjoo.core.model.pb"
+      "\023\n\013headIconUrl\030\004 \001(\t\022\025\n\rrecommendCode\030\005 " +
+      "\001(\t\"7\n\016RegisterResult\022\022\n\nresultCode\030\001 \002(" +
+      "\t\022\021\n\tresultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo." +
+      "core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2861,7 +3019,7 @@ public final class RegisterUser {
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_RegisterRequest_descriptor,
-        new java.lang.String[] { "MobileNo", "CheckCode", "Password", "HeadIconUrl", });
+        new java.lang.String[] { "MobileNo", "CheckCode", "Password", "HeadIconUrl", "RecommendCode", });
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterResult_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterResult_fieldAccessorTable = new

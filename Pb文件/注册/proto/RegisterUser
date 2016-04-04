@@ -30,6 +30,8 @@ message RegisterRequest {
     required string                 password = 3;
 
     optional string                 headIconUrl = 4;
+
+    optional string                 recommendCode = 5;
     
 }
 

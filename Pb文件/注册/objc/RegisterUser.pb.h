@@ -24,10 +24,12 @@
 @property (readonly) BOOL hasCheckCode;
 @property (readonly) BOOL hasPassword;
 @property (readonly) BOOL hasHeadIconUrl;
+@property (readonly) BOOL hasRecommendCode;
 @property (nonatomic,strong) NSString* mobileNo;
 @property (nonatomic,strong) NSString* checkCode;
 @property (nonatomic,strong) NSString* password;
 @property (nonatomic,strong) NSString* headIconUrl;
+@property (nonatomic,strong) NSString* recommendCode;
 @end
 
 @interface RegisterResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

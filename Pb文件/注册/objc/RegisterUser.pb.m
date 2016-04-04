@@ -160,6 +160,7 @@
     _checkCode = @"";
     _password = @"";
     _headIconUrl = @"";
+    _recommendCode = @"";
   }
   return self;
 }
@@ -175,6 +176,9 @@
   }
   if (self.hasHeadIconUrl) {
     [output writeString:4 value:self.headIconUrl];
+  }
+  if (self.hasRecommendCode) {
+    [output writeString:5 value:self.recommendCode];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -193,6 +197,9 @@
   }
   if (self.hasHeadIconUrl) {
     size_ += computeStringSize(4, self.headIconUrl);
+  }
+  if (self.hasRecommendCode) {
+    size_ += computeStringSize(5, self.recommendCode);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -216,6 +223,9 @@
   if (self.hasHeadIconUrl) {
     [output appendFormat:@"%@%@: %@\n", indent, @"headIconUrl", self.headIconUrl];
   }
+  if (self.hasRecommendCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"recommendCode", self.recommendCode];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -234,6 +244,10 @@
 - (void) setHeadIconUrl:(NSString*) value {
   _hasHeadIconUrl = YES;
   _headIconUrl = value;
+}
+- (void) setRecommendCode:(NSString*) value {
+  _hasRecommendCode = YES;
+  _recommendCode = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -264,6 +278,10 @@
       }
       case 34: {
         [self setHeadIconUrl:[input readString]];
+        break;
+      }
+      case 42: {
+        [self setRecommendCode:[input readString]];
         break;
       }
     }
