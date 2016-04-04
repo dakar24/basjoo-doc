@@ -812,7 +812,7 @@ public final class Login {
         getHeadIconUrlBytes();
 
     /**
-     * <code>required string mobileNo = 6;</code>
+     * <code>optional string mobileNo = 6;</code>
      *
      * <pre>
      *手机号
@@ -820,7 +820,7 @@ public final class Login {
      */
     boolean hasMobileNo();
     /**
-     * <code>required string mobileNo = 6;</code>
+     * <code>optional string mobileNo = 6;</code>
      *
      * <pre>
      *手机号
@@ -828,7 +828,7 @@ public final class Login {
      */
     java.lang.String getMobileNo();
     /**
-     * <code>required string mobileNo = 6;</code>
+     * <code>optional string mobileNo = 6;</code>
      *
      * <pre>
      *手机号
@@ -838,7 +838,7 @@ public final class Login {
         getMobileNoBytes();
 
     /**
-     * <code>required string userName = 7;</code>
+     * <code>optional string userName = 7;</code>
      *
      * <pre>
      *用户名
@@ -846,7 +846,7 @@ public final class Login {
      */
     boolean hasUserName();
     /**
-     * <code>required string userName = 7;</code>
+     * <code>optional string userName = 7;</code>
      *
      * <pre>
      *用户名
@@ -854,7 +854,7 @@ public final class Login {
      */
     java.lang.String getUserName();
     /**
-     * <code>required string userName = 7;</code>
+     * <code>optional string userName = 7;</code>
      *
      * <pre>
      *用户名
@@ -864,7 +864,7 @@ public final class Login {
         getUserNameBytes();
 
     /**
-     * <code>required string nickName = 8;</code>
+     * <code>optional string nickName = 8;</code>
      *
      * <pre>
      *昵称
@@ -872,7 +872,7 @@ public final class Login {
      */
     boolean hasNickName();
     /**
-     * <code>required string nickName = 8;</code>
+     * <code>optional string nickName = 8;</code>
      *
      * <pre>
      *昵称
@@ -880,7 +880,7 @@ public final class Login {
      */
     java.lang.String getNickName();
     /**
-     * <code>required string nickName = 8;</code>
+     * <code>optional string nickName = 8;</code>
      *
      * <pre>
      *昵称
@@ -1302,7 +1302,7 @@ public final class Login {
     public static final int MOBILENO_FIELD_NUMBER = 6;
     private java.lang.Object mobileNo_;
     /**
-     * <code>required string mobileNo = 6;</code>
+     * <code>optional string mobileNo = 6;</code>
      *
      * <pre>
      *手机号
@@ -1312,7 +1312,7 @@ public final class Login {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required string mobileNo = 6;</code>
+     * <code>optional string mobileNo = 6;</code>
      *
      * <pre>
      *手机号
@@ -1333,7 +1333,7 @@ public final class Login {
       }
     }
     /**
-     * <code>required string mobileNo = 6;</code>
+     * <code>optional string mobileNo = 6;</code>
      *
      * <pre>
      *手机号
@@ -1356,7 +1356,7 @@ public final class Login {
     public static final int USERNAME_FIELD_NUMBER = 7;
     private java.lang.Object userName_;
     /**
-     * <code>required string userName = 7;</code>
+     * <code>optional string userName = 7;</code>
      *
      * <pre>
      *用户名
@@ -1366,7 +1366,7 @@ public final class Login {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required string userName = 7;</code>
+     * <code>optional string userName = 7;</code>
      *
      * <pre>
      *用户名
@@ -1387,7 +1387,7 @@ public final class Login {
       }
     }
     /**
-     * <code>required string userName = 7;</code>
+     * <code>optional string userName = 7;</code>
      *
      * <pre>
      *用户名
@@ -1410,7 +1410,7 @@ public final class Login {
     public static final int NICKNAME_FIELD_NUMBER = 8;
     private java.lang.Object nickName_;
     /**
-     * <code>required string nickName = 8;</code>
+     * <code>optional string nickName = 8;</code>
      *
      * <pre>
      *昵称
@@ -1420,7 +1420,7 @@ public final class Login {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>required string nickName = 8;</code>
+     * <code>optional string nickName = 8;</code>
      *
      * <pre>
      *昵称
@@ -1441,7 +1441,7 @@ public final class Login {
       }
     }
     /**
-     * <code>required string nickName = 8;</code>
+     * <code>optional string nickName = 8;</code>
      *
      * <pre>
      *昵称
@@ -1537,18 +1537,6 @@ public final class Login {
         return false;
       }
       if (!hasResultMsg()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasMobileNo()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasUserName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasNickName()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1905,18 +1893,6 @@ public final class Login {
           return false;
         }
         if (!hasResultMsg()) {
-          
-          return false;
-        }
-        if (!hasMobileNo()) {
-          
-          return false;
-        }
-        if (!hasUserName()) {
-          
-          return false;
-        }
-        if (!hasNickName()) {
           
           return false;
         }
@@ -2372,7 +2348,7 @@ public final class Login {
 
       private java.lang.Object mobileNo_ = "";
       /**
-       * <code>required string mobileNo = 6;</code>
+       * <code>optional string mobileNo = 6;</code>
        *
        * <pre>
        *手机号
@@ -2382,7 +2358,7 @@ public final class Login {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required string mobileNo = 6;</code>
+       * <code>optional string mobileNo = 6;</code>
        *
        * <pre>
        *手机号
@@ -2403,7 +2379,7 @@ public final class Login {
         }
       }
       /**
-       * <code>required string mobileNo = 6;</code>
+       * <code>optional string mobileNo = 6;</code>
        *
        * <pre>
        *手机号
@@ -2423,7 +2399,7 @@ public final class Login {
         }
       }
       /**
-       * <code>required string mobileNo = 6;</code>
+       * <code>optional string mobileNo = 6;</code>
        *
        * <pre>
        *手机号
@@ -2440,7 +2416,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>required string mobileNo = 6;</code>
+       * <code>optional string mobileNo = 6;</code>
        *
        * <pre>
        *手机号
@@ -2453,7 +2429,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>required string mobileNo = 6;</code>
+       * <code>optional string mobileNo = 6;</code>
        *
        * <pre>
        *手机号
@@ -2472,7 +2448,7 @@ public final class Login {
 
       private java.lang.Object userName_ = "";
       /**
-       * <code>required string userName = 7;</code>
+       * <code>optional string userName = 7;</code>
        *
        * <pre>
        *用户名
@@ -2482,7 +2458,7 @@ public final class Login {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required string userName = 7;</code>
+       * <code>optional string userName = 7;</code>
        *
        * <pre>
        *用户名
@@ -2503,7 +2479,7 @@ public final class Login {
         }
       }
       /**
-       * <code>required string userName = 7;</code>
+       * <code>optional string userName = 7;</code>
        *
        * <pre>
        *用户名
@@ -2523,7 +2499,7 @@ public final class Login {
         }
       }
       /**
-       * <code>required string userName = 7;</code>
+       * <code>optional string userName = 7;</code>
        *
        * <pre>
        *用户名
@@ -2540,7 +2516,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>required string userName = 7;</code>
+       * <code>optional string userName = 7;</code>
        *
        * <pre>
        *用户名
@@ -2553,7 +2529,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>required string userName = 7;</code>
+       * <code>optional string userName = 7;</code>
        *
        * <pre>
        *用户名
@@ -2572,7 +2548,7 @@ public final class Login {
 
       private java.lang.Object nickName_ = "";
       /**
-       * <code>required string nickName = 8;</code>
+       * <code>optional string nickName = 8;</code>
        *
        * <pre>
        *昵称
@@ -2582,7 +2558,7 @@ public final class Login {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>required string nickName = 8;</code>
+       * <code>optional string nickName = 8;</code>
        *
        * <pre>
        *昵称
@@ -2603,7 +2579,7 @@ public final class Login {
         }
       }
       /**
-       * <code>required string nickName = 8;</code>
+       * <code>optional string nickName = 8;</code>
        *
        * <pre>
        *昵称
@@ -2623,7 +2599,7 @@ public final class Login {
         }
       }
       /**
-       * <code>required string nickName = 8;</code>
+       * <code>optional string nickName = 8;</code>
        *
        * <pre>
        *昵称
@@ -2640,7 +2616,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>required string nickName = 8;</code>
+       * <code>optional string nickName = 8;</code>
        *
        * <pre>
        *昵称
@@ -2653,7 +2629,7 @@ public final class Login {
         return this;
       }
       /**
-       * <code>required string nickName = 8;</code>
+       * <code>optional string nickName = 8;</code>
        *
        * <pre>
        *昵称
@@ -2805,8 +2781,8 @@ public final class Login {
       "ord\030\002 \002(\t\"\271\001\n\013LoginResult\022\022\n\nresultCode\030" +
       "\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\021\n\tsessionId\030\003 " +
       "\001(\t\022\016\n\006userId\030\004 \001(\t\022\023\n\013headIconUrl\030\005 \001(\t" +
-      "\022\020\n\010mobileNo\030\006 \002(\t\022\020\n\010userName\030\007 \002(\t\022\020\n\010" +
-      "nickName\030\010 \002(\t\022\025\n\rrecommendCode\030\t \001(\tB\037\n" +
+      "\022\020\n\010mobileNo\030\006 \001(\t\022\020\n\010userName\030\007 \001(\t\022\020\n\010" +
+      "nickName\030\010 \001(\t\022\025\n\rrecommendCode\030\t \001(\tB\037\n" +
       "\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

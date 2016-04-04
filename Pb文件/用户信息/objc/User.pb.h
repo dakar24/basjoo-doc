@@ -12,6 +12,8 @@
 @class ChangePasswordResult;
 @class GetUserInfoRequest;
 @class GetUserInfoResult;
+@class ResetPasswordRequest;
+@class ResetPasswordResult;
 
 @interface GetUserInfoRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasUserId;
@@ -77,6 +79,22 @@
 @end
 
 @interface ChangePasswordResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@end
+
+@interface ResetPasswordRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasMobileNo;
+@property (readonly) BOOL hasCheckCode;
+@property (readonly) BOOL hasPbNewPassword;
+@property (nonatomic,strong) NSString* mobileNo;
+@property (nonatomic,strong) NSString* checkCode;
+@property (nonatomic,strong) NSString* pbNewPassword;
+@end
+
+@interface ResetPasswordResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (nonatomic,strong) NSString* resultCode;

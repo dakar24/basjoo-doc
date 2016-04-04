@@ -26,11 +26,11 @@ message LoginResult {
     //头像
    optional string                 headIconUrl = 5;
    //手机号
-   required string                 mobileNo = 6;
+   optional string                 mobileNo = 6;
    //用户名
-   required string                 userName = 7; 
+   optional string                 userName = 7; 
    //昵称
-   required string                 nickName = 8; 
+   optional string                 nickName = 8; 
    
    //推荐码，类似Uber
    optional string                 recommendCode=9;

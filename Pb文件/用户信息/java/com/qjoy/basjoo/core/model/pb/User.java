@@ -7075,6 +7075,1629 @@ public final class User {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ChangePasswordResult)
   }
 
+  public interface ResetPasswordRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ResetPasswordRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string mobileNo = 1;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    boolean hasMobileNo();
+    /**
+     * <code>required string mobileNo = 1;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    java.lang.String getMobileNo();
+    /**
+     * <code>required string mobileNo = 1;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getMobileNoBytes();
+
+    /**
+     * <code>required string checkCode = 2;</code>
+     *
+     * <pre>
+     *验证码
+     * </pre>
+     */
+    boolean hasCheckCode();
+    /**
+     * <code>required string checkCode = 2;</code>
+     *
+     * <pre>
+     *验证码
+     * </pre>
+     */
+    java.lang.String getCheckCode();
+    /**
+     * <code>required string checkCode = 2;</code>
+     *
+     * <pre>
+     *验证码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCheckCodeBytes();
+
+    /**
+     * <code>required string newPassword = 3;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    boolean hasNewPassword();
+    /**
+     * <code>required string newPassword = 3;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    java.lang.String getNewPassword();
+    /**
+     * <code>required string newPassword = 3;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getNewPasswordBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ResetPasswordRequest}
+   *
+   * <pre>
+   *重置密码请求
+   * </pre>
+   */
+  public static final class ResetPasswordRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ResetPasswordRequest)
+      ResetPasswordRequestOrBuilder {
+    // Use ResetPasswordRequest.newBuilder() to construct.
+    private ResetPasswordRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ResetPasswordRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ResetPasswordRequest defaultInstance;
+    public static ResetPasswordRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ResetPasswordRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResetPasswordRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              mobileNo_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              checkCode_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              newPassword_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest.class, com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ResetPasswordRequest> PARSER =
+        new com.google.protobuf.AbstractParser<ResetPasswordRequest>() {
+      public ResetPasswordRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResetPasswordRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResetPasswordRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int MOBILENO_FIELD_NUMBER = 1;
+    private java.lang.Object mobileNo_;
+    /**
+     * <code>required string mobileNo = 1;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    public boolean hasMobileNo() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string mobileNo = 1;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    public java.lang.String getMobileNo() {
+      java.lang.Object ref = mobileNo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          mobileNo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string mobileNo = 1;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getMobileNoBytes() {
+      java.lang.Object ref = mobileNo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mobileNo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHECKCODE_FIELD_NUMBER = 2;
+    private java.lang.Object checkCode_;
+    /**
+     * <code>required string checkCode = 2;</code>
+     *
+     * <pre>
+     *验证码
+     * </pre>
+     */
+    public boolean hasCheckCode() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string checkCode = 2;</code>
+     *
+     * <pre>
+     *验证码
+     * </pre>
+     */
+    public java.lang.String getCheckCode() {
+      java.lang.Object ref = checkCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          checkCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string checkCode = 2;</code>
+     *
+     * <pre>
+     *验证码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCheckCodeBytes() {
+      java.lang.Object ref = checkCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        checkCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NEWPASSWORD_FIELD_NUMBER = 3;
+    private java.lang.Object newPassword_;
+    /**
+     * <code>required string newPassword = 3;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    public boolean hasNewPassword() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string newPassword = 3;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    public java.lang.String getNewPassword() {
+      java.lang.Object ref = newPassword_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          newPassword_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string newPassword = 3;</code>
+     *
+     * <pre>
+     *新密码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getNewPasswordBytes() {
+      java.lang.Object ref = newPassword_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        newPassword_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      mobileNo_ = "";
+      checkCode_ = "";
+      newPassword_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasMobileNo()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasCheckCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasNewPassword()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getMobileNoBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getCheckCodeBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getNewPasswordBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getMobileNoBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getCheckCodeBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getNewPasswordBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ResetPasswordRequest}
+     *
+     * <pre>
+     *重置密码请求
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ResetPasswordRequest)
+        com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest.class, com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        mobileNo_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        checkCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        newPassword_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest build() {
+        com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest result = new com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.mobileNo_ = mobileNo_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.checkCode_ = checkCode_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.newPassword_ = newPassword_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest.getDefaultInstance()) return this;
+        if (other.hasMobileNo()) {
+          bitField0_ |= 0x00000001;
+          mobileNo_ = other.mobileNo_;
+          onChanged();
+        }
+        if (other.hasCheckCode()) {
+          bitField0_ |= 0x00000002;
+          checkCode_ = other.checkCode_;
+          onChanged();
+        }
+        if (other.hasNewPassword()) {
+          bitField0_ |= 0x00000004;
+          newPassword_ = other.newPassword_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasMobileNo()) {
+          
+          return false;
+        }
+        if (!hasCheckCode()) {
+          
+          return false;
+        }
+        if (!hasNewPassword()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.User.ResetPasswordRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object mobileNo_ = "";
+      /**
+       * <code>required string mobileNo = 1;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public boolean hasMobileNo() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string mobileNo = 1;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public java.lang.String getMobileNo() {
+        java.lang.Object ref = mobileNo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            mobileNo_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string mobileNo = 1;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getMobileNoBytes() {
+        java.lang.Object ref = mobileNo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mobileNo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string mobileNo = 1;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public Builder setMobileNo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        mobileNo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string mobileNo = 1;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public Builder clearMobileNo() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        mobileNo_ = getDefaultInstance().getMobileNo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string mobileNo = 1;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public Builder setMobileNoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        mobileNo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object checkCode_ = "";
+      /**
+       * <code>required string checkCode = 2;</code>
+       *
+       * <pre>
+       *验证码
+       * </pre>
+       */
+      public boolean hasCheckCode() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string checkCode = 2;</code>
+       *
+       * <pre>
+       *验证码
+       * </pre>
+       */
+      public java.lang.String getCheckCode() {
+        java.lang.Object ref = checkCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            checkCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string checkCode = 2;</code>
+       *
+       * <pre>
+       *验证码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCheckCodeBytes() {
+        java.lang.Object ref = checkCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          checkCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string checkCode = 2;</code>
+       *
+       * <pre>
+       *验证码
+       * </pre>
+       */
+      public Builder setCheckCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        checkCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string checkCode = 2;</code>
+       *
+       * <pre>
+       *验证码
+       * </pre>
+       */
+      public Builder clearCheckCode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        checkCode_ = getDefaultInstance().getCheckCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string checkCode = 2;</code>
+       *
+       * <pre>
+       *验证码
+       * </pre>
+       */
+      public Builder setCheckCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        checkCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object newPassword_ = "";
+      /**
+       * <code>required string newPassword = 3;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public boolean hasNewPassword() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string newPassword = 3;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public java.lang.String getNewPassword() {
+        java.lang.Object ref = newPassword_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            newPassword_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string newPassword = 3;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getNewPasswordBytes() {
+        java.lang.Object ref = newPassword_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          newPassword_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string newPassword = 3;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public Builder setNewPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        newPassword_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string newPassword = 3;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public Builder clearNewPassword() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        newPassword_ = getDefaultInstance().getNewPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string newPassword = 3;</code>
+       *
+       * <pre>
+       *新密码
+       * </pre>
+       */
+      public Builder setNewPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        newPassword_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ResetPasswordRequest)
+    }
+
+    static {
+      defaultInstance = new ResetPasswordRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ResetPasswordRequest)
+  }
+
+  public interface ResetPasswordResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ResetPasswordResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ResetPasswordResult}
+   *
+   * <pre>
+   *重置密码结果
+   * </pre>
+   */
+  public static final class ResetPasswordResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ResetPasswordResult)
+      ResetPasswordResultOrBuilder {
+    // Use ResetPasswordResult.newBuilder() to construct.
+    private ResetPasswordResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ResetPasswordResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ResetPasswordResult defaultInstance;
+    public static ResetPasswordResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ResetPasswordResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResetPasswordResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult.class, com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ResetPasswordResult> PARSER =
+        new com.google.protobuf.AbstractParser<ResetPasswordResult>() {
+      public ResetPasswordResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResetPasswordResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResetPasswordResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ResetPasswordResult}
+     *
+     * <pre>
+     *重置密码结果
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ResetPasswordResult)
+        com.qjoy.basjoo.core.model.pb.User.ResetPasswordResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult.class, com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.User.internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult build() {
+        com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult result = new com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.User.ResetPasswordResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ResetPasswordResult)
+    }
+
+    static {
+      defaultInstance = new ResetPasswordResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ResetPasswordResult)
+  }
+
   public interface ChangeMobileNoRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ChangeMobileNoRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -8739,6 +10362,16 @@ public final class User {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_ChangePasswordResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -8773,12 +10406,15 @@ public final class User {
       "st\022\023\n\013oldPassword\030\001 \002(\t\022\023\n\013newPassword\030\002" +
       " \002(\t\022\027\n\017confirmPassword\030\003 \002(\t\022\016\n\006userId\030" +
       "\004 \002(\t\"=\n\024ChangePasswordResult\022\022\n\nresultC" +
-      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"O\n\025ChangeMo" +
-      "bileNoRequest\022\021\n\tcheckCode\030\001 \002(\t\022\023\n\013newM" +
-      "obileNo\030\002 \002(\t\022\016\n\006userId\030\003 \002(\t\"=\n\024ChangeM" +
-      "obileNoResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres",
-      "ultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo.core.mod" +
-      "el.pb"
+      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"P\n\024ResetPas" +
+      "swordRequest\022\020\n\010mobileNo\030\001 \002(\t\022\021\n\tcheckC" +
+      "ode\030\002 \002(\t\022\023\n\013newPassword\030\003 \002(\t\"<\n\023ResetP" +
+      "asswordResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres",
+      "ultMsg\030\002 \002(\t\"O\n\025ChangeMobileNoRequest\022\021\n" +
+      "\tcheckCode\030\001 \002(\t\022\023\n\013newMobileNo\030\002 \002(\t\022\016\n" +
+      "\006userId\030\003 \002(\t\"=\n\024ChangeMobileNoResult\022\022\n" +
+      "\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\tB\037\n\035" +
+      "com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8840,14 +10476,26 @@ public final class User {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ChangePasswordResult_descriptor,
         new java.lang.String[] { "ResultCode", "ResultMsg", });
-    internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoRequest_descriptor =
+    internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordRequest_descriptor,
+        new java.lang.String[] { "MobileNo", "CheckCode", "NewPassword", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ResetPasswordResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoRequest_descriptor,
         new java.lang.String[] { "CheckCode", "NewMobileNo", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoResult_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ChangeMobileNoResult_descriptor,

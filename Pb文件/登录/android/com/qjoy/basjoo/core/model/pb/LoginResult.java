@@ -57,19 +57,19 @@ public final class LoginResult extends Message {
   /**
    * 手机号
    */
-  @ProtoField(tag = 6, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 6, type = STRING)
   public String mobileNo;
 
   /**
    * 用户名
    */
-  @ProtoField(tag = 7, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 7, type = STRING)
   public String userName;
 
   /**
    * 昵称
    */
-  @ProtoField(tag = 8, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 8, type = STRING)
   public String nickName;
 
   /**

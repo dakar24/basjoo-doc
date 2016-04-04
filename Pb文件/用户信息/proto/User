@@ -98,6 +98,28 @@ message ChangePasswordResult {
 }
 
 
+//重置密码请求
+message ResetPasswordRequest {  
+
+   //新密码
+   required string                 mobileNo = 1;
+
+   //验证码
+   required string                 checkCode = 2;
+   
+   //新密码
+   required string                 newPassword = 3;
+   
+}
+
+//重置密码结果
+message ResetPasswordResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+}
+
 
 
 

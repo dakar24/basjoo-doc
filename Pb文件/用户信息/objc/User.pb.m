@@ -800,6 +800,192 @@
 @end
 
 
+@implementation ResetPasswordRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _mobileNo = @"";
+    _checkCode = @"";
+    _pbNewPassword = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasMobileNo) {
+    [output writeString:1 value:self.mobileNo];
+  }
+  if (self.hasCheckCode) {
+    [output writeString:2 value:self.checkCode];
+  }
+  if (self.hasPbNewPassword) {
+    [output writeString:3 value:self.pbNewPassword];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasMobileNo) {
+    size_ += computeStringSize(1, self.mobileNo);
+  }
+  if (self.hasCheckCode) {
+    size_ += computeStringSize(2, self.checkCode);
+  }
+  if (self.hasPbNewPassword) {
+    size_ += computeStringSize(3, self.pbNewPassword);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ResetPasswordRequest*) parseFromData:(NSData*) data {
+  ResetPasswordRequest* result = [[ResetPasswordRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasMobileNo) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"mobileNo", self.mobileNo];
+  }
+  if (self.hasCheckCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"checkCode", self.checkCode];
+  }
+  if (self.hasPbNewPassword) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"pbNewPassword", self.pbNewPassword];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setMobileNo:(NSString*) value {
+  _hasMobileNo = YES;
+  _mobileNo = value;
+}
+- (void) setCheckCode:(NSString*) value {
+  _hasCheckCode = YES;
+  _checkCode = value;
+}
+- (void) setPbNewPassword:(NSString*) value {
+  _hasPbNewPassword = YES;
+  _pbNewPassword = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setMobileNo:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setCheckCode:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setPbNewPassword:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ResetPasswordResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ResetPasswordResult*) parseFromData:(NSData*) data {
+  ResetPasswordResult* result = [[ResetPasswordResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
 @implementation ChangeMobileNoRequest
 
 - (instancetype) init {
