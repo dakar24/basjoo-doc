@@ -28,6 +28,7 @@ public final class ConfirmOrderRequest extends Message {
   public static final int TAG_VOUCHERS = 8;
   public static final int TAG_USERMESSAGE = 9;
   public static final int TAG_PAYCHANNEL = 10;
+  public static final int TAG_USERID = 11;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_CATEGORYID = "";
@@ -39,6 +40,7 @@ public final class ConfirmOrderRequest extends Message {
   public static final List<String> DEFAULT_VOUCHERS = Collections.emptyList();
   public static final String DEFAULT_USERMESSAGE = "";
   public static final Integer DEFAULT_PAYCHANNEL = 0;
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 产品Id
@@ -100,6 +102,12 @@ public final class ConfirmOrderRequest extends Message {
   @ProtoField(tag = 10, type = INT32)
   public Integer payChannel;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 11, type = STRING, label = REQUIRED)
+  public String userId;
+
   public ConfirmOrderRequest(ConfirmOrderRequest message) {
     super(message);
     if (message == null) return;
@@ -113,6 +121,7 @@ public final class ConfirmOrderRequest extends Message {
     this.vouchers = copyOf(message.vouchers);
     this.userMessage = message.userMessage;
     this.payChannel = message.payChannel;
+    this.userId = message.userId;
   }
 
   public ConfirmOrderRequest() {
@@ -150,6 +159,9 @@ public final class ConfirmOrderRequest extends Message {
         case TAG_PAYCHANNEL:
         this.payChannel = (Integer)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -169,7 +181,8 @@ public final class ConfirmOrderRequest extends Message {
         && equals(addressId, o.addressId)
         && equals(vouchers, o.vouchers)
         && equals(userMessage, o.userMessage)
-        && equals(payChannel, o.payChannel);
+        && equals(payChannel, o.payChannel)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -186,6 +199,7 @@ public final class ConfirmOrderRequest extends Message {
       result = result * 37 + (vouchers != null ? vouchers.hashCode() : 1);
       result = result * 37 + (userMessage != null ? userMessage.hashCode() : 0);
       result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

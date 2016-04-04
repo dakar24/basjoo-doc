@@ -9,81 +9,81 @@ import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 申请归还请求
+ * 提交退款的物流信息
  */
-public final class ApplyRevertRequest extends Message {
+public final class CommitRefundTransRequest extends Message {
 
-  public static final int TAG_ORDERID = 1;
-  public static final int TAG_APPLYREVERTTYPE = 2;
-  public static final int TAG_TRANSPORTATIONID = 3;
-  public static final int TAG_TRANSPORTATIONCOMPANY = 4;
-  public static final int TAG_USERID = 5;
+  public static final int TAG_USERID = 1;
+  public static final int TAG_ORDERID = 2;
+  public static final int TAG_REFUNDTRANSTYPE = 3;
+  public static final int TAG_TRANSPORTATIONID = 4;
+  public static final int TAG_TRANSPORTATIONCOMPANY = 5;
 
+  public static final String DEFAULT_USERID = "";
   public static final String DEFAULT_ORDERID = "";
-  public static final String DEFAULT_APPLYREVERTTYPE = "";
+  public static final String DEFAULT_REFUNDTRANSTYPE = "";
   public static final String DEFAULT_TRANSPORTATIONID = "";
   public static final String DEFAULT_TRANSPORTATIONCOMPANY = "";
-  public static final String DEFAULT_USERID = "";
+
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 1, type = STRING, label = REQUIRED)
+  public String userId;
 
   /**
    * 订单ID
    */
-  @ProtoField(tag = 1, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String orderId;
 
   /**
-   * 退还方式 1：快递归还，2：现场归还
+   * 退还方式 1：快递归还(默认)，2：现场归还
    */
-  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
-  public String applyRevertType;
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  public String refundTransType;
 
   /**
    * 快递号
    */
-  @ProtoField(tag = 3, type = STRING)
+  @ProtoField(tag = 4, type = STRING)
   public String transportationId;
 
   /**
    * 快递公司
    */
-  @ProtoField(tag = 4, type = STRING)
+  @ProtoField(tag = 5, type = STRING)
   public String transportationCompany;
 
-  /**
-   * 用户ID
-   */
-  @ProtoField(tag = 5, type = STRING, label = REQUIRED)
-  public String userId;
-
-  public ApplyRevertRequest(ApplyRevertRequest message) {
+  public CommitRefundTransRequest(CommitRefundTransRequest message) {
     super(message);
     if (message == null) return;
+    this.userId = message.userId;
     this.orderId = message.orderId;
-    this.applyRevertType = message.applyRevertType;
+    this.refundTransType = message.refundTransType;
     this.transportationId = message.transportationId;
     this.transportationCompany = message.transportationCompany;
-    this.userId = message.userId;
   }
 
-  public ApplyRevertRequest() {
+  public CommitRefundTransRequest() {
   }
 
-  public ApplyRevertRequest fillTagValue(int tag, Object value) {
+  public CommitRefundTransRequest fillTagValue(int tag, Object value) {
     switch(tag) {
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         case TAG_ORDERID:
         this.orderId = (String)value;
         break;
-        case TAG_APPLYREVERTTYPE:
-        this.applyRevertType = (String)value;
+        case TAG_REFUNDTRANSTYPE:
+        this.refundTransType = (String)value;
         break;
         case TAG_TRANSPORTATIONID:
         this.transportationId = (String)value;
         break;
         case TAG_TRANSPORTATIONCOMPANY:
         this.transportationCompany = (String)value;
-        break;
-        case TAG_USERID:
-        this.userId = (String)value;
         break;
         default: break;
         };
@@ -93,24 +93,24 @@ public final class ApplyRevertRequest extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof ApplyRevertRequest)) return false;
-    ApplyRevertRequest o = (ApplyRevertRequest) other;
-    return equals(orderId, o.orderId)
-        && equals(applyRevertType, o.applyRevertType)
+    if (!(other instanceof CommitRefundTransRequest)) return false;
+    CommitRefundTransRequest o = (CommitRefundTransRequest) other;
+    return equals(userId, o.userId)
+        && equals(orderId, o.orderId)
+        && equals(refundTransType, o.refundTransType)
         && equals(transportationId, o.transportationId)
-        && equals(transportationCompany, o.transportationCompany)
-        && equals(userId, o.userId);
+        && equals(transportationCompany, o.transportationCompany);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
     if (result == 0) {
-      result = orderId != null ? orderId.hashCode() : 0;
-      result = result * 37 + (applyRevertType != null ? applyRevertType.hashCode() : 0);
+      result = userId != null ? userId.hashCode() : 0;
+      result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
+      result = result * 37 + (refundTransType != null ? refundTransType.hashCode() : 0);
       result = result * 37 + (transportationId != null ? transportationId.hashCode() : 0);
       result = result * 37 + (transportationCompany != null ? transportationCompany.hashCode() : 0);
-      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

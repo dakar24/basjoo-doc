@@ -15,9 +15,11 @@ public final class CancelOrderRequest extends Message {
 
   public static final int TAG_ORDERID = 1;
   public static final int TAG_REASON = 2;
+  public static final int TAG_USERID = 3;
 
   public static final String DEFAULT_ORDERID = "";
   public static final String DEFAULT_REASON = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 订单ID
@@ -31,11 +33,18 @@ public final class CancelOrderRequest extends Message {
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String reason;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  public String userId;
+
   public CancelOrderRequest(CancelOrderRequest message) {
     super(message);
     if (message == null) return;
     this.orderId = message.orderId;
     this.reason = message.reason;
+    this.userId = message.userId;
   }
 
   public CancelOrderRequest() {
@@ -49,6 +58,9 @@ public final class CancelOrderRequest extends Message {
         case TAG_REASON:
         this.reason = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -60,7 +72,8 @@ public final class CancelOrderRequest extends Message {
     if (!(other instanceof CancelOrderRequest)) return false;
     CancelOrderRequest o = (CancelOrderRequest) other;
     return equals(orderId, o.orderId)
-        && equals(reason, o.reason);
+        && equals(reason, o.reason)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -69,6 +82,7 @@ public final class CancelOrderRequest extends Message {
     if (result == 0) {
       result = orderId != null ? orderId.hashCode() : 0;
       result = result * 37 + (reason != null ? reason.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

@@ -2,12 +2,16 @@
 
 #import <QJProtocolBuffers/ProtocolBuffers.h>
 
+@class ApplyRefundRequest;
+@class ApplyRefundResult;
 @class ApplyRevertRequest;
 @class ApplyRevertResult;
 @class CancelOrderRequest;
 @class CancelOrderResult;
 @class CommitOrderRequest;
 @class CommitOrderResult;
+@class CommitRefundTransRequest;
+@class CommitRefundTransResult;
 @class ConfirmOrderRequest;
 @class ConfirmOrderResult;
 @class ConfirmPayRequest;
@@ -35,6 +39,7 @@
 @property (readonly) BOOL hasInsurance;
 @property (readonly) BOOL hasOrderId;
 @property (readonly) BOOL hasOnlyCalPrice;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* categoryId;
 @property (nonatomic)SInt32 rentCount;
@@ -42,6 +47,7 @@
 @property (nonatomic)BOOL insurance;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)BOOL onlyCalPrice;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface CommitOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -96,6 +102,7 @@
 @property (readonly) BOOL hasAddressId;
 @property (readonly) BOOL hasUserMessage;
 @property (readonly) BOOL hasPayChannel;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* categoryId;
 @property (nonatomic)SInt32 rentCount;
@@ -106,6 +113,7 @@
 @property (nonatomic,strong) NSMutableArray * vouchers;
 @property (nonatomic,strong) NSString* userMessage;
 @property (nonatomic)SInt32 payChannel;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ConfirmOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -141,8 +149,10 @@
 @interface ConfirmPayRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOrderId;
 @property (readonly) BOOL hasPayChannel;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)SInt32 payChannel;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ConfirmPayResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -160,7 +170,9 @@
 
 @interface GetPayStatusRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* orderId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetPayStatusResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -185,12 +197,14 @@
 @property (readonly) BOOL hasStartIndex;
 @property (readonly) BOOL hasStartTime;
 @property (readonly) BOOL hasEndTime;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* keyWords;
 @property (nonatomic)SInt32 orderStatus;
 @property (nonatomic)BOOL evaluateStauts;
 @property (nonatomic)SInt32 startIndex;
 @property (nonatomic)SInt64 startTime;
 @property (nonatomic)SInt64 endTime;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface SearchOrderListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -256,7 +270,9 @@
 
 @interface DeleteOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* orderId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface DeleteOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -269,8 +285,10 @@
 @interface CancelOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOrderId;
 @property (readonly) BOOL hasReason;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic,strong) NSString* reason;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface CancelOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -282,7 +300,9 @@
 
 @interface ConfirmReceiveRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* orderId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ConfirmReceiveResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -297,10 +317,12 @@
 @property (readonly) BOOL hasApplyRevertType;
 @property (readonly) BOOL hasTransportationId;
 @property (readonly) BOOL hasTransportationCompany;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic,strong) NSString* applyRevertType;
 @property (nonatomic,strong) NSString* transportationId;
 @property (nonatomic,strong) NSString* transportationCompany;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ApplyRevertResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -310,9 +332,54 @@
 @property (nonatomic,strong) NSString* resultMsg;
 @end
 
+@interface ApplyRefundRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasRefundType;
+@property (readonly) BOOL hasGoodsStatus;
+@property (readonly) BOOL hasRefundReason;
+@property (readonly) BOOL hasRefundFee;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic,strong) NSString* refundType;
+@property (nonatomic,strong) NSString* goodsStatus;
+@property (nonatomic,strong) NSString* refundReason;
+@property (nonatomic)Float64 refundFee;
+@property (nonatomic,strong) NSMutableArray * evidentalImgs;
+@end
+
+@interface ApplyRefundResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@end
+
+@interface CommitRefundTransRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasRefundTransType;
+@property (readonly) BOOL hasTransportationId;
+@property (readonly) BOOL hasTransportationCompany;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic,strong) NSString* refundTransType;
+@property (nonatomic,strong) NSString* transportationId;
+@property (nonatomic,strong) NSString* transportationCompany;
+@end
+
+@interface CommitRefundTransResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@end
+
 @interface GetOrderDetailRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* orderId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetOrderDetailResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

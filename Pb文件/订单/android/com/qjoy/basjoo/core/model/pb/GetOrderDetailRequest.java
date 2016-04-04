@@ -6,6 +6,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
  * 获取订单详情请求
@@ -13,8 +14,10 @@ import static com.squareup.wire.Message.Datatype.STRING;
 public final class GetOrderDetailRequest extends Message {
 
   public static final int TAG_ORDERID = 1;
+  public static final int TAG_USERID = 2;
 
   public static final String DEFAULT_ORDERID = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 订单ID
@@ -22,10 +25,17 @@ public final class GetOrderDetailRequest extends Message {
   @ProtoField(tag = 1, type = STRING)
   public String orderId;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String userId;
+
   public GetOrderDetailRequest(GetOrderDetailRequest message) {
     super(message);
     if (message == null) return;
     this.orderId = message.orderId;
+    this.userId = message.userId;
   }
 
   public GetOrderDetailRequest() {
@@ -36,6 +46,9 @@ public final class GetOrderDetailRequest extends Message {
         case TAG_ORDERID:
         this.orderId = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -45,12 +58,19 @@ public final class GetOrderDetailRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof GetOrderDetailRequest)) return false;
-    return equals(orderId, ((GetOrderDetailRequest) other).orderId);
+    GetOrderDetailRequest o = (GetOrderDetailRequest) other;
+    return equals(orderId, o.orderId)
+        && equals(userId, o.userId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = orderId != null ? orderId.hashCode() : 0);
+    if (result == 0) {
+      result = orderId != null ? orderId.hashCode() : 0;
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }

@@ -16,9 +16,11 @@ public final class ConfirmPayRequest extends Message {
 
   public static final int TAG_ORDERID = 1;
   public static final int TAG_PAYCHANNEL = 2;
+  public static final int TAG_USERID = 3;
 
   public static final String DEFAULT_ORDERID = "";
   public static final Integer DEFAULT_PAYCHANNEL = 0;
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 订单ID
@@ -32,11 +34,18 @@ public final class ConfirmPayRequest extends Message {
   @ProtoField(tag = 2, type = INT32)
   public Integer payChannel;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  public String userId;
+
   public ConfirmPayRequest(ConfirmPayRequest message) {
     super(message);
     if (message == null) return;
     this.orderId = message.orderId;
     this.payChannel = message.payChannel;
+    this.userId = message.userId;
   }
 
   public ConfirmPayRequest() {
@@ -50,6 +59,9 @@ public final class ConfirmPayRequest extends Message {
         case TAG_PAYCHANNEL:
         this.payChannel = (Integer)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -61,7 +73,8 @@ public final class ConfirmPayRequest extends Message {
     if (!(other instanceof ConfirmPayRequest)) return false;
     ConfirmPayRequest o = (ConfirmPayRequest) other;
     return equals(orderId, o.orderId)
-        && equals(payChannel, o.payChannel);
+        && equals(payChannel, o.payChannel)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -70,6 +83,7 @@ public final class ConfirmPayRequest extends Message {
     if (result == 0) {
       result = orderId != null ? orderId.hashCode() : 0;
       result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

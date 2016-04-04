@@ -26,6 +26,12 @@ message CommitOrderRequest {
 	
 	//只计算价格，不需要返回权益和收货地址等信息
 	required bool                   onlyCalPrice = 7;
+
+ //用户ID   
+    required string                 userId = 8; 
+
+
+
     
 }
 
@@ -123,6 +129,8 @@ message ConfirmOrderRequest {
 	
 	//支付渠道，0：微信支付，1：支付宝
 	optional int32                  payChannel = 10;
+    //用户ID   
+    required string                 userId = 11; 
     
 }
 
@@ -175,7 +183,10 @@ message ConfirmPayRequest {
     required string                 orderId = 1; 	
 	
    //支付渠道，0：微信支付，1：支付宝
-	optional int32                  payChannel = 2;	
+	optional int32                  payChannel = 2;
+
+    //用户ID   
+    required string                 userId = 3; 	
     
 }
 
@@ -203,7 +214,10 @@ message ConfirmPayResult {
 message GetPayStatusRequest {   
 
      //订单ID
-    required string                 orderId = 1; 
+    required string                 orderId = 1;
+
+    //用户ID   
+    required string                 userId = 2;  
     
 }
 
@@ -252,6 +266,9 @@ message SearchOrderListRequest{
   
   //订单结束时间
   optional int64 endTime = 6;
+
+  //用户ID   
+  required string   userId = 7; 
 }
 
 
@@ -352,6 +369,9 @@ message DeleteOrderRequest {
 	
     //订单ID
     required string                 orderId = 1; 	
+
+    //用户ID   
+    required string                 userId = 2; 
     
 }
 
@@ -373,7 +393,10 @@ message CancelOrderRequest {
     required string                 orderId = 1; 	
 	
 	//取消理由
-	required string                 reason = 2;
+    required string                 reason = 2;
+
+    //用户ID   
+    required string                 userId = 3; 
     
 }
 
@@ -391,7 +414,9 @@ message CancelOrderResult {
 message ConfirmReceiveRequest {      
 	
     //订单ID
-    required string                 orderId = 1; 	
+    required string                 orderId = 1; 
+    //用户ID   
+    required string                 userId = 2; 	
     
 }
 
@@ -420,6 +445,9 @@ message ApplyRevertRequest {
 	
 	//快递公司
     optional string                 transportationCompany = 4; 
+
+    //用户ID   
+    required string                 userId = 5; 
     
     
 }
@@ -436,11 +464,87 @@ message ApplyRevertResult {
 }
 
 
+
+//申请退款请求
+message ApplyRefundRequest {   
+
+    //用户ID   
+    required string                 userId = 1; 
+	
+    //订单ID
+    required string                 orderId = 2; 
+
+    //退款类型 1：仅退款，2：退款＋退货
+    required string                 refundType = 3; 
+
+    //货物状态
+    optional string                 goodsStatus = 4;
+
+    //退款理由
+    required string                 refundReason = 5;
+ 
+    //退款金额
+    optional double                 refundFee = 6;	
+
+    //退款凭证图片
+    repeated string                 evidentalImgs = 7;
+
+      
+	
+ 
+}
+
+
+//申请退款结果
+message ApplyRefundResult {  
+
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+}
+
+
+//提交退款的物流信息
+message CommitRefundTransRequest {   
+
+    //用户ID   
+    required string                 userId = 1; 
+	
+    //订单ID
+    required string                 orderId = 2; 
+
+    //退还方式 1：快递归还(默认)，2：现场归还
+    required string                 refundTransType = 3; 	
+
+    //快递号
+    optional string                 transportationId = 4; 	
+	
+    //快递公司
+    optional string                 transportationCompany = 5; 
+ 
+}
+
+
+//提交退款的物流信息结果
+message CommitRefundTransResult {  
+
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+    
+}
+
+
 //获取订单详情请求
 message GetOrderDetailRequest {      
 	
     //订单ID
     optional string                 orderId = 1; 	
+    //用户ID   
+    required string                 userId = 2; 
     
 }
 

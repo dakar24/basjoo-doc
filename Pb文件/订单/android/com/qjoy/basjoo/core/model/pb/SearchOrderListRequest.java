@@ -9,6 +9,7 @@ import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.INT64;
 import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
  * 搜索订单列表
@@ -21,6 +22,7 @@ public final class SearchOrderListRequest extends Message {
   public static final int TAG_STARTINDEX = 4;
   public static final int TAG_STARTTIME = 5;
   public static final int TAG_ENDTIME = 6;
+  public static final int TAG_USERID = 7;
 
   public static final String DEFAULT_KEYWORDS = "";
   public static final Integer DEFAULT_ORDERSTATUS = 0;
@@ -28,6 +30,7 @@ public final class SearchOrderListRequest extends Message {
   public static final Integer DEFAULT_STARTINDEX = 0;
   public static final Long DEFAULT_STARTTIME = 0L;
   public static final Long DEFAULT_ENDTIME = 0L;
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 搜索关键字,订单ID
@@ -65,6 +68,12 @@ public final class SearchOrderListRequest extends Message {
   @ProtoField(tag = 6, type = INT64)
   public Long endTime;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 7, type = STRING, label = REQUIRED)
+  public String userId;
+
   public SearchOrderListRequest(SearchOrderListRequest message) {
     super(message);
     if (message == null) return;
@@ -74,6 +83,7 @@ public final class SearchOrderListRequest extends Message {
     this.startIndex = message.startIndex;
     this.startTime = message.startTime;
     this.endTime = message.endTime;
+    this.userId = message.userId;
   }
 
   public SearchOrderListRequest() {
@@ -99,6 +109,9 @@ public final class SearchOrderListRequest extends Message {
         case TAG_ENDTIME:
         this.endTime = (Long)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -114,7 +127,8 @@ public final class SearchOrderListRequest extends Message {
         && equals(evaluateStauts, o.evaluateStauts)
         && equals(startIndex, o.startIndex)
         && equals(startTime, o.startTime)
-        && equals(endTime, o.endTime);
+        && equals(endTime, o.endTime)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -127,6 +141,7 @@ public final class SearchOrderListRequest extends Message {
       result = result * 37 + (startIndex != null ? startIndex.hashCode() : 0);
       result = result * 37 + (startTime != null ? startTime.hashCode() : 0);
       result = result * 37 + (endTime != null ? endTime.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;
