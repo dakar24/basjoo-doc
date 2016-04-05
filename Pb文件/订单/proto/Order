@@ -489,9 +489,10 @@ message ApplyRefundRequest {
     //退款凭证图片
     repeated string                 evidentalImgs = 7;
 
-      
-	
- 
+   //退款说明
+    optional string                 refundIntro = 8;
+
+       
 }
 
 
@@ -523,6 +524,9 @@ message CommitRefundTransRequest {
 	
     //快递公司
     optional string                 transportationCompany = 5; 
+
+    //物流说明
+    optional string                 transportationIntro = 6; 
  
 }
 

@@ -24,6 +24,7 @@ public final class ApplyRefundRequest extends Message {
   public static final int TAG_REFUNDREASON = 5;
   public static final int TAG_REFUNDFEE = 6;
   public static final int TAG_EVIDENTALIMGS = 7;
+  public static final int TAG_REFUNDINTRO = 8;
 
   public static final String DEFAULT_USERID = "";
   public static final String DEFAULT_ORDERID = "";
@@ -32,6 +33,7 @@ public final class ApplyRefundRequest extends Message {
   public static final String DEFAULT_REFUNDREASON = "";
   public static final Double DEFAULT_REFUNDFEE = 0D;
   public static final List<String> DEFAULT_EVIDENTALIMGS = Collections.emptyList();
+  public static final String DEFAULT_REFUNDINTRO = "";
 
   /**
    * 用户ID
@@ -75,6 +77,12 @@ public final class ApplyRefundRequest extends Message {
   @ProtoField(tag = 7, type = STRING, label = REPEATED)
   public List<String> evidentalImgs;
 
+  /**
+   * 退款说明
+   */
+  @ProtoField(tag = 8, type = STRING)
+  public String refundIntro;
+
   public ApplyRefundRequest(ApplyRefundRequest message) {
     super(message);
     if (message == null) return;
@@ -85,6 +93,7 @@ public final class ApplyRefundRequest extends Message {
     this.refundReason = message.refundReason;
     this.refundFee = message.refundFee;
     this.evidentalImgs = copyOf(message.evidentalImgs);
+    this.refundIntro = message.refundIntro;
   }
 
   public ApplyRefundRequest() {
@@ -113,6 +122,9 @@ public final class ApplyRefundRequest extends Message {
         case TAG_EVIDENTALIMGS:
         this.evidentalImgs = immutableCopyOf((List<String>)value);
         break;
+        case TAG_REFUNDINTRO:
+        this.refundIntro = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -129,7 +141,8 @@ public final class ApplyRefundRequest extends Message {
         && equals(goodsStatus, o.goodsStatus)
         && equals(refundReason, o.refundReason)
         && equals(refundFee, o.refundFee)
-        && equals(evidentalImgs, o.evidentalImgs);
+        && equals(evidentalImgs, o.evidentalImgs)
+        && equals(refundIntro, o.refundIntro);
   }
 
   @Override
@@ -143,6 +156,7 @@ public final class ApplyRefundRequest extends Message {
       result = result * 37 + (refundReason != null ? refundReason.hashCode() : 0);
       result = result * 37 + (refundFee != null ? refundFee.hashCode() : 0);
       result = result * 37 + (evidentalImgs != null ? evidentalImgs.hashCode() : 1);
+      result = result * 37 + (refundIntro != null ? refundIntro.hashCode() : 0);
       hashCode = result;
     }
     return result;

@@ -18,12 +18,14 @@ public final class CommitRefundTransRequest extends Message {
   public static final int TAG_REFUNDTRANSTYPE = 3;
   public static final int TAG_TRANSPORTATIONID = 4;
   public static final int TAG_TRANSPORTATIONCOMPANY = 5;
+  public static final int TAG_TRANSPORTATIONINTRO = 6;
 
   public static final String DEFAULT_USERID = "";
   public static final String DEFAULT_ORDERID = "";
   public static final String DEFAULT_REFUNDTRANSTYPE = "";
   public static final String DEFAULT_TRANSPORTATIONID = "";
   public static final String DEFAULT_TRANSPORTATIONCOMPANY = "";
+  public static final String DEFAULT_TRANSPORTATIONINTRO = "";
 
   /**
    * 用户ID
@@ -55,6 +57,12 @@ public final class CommitRefundTransRequest extends Message {
   @ProtoField(tag = 5, type = STRING)
   public String transportationCompany;
 
+  /**
+   * 物流说明
+   */
+  @ProtoField(tag = 6, type = STRING)
+  public String transportationIntro;
+
   public CommitRefundTransRequest(CommitRefundTransRequest message) {
     super(message);
     if (message == null) return;
@@ -63,6 +71,7 @@ public final class CommitRefundTransRequest extends Message {
     this.refundTransType = message.refundTransType;
     this.transportationId = message.transportationId;
     this.transportationCompany = message.transportationCompany;
+    this.transportationIntro = message.transportationIntro;
   }
 
   public CommitRefundTransRequest() {
@@ -85,6 +94,9 @@ public final class CommitRefundTransRequest extends Message {
         case TAG_TRANSPORTATIONCOMPANY:
         this.transportationCompany = (String)value;
         break;
+        case TAG_TRANSPORTATIONINTRO:
+        this.transportationIntro = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -99,7 +111,8 @@ public final class CommitRefundTransRequest extends Message {
         && equals(orderId, o.orderId)
         && equals(refundTransType, o.refundTransType)
         && equals(transportationId, o.transportationId)
-        && equals(transportationCompany, o.transportationCompany);
+        && equals(transportationCompany, o.transportationCompany)
+        && equals(transportationIntro, o.transportationIntro);
   }
 
   @Override
@@ -111,6 +124,7 @@ public final class CommitRefundTransRequest extends Message {
       result = result * 37 + (refundTransType != null ? refundTransType.hashCode() : 0);
       result = result * 37 + (transportationId != null ? transportationId.hashCode() : 0);
       result = result * 37 + (transportationCompany != null ? transportationCompany.hashCode() : 0);
+      result = result * 37 + (transportationIntro != null ? transportationIntro.hashCode() : 0);
       hashCode = result;
     }
     return result;

@@ -3215,6 +3215,7 @@
     _goodsStatus = @"";
     _refundReason = @"";
     _refundFee = 0;
+    _refundIntro = @"";
   }
   return self;
 }
@@ -3240,6 +3241,9 @@
   [self.evidentalImgs enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
     [output writeString:7 value:element];
   }];
+  if (self.hasRefundIntro) {
+    [output writeString:8 value:self.refundIntro];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -3273,6 +3277,9 @@
     size_ += dataSize;
     size_ += (SInt32)(1 * count);
   }
+  if (self.hasRefundIntro) {
+    size_ += computeStringSize(8, self.refundIntro);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -3304,6 +3311,9 @@
   [self.evidentalImgs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@: %@\n", indent, @"evidentalImgs", obj];
   }];
+  if (self.hasRefundIntro) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"refundIntro", self.refundIntro];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -3339,6 +3349,10 @@
     _evidentalImgs = [[NSMutableArray alloc]init];
   }
   [_evidentalImgs addObject:value];
+}
+- (void) setRefundIntro:(NSString*) value {
+  _hasRefundIntro = YES;
+  _refundIntro = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -3381,6 +3395,10 @@
       }
       case 58: {
         [self addEvidentalImgs:[input readString]];
+        break;
+      }
+      case 66: {
+        [self setRefundIntro:[input readString]];
         break;
       }
     }
@@ -3482,6 +3500,7 @@
     _refundTransType = @"";
     _transportationId = @"";
     _transportationCompany = @"";
+    _transportationIntro = @"";
   }
   return self;
 }
@@ -3500,6 +3519,9 @@
   }
   if (self.hasTransportationCompany) {
     [output writeString:5 value:self.transportationCompany];
+  }
+  if (self.hasTransportationIntro) {
+    [output writeString:6 value:self.transportationIntro];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -3521,6 +3543,9 @@
   }
   if (self.hasTransportationCompany) {
     size_ += computeStringSize(5, self.transportationCompany);
+  }
+  if (self.hasTransportationIntro) {
+    size_ += computeStringSize(6, self.transportationIntro);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -3547,6 +3572,9 @@
   if (self.hasTransportationCompany) {
     [output appendFormat:@"%@%@: %@\n", indent, @"transportationCompany", self.transportationCompany];
   }
+  if (self.hasTransportationIntro) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"transportationIntro", self.transportationIntro];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -3569,6 +3597,10 @@
 - (void) setTransportationCompany:(NSString*) value {
   _hasTransportationCompany = YES;
   _transportationCompany = value;
+}
+- (void) setTransportationIntro:(NSString*) value {
+  _hasTransportationIntro = YES;
+  _transportationIntro = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -3603,6 +3635,10 @@
       }
       case 42: {
         [self setTransportationCompany:[input readString]];
+        break;
+      }
+      case 50: {
+        [self setTransportationIntro:[input readString]];
         break;
       }
     }

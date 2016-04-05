@@ -339,6 +339,7 @@
 @property (readonly) BOOL hasGoodsStatus;
 @property (readonly) BOOL hasRefundReason;
 @property (readonly) BOOL hasRefundFee;
+@property (readonly) BOOL hasRefundIntro;
 @property (nonatomic,strong) NSString* userId;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic,strong) NSString* refundType;
@@ -346,6 +347,7 @@
 @property (nonatomic,strong) NSString* refundReason;
 @property (nonatomic)Float64 refundFee;
 @property (nonatomic,strong) NSMutableArray * evidentalImgs;
+@property (nonatomic,strong) NSString* refundIntro;
 @end
 
 @interface ApplyRefundResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -361,11 +363,13 @@
 @property (readonly) BOOL hasRefundTransType;
 @property (readonly) BOOL hasTransportationId;
 @property (readonly) BOOL hasTransportationCompany;
+@property (readonly) BOOL hasTransportationIntro;
 @property (nonatomic,strong) NSString* userId;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic,strong) NSString* refundTransType;
 @property (nonatomic,strong) NSString* transportationId;
 @property (nonatomic,strong) NSString* transportationCompany;
+@property (nonatomic,strong) NSString* transportationIntro;
 @end
 
 @interface CommitRefundTransResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

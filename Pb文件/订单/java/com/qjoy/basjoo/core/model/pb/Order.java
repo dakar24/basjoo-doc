@@ -27996,6 +27996,32 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getEvidentalImgsBytes(int index);
+
+    /**
+     * <code>optional string refundIntro = 8;</code>
+     *
+     * <pre>
+     *退款说明
+     * </pre>
+     */
+    boolean hasRefundIntro();
+    /**
+     * <code>optional string refundIntro = 8;</code>
+     *
+     * <pre>
+     *退款说明
+     * </pre>
+     */
+    java.lang.String getRefundIntro();
+    /**
+     * <code>optional string refundIntro = 8;</code>
+     *
+     * <pre>
+     *退款说明
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getRefundIntroBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ApplyRefundRequest}
@@ -28095,6 +28121,12 @@ public final class Order {
                 mutable_bitField0_ |= 0x00000040;
               }
               evidentalImgs_.add(bs);
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              refundIntro_ = bs;
               break;
             }
           }
@@ -28478,6 +28510,60 @@ public final class Order {
       return evidentalImgs_.getByteString(index);
     }
 
+    public static final int REFUNDINTRO_FIELD_NUMBER = 8;
+    private java.lang.Object refundIntro_;
+    /**
+     * <code>optional string refundIntro = 8;</code>
+     *
+     * <pre>
+     *退款说明
+     * </pre>
+     */
+    public boolean hasRefundIntro() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional string refundIntro = 8;</code>
+     *
+     * <pre>
+     *退款说明
+     * </pre>
+     */
+    public java.lang.String getRefundIntro() {
+      java.lang.Object ref = refundIntro_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          refundIntro_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string refundIntro = 8;</code>
+     *
+     * <pre>
+     *退款说明
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getRefundIntroBytes() {
+      java.lang.Object ref = refundIntro_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        refundIntro_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       userId_ = "";
       orderId_ = "";
@@ -28486,6 +28572,7 @@ public final class Order {
       refundReason_ = "";
       refundFee_ = 0D;
       evidentalImgs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      refundIntro_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -28537,6 +28624,9 @@ public final class Order {
       for (int i = 0; i < evidentalImgs_.size(); i++) {
         output.writeBytes(7, evidentalImgs_.getByteString(i));
       }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(8, getRefundIntroBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -28578,6 +28668,10 @@ public final class Order {
         }
         size += dataSize;
         size += 1 * getEvidentalImgsList().size();
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, getRefundIntroBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -28714,6 +28808,8 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000020);
         evidentalImgs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000040);
+        refundIntro_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -28771,6 +28867,10 @@ public final class Order {
           bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.evidentalImgs_ = evidentalImgs_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.refundIntro_ = refundIntro_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -28823,6 +28923,11 @@ public final class Order {
             ensureEvidentalImgsIsMutable();
             evidentalImgs_.addAll(other.evidentalImgs_);
           }
+          onChanged();
+        }
+        if (other.hasRefundIntro()) {
+          bitField0_ |= 0x00000080;
+          refundIntro_ = other.refundIntro_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -29541,6 +29646,106 @@ public final class Order {
   }
   ensureEvidentalImgsIsMutable();
         evidentalImgs_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object refundIntro_ = "";
+      /**
+       * <code>optional string refundIntro = 8;</code>
+       *
+       * <pre>
+       *退款说明
+       * </pre>
+       */
+      public boolean hasRefundIntro() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional string refundIntro = 8;</code>
+       *
+       * <pre>
+       *退款说明
+       * </pre>
+       */
+      public java.lang.String getRefundIntro() {
+        java.lang.Object ref = refundIntro_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            refundIntro_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string refundIntro = 8;</code>
+       *
+       * <pre>
+       *退款说明
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getRefundIntroBytes() {
+        java.lang.Object ref = refundIntro_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          refundIntro_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string refundIntro = 8;</code>
+       *
+       * <pre>
+       *退款说明
+       * </pre>
+       */
+      public Builder setRefundIntro(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        refundIntro_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string refundIntro = 8;</code>
+       *
+       * <pre>
+       *退款说明
+       * </pre>
+       */
+      public Builder clearRefundIntro() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        refundIntro_ = getDefaultInstance().getRefundIntro();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string refundIntro = 8;</code>
+       *
+       * <pre>
+       *退款说明
+       * </pre>
+       */
+      public Builder setRefundIntroBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        refundIntro_ = value;
         onChanged();
         return this;
       }
@@ -30346,6 +30551,32 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getTransportationCompanyBytes();
+
+    /**
+     * <code>optional string transportationIntro = 6;</code>
+     *
+     * <pre>
+     *物流说明
+     * </pre>
+     */
+    boolean hasTransportationIntro();
+    /**
+     * <code>optional string transportationIntro = 6;</code>
+     *
+     * <pre>
+     *物流说明
+     * </pre>
+     */
+    java.lang.String getTransportationIntro();
+    /**
+     * <code>optional string transportationIntro = 6;</code>
+     *
+     * <pre>
+     *物流说明
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getTransportationIntroBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CommitRefundTransRequest}
@@ -30431,6 +30662,12 @@ public final class Order {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
               transportationCompany_ = bs;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              transportationIntro_ = bs;
               break;
             }
           }
@@ -30743,12 +30980,67 @@ public final class Order {
       }
     }
 
+    public static final int TRANSPORTATIONINTRO_FIELD_NUMBER = 6;
+    private java.lang.Object transportationIntro_;
+    /**
+     * <code>optional string transportationIntro = 6;</code>
+     *
+     * <pre>
+     *物流说明
+     * </pre>
+     */
+    public boolean hasTransportationIntro() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string transportationIntro = 6;</code>
+     *
+     * <pre>
+     *物流说明
+     * </pre>
+     */
+    public java.lang.String getTransportationIntro() {
+      java.lang.Object ref = transportationIntro_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          transportationIntro_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string transportationIntro = 6;</code>
+     *
+     * <pre>
+     *物流说明
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getTransportationIntroBytes() {
+      java.lang.Object ref = transportationIntro_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        transportationIntro_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       userId_ = "";
       orderId_ = "";
       refundTransType_ = "";
       transportationId_ = "";
       transportationCompany_ = "";
+      transportationIntro_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -30790,6 +31082,9 @@ public final class Order {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(5, getTransportationCompanyBytes());
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getTransportationIntroBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -30818,6 +31113,10 @@ public final class Order {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, getTransportationCompanyBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getTransportationIntroBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -30950,6 +31249,8 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000008);
         transportationCompany_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
+        transportationIntro_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -30998,6 +31299,10 @@ public final class Order {
           to_bitField0_ |= 0x00000010;
         }
         result.transportationCompany_ = transportationCompany_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.transportationIntro_ = transportationIntro_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -31037,6 +31342,11 @@ public final class Order {
         if (other.hasTransportationCompany()) {
           bitField0_ |= 0x00000010;
           transportationCompany_ = other.transportationCompany_;
+          onChanged();
+        }
+        if (other.hasTransportationIntro()) {
+          bitField0_ |= 0x00000020;
+          transportationIntro_ = other.transportationIntro_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -31574,6 +31884,106 @@ public final class Order {
   }
   bitField0_ |= 0x00000010;
         transportationCompany_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object transportationIntro_ = "";
+      /**
+       * <code>optional string transportationIntro = 6;</code>
+       *
+       * <pre>
+       *物流说明
+       * </pre>
+       */
+      public boolean hasTransportationIntro() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string transportationIntro = 6;</code>
+       *
+       * <pre>
+       *物流说明
+       * </pre>
+       */
+      public java.lang.String getTransportationIntro() {
+        java.lang.Object ref = transportationIntro_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            transportationIntro_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string transportationIntro = 6;</code>
+       *
+       * <pre>
+       *物流说明
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getTransportationIntroBytes() {
+        java.lang.Object ref = transportationIntro_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          transportationIntro_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string transportationIntro = 6;</code>
+       *
+       * <pre>
+       *物流说明
+       * </pre>
+       */
+      public Builder setTransportationIntro(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        transportationIntro_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string transportationIntro = 6;</code>
+       *
+       * <pre>
+       *物流说明
+       * </pre>
+       */
+      public Builder clearTransportationIntro() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        transportationIntro_ = getDefaultInstance().getTransportationIntro();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string transportationIntro = 6;</code>
+       *
+       * <pre>
+       *物流说明
+       * </pre>
+       */
+      public Builder setTransportationIntroBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        transportationIntro_ = value;
         onChanged();
         return this;
       }
@@ -38601,39 +39011,41 @@ public final class Order {
       "\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025transport" +
       "ationCompany\030\004 \001(\t\022\016\n\006userId\030\005 \002(\t\":\n\021Ap" +
       "plyRevertResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tr" +
-      "esultMsg\030\002 \002(\t\"\236\001\n\022ApplyRefundRequest\022\016\n" +
+      "esultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefundRequest\022\016\n" +
       "\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\022\n\nrefund",
       "Type\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001(\t\022\024\n\014refun" +
       "dReason\030\005 \002(\t\022\021\n\trefundFee\030\006 \001(\001\022\025\n\revid" +
-      "entalImgs\030\007 \003(\t\":\n\021ApplyRefundResult\022\022\n\n" +
-      "resultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\215\001\n\030" +
-      "CommitRefundTransRequest\022\016\n\006userId\030\001 \002(\t" +
-      "\022\017\n\007orderId\030\002 \002(\t\022\027\n\017refundTransType\030\003 \002" +
-      "(\t\022\030\n\020transportationId\030\004 \001(\t\022\035\n\025transpor" +
-      "tationCompany\030\005 \001(\t\"@\n\027CommitRefundTrans" +
-      "Result\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030" +
-      "\002 \002(\t\"8\n\025GetOrderDetailRequest\022\017\n\007orderI",
-      "d\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"\206\001\n\024GetOrderDeta" +
-      "ilResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMs" +
-      "g\030\002 \002(\t\022G\n\017orderDetailInfo\030\003 \002(\0132..com.q" +
-      "joy.basjoo.core.model.pb.OrderDetailInfo" +
-      "\"\373\004\n\017OrderDetailInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n" +
-      "\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025" +
-      "\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002" +
-      "(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022" +
-      "\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022" +
-      "\033\n\023transportationPrice\030\n \001(\001\022\022\n\ntotalPri",
-      "ce\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016ev" +
-      "aluateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n" +
-      "\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014cat" +
-      "egoryName\030\021 \002(\t\022\017\n\007payTime\030\022 \001(\003\022\r\n\005payI" +
-      "d\030\023 \001(\t\022\022\n\npayChannel\030\024 \001(\t\022\024\n\014deliveryT" +
-      "ime\030\025 \001(\003\022\023\n\013receiveTime\030\026 \001(\003\022\022\n\nrevert" +
-      "Time\030\027 \001(\003\022\024\n\014completeTime\030\030 \001(\003\022\021\n\tclos" +
-      "eTime\030\031 \001(\003\022\020\n\010vouchers\030\032 \003(\t\022W\n\027orderRe" +
-      "ceiveAddressInfo\030\033 \001(\01326.com.qjoy.basjoo" +
-      ".core.model.pb.OrderReceiveAddressInfoB\037",
-      "\n\035com.qjoy.basjoo.core.model.pb"
+      "entalImgs\030\007 \003(\t\022\023\n\013refundIntro\030\010 \001(\t\":\n\021" +
+      "ApplyRefundResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
+      "\tresultMsg\030\002 \002(\t\"\252\001\n\030CommitRefundTransRe" +
+      "quest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\027" +
+      "\n\017refundTransType\030\003 \002(\t\022\030\n\020transportatio" +
+      "nId\030\004 \001(\t\022\035\n\025transportationCompany\030\005 \001(\t" +
+      "\022\033\n\023transportationIntro\030\006 \001(\t\"@\n\027CommitR" +
+      "efundTransResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t",
+      "resultMsg\030\002 \002(\t\"8\n\025GetOrderDetailRequest" +
+      "\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"\206\001\n\024Ge" +
+      "tOrderDetailResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
+      "\n\tresultMsg\030\002 \002(\t\022G\n\017orderDetailInfo\030\003 \002" +
+      "(\0132..com.qjoy.basjoo.core.model.pb.Order" +
+      "DetailInfo\"\373\004\n\017OrderDetailInfo\022\017\n\007orderI" +
+      "d\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTi" +
+      "me\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentE" +
+      "ndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCo" +
+      "unt\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePr",
+      "ice\030\t \002(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022" +
+      "\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportationId\030\014" +
+      " \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tproductI" +
+      "d\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 " +
+      "\002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTime\030\022 \001" +
+      "(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 \001(\t\022\024\n" +
+      "\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTime\030\026 \001(\003" +
+      "\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTime\030\030 \001" +
+      "(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030\032 \003(\t\022" +
+      "W\n\027orderReceiveAddressInfo\030\033 \001(\01326.com.q",
+      "joy.basjoo.core.model.pb.OrderReceiveAdd" +
+      "ressInfoB\037\n\035com.qjoy.basjoo.core.model.p" +
+      "b"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -38778,7 +39190,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRefundRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ApplyRefundRequest_descriptor,
-        new java.lang.String[] { "UserId", "OrderId", "RefundType", "GoodsStatus", "RefundReason", "RefundFee", "EvidentalImgs", });
+        new java.lang.String[] { "UserId", "OrderId", "RefundType", "GoodsStatus", "RefundReason", "RefundFee", "EvidentalImgs", "RefundIntro", });
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRefundResult_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRefundResult_fieldAccessorTable = new
@@ -38790,7 +39202,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_CommitRefundTransRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CommitRefundTransRequest_descriptor,
-        new java.lang.String[] { "UserId", "OrderId", "RefundTransType", "TransportationId", "TransportationCompany", });
+        new java.lang.String[] { "UserId", "OrderId", "RefundTransType", "TransportationId", "TransportationCompany", "TransportationIntro", });
     internal_static_com_qjoy_basjoo_core_model_pb_CommitRefundTransResult_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_com_qjoy_basjoo_core_model_pb_CommitRefundTransResult_fieldAccessorTable = new
