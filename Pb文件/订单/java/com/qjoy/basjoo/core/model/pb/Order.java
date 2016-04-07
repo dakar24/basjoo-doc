@@ -1996,7 +1996,7 @@ public final class Order {
      * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
-     *订单收货地址信息
+     *订单的默认收货地址
      * </pre>
      */
     boolean hasOrderReceiveAddressInfo();
@@ -2004,7 +2004,7 @@ public final class Order {
      * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
-     *订单收货地址信息
+     *订单的默认收货地址
      * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo getOrderReceiveAddressInfo();
@@ -2012,7 +2012,7 @@ public final class Order {
      * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
-     *订单收货地址信息
+     *订单的默认收货地址
      * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder getOrderReceiveAddressInfoOrBuilder();
@@ -2632,7 +2632,7 @@ public final class Order {
      * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
-     *订单收货地址信息
+     *订单的默认收货地址
      * </pre>
      */
     public boolean hasOrderReceiveAddressInfo() {
@@ -2642,7 +2642,7 @@ public final class Order {
      * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
-     *订单收货地址信息
+     *订单的默认收货地址
      * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo getOrderReceiveAddressInfo() {
@@ -2652,7 +2652,7 @@ public final class Order {
      * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
      *
      * <pre>
-     *订单收货地址信息
+     *订单的默认收货地址
      * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder getOrderReceiveAddressInfoOrBuilder() {
@@ -4059,7 +4059,7 @@ public final class Order {
        * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
-       *订单收货地址信息
+       *订单的默认收货地址
        * </pre>
        */
       public boolean hasOrderReceiveAddressInfo() {
@@ -4069,7 +4069,7 @@ public final class Order {
        * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
-       *订单收货地址信息
+       *订单的默认收货地址
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo getOrderReceiveAddressInfo() {
@@ -4083,7 +4083,7 @@ public final class Order {
        * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
-       *订单收货地址信息
+       *订单的默认收货地址
        * </pre>
        */
       public Builder setOrderReceiveAddressInfo(com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo value) {
@@ -4103,7 +4103,7 @@ public final class Order {
        * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
-       *订单收货地址信息
+       *订单的默认收货地址
        * </pre>
        */
       public Builder setOrderReceiveAddressInfo(
@@ -4121,7 +4121,7 @@ public final class Order {
        * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
-       *订单收货地址信息
+       *订单的默认收货地址
        * </pre>
        */
       public Builder mergeOrderReceiveAddressInfo(com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo value) {
@@ -4144,7 +4144,7 @@ public final class Order {
        * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
-       *订单收货地址信息
+       *订单的默认收货地址
        * </pre>
        */
       public Builder clearOrderReceiveAddressInfo() {
@@ -4161,7 +4161,7 @@ public final class Order {
        * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
-       *订单收货地址信息
+       *订单的默认收货地址
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.Builder getOrderReceiveAddressInfoBuilder() {
@@ -4173,7 +4173,7 @@ public final class Order {
        * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
-       *订单收货地址信息
+       *订单的默认收货地址
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder getOrderReceiveAddressInfoOrBuilder() {
@@ -4187,7 +4187,7 @@ public final class Order {
        * <code>optional .com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo orderReceiveAddressInfo = 14;</code>
        *
        * <pre>
-       *订单收货地址信息
+       *订单的默认收货地址
        * </pre>
        */
       private com.google.protobuf.SingleFieldBuilder<
@@ -4220,7 +4220,163 @@ public final class Order {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string addressId = 1;</code>
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    boolean hasReceiver();
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    java.lang.String getReceiver();
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getReceiverBytes();
+
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    boolean hasMobileNo();
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    java.lang.String getMobileNo();
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getMobileNoBytes();
+
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    boolean hasSection();
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    java.lang.String getSection();
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getSectionBytes();
+
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    boolean hasStreet();
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    java.lang.String getStreet();
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getStreetBytes();
+
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    boolean hasDetail();
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    java.lang.String getDetail();
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getDetailBytes();
+
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    boolean hasPostCode();
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    java.lang.String getPostCode();
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getPostCodeBytes();
+
+    /**
+     * <code>optional string addressId = 7;</code>
      *
      * <pre>
      *地址ID
@@ -4228,7 +4384,7 @@ public final class Order {
      */
     boolean hasAddressId();
     /**
-     * <code>required string addressId = 1;</code>
+     * <code>optional string addressId = 7;</code>
      *
      * <pre>
      *地址ID
@@ -4236,7 +4392,7 @@ public final class Order {
      */
     java.lang.String getAddressId();
     /**
-     * <code>required string addressId = 1;</code>
+     * <code>optional string addressId = 7;</code>
      *
      * <pre>
      *地址ID
@@ -4244,87 +4400,13 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getAddressIdBytes();
-
-    /**
-     * <code>required string receiver = 2;</code>
-     *
-     * <pre>
-     *收件人
-     * </pre>
-     */
-    boolean hasReceiver();
-    /**
-     * <code>required string receiver = 2;</code>
-     *
-     * <pre>
-     *收件人
-     * </pre>
-     */
-    java.lang.String getReceiver();
-    /**
-     * <code>required string receiver = 2;</code>
-     *
-     * <pre>
-     *收件人
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getReceiverBytes();
-
-    /**
-     * <code>required string mobileNo = 3;</code>
-     *
-     * <pre>
-     *手机号
-     * </pre>
-     */
-    boolean hasMobileNo();
-    /**
-     * <code>required string mobileNo = 3;</code>
-     *
-     * <pre>
-     *手机号
-     * </pre>
-     */
-    java.lang.String getMobileNo();
-    /**
-     * <code>required string mobileNo = 3;</code>
-     *
-     * <pre>
-     *手机号
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getMobileNoBytes();
-
-    /**
-     * <code>required string addressDetail = 4;</code>
-     *
-     * <pre>
-     *详细地址
-     * </pre>
-     */
-    boolean hasAddressDetail();
-    /**
-     * <code>required string addressDetail = 4;</code>
-     *
-     * <pre>
-     *详细地址
-     * </pre>
-     */
-    java.lang.String getAddressDetail();
-    /**
-     * <code>required string addressDetail = 4;</code>
-     *
-     * <pre>
-     *详细地址
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getAddressDetailBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo}
+   *
+   * <pre>
+   *订单的默认收货地址
+   * </pre>
    */
   public static final class OrderReceiveAddressInfo extends
       com.google.protobuf.GeneratedMessage implements
@@ -4378,25 +4460,43 @@ public final class Order {
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              addressId_ = bs;
+              receiver_ = bs;
               break;
             }
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              receiver_ = bs;
+              mobileNo_ = bs;
               break;
             }
             case 26: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              mobileNo_ = bs;
+              section_ = bs;
               break;
             }
             case 34: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              addressDetail_ = bs;
+              street_ = bs;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              detail_ = bs;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              postCode_ = bs;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              addressId_ = bs;
               break;
             }
           }
@@ -4439,20 +4539,344 @@ public final class Order {
     }
 
     private int bitField0_;
-    public static final int ADDRESSID_FIELD_NUMBER = 1;
+    public static final int RECEIVER_FIELD_NUMBER = 1;
+    private java.lang.Object receiver_;
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    public boolean hasReceiver() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    public java.lang.String getReceiver() {
+      java.lang.Object ref = receiver_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          receiver_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getReceiverBytes() {
+      java.lang.Object ref = receiver_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        receiver_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MOBILENO_FIELD_NUMBER = 2;
+    private java.lang.Object mobileNo_;
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    public boolean hasMobileNo() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    public java.lang.String getMobileNo() {
+      java.lang.Object ref = mobileNo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          mobileNo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getMobileNoBytes() {
+      java.lang.Object ref = mobileNo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mobileNo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SECTION_FIELD_NUMBER = 3;
+    private java.lang.Object section_;
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    public boolean hasSection() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    public java.lang.String getSection() {
+      java.lang.Object ref = section_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          section_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getSectionBytes() {
+      java.lang.Object ref = section_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        section_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STREET_FIELD_NUMBER = 4;
+    private java.lang.Object street_;
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    public boolean hasStreet() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    public java.lang.String getStreet() {
+      java.lang.Object ref = street_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          street_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getStreetBytes() {
+      java.lang.Object ref = street_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        street_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DETAIL_FIELD_NUMBER = 5;
+    private java.lang.Object detail_;
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    public boolean hasDetail() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    public java.lang.String getDetail() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          detail_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getDetailBytes() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        detail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POSTCODE_FIELD_NUMBER = 6;
+    private java.lang.Object postCode_;
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    public boolean hasPostCode() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    public java.lang.String getPostCode() {
+      java.lang.Object ref = postCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          postCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getPostCodeBytes() {
+      java.lang.Object ref = postCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        postCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESSID_FIELD_NUMBER = 7;
     private java.lang.Object addressId_;
     /**
-     * <code>required string addressId = 1;</code>
+     * <code>optional string addressId = 7;</code>
      *
      * <pre>
      *地址ID
      * </pre>
      */
     public boolean hasAddressId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required string addressId = 1;</code>
+     * <code>optional string addressId = 7;</code>
      *
      * <pre>
      *地址ID
@@ -4473,7 +4897,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string addressId = 1;</code>
+     * <code>optional string addressId = 7;</code>
      *
      * <pre>
      *地址ID
@@ -4493,173 +4917,14 @@ public final class Order {
       }
     }
 
-    public static final int RECEIVER_FIELD_NUMBER = 2;
-    private java.lang.Object receiver_;
-    /**
-     * <code>required string receiver = 2;</code>
-     *
-     * <pre>
-     *收件人
-     * </pre>
-     */
-    public boolean hasReceiver() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string receiver = 2;</code>
-     *
-     * <pre>
-     *收件人
-     * </pre>
-     */
-    public java.lang.String getReceiver() {
-      java.lang.Object ref = receiver_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          receiver_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string receiver = 2;</code>
-     *
-     * <pre>
-     *收件人
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getReceiverBytes() {
-      java.lang.Object ref = receiver_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        receiver_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MOBILENO_FIELD_NUMBER = 3;
-    private java.lang.Object mobileNo_;
-    /**
-     * <code>required string mobileNo = 3;</code>
-     *
-     * <pre>
-     *手机号
-     * </pre>
-     */
-    public boolean hasMobileNo() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>required string mobileNo = 3;</code>
-     *
-     * <pre>
-     *手机号
-     * </pre>
-     */
-    public java.lang.String getMobileNo() {
-      java.lang.Object ref = mobileNo_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          mobileNo_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string mobileNo = 3;</code>
-     *
-     * <pre>
-     *手机号
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getMobileNoBytes() {
-      java.lang.Object ref = mobileNo_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        mobileNo_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ADDRESSDETAIL_FIELD_NUMBER = 4;
-    private java.lang.Object addressDetail_;
-    /**
-     * <code>required string addressDetail = 4;</code>
-     *
-     * <pre>
-     *详细地址
-     * </pre>
-     */
-    public boolean hasAddressDetail() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>required string addressDetail = 4;</code>
-     *
-     * <pre>
-     *详细地址
-     * </pre>
-     */
-    public java.lang.String getAddressDetail() {
-      java.lang.Object ref = addressDetail_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          addressDetail_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string addressDetail = 4;</code>
-     *
-     * <pre>
-     *详细地址
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getAddressDetailBytes() {
-      java.lang.Object ref = addressDetail_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        addressDetail_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private void initFields() {
-      addressId_ = "";
       receiver_ = "";
       mobileNo_ = "";
-      addressDetail_ = "";
+      section_ = "";
+      street_ = "";
+      detail_ = "";
+      postCode_ = "";
+      addressId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4667,10 +4932,6 @@ public final class Order {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasAddressId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasReceiver()) {
         memoizedIsInitialized = 0;
         return false;
@@ -4679,7 +4940,19 @@ public final class Order {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasAddressDetail()) {
+      if (!hasSection()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasStreet()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasDetail()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPostCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -4691,16 +4964,25 @@ public final class Order {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getAddressIdBytes());
+        output.writeBytes(1, getReceiverBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getReceiverBytes());
+        output.writeBytes(2, getMobileNoBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getMobileNoBytes());
+        output.writeBytes(3, getSectionBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getAddressDetailBytes());
+        output.writeBytes(4, getStreetBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getDetailBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getPostCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getAddressIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -4713,19 +4995,31 @@ public final class Order {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getAddressIdBytes());
+          .computeBytesSize(1, getReceiverBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getReceiverBytes());
+          .computeBytesSize(2, getMobileNoBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getMobileNoBytes());
+          .computeBytesSize(3, getSectionBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getAddressDetailBytes());
+          .computeBytesSize(4, getStreetBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getDetailBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getPostCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getAddressIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4807,6 +5101,10 @@ public final class Order {
     }
     /**
      * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderReceiveAddressInfo}
+     *
+     * <pre>
+     *订单的默认收货地址
+     * </pre>
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
@@ -4844,14 +5142,20 @@ public final class Order {
 
       public Builder clear() {
         super.clear();
-        addressId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
         receiver_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         mobileNo_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        section_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        addressDetail_ = "";
+        street_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
+        detail_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        postCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        addressId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -4883,19 +5187,31 @@ public final class Order {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.addressId_ = addressId_;
+        result.receiver_ = receiver_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.receiver_ = receiver_;
+        result.mobileNo_ = mobileNo_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.mobileNo_ = mobileNo_;
+        result.section_ = section_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.addressDetail_ = addressDetail_;
+        result.street_ = street_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.detail_ = detail_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.postCode_ = postCode_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.addressId_ = addressId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4912,24 +5228,39 @@ public final class Order {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo other) {
         if (other == com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance()) return this;
-        if (other.hasAddressId()) {
-          bitField0_ |= 0x00000001;
-          addressId_ = other.addressId_;
-          onChanged();
-        }
         if (other.hasReceiver()) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
           receiver_ = other.receiver_;
           onChanged();
         }
         if (other.hasMobileNo()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           mobileNo_ = other.mobileNo_;
           onChanged();
         }
-        if (other.hasAddressDetail()) {
+        if (other.hasSection()) {
+          bitField0_ |= 0x00000004;
+          section_ = other.section_;
+          onChanged();
+        }
+        if (other.hasStreet()) {
           bitField0_ |= 0x00000008;
-          addressDetail_ = other.addressDetail_;
+          street_ = other.street_;
+          onChanged();
+        }
+        if (other.hasDetail()) {
+          bitField0_ |= 0x00000010;
+          detail_ = other.detail_;
+          onChanged();
+        }
+        if (other.hasPostCode()) {
+          bitField0_ |= 0x00000020;
+          postCode_ = other.postCode_;
+          onChanged();
+        }
+        if (other.hasAddressId()) {
+          bitField0_ |= 0x00000040;
+          addressId_ = other.addressId_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4937,10 +5268,6 @@ public final class Order {
       }
 
       public final boolean isInitialized() {
-        if (!hasAddressId()) {
-          
-          return false;
-        }
         if (!hasReceiver()) {
           
           return false;
@@ -4949,7 +5276,19 @@ public final class Order {
           
           return false;
         }
-        if (!hasAddressDetail()) {
+        if (!hasSection()) {
+          
+          return false;
+        }
+        if (!hasStreet()) {
+          
+          return false;
+        }
+        if (!hasDetail()) {
+          
+          return false;
+        }
+        if (!hasPostCode()) {
           
           return false;
         }
@@ -4975,19 +5314,619 @@ public final class Order {
       }
       private int bitField0_;
 
+      private java.lang.Object receiver_ = "";
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public boolean hasReceiver() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public java.lang.String getReceiver() {
+        java.lang.Object ref = receiver_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            receiver_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getReceiverBytes() {
+        java.lang.Object ref = receiver_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          receiver_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public Builder setReceiver(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        receiver_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public Builder clearReceiver() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        receiver_ = getDefaultInstance().getReceiver();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public Builder setReceiverBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        receiver_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mobileNo_ = "";
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public boolean hasMobileNo() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public java.lang.String getMobileNo() {
+        java.lang.Object ref = mobileNo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            mobileNo_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getMobileNoBytes() {
+        java.lang.Object ref = mobileNo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mobileNo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public Builder setMobileNo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        mobileNo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public Builder clearMobileNo() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        mobileNo_ = getDefaultInstance().getMobileNo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public Builder setMobileNoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        mobileNo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object section_ = "";
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public boolean hasSection() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public java.lang.String getSection() {
+        java.lang.Object ref = section_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            section_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getSectionBytes() {
+        java.lang.Object ref = section_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          section_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public Builder setSection(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        section_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public Builder clearSection() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        section_ = getDefaultInstance().getSection();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public Builder setSectionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        section_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object street_ = "";
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public boolean hasStreet() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public java.lang.String getStreet() {
+        java.lang.Object ref = street_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            street_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getStreetBytes() {
+        java.lang.Object ref = street_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          street_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public Builder setStreet(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        street_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public Builder clearStreet() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        street_ = getDefaultInstance().getStreet();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public Builder setStreetBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        street_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object detail_ = "";
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public boolean hasDetail() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public java.lang.String getDetail() {
+        java.lang.Object ref = detail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            detail_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getDetailBytes() {
+        java.lang.Object ref = detail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          detail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public Builder setDetail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        detail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public Builder clearDetail() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        detail_ = getDefaultInstance().getDetail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public Builder setDetailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        detail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object postCode_ = "";
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public boolean hasPostCode() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public java.lang.String getPostCode() {
+        java.lang.Object ref = postCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            postCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getPostCodeBytes() {
+        java.lang.Object ref = postCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          postCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public Builder setPostCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        postCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public Builder clearPostCode() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        postCode_ = getDefaultInstance().getPostCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public Builder setPostCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        postCode_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object addressId_ = "";
       /**
-       * <code>required string addressId = 1;</code>
+       * <code>optional string addressId = 7;</code>
        *
        * <pre>
        *地址ID
        * </pre>
        */
       public boolean hasAddressId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required string addressId = 1;</code>
+       * <code>optional string addressId = 7;</code>
        *
        * <pre>
        *地址ID
@@ -5008,7 +5947,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string addressId = 1;</code>
+       * <code>optional string addressId = 7;</code>
        *
        * <pre>
        *地址ID
@@ -5028,7 +5967,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string addressId = 1;</code>
+       * <code>optional string addressId = 7;</code>
        *
        * <pre>
        *地址ID
@@ -5039,26 +5978,26 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000040;
         addressId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string addressId = 1;</code>
+       * <code>optional string addressId = 7;</code>
        *
        * <pre>
        *地址ID
        * </pre>
        */
       public Builder clearAddressId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         addressId_ = getDefaultInstance().getAddressId();
         onChanged();
         return this;
       }
       /**
-       * <code>required string addressId = 1;</code>
+       * <code>optional string addressId = 7;</code>
        *
        * <pre>
        *地址ID
@@ -5069,308 +6008,8 @@ public final class Order {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000040;
         addressId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object receiver_ = "";
-      /**
-       * <code>required string receiver = 2;</code>
-       *
-       * <pre>
-       *收件人
-       * </pre>
-       */
-      public boolean hasReceiver() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string receiver = 2;</code>
-       *
-       * <pre>
-       *收件人
-       * </pre>
-       */
-      public java.lang.String getReceiver() {
-        java.lang.Object ref = receiver_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            receiver_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string receiver = 2;</code>
-       *
-       * <pre>
-       *收件人
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getReceiverBytes() {
-        java.lang.Object ref = receiver_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          receiver_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string receiver = 2;</code>
-       *
-       * <pre>
-       *收件人
-       * </pre>
-       */
-      public Builder setReceiver(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        receiver_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string receiver = 2;</code>
-       *
-       * <pre>
-       *收件人
-       * </pre>
-       */
-      public Builder clearReceiver() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        receiver_ = getDefaultInstance().getReceiver();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string receiver = 2;</code>
-       *
-       * <pre>
-       *收件人
-       * </pre>
-       */
-      public Builder setReceiverBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        receiver_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object mobileNo_ = "";
-      /**
-       * <code>required string mobileNo = 3;</code>
-       *
-       * <pre>
-       *手机号
-       * </pre>
-       */
-      public boolean hasMobileNo() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required string mobileNo = 3;</code>
-       *
-       * <pre>
-       *手机号
-       * </pre>
-       */
-      public java.lang.String getMobileNo() {
-        java.lang.Object ref = mobileNo_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            mobileNo_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string mobileNo = 3;</code>
-       *
-       * <pre>
-       *手机号
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getMobileNoBytes() {
-        java.lang.Object ref = mobileNo_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          mobileNo_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string mobileNo = 3;</code>
-       *
-       * <pre>
-       *手机号
-       * </pre>
-       */
-      public Builder setMobileNo(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        mobileNo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string mobileNo = 3;</code>
-       *
-       * <pre>
-       *手机号
-       * </pre>
-       */
-      public Builder clearMobileNo() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        mobileNo_ = getDefaultInstance().getMobileNo();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string mobileNo = 3;</code>
-       *
-       * <pre>
-       *手机号
-       * </pre>
-       */
-      public Builder setMobileNoBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        mobileNo_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object addressDetail_ = "";
-      /**
-       * <code>required string addressDetail = 4;</code>
-       *
-       * <pre>
-       *详细地址
-       * </pre>
-       */
-      public boolean hasAddressDetail() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>required string addressDetail = 4;</code>
-       *
-       * <pre>
-       *详细地址
-       * </pre>
-       */
-      public java.lang.String getAddressDetail() {
-        java.lang.Object ref = addressDetail_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            addressDetail_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string addressDetail = 4;</code>
-       *
-       * <pre>
-       *详细地址
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getAddressDetailBytes() {
-        java.lang.Object ref = addressDetail_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          addressDetail_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string addressDetail = 4;</code>
-       *
-       * <pre>
-       *详细地址
-       * </pre>
-       */
-      public Builder setAddressDetail(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        addressDetail_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string addressDetail = 4;</code>
-       *
-       * <pre>
-       *详细地址
-       * </pre>
-       */
-      public Builder clearAddressDetail() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        addressDetail_ = getDefaultInstance().getAddressDetail();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string addressDetail = 4;</code>
-       *
-       * <pre>
-       *详细地址
-       * </pre>
-       */
-      public Builder setAddressDetailBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        addressDetail_ = value;
         onChanged();
         return this;
       }
@@ -38947,105 +39586,106 @@ public final class Order {
       "\026\n\016totalRentPrice\030\013 \002(\001\022\022\n\nhasVoucher\030\014 " +
       "\002(\010\022\022\n\ntotalPrice\030\r \002(\001\022W\n\027orderReceiveA" +
       "ddressInfo\030\016 \001(\01326.com.qjoy.basjoo.core." +
-      "model.pb.OrderReceiveAddressInfo\"g\n\027Orde" +
-      "rReceiveAddressInfo\022\021\n\taddressId\030\001 \002(\t\022\020" +
-      "\n\010receiver\030\002 \002(\t\022\020\n\010mobileNo\030\003 \002(\t\022\025\n\rad" +
-      "dressDetail\030\004 \002(\t\"\343\001\n\023ConfirmOrderReques" +
-      "t\022\021\n\tproductId\030\001 \002(\t\022\022\n\ncategoryId\030\002 \002(\t" +
-      "\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030\004 \002(\t\022\021\n",
-      "\tinsurance\030\005 \001(\010\022\017\n\007orderId\030\006 \002(\t\022\021\n\tadd" +
-      "ressId\030\007 \002(\t\022\020\n\010vouchers\030\010 \003(\t\022\023\n\013userMe" +
-      "ssage\030\t \001(\t\022\022\n\npayChannel\030\n \001(\005\022\016\n\006userI" +
-      "d\030\013 \002(\t\"\235\001\n\022ConfirmOrderResult\022\022\n\nresult" +
-      "Code\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId" +
-      "\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPayInfo\030" +
-      "\005 \001(\0132(.com.qjoy.basjoo.core.model.pb.Wx" +
-      "PayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId\030\001 \002(\t" +
-      "\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t\022\020\n\010n" +
-      "onceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n\004sign",
-      "\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"H\n\021ConfirmPayReque" +
-      "st\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030\002 \001(\005\022" +
-      "\016\n\006userId\030\003 \002(\t\"\233\001\n\020ConfirmPayResult\022\022\n\n" +
-      "resultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007o" +
-      "rderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPa" +
-      "yInfo\030\005 \001(\0132(.com.qjoy.basjoo.core.model" +
-      ".pb.WxPayInfo\"6\n\023GetPayStatusRequest\022\017\n\007" +
-      "orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"\316\001\n\022GetPay" +
-      "StatusResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresu" +
-      "ltMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \002(\t\022\022\n\npayChann",
-      "el\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001\022W\n\027orderRe" +
-      "ceiveAddressInfo\030\006 \001(\01326.com.qjoy.basjoo" +
-      ".core.model.pb.OrderReceiveAddressInfo\"\237" +
-      "\001\n\026SearchOrderListRequest\022\020\n\010keyWords\030\001 " +
-      "\001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016evaluateStau" +
-      "ts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022\021\n\tstartTim" +
-      "e\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006userId\030\007 \002(\t" +
-      "\"\271\002\n\025SearchOrderListResult\022\022\n\nresultCode" +
-      "\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 " +
-      "\001(\005\022\017\n\007hasMore\030\004 \002(\010\022\024\n\014waitPayCount\030\005 \002",
-      "(\005\022\031\n\021waitDeliveryCount\030\006 \002(\005\022\030\n\020waitRec" +
-      "eiveCount\030\007 \002(\005\022\027\n\017waitRevertCount\030\010 \002(\005" +
-      "\022\031\n\021waitEvaluateCount\030\t \002(\005\022\022\n\ntotalCoun" +
-      "t\030\n \002(\005\022C\n\rorderLiteInfo\030\013 \003(\0132,.com.qjo" +
-      "y.basjoo.core.model.pb.OrderLiteInfo\"\362\002\n" +
-      "\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013order" +
-      "Status\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rrent" +
-      "StartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010" +
-      "rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\tren" +
-      "tPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033\n\023tra",
-      "nsportationPrice\030\n \001(\001\022\022\n\ntotalPrice\030\013 \002" +
-      "(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016evaluate" +
-      "Stauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014mainI" +
-      "mageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014categoryN" +
-      "ame\030\021 \002(\t\"5\n\022DeleteOrderRequest\022\017\n\007order" +
-      "Id\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021DeleteOrderR" +
-      "esult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002" +
-      " \002(\t\"E\n\022CancelOrderRequest\022\017\n\007orderId\030\001 " +
-      "\002(\t\022\016\n\006reason\030\002 \002(\t\022\016\n\006userId\030\003 \002(\t\":\n\021C" +
-      "ancelOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t",
-      "resultMsg\030\002 \002(\t\"8\n\025ConfirmReceiveRequest" +
-      "\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"=\n\024Con" +
-      "firmReceiveResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
-      "\tresultMsg\030\002 \002(\t\"\207\001\n\022ApplyRevertRequest\022" +
-      "\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType\030\002 \002(" +
-      "\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025transport" +
-      "ationCompany\030\004 \001(\t\022\016\n\006userId\030\005 \002(\t\":\n\021Ap" +
-      "plyRevertResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tr" +
-      "esultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefundRequest\022\016\n" +
-      "\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\022\n\nrefund",
-      "Type\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001(\t\022\024\n\014refun" +
-      "dReason\030\005 \002(\t\022\021\n\trefundFee\030\006 \001(\001\022\025\n\revid" +
-      "entalImgs\030\007 \003(\t\022\023\n\013refundIntro\030\010 \001(\t\":\n\021" +
-      "ApplyRefundResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
-      "\tresultMsg\030\002 \002(\t\"\252\001\n\030CommitRefundTransRe" +
-      "quest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\027" +
-      "\n\017refundTransType\030\003 \002(\t\022\030\n\020transportatio" +
-      "nId\030\004 \001(\t\022\035\n\025transportationCompany\030\005 \001(\t" +
-      "\022\033\n\023transportationIntro\030\006 \001(\t\"@\n\027CommitR" +
-      "efundTransResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t",
-      "resultMsg\030\002 \002(\t\"8\n\025GetOrderDetailRequest" +
-      "\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"\206\001\n\024Ge" +
-      "tOrderDetailResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
-      "\n\tresultMsg\030\002 \002(\t\022G\n\017orderDetailInfo\030\003 \002" +
-      "(\0132..com.qjoy.basjoo.core.model.pb.Order" +
-      "DetailInfo\"\373\004\n\017OrderDetailInfo\022\017\n\007orderI" +
-      "d\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTi" +
-      "me\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentE" +
-      "ndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCo" +
-      "unt\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePr",
-      "ice\030\t \002(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022" +
-      "\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportationId\030\014" +
-      " \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tproductI" +
-      "d\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 " +
-      "\002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTime\030\022 \001" +
-      "(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 \001(\t\022\024\n" +
-      "\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTime\030\026 \001(\003" +
-      "\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTime\030\030 \001" +
-      "(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030\032 \003(\t\022" +
-      "W\n\027orderReceiveAddressInfo\030\033 \001(\01326.com.q",
-      "joy.basjoo.core.model.pb.OrderReceiveAdd" +
-      "ressInfoB\037\n\035com.qjoy.basjoo.core.model.p" +
-      "b"
+      "model.pb.OrderReceiveAddressInfo\"\223\001\n\027Ord" +
+      "erReceiveAddressInfo\022\020\n\010receiver\030\001 \002(\t\022\020" +
+      "\n\010mobileNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006str" +
+      "eet\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 " +
+      "\002(\t\022\021\n\taddressId\030\007 \001(\t\"\343\001\n\023ConfirmOrderR" +
+      "equest\022\021\n\tproductId\030\001 \002(\t\022\022\n\ncategoryId\030",
+      "\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030\004 \002" +
+      "(\t\022\021\n\tinsurance\030\005 \001(\010\022\017\n\007orderId\030\006 \002(\t\022\021" +
+      "\n\taddressId\030\007 \002(\t\022\020\n\010vouchers\030\010 \003(\t\022\023\n\013u" +
+      "serMessage\030\t \001(\t\022\022\n\npayChannel\030\n \001(\005\022\016\n\006" +
+      "userId\030\013 \002(\t\"\235\001\n\022ConfirmOrderResult\022\022\n\nr" +
+      "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007or" +
+      "derId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPay" +
+      "Info\030\005 \001(\0132(.com.qjoy.basjoo.core.model." +
+      "pb.WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId\030" +
+      "\001 \002(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t",
+      "\022\020\n\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n" +
+      "\004sign\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"H\n\021ConfirmPay" +
+      "Request\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030\002" +
+      " \001(\005\022\016\n\006userId\030\003 \002(\t\"\233\001\n\020ConfirmPayResul" +
+      "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
+      "\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n" +
+      "\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo.core." +
+      "model.pb.WxPayInfo\"6\n\023GetPayStatusReques" +
+      "t\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"\316\001\n\022G" +
+      "etPayStatusResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n",
+      "\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \002(\t\022\022\n\npay" +
+      "Channel\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001\022W\n\027or" +
+      "derReceiveAddressInfo\030\006 \001(\01326.com.qjoy.b" +
+      "asjoo.core.model.pb.OrderReceiveAddressI" +
+      "nfo\"\237\001\n\026SearchOrderListRequest\022\020\n\010keyWor" +
+      "ds\030\001 \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016evaluat" +
+      "eStauts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022\021\n\tsta" +
+      "rtTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006userId\030" +
+      "\007 \002(\t\"\271\002\n\025SearchOrderListResult\022\022\n\nresul" +
+      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxInd",
+      "ex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\024\n\014waitPayCoun" +
+      "t\030\005 \002(\005\022\031\n\021waitDeliveryCount\030\006 \002(\005\022\030\n\020wa" +
+      "itReceiveCount\030\007 \002(\005\022\027\n\017waitRevertCount\030" +
+      "\010 \002(\005\022\031\n\021waitEvaluateCount\030\t \002(\005\022\022\n\ntota" +
+      "lCount\030\n \002(\005\022C\n\rorderLiteInfo\030\013 \003(\0132,.co" +
+      "m.qjoy.basjoo.core.model.pb.OrderLiteInf" +
+      "o\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013" +
+      "orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n" +
+      "\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(" +
+      "\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021",
+      "\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033" +
+      "\n\023transportationPrice\030\n \001(\001\022\022\n\ntotalPric" +
+      "e\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016eva" +
+      "luateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014" +
+      "mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014cate" +
+      "goryName\030\021 \002(\t\"5\n\022DeleteOrderRequest\022\017\n\007" +
+      "orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021DeleteO" +
+      "rderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresult" +
+      "Msg\030\002 \002(\t\"E\n\022CancelOrderRequest\022\017\n\007order" +
+      "Id\030\001 \002(\t\022\016\n\006reason\030\002 \002(\t\022\016\n\006userId\030\003 \002(\t",
+      "\":\n\021CancelOrderResult\022\022\n\nresultCode\030\001 \002(" +
+      "\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025ConfirmReceiveRe" +
+      "quest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"=" +
+      "\n\024ConfirmReceiveResult\022\022\n\nresultCode\030\001 \002" +
+      "(\t\022\021\n\tresultMsg\030\002 \002(\t\"\207\001\n\022ApplyRevertReq" +
+      "uest\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType" +
+      "\030\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025tran" +
+      "sportationCompany\030\004 \001(\t\022\016\n\006userId\030\005 \002(\t\"" +
+      ":\n\021ApplyRevertResult\022\022\n\nresultCode\030\001 \002(\t" +
+      "\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefundReque",
+      "st\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\022\n\nr" +
+      "efundType\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001(\t\022\024\n\014" +
+      "refundReason\030\005 \002(\t\022\021\n\trefundFee\030\006 \001(\001\022\025\n" +
+      "\revidentalImgs\030\007 \003(\t\022\023\n\013refundIntro\030\010 \001(" +
+      "\t\":\n\021ApplyRefundResult\022\022\n\nresultCode\030\001 \002" +
+      "(\t\022\021\n\tresultMsg\030\002 \002(\t\"\252\001\n\030CommitRefundTr" +
+      "ansRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 " +
+      "\002(\t\022\027\n\017refundTransType\030\003 \002(\t\022\030\n\020transpor" +
+      "tationId\030\004 \001(\t\022\035\n\025transportationCompany\030" +
+      "\005 \001(\t\022\033\n\023transportationIntro\030\006 \001(\t\"@\n\027Co",
+      "mmitRefundTransResult\022\022\n\nresultCode\030\001 \002(" +
+      "\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetOrderDetailRe" +
+      "quest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"\206" +
+      "\001\n\024GetOrderDetailResult\022\022\n\nresultCode\030\001 " +
+      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDetailInf" +
+      "o\030\003 \002(\0132..com.qjoy.basjoo.core.model.pb." +
+      "OrderDetailInfo\"\373\004\n\017OrderDetailInfo\022\017\n\007o" +
+      "rderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncre" +
+      "ateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013" +
+      "rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\tr",
+      "entCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013ple" +
+      "dgePrice\030\t \002(\001\022\033\n\023transportationPrice\030\n " +
+      "\001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportatio" +
+      "nId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tpro" +
+      "ductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004de" +
+      "sc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTim" +
+      "e\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 \001" +
+      "(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTime\030" +
+      "\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTim" +
+      "e\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030\032",
+      " \003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001(\01326." +
+      "com.qjoy.basjoo.core.model.pb.OrderRecei" +
+      "veAddressInfoB\037\n\035com.qjoy.basjoo.core.mo" +
+      "del.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -39076,7 +39716,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_descriptor,
-        new java.lang.String[] { "AddressId", "Receiver", "MobileNo", "AddressDetail", });
+        new java.lang.String[] { "Receiver", "MobileNo", "Section", "Street", "Detail", "PostCode", "AddressId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderRequest_fieldAccessorTable = new

@@ -118,7 +118,7 @@ public final class CommitOrderResult extends Message {
   public Double totalPrice;
 
   /**
-   * 订单收货地址信息
+   * 订单的默认收货地址
    */
   @ProtoField(tag = 14)
   public OrderReceiveAddressInfo orderReceiveAddressInfo;

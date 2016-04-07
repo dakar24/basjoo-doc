@@ -502,25 +502,37 @@
 
 - (instancetype) init {
   if ((self = [super init])) {
-    _addressId = @"";
     _receiver = @"";
     _mobileNo = @"";
-    _addressDetail = @"";
+    _section = @"";
+    _street = @"";
+    _detail = @"";
+    _postCode = @"";
+    _addressId = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasAddressId) {
-    [output writeString:1 value:self.addressId];
-  }
   if (self.hasReceiver) {
-    [output writeString:2 value:self.receiver];
+    [output writeString:1 value:self.receiver];
   }
   if (self.hasMobileNo) {
-    [output writeString:3 value:self.mobileNo];
+    [output writeString:2 value:self.mobileNo];
   }
-  if (self.hasAddressDetail) {
-    [output writeString:4 value:self.addressDetail];
+  if (self.hasSection) {
+    [output writeString:3 value:self.section];
+  }
+  if (self.hasStreet) {
+    [output writeString:4 value:self.street];
+  }
+  if (self.hasDetail) {
+    [output writeString:5 value:self.detail];
+  }
+  if (self.hasPostCode) {
+    [output writeString:6 value:self.postCode];
+  }
+  if (self.hasAddressId) {
+    [output writeString:7 value:self.addressId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -528,17 +540,26 @@
   __block SInt32 size_ = memoizedSerializedSize;
 
   size_ = 0;
-  if (self.hasAddressId) {
-    size_ += computeStringSize(1, self.addressId);
-  }
   if (self.hasReceiver) {
-    size_ += computeStringSize(2, self.receiver);
+    size_ += computeStringSize(1, self.receiver);
   }
   if (self.hasMobileNo) {
-    size_ += computeStringSize(3, self.mobileNo);
+    size_ += computeStringSize(2, self.mobileNo);
   }
-  if (self.hasAddressDetail) {
-    size_ += computeStringSize(4, self.addressDetail);
+  if (self.hasSection) {
+    size_ += computeStringSize(3, self.section);
+  }
+  if (self.hasStreet) {
+    size_ += computeStringSize(4, self.street);
+  }
+  if (self.hasDetail) {
+    size_ += computeStringSize(5, self.detail);
+  }
+  if (self.hasPostCode) {
+    size_ += computeStringSize(6, self.postCode);
+  }
+  if (self.hasAddressId) {
+    size_ += computeStringSize(7, self.addressId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -550,25 +571,30 @@
 }
 #ifdef DEBUG
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasAddressId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
-  }
   if (self.hasReceiver) {
     [output appendFormat:@"%@%@: %@\n", indent, @"receiver", self.receiver];
   }
   if (self.hasMobileNo) {
     [output appendFormat:@"%@%@: %@\n", indent, @"mobileNo", self.mobileNo];
   }
-  if (self.hasAddressDetail) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"addressDetail", self.addressDetail];
+  if (self.hasSection) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"section", self.section];
+  }
+  if (self.hasStreet) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"street", self.street];
+  }
+  if (self.hasDetail) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"detail", self.detail];
+  }
+  if (self.hasPostCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"postCode", self.postCode];
+  }
+  if (self.hasAddressId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
-- (void) setAddressId:(NSString*) value {
-  _hasAddressId = YES;
-  _addressId = value;
-}
 - (void) setReceiver:(NSString*) value {
   _hasReceiver = YES;
   _receiver = value;
@@ -577,9 +603,25 @@
   _hasMobileNo = YES;
   _mobileNo = value;
 }
-- (void) setAddressDetail:(NSString*) value {
-  _hasAddressDetail = YES;
-  _addressDetail = value;
+- (void) setSection:(NSString*) value {
+  _hasSection = YES;
+  _section = value;
+}
+- (void) setStreet:(NSString*) value {
+  _hasStreet = YES;
+  _street = value;
+}
+- (void) setDetail:(NSString*) value {
+  _hasDetail = YES;
+  _detail = value;
+}
+- (void) setPostCode:(NSString*) value {
+  _hasPostCode = YES;
+  _postCode = value;
+}
+- (void) setAddressId:(NSString*) value {
+  _hasAddressId = YES;
+  _addressId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -597,19 +639,31 @@
         break;
       }
       case 10: {
-        [self setAddressId:[input readString]];
-        break;
-      }
-      case 18: {
         [self setReceiver:[input readString]];
         break;
       }
-      case 26: {
+      case 18: {
         [self setMobileNo:[input readString]];
         break;
       }
+      case 26: {
+        [self setSection:[input readString]];
+        break;
+      }
       case 34: {
-        [self setAddressDetail:[input readString]];
+        [self setStreet:[input readString]];
+        break;
+      }
+      case 42: {
+        [self setDetail:[input readString]];
+        break;
+      }
+      case 50: {
+        [self setPostCode:[input readString]];
+        break;
+      }
+      case 58: {
+        [self setAddressId:[input readString]];
         break;
       }
     }

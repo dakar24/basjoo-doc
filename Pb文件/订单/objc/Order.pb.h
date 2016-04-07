@@ -82,14 +82,20 @@
 @end
 
 @interface OrderReceiveAddressInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasAddressId;
 @property (readonly) BOOL hasReceiver;
 @property (readonly) BOOL hasMobileNo;
-@property (readonly) BOOL hasAddressDetail;
-@property (nonatomic,strong) NSString* addressId;
+@property (readonly) BOOL hasSection;
+@property (readonly) BOOL hasStreet;
+@property (readonly) BOOL hasDetail;
+@property (readonly) BOOL hasPostCode;
+@property (readonly) BOOL hasAddressId;
 @property (nonatomic,strong) NSString* receiver;
 @property (nonatomic,strong) NSString* mobileNo;
-@property (nonatomic,strong) NSString* addressDetail;
+@property (nonatomic,strong) NSString* section;
+@property (nonatomic,strong) NSString* street;
+@property (nonatomic,strong) NSString* detail;
+@property (nonatomic,strong) NSString* postCode;
+@property (nonatomic,strong) NSString* addressId;
 @end
 
 @interface ConfirmOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>

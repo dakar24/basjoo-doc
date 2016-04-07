@@ -8,49 +8,79 @@ import com.squareup.wire.ProtoField;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
+/**
+ * 订单的默认收货地址
+ */
 public final class OrderReceiveAddressInfo extends Message {
 
-  public static final int TAG_ADDRESSID = 1;
-  public static final int TAG_RECEIVER = 2;
-  public static final int TAG_MOBILENO = 3;
-  public static final int TAG_ADDRESSDETAIL = 4;
+  public static final int TAG_RECEIVER = 1;
+  public static final int TAG_MOBILENO = 2;
+  public static final int TAG_SECTION = 3;
+  public static final int TAG_STREET = 4;
+  public static final int TAG_DETAIL = 5;
+  public static final int TAG_POSTCODE = 6;
+  public static final int TAG_ADDRESSID = 7;
 
-  public static final String DEFAULT_ADDRESSID = "";
   public static final String DEFAULT_RECEIVER = "";
   public static final String DEFAULT_MOBILENO = "";
-  public static final String DEFAULT_ADDRESSDETAIL = "";
+  public static final String DEFAULT_SECTION = "";
+  public static final String DEFAULT_STREET = "";
+  public static final String DEFAULT_DETAIL = "";
+  public static final String DEFAULT_POSTCODE = "";
+  public static final String DEFAULT_ADDRESSID = "";
 
   /**
-   * 地址ID
+   * 收货人
    */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
-  public String addressId;
-
-  /**
-   * 收件人
-   */
-  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String receiver;
 
   /**
-   * 手机号
+   * 联系电话
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String mobileNo;
+
+  /**
+   * 所在地区
    */
   @ProtoField(tag = 3, type = STRING, label = REQUIRED)
-  public String mobileNo;
+  public String section;
+
+  /**
+   * 所在街道
+   */
+  @ProtoField(tag = 4, type = STRING, label = REQUIRED)
+  public String street;
 
   /**
    * 详细地址
    */
-  @ProtoField(tag = 4, type = STRING, label = REQUIRED)
-  public String addressDetail;
+  @ProtoField(tag = 5, type = STRING, label = REQUIRED)
+  public String detail;
+
+  /**
+   * 邮编
+   */
+  @ProtoField(tag = 6, type = STRING, label = REQUIRED)
+  public String postCode;
+
+  /**
+   * 地址ID
+   */
+  @ProtoField(tag = 7, type = STRING)
+  public String addressId;
 
   public OrderReceiveAddressInfo(OrderReceiveAddressInfo message) {
     super(message);
     if (message == null) return;
-    this.addressId = message.addressId;
     this.receiver = message.receiver;
     this.mobileNo = message.mobileNo;
-    this.addressDetail = message.addressDetail;
+    this.section = message.section;
+    this.street = message.street;
+    this.detail = message.detail;
+    this.postCode = message.postCode;
+    this.addressId = message.addressId;
   }
 
   public OrderReceiveAddressInfo() {
@@ -58,17 +88,26 @@ public final class OrderReceiveAddressInfo extends Message {
 
   public OrderReceiveAddressInfo fillTagValue(int tag, Object value) {
     switch(tag) {
-        case TAG_ADDRESSID:
-        this.addressId = (String)value;
-        break;
         case TAG_RECEIVER:
         this.receiver = (String)value;
         break;
         case TAG_MOBILENO:
         this.mobileNo = (String)value;
         break;
-        case TAG_ADDRESSDETAIL:
-        this.addressDetail = (String)value;
+        case TAG_SECTION:
+        this.section = (String)value;
+        break;
+        case TAG_STREET:
+        this.street = (String)value;
+        break;
+        case TAG_DETAIL:
+        this.detail = (String)value;
+        break;
+        case TAG_POSTCODE:
+        this.postCode = (String)value;
+        break;
+        case TAG_ADDRESSID:
+        this.addressId = (String)value;
         break;
         default: break;
         };
@@ -80,20 +119,26 @@ public final class OrderReceiveAddressInfo extends Message {
     if (other == this) return true;
     if (!(other instanceof OrderReceiveAddressInfo)) return false;
     OrderReceiveAddressInfo o = (OrderReceiveAddressInfo) other;
-    return equals(addressId, o.addressId)
-        && equals(receiver, o.receiver)
+    return equals(receiver, o.receiver)
         && equals(mobileNo, o.mobileNo)
-        && equals(addressDetail, o.addressDetail);
+        && equals(section, o.section)
+        && equals(street, o.street)
+        && equals(detail, o.detail)
+        && equals(postCode, o.postCode)
+        && equals(addressId, o.addressId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
     if (result == 0) {
-      result = addressId != null ? addressId.hashCode() : 0;
-      result = result * 37 + (receiver != null ? receiver.hashCode() : 0);
+      result = receiver != null ? receiver.hashCode() : 0;
       result = result * 37 + (mobileNo != null ? mobileNo.hashCode() : 0);
-      result = result * 37 + (addressDetail != null ? addressDetail.hashCode() : 0);
+      result = result * 37 + (section != null ? section.hashCode() : 0);
+      result = result * 37 + (street != null ? street.hashCode() : 0);
+      result = result * 37 + (detail != null ? detail.hashCode() : 0);
+      result = result * 37 + (postCode != null ? postCode.hashCode() : 0);
+      result = result * 37 + (addressId != null ? addressId.hashCode() : 0);
       hashCode = result;
     }
     return result;
