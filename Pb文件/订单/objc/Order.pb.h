@@ -33,7 +33,7 @@
 
 @interface CommitOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasProductId;
-@property (readonly) BOOL hasCategoryId;
+@property (readonly) BOOL hasCategoryCode;
 @property (readonly) BOOL hasRentCount;
 @property (readonly) BOOL hasRentCode;
 @property (readonly) BOOL hasInsurance;
@@ -41,7 +41,7 @@
 @property (readonly) BOOL hasOnlyCalPrice;
 @property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* productId;
-@property (nonatomic,strong) NSString* categoryId;
+@property (nonatomic,strong) NSString* categoryCode;
 @property (nonatomic)SInt32 rentCount;
 @property (nonatomic,strong) NSString* rentCode;
 @property (nonatomic)BOOL insurance;
@@ -54,7 +54,7 @@
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasOrderId;
-@property (readonly) BOOL hasCategoryId;
+@property (readonly) BOOL hasCategoryCode;
 @property (readonly) BOOL hasRentCount;
 @property (readonly) BOOL hasRentCode;
 @property (readonly) BOOL hasInsurance;
@@ -68,7 +68,7 @@
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* orderId;
-@property (nonatomic,strong) NSString* categoryId;
+@property (nonatomic,strong) NSString* categoryCode;
 @property (nonatomic)SInt32 rentCount;
 @property (nonatomic,strong) NSString* rentCode;
 @property (nonatomic)BOOL insurance;
@@ -100,7 +100,7 @@
 
 @interface ConfirmOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasProductId;
-@property (readonly) BOOL hasCategoryId;
+@property (readonly) BOOL hasCategoryCode;
 @property (readonly) BOOL hasRentCount;
 @property (readonly) BOOL hasRentCode;
 @property (readonly) BOOL hasInsurance;
@@ -110,7 +110,7 @@
 @property (readonly) BOOL hasPayChannel;
 @property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* productId;
-@property (nonatomic,strong) NSString* categoryId;
+@property (nonatomic,strong) NSString* categoryCode;
 @property (nonatomic)SInt32 rentCount;
 @property (nonatomic,strong) NSString* rentCode;
 @property (nonatomic)BOOL insurance;

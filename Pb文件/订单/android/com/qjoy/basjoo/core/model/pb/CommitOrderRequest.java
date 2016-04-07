@@ -16,7 +16,7 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 public final class CommitOrderRequest extends Message {
 
   public static final int TAG_PRODUCTID = 1;
-  public static final int TAG_CATEGORYID = 2;
+  public static final int TAG_CATEGORYCODE = 2;
   public static final int TAG_RENTCOUNT = 3;
   public static final int TAG_RENTCODE = 4;
   public static final int TAG_INSURANCE = 5;
@@ -25,7 +25,7 @@ public final class CommitOrderRequest extends Message {
   public static final int TAG_USERID = 8;
 
   public static final String DEFAULT_PRODUCTID = "";
-  public static final String DEFAULT_CATEGORYID = "";
+  public static final String DEFAULT_CATEGORYCODE = "";
   public static final Integer DEFAULT_RENTCOUNT = 0;
   public static final String DEFAULT_RENTCODE = "";
   public static final Boolean DEFAULT_INSURANCE = false;
@@ -43,7 +43,7 @@ public final class CommitOrderRequest extends Message {
    * 类别信息
    */
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
-  public String categoryId;
+  public String categoryCode;
 
   /**
    * 租用数量
@@ -85,7 +85,7 @@ public final class CommitOrderRequest extends Message {
     super(message);
     if (message == null) return;
     this.productId = message.productId;
-    this.categoryId = message.categoryId;
+    this.categoryCode = message.categoryCode;
     this.rentCount = message.rentCount;
     this.rentCode = message.rentCode;
     this.insurance = message.insurance;
@@ -102,8 +102,8 @@ public final class CommitOrderRequest extends Message {
         case TAG_PRODUCTID:
         this.productId = (String)value;
         break;
-        case TAG_CATEGORYID:
-        this.categoryId = (String)value;
+        case TAG_CATEGORYCODE:
+        this.categoryCode = (String)value;
         break;
         case TAG_RENTCOUNT:
         this.rentCount = (Integer)value;
@@ -134,7 +134,7 @@ public final class CommitOrderRequest extends Message {
     if (!(other instanceof CommitOrderRequest)) return false;
     CommitOrderRequest o = (CommitOrderRequest) other;
     return equals(productId, o.productId)
-        && equals(categoryId, o.categoryId)
+        && equals(categoryCode, o.categoryCode)
         && equals(rentCount, o.rentCount)
         && equals(rentCode, o.rentCode)
         && equals(insurance, o.insurance)
@@ -148,7 +148,7 @@ public final class CommitOrderRequest extends Message {
     int result = hashCode;
     if (result == 0) {
       result = productId != null ? productId.hashCode() : 0;
-      result = result * 37 + (categoryId != null ? categoryId.hashCode() : 0);
+      result = result * 37 + (categoryCode != null ? categoryCode.hashCode() : 0);
       result = result * 37 + (rentCount != null ? rentCount.hashCode() : 0);
       result = result * 37 + (rentCode != null ? rentCode.hashCode() : 0);
       result = result * 37 + (insurance != null ? insurance.hashCode() : 0);

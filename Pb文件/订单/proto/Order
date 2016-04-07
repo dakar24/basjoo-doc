@@ -10,7 +10,7 @@ message CommitOrderRequest {
     required string                 productId = 1; 
 	
 	//类别信息
-	required string                 categoryId = 2;	
+	required string                 categoryCode = 2;	
 	
 	 //租用数量
 	required int32                  rentCount = 3;
@@ -27,7 +27,7 @@ message CommitOrderRequest {
 	//只计算价格，不需要返回权益和收货地址等信息
 	required bool                   onlyCalPrice = 7;
 
- //用户ID   
+    //用户ID   
     required string                 userId = 8; 
 
 
@@ -48,7 +48,7 @@ message CommitOrderResult {
     optional string                 orderId = 3; 
 	 
 	//用户提交订单时所选的类别信息
-	required string                 categoryId = 4;	
+	required string                 categoryCode = 4;	
 	
 	 //用户提交订单时所选的租用数量
 	required int32                  rentCount = 5;
@@ -111,7 +111,7 @@ message ConfirmOrderRequest {
     required string                 productId = 1; 
 	
 	//类别信息
-	required string                 categoryId = 2;	
+	required string                 categoryCode = 2;	
 	
 	 //租用数量
 	required int32                  rentCount = 3;

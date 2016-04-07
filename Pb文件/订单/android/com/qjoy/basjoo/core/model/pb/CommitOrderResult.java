@@ -19,7 +19,7 @@ public final class CommitOrderResult extends Message {
   public static final int TAG_RESULTCODE = 1;
   public static final int TAG_RESULTMSG = 2;
   public static final int TAG_ORDERID = 3;
-  public static final int TAG_CATEGORYID = 4;
+  public static final int TAG_CATEGORYCODE = 4;
   public static final int TAG_RENTCOUNT = 5;
   public static final int TAG_RENTCODE = 6;
   public static final int TAG_INSURANCE = 7;
@@ -34,7 +34,7 @@ public final class CommitOrderResult extends Message {
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
   public static final String DEFAULT_ORDERID = "";
-  public static final String DEFAULT_CATEGORYID = "";
+  public static final String DEFAULT_CATEGORYCODE = "";
   public static final Integer DEFAULT_RENTCOUNT = 0;
   public static final String DEFAULT_RENTCODE = "";
   public static final Boolean DEFAULT_INSURANCE = false;
@@ -61,7 +61,7 @@ public final class CommitOrderResult extends Message {
    * 用户提交订单时所选的类别信息
    */
   @ProtoField(tag = 4, type = STRING, label = REQUIRED)
-  public String categoryId;
+  public String categoryCode;
 
   /**
    * 用户提交订单时所选的租用数量
@@ -129,7 +129,7 @@ public final class CommitOrderResult extends Message {
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
     this.orderId = message.orderId;
-    this.categoryId = message.categoryId;
+    this.categoryCode = message.categoryCode;
     this.rentCount = message.rentCount;
     this.rentCode = message.rentCode;
     this.insurance = message.insurance;
@@ -156,8 +156,8 @@ public final class CommitOrderResult extends Message {
         case TAG_ORDERID:
         this.orderId = (String)value;
         break;
-        case TAG_CATEGORYID:
-        this.categoryId = (String)value;
+        case TAG_CATEGORYCODE:
+        this.categoryCode = (String)value;
         break;
         case TAG_RENTCOUNT:
         this.rentCount = (Integer)value;
@@ -202,7 +202,7 @@ public final class CommitOrderResult extends Message {
     return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
         && equals(orderId, o.orderId)
-        && equals(categoryId, o.categoryId)
+        && equals(categoryCode, o.categoryCode)
         && equals(rentCount, o.rentCount)
         && equals(rentCode, o.rentCode)
         && equals(insurance, o.insurance)
@@ -222,7 +222,7 @@ public final class CommitOrderResult extends Message {
       result = resultCode != null ? resultCode.hashCode() : 0;
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
-      result = result * 37 + (categoryId != null ? categoryId.hashCode() : 0);
+      result = result * 37 + (categoryCode != null ? categoryCode.hashCode() : 0);
       result = result * 37 + (rentCount != null ? rentCount.hashCode() : 0);
       result = result * 37 + (rentCode != null ? rentCode.hashCode() : 0);
       result = result * 37 + (insurance != null ? insurance.hashCode() : 0);

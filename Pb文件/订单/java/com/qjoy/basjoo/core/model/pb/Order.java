@@ -39,30 +39,30 @@ public final class Order {
         getProductIdBytes();
 
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
-    boolean hasCategoryId();
+    boolean hasCategoryCode();
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
-    java.lang.String getCategoryId();
+    java.lang.String getCategoryCode();
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
     com.google.protobuf.ByteString
-        getCategoryIdBytes();
+        getCategoryCodeBytes();
 
     /**
      * <code>required int32 rentCount = 3;</code>
@@ -258,7 +258,7 @@ public final class Order {
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              categoryId_ = bs;
+              categoryCode_ = bs;
               break;
             }
             case 24: {
@@ -388,27 +388,27 @@ public final class Order {
       }
     }
 
-    public static final int CATEGORYID_FIELD_NUMBER = 2;
-    private java.lang.Object categoryId_;
+    public static final int CATEGORYCODE_FIELD_NUMBER = 2;
+    private java.lang.Object categoryCode_;
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
-    public boolean hasCategoryId() {
+    public boolean hasCategoryCode() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
-    public java.lang.String getCategoryId() {
-      java.lang.Object ref = categoryId_;
+    public java.lang.String getCategoryCode() {
+      java.lang.Object ref = categoryCode_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -416,26 +416,26 @@ public final class Order {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          categoryId_ = s;
+          categoryCode_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getCategoryIdBytes() {
-      java.lang.Object ref = categoryId_;
+        getCategoryCodeBytes() {
+      java.lang.Object ref = categoryCode_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        categoryId_ = b;
+        categoryCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -675,7 +675,7 @@ public final class Order {
 
     private void initFields() {
       productId_ = "";
-      categoryId_ = "";
+      categoryCode_ = "";
       rentCount_ = 0;
       rentCode_ = "";
       insurance_ = false;
@@ -693,7 +693,7 @@ public final class Order {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasCategoryId()) {
+      if (!hasCategoryCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -728,7 +728,7 @@ public final class Order {
         output.writeBytes(1, getProductIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getCategoryIdBytes());
+        output.writeBytes(2, getCategoryCodeBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, rentCount_);
@@ -763,7 +763,7 @@ public final class Order {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getCategoryIdBytes());
+          .computeBytesSize(2, getCategoryCodeBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -912,7 +912,7 @@ public final class Order {
         super.clear();
         productId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        categoryId_ = "";
+        categoryCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         rentCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -961,7 +961,7 @@ public final class Order {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.categoryId_ = categoryId_;
+        result.categoryCode_ = categoryCode_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -1007,9 +1007,9 @@ public final class Order {
           productId_ = other.productId_;
           onChanged();
         }
-        if (other.hasCategoryId()) {
+        if (other.hasCategoryCode()) {
           bitField0_ |= 0x00000002;
-          categoryId_ = other.categoryId_;
+          categoryCode_ = other.categoryCode_;
           onChanged();
         }
         if (other.hasRentCount()) {
@@ -1045,7 +1045,7 @@ public final class Order {
           
           return false;
         }
-        if (!hasCategoryId()) {
+        if (!hasCategoryCode()) {
           
           return false;
         }
@@ -1191,32 +1191,32 @@ public final class Order {
         return this;
       }
 
-      private java.lang.Object categoryId_ = "";
+      private java.lang.Object categoryCode_ = "";
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public boolean hasCategoryId() {
+      public boolean hasCategoryCode() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public java.lang.String getCategoryId() {
-        java.lang.Object ref = categoryId_;
+      public java.lang.String getCategoryCode() {
+        java.lang.Object ref = categoryCode_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            categoryId_ = s;
+            categoryCode_ = s;
           }
           return s;
         } else {
@@ -1224,69 +1224,69 @@ public final class Order {
         }
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getCategoryIdBytes() {
-        java.lang.Object ref = categoryId_;
+          getCategoryCodeBytes() {
+        java.lang.Object ref = categoryCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          categoryId_ = b;
+          categoryCode_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public Builder setCategoryId(
+      public Builder setCategoryCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        categoryId_ = value;
+        categoryCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public Builder clearCategoryId() {
+      public Builder clearCategoryCode() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        categoryId_ = getDefaultInstance().getCategoryId();
+        categoryCode_ = getDefaultInstance().getCategoryCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public Builder setCategoryIdBytes(
+      public Builder setCategoryCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        categoryId_ = value;
+        categoryCode_ = value;
         onChanged();
         return this;
       }
@@ -1805,30 +1805,30 @@ public final class Order {
         getOrderIdBytes();
 
     /**
-     * <code>required string categoryId = 4;</code>
+     * <code>required string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
      * </pre>
      */
-    boolean hasCategoryId();
+    boolean hasCategoryCode();
     /**
-     * <code>required string categoryId = 4;</code>
+     * <code>required string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
      * </pre>
      */
-    java.lang.String getCategoryId();
+    java.lang.String getCategoryCode();
     /**
-     * <code>required string categoryId = 4;</code>
+     * <code>required string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
      * </pre>
      */
     com.google.protobuf.ByteString
-        getCategoryIdBytes();
+        getCategoryCodeBytes();
 
     /**
      * <code>required int32 rentCount = 5;</code>
@@ -2094,7 +2094,7 @@ public final class Order {
             case 34: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              categoryId_ = bs;
+              categoryCode_ = bs;
               break;
             }
             case 40: {
@@ -2334,27 +2334,27 @@ public final class Order {
       }
     }
 
-    public static final int CATEGORYID_FIELD_NUMBER = 4;
-    private java.lang.Object categoryId_;
+    public static final int CATEGORYCODE_FIELD_NUMBER = 4;
+    private java.lang.Object categoryCode_;
     /**
-     * <code>required string categoryId = 4;</code>
+     * <code>required string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
      * </pre>
      */
-    public boolean hasCategoryId() {
+    public boolean hasCategoryCode() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required string categoryId = 4;</code>
+     * <code>required string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
      * </pre>
      */
-    public java.lang.String getCategoryId() {
-      java.lang.Object ref = categoryId_;
+    public java.lang.String getCategoryCode() {
+      java.lang.Object ref = categoryCode_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -2362,26 +2362,26 @@ public final class Order {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          categoryId_ = s;
+          categoryCode_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string categoryId = 4;</code>
+     * <code>required string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getCategoryIdBytes() {
-      java.lang.Object ref = categoryId_;
+        getCategoryCodeBytes() {
+      java.lang.Object ref = categoryCode_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        categoryId_ = b;
+        categoryCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2663,7 +2663,7 @@ public final class Order {
       resultCode_ = "";
       resultMsg_ = "";
       orderId_ = "";
-      categoryId_ = "";
+      categoryCode_ = "";
       rentCount_ = 0;
       rentCode_ = "";
       insurance_ = false;
@@ -2689,7 +2689,7 @@ public final class Order {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasCategoryId()) {
+      if (!hasCategoryCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -2740,7 +2740,7 @@ public final class Order {
         output.writeBytes(3, getOrderIdBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getCategoryIdBytes());
+        output.writeBytes(4, getCategoryCodeBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeInt32(5, rentCount_);
@@ -2795,7 +2795,7 @@ public final class Order {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getCategoryIdBytes());
+          .computeBytesSize(4, getCategoryCodeBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
@@ -2965,7 +2965,7 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000002);
         orderId_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        categoryId_ = "";
+        categoryCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
         rentCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -3034,7 +3034,7 @@ public final class Order {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.categoryId_ = categoryId_;
+        result.categoryCode_ = categoryCode_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
@@ -3110,9 +3110,9 @@ public final class Order {
           orderId_ = other.orderId_;
           onChanged();
         }
-        if (other.hasCategoryId()) {
+        if (other.hasCategoryCode()) {
           bitField0_ |= 0x00000008;
-          categoryId_ = other.categoryId_;
+          categoryCode_ = other.categoryCode_;
           onChanged();
         }
         if (other.hasRentCount()) {
@@ -3160,7 +3160,7 @@ public final class Order {
           
           return false;
         }
-        if (!hasCategoryId()) {
+        if (!hasCategoryCode()) {
           
           return false;
         }
@@ -3468,32 +3468,32 @@ public final class Order {
         return this;
       }
 
-      private java.lang.Object categoryId_ = "";
+      private java.lang.Object categoryCode_ = "";
       /**
-       * <code>required string categoryId = 4;</code>
+       * <code>required string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
        * </pre>
        */
-      public boolean hasCategoryId() {
+      public boolean hasCategoryCode() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required string categoryId = 4;</code>
+       * <code>required string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
        * </pre>
        */
-      public java.lang.String getCategoryId() {
-        java.lang.Object ref = categoryId_;
+      public java.lang.String getCategoryCode() {
+        java.lang.Object ref = categoryCode_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            categoryId_ = s;
+            categoryCode_ = s;
           }
           return s;
         } else {
@@ -3501,69 +3501,69 @@ public final class Order {
         }
       }
       /**
-       * <code>required string categoryId = 4;</code>
+       * <code>required string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getCategoryIdBytes() {
-        java.lang.Object ref = categoryId_;
+          getCategoryCodeBytes() {
+        java.lang.Object ref = categoryCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          categoryId_ = b;
+          categoryCode_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string categoryId = 4;</code>
+       * <code>required string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
        * </pre>
        */
-      public Builder setCategoryId(
+      public Builder setCategoryCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        categoryId_ = value;
+        categoryCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string categoryId = 4;</code>
+       * <code>required string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
        * </pre>
        */
-      public Builder clearCategoryId() {
+      public Builder clearCategoryCode() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        categoryId_ = getDefaultInstance().getCategoryId();
+        categoryCode_ = getDefaultInstance().getCategoryCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string categoryId = 4;</code>
+       * <code>required string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
        * </pre>
        */
-      public Builder setCategoryIdBytes(
+      public Builder setCategoryCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        categoryId_ = value;
+        categoryCode_ = value;
         onChanged();
         return this;
       }
@@ -6056,30 +6056,30 @@ public final class Order {
         getProductIdBytes();
 
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
-    boolean hasCategoryId();
+    boolean hasCategoryCode();
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
-    java.lang.String getCategoryId();
+    java.lang.String getCategoryCode();
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
     com.google.protobuf.ByteString
-        getCategoryIdBytes();
+        getCategoryCodeBytes();
 
     /**
      * <code>required int32 rentCount = 3;</code>
@@ -6362,7 +6362,7 @@ public final class Order {
             case 18: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              categoryId_ = bs;
+              categoryCode_ = bs;
               break;
             }
             case 24: {
@@ -6516,27 +6516,27 @@ public final class Order {
       }
     }
 
-    public static final int CATEGORYID_FIELD_NUMBER = 2;
-    private java.lang.Object categoryId_;
+    public static final int CATEGORYCODE_FIELD_NUMBER = 2;
+    private java.lang.Object categoryCode_;
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
-    public boolean hasCategoryId() {
+    public boolean hasCategoryCode() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
-    public java.lang.String getCategoryId() {
-      java.lang.Object ref = categoryId_;
+    public java.lang.String getCategoryCode() {
+      java.lang.Object ref = categoryCode_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -6544,26 +6544,26 @@ public final class Order {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          categoryId_ = s;
+          categoryCode_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string categoryId = 2;</code>
+     * <code>required string categoryCode = 2;</code>
      *
      * <pre>
      *类别信息
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getCategoryIdBytes() {
-      java.lang.Object ref = categoryId_;
+        getCategoryCodeBytes() {
+      java.lang.Object ref = categoryCode_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        categoryId_ = b;
+        categoryCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6956,7 +6956,7 @@ public final class Order {
 
     private void initFields() {
       productId_ = "";
-      categoryId_ = "";
+      categoryCode_ = "";
       rentCount_ = 0;
       rentCode_ = "";
       insurance_ = false;
@@ -6977,7 +6977,7 @@ public final class Order {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasCategoryId()) {
+      if (!hasCategoryCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -7012,7 +7012,7 @@ public final class Order {
         output.writeBytes(1, getProductIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getCategoryIdBytes());
+        output.writeBytes(2, getCategoryCodeBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, rentCount_);
@@ -7056,7 +7056,7 @@ public final class Order {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getCategoryIdBytes());
+          .computeBytesSize(2, getCategoryCodeBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -7222,7 +7222,7 @@ public final class Order {
         super.clear();
         productId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        categoryId_ = "";
+        categoryCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         rentCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -7277,7 +7277,7 @@ public final class Order {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.categoryId_ = categoryId_;
+        result.categoryCode_ = categoryCode_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -7336,9 +7336,9 @@ public final class Order {
           productId_ = other.productId_;
           onChanged();
         }
-        if (other.hasCategoryId()) {
+        if (other.hasCategoryCode()) {
           bitField0_ |= 0x00000002;
-          categoryId_ = other.categoryId_;
+          categoryCode_ = other.categoryCode_;
           onChanged();
         }
         if (other.hasRentCount()) {
@@ -7394,7 +7394,7 @@ public final class Order {
           
           return false;
         }
-        if (!hasCategoryId()) {
+        if (!hasCategoryCode()) {
           
           return false;
         }
@@ -7540,32 +7540,32 @@ public final class Order {
         return this;
       }
 
-      private java.lang.Object categoryId_ = "";
+      private java.lang.Object categoryCode_ = "";
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public boolean hasCategoryId() {
+      public boolean hasCategoryCode() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public java.lang.String getCategoryId() {
-        java.lang.Object ref = categoryId_;
+      public java.lang.String getCategoryCode() {
+        java.lang.Object ref = categoryCode_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
-            categoryId_ = s;
+            categoryCode_ = s;
           }
           return s;
         } else {
@@ -7573,69 +7573,69 @@ public final class Order {
         }
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getCategoryIdBytes() {
-        java.lang.Object ref = categoryId_;
+          getCategoryCodeBytes() {
+        java.lang.Object ref = categoryCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          categoryId_ = b;
+          categoryCode_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public Builder setCategoryId(
+      public Builder setCategoryCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        categoryId_ = value;
+        categoryCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public Builder clearCategoryId() {
+      public Builder clearCategoryCode() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        categoryId_ = getDefaultInstance().getCategoryId();
+        categoryCode_ = getDefaultInstance().getCategoryCode();
         onChanged();
         return this;
       }
       /**
-       * <code>required string categoryId = 2;</code>
+       * <code>required string categoryCode = 2;</code>
        *
        * <pre>
        *类别信息
        * </pre>
        */
-      public Builder setCategoryIdBytes(
+      public Builder setCategoryCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        categoryId_ = value;
+        categoryCode_ = value;
         onChanged();
         return this;
       }
@@ -39572,120 +39572,120 @@ public final class Order {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\005Order\022\035com.qjoy.basjoo.core.model.pb\"\252" +
+      "\n\005Order\022\035com.qjoy.basjoo.core.model.pb\"\254" +
       "\001\n\022CommitOrderRequest\022\021\n\tproductId\030\001 \002(\t" +
-      "\022\022\n\ncategoryId\030\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022" +
-      "\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance\030\005 \002(\010\022\017\n\007" +
-      "orderId\030\006 \001(\t\022\024\n\014onlyCalPrice\030\007 \002(\010\022\016\n\006u" +
-      "serId\030\010 \002(\t\"\372\002\n\021CommitOrderResult\022\022\n\nres" +
-      "ultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orde" +
-      "rId\030\003 \001(\t\022\022\n\ncategoryId\030\004 \002(\t\022\021\n\trentCou" +
-      "nt\030\005 \002(\005\022\020\n\010rentCode\030\006 \002(\t\022\021\n\tinsurance\030" +
-      "\007 \002(\010\022\026\n\016insurancePrice\030\010 \001(\001\022\023\n\013pledgeP",
-      "rice\030\t \001(\001\022\033\n\023transportationPrice\030\n \001(\001\022" +
-      "\026\n\016totalRentPrice\030\013 \002(\001\022\022\n\nhasVoucher\030\014 " +
-      "\002(\010\022\022\n\ntotalPrice\030\r \002(\001\022W\n\027orderReceiveA" +
-      "ddressInfo\030\016 \001(\01326.com.qjoy.basjoo.core." +
-      "model.pb.OrderReceiveAddressInfo\"\223\001\n\027Ord" +
-      "erReceiveAddressInfo\022\020\n\010receiver\030\001 \002(\t\022\020" +
-      "\n\010mobileNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006str" +
-      "eet\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 " +
-      "\002(\t\022\021\n\taddressId\030\007 \001(\t\"\343\001\n\023ConfirmOrderR" +
-      "equest\022\021\n\tproductId\030\001 \002(\t\022\022\n\ncategoryId\030",
-      "\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030\004 \002" +
-      "(\t\022\021\n\tinsurance\030\005 \001(\010\022\017\n\007orderId\030\006 \002(\t\022\021" +
-      "\n\taddressId\030\007 \002(\t\022\020\n\010vouchers\030\010 \003(\t\022\023\n\013u" +
-      "serMessage\030\t \001(\t\022\022\n\npayChannel\030\n \001(\005\022\016\n\006" +
-      "userId\030\013 \002(\t\"\235\001\n\022ConfirmOrderResult\022\022\n\nr" +
+      "\022\024\n\014categoryCode\030\002 \002(\t\022\021\n\trentCount\030\003 \002(" +
+      "\005\022\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance\030\005 \002(\010\022\017" +
+      "\n\007orderId\030\006 \001(\t\022\024\n\014onlyCalPrice\030\007 \002(\010\022\016\n" +
+      "\006userId\030\010 \002(\t\"\374\002\n\021CommitOrderResult\022\022\n\nr" +
       "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007or" +
-      "derId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPay" +
-      "Info\030\005 \001(\0132(.com.qjoy.basjoo.core.model." +
-      "pb.WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId\030" +
-      "\001 \002(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t",
-      "\022\020\n\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n" +
-      "\004sign\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"H\n\021ConfirmPay" +
-      "Request\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030\002" +
-      " \001(\005\022\016\n\006userId\030\003 \002(\t\"\233\001\n\020ConfirmPayResul" +
+      "derId\030\003 \001(\t\022\024\n\014categoryCode\030\004 \002(\t\022\021\n\tren" +
+      "tCount\030\005 \002(\005\022\020\n\010rentCode\030\006 \002(\t\022\021\n\tinsura" +
+      "nce\030\007 \002(\010\022\026\n\016insurancePrice\030\010 \001(\001\022\023\n\013ple",
+      "dgePrice\030\t \001(\001\022\033\n\023transportationPrice\030\n " +
+      "\001(\001\022\026\n\016totalRentPrice\030\013 \002(\001\022\022\n\nhasVouche" +
+      "r\030\014 \002(\010\022\022\n\ntotalPrice\030\r \002(\001\022W\n\027orderRece" +
+      "iveAddressInfo\030\016 \001(\01326.com.qjoy.basjoo.c" +
+      "ore.model.pb.OrderReceiveAddressInfo\"\223\001\n" +
+      "\027OrderReceiveAddressInfo\022\020\n\010receiver\030\001 \002" +
+      "(\t\022\020\n\010mobileNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n" +
+      "\006street\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCod" +
+      "e\030\006 \002(\t\022\021\n\taddressId\030\007 \001(\t\"\345\001\n\023ConfirmOr" +
+      "derRequest\022\021\n\tproductId\030\001 \002(\t\022\024\n\014categor",
+      "yCode\030\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCo" +
+      "de\030\004 \002(\t\022\021\n\tinsurance\030\005 \001(\010\022\017\n\007orderId\030\006" +
+      " \002(\t\022\021\n\taddressId\030\007 \002(\t\022\020\n\010vouchers\030\010 \003(" +
+      "\t\022\023\n\013userMessage\030\t \001(\t\022\022\n\npayChannel\030\n \001" +
+      "(\005\022\016\n\006userId\030\013 \002(\t\"\235\001\n\022ConfirmOrderResul" +
       "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
       "\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n" +
       "\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo.core." +
-      "model.pb.WxPayInfo\"6\n\023GetPayStatusReques" +
-      "t\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"\316\001\n\022G" +
-      "etPayStatusResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n",
-      "\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \002(\t\022\022\n\npay" +
-      "Channel\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001\022W\n\027or" +
-      "derReceiveAddressInfo\030\006 \001(\01326.com.qjoy.b" +
-      "asjoo.core.model.pb.OrderReceiveAddressI" +
-      "nfo\"\237\001\n\026SearchOrderListRequest\022\020\n\010keyWor" +
-      "ds\030\001 \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016evaluat" +
-      "eStauts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022\021\n\tsta" +
-      "rtTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006userId\030" +
-      "\007 \002(\t\"\271\002\n\025SearchOrderListResult\022\022\n\nresul" +
-      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxInd",
-      "ex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\024\n\014waitPayCoun" +
-      "t\030\005 \002(\005\022\031\n\021waitDeliveryCount\030\006 \002(\005\022\030\n\020wa" +
-      "itReceiveCount\030\007 \002(\005\022\027\n\017waitRevertCount\030" +
-      "\010 \002(\005\022\031\n\021waitEvaluateCount\030\t \002(\005\022\022\n\ntota" +
-      "lCount\030\n \002(\005\022C\n\rorderLiteInfo\030\013 \003(\0132,.co" +
-      "m.qjoy.basjoo.core.model.pb.OrderLiteInf" +
-      "o\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013" +
-      "orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n" +
-      "\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(" +
-      "\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021",
-      "\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033" +
-      "\n\023transportationPrice\030\n \001(\001\022\022\n\ntotalPric" +
-      "e\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016eva" +
-      "luateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014" +
-      "mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014cate" +
-      "goryName\030\021 \002(\t\"5\n\022DeleteOrderRequest\022\017\n\007" +
-      "orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021DeleteO" +
-      "rderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresult" +
-      "Msg\030\002 \002(\t\"E\n\022CancelOrderRequest\022\017\n\007order" +
-      "Id\030\001 \002(\t\022\016\n\006reason\030\002 \002(\t\022\016\n\006userId\030\003 \002(\t",
-      "\":\n\021CancelOrderResult\022\022\n\nresultCode\030\001 \002(" +
-      "\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025ConfirmReceiveRe" +
-      "quest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"=" +
-      "\n\024ConfirmReceiveResult\022\022\n\nresultCode\030\001 \002" +
-      "(\t\022\021\n\tresultMsg\030\002 \002(\t\"\207\001\n\022ApplyRevertReq" +
-      "uest\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType" +
-      "\030\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025tran" +
-      "sportationCompany\030\004 \001(\t\022\016\n\006userId\030\005 \002(\t\"" +
-      ":\n\021ApplyRevertResult\022\022\n\nresultCode\030\001 \002(\t" +
-      "\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefundReque",
-      "st\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\022\n\nr" +
-      "efundType\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001(\t\022\024\n\014" +
-      "refundReason\030\005 \002(\t\022\021\n\trefundFee\030\006 \001(\001\022\025\n" +
-      "\revidentalImgs\030\007 \003(\t\022\023\n\013refundIntro\030\010 \001(" +
-      "\t\":\n\021ApplyRefundResult\022\022\n\nresultCode\030\001 \002" +
-      "(\t\022\021\n\tresultMsg\030\002 \002(\t\"\252\001\n\030CommitRefundTr" +
-      "ansRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 " +
-      "\002(\t\022\027\n\017refundTransType\030\003 \002(\t\022\030\n\020transpor" +
-      "tationId\030\004 \001(\t\022\035\n\025transportationCompany\030" +
-      "\005 \001(\t\022\033\n\023transportationIntro\030\006 \001(\t\"@\n\027Co",
-      "mmitRefundTransResult\022\022\n\nresultCode\030\001 \002(" +
-      "\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetOrderDetailRe" +
-      "quest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"\206" +
-      "\001\n\024GetOrderDetailResult\022\022\n\nresultCode\030\001 " +
-      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDetailInf" +
-      "o\030\003 \002(\0132..com.qjoy.basjoo.core.model.pb." +
-      "OrderDetailInfo\"\373\004\n\017OrderDetailInfo\022\017\n\007o" +
-      "rderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncre" +
-      "ateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013" +
-      "rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\tr",
-      "entCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013ple" +
-      "dgePrice\030\t \002(\001\022\033\n\023transportationPrice\030\n " +
-      "\001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportatio" +
-      "nId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tpro" +
-      "ductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004de" +
-      "sc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTim" +
-      "e\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 \001" +
-      "(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTime\030" +
-      "\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTim" +
-      "e\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030\032",
-      " \003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001(\01326." +
-      "com.qjoy.basjoo.core.model.pb.OrderRecei" +
-      "veAddressInfoB\037\n\035com.qjoy.basjoo.core.mo" +
-      "del.pb"
+      "model.pb.WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpart" +
+      "nerId\030\001 \002(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package",
+      "\030\003 \002(\t\022\020\n\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 " +
+      "\002(\t\022\014\n\004sign\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"H\n\021Conf" +
+      "irmPayRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayCha" +
+      "nnel\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\"\233\001\n\020ConfirmPa" +
+      "yResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg" +
+      "\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 " +
+      "\001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo" +
+      ".core.model.pb.WxPayInfo\"6\n\023GetPayStatus" +
+      "Request\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t" +
+      "\"\316\001\n\022GetPayStatusResult\022\022\n\nresultCode\030\001 ",
+      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \002(\t\022" +
+      "\022\n\npayChannel\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001" +
+      "\022W\n\027orderReceiveAddressInfo\030\006 \001(\01326.com." +
+      "qjoy.basjoo.core.model.pb.OrderReceiveAd" +
+      "dressInfo\"\237\001\n\026SearchOrderListRequest\022\020\n\010" +
+      "keyWords\030\001 \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016e" +
+      "valuateStauts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022" +
+      "\021\n\tstartTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006u" +
+      "serId\030\007 \002(\t\"\271\002\n\025SearchOrderListResult\022\022\n" +
+      "\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010",
+      "maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\024\n\014waitP" +
+      "ayCount\030\005 \002(\005\022\031\n\021waitDeliveryCount\030\006 \002(\005" +
+      "\022\030\n\020waitReceiveCount\030\007 \002(\005\022\027\n\017waitRevert" +
+      "Count\030\010 \002(\005\022\031\n\021waitEvaluateCount\030\t \002(\005\022\022" +
+      "\n\ntotalCount\030\n \002(\005\022C\n\rorderLiteInfo\030\013 \003(" +
+      "\0132,.com.qjoy.basjoo.core.model.pb.OrderL" +
+      "iteInfo\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002" +
+      "(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 " +
+      "\002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTim" +
+      "e\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007",
+      " \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t" +
+      " \002(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022\n\ntot" +
+      "alPrice\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022" +
+      "\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002" +
+      "(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024" +
+      "\n\014categoryName\030\021 \002(\t\"5\n\022DeleteOrderReque" +
+      "st\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021D" +
+      "eleteOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
+      "resultMsg\030\002 \002(\t\"E\n\022CancelOrderRequest\022\017\n" +
+      "\007orderId\030\001 \002(\t\022\016\n\006reason\030\002 \002(\t\022\016\n\006userId",
+      "\030\003 \002(\t\":\n\021CancelOrderResult\022\022\n\nresultCod" +
+      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025ConfirmRec" +
+      "eiveRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002" +
+      " \002(\t\"=\n\024ConfirmReceiveResult\022\022\n\nresultCo" +
+      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\207\001\n\022ApplyRev" +
+      "ertRequest\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyReve" +
+      "rtType\030\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022\035" +
+      "\n\025transportationCompany\030\004 \001(\t\022\016\n\006userId\030" +
+      "\005 \002(\t\":\n\021ApplyRevertResult\022\022\n\nresultCode" +
+      "\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefun",
+      "dRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(" +
+      "\t\022\022\n\nrefundType\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001" +
+      "(\t\022\024\n\014refundReason\030\005 \002(\t\022\021\n\trefundFee\030\006 " +
+      "\001(\001\022\025\n\revidentalImgs\030\007 \003(\t\022\023\n\013refundIntr" +
+      "o\030\010 \001(\t\":\n\021ApplyRefundResult\022\022\n\nresultCo" +
+      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\252\001\n\030CommitRe" +
+      "fundTransRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orde" +
+      "rId\030\002 \002(\t\022\027\n\017refundTransType\030\003 \002(\t\022\030\n\020tr" +
+      "ansportationId\030\004 \001(\t\022\035\n\025transportationCo" +
+      "mpany\030\005 \001(\t\022\033\n\023transportationIntro\030\006 \001(\t",
+      "\"@\n\027CommitRefundTransResult\022\022\n\nresultCod" +
+      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetOrderDe" +
+      "tailRequest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030\002" +
+      " \002(\t\"\206\001\n\024GetOrderDetailResult\022\022\n\nresultC" +
+      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDet" +
+      "ailInfo\030\003 \002(\0132..com.qjoy.basjoo.core.mod" +
+      "el.pb.OrderDetailInfo\"\373\004\n\017OrderDetailInf" +
+      "o\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022" +
+      "\022\n\ncreateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002" +
+      "(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(",
+      "\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022" +
+      "\023\n\013pledgePrice\030\t \002(\001\022\033\n\023transportationPr" +
+      "ice\030\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transpo" +
+      "rtationId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022" +
+      "\021\n\tproductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t" +
+      "\022\014\n\004desc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007" +
+      "payTime\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChann" +
+      "el\030\024 \001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiv" +
+      "eTime\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014compl" +
+      "eteTime\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouc",
+      "hers\030\032 \003(\t\022W\n\027orderReceiveAddressInfo\030\033 " +
+      "\001(\01326.com.qjoy.basjoo.core.model.pb.Orde" +
+      "rReceiveAddressInfoB\037\n\035com.qjoy.basjoo.c" +
+      "ore.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -39704,13 +39704,13 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderRequest_descriptor,
-        new java.lang.String[] { "ProductId", "CategoryId", "RentCount", "RentCode", "Insurance", "OrderId", "OnlyCalPrice", "UserId", });
+        new java.lang.String[] { "ProductId", "CategoryCode", "RentCount", "RentCode", "Insurance", "OrderId", "OnlyCalPrice", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "CategoryId", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "CategoryCode", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_fieldAccessorTable = new
@@ -39722,7 +39722,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderRequest_descriptor,
-        new java.lang.String[] { "ProductId", "CategoryId", "RentCount", "RentCode", "Insurance", "OrderId", "AddressId", "Vouchers", "UserMessage", "PayChannel", "UserId", });
+        new java.lang.String[] { "ProductId", "CategoryCode", "RentCount", "RentCode", "Insurance", "OrderId", "AddressId", "Vouchers", "UserMessage", "PayChannel", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderResult_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderResult_fieldAccessorTable = new

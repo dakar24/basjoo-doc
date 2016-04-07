@@ -7,7 +7,7 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _productId = @"";
-    _categoryId = @"";
+    _categoryCode = @"";
     _rentCount = 0;
     _rentCode = @"";
     _insurance = NO;
@@ -21,8 +21,8 @@
   if (self.hasProductId) {
     [output writeString:1 value:self.productId];
   }
-  if (self.hasCategoryId) {
-    [output writeString:2 value:self.categoryId];
+  if (self.hasCategoryCode) {
+    [output writeString:2 value:self.categoryCode];
   }
   if (self.hasRentCount) {
     [output writeInt32:3 value:self.rentCount];
@@ -51,8 +51,8 @@
   if (self.hasProductId) {
     size_ += computeStringSize(1, self.productId);
   }
-  if (self.hasCategoryId) {
-    size_ += computeStringSize(2, self.categoryId);
+  if (self.hasCategoryCode) {
+    size_ += computeStringSize(2, self.categoryCode);
   }
   if (self.hasRentCount) {
     size_ += computeInt32Size(3, self.rentCount);
@@ -85,8 +85,8 @@
   if (self.hasProductId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"productId", self.productId];
   }
-  if (self.hasCategoryId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"categoryId", self.categoryId];
+  if (self.hasCategoryCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryCode", self.categoryCode];
   }
   if (self.hasRentCount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentCount", [NSNumber numberWithInteger:self.rentCount]];
@@ -113,9 +113,9 @@
   _hasProductId = YES;
   _productId = value;
 }
-- (void) setCategoryId:(NSString*) value {
-  _hasCategoryId = YES;
-  _categoryId = value;
+- (void) setCategoryCode:(NSString*) value {
+  _hasCategoryCode = YES;
+  _categoryCode = value;
 }
 - (void) setRentCount:(SInt32) value {
   _hasRentCount = YES;
@@ -161,7 +161,7 @@
         break;
       }
       case 18: {
-        [self setCategoryId:[input readString]];
+        [self setCategoryCode:[input readString]];
         break;
       }
       case 24: {
@@ -201,7 +201,7 @@
     _resultCode = @"";
     _resultMsg = @"";
     _orderId = @"";
-    _categoryId = @"";
+    _categoryCode = @"";
     _rentCount = 0;
     _rentCode = @"";
     _insurance = NO;
@@ -224,8 +224,8 @@
   if (self.hasOrderId) {
     [output writeString:3 value:self.orderId];
   }
-  if (self.hasCategoryId) {
-    [output writeString:4 value:self.categoryId];
+  if (self.hasCategoryCode) {
+    [output writeString:4 value:self.categoryCode];
   }
   if (self.hasRentCount) {
     [output writeInt32:5 value:self.rentCount];
@@ -272,8 +272,8 @@
   if (self.hasOrderId) {
     size_ += computeStringSize(3, self.orderId);
   }
-  if (self.hasCategoryId) {
-    size_ += computeStringSize(4, self.categoryId);
+  if (self.hasCategoryCode) {
+    size_ += computeStringSize(4, self.categoryCode);
   }
   if (self.hasRentCount) {
     size_ += computeInt32Size(5, self.rentCount);
@@ -324,8 +324,8 @@
   if (self.hasOrderId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
   }
-  if (self.hasCategoryId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"categoryId", self.categoryId];
+  if (self.hasCategoryCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryCode", self.categoryCode];
   }
   if (self.hasRentCount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentCount", [NSNumber numberWithInteger:self.rentCount]];
@@ -375,9 +375,9 @@
   _hasOrderId = YES;
   _orderId = value;
 }
-- (void) setCategoryId:(NSString*) value {
-  _hasCategoryId = YES;
-  _categoryId = value;
+- (void) setCategoryCode:(NSString*) value {
+  _hasCategoryCode = YES;
+  _categoryCode = value;
 }
 - (void) setRentCount:(SInt32) value {
   _hasRentCount = YES;
@@ -447,7 +447,7 @@
         break;
       }
       case 34: {
-        [self setCategoryId:[input readString]];
+        [self setCategoryCode:[input readString]];
         break;
       }
       case 40: {
@@ -677,7 +677,7 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _productId = @"";
-    _categoryId = @"";
+    _categoryCode = @"";
     _rentCount = 0;
     _rentCode = @"";
     _insurance = NO;
@@ -693,8 +693,8 @@
   if (self.hasProductId) {
     [output writeString:1 value:self.productId];
   }
-  if (self.hasCategoryId) {
-    [output writeString:2 value:self.categoryId];
+  if (self.hasCategoryCode) {
+    [output writeString:2 value:self.categoryCode];
   }
   if (self.hasRentCount) {
     [output writeInt32:3 value:self.rentCount];
@@ -732,8 +732,8 @@
   if (self.hasProductId) {
     size_ += computeStringSize(1, self.productId);
   }
-  if (self.hasCategoryId) {
-    size_ += computeStringSize(2, self.categoryId);
+  if (self.hasCategoryCode) {
+    size_ += computeStringSize(2, self.categoryCode);
   }
   if (self.hasRentCount) {
     size_ += computeInt32Size(3, self.rentCount);
@@ -781,8 +781,8 @@
   if (self.hasProductId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"productId", self.productId];
   }
-  if (self.hasCategoryId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"categoryId", self.categoryId];
+  if (self.hasCategoryCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryCode", self.categoryCode];
   }
   if (self.hasRentCount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentCount", [NSNumber numberWithInteger:self.rentCount]];
@@ -818,9 +818,9 @@
   _hasProductId = YES;
   _productId = value;
 }
-- (void) setCategoryId:(NSString*) value {
-  _hasCategoryId = YES;
-  _categoryId = value;
+- (void) setCategoryCode:(NSString*) value {
+  _hasCategoryCode = YES;
+  _categoryCode = value;
 }
 - (void) setRentCount:(SInt32) value {
   _hasRentCount = YES;
@@ -883,7 +883,7 @@
         break;
       }
       case 18: {
-        [self setCategoryId:[input readString]];
+        [self setCategoryCode:[input readString]];
         break;
       }
       case 24: {
