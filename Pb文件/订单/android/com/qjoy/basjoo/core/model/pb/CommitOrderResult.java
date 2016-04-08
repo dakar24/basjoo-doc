@@ -60,25 +60,25 @@ public final class CommitOrderResult extends Message {
   /**
    * 用户提交订单时所选的类别信息
    */
-  @ProtoField(tag = 4, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 4, type = STRING)
   public String categoryCode;
 
   /**
    * 用户提交订单时所选的租用数量
    */
-  @ProtoField(tag = 5, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 5, type = INT32)
   public Integer rentCount;
 
   /**
    * 用户提交订单时所选的租金的编码
    */
-  @ProtoField(tag = 6, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 6, type = STRING)
   public String rentCode;
 
   /**
    * 是否选择运费险
    */
-  @ProtoField(tag = 7, type = BOOL, label = REQUIRED)
+  @ProtoField(tag = 7, type = BOOL)
   public Boolean insurance;
 
   /**
@@ -102,19 +102,19 @@ public final class CommitOrderResult extends Message {
   /**
    * 该周期内总租金
    */
-  @ProtoField(tag = 11, type = DOUBLE, label = REQUIRED)
+  @ProtoField(tag = 11, type = DOUBLE)
   public Double totalRentPrice;
 
   /**
    * 是否有可使用的权益
    */
-  @ProtoField(tag = 12, type = BOOL, label = REQUIRED)
+  @ProtoField(tag = 12, type = BOOL)
   public Boolean hasVoucher;
 
   /**
    * 总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
    */
-  @ProtoField(tag = 13, type = DOUBLE, label = REQUIRED)
+  @ProtoField(tag = 13, type = DOUBLE)
   public Double totalPrice;
 
   /**

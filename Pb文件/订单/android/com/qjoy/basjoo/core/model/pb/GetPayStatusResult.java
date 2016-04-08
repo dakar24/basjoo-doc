@@ -40,7 +40,7 @@ public final class GetPayStatusResult extends Message {
   /**
    * 订单ID
    */
-  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 3, type = STRING)
   public String orderId;
 
   /**

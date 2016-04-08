@@ -63,37 +63,37 @@ public final class SearchOrderListResult extends Message {
   /**
    * 待付款
    */
-  @ProtoField(tag = 5, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 5, type = INT32)
   public Integer waitPayCount;
 
   /**
    * 待发货
    */
-  @ProtoField(tag = 6, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 6, type = INT32)
   public Integer waitDeliveryCount;
 
   /**
    * 待收货
    */
-  @ProtoField(tag = 7, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 7, type = INT32)
   public Integer waitReceiveCount;
 
   /**
    * 待归还
    */
-  @ProtoField(tag = 8, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 8, type = INT32)
   public Integer waitRevertCount;
 
   /**
    * 待评价
    */
-  @ProtoField(tag = 9, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 9, type = INT32)
   public Integer waitEvaluateCount;
 
   /**
    * 总数
    */
-  @ProtoField(tag = 10, type = INT32, label = REQUIRED)
+  @ProtoField(tag = 10, type = INT32)
   public Integer totalCount;
 
   /**

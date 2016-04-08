@@ -488,7 +488,7 @@
       }
       case 114: {
         OrderReceiveAddressInfo* sub = [[OrderReceiveAddressInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self setOrderReceiveAddressInfo:sub];
         break;
       }
@@ -1060,7 +1060,7 @@
       }
       case 42: {
         WxPayInfo* sub = [[WxPayInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self setWxPayInfo:sub];
         break;
       }
@@ -1478,7 +1478,7 @@
       }
       case 42: {
         WxPayInfo* sub = [[WxPayInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self setWxPayInfo:sub];
         break;
       }
@@ -1722,7 +1722,7 @@
       }
       case 50: {
         OrderReceiveAddressInfo* sub = [[OrderReceiveAddressInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self setOrderReceiveAddressInfo:sub];
         break;
       }
@@ -2151,7 +2151,7 @@
       }
       case 90: {
         OrderLiteInfo* sub = [[OrderLiteInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self addOrderLiteInfo:sub];
         break;
       }
@@ -3965,7 +3965,7 @@
       }
       case 26: {
         OrderDetailInfo* sub = [[OrderDetailInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self setOrderDetailInfo:sub];
         break;
       }
@@ -4513,7 +4513,7 @@
       }
       case 218: {
         OrderReceiveAddressInfo* sub = [[OrderReceiveAddressInfo alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [input readAPMessage:sub extensionRegistry:extensionRegistry];
         [self setOrderReceiveAddressInfo:sub];
         break;
       }

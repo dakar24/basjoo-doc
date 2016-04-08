@@ -1805,7 +1805,7 @@ public final class Order {
         getOrderIdBytes();
 
     /**
-     * <code>required string categoryCode = 4;</code>
+     * <code>optional string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -1813,7 +1813,7 @@ public final class Order {
      */
     boolean hasCategoryCode();
     /**
-     * <code>required string categoryCode = 4;</code>
+     * <code>optional string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -1821,7 +1821,7 @@ public final class Order {
      */
     java.lang.String getCategoryCode();
     /**
-     * <code>required string categoryCode = 4;</code>
+     * <code>optional string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -1831,7 +1831,7 @@ public final class Order {
         getCategoryCodeBytes();
 
     /**
-     * <code>required int32 rentCount = 5;</code>
+     * <code>optional int32 rentCount = 5;</code>
      *
      * <pre>
      *用户提交订单时所选的租用数量
@@ -1839,7 +1839,7 @@ public final class Order {
      */
     boolean hasRentCount();
     /**
-     * <code>required int32 rentCount = 5;</code>
+     * <code>optional int32 rentCount = 5;</code>
      *
      * <pre>
      *用户提交订单时所选的租用数量
@@ -1848,7 +1848,7 @@ public final class Order {
     int getRentCount();
 
     /**
-     * <code>required string rentCode = 6;</code>
+     * <code>optional string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -1856,7 +1856,7 @@ public final class Order {
      */
     boolean hasRentCode();
     /**
-     * <code>required string rentCode = 6;</code>
+     * <code>optional string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -1864,7 +1864,7 @@ public final class Order {
      */
     java.lang.String getRentCode();
     /**
-     * <code>required string rentCode = 6;</code>
+     * <code>optional string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -1874,7 +1874,7 @@ public final class Order {
         getRentCodeBytes();
 
     /**
-     * <code>required bool insurance = 7;</code>
+     * <code>optional bool insurance = 7;</code>
      *
      * <pre>
      *是否选择运费险
@@ -1882,7 +1882,7 @@ public final class Order {
      */
     boolean hasInsurance();
     /**
-     * <code>required bool insurance = 7;</code>
+     * <code>optional bool insurance = 7;</code>
      *
      * <pre>
      *是否选择运费险
@@ -1942,7 +1942,7 @@ public final class Order {
     double getTransportationPrice();
 
     /**
-     * <code>required double totalRentPrice = 11;</code>
+     * <code>optional double totalRentPrice = 11;</code>
      *
      * <pre>
      *该周期内总租金
@@ -1950,7 +1950,7 @@ public final class Order {
      */
     boolean hasTotalRentPrice();
     /**
-     * <code>required double totalRentPrice = 11;</code>
+     * <code>optional double totalRentPrice = 11;</code>
      *
      * <pre>
      *该周期内总租金
@@ -1959,7 +1959,7 @@ public final class Order {
     double getTotalRentPrice();
 
     /**
-     * <code>required bool hasVoucher = 12;</code>
+     * <code>optional bool hasVoucher = 12;</code>
      *
      * <pre>
      *是否有可使用的权益
@@ -1967,7 +1967,7 @@ public final class Order {
      */
     boolean hasHasVoucher();
     /**
-     * <code>required bool hasVoucher = 12;</code>
+     * <code>optional bool hasVoucher = 12;</code>
      *
      * <pre>
      *是否有可使用的权益
@@ -1976,7 +1976,7 @@ public final class Order {
     boolean getHasVoucher();
 
     /**
-     * <code>required double totalPrice = 13;</code>
+     * <code>optional double totalPrice = 13;</code>
      *
      * <pre>
      *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -1984,7 +1984,7 @@ public final class Order {
      */
     boolean hasTotalPrice();
     /**
-     * <code>required double totalPrice = 13;</code>
+     * <code>optional double totalPrice = 13;</code>
      *
      * <pre>
      *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -2337,7 +2337,7 @@ public final class Order {
     public static final int CATEGORYCODE_FIELD_NUMBER = 4;
     private java.lang.Object categoryCode_;
     /**
-     * <code>required string categoryCode = 4;</code>
+     * <code>optional string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -2347,7 +2347,7 @@ public final class Order {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required string categoryCode = 4;</code>
+     * <code>optional string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -2368,7 +2368,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string categoryCode = 4;</code>
+     * <code>optional string categoryCode = 4;</code>
      *
      * <pre>
      *用户提交订单时所选的类别信息
@@ -2391,7 +2391,7 @@ public final class Order {
     public static final int RENTCOUNT_FIELD_NUMBER = 5;
     private int rentCount_;
     /**
-     * <code>required int32 rentCount = 5;</code>
+     * <code>optional int32 rentCount = 5;</code>
      *
      * <pre>
      *用户提交订单时所选的租用数量
@@ -2401,7 +2401,7 @@ public final class Order {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required int32 rentCount = 5;</code>
+     * <code>optional int32 rentCount = 5;</code>
      *
      * <pre>
      *用户提交订单时所选的租用数量
@@ -2414,7 +2414,7 @@ public final class Order {
     public static final int RENTCODE_FIELD_NUMBER = 6;
     private java.lang.Object rentCode_;
     /**
-     * <code>required string rentCode = 6;</code>
+     * <code>optional string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -2424,7 +2424,7 @@ public final class Order {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required string rentCode = 6;</code>
+     * <code>optional string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -2445,7 +2445,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string rentCode = 6;</code>
+     * <code>optional string rentCode = 6;</code>
      *
      * <pre>
      *用户提交订单时所选的租金的编码
@@ -2468,7 +2468,7 @@ public final class Order {
     public static final int INSURANCE_FIELD_NUMBER = 7;
     private boolean insurance_;
     /**
-     * <code>required bool insurance = 7;</code>
+     * <code>optional bool insurance = 7;</code>
      *
      * <pre>
      *是否选择运费险
@@ -2478,7 +2478,7 @@ public final class Order {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required bool insurance = 7;</code>
+     * <code>optional bool insurance = 7;</code>
      *
      * <pre>
      *是否选择运费险
@@ -2560,7 +2560,7 @@ public final class Order {
     public static final int TOTALRENTPRICE_FIELD_NUMBER = 11;
     private double totalRentPrice_;
     /**
-     * <code>required double totalRentPrice = 11;</code>
+     * <code>optional double totalRentPrice = 11;</code>
      *
      * <pre>
      *该周期内总租金
@@ -2570,7 +2570,7 @@ public final class Order {
       return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>required double totalRentPrice = 11;</code>
+     * <code>optional double totalRentPrice = 11;</code>
      *
      * <pre>
      *该周期内总租金
@@ -2583,7 +2583,7 @@ public final class Order {
     public static final int HASVOUCHER_FIELD_NUMBER = 12;
     private boolean hasVoucher_;
     /**
-     * <code>required bool hasVoucher = 12;</code>
+     * <code>optional bool hasVoucher = 12;</code>
      *
      * <pre>
      *是否有可使用的权益
@@ -2593,7 +2593,7 @@ public final class Order {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>required bool hasVoucher = 12;</code>
+     * <code>optional bool hasVoucher = 12;</code>
      *
      * <pre>
      *是否有可使用的权益
@@ -2606,7 +2606,7 @@ public final class Order {
     public static final int TOTALPRICE_FIELD_NUMBER = 13;
     private double totalPrice_;
     /**
-     * <code>required double totalPrice = 13;</code>
+     * <code>optional double totalPrice = 13;</code>
      *
      * <pre>
      *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -2616,7 +2616,7 @@ public final class Order {
       return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
-     * <code>required double totalPrice = 13;</code>
+     * <code>optional double totalPrice = 13;</code>
      *
      * <pre>
      *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -2686,34 +2686,6 @@ public final class Order {
         return false;
       }
       if (!hasResultMsg()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasCategoryCode()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasRentCount()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasRentCode()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasInsurance()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTotalRentPrice()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasHasVoucher()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTotalPrice()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3160,34 +3132,6 @@ public final class Order {
           
           return false;
         }
-        if (!hasCategoryCode()) {
-          
-          return false;
-        }
-        if (!hasRentCount()) {
-          
-          return false;
-        }
-        if (!hasRentCode()) {
-          
-          return false;
-        }
-        if (!hasInsurance()) {
-          
-          return false;
-        }
-        if (!hasTotalRentPrice()) {
-          
-          return false;
-        }
-        if (!hasHasVoucher()) {
-          
-          return false;
-        }
-        if (!hasTotalPrice()) {
-          
-          return false;
-        }
         if (hasOrderReceiveAddressInfo()) {
           if (!getOrderReceiveAddressInfo().isInitialized()) {
             
@@ -3470,7 +3414,7 @@ public final class Order {
 
       private java.lang.Object categoryCode_ = "";
       /**
-       * <code>required string categoryCode = 4;</code>
+       * <code>optional string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3480,7 +3424,7 @@ public final class Order {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required string categoryCode = 4;</code>
+       * <code>optional string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3501,7 +3445,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string categoryCode = 4;</code>
+       * <code>optional string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3521,7 +3465,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string categoryCode = 4;</code>
+       * <code>optional string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3538,7 +3482,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required string categoryCode = 4;</code>
+       * <code>optional string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3551,7 +3495,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required string categoryCode = 4;</code>
+       * <code>optional string categoryCode = 4;</code>
        *
        * <pre>
        *用户提交订单时所选的类别信息
@@ -3570,7 +3514,7 @@ public final class Order {
 
       private int rentCount_ ;
       /**
-       * <code>required int32 rentCount = 5;</code>
+       * <code>optional int32 rentCount = 5;</code>
        *
        * <pre>
        *用户提交订单时所选的租用数量
@@ -3580,7 +3524,7 @@ public final class Order {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required int32 rentCount = 5;</code>
+       * <code>optional int32 rentCount = 5;</code>
        *
        * <pre>
        *用户提交订单时所选的租用数量
@@ -3590,7 +3534,7 @@ public final class Order {
         return rentCount_;
       }
       /**
-       * <code>required int32 rentCount = 5;</code>
+       * <code>optional int32 rentCount = 5;</code>
        *
        * <pre>
        *用户提交订单时所选的租用数量
@@ -3603,7 +3547,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required int32 rentCount = 5;</code>
+       * <code>optional int32 rentCount = 5;</code>
        *
        * <pre>
        *用户提交订单时所选的租用数量
@@ -3618,7 +3562,7 @@ public final class Order {
 
       private java.lang.Object rentCode_ = "";
       /**
-       * <code>required string rentCode = 6;</code>
+       * <code>optional string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3628,7 +3572,7 @@ public final class Order {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required string rentCode = 6;</code>
+       * <code>optional string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3649,7 +3593,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string rentCode = 6;</code>
+       * <code>optional string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3669,7 +3613,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string rentCode = 6;</code>
+       * <code>optional string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3686,7 +3630,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required string rentCode = 6;</code>
+       * <code>optional string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3699,7 +3643,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required string rentCode = 6;</code>
+       * <code>optional string rentCode = 6;</code>
        *
        * <pre>
        *用户提交订单时所选的租金的编码
@@ -3718,7 +3662,7 @@ public final class Order {
 
       private boolean insurance_ ;
       /**
-       * <code>required bool insurance = 7;</code>
+       * <code>optional bool insurance = 7;</code>
        *
        * <pre>
        *是否选择运费险
@@ -3728,7 +3672,7 @@ public final class Order {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required bool insurance = 7;</code>
+       * <code>optional bool insurance = 7;</code>
        *
        * <pre>
        *是否选择运费险
@@ -3738,7 +3682,7 @@ public final class Order {
         return insurance_;
       }
       /**
-       * <code>required bool insurance = 7;</code>
+       * <code>optional bool insurance = 7;</code>
        *
        * <pre>
        *是否选择运费险
@@ -3751,7 +3695,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required bool insurance = 7;</code>
+       * <code>optional bool insurance = 7;</code>
        *
        * <pre>
        *是否选择运费险
@@ -3910,7 +3854,7 @@ public final class Order {
 
       private double totalRentPrice_ ;
       /**
-       * <code>required double totalRentPrice = 11;</code>
+       * <code>optional double totalRentPrice = 11;</code>
        *
        * <pre>
        *该周期内总租金
@@ -3920,7 +3864,7 @@ public final class Order {
         return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>required double totalRentPrice = 11;</code>
+       * <code>optional double totalRentPrice = 11;</code>
        *
        * <pre>
        *该周期内总租金
@@ -3930,7 +3874,7 @@ public final class Order {
         return totalRentPrice_;
       }
       /**
-       * <code>required double totalRentPrice = 11;</code>
+       * <code>optional double totalRentPrice = 11;</code>
        *
        * <pre>
        *该周期内总租金
@@ -3943,7 +3887,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required double totalRentPrice = 11;</code>
+       * <code>optional double totalRentPrice = 11;</code>
        *
        * <pre>
        *该周期内总租金
@@ -3958,7 +3902,7 @@ public final class Order {
 
       private boolean hasVoucher_ ;
       /**
-       * <code>required bool hasVoucher = 12;</code>
+       * <code>optional bool hasVoucher = 12;</code>
        *
        * <pre>
        *是否有可使用的权益
@@ -3968,7 +3912,7 @@ public final class Order {
         return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
-       * <code>required bool hasVoucher = 12;</code>
+       * <code>optional bool hasVoucher = 12;</code>
        *
        * <pre>
        *是否有可使用的权益
@@ -3978,7 +3922,7 @@ public final class Order {
         return hasVoucher_;
       }
       /**
-       * <code>required bool hasVoucher = 12;</code>
+       * <code>optional bool hasVoucher = 12;</code>
        *
        * <pre>
        *是否有可使用的权益
@@ -3991,7 +3935,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required bool hasVoucher = 12;</code>
+       * <code>optional bool hasVoucher = 12;</code>
        *
        * <pre>
        *是否有可使用的权益
@@ -4006,7 +3950,7 @@ public final class Order {
 
       private double totalPrice_ ;
       /**
-       * <code>required double totalPrice = 13;</code>
+       * <code>optional double totalPrice = 13;</code>
        *
        * <pre>
        *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -4016,7 +3960,7 @@ public final class Order {
         return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
-       * <code>required double totalPrice = 13;</code>
+       * <code>optional double totalPrice = 13;</code>
        *
        * <pre>
        *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -4026,7 +3970,7 @@ public final class Order {
         return totalPrice_;
       }
       /**
-       * <code>required double totalPrice = 13;</code>
+       * <code>optional double totalPrice = 13;</code>
        *
        * <pre>
        *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -4039,7 +3983,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required double totalPrice = 13;</code>
+       * <code>optional double totalPrice = 13;</code>
        *
        * <pre>
        *总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
@@ -14369,7 +14313,7 @@ public final class Order {
         getResultMsgBytes();
 
     /**
-     * <code>required string orderId = 3;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -14377,7 +14321,7 @@ public final class Order {
      */
     boolean hasOrderId();
     /**
-     * <code>required string orderId = 3;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -14385,7 +14329,7 @@ public final class Order {
      */
     java.lang.String getOrderId();
     /**
-     * <code>required string orderId = 3;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -14689,7 +14633,7 @@ public final class Order {
     public static final int ORDERID_FIELD_NUMBER = 3;
     private java.lang.Object orderId_;
     /**
-     * <code>required string orderId = 3;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -14699,7 +14643,7 @@ public final class Order {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string orderId = 3;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -14720,7 +14664,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string orderId = 3;</code>
+     * <code>optional string orderId = 3;</code>
      *
      * <pre>
      *订单ID
@@ -14838,10 +14782,6 @@ public final class Order {
         return false;
       }
       if (!hasResultMsg()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOrderId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -15156,10 +15096,6 @@ public final class Order {
           
           return false;
         }
-        if (!hasOrderId()) {
-          
-          return false;
-        }
         if (hasOrderReceiveAddressInfo()) {
           if (!getOrderReceiveAddressInfo().isInitialized()) {
             
@@ -15366,7 +15302,7 @@ public final class Order {
 
       private java.lang.Object orderId_ = "";
       /**
-       * <code>required string orderId = 3;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -15376,7 +15312,7 @@ public final class Order {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string orderId = 3;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -15397,7 +15333,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string orderId = 3;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -15417,7 +15353,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string orderId = 3;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -15434,7 +15370,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required string orderId = 3;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -15447,7 +15383,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required string orderId = 3;</code>
+       * <code>optional string orderId = 3;</code>
        *
        * <pre>
        *订单ID
@@ -17085,7 +17021,7 @@ public final class Order {
     boolean getHasMore();
 
     /**
-     * <code>required int32 waitPayCount = 5;</code>
+     * <code>optional int32 waitPayCount = 5;</code>
      *
      * <pre>
      *待付款
@@ -17093,7 +17029,7 @@ public final class Order {
      */
     boolean hasWaitPayCount();
     /**
-     * <code>required int32 waitPayCount = 5;</code>
+     * <code>optional int32 waitPayCount = 5;</code>
      *
      * <pre>
      *待付款
@@ -17102,7 +17038,7 @@ public final class Order {
     int getWaitPayCount();
 
     /**
-     * <code>required int32 waitDeliveryCount = 6;</code>
+     * <code>optional int32 waitDeliveryCount = 6;</code>
      *
      * <pre>
      *待发货
@@ -17110,7 +17046,7 @@ public final class Order {
      */
     boolean hasWaitDeliveryCount();
     /**
-     * <code>required int32 waitDeliveryCount = 6;</code>
+     * <code>optional int32 waitDeliveryCount = 6;</code>
      *
      * <pre>
      *待发货
@@ -17119,7 +17055,7 @@ public final class Order {
     int getWaitDeliveryCount();
 
     /**
-     * <code>required int32 waitReceiveCount = 7;</code>
+     * <code>optional int32 waitReceiveCount = 7;</code>
      *
      * <pre>
      *待收货
@@ -17127,7 +17063,7 @@ public final class Order {
      */
     boolean hasWaitReceiveCount();
     /**
-     * <code>required int32 waitReceiveCount = 7;</code>
+     * <code>optional int32 waitReceiveCount = 7;</code>
      *
      * <pre>
      *待收货
@@ -17136,7 +17072,7 @@ public final class Order {
     int getWaitReceiveCount();
 
     /**
-     * <code>required int32 waitRevertCount = 8;</code>
+     * <code>optional int32 waitRevertCount = 8;</code>
      *
      * <pre>
      *待归还
@@ -17144,7 +17080,7 @@ public final class Order {
      */
     boolean hasWaitRevertCount();
     /**
-     * <code>required int32 waitRevertCount = 8;</code>
+     * <code>optional int32 waitRevertCount = 8;</code>
      *
      * <pre>
      *待归还
@@ -17153,7 +17089,7 @@ public final class Order {
     int getWaitRevertCount();
 
     /**
-     * <code>required int32 waitEvaluateCount = 9;</code>
+     * <code>optional int32 waitEvaluateCount = 9;</code>
      *
      * <pre>
      *待评价
@@ -17161,7 +17097,7 @@ public final class Order {
      */
     boolean hasWaitEvaluateCount();
     /**
-     * <code>required int32 waitEvaluateCount = 9;</code>
+     * <code>optional int32 waitEvaluateCount = 9;</code>
      *
      * <pre>
      *待评价
@@ -17170,7 +17106,7 @@ public final class Order {
     int getWaitEvaluateCount();
 
     /**
-     * <code>required int32 totalCount = 10;</code>
+     * <code>optional int32 totalCount = 10;</code>
      *
      * <pre>
      *总数
@@ -17178,7 +17114,7 @@ public final class Order {
      */
     boolean hasTotalCount();
     /**
-     * <code>required int32 totalCount = 10;</code>
+     * <code>optional int32 totalCount = 10;</code>
      *
      * <pre>
      *总数
@@ -17522,7 +17458,7 @@ public final class Order {
     public static final int WAITPAYCOUNT_FIELD_NUMBER = 5;
     private int waitPayCount_;
     /**
-     * <code>required int32 waitPayCount = 5;</code>
+     * <code>optional int32 waitPayCount = 5;</code>
      *
      * <pre>
      *待付款
@@ -17532,7 +17468,7 @@ public final class Order {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required int32 waitPayCount = 5;</code>
+     * <code>optional int32 waitPayCount = 5;</code>
      *
      * <pre>
      *待付款
@@ -17545,7 +17481,7 @@ public final class Order {
     public static final int WAITDELIVERYCOUNT_FIELD_NUMBER = 6;
     private int waitDeliveryCount_;
     /**
-     * <code>required int32 waitDeliveryCount = 6;</code>
+     * <code>optional int32 waitDeliveryCount = 6;</code>
      *
      * <pre>
      *待发货
@@ -17555,7 +17491,7 @@ public final class Order {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required int32 waitDeliveryCount = 6;</code>
+     * <code>optional int32 waitDeliveryCount = 6;</code>
      *
      * <pre>
      *待发货
@@ -17568,7 +17504,7 @@ public final class Order {
     public static final int WAITRECEIVECOUNT_FIELD_NUMBER = 7;
     private int waitReceiveCount_;
     /**
-     * <code>required int32 waitReceiveCount = 7;</code>
+     * <code>optional int32 waitReceiveCount = 7;</code>
      *
      * <pre>
      *待收货
@@ -17578,7 +17514,7 @@ public final class Order {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required int32 waitReceiveCount = 7;</code>
+     * <code>optional int32 waitReceiveCount = 7;</code>
      *
      * <pre>
      *待收货
@@ -17591,7 +17527,7 @@ public final class Order {
     public static final int WAITREVERTCOUNT_FIELD_NUMBER = 8;
     private int waitRevertCount_;
     /**
-     * <code>required int32 waitRevertCount = 8;</code>
+     * <code>optional int32 waitRevertCount = 8;</code>
      *
      * <pre>
      *待归还
@@ -17601,7 +17537,7 @@ public final class Order {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>required int32 waitRevertCount = 8;</code>
+     * <code>optional int32 waitRevertCount = 8;</code>
      *
      * <pre>
      *待归还
@@ -17614,7 +17550,7 @@ public final class Order {
     public static final int WAITEVALUATECOUNT_FIELD_NUMBER = 9;
     private int waitEvaluateCount_;
     /**
-     * <code>required int32 waitEvaluateCount = 9;</code>
+     * <code>optional int32 waitEvaluateCount = 9;</code>
      *
      * <pre>
      *待评价
@@ -17624,7 +17560,7 @@ public final class Order {
       return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
-     * <code>required int32 waitEvaluateCount = 9;</code>
+     * <code>optional int32 waitEvaluateCount = 9;</code>
      *
      * <pre>
      *待评价
@@ -17637,7 +17573,7 @@ public final class Order {
     public static final int TOTALCOUNT_FIELD_NUMBER = 10;
     private int totalCount_;
     /**
-     * <code>required int32 totalCount = 10;</code>
+     * <code>optional int32 totalCount = 10;</code>
      *
      * <pre>
      *总数
@@ -17647,7 +17583,7 @@ public final class Order {
       return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
-     * <code>required int32 totalCount = 10;</code>
+     * <code>optional int32 totalCount = 10;</code>
      *
      * <pre>
      *总数
@@ -17740,30 +17676,6 @@ public final class Order {
         return false;
       }
       if (!hasHasMore()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasWaitPayCount()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasWaitDeliveryCount()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasWaitReceiveCount()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasWaitRevertCount()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasWaitEvaluateCount()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTotalCount()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -18184,30 +18096,6 @@ public final class Order {
           
           return false;
         }
-        if (!hasWaitPayCount()) {
-          
-          return false;
-        }
-        if (!hasWaitDeliveryCount()) {
-          
-          return false;
-        }
-        if (!hasWaitReceiveCount()) {
-          
-          return false;
-        }
-        if (!hasWaitRevertCount()) {
-          
-          return false;
-        }
-        if (!hasWaitEvaluateCount()) {
-          
-          return false;
-        }
-        if (!hasTotalCount()) {
-          
-          return false;
-        }
         for (int i = 0; i < getOrderLiteInfoCount(); i++) {
           if (!getOrderLiteInfo(i).isInitialized()) {
             
@@ -18486,7 +18374,7 @@ public final class Order {
 
       private int waitPayCount_ ;
       /**
-       * <code>required int32 waitPayCount = 5;</code>
+       * <code>optional int32 waitPayCount = 5;</code>
        *
        * <pre>
        *待付款
@@ -18496,7 +18384,7 @@ public final class Order {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required int32 waitPayCount = 5;</code>
+       * <code>optional int32 waitPayCount = 5;</code>
        *
        * <pre>
        *待付款
@@ -18506,7 +18394,7 @@ public final class Order {
         return waitPayCount_;
       }
       /**
-       * <code>required int32 waitPayCount = 5;</code>
+       * <code>optional int32 waitPayCount = 5;</code>
        *
        * <pre>
        *待付款
@@ -18519,7 +18407,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required int32 waitPayCount = 5;</code>
+       * <code>optional int32 waitPayCount = 5;</code>
        *
        * <pre>
        *待付款
@@ -18534,7 +18422,7 @@ public final class Order {
 
       private int waitDeliveryCount_ ;
       /**
-       * <code>required int32 waitDeliveryCount = 6;</code>
+       * <code>optional int32 waitDeliveryCount = 6;</code>
        *
        * <pre>
        *待发货
@@ -18544,7 +18432,7 @@ public final class Order {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required int32 waitDeliveryCount = 6;</code>
+       * <code>optional int32 waitDeliveryCount = 6;</code>
        *
        * <pre>
        *待发货
@@ -18554,7 +18442,7 @@ public final class Order {
         return waitDeliveryCount_;
       }
       /**
-       * <code>required int32 waitDeliveryCount = 6;</code>
+       * <code>optional int32 waitDeliveryCount = 6;</code>
        *
        * <pre>
        *待发货
@@ -18567,7 +18455,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required int32 waitDeliveryCount = 6;</code>
+       * <code>optional int32 waitDeliveryCount = 6;</code>
        *
        * <pre>
        *待发货
@@ -18582,7 +18470,7 @@ public final class Order {
 
       private int waitReceiveCount_ ;
       /**
-       * <code>required int32 waitReceiveCount = 7;</code>
+       * <code>optional int32 waitReceiveCount = 7;</code>
        *
        * <pre>
        *待收货
@@ -18592,7 +18480,7 @@ public final class Order {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required int32 waitReceiveCount = 7;</code>
+       * <code>optional int32 waitReceiveCount = 7;</code>
        *
        * <pre>
        *待收货
@@ -18602,7 +18490,7 @@ public final class Order {
         return waitReceiveCount_;
       }
       /**
-       * <code>required int32 waitReceiveCount = 7;</code>
+       * <code>optional int32 waitReceiveCount = 7;</code>
        *
        * <pre>
        *待收货
@@ -18615,7 +18503,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required int32 waitReceiveCount = 7;</code>
+       * <code>optional int32 waitReceiveCount = 7;</code>
        *
        * <pre>
        *待收货
@@ -18630,7 +18518,7 @@ public final class Order {
 
       private int waitRevertCount_ ;
       /**
-       * <code>required int32 waitRevertCount = 8;</code>
+       * <code>optional int32 waitRevertCount = 8;</code>
        *
        * <pre>
        *待归还
@@ -18640,7 +18528,7 @@ public final class Order {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>required int32 waitRevertCount = 8;</code>
+       * <code>optional int32 waitRevertCount = 8;</code>
        *
        * <pre>
        *待归还
@@ -18650,7 +18538,7 @@ public final class Order {
         return waitRevertCount_;
       }
       /**
-       * <code>required int32 waitRevertCount = 8;</code>
+       * <code>optional int32 waitRevertCount = 8;</code>
        *
        * <pre>
        *待归还
@@ -18663,7 +18551,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required int32 waitRevertCount = 8;</code>
+       * <code>optional int32 waitRevertCount = 8;</code>
        *
        * <pre>
        *待归还
@@ -18678,7 +18566,7 @@ public final class Order {
 
       private int waitEvaluateCount_ ;
       /**
-       * <code>required int32 waitEvaluateCount = 9;</code>
+       * <code>optional int32 waitEvaluateCount = 9;</code>
        *
        * <pre>
        *待评价
@@ -18688,7 +18576,7 @@ public final class Order {
         return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
-       * <code>required int32 waitEvaluateCount = 9;</code>
+       * <code>optional int32 waitEvaluateCount = 9;</code>
        *
        * <pre>
        *待评价
@@ -18698,7 +18586,7 @@ public final class Order {
         return waitEvaluateCount_;
       }
       /**
-       * <code>required int32 waitEvaluateCount = 9;</code>
+       * <code>optional int32 waitEvaluateCount = 9;</code>
        *
        * <pre>
        *待评价
@@ -18711,7 +18599,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required int32 waitEvaluateCount = 9;</code>
+       * <code>optional int32 waitEvaluateCount = 9;</code>
        *
        * <pre>
        *待评价
@@ -18726,7 +18614,7 @@ public final class Order {
 
       private int totalCount_ ;
       /**
-       * <code>required int32 totalCount = 10;</code>
+       * <code>optional int32 totalCount = 10;</code>
        *
        * <pre>
        *总数
@@ -18736,7 +18624,7 @@ public final class Order {
         return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>required int32 totalCount = 10;</code>
+       * <code>optional int32 totalCount = 10;</code>
        *
        * <pre>
        *总数
@@ -18746,7 +18634,7 @@ public final class Order {
         return totalCount_;
       }
       /**
-       * <code>required int32 totalCount = 10;</code>
+       * <code>optional int32 totalCount = 10;</code>
        *
        * <pre>
        *总数
@@ -18759,7 +18647,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required int32 totalCount = 10;</code>
+       * <code>optional int32 totalCount = 10;</code>
        *
        * <pre>
        *总数
@@ -39579,12 +39467,12 @@ public final class Order {
       "\n\007orderId\030\006 \001(\t\022\024\n\014onlyCalPrice\030\007 \002(\010\022\016\n" +
       "\006userId\030\010 \002(\t\"\374\002\n\021CommitOrderResult\022\022\n\nr" +
       "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007or" +
-      "derId\030\003 \001(\t\022\024\n\014categoryCode\030\004 \002(\t\022\021\n\tren" +
-      "tCount\030\005 \002(\005\022\020\n\010rentCode\030\006 \002(\t\022\021\n\tinsura" +
-      "nce\030\007 \002(\010\022\026\n\016insurancePrice\030\010 \001(\001\022\023\n\013ple",
+      "derId\030\003 \001(\t\022\024\n\014categoryCode\030\004 \001(\t\022\021\n\tren" +
+      "tCount\030\005 \001(\005\022\020\n\010rentCode\030\006 \001(\t\022\021\n\tinsura" +
+      "nce\030\007 \001(\010\022\026\n\016insurancePrice\030\010 \001(\001\022\023\n\013ple",
       "dgePrice\030\t \001(\001\022\033\n\023transportationPrice\030\n " +
-      "\001(\001\022\026\n\016totalRentPrice\030\013 \002(\001\022\022\n\nhasVouche" +
-      "r\030\014 \002(\010\022\022\n\ntotalPrice\030\r \002(\001\022W\n\027orderRece" +
+      "\001(\001\022\026\n\016totalRentPrice\030\013 \001(\001\022\022\n\nhasVouche" +
+      "r\030\014 \001(\010\022\022\n\ntotalPrice\030\r \001(\001\022W\n\027orderRece" +
       "iveAddressInfo\030\016 \001(\01326.com.qjoy.basjoo.c" +
       "ore.model.pb.OrderReceiveAddressInfo\"\223\001\n" +
       "\027OrderReceiveAddressInfo\022\020\n\010receiver\030\001 \002" +
@@ -39612,7 +39500,7 @@ public final class Order {
       ".core.model.pb.WxPayInfo\"6\n\023GetPayStatus" +
       "Request\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t" +
       "\"\316\001\n\022GetPayStatusResult\022\022\n\nresultCode\030\001 ",
-      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \002(\t\022" +
+      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022" +
       "\022\n\npayChannel\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001" +
       "\022W\n\027orderReceiveAddressInfo\030\006 \001(\01326.com." +
       "qjoy.basjoo.core.model.pb.OrderReceiveAd" +
@@ -39623,10 +39511,10 @@ public final class Order {
       "serId\030\007 \002(\t\"\271\002\n\025SearchOrderListResult\022\022\n" +
       "\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010",
       "maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\024\n\014waitP" +
-      "ayCount\030\005 \002(\005\022\031\n\021waitDeliveryCount\030\006 \002(\005" +
-      "\022\030\n\020waitReceiveCount\030\007 \002(\005\022\027\n\017waitRevert" +
-      "Count\030\010 \002(\005\022\031\n\021waitEvaluateCount\030\t \002(\005\022\022" +
-      "\n\ntotalCount\030\n \002(\005\022C\n\rorderLiteInfo\030\013 \003(" +
+      "ayCount\030\005 \001(\005\022\031\n\021waitDeliveryCount\030\006 \001(\005" +
+      "\022\030\n\020waitReceiveCount\030\007 \001(\005\022\027\n\017waitRevert" +
+      "Count\030\010 \001(\005\022\031\n\021waitEvaluateCount\030\t \001(\005\022\022" +
+      "\n\ntotalCount\030\n \001(\005\022C\n\rorderLiteInfo\030\013 \003(" +
       "\0132,.com.qjoy.basjoo.core.model.pb.OrderL" +
       "iteInfo\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002" +
       "(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 " +

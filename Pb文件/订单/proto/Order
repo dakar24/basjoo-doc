@@ -48,16 +48,16 @@ message CommitOrderResult {
     optional string                 orderId = 3; 
 	 
 	//用户提交订单时所选的类别信息
-	required string                 categoryCode = 4;	
+	optional string                 categoryCode = 4;	
 	
 	 //用户提交订单时所选的租用数量
-	required int32                  rentCount = 5;
+	optional int32                  rentCount = 5;
 	
 	 //用户提交订单时所选的租金的编码
-	required string                 rentCode = 6;
+	optional string                 rentCode = 6;
 	
 	//是否选择运费险
-	required bool                   insurance = 7;
+	optional bool                   insurance = 7;
 	
 	//运费险金额
     optional double                 insurancePrice = 8; 
@@ -69,13 +69,13 @@ message CommitOrderResult {
     optional double                 transportationPrice = 10; 
 	
 	//该周期内总租金
-    required double                 totalRentPrice = 11; 
+    optional double                 totalRentPrice = 11; 
 	
 	//是否有可使用的权益
-	required bool                   hasVoucher  = 12;
+	optional bool                   hasVoucher  = 12;
 	
 	//总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
-	required double                 totalPrice = 13;
+	optional double                 totalPrice = 13;
 	
 	
 	//订单的默认收货地址
@@ -238,7 +238,7 @@ message GetPayStatusResult {
     required string                 resultMsg = 2; 
 	
     //订单ID
-    required string                 orderId = 3; 
+    optional string                 orderId = 3; 
 	
     //支付渠道，0：微信支付，1：支付宝
     optional int32                  payChannel = 4;
@@ -294,22 +294,22 @@ message SearchOrderListResult{
   required bool     hasMore  = 4;
   
   //待付款
-  required int32    waitPayCount = 5;
+  optional int32    waitPayCount = 5;
   
   //待发货
-  required int32    waitDeliveryCount = 6;
+  optional int32    waitDeliveryCount = 6;
   
   //待收货
-  required int32    waitReceiveCount = 7;
+  optional int32    waitReceiveCount = 7;
   
   //待归还
-  required int32    waitRevertCount = 8;
+  optional int32    waitRevertCount = 8;
   
   //待评价
-  required int32    waitEvaluateCount = 9;
+  optional int32    waitEvaluateCount = 9;
   
   //总数
-  required int32    totalCount = 10;
+  optional int32    totalCount = 10;
   
   //订单简要信息
   repeated OrderLiteInfo orderLiteInfo = 11;
