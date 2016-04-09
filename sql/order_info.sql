@@ -15,7 +15,7 @@ CREATE table order_info (
  total_fee double(9,2) comment '总费用',
  transport_id varchar(64) comment '物流ID',
  evaluate_status bigint not null comment '评价状态',
- product_id     varchar(64)  not null comment '产品ID',
+ product_id     varchar(64)  not null comment '产品ID',w
  main_image_url     varchar(256)  not null comment '产品图片',
  order_desc     varchar(256)  not null comment '订单描述',
  category_code varchar(256)  not null comment '产品类目code',
