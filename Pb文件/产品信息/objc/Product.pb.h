@@ -24,12 +24,14 @@
 @property (readonly) BOOL hasStartIndex;
 @property (readonly) BOOL hasSort;
 @property (readonly) BOOL hasProductType;
+@property (readonly) BOOL hasPromoId;
 @property (nonatomic,strong) NSString* keywords;
 @property (nonatomic,strong) NSString* searchType;
 @property (nonatomic)SInt32 orderBy;
 @property (nonatomic)SInt32 startIndex;
 @property (nonatomic)SInt32 sort;
 @property (nonatomic,strong) NSString* productType;
+@property (nonatomic,strong) NSString* promoId;
 @end
 
 @interface SearchProductListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

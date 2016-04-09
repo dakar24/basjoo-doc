@@ -12,6 +12,7 @@
     _startIndex = 0;
     _sort = 0;
     _productType = @"";
+    _promoId = @"";
   }
   return self;
 }
@@ -33,6 +34,9 @@
   }
   if (self.hasProductType) {
     [output writeString:6 value:self.productType];
+  }
+  if (self.hasPromoId) {
+    [output writeString:7 value:self.promoId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -57,6 +61,9 @@
   }
   if (self.hasProductType) {
     size_ += computeStringSize(6, self.productType);
+  }
+  if (self.hasPromoId) {
+    size_ += computeStringSize(7, self.promoId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -86,6 +93,9 @@
   if (self.hasProductType) {
     [output appendFormat:@"%@%@: %@\n", indent, @"productType", self.productType];
   }
+  if (self.hasPromoId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"promoId", self.promoId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -112,6 +122,10 @@
 - (void) setProductType:(NSString*) value {
   _hasProductType = YES;
   _productType = value;
+}
+- (void) setPromoId:(NSString*) value {
+  _hasPromoId = YES;
+  _promoId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -150,6 +164,10 @@
       }
       case 50: {
         [self setProductType:[input readString]];
+        break;
+      }
+      case 58: {
+        [self setPromoId:[input readString]];
         break;
       }
     }

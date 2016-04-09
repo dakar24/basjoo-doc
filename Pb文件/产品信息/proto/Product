@@ -22,8 +22,12 @@ message SearchProductListRequest {
 	//升降序方式 0:降序,1:升序
 	optional int32                  sort = 5;
 	
-	 //产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器,5:胎心仪
-	optional string                 ｀ = 6;
+	//产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器,5:胎心仪
+	optional string                 productType = 6;
+
+       //活动ID
+       optional string                 promoId = 7;
+
     
 }
 
