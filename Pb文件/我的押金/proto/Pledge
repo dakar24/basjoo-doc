@@ -8,6 +8,9 @@ message GetPledgeListRequest {
   
   //起始index
   optional int32 startIndex = 1;   
+
+  //用户ID
+  required string userId = 2;
     
 }
 

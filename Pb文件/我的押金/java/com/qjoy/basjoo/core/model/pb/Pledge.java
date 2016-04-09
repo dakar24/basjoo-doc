@@ -28,6 +28,32 @@ public final class Pledge {
      * </pre>
      */
     int getStartIndex();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetPledgeListRequest}
@@ -88,6 +114,12 @@ public final class Pledge {
             case 8: {
               bitField0_ |= 0x00000001;
               startIndex_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -153,8 +185,63 @@ public final class Pledge {
       return startIndex_;
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       startIndex_ = 0;
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -162,6 +249,10 @@ public final class Pledge {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -171,6 +262,9 @@ public final class Pledge {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, startIndex_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -184,6 +278,10 @@ public final class Pledge {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, startIndex_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -308,6 +406,8 @@ public final class Pledge {
         super.clear();
         startIndex_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -340,6 +440,10 @@ public final class Pledge {
           to_bitField0_ |= 0x00000001;
         }
         result.startIndex_ = startIndex_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -359,11 +463,20 @@ public final class Pledge {
         if (other.hasStartIndex()) {
           setStartIndex(other.getStartIndex());
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -430,6 +543,106 @@ public final class Pledge {
       public Builder clearStartIndex() {
         bitField0_ = (bitField0_ & ~0x00000001);
         startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -3159,16 +3372,16 @@ public final class Pledge {
   static {
     java.lang.String[] descriptorData = {
       "\n\006Pledge\022\035com.qjoy.basjoo.core.model.pb\"" +
-      "*\n\024GetPledgeListRequest\022\022\n\nstartIndex\030\001 " +
-      "\001(\005\"\301\001\n\023GetPledgeListResult\022\022\n\nresultCod" +
-      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003" +
-      " \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\031\n\021totalPledgeAmou" +
-      "nt\030\005 \002(\001\022E\n\016pledgeLiteInfo\030\006 \003(\0132-.com.q" +
-      "joy.basjoo.core.model.pb.PledgeLiteInfo\"" +
-      "g\n\016PledgeLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\020\n\010im" +
-      "ageUrl\030\002 \002(\t\022\014\n\004desc\030\003 \002(\t\022\023\n\013pledgePric" +
-      "e\030\004 \002(\001\022\017\n\007endTime\030\005 \002(\003B\037\n\035com.qjoy.bas",
-      "joo.core.model.pb"
+      ":\n\024GetPledgeListRequest\022\022\n\nstartIndex\030\001 " +
+      "\001(\005\022\016\n\006userId\030\002 \002(\t\"\301\001\n\023GetPledgeListRes" +
+      "ult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002" +
+      "(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\031\n" +
+      "\021totalPledgeAmount\030\005 \002(\001\022E\n\016pledgeLiteIn" +
+      "fo\030\006 \003(\0132-.com.qjoy.basjoo.core.model.pb" +
+      ".PledgeLiteInfo\"g\n\016PledgeLiteInfo\022\017\n\007ord" +
+      "erId\030\001 \002(\t\022\020\n\010imageUrl\030\002 \002(\t\022\014\n\004desc\030\003 \002" +
+      "(\t\022\023\n\013pledgePrice\030\004 \002(\001\022\017\n\007endTime\030\005 \002(\003",
+      "B\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3187,7 +3400,7 @@ public final class Pledge {
     internal_static_com_qjoy_basjoo_core_model_pb_GetPledgeListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetPledgeListRequest_descriptor,
-        new java.lang.String[] { "StartIndex", });
+        new java.lang.String[] { "StartIndex", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetPledgeListResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_GetPledgeListResult_fieldAccessorTable = new

@@ -8,7 +8,9 @@
 
 @interface GetPledgeListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasStartIndex;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic)SInt32 startIndex;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetPledgeListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
