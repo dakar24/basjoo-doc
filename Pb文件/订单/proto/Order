@@ -291,7 +291,7 @@ message SearchOrderListResult{
   optional int32    maxIndex = 3;
    
   //是否还有更多数据
-  required bool     hasMore  = 4;
+  optional bool     hasMore  = 4;
   
   //待付款
   optional int32    waitPayCount = 5;
