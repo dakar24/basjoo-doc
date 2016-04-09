@@ -43,6 +43,7 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_PRODUCTEVALUATEINFO = 21;
   public static final int TAG_FAVORITED = 22;
   public static final int TAG_PRODUCTTITLE = 23;
+  public static final int TAG_BANNERIMAGEURL = 24;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -67,6 +68,7 @@ public final class ProductDetailInfo extends Message {
   public static final List<ProductEvaluateInfo> DEFAULT_PRODUCTEVALUATEINFO = Collections.emptyList();
   public static final Boolean DEFAULT_FAVORITED = false;
   public static final String DEFAULT_PRODUCTTITLE = "";
+  public static final String DEFAULT_BANNERIMAGEURL = "";
 
   /**
    * 产品Id
@@ -206,6 +208,12 @@ public final class ProductDetailInfo extends Message {
   @ProtoField(tag = 23, type = STRING, label = REQUIRED)
   public String productTitle;
 
+  /**
+   * 横幅图片地址
+   */
+  @ProtoField(tag = 24, type = STRING)
+  public String bannerImageUrl;
+
   public ProductDetailInfo(ProductDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -232,6 +240,7 @@ public final class ProductDetailInfo extends Message {
     this.productEvaluateInfo = copyOf(message.productEvaluateInfo);
     this.favorited = message.favorited;
     this.productTitle = message.productTitle;
+    this.bannerImageUrl = message.bannerImageUrl;
   }
 
   public ProductDetailInfo() {
@@ -308,6 +317,9 @@ public final class ProductDetailInfo extends Message {
         case TAG_PRODUCTTITLE:
         this.productTitle = (String)value;
         break;
+        case TAG_BANNERIMAGEURL:
+        this.bannerImageUrl = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -340,7 +352,8 @@ public final class ProductDetailInfo extends Message {
         && equals(evaluateCount, o.evaluateCount)
         && equals(productEvaluateInfo, o.productEvaluateInfo)
         && equals(favorited, o.favorited)
-        && equals(productTitle, o.productTitle);
+        && equals(productTitle, o.productTitle)
+        && equals(bannerImageUrl, o.bannerImageUrl);
   }
 
   @Override
@@ -370,6 +383,7 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (productEvaluateInfo != null ? productEvaluateInfo.hashCode() : 1);
       result = result * 37 + (favorited != null ? favorited.hashCode() : 0);
       result = result * 37 + (productTitle != null ? productTitle.hashCode() : 0);
+      result = result * 37 + (bannerImageUrl != null ? bannerImageUrl.hashCode() : 0);
       hashCode = result;
     }
     return result;

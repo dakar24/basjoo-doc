@@ -58,7 +58,7 @@ public final class SearchProductListRequest extends Message {
   public Integer sort;
 
   /**
-   * 产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+   * 产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
    */
   @ProtoField(tag = 6, type = STRING)
   public String productType;

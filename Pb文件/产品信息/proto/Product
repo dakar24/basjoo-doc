@@ -9,11 +9,11 @@ message SearchProductListRequest {
      //关键字
     optional string                 keywords = 1; 
 	
-	 //0：默认综合，1：品牌，2：类型
+	 //0：默认综合，1：品牌，2：类型 ，3 年龄
 	optional string                 searchType = 2;
 	
 	
-	 //排序方式，0：默认综合，1：年龄，2：价格，3：销量
+	 //排序方式，0：默认综合，1：年龄，2：价格,3：销量
 	optional int32                  orderBy = 3;
 	
 	//起始index
@@ -22,8 +22,8 @@ message SearchProductListRequest {
 	//升降序方式 0:降序,1:升序
 	optional int32                  sort = 5;
 	
-	 //产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
-	optional string                 productType = 6;
+	 //产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器,5:胎心仪
+	optional string                 ｀ = 6;
     
 }
 
@@ -83,6 +83,9 @@ message ProductLiteInfo {
    
    //产品标题
    required string                 productTitle = 12; 
+
+   //横幅图片地址
+   optional string                 bannerImageUrl = 13; 
    
     
 }
@@ -179,6 +182,9 @@ message ProductDetailInfo {
    
    //产品标题
    required string                productTitle = 23; 
+
+  //横幅图片地址
+   optional string                 bannerImageUrl = 24;
    
 
     

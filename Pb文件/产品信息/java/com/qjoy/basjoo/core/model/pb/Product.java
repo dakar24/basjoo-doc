@@ -119,7 +119,7 @@ public final class Product {
      * <code>optional string productType = 6;</code>
      *
      * <pre>
-     *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+     *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
      * </pre>
      */
     boolean hasProductType();
@@ -127,7 +127,7 @@ public final class Product {
      * <code>optional string productType = 6;</code>
      *
      * <pre>
-     *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+     *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
      * </pre>
      */
     java.lang.String getProductType();
@@ -135,7 +135,7 @@ public final class Product {
      * <code>optional string productType = 6;</code>
      *
      * <pre>
-     *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+     *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
      * </pre>
      */
     com.google.protobuf.ByteString
@@ -453,7 +453,7 @@ public final class Product {
      * <code>optional string productType = 6;</code>
      *
      * <pre>
-     *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+     *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
      * </pre>
      */
     public boolean hasProductType() {
@@ -463,7 +463,7 @@ public final class Product {
      * <code>optional string productType = 6;</code>
      *
      * <pre>
-     *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+     *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
      * </pre>
      */
     public java.lang.String getProductType() {
@@ -484,7 +484,7 @@ public final class Product {
      * <code>optional string productType = 6;</code>
      *
      * <pre>
-     *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+     *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
      * </pre>
      */
     public com.google.protobuf.ByteString
@@ -1174,7 +1174,7 @@ public final class Product {
        * <code>optional string productType = 6;</code>
        *
        * <pre>
-       *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+       *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
        * </pre>
        */
       public boolean hasProductType() {
@@ -1184,7 +1184,7 @@ public final class Product {
        * <code>optional string productType = 6;</code>
        *
        * <pre>
-       *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+       *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
        * </pre>
        */
       public java.lang.String getProductType() {
@@ -1205,7 +1205,7 @@ public final class Product {
        * <code>optional string productType = 6;</code>
        *
        * <pre>
-       *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+       *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
        * </pre>
        */
       public com.google.protobuf.ByteString
@@ -1225,7 +1225,7 @@ public final class Product {
        * <code>optional string productType = 6;</code>
        *
        * <pre>
-       *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+       *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
        * </pre>
        */
       public Builder setProductType(
@@ -1242,7 +1242,7 @@ public final class Product {
        * <code>optional string productType = 6;</code>
        *
        * <pre>
-       *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+       *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
        * </pre>
        */
       public Builder clearProductType() {
@@ -1255,7 +1255,7 @@ public final class Product {
        * <code>optional string productType = 6;</code>
        *
        * <pre>
-       *产品类型：0,默认全部,1,推车；2,安全桌椅;3,提篮;4,吸奶器
+       *产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器
        * </pre>
        */
       public Builder setProductTypeBytes(
@@ -2910,6 +2910,32 @@ public final class Product {
      */
     com.google.protobuf.ByteString
         getProductTitleBytes();
+
+    /**
+     * <code>optional string bannerImageUrl = 13;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    boolean hasBannerImageUrl();
+    /**
+     * <code>optional string bannerImageUrl = 13;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    java.lang.String getBannerImageUrl();
+    /**
+     * <code>optional string bannerImageUrl = 13;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getBannerImageUrlBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductLiteInfo}
@@ -3031,6 +3057,12 @@ public final class Product {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000800;
               productTitle_ = bs;
+              break;
+            }
+            case 106: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00001000;
+              bannerImageUrl_ = bs;
               break;
             }
           }
@@ -3535,6 +3567,60 @@ public final class Product {
       }
     }
 
+    public static final int BANNERIMAGEURL_FIELD_NUMBER = 13;
+    private java.lang.Object bannerImageUrl_;
+    /**
+     * <code>optional string bannerImageUrl = 13;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    public boolean hasBannerImageUrl() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional string bannerImageUrl = 13;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    public java.lang.String getBannerImageUrl() {
+      java.lang.Object ref = bannerImageUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          bannerImageUrl_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string bannerImageUrl = 13;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getBannerImageUrlBytes() {
+      java.lang.Object ref = bannerImageUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bannerImageUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       productId_ = "";
       productType_ = "";
@@ -3548,6 +3634,7 @@ public final class Product {
       pledgePrice_ = 0D;
       favorited_ = false;
       productTitle_ = "";
+      bannerImageUrl_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3622,6 +3709,9 @@ public final class Product {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeBytes(12, getProductTitleBytes());
       }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeBytes(13, getBannerImageUrlBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3678,6 +3768,10 @@ public final class Product {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(12, getProductTitleBytes());
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(13, getBannerImageUrlBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3824,6 +3918,8 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00000400);
         productTitle_ = "";
         bitField0_ = (bitField0_ & ~0x00000800);
+        bannerImageUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
 
@@ -3900,6 +3996,10 @@ public final class Product {
           to_bitField0_ |= 0x00000800;
         }
         result.productTitle_ = productTitle_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.bannerImageUrl_ = bannerImageUrl_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3962,6 +4062,11 @@ public final class Product {
         if (other.hasProductTitle()) {
           bitField0_ |= 0x00000800;
           productTitle_ = other.productTitle_;
+          onChanged();
+        }
+        if (other.hasBannerImageUrl()) {
+          bitField0_ |= 0x00001000;
+          bannerImageUrl_ = other.bannerImageUrl_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4899,6 +5004,106 @@ public final class Product {
   }
   bitField0_ |= 0x00000800;
         productTitle_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bannerImageUrl_ = "";
+      /**
+       * <code>optional string bannerImageUrl = 13;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public boolean hasBannerImageUrl() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional string bannerImageUrl = 13;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public java.lang.String getBannerImageUrl() {
+        java.lang.Object ref = bannerImageUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            bannerImageUrl_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string bannerImageUrl = 13;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getBannerImageUrlBytes() {
+        java.lang.Object ref = bannerImageUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bannerImageUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string bannerImageUrl = 13;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public Builder setBannerImageUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        bannerImageUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string bannerImageUrl = 13;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public Builder clearBannerImageUrl() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        bannerImageUrl_ = getDefaultInstance().getBannerImageUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string bannerImageUrl = 13;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public Builder setBannerImageUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        bannerImageUrl_ = value;
         onChanged();
         return this;
       }
@@ -7000,6 +7205,32 @@ public final class Product {
      */
     com.google.protobuf.ByteString
         getProductTitleBytes();
+
+    /**
+     * <code>optional string bannerImageUrl = 24;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    boolean hasBannerImageUrl();
+    /**
+     * <code>optional string bannerImageUrl = 24;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    java.lang.String getBannerImageUrl();
+    /**
+     * <code>optional string bannerImageUrl = 24;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getBannerImageUrlBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductDetailInfo}
@@ -7200,6 +7431,12 @@ public final class Product {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00008000;
               productTitle_ = bs;
+              break;
+            }
+            case 194: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00010000;
+              bannerImageUrl_ = bs;
               break;
             }
           }
@@ -8213,6 +8450,60 @@ public final class Product {
       }
     }
 
+    public static final int BANNERIMAGEURL_FIELD_NUMBER = 24;
+    private java.lang.Object bannerImageUrl_;
+    /**
+     * <code>optional string bannerImageUrl = 24;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    public boolean hasBannerImageUrl() {
+      return ((bitField0_ & 0x00010000) == 0x00010000);
+    }
+    /**
+     * <code>optional string bannerImageUrl = 24;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    public java.lang.String getBannerImageUrl() {
+      java.lang.Object ref = bannerImageUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          bannerImageUrl_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string bannerImageUrl = 24;</code>
+     *
+     * <pre>
+     *横幅图片地址
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getBannerImageUrlBytes() {
+      java.lang.Object ref = bannerImageUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bannerImageUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       productId_ = "";
       productType_ = "";
@@ -8237,6 +8528,7 @@ public final class Product {
       productEvaluateInfo_ = java.util.Collections.emptyList();
       favorited_ = false;
       productTitle_ = "";
+      bannerImageUrl_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -8370,6 +8662,9 @@ public final class Product {
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         output.writeBytes(23, getProductTitleBytes());
       }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        output.writeBytes(24, getBannerImageUrlBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8480,6 +8775,10 @@ public final class Product {
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(23, getProductTitleBytes());
+      }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(24, getBannerImageUrlBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -8673,6 +8972,8 @@ public final class Product {
         bitField0_ = (bitField0_ & ~0x00200000);
         productTitle_ = "";
         bitField0_ = (bitField0_ & ~0x00400000);
+        bannerImageUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00800000);
         return this;
       }
 
@@ -8820,6 +9121,10 @@ public final class Product {
           to_bitField0_ |= 0x00008000;
         }
         result.productTitle_ = productTitle_;
+        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
+          to_bitField0_ |= 0x00010000;
+        }
+        result.bannerImageUrl_ = bannerImageUrl_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -9046,6 +9351,11 @@ public final class Product {
         if (other.hasProductTitle()) {
           bitField0_ |= 0x00400000;
           productTitle_ = other.productTitle_;
+          onChanged();
+        }
+        if (other.hasBannerImageUrl()) {
+          bitField0_ |= 0x00800000;
+          bannerImageUrl_ = other.bannerImageUrl_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -12071,6 +12381,106 @@ public final class Product {
   }
   bitField0_ |= 0x00400000;
         productTitle_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bannerImageUrl_ = "";
+      /**
+       * <code>optional string bannerImageUrl = 24;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public boolean hasBannerImageUrl() {
+        return ((bitField0_ & 0x00800000) == 0x00800000);
+      }
+      /**
+       * <code>optional string bannerImageUrl = 24;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public java.lang.String getBannerImageUrl() {
+        java.lang.Object ref = bannerImageUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            bannerImageUrl_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string bannerImageUrl = 24;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getBannerImageUrlBytes() {
+        java.lang.Object ref = bannerImageUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bannerImageUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string bannerImageUrl = 24;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public Builder setBannerImageUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00800000;
+        bannerImageUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string bannerImageUrl = 24;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public Builder clearBannerImageUrl() {
+        bitField0_ = (bitField0_ & ~0x00800000);
+        bannerImageUrl_ = getDefaultInstance().getBannerImageUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string bannerImageUrl = 24;</code>
+       *
+       * <pre>
+       *横幅图片地址
+       * </pre>
+       */
+      public Builder setBannerImageUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00800000;
+        bannerImageUrl_ = value;
         onChanged();
         return this;
       }
@@ -22572,65 +22982,67 @@ public final class Product {
       "tResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg" +
       "\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(" +
       "\010\022G\n\017productLiteInfo\030\005 \003(\0132..com.qjoy.ba" +
-      "sjoo.core.model.pb.ProductLiteInfo\"\364\001\n\017P" +
+      "sjoo.core.model.pb.ProductLiteInfo\"\214\002\n\017P" +
       "roductLiteInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013pro",
       "ductType\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\024\n\014mainIma" +
       "geUrl\030\004 \002(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowestRent\030" +
       "\006 \001(\001\022\014\n\004unit\030\007 \001(\005\022\021\n\trentCount\030\010 \001(\003\022\023" +
       "\n\013marketPrice\030\t \001(\001\022\023\n\013pledgePrice\030\n \001(\001" +
       "\022\021\n\tfavorited\030\013 \001(\010\022\024\n\014productTitle\030\014 \002(" +
-      "\t\")\n\024ProductDetailRequest\022\021\n\tproductId\030\001" +
-      " \002(\t\"\211\001\n\023ProductDetailResult\022\022\n\nresultCo" +
-      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022K\n\021productDe" +
-      "tailInfo\030\003 \001(\01320.com.qjoy.basjoo.core.mo" +
-      "del.pb.ProductDetailInfo\"\332\005\n\021ProductDeta",
-      "ilInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productType" +
-      "\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\020\n\010imageUrl\030\004 \003(\t\022" +
-      "\014\n\004desc\030\005 \002(\t\022\022\n\nageBracket\030\006 \001(\t\022\022\n\nlow" +
-      "estRent\030\007 \001(\001\022\014\n\004unit\030\010 \001(\005\022\021\n\trentCount" +
-      "\030\t \001(\003\022\024\n\014maxAvailable\030\n \001(\003\022\023\n\013marketPr" +
-      "ice\030\013 \001(\001\022\023\n\013pledgePrice\030\014 \001(\001\022\033\n\023transp" +
-      "ortationPrice\030\r \001(\001\022\020\n\010location\030\016 \001(\t\022A\n" +
-      "\014categoryInfo\030\017 \003(\0132+.com.qjoy.basjoo.co" +
-      "re.model.pb.CategoryInfo\022C\n\rshortRentInf" +
-      "o\030\020 \003(\0132,.com.qjoy.basjoo.core.model.pb.",
-      "ShortRentInfo\022A\n\014longRentInfo\030\021 \003(\0132+.co" +
-      "m.qjoy.basjoo.core.model.pb.LongRentInfo" +
-      "\022B\n\tbaseParam\030\022 \003(\0132/.com.qjoy.basjoo.co" +
-      "re.model.pb.ProductBaseParam\022\026\n\016imagePar" +
-      "amUrls\030\023 \003(\t\022\025\n\revaluateCount\030\024 \001(\003\022O\n\023p" +
-      "roductEvaluateInfo\030\025 \003(\01322.com.qjoy.basj" +
-      "oo.core.model.pb.ProductEvaluateInfo\022\021\n\t" +
-      "favorited\030\026 \001(\010\022\024\n\014productTitle\030\027 \002(\t\"f\n" +
-      "\014CategoryInfo\022\024\n\014categoryCode\030\001 \002(\t\022\024\n\014c" +
-      "ategoryName\030\002 \002(\t\022\022\n\nstockCount\030\003 \001(\003\022\026\n",
-      "\016categoryImgUrl\030\004 \001(\t\"b\n\rShortRentInfo\022\020" +
-      "\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\027\n\017" +
-      "rentPricePerDay\030\003 \002(\001\022\022\n\ntotalPrice\030\004 \002(" +
-      "\001\"\224\001\n\014LongRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\n" +
-      "rentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002(\t" +
-      "\022\027\n\017rentPricePerDay\030\004 \002(\001\022\031\n\021rentPricePe" +
-      "rMonth\030\005 \002(\001\022\022\n\ntotalPrice\030\006 \002(\001\"D\n\020Prod" +
-      "uctBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030\002 " +
-      "\002(\t\022\021\n\tshowValue\030\003 \002(\t\"\233\002\n\023ProductEvalua" +
-      "teInfo\022\014\n\004time\030\001 \002(\003\022\016\n\006userId\030\002 \002(\t\022\020\n\010",
-      "userName\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \002(\t\022\021\n\tu" +
-      "serLevel\030\005 \002(\005\022\030\n\020rentCategoryName\030\006 \002(\t" +
-      "\022\017\n\007content\030\007 \002(\t\022\021\n\timageUrls\030\010 \003(\t\022\r\n\005" +
-      "level\030\t \002(\005\022\022\n\nevaluateId\030\n \002(\t\022K\n\021evalu" +
-      "ateReplyInfo\030\013 \003(\01320.com.qjoy.basjoo.cor" +
-      "e.model.pb.EvaluateReplyInfo\"X\n\021Evaluate" +
-      "ReplyInfo\022\017\n\007replyId\030\001 \002(\t\022\017\n\007content\030\002 " +
-      "\002(\t\022\014\n\004time\030\003 \002(\003\022\023\n\013fromMechant\030\004 \002(\010\"\\" +
-      "\n\035GetProductEvaluateListRequest\022\021\n\tprodu" +
-      "ctId\030\001 \002(\t\022\024\n\014evaluateType\030\002 \002(\005\022\022\n\nstar",
-      "tIndex\030\003 \001(\005\"\346\001\n\034GetProductEvaluateListR" +
-      "esult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002" +
-      " \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022" +
-      "\022\n\ntotalCount\030\005 \002(\003\022\027\n\017totalImageCount\030\006" +
-      " \002(\003\022O\n\023productEvaluateInfo\030\007 \003(\01322.com." +
-      "qjoy.basjoo.core.model.pb.ProductEvaluat" +
-      "eInfoB\037\n\035com.qjoy.basjoo.core.model.pb"
+      "\t\022\026\n\016bannerImageUrl\030\r \001(\t\")\n\024ProductDeta" +
+      "ilRequest\022\021\n\tproductId\030\001 \002(\t\"\211\001\n\023Product" +
+      "DetailResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresu" +
+      "ltMsg\030\002 \002(\t\022K\n\021productDetailInfo\030\003 \001(\01320" +
+      ".com.qjoy.basjoo.core.model.pb.ProductDe",
+      "tailInfo\"\362\005\n\021ProductDetailInfo\022\021\n\tproduc" +
+      "tId\030\001 \002(\t\022\023\n\013productType\030\002 \002(\t\022\r\n\005brand\030" +
+      "\003 \002(\t\022\020\n\010imageUrl\030\004 \003(\t\022\014\n\004desc\030\005 \002(\t\022\022\n" +
+      "\nageBracket\030\006 \001(\t\022\022\n\nlowestRent\030\007 \001(\001\022\014\n" +
+      "\004unit\030\010 \001(\005\022\021\n\trentCount\030\t \001(\003\022\024\n\014maxAva" +
+      "ilable\030\n \001(\003\022\023\n\013marketPrice\030\013 \001(\001\022\023\n\013ple" +
+      "dgePrice\030\014 \001(\001\022\033\n\023transportationPrice\030\r " +
+      "\001(\001\022\020\n\010location\030\016 \001(\t\022A\n\014categoryInfo\030\017 " +
+      "\003(\0132+.com.qjoy.basjoo.core.model.pb.Cate" +
+      "goryInfo\022C\n\rshortRentInfo\030\020 \003(\0132,.com.qj",
+      "oy.basjoo.core.model.pb.ShortRentInfo\022A\n" +
+      "\014longRentInfo\030\021 \003(\0132+.com.qjoy.basjoo.co" +
+      "re.model.pb.LongRentInfo\022B\n\tbaseParam\030\022 " +
+      "\003(\0132/.com.qjoy.basjoo.core.model.pb.Prod" +
+      "uctBaseParam\022\026\n\016imageParamUrls\030\023 \003(\t\022\025\n\r" +
+      "evaluateCount\030\024 \001(\003\022O\n\023productEvaluateIn" +
+      "fo\030\025 \003(\01322.com.qjoy.basjoo.core.model.pb" +
+      ".ProductEvaluateInfo\022\021\n\tfavorited\030\026 \001(\010\022" +
+      "\024\n\014productTitle\030\027 \002(\t\022\026\n\016bannerImageUrl\030" +
+      "\030 \001(\t\"f\n\014CategoryInfo\022\024\n\014categoryCode\030\001 ",
+      "\002(\t\022\024\n\014categoryName\030\002 \002(\t\022\022\n\nstockCount\030" +
+      "\003 \001(\003\022\026\n\016categoryImgUrl\030\004 \001(\t\"b\n\rShortRe" +
+      "ntInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002" +
+      " \002(\t\022\027\n\017rentPricePerDay\030\003 \002(\001\022\022\n\ntotalPr" +
+      "ice\030\004 \002(\001\"\224\001\n\014LongRentInfo\022\020\n\010rentCode\030\001" +
+      " \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodNa" +
+      "me\030\003 \002(\t\022\027\n\017rentPricePerDay\030\004 \002(\001\022\031\n\021ren" +
+      "tPricePerMonth\030\005 \002(\001\022\022\n\ntotalPrice\030\006 \002(\001" +
+      "\"D\n\020ProductBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007sh" +
+      "owKey\030\002 \002(\t\022\021\n\tshowValue\030\003 \002(\t\"\233\002\n\023Produ",
+      "ctEvaluateInfo\022\014\n\004time\030\001 \002(\003\022\016\n\006userId\030\002" +
+      " \002(\t\022\020\n\010userName\030\003 \002(\t\022\023\n\013headIconUrl\030\004 " +
+      "\002(\t\022\021\n\tuserLevel\030\005 \002(\005\022\030\n\020rentCategoryNa" +
+      "me\030\006 \002(\t\022\017\n\007content\030\007 \002(\t\022\021\n\timageUrls\030\010" +
+      " \003(\t\022\r\n\005level\030\t \002(\005\022\022\n\nevaluateId\030\n \002(\t\022" +
+      "K\n\021evaluateReplyInfo\030\013 \003(\01320.com.qjoy.ba" +
+      "sjoo.core.model.pb.EvaluateReplyInfo\"X\n\021" +
+      "EvaluateReplyInfo\022\017\n\007replyId\030\001 \002(\t\022\017\n\007co" +
+      "ntent\030\002 \002(\t\022\014\n\004time\030\003 \002(\003\022\023\n\013fromMechant" +
+      "\030\004 \002(\010\"\\\n\035GetProductEvaluateListRequest\022",
+      "\021\n\tproductId\030\001 \002(\t\022\024\n\014evaluateType\030\002 \002(\005" +
+      "\022\022\n\nstartIndex\030\003 \001(\005\"\346\001\n\034GetProductEvalu" +
+      "ateListResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
+      "ultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMor" +
+      "e\030\004 \002(\010\022\022\n\ntotalCount\030\005 \002(\003\022\027\n\017totalImag" +
+      "eCount\030\006 \002(\003\022O\n\023productEvaluateInfo\030\007 \003(" +
+      "\01322.com.qjoy.basjoo.core.model.pb.Produc" +
+      "tEvaluateInfoB\037\n\035com.qjoy.basjoo.core.mo" +
+      "del.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -22661,7 +23073,7 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductLiteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductLiteInfo_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "Brand", "MainImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MarketPrice", "PledgePrice", "Favorited", "ProductTitle", });
+        new java.lang.String[] { "ProductId", "ProductType", "Brand", "MainImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MarketPrice", "PledgePrice", "Favorited", "ProductTitle", "BannerImageUrl", });
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailRequest_fieldAccessorTable = new
@@ -22679,7 +23091,7 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "AgeBracket", "LowestRent", "Unit", "RentCount", "MaxAvailable", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "CategoryInfo", "ShortRentInfo", "LongRentInfo", "BaseParam", "ImageParamUrls", "EvaluateCount", "ProductEvaluateInfo", "Favorited", "ProductTitle", });
+        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "AgeBracket", "LowestRent", "Unit", "RentCount", "MaxAvailable", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "CategoryInfo", "ShortRentInfo", "LongRentInfo", "BaseParam", "ImageParamUrls", "EvaluateCount", "ProductEvaluateInfo", "Favorited", "ProductTitle", "BannerImageUrl", });
     internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_fieldAccessorTable = new

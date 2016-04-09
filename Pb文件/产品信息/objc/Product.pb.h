@@ -57,6 +57,7 @@
 @property (readonly) BOOL hasPledgePrice;
 @property (readonly) BOOL hasFavorited;
 @property (readonly) BOOL hasProductTitle;
+@property (readonly) BOOL hasBannerImageUrl;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic,strong) NSString* brand;
@@ -69,6 +70,7 @@
 @property (nonatomic)Float64 pledgePrice;
 @property (nonatomic)BOOL favorited;
 @property (nonatomic,strong) NSString* productTitle;
+@property (nonatomic,strong) NSString* bannerImageUrl;
 @end
 
 @interface ProductDetailRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -102,6 +104,7 @@
 @property (readonly) BOOL hasEvaluateCount;
 @property (readonly) BOOL hasFavorited;
 @property (readonly) BOOL hasProductTitle;
+@property (readonly) BOOL hasBannerImageUrl;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic,strong) NSString* brand;
@@ -125,6 +128,7 @@
 @property (nonatomic,strong) NSMutableArray * productEvaluateInfo;
 @property (nonatomic)BOOL favorited;
 @property (nonatomic,strong) NSString* productTitle;
+@property (nonatomic,strong) NSString* bannerImageUrl;
 @end
 
 @interface CategoryInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>

@@ -321,6 +321,7 @@
     _pledgePrice = 0;
     _favorited = NO;
     _productTitle = @"";
+    _bannerImageUrl = @"";
   }
   return self;
 }
@@ -360,6 +361,9 @@
   }
   if (self.hasProductTitle) {
     [output writeString:12 value:self.productTitle];
+  }
+  if (self.hasBannerImageUrl) {
+    [output writeString:13 value:self.bannerImageUrl];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -402,6 +406,9 @@
   }
   if (self.hasProductTitle) {
     size_ += computeStringSize(12, self.productTitle);
+  }
+  if (self.hasBannerImageUrl) {
+    size_ += computeStringSize(13, self.bannerImageUrl);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -448,6 +455,9 @@
   }
   if (self.hasProductTitle) {
     [output appendFormat:@"%@%@: %@\n", indent, @"productTitle", self.productTitle];
+  }
+  if (self.hasBannerImageUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"bannerImageUrl", self.bannerImageUrl];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -499,6 +509,10 @@
 - (void) setProductTitle:(NSString*) value {
   _hasProductTitle = YES;
   _productTitle = value;
+}
+- (void) setBannerImageUrl:(NSString*) value {
+  _hasBannerImageUrl = YES;
+  _bannerImageUrl = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -561,6 +575,10 @@
       }
       case 98: {
         [self setProductTitle:[input readString]];
+        break;
+      }
+      case 106: {
+        [self setBannerImageUrl:[input readString]];
         break;
       }
     }
@@ -761,6 +779,7 @@
     _evaluateCount = 0L;
     _favorited = NO;
     _productTitle = @"";
+    _bannerImageUrl = @"";
   }
   return self;
 }
@@ -833,6 +852,9 @@
   }
   if (self.hasProductTitle) {
     [output writeString:23 value:self.productTitle];
+  }
+  if (self.hasBannerImageUrl) {
+    [output writeString:24 value:self.bannerImageUrl];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -920,6 +942,9 @@
   }
   if (self.hasProductTitle) {
     size_ += computeStringSize(23, self.productTitle);
+  }
+  if (self.hasBannerImageUrl) {
+    size_ += computeStringSize(24, self.bannerImageUrl);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1014,6 +1039,9 @@
   }
   if (self.hasProductTitle) {
     [output appendFormat:@"%@%@: %@\n", indent, @"productTitle", self.productTitle];
+  }
+  if (self.hasBannerImageUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"bannerImageUrl", self.bannerImageUrl];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -1145,6 +1173,10 @@
   _hasProductTitle = YES;
   _productTitle = value;
 }
+- (void) setBannerImageUrl:(NSString*) value {
+  _hasBannerImageUrl = YES;
+  _bannerImageUrl = value;
+}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -1260,6 +1292,10 @@
       }
       case 186: {
         [self setProductTitle:[input readString]];
+        break;
+      }
+      case 194: {
+        [self setBannerImageUrl:[input readString]];
         break;
       }
     }
