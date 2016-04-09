@@ -5,20 +5,24 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.DOUBLE;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 获取订单详情结果
+ * 获取退款金额
  */
-public final class GetOrderDetailResult extends Message {
+public final class GetRefundFeeResult extends Message {
 
   public static final int TAG_RESULTCODE = 1;
   public static final int TAG_RESULTMSG = 2;
-  public static final int TAG_ORDERDETAILINFO = 3;
+  public static final int TAG_MAXREFUNDFEE = 3;
+  public static final int TAG_TRANSPORTFEE = 4;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
+  public static final Double DEFAULT_MAXREFUNDFEE = 0D;
+  public static final Double DEFAULT_TRANSPORTFEE = 0D;
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
@@ -27,23 +31,30 @@ public final class GetOrderDetailResult extends Message {
   public String resultMsg;
 
   /**
-   * 订单详细信息
+   * 最大退款金额
    */
-  @ProtoField(tag = 3)
-  public OrderDetailInfo orderDetailInfo;
+  @ProtoField(tag = 3, type = DOUBLE)
+  public Double maxRefundFee;
 
-  public GetOrderDetailResult(GetOrderDetailResult message) {
+  /**
+   * 邮费
+   */
+  @ProtoField(tag = 4, type = DOUBLE)
+  public Double transportFee;
+
+  public GetRefundFeeResult(GetRefundFeeResult message) {
     super(message);
     if (message == null) return;
     this.resultCode = message.resultCode;
     this.resultMsg = message.resultMsg;
-    this.orderDetailInfo = message.orderDetailInfo;
+    this.maxRefundFee = message.maxRefundFee;
+    this.transportFee = message.transportFee;
   }
 
-  public GetOrderDetailResult() {
+  public GetRefundFeeResult() {
   }
 
-  public GetOrderDetailResult fillTagValue(int tag, Object value) {
+  public GetRefundFeeResult fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_RESULTCODE:
         this.resultCode = (String)value;
@@ -51,8 +62,11 @@ public final class GetOrderDetailResult extends Message {
         case TAG_RESULTMSG:
         this.resultMsg = (String)value;
         break;
-        case TAG_ORDERDETAILINFO:
-        this.orderDetailInfo = (OrderDetailInfo)value;
+        case TAG_MAXREFUNDFEE:
+        this.maxRefundFee = (Double)value;
+        break;
+        case TAG_TRANSPORTFEE:
+        this.transportFee = (Double)value;
         break;
         default: break;
         };
@@ -62,11 +76,12 @@ public final class GetOrderDetailResult extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof GetOrderDetailResult)) return false;
-    GetOrderDetailResult o = (GetOrderDetailResult) other;
+    if (!(other instanceof GetRefundFeeResult)) return false;
+    GetRefundFeeResult o = (GetRefundFeeResult) other;
     return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
-        && equals(orderDetailInfo, o.orderDetailInfo);
+        && equals(maxRefundFee, o.maxRefundFee)
+        && equals(transportFee, o.transportFee);
   }
 
   @Override
@@ -75,7 +90,8 @@ public final class GetOrderDetailResult extends Message {
     if (result == 0) {
       result = resultCode != null ? resultCode.hashCode() : 0;
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
-      result = result * 37 + (orderDetailInfo != null ? orderDetailInfo.hashCode() : 0);
+      result = result * 37 + (maxRefundFee != null ? maxRefundFee.hashCode() : 0);
+      result = result * 37 + (transportFee != null ? transportFee.hashCode() : 0);
       hashCode = result;
     }
     return result;

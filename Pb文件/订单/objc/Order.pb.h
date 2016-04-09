@@ -24,6 +24,8 @@
 @class GetOrderDetailResult;
 @class GetPayStatusRequest;
 @class GetPayStatusResult;
+@class GetRefundFeeRequest;
+@class GetRefundFeeResult;
 @class OrderDetailInfo;
 @class OrderLiteInfo;
 @class OrderReceiveAddressInfo;
@@ -361,6 +363,24 @@
 @property (readonly) BOOL hasResultMsg;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
+@end
+
+@interface GetRefundFeeRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasOrderId;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSString* orderId;
+@end
+
+@interface GetRefundFeeResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasMaxRefundFee;
+@property (readonly) BOOL hasTransportFee;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic)Float64 maxRefundFee;
+@property (nonatomic)Float64 transportFee;
 @end
 
 @interface CommitRefundTransRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>

@@ -514,6 +514,33 @@ message ApplyRefundResult {
 }
 
 
+//获取退款金额
+message GetRefundFeeRequest {   
+
+    //用户ID   
+    required string                 userId = 1; 
+  
+    //订单ID
+    required string                 orderId = 2;
+
+}
+
+//获取退款金额
+message GetRefundFeeResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+
+   //最大退款金额
+   optional double                 maxRefundFee = 3; 
+
+   //邮费 
+   optional double                 transportFee = 4; 
+
+}
+
+
 //提交退款的物流信息
 message CommitRefundTransRequest {   
 
@@ -568,7 +595,7 @@ message GetOrderDetailResult{
   required string   resultMsg = 2; 
   
   //订单详细信息
-  required OrderDetailInfo orderDetailInfo = 3;
+  optional OrderDetailInfo orderDetailInfo = 3;
 }
 
 
