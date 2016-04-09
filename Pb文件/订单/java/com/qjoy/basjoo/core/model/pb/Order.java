@@ -17004,7 +17004,7 @@ public final class Order {
     int getMaxIndex();
 
     /**
-     * <code>required bool hasMore = 4;</code>
+     * <code>optional bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -17012,7 +17012,7 @@ public final class Order {
      */
     boolean hasHasMore();
     /**
-     * <code>required bool hasMore = 4;</code>
+     * <code>optional bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -17435,7 +17435,7 @@ public final class Order {
     public static final int HASMORE_FIELD_NUMBER = 4;
     private boolean hasMore_;
     /**
-     * <code>required bool hasMore = 4;</code>
+     * <code>optional bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -17445,7 +17445,7 @@ public final class Order {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required bool hasMore = 4;</code>
+     * <code>optional bool hasMore = 4;</code>
      *
      * <pre>
      *是否还有更多数据
@@ -17672,10 +17672,6 @@ public final class Order {
         return false;
       }
       if (!hasResultMsg()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasHasMore()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -18092,10 +18088,6 @@ public final class Order {
           
           return false;
         }
-        if (!hasHasMore()) {
-          
-          return false;
-        }
         for (int i = 0; i < getOrderLiteInfoCount(); i++) {
           if (!getOrderLiteInfo(i).isInitialized()) {
             
@@ -18326,7 +18318,7 @@ public final class Order {
 
       private boolean hasMore_ ;
       /**
-       * <code>required bool hasMore = 4;</code>
+       * <code>optional bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -18336,7 +18328,7 @@ public final class Order {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required bool hasMore = 4;</code>
+       * <code>optional bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -18346,7 +18338,7 @@ public final class Order {
         return hasMore_;
       }
       /**
-       * <code>required bool hasMore = 4;</code>
+       * <code>optional bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -18359,7 +18351,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required bool hasMore = 4;</code>
+       * <code>optional bool hasMore = 4;</code>
        *
        * <pre>
        *是否还有更多数据
@@ -26438,6 +26430,41 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getUserIdBytes();
+
+    /**
+     * <code>repeated string evidentalImgs = 6;</code>
+     *
+     * <pre>
+     *归还凭证图片
+     * </pre>
+     */
+    com.google.protobuf.ProtocolStringList
+        getEvidentalImgsList();
+    /**
+     * <code>repeated string evidentalImgs = 6;</code>
+     *
+     * <pre>
+     *归还凭证图片
+     * </pre>
+     */
+    int getEvidentalImgsCount();
+    /**
+     * <code>repeated string evidentalImgs = 6;</code>
+     *
+     * <pre>
+     *归还凭证图片
+     * </pre>
+     */
+    java.lang.String getEvidentalImgs(int index);
+    /**
+     * <code>repeated string evidentalImgs = 6;</code>
+     *
+     * <pre>
+     *归还凭证图片
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getEvidentalImgsBytes(int index);
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ApplyRevertRequest}
@@ -26525,6 +26552,15 @@ public final class Order {
               userId_ = bs;
               break;
             }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                evidentalImgs_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              evidentalImgs_.add(bs);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -26533,6 +26569,9 @@ public final class Order {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          evidentalImgs_ = evidentalImgs_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -26835,12 +26874,58 @@ public final class Order {
       }
     }
 
+    public static final int EVIDENTALIMGS_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList evidentalImgs_;
+    /**
+     * <code>repeated string evidentalImgs = 6;</code>
+     *
+     * <pre>
+     *归还凭证图片
+     * </pre>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEvidentalImgsList() {
+      return evidentalImgs_;
+    }
+    /**
+     * <code>repeated string evidentalImgs = 6;</code>
+     *
+     * <pre>
+     *归还凭证图片
+     * </pre>
+     */
+    public int getEvidentalImgsCount() {
+      return evidentalImgs_.size();
+    }
+    /**
+     * <code>repeated string evidentalImgs = 6;</code>
+     *
+     * <pre>
+     *归还凭证图片
+     * </pre>
+     */
+    public java.lang.String getEvidentalImgs(int index) {
+      return evidentalImgs_.get(index);
+    }
+    /**
+     * <code>repeated string evidentalImgs = 6;</code>
+     *
+     * <pre>
+     *归还凭证图片
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getEvidentalImgsBytes(int index) {
+      return evidentalImgs_.getByteString(index);
+    }
+
     private void initFields() {
       orderId_ = "";
       applyRevertType_ = "";
       transportationId_ = "";
       transportationCompany_ = "";
       userId_ = "";
+      evidentalImgs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -26882,6 +26967,9 @@ public final class Order {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(5, getUserIdBytes());
       }
+      for (int i = 0; i < evidentalImgs_.size(); i++) {
+        output.writeBytes(6, evidentalImgs_.getByteString(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -26910,6 +26998,15 @@ public final class Order {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, getUserIdBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < evidentalImgs_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(evidentalImgs_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getEvidentalImgsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -27042,6 +27139,8 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000008);
         userId_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
+        evidentalImgs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -27090,6 +27189,11 @@ public final class Order {
           to_bitField0_ |= 0x00000010;
         }
         result.userId_ = userId_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          evidentalImgs_ = evidentalImgs_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.evidentalImgs_ = evidentalImgs_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -27129,6 +27233,16 @@ public final class Order {
         if (other.hasUserId()) {
           bitField0_ |= 0x00000010;
           userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.evidentalImgs_.isEmpty()) {
+          if (evidentalImgs_.isEmpty()) {
+            evidentalImgs_ = other.evidentalImgs_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureEvidentalImgsIsMutable();
+            evidentalImgs_.addAll(other.evidentalImgs_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -27666,6 +27780,135 @@ public final class Order {
   }
   bitField0_ |= 0x00000010;
         userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList evidentalImgs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureEvidentalImgsIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          evidentalImgs_ = new com.google.protobuf.LazyStringArrayList(evidentalImgs_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated string evidentalImgs = 6;</code>
+       *
+       * <pre>
+       *归还凭证图片
+       * </pre>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getEvidentalImgsList() {
+        return evidentalImgs_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string evidentalImgs = 6;</code>
+       *
+       * <pre>
+       *归还凭证图片
+       * </pre>
+       */
+      public int getEvidentalImgsCount() {
+        return evidentalImgs_.size();
+      }
+      /**
+       * <code>repeated string evidentalImgs = 6;</code>
+       *
+       * <pre>
+       *归还凭证图片
+       * </pre>
+       */
+      public java.lang.String getEvidentalImgs(int index) {
+        return evidentalImgs_.get(index);
+      }
+      /**
+       * <code>repeated string evidentalImgs = 6;</code>
+       *
+       * <pre>
+       *归还凭证图片
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getEvidentalImgsBytes(int index) {
+        return evidentalImgs_.getByteString(index);
+      }
+      /**
+       * <code>repeated string evidentalImgs = 6;</code>
+       *
+       * <pre>
+       *归还凭证图片
+       * </pre>
+       */
+      public Builder setEvidentalImgs(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEvidentalImgsIsMutable();
+        evidentalImgs_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string evidentalImgs = 6;</code>
+       *
+       * <pre>
+       *归还凭证图片
+       * </pre>
+       */
+      public Builder addEvidentalImgs(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEvidentalImgsIsMutable();
+        evidentalImgs_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string evidentalImgs = 6;</code>
+       *
+       * <pre>
+       *归还凭证图片
+       * </pre>
+       */
+      public Builder addAllEvidentalImgs(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureEvidentalImgsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, evidentalImgs_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string evidentalImgs = 6;</code>
+       *
+       * <pre>
+       *归还凭证图片
+       * </pre>
+       */
+      public Builder clearEvidentalImgs() {
+        evidentalImgs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string evidentalImgs = 6;</code>
+       *
+       * <pre>
+       *归还凭证图片
+       * </pre>
+       */
+      public Builder addEvidentalImgsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEvidentalImgsIsMutable();
+        evidentalImgs_.add(value);
         onChanged();
         return this;
       }
@@ -41146,7 +41389,7 @@ public final class Order {
       "\021\n\tstartTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006u" +
       "serId\030\007 \002(\t\"\271\002\n\025SearchOrderListResult\022\022\n" +
       "\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010",
-      "maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\024\n\014waitP" +
+      "maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \001(\010\022\024\n\014waitP" +
       "ayCount\030\005 \001(\005\022\031\n\021waitDeliveryCount\030\006 \001(\005" +
       "\022\030\n\020waitReceiveCount\030\007 \001(\005\022\027\n\017waitRevert" +
       "Count\030\010 \001(\005\022\031\n\021waitEvaluateCount\030\t \001(\005\022\022" +
@@ -41170,50 +41413,50 @@ public final class Order {
       "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025ConfirmRec" +
       "eiveRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002" +
       " \002(\t\"=\n\024ConfirmReceiveResult\022\022\n\nresultCo" +
-      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\207\001\n\022ApplyRev" +
+      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\236\001\n\022ApplyRev" +
       "ertRequest\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyReve" +
       "rtType\030\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022\035" +
       "\n\025transportationCompany\030\004 \001(\t\022\016\n\006userId\030" +
-      "\005 \002(\t\":\n\021ApplyRevertResult\022\022\n\nresultCode" +
-      "\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefun",
-      "dRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(" +
-      "\t\022\022\n\nrefundType\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001" +
-      "(\t\022\024\n\014refundReason\030\005 \002(\t\022\021\n\trefundFee\030\006 " +
-      "\001(\001\022\025\n\revidentalImgs\030\007 \003(\t\022\023\n\013refundIntr" +
-      "o\030\010 \001(\t\":\n\021ApplyRefundResult\022\022\n\nresultCo" +
-      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"6\n\023GetRefund" +
-      "FeeRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 " +
-      "\002(\t\"g\n\022GetRefundFeeResult\022\022\n\nresultCode\030" +
-      "\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\024\n\014maxRefundFee" +
-      "\030\003 \001(\001\022\024\n\014transportFee\030\004 \001(\001\"\252\001\n\030CommitR",
-      "efundTransRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007ord" +
-      "erId\030\002 \002(\t\022\027\n\017refundTransType\030\003 \002(\t\022\030\n\020t" +
-      "ransportationId\030\004 \001(\t\022\035\n\025transportationC" +
-      "ompany\030\005 \001(\t\022\033\n\023transportationIntro\030\006 \001(" +
-      "\t\"@\n\027CommitRefundTransResult\022\022\n\nresultCo" +
-      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetOrderD" +
-      "etailRequest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030" +
-      "\002 \002(\t\"\206\001\n\024GetOrderDetailResult\022\022\n\nresult" +
-      "Code\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDe" +
-      "tailInfo\030\003 \001(\0132..com.qjoy.basjoo.core.mo",
-      "del.pb.OrderDetailInfo\"\373\004\n\017OrderDetailIn" +
-      "fo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005" +
-      "\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 " +
-      "\002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002" +
-      "(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001" +
-      "\022\023\n\013pledgePrice\030\t \002(\001\022\033\n\023transportationP" +
-      "rice\030\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transp" +
-      "ortationId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010" +
-      "\022\021\n\tproductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(" +
-      "\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n",
-      "\007payTime\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChan" +
-      "nel\030\024 \001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013recei" +
-      "veTime\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014comp" +
-      "leteTime\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vou" +
-      "chers\030\032 \003(\t\022W\n\027orderReceiveAddressInfo\030\033" +
-      " \001(\01326.com.qjoy.basjoo.core.model.pb.Ord" +
-      "erReceiveAddressInfoB\037\n\035com.qjoy.basjoo." +
-      "core.model.pb"
+      "\005 \002(\t\022\025\n\revidentalImgs\030\006 \003(\t\":\n\021ApplyRev" +
+      "ertResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultM",
+      "sg\030\002 \002(\t\"\263\001\n\022ApplyRefundRequest\022\016\n\006userI" +
+      "d\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\022\n\nrefundType\030\003" +
+      " \002(\t\022\023\n\013goodsStatus\030\004 \001(\t\022\024\n\014refundReaso" +
+      "n\030\005 \002(\t\022\021\n\trefundFee\030\006 \001(\001\022\025\n\revidentalI" +
+      "mgs\030\007 \003(\t\022\023\n\013refundIntro\030\010 \001(\t\":\n\021ApplyR" +
+      "efundResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
+      "tMsg\030\002 \002(\t\"6\n\023GetRefundFeeRequest\022\016\n\006use" +
+      "rId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\"g\n\022GetRefundF" +
+      "eeResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMs" +
+      "g\030\002 \002(\t\022\024\n\014maxRefundFee\030\003 \001(\001\022\024\n\014transpo",
+      "rtFee\030\004 \001(\001\"\252\001\n\030CommitRefundTransRequest" +
+      "\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\027\n\017ref" +
+      "undTransType\030\003 \002(\t\022\030\n\020transportationId\030\004" +
+      " \001(\t\022\035\n\025transportationCompany\030\005 \001(\t\022\033\n\023t" +
+      "ransportationIntro\030\006 \001(\t\"@\n\027CommitRefund" +
+      "TransResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
+      "tMsg\030\002 \002(\t\"8\n\025GetOrderDetailRequest\022\017\n\007o" +
+      "rderId\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"\206\001\n\024GetOrde" +
+      "rDetailResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
+      "ultMsg\030\002 \002(\t\022G\n\017orderDetailInfo\030\003 \001(\0132..",
+      "com.qjoy.basjoo.core.model.pb.OrderDetai" +
+      "lInfo\"\373\004\n\017OrderDetailInfo\022\017\n\007orderId\030\001 \002" +
+      "(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 " +
+      "\002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTim" +
+      "e\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007" +
+      " \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t" +
+      " \002(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022\n\ntot" +
+      "alPrice\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022" +
+      "\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002" +
+      "(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024",
+      "\n\014categoryName\030\021 \002(\t\022\017\n\007payTime\030\022 \001(\003\022\r\n" +
+      "\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 \001(\t\022\024\n\014deli" +
+      "veryTime\030\025 \001(\003\022\023\n\013receiveTime\030\026 \001(\003\022\022\n\nr" +
+      "evertTime\030\027 \001(\003\022\024\n\014completeTime\030\030 \001(\003\022\021\n" +
+      "\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030\032 \003(\t\022W\n\027or" +
+      "derReceiveAddressInfo\030\033 \001(\01326.com.qjoy.b" +
+      "asjoo.core.model.pb.OrderReceiveAddressI" +
+      "nfoB\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -41346,7 +41589,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertRequest_descriptor,
-        new java.lang.String[] { "OrderId", "ApplyRevertType", "TransportationId", "TransportationCompany", "UserId", });
+        new java.lang.String[] { "OrderId", "ApplyRevertType", "TransportationId", "TransportationCompany", "UserId", "EvidentalImgs", });
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertResult_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_com_qjoy_basjoo_core_model_pb_ApplyRevertResult_fieldAccessorTable = new

@@ -4,8 +4,11 @@ package com.qjoy.basjoo.core.model.pb;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 
 import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REPEATED;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
@@ -18,12 +21,14 @@ public final class ApplyRevertRequest extends Message {
   public static final int TAG_TRANSPORTATIONID = 3;
   public static final int TAG_TRANSPORTATIONCOMPANY = 4;
   public static final int TAG_USERID = 5;
+  public static final int TAG_EVIDENTALIMGS = 6;
 
   public static final String DEFAULT_ORDERID = "";
   public static final String DEFAULT_APPLYREVERTTYPE = "";
   public static final String DEFAULT_TRANSPORTATIONID = "";
   public static final String DEFAULT_TRANSPORTATIONCOMPANY = "";
   public static final String DEFAULT_USERID = "";
+  public static final List<String> DEFAULT_EVIDENTALIMGS = Collections.emptyList();
 
   /**
    * 订单ID
@@ -55,6 +60,12 @@ public final class ApplyRevertRequest extends Message {
   @ProtoField(tag = 5, type = STRING, label = REQUIRED)
   public String userId;
 
+  /**
+   * 归还凭证图片
+   */
+  @ProtoField(tag = 6, type = STRING, label = REPEATED)
+  public List<String> evidentalImgs;
+
   public ApplyRevertRequest(ApplyRevertRequest message) {
     super(message);
     if (message == null) return;
@@ -63,6 +74,7 @@ public final class ApplyRevertRequest extends Message {
     this.transportationId = message.transportationId;
     this.transportationCompany = message.transportationCompany;
     this.userId = message.userId;
+    this.evidentalImgs = copyOf(message.evidentalImgs);
   }
 
   public ApplyRevertRequest() {
@@ -85,6 +97,9 @@ public final class ApplyRevertRequest extends Message {
         case TAG_USERID:
         this.userId = (String)value;
         break;
+        case TAG_EVIDENTALIMGS:
+        this.evidentalImgs = immutableCopyOf((List<String>)value);
+        break;
         default: break;
         };
     return this;
@@ -99,7 +114,8 @@ public final class ApplyRevertRequest extends Message {
         && equals(applyRevertType, o.applyRevertType)
         && equals(transportationId, o.transportationId)
         && equals(transportationCompany, o.transportationCompany)
-        && equals(userId, o.userId);
+        && equals(userId, o.userId)
+        && equals(evidentalImgs, o.evidentalImgs);
   }
 
   @Override
@@ -111,6 +127,7 @@ public final class ApplyRevertRequest extends Message {
       result = result * 37 + (transportationId != null ? transportationId.hashCode() : 0);
       result = result * 37 + (transportationCompany != null ? transportationCompany.hashCode() : 0);
       result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      result = result * 37 + (evidentalImgs != null ? evidentalImgs.hashCode() : 1);
       hashCode = result;
     }
     return result;

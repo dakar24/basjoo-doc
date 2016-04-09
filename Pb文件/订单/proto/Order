@@ -455,6 +455,9 @@ message ApplyRevertRequest {
 
     //用户ID   
     required string                 userId = 5; 
+
+    //归还凭证图片
+    repeated string                 evidentalImgs = 6;
     
     
 }

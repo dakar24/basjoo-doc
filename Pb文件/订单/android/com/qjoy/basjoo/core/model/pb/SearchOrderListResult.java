@@ -57,7 +57,7 @@ public final class SearchOrderListResult extends Message {
   /**
    * 是否还有更多数据
    */
-  @ProtoField(tag = 4, type = BOOL, label = REQUIRED)
+  @ProtoField(tag = 4, type = BOOL)
   public Boolean hasMore;
 
   /**

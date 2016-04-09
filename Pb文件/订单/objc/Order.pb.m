@@ -3065,6 +3065,9 @@
   if (self.hasUserId) {
     [output writeString:5 value:self.userId];
   }
+  [self.evidentalImgs enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:6 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -3085,6 +3088,15 @@
   }
   if (self.hasUserId) {
     size_ += computeStringSize(5, self.userId);
+  }
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.evidentalImgs.count;
+    [self.evidentalImgs enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(1 * count);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -3111,6 +3123,9 @@
   if (self.hasUserId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
   }
+  [self.evidentalImgs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"evidentalImgs", obj];
+  }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -3133,6 +3148,15 @@
 - (void) setUserId:(NSString*) value {
   _hasUserId = YES;
   _userId = value;
+}
+- (void)setEvidentalImgsArray:(NSArray *)array {
+  _evidentalImgs = [[NSMutableArray alloc] initWithArray:array];
+}
+- (void)addEvidentalImgs:(NSString*)value {
+  if (_evidentalImgs == nil) {
+    _evidentalImgs = [[NSMutableArray alloc]init];
+  }
+  [_evidentalImgs addObject:value];
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -3167,6 +3191,10 @@
       }
       case 42: {
         [self setUserId:[input readString]];
+        break;
+      }
+      case 50: {
+        [self addEvidentalImgs:[input readString]];
         break;
       }
     }

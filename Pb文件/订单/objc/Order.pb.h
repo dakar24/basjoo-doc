@@ -331,6 +331,7 @@
 @property (nonatomic,strong) NSString* transportationId;
 @property (nonatomic,strong) NSString* transportationCompany;
 @property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSMutableArray * evidentalImgs;
 @end
 
 @interface ApplyRevertResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
