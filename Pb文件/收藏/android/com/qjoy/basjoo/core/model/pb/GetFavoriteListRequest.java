@@ -6,6 +6,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 import static com.squareup.wire.Message.Datatype.INT32;
+import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
  * 获取收藏（产品）列表
@@ -13,8 +15,10 @@ import static com.squareup.wire.Message.Datatype.INT32;
 public final class GetFavoriteListRequest extends Message {
 
   public static final int TAG_STARTINDEX = 1;
+  public static final int TAG_USERID = 2;
 
   public static final Integer DEFAULT_STARTINDEX = 0;
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 起始index
@@ -22,10 +26,17 @@ public final class GetFavoriteListRequest extends Message {
   @ProtoField(tag = 1, type = INT32)
   public Integer startIndex;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String userId;
+
   public GetFavoriteListRequest(GetFavoriteListRequest message) {
     super(message);
     if (message == null) return;
     this.startIndex = message.startIndex;
+    this.userId = message.userId;
   }
 
   public GetFavoriteListRequest() {
@@ -36,6 +47,9 @@ public final class GetFavoriteListRequest extends Message {
         case TAG_STARTINDEX:
         this.startIndex = (Integer)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -45,12 +59,19 @@ public final class GetFavoriteListRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof GetFavoriteListRequest)) return false;
-    return equals(startIndex, ((GetFavoriteListRequest) other).startIndex);
+    GetFavoriteListRequest o = (GetFavoriteListRequest) other;
+    return equals(startIndex, o.startIndex)
+        && equals(userId, o.userId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = startIndex != null ? startIndex.hashCode() : 0);
+    if (result == 0) {
+      result = startIndex != null ? startIndex.hashCode() : 0;
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }

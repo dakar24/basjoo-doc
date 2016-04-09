@@ -28,6 +28,32 @@ public final class Favorite {
      * </pre>
      */
     int getStartIndex();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetFavoriteListRequest}
@@ -88,6 +114,12 @@ public final class Favorite {
             case 8: {
               bitField0_ |= 0x00000001;
               startIndex_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -153,8 +185,63 @@ public final class Favorite {
       return startIndex_;
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       startIndex_ = 0;
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -162,6 +249,10 @@ public final class Favorite {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -171,6 +262,9 @@ public final class Favorite {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, startIndex_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -184,6 +278,10 @@ public final class Favorite {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, startIndex_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -308,6 +406,8 @@ public final class Favorite {
         super.clear();
         startIndex_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -340,6 +440,10 @@ public final class Favorite {
           to_bitField0_ |= 0x00000001;
         }
         result.startIndex_ = startIndex_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -359,11 +463,20 @@ public final class Favorite {
         if (other.hasStartIndex()) {
           setStartIndex(other.getStartIndex());
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -430,6 +543,106 @@ public final class Favorite {
       public Builder clearStartIndex() {
         bitField0_ = (bitField0_ & ~0x00000001);
         startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -3998,6 +4211,32 @@ public final class Favorite {
      */
     com.google.protobuf.ByteString
         getProductIdBytes();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.AddFavoriteRequest}
@@ -4059,6 +4298,12 @@ public final class Favorite {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               productId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -4155,8 +4400,63 @@ public final class Favorite {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       productId_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4165,6 +4465,10 @@ public final class Favorite {
       if (isInitialized == 0) return false;
 
       if (!hasProductId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -4178,6 +4482,9 @@ public final class Favorite {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getProductIdBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4190,6 +4497,10 @@ public final class Favorite {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getProductIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4314,6 +4625,8 @@ public final class Favorite {
         super.clear();
         productId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -4346,6 +4659,10 @@ public final class Favorite {
           to_bitField0_ |= 0x00000001;
         }
         result.productId_ = productId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4367,12 +4684,21 @@ public final class Favorite {
           productId_ = other.productId_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasProductId()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -4494,6 +4820,106 @@ public final class Favorite {
   }
   bitField0_ |= 0x00000001;
         productId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -5417,6 +5843,32 @@ public final class Favorite {
      */
     com.google.protobuf.ByteString
         getFavoriteIdsBytes(int index);
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.DeleteFavoriteRequest}
@@ -5483,6 +5935,12 @@ public final class Favorite {
               favoriteIds_.add(bs);
               break;
             }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              userId_ = bs;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5525,6 +5983,7 @@ public final class Favorite {
       return PARSER;
     }
 
+    private int bitField0_;
     public static final int FAVORITEIDS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList favoriteIds_;
     /**
@@ -5570,8 +6029,63 @@ public final class Favorite {
       return favoriteIds_.getByteString(index);
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       favoriteIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -5579,6 +6093,10 @@ public final class Favorite {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -5588,6 +6106,9 @@ public final class Favorite {
       getSerializedSize();
       for (int i = 0; i < favoriteIds_.size(); i++) {
         output.writeBytes(1, favoriteIds_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(2, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -5606,6 +6127,10 @@ public final class Favorite {
         }
         size += dataSize;
         size += 1 * getFavoriteIdsList().size();
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5730,6 +6255,8 @@ public final class Favorite {
         super.clear();
         favoriteIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -5757,11 +6284,17 @@ public final class Favorite {
       public com.qjoy.basjoo.core.model.pb.Favorite.DeleteFavoriteRequest buildPartial() {
         com.qjoy.basjoo.core.model.pb.Favorite.DeleteFavoriteRequest result = new com.qjoy.basjoo.core.model.pb.Favorite.DeleteFavoriteRequest(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           favoriteIds_ = favoriteIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.favoriteIds_ = favoriteIds_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userId_ = userId_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -5787,11 +6320,20 @@ public final class Favorite {
           }
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -5939,6 +6481,106 @@ public final class Favorite {
   }
   ensureFavoriteIdsIsMutable();
         favoriteIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -6656,24 +7298,25 @@ public final class Favorite {
   static {
     java.lang.String[] descriptorData = {
       "\n\010Favorite\022\035com.qjoy.basjoo.core.model.p" +
-      "b\",\n\026GetFavoriteListRequest\022\022\n\nstartInde" +
-      "x\030\001 \001(\005\"\254\001\n\025GetFavoriteListResult\022\022\n\nres" +
-      "ultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxI" +
-      "ndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022I\n\020favoriteL" +
-      "iteInfo\030\005 \003(\0132/.com.qjoy.basjoo.core.mod" +
-      "el.pb.FavoriteLiteInfo\"\340\001\n\020FavoriteLiteI" +
-      "nfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productType\030\002 " +
-      "\002(\t\022\r\n\005brand\030\003 \002(\t\022\024\n\014mainImageUrl\030\004 \002(\t" +
-      "\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowestRent\030\006 \001(\001\022\014\n\004un",
-      "it\030\007 \001(\005\022\021\n\trentCount\030\010 \001(\003\022\023\n\013marketPri" +
-      "ce\030\t \001(\001\022\023\n\013pledgePrice\030\n \001(\001\022\022\n\nfavorit" +
-      "eId\030\013 \002(\t\"\'\n\022AddFavoriteRequest\022\021\n\tprodu" +
-      "ctId\030\001 \002(\t\"N\n\021AddFavoriteResult\022\022\n\nresul" +
-      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\022\n\nfavori" +
-      "teId\030\003 \002(\t\",\n\025DeleteFavoriteRequest\022\023\n\013f" +
-      "avoriteIds\030\001 \003(\t\"=\n\024DeleteFavoriteResult" +
-      "\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\tB" +
-      "\037\n\035com.qjoy.basjoo.core.model.pb"
+      "b\"<\n\026GetFavoriteListRequest\022\022\n\nstartInde" +
+      "x\030\001 \001(\005\022\016\n\006userId\030\002 \002(\t\"\254\001\n\025GetFavoriteL" +
+      "istResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultM" +
+      "sg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 " +
+      "\002(\010\022I\n\020favoriteLiteInfo\030\005 \003(\0132/.com.qjoy" +
+      ".basjoo.core.model.pb.FavoriteLiteInfo\"\340" +
+      "\001\n\020FavoriteLiteInfo\022\021\n\tproductId\030\001 \002(\t\022\023" +
+      "\n\013productType\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\024\n\014ma" +
+      "inImageUrl\030\004 \002(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowest",
+      "Rent\030\006 \001(\001\022\014\n\004unit\030\007 \001(\005\022\021\n\trentCount\030\010 " +
+      "\001(\003\022\023\n\013marketPrice\030\t \001(\001\022\023\n\013pledgePrice\030" +
+      "\n \001(\001\022\022\n\nfavoriteId\030\013 \002(\t\"7\n\022AddFavorite" +
+      "Request\022\021\n\tproductId\030\001 \002(\t\022\016\n\006userId\030\002 \002" +
+      "(\t\"N\n\021AddFavoriteResult\022\022\n\nresultCode\030\001 " +
+      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\022\n\nfavoriteId\030\003 \002" +
+      "(\t\"<\n\025DeleteFavoriteRequest\022\023\n\013favoriteI" +
+      "ds\030\001 \003(\t\022\016\n\006userId\030\002 \002(\t\"=\n\024DeleteFavori" +
+      "teResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMs" +
+      "g\030\002 \002(\tB\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6692,7 +7335,7 @@ public final class Favorite {
     internal_static_com_qjoy_basjoo_core_model_pb_GetFavoriteListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetFavoriteListRequest_descriptor,
-        new java.lang.String[] { "StartIndex", });
+        new java.lang.String[] { "StartIndex", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetFavoriteListResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_GetFavoriteListResult_fieldAccessorTable = new
@@ -6710,7 +7353,7 @@ public final class Favorite {
     internal_static_com_qjoy_basjoo_core_model_pb_AddFavoriteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_AddFavoriteRequest_descriptor,
-        new java.lang.String[] { "ProductId", });
+        new java.lang.String[] { "ProductId", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_AddFavoriteResult_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_qjoy_basjoo_core_model_pb_AddFavoriteResult_fieldAccessorTable = new
@@ -6722,7 +7365,7 @@ public final class Favorite {
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteFavoriteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_DeleteFavoriteRequest_descriptor,
-        new java.lang.String[] { "FavoriteIds", });
+        new java.lang.String[] { "FavoriteIds", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteFavoriteResult_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteFavoriteResult_fieldAccessorTable = new

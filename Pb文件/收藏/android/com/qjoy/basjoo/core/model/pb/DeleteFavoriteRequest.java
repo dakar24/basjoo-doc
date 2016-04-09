@@ -9,6 +9,7 @@ import java.util.List;
 
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REPEATED;
+import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
  * 删除收藏列表
@@ -16,8 +17,10 @@ import static com.squareup.wire.Message.Label.REPEATED;
 public final class DeleteFavoriteRequest extends Message {
 
   public static final int TAG_FAVORITEIDS = 1;
+  public static final int TAG_USERID = 2;
 
   public static final List<String> DEFAULT_FAVORITEIDS = Collections.emptyList();
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 产品Id
@@ -25,10 +28,17 @@ public final class DeleteFavoriteRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REPEATED)
   public List<String> favoriteIds;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String userId;
+
   public DeleteFavoriteRequest(DeleteFavoriteRequest message) {
     super(message);
     if (message == null) return;
     this.favoriteIds = copyOf(message.favoriteIds);
+    this.userId = message.userId;
   }
 
   public DeleteFavoriteRequest() {
@@ -39,6 +49,9 @@ public final class DeleteFavoriteRequest extends Message {
         case TAG_FAVORITEIDS:
         this.favoriteIds = immutableCopyOf((List<String>)value);
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -48,12 +61,19 @@ public final class DeleteFavoriteRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof DeleteFavoriteRequest)) return false;
-    return equals(favoriteIds, ((DeleteFavoriteRequest) other).favoriteIds);
+    DeleteFavoriteRequest o = (DeleteFavoriteRequest) other;
+    return equals(favoriteIds, o.favoriteIds)
+        && equals(userId, o.userId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = favoriteIds != null ? favoriteIds.hashCode() : 1);
+    if (result == 0) {
+      result = favoriteIds != null ? favoriteIds.hashCode() : 1;
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }

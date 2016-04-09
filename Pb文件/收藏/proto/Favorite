@@ -6,8 +6,13 @@ option java_package="com.qjoy.basjoo.core.model.pb";
 //获取收藏（产品）列表
 message GetFavoriteListRequest {   
   
+
   //起始index
-  optional int32 startIndex = 1;   
+  optional int32 startIndex = 1;  
+
+  //用户ID
+  required string userId=2; 
+
     
 }
 
@@ -73,6 +78,10 @@ message AddFavoriteRequest {
   
   //产品Id
    required string                 productId = 1; 
+
+
+  //用户ID
+  required string userId = 2 ;
     
 }
 
@@ -93,6 +102,9 @@ message DeleteFavoriteRequest {
   
   //产品Id
    repeated string                 favoriteIds = 1; 
+
+  //用户ID
+  required string userId = 2 ;
     
 }
 

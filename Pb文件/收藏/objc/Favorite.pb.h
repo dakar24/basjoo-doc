@@ -12,7 +12,9 @@
 
 @interface GetFavoriteListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasStartIndex;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic)SInt32 startIndex;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetFavoriteListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -54,7 +56,9 @@
 
 @interface AddFavoriteRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasProductId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* productId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface AddFavoriteResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -67,7 +71,9 @@
 @end
 
 @interface DeleteFavoriteRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSMutableArray * favoriteIds;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface DeleteFavoriteResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
