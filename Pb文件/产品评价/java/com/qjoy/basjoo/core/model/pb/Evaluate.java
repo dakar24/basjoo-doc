@@ -1163,15 +1163,15 @@ public final class Evaluate {
         getResultMsgBytes();
 
     /**
-     * <code>required string evaluateId = 3;</code>
+     * <code>optional string evaluateId = 3;</code>
      */
     boolean hasEvaluateId();
     /**
-     * <code>required string evaluateId = 3;</code>
+     * <code>optional string evaluateId = 3;</code>
      */
     java.lang.String getEvaluateId();
     /**
-     * <code>required string evaluateId = 3;</code>
+     * <code>optional string evaluateId = 3;</code>
      */
     com.google.protobuf.ByteString
         getEvaluateIdBytes();
@@ -1377,13 +1377,13 @@ public final class Evaluate {
     public static final int EVALUATEID_FIELD_NUMBER = 3;
     private java.lang.Object evaluateId_;
     /**
-     * <code>required string evaluateId = 3;</code>
+     * <code>optional string evaluateId = 3;</code>
      */
     public boolean hasEvaluateId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string evaluateId = 3;</code>
+     * <code>optional string evaluateId = 3;</code>
      */
     public java.lang.String getEvaluateId() {
       java.lang.Object ref = evaluateId_;
@@ -1400,7 +1400,7 @@ public final class Evaluate {
       }
     }
     /**
-     * <code>required string evaluateId = 3;</code>
+     * <code>optional string evaluateId = 3;</code>
      */
     public com.google.protobuf.ByteString
         getEvaluateIdBytes() {
@@ -1432,10 +1432,6 @@ public final class Evaluate {
         return false;
       }
       if (!hasResultMsg()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEvaluateId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1687,10 +1683,6 @@ public final class Evaluate {
           
           return false;
         }
-        if (!hasEvaluateId()) {
-          
-          return false;
-        }
         return true;
       }
 
@@ -1867,13 +1859,13 @@ public final class Evaluate {
 
       private java.lang.Object evaluateId_ = "";
       /**
-       * <code>required string evaluateId = 3;</code>
+       * <code>optional string evaluateId = 3;</code>
        */
       public boolean hasEvaluateId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string evaluateId = 3;</code>
+       * <code>optional string evaluateId = 3;</code>
        */
       public java.lang.String getEvaluateId() {
         java.lang.Object ref = evaluateId_;
@@ -1890,7 +1882,7 @@ public final class Evaluate {
         }
       }
       /**
-       * <code>required string evaluateId = 3;</code>
+       * <code>optional string evaluateId = 3;</code>
        */
       public com.google.protobuf.ByteString
           getEvaluateIdBytes() {
@@ -1906,7 +1898,7 @@ public final class Evaluate {
         }
       }
       /**
-       * <code>required string evaluateId = 3;</code>
+       * <code>optional string evaluateId = 3;</code>
        */
       public Builder setEvaluateId(
           java.lang.String value) {
@@ -1919,7 +1911,7 @@ public final class Evaluate {
         return this;
       }
       /**
-       * <code>required string evaluateId = 3;</code>
+       * <code>optional string evaluateId = 3;</code>
        */
       public Builder clearEvaluateId() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1928,7 +1920,7 @@ public final class Evaluate {
         return this;
       }
       /**
-       * <code>required string evaluateId = 3;</code>
+       * <code>optional string evaluateId = 3;</code>
        */
       public Builder setEvaluateIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2738,15 +2730,15 @@ public final class Evaluate {
         getResultMsgBytes();
 
     /**
-     * <code>required string replyId = 3;</code>
+     * <code>optional string replyId = 3;</code>
      */
     boolean hasReplyId();
     /**
-     * <code>required string replyId = 3;</code>
+     * <code>optional string replyId = 3;</code>
      */
     java.lang.String getReplyId();
     /**
-     * <code>required string replyId = 3;</code>
+     * <code>optional string replyId = 3;</code>
      */
     com.google.protobuf.ByteString
         getReplyIdBytes();
@@ -2952,13 +2944,13 @@ public final class Evaluate {
     public static final int REPLYID_FIELD_NUMBER = 3;
     private java.lang.Object replyId_;
     /**
-     * <code>required string replyId = 3;</code>
+     * <code>optional string replyId = 3;</code>
      */
     public boolean hasReplyId() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string replyId = 3;</code>
+     * <code>optional string replyId = 3;</code>
      */
     public java.lang.String getReplyId() {
       java.lang.Object ref = replyId_;
@@ -2975,7 +2967,7 @@ public final class Evaluate {
       }
     }
     /**
-     * <code>required string replyId = 3;</code>
+     * <code>optional string replyId = 3;</code>
      */
     public com.google.protobuf.ByteString
         getReplyIdBytes() {
@@ -3007,10 +2999,6 @@ public final class Evaluate {
         return false;
       }
       if (!hasResultMsg()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasReplyId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3262,10 +3250,6 @@ public final class Evaluate {
           
           return false;
         }
-        if (!hasReplyId()) {
-          
-          return false;
-        }
         return true;
       }
 
@@ -3442,13 +3426,13 @@ public final class Evaluate {
 
       private java.lang.Object replyId_ = "";
       /**
-       * <code>required string replyId = 3;</code>
+       * <code>optional string replyId = 3;</code>
        */
       public boolean hasReplyId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string replyId = 3;</code>
+       * <code>optional string replyId = 3;</code>
        */
       public java.lang.String getReplyId() {
         java.lang.Object ref = replyId_;
@@ -3465,7 +3449,7 @@ public final class Evaluate {
         }
       }
       /**
-       * <code>required string replyId = 3;</code>
+       * <code>optional string replyId = 3;</code>
        */
       public com.google.protobuf.ByteString
           getReplyIdBytes() {
@@ -3481,7 +3465,7 @@ public final class Evaluate {
         }
       }
       /**
-       * <code>required string replyId = 3;</code>
+       * <code>optional string replyId = 3;</code>
        */
       public Builder setReplyId(
           java.lang.String value) {
@@ -3494,7 +3478,7 @@ public final class Evaluate {
         return this;
       }
       /**
-       * <code>required string replyId = 3;</code>
+       * <code>optional string replyId = 3;</code>
        */
       public Builder clearReplyId() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3503,7 +3487,7 @@ public final class Evaluate {
         return this;
       }
       /**
-       * <code>required string replyId = 3;</code>
+       * <code>optional string replyId = 3;</code>
        */
       public Builder setReplyIdBytes(
           com.google.protobuf.ByteString value) {
@@ -6557,10 +6541,10 @@ public final class Evaluate {
       "\022\017\n\007content\030\002 \002(\t\022\021\n\timageUrls\030\003 \003(\t\022\r\n\005" +
       "level\030\004 \002(\005\"N\n\021AddEvaluateResult\022\022\n\nresu" +
       "ltCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\022\n\nevalu" +
-      "ateId\030\003 \002(\t\">\n\027AddEvaluateReplyRequest\022\022" +
+      "ateId\030\003 \001(\t\">\n\027AddEvaluateReplyRequest\022\022" +
       "\n\nevaluateId\030\001 \002(\t\022\017\n\007content\030\002 \002(\t\"P\n\026A" +
       "ddEvaluateReplyResult\022\022\n\nresultCode\030\001 \002(" +
-      "\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007replyId\030\003 \002(\t\"^\n" +
+      "\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007replyId\030\003 \001(\t\"^\n" +
       "\025ModifyEvaluateRequest\022\022\n\nevaluateId\030\001 \002",
       "(\t\022\017\n\007content\030\002 \002(\t\022\021\n\timageUrls\030\003 \003(\t\022\r" +
       "\n\005level\030\004 \002(\005\"=\n\024ModifyEvaluateResult\022\022\n" +

@@ -30,7 +30,7 @@ public final class CancelOrderRequest extends Message {
   /**
    * 取消理由
    */
-  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 2, type = STRING)
   public String reason;
 
   /**

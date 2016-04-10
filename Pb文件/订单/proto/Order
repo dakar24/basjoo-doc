@@ -400,7 +400,7 @@ message CancelOrderRequest {
     required string                 orderId = 1; 	
 	
 	//取消理由
-    required string                 reason = 2;
+    optional string                 reason = 2;
 
     //用户ID   
     required string                 userId = 3; 

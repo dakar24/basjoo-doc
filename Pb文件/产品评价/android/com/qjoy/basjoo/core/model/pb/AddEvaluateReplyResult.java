@@ -27,7 +27,7 @@ public final class AddEvaluateReplyResult extends Message {
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String resultMsg;
 
-  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 3, type = STRING)
   public String replyId;
 
   public AddEvaluateReplyResult(AddEvaluateReplyResult message) {

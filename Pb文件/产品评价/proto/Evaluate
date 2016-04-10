@@ -27,7 +27,7 @@ message AddEvaluateResult {
     
    required string                 resultMsg = 2;
    
-   required string                 evaluateId = 3; 
+   optional string                 evaluateId = 3; 
     
 }
 
@@ -50,7 +50,7 @@ message AddEvaluateReplyResult {
     
    required string                 resultMsg = 2;
    
-   required string                 replyId = 3; 
+   optional string                 replyId = 3; 
     
 }
 

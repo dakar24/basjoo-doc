@@ -23295,7 +23295,7 @@ public final class Order {
         getOrderIdBytes();
 
     /**
-     * <code>required string reason = 2;</code>
+     * <code>optional string reason = 2;</code>
      *
      * <pre>
      *取消理由
@@ -23303,7 +23303,7 @@ public final class Order {
      */
     boolean hasReason();
     /**
-     * <code>required string reason = 2;</code>
+     * <code>optional string reason = 2;</code>
      *
      * <pre>
      *取消理由
@@ -23311,7 +23311,7 @@ public final class Order {
      */
     java.lang.String getReason();
     /**
-     * <code>required string reason = 2;</code>
+     * <code>optional string reason = 2;</code>
      *
      * <pre>
      *取消理由
@@ -23517,7 +23517,7 @@ public final class Order {
     public static final int REASON_FIELD_NUMBER = 2;
     private java.lang.Object reason_;
     /**
-     * <code>required string reason = 2;</code>
+     * <code>optional string reason = 2;</code>
      *
      * <pre>
      *取消理由
@@ -23527,7 +23527,7 @@ public final class Order {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string reason = 2;</code>
+     * <code>optional string reason = 2;</code>
      *
      * <pre>
      *取消理由
@@ -23548,7 +23548,7 @@ public final class Order {
       }
     }
     /**
-     * <code>required string reason = 2;</code>
+     * <code>optional string reason = 2;</code>
      *
      * <pre>
      *取消理由
@@ -23634,10 +23634,6 @@ public final class Order {
       if (isInitialized == 0) return false;
 
       if (!hasOrderId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasReason()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -23889,10 +23885,6 @@ public final class Order {
           
           return false;
         }
-        if (!hasReason()) {
-          
-          return false;
-        }
         if (!hasUserId()) {
           
           return false;
@@ -24021,7 +24013,7 @@ public final class Order {
 
       private java.lang.Object reason_ = "";
       /**
-       * <code>required string reason = 2;</code>
+       * <code>optional string reason = 2;</code>
        *
        * <pre>
        *取消理由
@@ -24031,7 +24023,7 @@ public final class Order {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string reason = 2;</code>
+       * <code>optional string reason = 2;</code>
        *
        * <pre>
        *取消理由
@@ -24052,7 +24044,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string reason = 2;</code>
+       * <code>optional string reason = 2;</code>
        *
        * <pre>
        *取消理由
@@ -24072,7 +24064,7 @@ public final class Order {
         }
       }
       /**
-       * <code>required string reason = 2;</code>
+       * <code>optional string reason = 2;</code>
        *
        * <pre>
        *取消理由
@@ -24089,7 +24081,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required string reason = 2;</code>
+       * <code>optional string reason = 2;</code>
        *
        * <pre>
        *取消理由
@@ -24102,7 +24094,7 @@ public final class Order {
         return this;
       }
       /**
-       * <code>required string reason = 2;</code>
+       * <code>optional string reason = 2;</code>
        *
        * <pre>
        *取消理由
@@ -41408,7 +41400,7 @@ public final class Order {
       "st\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021D" +
       "eleteOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
       "resultMsg\030\002 \002(\t\"E\n\022CancelOrderRequest\022\017\n" +
-      "\007orderId\030\001 \002(\t\022\016\n\006reason\030\002 \002(\t\022\016\n\006userId",
+      "\007orderId\030\001 \002(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006userId",
       "\030\003 \002(\t\":\n\021CancelOrderResult\022\022\n\nresultCod" +
       "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025ConfirmRec" +
       "eiveRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002" +
