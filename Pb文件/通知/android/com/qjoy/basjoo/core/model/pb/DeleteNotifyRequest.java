@@ -9,13 +9,15 @@ import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 获取通知
+ * 删除消息通知
  */
-public final class GetNotifyRequest extends Message {
+public final class DeleteNotifyRequest extends Message {
 
   public static final int TAG_USERID = 1;
+  public static final int TAG_NOTIFYID = 2;
 
   public static final String DEFAULT_USERID = "";
+  public static final String DEFAULT_NOTIFYID = "";
 
   /**
    * 用户ID
@@ -23,19 +25,29 @@ public final class GetNotifyRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String userId;
 
-  public GetNotifyRequest(GetNotifyRequest message) {
+  /**
+   * 通知ID
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String notifyId;
+
+  public DeleteNotifyRequest(DeleteNotifyRequest message) {
     super(message);
     if (message == null) return;
     this.userId = message.userId;
+    this.notifyId = message.notifyId;
   }
 
-  public GetNotifyRequest() {
+  public DeleteNotifyRequest() {
   }
 
-  public GetNotifyRequest fillTagValue(int tag, Object value) {
+  public DeleteNotifyRequest fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_USERID:
         this.userId = (String)value;
+        break;
+        case TAG_NOTIFYID:
+        this.notifyId = (String)value;
         break;
         default: break;
         };
@@ -45,13 +57,20 @@ public final class GetNotifyRequest extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof GetNotifyRequest)) return false;
-    return equals(userId, ((GetNotifyRequest) other).userId);
+    if (!(other instanceof DeleteNotifyRequest)) return false;
+    DeleteNotifyRequest o = (DeleteNotifyRequest) other;
+    return equals(userId, o.userId)
+        && equals(notifyId, o.notifyId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = userId != null ? userId.hashCode() : 0);
+    if (result == 0) {
+      result = userId != null ? userId.hashCode() : 0;
+      result = result * 37 + (notifyId != null ? notifyId.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }

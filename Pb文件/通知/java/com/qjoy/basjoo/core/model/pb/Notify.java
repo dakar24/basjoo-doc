@@ -11,6 +11,32 @@ public final class Notify {
   public interface GetNotifyRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetNotifyRequest)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetNotifyRequest}
@@ -50,6 +76,7 @@ public final class Notify {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -65,6 +92,12 @@ public final class Notify {
                                      extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              userId_ = bs;
               break;
             }
           }
@@ -106,7 +139,63 @@ public final class Notify {
       return PARSER;
     }
 
+    private int bitField0_;
+    public static final int USERID_FIELD_NUMBER = 1;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -114,6 +203,10 @@ public final class Notify {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -121,6 +214,9 @@ public final class Notify {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -130,6 +226,10 @@ public final class Notify {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getUserIdBytes());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -251,6 +351,8 @@ public final class Notify {
 
       public Builder clear() {
         super.clear();
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -277,6 +379,13 @@ public final class Notify {
 
       public com.qjoy.basjoo.core.model.pb.Notify.GetNotifyRequest buildPartial() {
         com.qjoy.basjoo.core.model.pb.Notify.GetNotifyRequest result = new com.qjoy.basjoo.core.model.pb.Notify.GetNotifyRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userId_ = userId_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -292,11 +401,20 @@ public final class Notify {
 
       public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Notify.GetNotifyRequest other) {
         if (other == com.qjoy.basjoo.core.model.pb.Notify.GetNotifyRequest.getDefaultInstance()) return this;
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000001;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -315,6 +433,107 @@ public final class Notify {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
         return this;
       }
 
@@ -1581,6 +1800,32 @@ public final class Notify {
      * </pre>
      */
     int getStartIndex();
+
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetNotifyLiteInfoListRequest}
@@ -1646,6 +1891,12 @@ public final class Notify {
             case 16: {
               bitField0_ |= 0x00000002;
               startIndex_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              userId_ = bs;
               break;
             }
           }
@@ -1734,9 +1985,64 @@ public final class Notify {
       return startIndex_;
     }
 
+    public static final int USERID_FIELD_NUMBER = 3;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       notifyType_ = 0;
       startIndex_ = 0;
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1745,6 +2051,10 @@ public final class Notify {
       if (isInitialized == 0) return false;
 
       if (!hasNotifyType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1760,6 +2070,9 @@ public final class Notify {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, startIndex_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -1777,6 +2090,10 @@ public final class Notify {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, startIndex_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1903,6 +2220,8 @@ public final class Notify {
         bitField0_ = (bitField0_ & ~0x00000001);
         startIndex_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -1939,6 +2258,10 @@ public final class Notify {
           to_bitField0_ |= 0x00000002;
         }
         result.startIndex_ = startIndex_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1961,12 +2284,21 @@ public final class Notify {
         if (other.hasStartIndex()) {
           setStartIndex(other.getStartIndex());
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000004;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasNotifyType()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -2088,6 +2420,106 @@ public final class Notify {
         return this;
       }
 
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetNotifyLiteInfoListRequest)
     }
 
@@ -2132,7 +2564,7 @@ public final class Notify {
         getResultMsgBytes();
 
     /**
-     * <code>required bool hasMore = 3;</code>
+     * <code>optional bool hasMore = 3;</code>
      *
      * <pre>
      *是否有更多
@@ -2140,7 +2572,7 @@ public final class Notify {
      */
     boolean hasHasMore();
     /**
-     * <code>required bool hasMore = 3;</code>
+     * <code>optional bool hasMore = 3;</code>
      *
      * <pre>
      *是否有更多
@@ -2169,7 +2601,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     java.util.List<com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo> 
@@ -2178,7 +2610,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo getNotifyLiteInfo(int index);
@@ -2186,7 +2618,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     int getNotifyLiteInfoCount();
@@ -2194,7 +2626,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     java.util.List<? extends com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfoOrBuilder> 
@@ -2203,7 +2635,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfoOrBuilder getNotifyLiteInfoOrBuilder(
@@ -2425,7 +2857,7 @@ public final class Notify {
     public static final int HASMORE_FIELD_NUMBER = 3;
     private boolean hasMore_;
     /**
-     * <code>required bool hasMore = 3;</code>
+     * <code>optional bool hasMore = 3;</code>
      *
      * <pre>
      *是否有更多
@@ -2435,7 +2867,7 @@ public final class Notify {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required bool hasMore = 3;</code>
+     * <code>optional bool hasMore = 3;</code>
      *
      * <pre>
      *是否有更多
@@ -2474,7 +2906,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     public java.util.List<com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo> getNotifyLiteInfoList() {
@@ -2484,7 +2916,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfoOrBuilder> 
@@ -2495,7 +2927,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     public int getNotifyLiteInfoCount() {
@@ -2505,7 +2937,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo getNotifyLiteInfo(int index) {
@@ -2515,7 +2947,7 @@ public final class Notify {
      * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
      *
      * <pre>
-     *券详细内容
+     *通知概要信息
      * </pre>
      */
     public com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfoOrBuilder getNotifyLiteInfoOrBuilder(
@@ -2541,10 +2973,6 @@ public final class Notify {
         return false;
       }
       if (!hasResultMsg()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasHasMore()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -2865,10 +3293,6 @@ public final class Notify {
           
           return false;
         }
-        if (!hasHasMore()) {
-          
-          return false;
-        }
         for (int i = 0; i < getNotifyLiteInfoCount(); i++) {
           if (!getNotifyLiteInfo(i).isInitialized()) {
             
@@ -3051,7 +3475,7 @@ public final class Notify {
 
       private boolean hasMore_ ;
       /**
-       * <code>required bool hasMore = 3;</code>
+       * <code>optional bool hasMore = 3;</code>
        *
        * <pre>
        *是否有更多
@@ -3061,7 +3485,7 @@ public final class Notify {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required bool hasMore = 3;</code>
+       * <code>optional bool hasMore = 3;</code>
        *
        * <pre>
        *是否有更多
@@ -3071,7 +3495,7 @@ public final class Notify {
         return hasMore_;
       }
       /**
-       * <code>required bool hasMore = 3;</code>
+       * <code>optional bool hasMore = 3;</code>
        *
        * <pre>
        *是否有更多
@@ -3084,7 +3508,7 @@ public final class Notify {
         return this;
       }
       /**
-       * <code>required bool hasMore = 3;</code>
+       * <code>optional bool hasMore = 3;</code>
        *
        * <pre>
        *是否有更多
@@ -3161,7 +3585,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public java.util.List<com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo> getNotifyLiteInfoList() {
@@ -3175,7 +3599,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public int getNotifyLiteInfoCount() {
@@ -3189,7 +3613,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo getNotifyLiteInfo(int index) {
@@ -3203,7 +3627,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public Builder setNotifyLiteInfo(
@@ -3224,7 +3648,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public Builder setNotifyLiteInfo(
@@ -3242,7 +3666,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public Builder addNotifyLiteInfo(com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo value) {
@@ -3262,7 +3686,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public Builder addNotifyLiteInfo(
@@ -3283,7 +3707,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public Builder addNotifyLiteInfo(
@@ -3301,7 +3725,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public Builder addNotifyLiteInfo(
@@ -3319,7 +3743,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public Builder addAllNotifyLiteInfo(
@@ -3338,7 +3762,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public Builder clearNotifyLiteInfo() {
@@ -3355,7 +3779,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public Builder removeNotifyLiteInfo(int index) {
@@ -3372,7 +3796,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo.Builder getNotifyLiteInfoBuilder(
@@ -3383,7 +3807,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfoOrBuilder getNotifyLiteInfoOrBuilder(
@@ -3397,7 +3821,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfoOrBuilder> 
@@ -3412,7 +3836,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo.Builder addNotifyLiteInfoBuilder() {
@@ -3423,7 +3847,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo.Builder addNotifyLiteInfoBuilder(
@@ -3435,7 +3859,7 @@ public final class Notify {
        * <code>repeated .com.qjoy.basjoo.core.model.pb.NotifyLiteInfo notifyLiteInfo = 5;</code>
        *
        * <pre>
-       *券详细内容
+       *通知概要信息
        * </pre>
        */
       public java.util.List<com.qjoy.basjoo.core.model.pb.Notify.NotifyLiteInfo.Builder> 
@@ -6214,6 +6638,2778 @@ public final class Notify {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.NotifyExtInfo)
   }
 
+  public interface DeleteNotifyRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.DeleteNotifyRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>required string notifyId = 2;</code>
+     *
+     * <pre>
+     *通知ID
+     * </pre>
+     */
+    boolean hasNotifyId();
+    /**
+     * <code>required string notifyId = 2;</code>
+     *
+     * <pre>
+     *通知ID
+     * </pre>
+     */
+    java.lang.String getNotifyId();
+    /**
+     * <code>required string notifyId = 2;</code>
+     *
+     * <pre>
+     *通知ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getNotifyIdBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.DeleteNotifyRequest}
+   *
+   * <pre>
+   *删除消息通知
+   * </pre>
+   */
+  public static final class DeleteNotifyRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.DeleteNotifyRequest)
+      DeleteNotifyRequestOrBuilder {
+    // Use DeleteNotifyRequest.newBuilder() to construct.
+    private DeleteNotifyRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private DeleteNotifyRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final DeleteNotifyRequest defaultInstance;
+    public static DeleteNotifyRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public DeleteNotifyRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteNotifyRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              userId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              notifyId_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest.class, com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<DeleteNotifyRequest> PARSER =
+        new com.google.protobuf.AbstractParser<DeleteNotifyRequest>() {
+      public DeleteNotifyRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeleteNotifyRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteNotifyRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int USERID_FIELD_NUMBER = 1;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NOTIFYID_FIELD_NUMBER = 2;
+    private java.lang.Object notifyId_;
+    /**
+     * <code>required string notifyId = 2;</code>
+     *
+     * <pre>
+     *通知ID
+     * </pre>
+     */
+    public boolean hasNotifyId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string notifyId = 2;</code>
+     *
+     * <pre>
+     *通知ID
+     * </pre>
+     */
+    public java.lang.String getNotifyId() {
+      java.lang.Object ref = notifyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          notifyId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string notifyId = 2;</code>
+     *
+     * <pre>
+     *通知ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getNotifyIdBytes() {
+      java.lang.Object ref = notifyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notifyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      userId_ = "";
+      notifyId_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasNotifyId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getNotifyIdBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getNotifyIdBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.DeleteNotifyRequest}
+     *
+     * <pre>
+     *删除消息通知
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.DeleteNotifyRequest)
+        com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest.class, com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        notifyId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest build() {
+        com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest result = new com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userId_ = userId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.notifyId_ = notifyId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest.getDefaultInstance()) return this;
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000001;
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (other.hasNotifyId()) {
+          bitField0_ |= 0x00000002;
+          notifyId_ = other.notifyId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
+        if (!hasNotifyId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object notifyId_ = "";
+      /**
+       * <code>required string notifyId = 2;</code>
+       *
+       * <pre>
+       *通知ID
+       * </pre>
+       */
+      public boolean hasNotifyId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string notifyId = 2;</code>
+       *
+       * <pre>
+       *通知ID
+       * </pre>
+       */
+      public java.lang.String getNotifyId() {
+        java.lang.Object ref = notifyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            notifyId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string notifyId = 2;</code>
+       *
+       * <pre>
+       *通知ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getNotifyIdBytes() {
+        java.lang.Object ref = notifyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notifyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string notifyId = 2;</code>
+       *
+       * <pre>
+       *通知ID
+       * </pre>
+       */
+      public Builder setNotifyId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        notifyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string notifyId = 2;</code>
+       *
+       * <pre>
+       *通知ID
+       * </pre>
+       */
+      public Builder clearNotifyId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        notifyId_ = getDefaultInstance().getNotifyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string notifyId = 2;</code>
+       *
+       * <pre>
+       *通知ID
+       * </pre>
+       */
+      public Builder setNotifyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        notifyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.DeleteNotifyRequest)
+    }
+
+    static {
+      defaultInstance = new DeleteNotifyRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.DeleteNotifyRequest)
+  }
+
+  public interface DeleteNotifyResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.DeleteNotifyResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.DeleteNotifyResult}
+   *
+   * <pre>
+   *删除消息通知
+   * </pre>
+   */
+  public static final class DeleteNotifyResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.DeleteNotifyResult)
+      DeleteNotifyResultOrBuilder {
+    // Use DeleteNotifyResult.newBuilder() to construct.
+    private DeleteNotifyResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private DeleteNotifyResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final DeleteNotifyResult defaultInstance;
+    public static DeleteNotifyResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public DeleteNotifyResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteNotifyResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult.class, com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<DeleteNotifyResult> PARSER =
+        new com.google.protobuf.AbstractParser<DeleteNotifyResult>() {
+      public DeleteNotifyResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeleteNotifyResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteNotifyResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.DeleteNotifyResult}
+     *
+     * <pre>
+     *删除消息通知
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.DeleteNotifyResult)
+        com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult.class, com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult build() {
+        com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult result = new com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Notify.DeleteNotifyResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.DeleteNotifyResult)
+    }
+
+    static {
+      defaultInstance = new DeleteNotifyResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.DeleteNotifyResult)
+  }
+
+  public interface MarkNotifyReadedRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>required string notifyType = 2;</code>
+     */
+    boolean hasNotifyType();
+    /**
+     * <code>required string notifyType = 2;</code>
+     */
+    java.lang.String getNotifyType();
+    /**
+     * <code>required string notifyType = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNotifyTypeBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.MarkNotifyReadedRequest}
+   *
+   * <pre>
+   *标记通知为已读请求
+   * </pre>
+   */
+  public static final class MarkNotifyReadedRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedRequest)
+      MarkNotifyReadedRequestOrBuilder {
+    // Use MarkNotifyReadedRequest.newBuilder() to construct.
+    private MarkNotifyReadedRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private MarkNotifyReadedRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final MarkNotifyReadedRequest defaultInstance;
+    public static MarkNotifyReadedRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public MarkNotifyReadedRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MarkNotifyReadedRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              userId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              notifyType_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest.class, com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<MarkNotifyReadedRequest> PARSER =
+        new com.google.protobuf.AbstractParser<MarkNotifyReadedRequest>() {
+      public MarkNotifyReadedRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MarkNotifyReadedRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MarkNotifyReadedRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int USERID_FIELD_NUMBER = 1;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NOTIFYTYPE_FIELD_NUMBER = 2;
+    private java.lang.Object notifyType_;
+    /**
+     * <code>required string notifyType = 2;</code>
+     */
+    public boolean hasNotifyType() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string notifyType = 2;</code>
+     */
+    public java.lang.String getNotifyType() {
+      java.lang.Object ref = notifyType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          notifyType_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string notifyType = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNotifyTypeBytes() {
+      java.lang.Object ref = notifyType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notifyType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      userId_ = "";
+      notifyType_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasNotifyType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getNotifyTypeBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getNotifyTypeBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.MarkNotifyReadedRequest}
+     *
+     * <pre>
+     *标记通知为已读请求
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedRequest)
+        com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest.class, com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        notifyType_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest build() {
+        com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest result = new com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userId_ = userId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.notifyType_ = notifyType_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest.getDefaultInstance()) return this;
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000001;
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (other.hasNotifyType()) {
+          bitField0_ |= 0x00000002;
+          notifyType_ = other.notifyType_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
+        if (!hasNotifyType()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object notifyType_ = "";
+      /**
+       * <code>required string notifyType = 2;</code>
+       */
+      public boolean hasNotifyType() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string notifyType = 2;</code>
+       */
+      public java.lang.String getNotifyType() {
+        java.lang.Object ref = notifyType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            notifyType_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string notifyType = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNotifyTypeBytes() {
+        java.lang.Object ref = notifyType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notifyType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string notifyType = 2;</code>
+       */
+      public Builder setNotifyType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        notifyType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string notifyType = 2;</code>
+       */
+      public Builder clearNotifyType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        notifyType_ = getDefaultInstance().getNotifyType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string notifyType = 2;</code>
+       */
+      public Builder setNotifyTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        notifyType_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedRequest)
+    }
+
+    static {
+      defaultInstance = new MarkNotifyReadedRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedRequest)
+  }
+
+  public interface MarkNotifyReadedResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.MarkNotifyReadedResult}
+   *
+   * <pre>
+   *标记通知为已读结果
+   * </pre>
+   */
+  public static final class MarkNotifyReadedResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedResult)
+      MarkNotifyReadedResultOrBuilder {
+    // Use MarkNotifyReadedResult.newBuilder() to construct.
+    private MarkNotifyReadedResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private MarkNotifyReadedResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final MarkNotifyReadedResult defaultInstance;
+    public static MarkNotifyReadedResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public MarkNotifyReadedResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MarkNotifyReadedResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult.class, com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<MarkNotifyReadedResult> PARSER =
+        new com.google.protobuf.AbstractParser<MarkNotifyReadedResult>() {
+      public MarkNotifyReadedResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MarkNotifyReadedResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MarkNotifyReadedResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.MarkNotifyReadedResult}
+     *
+     * <pre>
+     *标记通知为已读结果
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedResult)
+        com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult.class, com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Notify.internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult build() {
+        com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult result = new com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Notify.MarkNotifyReadedResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedResult)
+    }
+
+    static {
+      defaultInstance = new MarkNotifyReadedResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.MarkNotifyReadedResult)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_GetNotifyRequest_descriptor;
   private static
@@ -6244,6 +9440,26 @@ public final class Notify {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_NotifyExtInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6254,26 +9470,33 @@ public final class Notify {
   static {
     java.lang.String[] descriptorData = {
       "\n\006Notify\022\035com.qjoy.basjoo.core.model.pb\"" +
-      "\022\n\020GetNotifyRequest\"\277\001\n\017GetNotifyResult\022" +
-      "\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\030" +
-      "\n\020totalNotifyCount\030\003 \002(\005\022\030\n\020orderNotifyC" +
-      "ount\030\004 \001(\005\022\032\n\022voucherNotifyCount\030\005 \001(\005\022\032" +
-      "\n\022commentNotifyCount\030\006 \001(\005\022\031\n\021systemNoti" +
-      "fyCount\030\007 \001(\005\"F\n\034GetNotifyLiteInfoListRe" +
-      "quest\022\022\n\nnotifyType\030\001 \002(\005\022\022\n\nstartIndex\030" +
-      "\002 \001(\005\"\256\001\n\033GetNotifyLiteInfoListResult\022\022\n" +
-      "\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007",
-      "hasMore\030\003 \002(\010\022\020\n\010maxIndex\030\004 \001(\005\022E\n\016notif" +
-      "yLiteInfo\030\005 \003(\0132-.com.qjoy.basjoo.core.m" +
-      "odel.pb.NotifyLiteInfo\"\345\001\n\016NotifyLiteInf" +
-      "o\022\020\n\010notifyId\030\001 \002(\t\022\022\n\nnotifyTime\030\002 \002(\003\022" +
-      "\023\n\013notifyTitle\030\003 \002(\t\022\022\n\nnotifyDesc\030\004 \002(\t" +
-      "\022\022\n\nnotifyType\030\005 \001(\005\022\025\n\rnotifySubType\030\006 " +
-      "\001(\005\022\024\n\014notifyImgUrl\030\007 \001(\t\022C\n\rnotifyExtIn" +
-      "fo\030\010 \003(\0132,.com.qjoy.basjoo.core.model.pb" +
-      ".NotifyExtInfo\"+\n\rNotifyExtInfo\022\013\n\003key\030\001" +
-      " \002(\t\022\r\n\005value\030\002 \002(\tB\037\n\035com.qjoy.basjoo.c",
-      "ore.model.pb"
+      "\"\n\020GetNotifyRequest\022\016\n\006userId\030\001 \002(\t\"\277\001\n\017" +
+      "GetNotifyResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tr" +
+      "esultMsg\030\002 \002(\t\022\030\n\020totalNotifyCount\030\003 \002(\005" +
+      "\022\030\n\020orderNotifyCount\030\004 \001(\005\022\032\n\022voucherNot" +
+      "ifyCount\030\005 \001(\005\022\032\n\022commentNotifyCount\030\006 \001" +
+      "(\005\022\031\n\021systemNotifyCount\030\007 \001(\005\"V\n\034GetNoti" +
+      "fyLiteInfoListRequest\022\022\n\nnotifyType\030\001 \002(" +
+      "\005\022\022\n\nstartIndex\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\"\256\001" +
+      "\n\033GetNotifyLiteInfoListResult\022\022\n\nresultC",
+      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007hasMore\030" +
+      "\003 \001(\010\022\020\n\010maxIndex\030\004 \001(\005\022E\n\016notifyLiteInf" +
+      "o\030\005 \003(\0132-.com.qjoy.basjoo.core.model.pb." +
+      "NotifyLiteInfo\"\345\001\n\016NotifyLiteInfo\022\020\n\010not" +
+      "ifyId\030\001 \002(\t\022\022\n\nnotifyTime\030\002 \002(\003\022\023\n\013notif" +
+      "yTitle\030\003 \002(\t\022\022\n\nnotifyDesc\030\004 \002(\t\022\022\n\nnoti" +
+      "fyType\030\005 \001(\005\022\025\n\rnotifySubType\030\006 \001(\005\022\024\n\014n" +
+      "otifyImgUrl\030\007 \001(\t\022C\n\rnotifyExtInfo\030\010 \003(\013" +
+      "2,.com.qjoy.basjoo.core.model.pb.NotifyE" +
+      "xtInfo\"+\n\rNotifyExtInfo\022\013\n\003key\030\001 \002(\t\022\r\n\005",
+      "value\030\002 \002(\t\"7\n\023DeleteNotifyRequest\022\016\n\006us" +
+      "erId\030\001 \002(\t\022\020\n\010notifyId\030\002 \002(\t\";\n\022DeleteNo" +
+      "tifyResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresult" +
+      "Msg\030\002 \002(\t\"=\n\027MarkNotifyReadedRequest\022\016\n\006" +
+      "userId\030\001 \002(\t\022\022\n\nnotifyType\030\002 \002(\t\"?\n\026Mark" +
+      "NotifyReadedResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
+      "\n\tresultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo.cor" +
+      "e.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6292,7 +9515,7 @@ public final class Notify {
     internal_static_com_qjoy_basjoo_core_model_pb_GetNotifyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetNotifyRequest_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetNotifyResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_GetNotifyResult_fieldAccessorTable = new
@@ -6304,7 +9527,7 @@ public final class Notify {
     internal_static_com_qjoy_basjoo_core_model_pb_GetNotifyLiteInfoListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetNotifyLiteInfoListRequest_descriptor,
-        new java.lang.String[] { "NotifyType", "StartIndex", });
+        new java.lang.String[] { "NotifyType", "StartIndex", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetNotifyLiteInfoListResult_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_GetNotifyLiteInfoListResult_fieldAccessorTable = new
@@ -6323,6 +9546,30 @@ public final class Notify {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_NotifyExtInfo_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyRequest_descriptor,
+        new java.lang.String[] { "UserId", "NotifyId", });
+    internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_DeleteNotifyResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
+    internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedRequest_descriptor,
+        new java.lang.String[] { "UserId", "NotifyType", });
+    internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_MarkNotifyReadedResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

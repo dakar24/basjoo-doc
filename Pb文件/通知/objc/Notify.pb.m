@@ -6,16 +6,23 @@
 
 - (instancetype) init {
   if ((self = [super init])) {
+    _userId = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUserId) {
+    [output writeString:1 value:self.userId];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
   __block SInt32 size_ = memoizedSerializedSize;
 
   size_ = 0;
+  if (self.hasUserId) {
+    size_ += computeStringSize(1, self.userId);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -26,9 +33,16 @@
 }
 #ifdef DEBUG
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -42,6 +56,10 @@
           [self setUnknownFields:[unknownFields_ build]];
           return ;
         }
+        break;
+      }
+      case 10: {
+        [self setUserId:[input readString]];
         break;
       }
     }
@@ -230,6 +248,7 @@
   if ((self = [super init])) {
     _notifyType = 0;
     _startIndex = 0;
+    _userId = @"";
   }
   return self;
 }
@@ -239,6 +258,9 @@
   }
   if (self.hasStartIndex) {
     [output writeInt32:2 value:self.startIndex];
+  }
+  if (self.hasUserId) {
+    [output writeString:3 value:self.userId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -251,6 +273,9 @@
   }
   if (self.hasStartIndex) {
     size_ += computeInt32Size(2, self.startIndex);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(3, self.userId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -268,6 +293,9 @@
   if (self.hasStartIndex) {
     [output appendFormat:@"%@%@: %@\n", indent, @"startIndex", [NSNumber numberWithInteger:self.startIndex]];
   }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -278,6 +306,10 @@
 - (void) setStartIndex:(SInt32) value {
   _hasStartIndex = YES;
   _startIndex = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -300,6 +332,10 @@
       }
       case 16: {
         [self setStartIndex:[input readInt32]];
+        break;
+      }
+      case 26: {
+        [self setUserId:[input readString]];
         break;
       }
     }
@@ -732,6 +768,342 @@
       }
       case 18: {
         [self setValue:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation DeleteNotifyRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _userId = @"";
+    _notifyId = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUserId) {
+    [output writeString:1 value:self.userId];
+  }
+  if (self.hasNotifyId) {
+    [output writeString:2 value:self.notifyId];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasUserId) {
+    size_ += computeStringSize(1, self.userId);
+  }
+  if (self.hasNotifyId) {
+    size_ += computeStringSize(2, self.notifyId);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (DeleteNotifyRequest*) parseFromData:(NSData*) data {
+  DeleteNotifyRequest* result = [[DeleteNotifyRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
+  if (self.hasNotifyId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"notifyId", self.notifyId];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
+- (void) setNotifyId:(NSString*) value {
+  _hasNotifyId = YES;
+  _notifyId = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setUserId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setNotifyId:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation DeleteNotifyResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (DeleteNotifyResult*) parseFromData:(NSData*) data {
+  DeleteNotifyResult* result = [[DeleteNotifyResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation MarkNotifyReadedRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _userId = @"";
+    _notifyType = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUserId) {
+    [output writeString:1 value:self.userId];
+  }
+  if (self.hasNotifyType) {
+    [output writeString:2 value:self.notifyType];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasUserId) {
+    size_ += computeStringSize(1, self.userId);
+  }
+  if (self.hasNotifyType) {
+    size_ += computeStringSize(2, self.notifyType);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (MarkNotifyReadedRequest*) parseFromData:(NSData*) data {
+  MarkNotifyReadedRequest* result = [[MarkNotifyReadedRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
+  if (self.hasNotifyType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"notifyType", self.notifyType];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
+- (void) setNotifyType:(NSString*) value {
+  _hasNotifyType = YES;
+  _notifyType = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setUserId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setNotifyType:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation MarkNotifyReadedResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (MarkNotifyReadedResult*) parseFromData:(NSData*) data {
+  MarkNotifyReadedResult* result = [[MarkNotifyReadedResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
         break;
       }
     }

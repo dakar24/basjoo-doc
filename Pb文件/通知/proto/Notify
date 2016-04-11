@@ -6,7 +6,8 @@ option java_package="com.qjoy.basjoo.core.model.pb";
 //获取通知
 message GetNotifyRequest {  
 
-    
+   //用户ID
+   required string userId = 1; 
 }
 
 //获取通知结果
@@ -42,6 +43,9 @@ message GetNotifyLiteInfoListRequest {
   
   //起始index
   optional int32 startIndex = 2;  
+
+  //用户ID
+  required string userId = 3; 
     
 }
 
@@ -54,7 +58,7 @@ message GetNotifyLiteInfoListResult {
    required string                 resultMsg = 2;
    
    //是否有更多
-   required bool                   hasMore = 3;
+   optional bool                   hasMore = 3;
    
    //当前最大index
    optional int32                  maxIndex = 4;
@@ -103,6 +107,45 @@ message NotifyExtInfo{
   required string                 value = 2;
 }
 
+
+//删除消息通知
+message DeleteNotifyRequest {  
+
+   //用户ID
+   required string userId = 1; 
+   
+   //通知ID
+   required string notifyId = 2;
+}
+
+
+//删除消息通知
+message DeleteNotifyResult {  
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+}
+
+
+
+//标记通知为已读请求
+message MarkNotifyReadedRequest {  
+
+   //用户ID
+   required string userId = 1; 
+   
+   required string notifyType = 2;
+}
+
+
+//标记通知为已读结果
+message MarkNotifyReadedResult {  
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+}
 
 
 

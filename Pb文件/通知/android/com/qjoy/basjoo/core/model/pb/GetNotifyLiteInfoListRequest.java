@@ -6,6 +6,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 import static com.squareup.wire.Message.Datatype.INT32;
+import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
@@ -15,9 +16,11 @@ public final class GetNotifyLiteInfoListRequest extends Message {
 
   public static final int TAG_NOTIFYTYPE = 1;
   public static final int TAG_STARTINDEX = 2;
+  public static final int TAG_USERID = 3;
 
   public static final Integer DEFAULT_NOTIFYTYPE = 0;
   public static final Integer DEFAULT_STARTINDEX = 0;
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 通知类型 0：订单通知,1:权益通知,2：评论通知,3:系统通知
@@ -31,11 +34,18 @@ public final class GetNotifyLiteInfoListRequest extends Message {
   @ProtoField(tag = 2, type = INT32)
   public Integer startIndex;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  public String userId;
+
   public GetNotifyLiteInfoListRequest(GetNotifyLiteInfoListRequest message) {
     super(message);
     if (message == null) return;
     this.notifyType = message.notifyType;
     this.startIndex = message.startIndex;
+    this.userId = message.userId;
   }
 
   public GetNotifyLiteInfoListRequest() {
@@ -49,6 +59,9 @@ public final class GetNotifyLiteInfoListRequest extends Message {
         case TAG_STARTINDEX:
         this.startIndex = (Integer)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -60,7 +73,8 @@ public final class GetNotifyLiteInfoListRequest extends Message {
     if (!(other instanceof GetNotifyLiteInfoListRequest)) return false;
     GetNotifyLiteInfoListRequest o = (GetNotifyLiteInfoListRequest) other;
     return equals(notifyType, o.notifyType)
-        && equals(startIndex, o.startIndex);
+        && equals(startIndex, o.startIndex)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -69,6 +83,7 @@ public final class GetNotifyLiteInfoListRequest extends Message {
     if (result == 0) {
       result = notifyType != null ? notifyType.hashCode() : 0;
       result = result * 37 + (startIndex != null ? startIndex.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

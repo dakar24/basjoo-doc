@@ -39,7 +39,7 @@ public final class GetNotifyLiteInfoListResult extends Message {
   /**
    * 是否有更多
    */
-  @ProtoField(tag = 3, type = BOOL, label = REQUIRED)
+  @ProtoField(tag = 3, type = BOOL)
   public Boolean hasMore;
 
   /**
@@ -49,7 +49,7 @@ public final class GetNotifyLiteInfoListResult extends Message {
   public Integer maxIndex;
 
   /**
-   * 券详细内容
+   * 通知概要信息
    */
   @ProtoField(tag = 5, label = REPEATED)
   public List<NotifyLiteInfo> notifyLiteInfo;
