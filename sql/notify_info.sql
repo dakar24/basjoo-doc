@@ -8,6 +8,7 @@ CREATE TABLE `notify_info` (
   `img_url` varchar(1024) DEFAULT NULL COMMENT '图片地址',
   `params` varchar(2048) DEFAULT NULL COMMENT '参数',
   `is_read` int(1) DEFAULT NULL COMMENT '是否已读',
+  `is_valid` int(1) NULL DEFAULT NULL COMMENT '是否有效',
   `valid_start` timestamp NULL DEFAULT NULL COMMENT '有效期开始时间',
   `valid_end` timestamp NULL DEFAULT NULL COMMENT '有效期结束时间',
   `gmt_create` timestamp NULL DEFAULT NULL COMMENT '创建时间',

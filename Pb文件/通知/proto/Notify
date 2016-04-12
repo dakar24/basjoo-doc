@@ -139,7 +139,7 @@ message MarkNotifyReadedRequest {
    required string userId = 1; 
    
    //全部标记为已读 时 notifyType 传空
-   optional string notifyType = 2;
+   optional int32 notifyType = 2;
   
    //针对某一个通知进行标记为已读
    optional string notifyId = 3;

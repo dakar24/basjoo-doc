@@ -102,7 +102,7 @@
 @property (readonly) BOOL hasNotifyType;
 @property (readonly) BOOL hasNotifyId;
 @property (nonatomic,strong) NSString* userId;
-@property (nonatomic,strong) NSString* notifyType;
+@property (nonatomic)SInt32 notifyType;
 @property (nonatomic,strong) NSString* notifyId;
 @end
 

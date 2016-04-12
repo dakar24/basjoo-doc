@@ -5,6 +5,7 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
@@ -18,7 +19,7 @@ public final class MarkNotifyReadedRequest extends Message {
   public static final int TAG_NOTIFYID = 3;
 
   public static final String DEFAULT_USERID = "";
-  public static final String DEFAULT_NOTIFYTYPE = "";
+  public static final Integer DEFAULT_NOTIFYTYPE = 0;
   public static final String DEFAULT_NOTIFYID = "";
 
   /**
@@ -30,8 +31,8 @@ public final class MarkNotifyReadedRequest extends Message {
   /**
    * 全部标记为已读 时 notifyType 传空
    */
-  @ProtoField(tag = 2, type = STRING)
-  public String notifyType;
+  @ProtoField(tag = 2, type = INT32)
+  public Integer notifyType;
 
   /**
    * 针对某一个通知进行标记为已读
@@ -56,7 +57,7 @@ public final class MarkNotifyReadedRequest extends Message {
         this.userId = (String)value;
         break;
         case TAG_NOTIFYTYPE:
-        this.notifyType = (String)value;
+        this.notifyType = (Integer)value;
         break;
         case TAG_NOTIFYID:
         this.notifyId = (String)value;

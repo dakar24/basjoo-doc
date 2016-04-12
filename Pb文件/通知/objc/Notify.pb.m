@@ -967,7 +967,7 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _userId = @"";
-    _notifyType = @"";
+    _notifyType = 0;
     _notifyId = @"";
   }
   return self;
@@ -977,7 +977,7 @@
     [output writeString:1 value:self.userId];
   }
   if (self.hasNotifyType) {
-    [output writeString:2 value:self.notifyType];
+    [output writeInt32:2 value:self.notifyType];
   }
   if (self.hasNotifyId) {
     [output writeString:3 value:self.notifyId];
@@ -992,7 +992,7 @@
     size_ += computeStringSize(1, self.userId);
   }
   if (self.hasNotifyType) {
-    size_ += computeStringSize(2, self.notifyType);
+    size_ += computeInt32Size(2, self.notifyType);
   }
   if (self.hasNotifyId) {
     size_ += computeStringSize(3, self.notifyId);
@@ -1011,7 +1011,7 @@
     [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
   }
   if (self.hasNotifyType) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"notifyType", self.notifyType];
+    [output appendFormat:@"%@%@: %@\n", indent, @"notifyType", [NSNumber numberWithInteger:self.notifyType]];
   }
   if (self.hasNotifyId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"notifyId", self.notifyId];
@@ -1023,7 +1023,7 @@
   _hasUserId = YES;
   _userId = value;
 }
-- (void) setNotifyType:(NSString*) value {
+- (void) setNotifyType:(SInt32) value {
   _hasNotifyType = YES;
   _notifyType = value;
 }
@@ -1050,8 +1050,8 @@
         [self setUserId:[input readString]];
         break;
       }
-      case 18: {
-        [self setNotifyType:[input readString]];
+      case 16: {
+        [self setNotifyType:[input readInt32]];
         break;
       }
       case 26: {

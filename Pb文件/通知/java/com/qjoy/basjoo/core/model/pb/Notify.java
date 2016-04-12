@@ -8189,7 +8189,7 @@ public final class Notify {
         getUserIdBytes();
 
     /**
-     * <code>optional string notifyType = 2;</code>
+     * <code>optional int32 notifyType = 2;</code>
      *
      * <pre>
      *全部标记为已读 时 notifyType 传空
@@ -8197,22 +8197,13 @@ public final class Notify {
      */
     boolean hasNotifyType();
     /**
-     * <code>optional string notifyType = 2;</code>
+     * <code>optional int32 notifyType = 2;</code>
      *
      * <pre>
      *全部标记为已读 时 notifyType 传空
      * </pre>
      */
-    java.lang.String getNotifyType();
-    /**
-     * <code>optional string notifyType = 2;</code>
-     *
-     * <pre>
-     *全部标记为已读 时 notifyType 传空
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getNotifyTypeBytes();
+    int getNotifyType();
 
     /**
      * <code>optional string notifyId = 3;</code>
@@ -8302,10 +8293,9 @@ public final class Notify {
               userId_ = bs;
               break;
             }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 16: {
               bitField0_ |= 0x00000002;
-              notifyType_ = bs;
+              notifyType_ = input.readInt32();
               break;
             }
             case 26: {
@@ -8409,9 +8399,9 @@ public final class Notify {
     }
 
     public static final int NOTIFYTYPE_FIELD_NUMBER = 2;
-    private java.lang.Object notifyType_;
+    private int notifyType_;
     /**
-     * <code>optional string notifyType = 2;</code>
+     * <code>optional int32 notifyType = 2;</code>
      *
      * <pre>
      *全部标记为已读 时 notifyType 传空
@@ -8421,45 +8411,14 @@ public final class Notify {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional string notifyType = 2;</code>
+     * <code>optional int32 notifyType = 2;</code>
      *
      * <pre>
      *全部标记为已读 时 notifyType 传空
      * </pre>
      */
-    public java.lang.String getNotifyType() {
-      java.lang.Object ref = notifyType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          notifyType_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string notifyType = 2;</code>
-     *
-     * <pre>
-     *全部标记为已读 时 notifyType 传空
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getNotifyTypeBytes() {
-      java.lang.Object ref = notifyType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        notifyType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getNotifyType() {
+      return notifyType_;
     }
 
     public static final int NOTIFYID_FIELD_NUMBER = 3;
@@ -8518,7 +8477,7 @@ public final class Notify {
 
     private void initFields() {
       userId_ = "";
-      notifyType_ = "";
+      notifyType_ = 0;
       notifyId_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -8542,7 +8501,7 @@ public final class Notify {
         output.writeBytes(1, getUserIdBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getNotifyTypeBytes());
+        output.writeInt32(2, notifyType_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getNotifyIdBytes());
@@ -8562,7 +8521,7 @@ public final class Notify {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getNotifyTypeBytes());
+          .computeInt32Size(2, notifyType_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -8691,7 +8650,7 @@ public final class Notify {
         super.clear();
         userId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        notifyType_ = "";
+        notifyType_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
         notifyId_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -8757,9 +8716,7 @@ public final class Notify {
           onChanged();
         }
         if (other.hasNotifyType()) {
-          bitField0_ |= 0x00000002;
-          notifyType_ = other.notifyType_;
-          onChanged();
+          setNotifyType(other.getNotifyType());
         }
         if (other.hasNotifyId()) {
           bitField0_ |= 0x00000004;
@@ -8897,9 +8854,9 @@ public final class Notify {
         return this;
       }
 
-      private java.lang.Object notifyType_ = "";
+      private int notifyType_ ;
       /**
-       * <code>optional string notifyType = 2;</code>
+       * <code>optional int32 notifyType = 2;</code>
        *
        * <pre>
        *全部标记为已读 时 notifyType 传空
@@ -8909,65 +8866,30 @@ public final class Notify {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional string notifyType = 2;</code>
+       * <code>optional int32 notifyType = 2;</code>
        *
        * <pre>
        *全部标记为已读 时 notifyType 传空
        * </pre>
        */
-      public java.lang.String getNotifyType() {
-        java.lang.Object ref = notifyType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            notifyType_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getNotifyType() {
+        return notifyType_;
       }
       /**
-       * <code>optional string notifyType = 2;</code>
+       * <code>optional int32 notifyType = 2;</code>
        *
        * <pre>
        *全部标记为已读 时 notifyType 传空
        * </pre>
        */
-      public com.google.protobuf.ByteString
-          getNotifyTypeBytes() {
-        java.lang.Object ref = notifyType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          notifyType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string notifyType = 2;</code>
-       *
-       * <pre>
-       *全部标记为已读 时 notifyType 传空
-       * </pre>
-       */
-      public Builder setNotifyType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+      public Builder setNotifyType(int value) {
+        bitField0_ |= 0x00000002;
         notifyType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string notifyType = 2;</code>
+       * <code>optional int32 notifyType = 2;</code>
        *
        * <pre>
        *全部标记为已读 时 notifyType 传空
@@ -8975,24 +8897,7 @@ public final class Notify {
        */
       public Builder clearNotifyType() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        notifyType_ = getDefaultInstance().getNotifyType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string notifyType = 2;</code>
-       *
-       * <pre>
-       *全部标记为已读 时 notifyType 传空
-       * </pre>
-       */
-      public Builder setNotifyTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        notifyType_ = value;
+        notifyType_ = 0;
         onChanged();
         return this;
       }
@@ -9849,7 +9754,7 @@ public final class Notify {
       "Id\030\002 \002(\t\";\n\022DeleteNotifyResult\022\022\n\nresult" +
       "Code\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"O\n\027MarkNot" +
       "ifyReadedRequest\022\016\n\006userId\030\001 \002(\t\022\022\n\nnoti" +
-      "fyType\030\002 \001(\t\022\020\n\010notifyId\030\003 \001(\t\"?\n\026MarkNo" +
+      "fyType\030\002 \001(\005\022\020\n\010notifyId\030\003 \001(\t\"?\n\026MarkNo" +
       "tifyReadedResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
       "resultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo.core." +
       "model.pb"
