@@ -94,6 +94,9 @@ message NotifyLiteInfo{
   
   //扩展信息，产品ID，话题ID，订单ID等
   repeated NotifyExtInfo          notifyExtInfo =8;
+
+  //1：已读，0:未读
+  optional int32                  readStatus = 9;
    
 }
 
@@ -135,7 +138,11 @@ message MarkNotifyReadedRequest {
    //用户ID
    required string userId = 1; 
    
-   required string notifyType = 2;
+   //全部标记为已读 时 notifyType 传空
+   optional string notifyType = 2;
+  
+   //针对某一个通知进行标记为已读
+   optional string notifyId = 3;
 }
 
 

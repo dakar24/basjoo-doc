@@ -502,6 +502,7 @@
     _notifyType = 0;
     _notifySubType = 0;
     _notifyImgUrl = @"";
+    _readStatus = 0;
   }
   return self;
 }
@@ -530,6 +531,9 @@
   [self.notifyExtInfo enumerateObjectsUsingBlock:^(NotifyExtInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:8 value:element];
   }];
+  if (self.hasReadStatus) {
+    [output writeInt32:9 value:self.readStatus];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -560,6 +564,9 @@
   [self.notifyExtInfo enumerateObjectsUsingBlock:^(NotifyExtInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(8, element);
   }];
+  if (self.hasReadStatus) {
+    size_ += computeInt32Size(9, self.readStatus);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -597,6 +604,9 @@
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }];
+  if (self.hasReadStatus) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"readStatus", [NSNumber numberWithInteger:self.readStatus]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -636,6 +646,10 @@
     _notifyExtInfo = [[NSMutableArray alloc]init];
   }
   [_notifyExtInfo addObject:value];
+}
+- (void) setReadStatus:(SInt32) value {
+  _hasReadStatus = YES;
+  _readStatus = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -684,6 +698,10 @@
         NotifyExtInfo* sub = [[NotifyExtInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addNotifyExtInfo:sub];
+        break;
+      }
+      case 72: {
+        [self setReadStatus:[input readInt32]];
         break;
       }
     }
@@ -950,6 +968,7 @@
   if ((self = [super init])) {
     _userId = @"";
     _notifyType = @"";
+    _notifyId = @"";
   }
   return self;
 }
@@ -959,6 +978,9 @@
   }
   if (self.hasNotifyType) {
     [output writeString:2 value:self.notifyType];
+  }
+  if (self.hasNotifyId) {
+    [output writeString:3 value:self.notifyId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -971,6 +993,9 @@
   }
   if (self.hasNotifyType) {
     size_ += computeStringSize(2, self.notifyType);
+  }
+  if (self.hasNotifyId) {
+    size_ += computeStringSize(3, self.notifyId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -988,6 +1013,9 @@
   if (self.hasNotifyType) {
     [output appendFormat:@"%@%@: %@\n", indent, @"notifyType", self.notifyType];
   }
+  if (self.hasNotifyId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"notifyId", self.notifyId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -998,6 +1026,10 @@
 - (void) setNotifyType:(NSString*) value {
   _hasNotifyType = YES;
   _notifyType = value;
+}
+- (void) setNotifyId:(NSString*) value {
+  _hasNotifyId = YES;
+  _notifyId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1020,6 +1052,10 @@
       }
       case 18: {
         [self setNotifyType:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setNotifyId:[input readString]];
         break;
       }
     }

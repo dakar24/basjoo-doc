@@ -26,6 +26,7 @@ public final class NotifyLiteInfo extends Message {
   public static final int TAG_NOTIFYSUBTYPE = 6;
   public static final int TAG_NOTIFYIMGURL = 7;
   public static final int TAG_NOTIFYEXTINFO = 8;
+  public static final int TAG_READSTATUS = 9;
 
   public static final String DEFAULT_NOTIFYID = "";
   public static final Long DEFAULT_NOTIFYTIME = 0L;
@@ -35,6 +36,7 @@ public final class NotifyLiteInfo extends Message {
   public static final Integer DEFAULT_NOTIFYSUBTYPE = 0;
   public static final String DEFAULT_NOTIFYIMGURL = "";
   public static final List<NotifyExtInfo> DEFAULT_NOTIFYEXTINFO = Collections.emptyList();
+  public static final Integer DEFAULT_READSTATUS = 0;
 
   /**
    * ID
@@ -84,6 +86,12 @@ public final class NotifyLiteInfo extends Message {
   @ProtoField(tag = 8, label = REPEATED)
   public List<NotifyExtInfo> notifyExtInfo;
 
+  /**
+   * 1：已读，0:未读
+   */
+  @ProtoField(tag = 9, type = INT32)
+  public Integer readStatus;
+
   public NotifyLiteInfo(NotifyLiteInfo message) {
     super(message);
     if (message == null) return;
@@ -95,6 +103,7 @@ public final class NotifyLiteInfo extends Message {
     this.notifySubType = message.notifySubType;
     this.notifyImgUrl = message.notifyImgUrl;
     this.notifyExtInfo = copyOf(message.notifyExtInfo);
+    this.readStatus = message.readStatus;
   }
 
   public NotifyLiteInfo() {
@@ -126,6 +135,9 @@ public final class NotifyLiteInfo extends Message {
         case TAG_NOTIFYEXTINFO:
         this.notifyExtInfo = immutableCopyOf((List<NotifyExtInfo>)value);
         break;
+        case TAG_READSTATUS:
+        this.readStatus = (Integer)value;
+        break;
         default: break;
         };
     return this;
@@ -143,7 +155,8 @@ public final class NotifyLiteInfo extends Message {
         && equals(notifyType, o.notifyType)
         && equals(notifySubType, o.notifySubType)
         && equals(notifyImgUrl, o.notifyImgUrl)
-        && equals(notifyExtInfo, o.notifyExtInfo);
+        && equals(notifyExtInfo, o.notifyExtInfo)
+        && equals(readStatus, o.readStatus);
   }
 
   @Override
@@ -158,6 +171,7 @@ public final class NotifyLiteInfo extends Message {
       result = result * 37 + (notifySubType != null ? notifySubType.hashCode() : 0);
       result = result * 37 + (notifyImgUrl != null ? notifyImgUrl.hashCode() : 0);
       result = result * 37 + (notifyExtInfo != null ? notifyExtInfo.hashCode() : 1);
+      result = result * 37 + (readStatus != null ? readStatus.hashCode() : 0);
       hashCode = result;
     }
     return result;

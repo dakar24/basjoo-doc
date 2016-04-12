@@ -64,6 +64,7 @@
 @property (readonly) BOOL hasNotifyType;
 @property (readonly) BOOL hasNotifySubType;
 @property (readonly) BOOL hasNotifyImgUrl;
+@property (readonly) BOOL hasReadStatus;
 @property (nonatomic,strong) NSString* notifyId;
 @property (nonatomic)SInt64 notifyTime;
 @property (nonatomic,strong) NSString* notifyTitle;
@@ -72,6 +73,7 @@
 @property (nonatomic)SInt32 notifySubType;
 @property (nonatomic,strong) NSString* notifyImgUrl;
 @property (nonatomic,strong) NSMutableArray * notifyExtInfo;
+@property (nonatomic)SInt32 readStatus;
 @end
 
 @interface NotifyExtInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -98,8 +100,10 @@
 @interface MarkNotifyReadedRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasUserId;
 @property (readonly) BOOL hasNotifyType;
+@property (readonly) BOOL hasNotifyId;
 @property (nonatomic,strong) NSString* userId;
 @property (nonatomic,strong) NSString* notifyType;
+@property (nonatomic,strong) NSString* notifyId;
 @end
 
 @interface MarkNotifyReadedResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

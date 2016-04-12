@@ -15,9 +15,11 @@ public final class MarkNotifyReadedRequest extends Message {
 
   public static final int TAG_USERID = 1;
   public static final int TAG_NOTIFYTYPE = 2;
+  public static final int TAG_NOTIFYID = 3;
 
   public static final String DEFAULT_USERID = "";
   public static final String DEFAULT_NOTIFYTYPE = "";
+  public static final String DEFAULT_NOTIFYID = "";
 
   /**
    * 用户ID
@@ -25,14 +27,24 @@ public final class MarkNotifyReadedRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String userId;
 
-  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  /**
+   * 全部标记为已读 时 notifyType 传空
+   */
+  @ProtoField(tag = 2, type = STRING)
   public String notifyType;
+
+  /**
+   * 针对某一个通知进行标记为已读
+   */
+  @ProtoField(tag = 3, type = STRING)
+  public String notifyId;
 
   public MarkNotifyReadedRequest(MarkNotifyReadedRequest message) {
     super(message);
     if (message == null) return;
     this.userId = message.userId;
     this.notifyType = message.notifyType;
+    this.notifyId = message.notifyId;
   }
 
   public MarkNotifyReadedRequest() {
@@ -46,6 +58,9 @@ public final class MarkNotifyReadedRequest extends Message {
         case TAG_NOTIFYTYPE:
         this.notifyType = (String)value;
         break;
+        case TAG_NOTIFYID:
+        this.notifyId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -57,7 +72,8 @@ public final class MarkNotifyReadedRequest extends Message {
     if (!(other instanceof MarkNotifyReadedRequest)) return false;
     MarkNotifyReadedRequest o = (MarkNotifyReadedRequest) other;
     return equals(userId, o.userId)
-        && equals(notifyType, o.notifyType);
+        && equals(notifyType, o.notifyType)
+        && equals(notifyId, o.notifyId);
   }
 
   @Override
@@ -66,6 +82,7 @@ public final class MarkNotifyReadedRequest extends Message {
     if (result == 0) {
       result = userId != null ? userId.hashCode() : 0;
       result = result * 37 + (notifyType != null ? notifyType.hashCode() : 0);
+      result = result * 37 + (notifyId != null ? notifyId.hashCode() : 0);
       hashCode = result;
     }
     return result;
