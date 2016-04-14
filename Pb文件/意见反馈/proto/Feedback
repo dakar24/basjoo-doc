@@ -11,6 +11,9 @@ message CommitFeedbackRequest {
     //联系方式
     optional string                 contact = 2;
     
+    //用户ID
+    required string                 userId= 3;
+    
 }
 
 //提交意见结果

@@ -15,9 +15,11 @@ public final class CommitFeedbackRequest extends Message {
 
   public static final int TAG_CONTENT = 1;
   public static final int TAG_CONTACT = 2;
+  public static final int TAG_USERID = 3;
 
   public static final String DEFAULT_CONTENT = "";
   public static final String DEFAULT_CONTACT = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 内容
@@ -31,11 +33,18 @@ public final class CommitFeedbackRequest extends Message {
   @ProtoField(tag = 2, type = STRING)
   public String contact;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  public String userId;
+
   public CommitFeedbackRequest(CommitFeedbackRequest message) {
     super(message);
     if (message == null) return;
     this.content = message.content;
     this.contact = message.contact;
+    this.userId = message.userId;
   }
 
   public CommitFeedbackRequest() {
@@ -49,6 +58,9 @@ public final class CommitFeedbackRequest extends Message {
         case TAG_CONTACT:
         this.contact = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -60,7 +72,8 @@ public final class CommitFeedbackRequest extends Message {
     if (!(other instanceof CommitFeedbackRequest)) return false;
     CommitFeedbackRequest o = (CommitFeedbackRequest) other;
     return equals(content, o.content)
-        && equals(contact, o.contact);
+        && equals(contact, o.contact)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -69,6 +82,7 @@ public final class CommitFeedbackRequest extends Message {
     if (result == 0) {
       result = content != null ? content.hashCode() : 0;
       result = result * 37 + (contact != null ? contact.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

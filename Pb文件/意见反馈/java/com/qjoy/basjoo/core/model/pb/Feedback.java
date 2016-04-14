@@ -63,6 +63,32 @@ public final class Feedback {
      */
     com.google.protobuf.ByteString
         getContactBytes();
+
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CommitFeedbackRequest}
@@ -130,6 +156,12 @@ public final class Feedback {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
               contact_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              userId_ = bs;
               break;
             }
           }
@@ -280,9 +312,64 @@ public final class Feedback {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 3;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       content_ = "";
       contact_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -291,6 +378,10 @@ public final class Feedback {
       if (isInitialized == 0) return false;
 
       if (!hasContent()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -306,6 +397,9 @@ public final class Feedback {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getContactBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -323,6 +417,10 @@ public final class Feedback {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getContactBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -449,6 +547,8 @@ public final class Feedback {
         bitField0_ = (bitField0_ & ~0x00000001);
         contact_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -485,6 +585,10 @@ public final class Feedback {
           to_bitField0_ |= 0x00000002;
         }
         result.contact_ = contact_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -511,12 +615,21 @@ public final class Feedback {
           contact_ = other.contact_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000004;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasContent()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -738,6 +851,106 @@ public final class Feedback {
   }
   bitField0_ |= 0x00000002;
         contact_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -1430,10 +1643,11 @@ public final class Feedback {
   static {
     java.lang.String[] descriptorData = {
       "\n\010Feedback\022\035com.qjoy.basjoo.core.model.p" +
-      "b\"9\n\025CommitFeedbackRequest\022\017\n\007content\030\001 " +
-      "\002(\t\022\017\n\007contact\030\002 \001(\t\"=\n\024CommitFeedbackRe" +
-      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 " +
-      "\002(\tB\037\n\035com.qjoy.basjoo.core.model.pb"
+      "b\"I\n\025CommitFeedbackRequest\022\017\n\007content\030\001 " +
+      "\002(\t\022\017\n\007contact\030\002 \001(\t\022\016\n\006userId\030\003 \002(\t\"=\n\024" +
+      "CommitFeedbackResult\022\022\n\nresultCode\030\001 \002(\t" +
+      "\022\021\n\tresultMsg\030\002 \002(\tB\037\n\035com.qjoy.basjoo.c" +
+      "ore.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1452,7 +1666,7 @@ public final class Feedback {
     internal_static_com_qjoy_basjoo_core_model_pb_CommitFeedbackRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CommitFeedbackRequest_descriptor,
-        new java.lang.String[] { "Content", "Contact", });
+        new java.lang.String[] { "Content", "Contact", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_CommitFeedbackResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_CommitFeedbackResult_fieldAccessorTable = new

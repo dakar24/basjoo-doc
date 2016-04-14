@@ -8,6 +8,7 @@
   if ((self = [super init])) {
     _content = @"";
     _contact = @"";
+    _userId = @"";
   }
   return self;
 }
@@ -17,6 +18,9 @@
   }
   if (self.hasContact) {
     [output writeString:2 value:self.contact];
+  }
+  if (self.hasUserId) {
+    [output writeString:3 value:self.userId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -29,6 +33,9 @@
   }
   if (self.hasContact) {
     size_ += computeStringSize(2, self.contact);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(3, self.userId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -46,6 +53,9 @@
   if (self.hasContact) {
     [output appendFormat:@"%@%@: %@\n", indent, @"contact", self.contact];
   }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -56,6 +66,10 @@
 - (void) setContact:(NSString*) value {
   _hasContact = YES;
   _contact = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -78,6 +92,10 @@
       }
       case 18: {
         [self setContact:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setUserId:[input readString]];
         break;
       }
     }
