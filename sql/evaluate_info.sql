@@ -10,6 +10,6 @@ CREATE TABLE `evaluate_info` (
   `has_image` int(1) DEFAULT NULL COMMENT '1有图0没有图',
   `gmt_create` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   `gmt_modify` timestamp NULL DEFAULT NULL COMMENT '修改时间',
-  PRIMARY KEY (evaluate_id),
-  INDEX `index_evaluate_info_product_id` (`product_id`)
+  PRIMARY KEY (`evaluate_id`),
+  KEY `index_evaluate_info_product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='评论';

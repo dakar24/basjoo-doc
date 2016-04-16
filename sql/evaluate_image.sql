@@ -3,5 +3,5 @@ CREATE TABLE `evaluate_image` (
   `image_url` varchar(255) DEFAULT NULL COMMENT '图片地址',
   `gmt_create` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   `gmt_modify` timestamp NULL DEFAULT NULL COMMENT '修改时间',
-  INDEX `index_evaluate_image_evaluate_id` (`evaluate_id`)
+  KEY `evaluate_id` (`evaluate_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='评论图片';
