@@ -2,8 +2,11 @@
 
 #import <QJProtocolBuffers/ProtocolBuffers.h>
 
+@class GetWxPreInfoRequest;
+@class GetWxPreInfoResult;
 @class LoginRequest;
 @class LoginResult;
+@class WxLoginRequest;
 
 @interface LoginRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasLoginId;
@@ -31,5 +34,34 @@
 @property (nonatomic,strong) NSString* userName;
 @property (nonatomic,strong) NSString* nickName;
 @property (nonatomic,strong) NSString* recommendCode;
+@end
+
+@interface WxLoginRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasOpenId;
+@property (readonly) BOOL hasNickName;
+@property (readonly) BOOL hasProvince;
+@property (readonly) BOOL hasCity;
+@property (readonly) BOOL hasCountry;
+@property (readonly) BOOL hasHeadImgUrl;
+@property (readonly) BOOL hasPrivilege;
+@property (readonly) BOOL hasUnionId;
+@property (nonatomic,strong) NSString* openId;
+@property (nonatomic,strong) NSString* nickName;
+@property (nonatomic,strong) NSString* province;
+@property (nonatomic,strong) NSString* city;
+@property (nonatomic,strong) NSString* country;
+@property (nonatomic,strong) NSString* headImgUrl;
+@property (nonatomic,strong) NSString* privilege;
+@property (nonatomic,strong) NSString* unionId;
+@end
+
+@interface GetWxPreInfoRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@end
+
+@interface GetWxPreInfoResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasAppId;
+@property (readonly) BOOL hasAppSecret;
+@property (nonatomic,strong) NSString* appId;
+@property (nonatomic,strong) NSString* appSecret;
 @end
 

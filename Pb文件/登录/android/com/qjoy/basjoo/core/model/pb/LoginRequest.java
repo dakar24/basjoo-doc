@@ -25,6 +25,9 @@ public final class LoginRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String loginId;
 
+  /**
+   * 密码
+   */
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String password;
 

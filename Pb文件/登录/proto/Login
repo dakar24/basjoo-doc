@@ -6,10 +6,11 @@ option java_package="com.qjoy.basjoo.core.model.pb";
 //登录请求
 message LoginRequest {   
 
-   //登录ID，一期只有手机号，后续可能会有email，或者其他类型账号
+    //登录ID，一期只有手机号，后续可能会有email，或者其他类型账号
     required string                 loginId = 1;
 	
-	required string                 password = 2;
+    //密码
+    required string                 password = 2;
     
 }
 
@@ -36,6 +37,51 @@ message LoginResult {
    optional string                 recommendCode=9;
     
 }
+
+
+//微信登录请求
+message WxLoginRequest {   
+
+   //微信openID
+   required string                openId = 1; 
+   
+   //昵称
+   required string                nickName=2;
+ 
+   //省份
+   optional string                province=3; 
+ 
+   //城市
+   optional string                city = 4;    
+     
+   //国家
+   optional string                country = 5;    
+
+   //头像
+   optional string                headImgUrl = 6; 
+   
+   //用户权限
+   optional string                privilege  =7;
+
+   //开发平台账号
+   optional string                unionId  =8;
+
+}
+
+//获取微信登录预准备信息请求
+message GetWxPreInfoRequest{
+
+}
+
+//获取微信登录预准备信息结果
+message GetWxPreInfoResult{
+   //微信openID
+   required string                appId = 1; 
+   
+   //昵称
+   required string                appSecret = 2;
+}
+ 
 
 
 

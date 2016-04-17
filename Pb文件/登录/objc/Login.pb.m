@@ -296,3 +296,327 @@
 @end
 
 
+@implementation WxLoginRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _openId = @"";
+    _nickName = @"";
+    _province = @"";
+    _city = @"";
+    _country = @"";
+    _headImgUrl = @"";
+    _privilege = @"";
+    _unionId = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasOpenId) {
+    [output writeString:1 value:self.openId];
+  }
+  if (self.hasNickName) {
+    [output writeString:2 value:self.nickName];
+  }
+  if (self.hasProvince) {
+    [output writeString:3 value:self.province];
+  }
+  if (self.hasCity) {
+    [output writeString:4 value:self.city];
+  }
+  if (self.hasCountry) {
+    [output writeString:5 value:self.country];
+  }
+  if (self.hasHeadImgUrl) {
+    [output writeString:6 value:self.headImgUrl];
+  }
+  if (self.hasPrivilege) {
+    [output writeString:7 value:self.privilege];
+  }
+  if (self.hasUnionId) {
+    [output writeString:8 value:self.unionId];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasOpenId) {
+    size_ += computeStringSize(1, self.openId);
+  }
+  if (self.hasNickName) {
+    size_ += computeStringSize(2, self.nickName);
+  }
+  if (self.hasProvince) {
+    size_ += computeStringSize(3, self.province);
+  }
+  if (self.hasCity) {
+    size_ += computeStringSize(4, self.city);
+  }
+  if (self.hasCountry) {
+    size_ += computeStringSize(5, self.country);
+  }
+  if (self.hasHeadImgUrl) {
+    size_ += computeStringSize(6, self.headImgUrl);
+  }
+  if (self.hasPrivilege) {
+    size_ += computeStringSize(7, self.privilege);
+  }
+  if (self.hasUnionId) {
+    size_ += computeStringSize(8, self.unionId);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (WxLoginRequest*) parseFromData:(NSData*) data {
+  WxLoginRequest* result = [[WxLoginRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasOpenId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"openId", self.openId];
+  }
+  if (self.hasNickName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"nickName", self.nickName];
+  }
+  if (self.hasProvince) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"province", self.province];
+  }
+  if (self.hasCity) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"city", self.city];
+  }
+  if (self.hasCountry) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"country", self.country];
+  }
+  if (self.hasHeadImgUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"headImgUrl", self.headImgUrl];
+  }
+  if (self.hasPrivilege) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"privilege", self.privilege];
+  }
+  if (self.hasUnionId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"unionId", self.unionId];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setOpenId:(NSString*) value {
+  _hasOpenId = YES;
+  _openId = value;
+}
+- (void) setNickName:(NSString*) value {
+  _hasNickName = YES;
+  _nickName = value;
+}
+- (void) setProvince:(NSString*) value {
+  _hasProvince = YES;
+  _province = value;
+}
+- (void) setCity:(NSString*) value {
+  _hasCity = YES;
+  _city = value;
+}
+- (void) setCountry:(NSString*) value {
+  _hasCountry = YES;
+  _country = value;
+}
+- (void) setHeadImgUrl:(NSString*) value {
+  _hasHeadImgUrl = YES;
+  _headImgUrl = value;
+}
+- (void) setPrivilege:(NSString*) value {
+  _hasPrivilege = YES;
+  _privilege = value;
+}
+- (void) setUnionId:(NSString*) value {
+  _hasUnionId = YES;
+  _unionId = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setOpenId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setNickName:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setProvince:[input readString]];
+        break;
+      }
+      case 34: {
+        [self setCity:[input readString]];
+        break;
+      }
+      case 42: {
+        [self setCountry:[input readString]];
+        break;
+      }
+      case 50: {
+        [self setHeadImgUrl:[input readString]];
+        break;
+      }
+      case 58: {
+        [self setPrivilege:[input readString]];
+        break;
+      }
+      case 66: {
+        [self setUnionId:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation GetWxPreInfoRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (GetWxPreInfoRequest*) parseFromData:(NSData*) data {
+  GetWxPreInfoRequest* result = [[GetWxPreInfoRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation GetWxPreInfoResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _appId = @"";
+    _appSecret = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasAppId) {
+    [output writeString:1 value:self.appId];
+  }
+  if (self.hasAppSecret) {
+    [output writeString:2 value:self.appSecret];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasAppId) {
+    size_ += computeStringSize(1, self.appId);
+  }
+  if (self.hasAppSecret) {
+    size_ += computeStringSize(2, self.appSecret);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (GetWxPreInfoResult*) parseFromData:(NSData*) data {
+  GetWxPreInfoResult* result = [[GetWxPreInfoResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasAppId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"appId", self.appId];
+  }
+  if (self.hasAppSecret) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"appSecret", self.appSecret];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setAppId:(NSString*) value {
+  _hasAppId = YES;
+  _appId = value;
+}
+- (void) setAppSecret:(NSString*) value {
+  _hasAppSecret = YES;
+  _appSecret = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setAppId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setAppSecret:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
