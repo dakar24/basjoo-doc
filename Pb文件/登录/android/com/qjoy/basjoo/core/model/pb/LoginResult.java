@@ -5,6 +5,7 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.ENUM;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
@@ -22,6 +23,7 @@ public final class LoginResult extends Message {
   public static final int TAG_USERNAME = 7;
   public static final int TAG_NICKNAME = 8;
   public static final int TAG_RECOMMENDCODE = 9;
+  public static final int TAG_LOGINTYPE = 10;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
@@ -32,6 +34,7 @@ public final class LoginResult extends Message {
   public static final String DEFAULT_USERNAME = "";
   public static final String DEFAULT_NICKNAME = "";
   public static final String DEFAULT_RECOMMENDCODE = "";
+  public static final LoginType DEFAULT_LOGINTYPE = LoginType.NORMAL;
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
@@ -78,6 +81,12 @@ public final class LoginResult extends Message {
   @ProtoField(tag = 9, type = STRING)
   public String recommendCode;
 
+  /**
+   * 登录类型
+   */
+  @ProtoField(tag = 10, type = ENUM)
+  public LoginType loginType;
+
   public LoginResult(LoginResult message) {
     super(message);
     if (message == null) return;
@@ -90,6 +99,7 @@ public final class LoginResult extends Message {
     this.userName = message.userName;
     this.nickName = message.nickName;
     this.recommendCode = message.recommendCode;
+    this.loginType = message.loginType;
   }
 
   public LoginResult() {
@@ -124,6 +134,9 @@ public final class LoginResult extends Message {
         case TAG_RECOMMENDCODE:
         this.recommendCode = (String)value;
         break;
+        case TAG_LOGINTYPE:
+        this.loginType = (LoginType)value;
+        break;
         default: break;
         };
     return this;
@@ -142,7 +155,8 @@ public final class LoginResult extends Message {
         && equals(mobileNo, o.mobileNo)
         && equals(userName, o.userName)
         && equals(nickName, o.nickName)
-        && equals(recommendCode, o.recommendCode);
+        && equals(recommendCode, o.recommendCode)
+        && equals(loginType, o.loginType);
   }
 
   @Override
@@ -158,6 +172,7 @@ public final class LoginResult extends Message {
       result = result * 37 + (userName != null ? userName.hashCode() : 0);
       result = result * 37 + (nickName != null ? nickName.hashCode() : 0);
       result = result * 37 + (recommendCode != null ? recommendCode.hashCode() : 0);
+      result = result * 37 + (loginType != null ? loginType.hashCode() : 0);
       hashCode = result;
     }
     return result;

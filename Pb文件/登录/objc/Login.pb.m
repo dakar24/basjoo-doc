@@ -2,6 +2,16 @@
 
 #import "Login.pb.h"
 
+BOOL LoginTypeIsValidValue(LoginType value) {
+  switch (value) {
+    case LoginTypeNormal:
+    case LoginTypeWxlogin:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
 @implementation LoginRequest
 
 - (instancetype) init {
@@ -99,6 +109,7 @@
     _userName = @"";
     _nickName = @"";
     _recommendCode = @"";
+    _loginType = LoginTypeNormal;
   }
   return self;
 }
@@ -129,6 +140,9 @@
   }
   if (self.hasRecommendCode) {
     [output writeString:9 value:self.recommendCode];
+  }
+  if (self.hasLoginType) {
+    [output writeEnum:10 value:self.loginType];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -162,6 +176,9 @@
   }
   if (self.hasRecommendCode) {
     size_ += computeStringSize(9, self.recommendCode);
+  }
+  if (self.hasLoginType) {
+    size_ += computeEnumSize(10, self.loginType);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -199,6 +216,9 @@
   }
   if (self.hasRecommendCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"recommendCode", self.recommendCode];
+  }
+  if (self.hasLoginType) {
+    [output appendFormat:@"%@%@: %d\n", indent, @"loginType", (int)self.loginType];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -238,6 +258,10 @@
 - (void) setRecommendCode:(NSString*) value {
   _hasRecommendCode = YES;
   _recommendCode = value;
+}
+- (void) setLoginType:(LoginType) value {
+  _hasLoginType = YES;
+  _loginType = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -288,6 +312,15 @@
       }
       case 74: {
         [self setRecommendCode:[input readString]];
+        break;
+      }
+      case 80: {
+        LoginType value = (LoginType)[input readEnum];
+        if (LoginTypeIsValidValue(value)) {
+          [self setLoginType:value];
+        } else {
+          [unknownFields_ mergeVarintField:10 value:value];
+        }
         break;
       }
     }

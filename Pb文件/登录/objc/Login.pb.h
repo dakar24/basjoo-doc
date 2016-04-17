@@ -8,6 +8,11 @@
 @class LoginResult;
 @class WxLoginRequest;
 
+typedef NS_ENUM(SInt32, LoginType) {
+  LoginTypeNormal = 0,
+  LoginTypeWxlogin = 1,
+};
+
 @interface LoginRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasLoginId;
 @property (readonly) BOOL hasPassword;
@@ -25,6 +30,7 @@
 @property (readonly) BOOL hasUserName;
 @property (readonly) BOOL hasNickName;
 @property (readonly) BOOL hasRecommendCode;
+@property (readonly) BOOL hasLoginType;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* sessionId;
@@ -34,6 +40,7 @@
 @property (nonatomic,strong) NSString* userName;
 @property (nonatomic,strong) NSString* nickName;
 @property (nonatomic,strong) NSString* recommendCode;
+@property (nonatomic)LoginType loginType;
 @end
 
 @interface WxLoginRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>

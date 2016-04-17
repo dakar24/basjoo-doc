@@ -8,6 +8,108 @@ public final class Login {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code com.qjoy.basjoo.core.model.pb.LoginType}
+   *
+   * <pre>
+   *登录类型
+   * </pre>
+   */
+  public enum LoginType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NORMAL = 0;</code>
+     *
+     * <pre>
+     *普通登录  
+     * </pre>
+     */
+    NORMAL(0, 0),
+    /**
+     * <code>WXLOGIN = 1;</code>
+     *
+     * <pre>
+     *微信登录
+     * </pre>
+     */
+    WXLOGIN(1, 1),
+    ;
+
+    /**
+     * <code>NORMAL = 0;</code>
+     *
+     * <pre>
+     *普通登录  
+     * </pre>
+     */
+    public static final int NORMAL_VALUE = 0;
+    /**
+     * <code>WXLOGIN = 1;</code>
+     *
+     * <pre>
+     *微信登录
+     * </pre>
+     */
+    public static final int WXLOGIN_VALUE = 1;
+
+
+    public final int getNumber() { return value; }
+
+    public static LoginType valueOf(int value) {
+      switch (value) {
+        case 0: return NORMAL;
+        case 1: return WXLOGIN;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<LoginType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<LoginType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<LoginType>() {
+            public LoginType findValueByNumber(int number) {
+              return LoginType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Login.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final LoginType[] VALUES = values();
+
+    public static LoginType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private LoginType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.qjoy.basjoo.core.model.pb.LoginType)
+  }
+
   public interface LoginRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.LoginRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -962,6 +1064,23 @@ public final class Login {
      */
     com.google.protobuf.ByteString
         getRecommendCodeBytes();
+
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.LoginType loginType = 10;</code>
+     *
+     * <pre>
+     *登录类型
+     * </pre>
+     */
+    boolean hasLoginType();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.LoginType loginType = 10;</code>
+     *
+     * <pre>
+     *登录类型
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Login.LoginType getLoginType();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.LoginResult}
@@ -1071,6 +1190,17 @@ public final class Login {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000100;
               recommendCode_ = bs;
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+              com.qjoy.basjoo.core.model.pb.Login.LoginType value = com.qjoy.basjoo.core.model.pb.Login.LoginType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(10, rawValue);
+              } else {
+                bitField0_ |= 0x00000200;
+                loginType_ = value;
+              }
               break;
             }
           }
@@ -1563,6 +1693,29 @@ public final class Login {
       }
     }
 
+    public static final int LOGINTYPE_FIELD_NUMBER = 10;
+    private com.qjoy.basjoo.core.model.pb.Login.LoginType loginType_;
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.LoginType loginType = 10;</code>
+     *
+     * <pre>
+     *登录类型
+     * </pre>
+     */
+    public boolean hasLoginType() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.LoginType loginType = 10;</code>
+     *
+     * <pre>
+     *登录类型
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Login.LoginType getLoginType() {
+      return loginType_;
+    }
+
     private void initFields() {
       resultCode_ = "";
       resultMsg_ = "";
@@ -1573,6 +1726,7 @@ public final class Login {
       userName_ = "";
       nickName_ = "";
       recommendCode_ = "";
+      loginType_ = com.qjoy.basjoo.core.model.pb.Login.LoginType.NORMAL;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1622,6 +1776,9 @@ public final class Login {
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeBytes(9, getRecommendCodeBytes());
       }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeEnum(10, loginType_.getNumber());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1666,6 +1823,10 @@ public final class Login {
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(9, getRecommendCodeBytes());
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, loginType_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1806,6 +1967,8 @@ public final class Login {
         bitField0_ = (bitField0_ & ~0x00000080);
         recommendCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000100);
+        loginType_ = com.qjoy.basjoo.core.model.pb.Login.LoginType.NORMAL;
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -1870,6 +2033,10 @@ public final class Login {
           to_bitField0_ |= 0x00000100;
         }
         result.recommendCode_ = recommendCode_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.loginType_ = loginType_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1930,6 +2097,9 @@ public final class Login {
           bitField0_ |= 0x00000100;
           recommendCode_ = other.recommendCode_;
           onChanged();
+        }
+        if (other.hasLoginType()) {
+          setLoginType(other.getLoginType());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -2790,6 +2960,57 @@ public final class Login {
   }
   bitField0_ |= 0x00000100;
         recommendCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.qjoy.basjoo.core.model.pb.Login.LoginType loginType_ = com.qjoy.basjoo.core.model.pb.Login.LoginType.NORMAL;
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.LoginType loginType = 10;</code>
+       *
+       * <pre>
+       *登录类型
+       * </pre>
+       */
+      public boolean hasLoginType() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.LoginType loginType = 10;</code>
+       *
+       * <pre>
+       *登录类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Login.LoginType getLoginType() {
+        return loginType_;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.LoginType loginType = 10;</code>
+       *
+       * <pre>
+       *登录类型
+       * </pre>
+       */
+      public Builder setLoginType(com.qjoy.basjoo.core.model.pb.Login.LoginType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
+        loginType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.LoginType loginType = 10;</code>
+       *
+       * <pre>
+       *登录类型
+       * </pre>
+       */
+      public Builder clearLoginType() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        loginType_ = com.qjoy.basjoo.core.model.pb.Login.LoginType.NORMAL;
         onChanged();
         return this;
       }
@@ -5898,18 +6119,21 @@ public final class Login {
     java.lang.String[] descriptorData = {
       "\n\005Login\022\035com.qjoy.basjoo.core.model.pb\"1" +
       "\n\014LoginRequest\022\017\n\007loginId\030\001 \002(\t\022\020\n\010passw" +
-      "ord\030\002 \002(\t\"\271\001\n\013LoginResult\022\022\n\nresultCode\030" +
+      "ord\030\002 \002(\t\"\366\001\n\013LoginResult\022\022\n\nresultCode\030" +
       "\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\021\n\tsessionId\030\003 " +
       "\001(\t\022\016\n\006userId\030\004 \001(\t\022\023\n\013headIconUrl\030\005 \001(\t" +
       "\022\020\n\010mobileNo\030\006 \001(\t\022\020\n\010userName\030\007 \001(\t\022\020\n\010" +
-      "nickName\030\010 \001(\t\022\025\n\rrecommendCode\030\t \001(\t\"\233\001" +
-      "\n\016WxLoginRequest\022\016\n\006openId\030\001 \002(\t\022\020\n\010nick" +
-      "Name\030\002 \002(\t\022\020\n\010province\030\003 \001(\t\022\014\n\004city\030\004 \001" +
-      "(\t\022\017\n\007country\030\005 \001(\t\022\022\n\nheadImgUrl\030\006 \001(\t\022",
-      "\021\n\tprivilege\030\007 \001(\t\022\017\n\007unionId\030\010 \001(\t\"\025\n\023G" +
-      "etWxPreInfoRequest\"6\n\022GetWxPreInfoResult" +
-      "\022\r\n\005appId\030\001 \002(\t\022\021\n\tappSecret\030\002 \002(\tB\037\n\035co" +
-      "m.qjoy.basjoo.core.model.pb"
+      "nickName\030\010 \001(\t\022\025\n\rrecommendCode\030\t \001(\t\022;\n" +
+      "\tloginType\030\n \001(\0162(.com.qjoy.basjoo.core." +
+      "model.pb.LoginType\"\233\001\n\016WxLoginRequest\022\016\n" +
+      "\006openId\030\001 \002(\t\022\020\n\010nickName\030\002 \002(\t\022\020\n\010provi",
+      "nce\030\003 \001(\t\022\014\n\004city\030\004 \001(\t\022\017\n\007country\030\005 \001(\t" +
+      "\022\022\n\nheadImgUrl\030\006 \001(\t\022\021\n\tprivilege\030\007 \001(\t\022" +
+      "\017\n\007unionId\030\010 \001(\t\"\025\n\023GetWxPreInfoRequest\"" +
+      "6\n\022GetWxPreInfoResult\022\r\n\005appId\030\001 \002(\t\022\021\n\t" +
+      "appSecret\030\002 \002(\t*$\n\tLoginType\022\n\n\006NORMAL\020\000" +
+      "\022\013\n\007WXLOGIN\020\001B\037\n\035com.qjoy.basjoo.core.mo" +
+      "del.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5934,7 +6158,7 @@ public final class Login {
     internal_static_com_qjoy_basjoo_core_model_pb_LoginResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_LoginResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMsg", "SessionId", "UserId", "HeadIconUrl", "MobileNo", "UserName", "NickName", "RecommendCode", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "SessionId", "UserId", "HeadIconUrl", "MobileNo", "UserName", "NickName", "RecommendCode", "LoginType", });
     internal_static_com_qjoy_basjoo_core_model_pb_WxLoginRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_WxLoginRequest_fieldAccessorTable = new

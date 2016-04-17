@@ -2,6 +2,8 @@
 发送注册校验码：qjoy.basjoo.sendRegisterCheckCode
 注册：qjoy.basjoo.registerUser
 登陆：qjoy.basjoo.login
+微信登陆：qjoy.basjoo.wxLogin
+微信登录预信息：qjoy.basjoo.getWxPreInfo
 
 
 #验证码（统一接口）

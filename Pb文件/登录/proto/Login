@@ -35,7 +35,17 @@ message LoginResult {
    
    //推荐码，类似Uber
    optional string                 recommendCode=9;
-    
+
+   //登录类型
+   optional LoginType              loginType =10;
+}
+
+//登录类型
+enum LoginType {
+  //普通登录  
+  NORMAL = 0;
+  //微信登录
+  WXLOGIN = 1;
 }
 
 
