@@ -14,6 +14,9 @@ message GetTopicListRequest {
   
   //所属圈子ID(可选)
   optional string                 columnId =  3;
+
+  //用户ID(可选)
+  optional string                 userId =  4;
 }
 
 //获取话题结果
@@ -81,6 +84,9 @@ message GetTopicDetailRequest {
  
   //话题ID;
   required string                 topicId = 1;  
+
+  //用户ID(可选)
+  optional string                 userId =  2;
   
 }
 
@@ -104,9 +110,9 @@ message TopicDetailInfo{
    required string                 topicId = 1;
    
    //话题类型。1: 热门话题，2：圈子话题
-   optional int32                 topicType = 2;    
+   optional int32                  topicType = 2;    
   
-   //是否置顶
+   //是否置顶 
    required bool                   setTop = 3;
    
    //话题标题
@@ -182,6 +188,10 @@ message AddTopicPraiseRequest {
  
   //话题ID;
   required string                 topicId = 1;  
+
+
+  //用户ID(可选)
+  required string                 userId =  2;
   
 }
 
@@ -202,6 +212,9 @@ message CancelTopicPraiseRequest {
  
   //话题ID;
   required string                 topicId = 1;  
+
+  //用户ID(可选)
+  required string                 userId =  2;
   
 }
 
@@ -227,6 +240,9 @@ message AddTopicReplyRequest {
   
   //回复内容
   required string                 replyContent = 3;
+
+  //用户ID(可选)
+  required string                 userId =  4;
   
 }
 
@@ -276,14 +292,16 @@ message GetTopicPraiseUsersResult {
  
 }
 
+//点赞用户
 message TopicPraiseUser{
 
+   //用户ID
    required string                 userId = 1;
-   
+   //用户昵称
    required string                 userNickName = 2;
-   
+   //用户头像
    required string                 headIconUrl = 3;
-   
+   //用户点赞时间
    required int64                  praiseTime = 4;   
 
 }

@@ -8,6 +8,125 @@ public final class SearchHot {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code com.qjoy.basjoo.core.model.pb.SearchWay}
+   *
+   * <pre>
+   *登录类型
+   * </pre>
+   */
+  public enum SearchWay
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>AGE = 1;</code>
+     *
+     * <pre>
+     *年龄段 
+     * </pre>
+     */
+    AGE(0, 1),
+    /**
+     * <code>PRODUCT = 2;</code>
+     *
+     * <pre>
+     *产品类型
+     * </pre>
+     */
+    PRODUCT(1, 2),
+    /**
+     * <code>BRAND = 3;</code>
+     *
+     * <pre>
+     *品牌类型
+     * </pre>
+     */
+    BRAND(2, 3),
+    ;
+
+    /**
+     * <code>AGE = 1;</code>
+     *
+     * <pre>
+     *年龄段 
+     * </pre>
+     */
+    public static final int AGE_VALUE = 1;
+    /**
+     * <code>PRODUCT = 2;</code>
+     *
+     * <pre>
+     *产品类型
+     * </pre>
+     */
+    public static final int PRODUCT_VALUE = 2;
+    /**
+     * <code>BRAND = 3;</code>
+     *
+     * <pre>
+     *品牌类型
+     * </pre>
+     */
+    public static final int BRAND_VALUE = 3;
+
+
+    public final int getNumber() { return value; }
+
+    public static SearchWay valueOf(int value) {
+      switch (value) {
+        case 1: return AGE;
+        case 2: return PRODUCT;
+        case 3: return BRAND;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SearchWay>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<SearchWay>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SearchWay>() {
+            public SearchWay findValueByNumber(int number) {
+              return SearchWay.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.SearchHot.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SearchWay[] VALUES = values();
+
+    public static SearchWay valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private SearchWay(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.qjoy.basjoo.core.model.pb.SearchWay)
+  }
+
   public interface GetSearchHotRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetSearchHotRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -2420,6 +2539,2354 @@ public final class SearchHot {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.SearchHotInfo)
   }
 
+  public interface GetSearchWayRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetSearchWayRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required .com.qjoy.basjoo.core.model.pb.SearchWay searchWay = 1;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    boolean hasSearchWay();
+    /**
+     * <code>required .com.qjoy.basjoo.core.model.pb.SearchWay searchWay = 1;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay getSearchWay();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetSearchWayRequest}
+   *
+   * <pre>
+   *获取搜索热点
+   * </pre>
+   */
+  public static final class GetSearchWayRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GetSearchWayRequest)
+      GetSearchWayRequestOrBuilder {
+    // Use GetSearchWayRequest.newBuilder() to construct.
+    private GetSearchWayRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private GetSearchWayRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final GetSearchWayRequest defaultInstance;
+    public static GetSearchWayRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public GetSearchWayRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetSearchWayRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay value = com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                searchWay_ = value;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest.class, com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<GetSearchWayRequest> PARSER =
+        new com.google.protobuf.AbstractParser<GetSearchWayRequest>() {
+      public GetSearchWayRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetSearchWayRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetSearchWayRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int SEARCHWAY_FIELD_NUMBER = 1;
+    private com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay searchWay_;
+    /**
+     * <code>required .com.qjoy.basjoo.core.model.pb.SearchWay searchWay = 1;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    public boolean hasSearchWay() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .com.qjoy.basjoo.core.model.pb.SearchWay searchWay = 1;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay getSearchWay() {
+      return searchWay_;
+    }
+
+    private void initFields() {
+      searchWay_ = com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay.AGE;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasSearchWay()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, searchWay_.getNumber());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, searchWay_.getNumber());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetSearchWayRequest}
+     *
+     * <pre>
+     *获取搜索热点
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GetSearchWayRequest)
+        com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest.class, com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        searchWay_ = com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay.AGE;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest build() {
+        com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest result = new com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.searchWay_ = searchWay_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest.getDefaultInstance()) return this;
+        if (other.hasSearchWay()) {
+          setSearchWay(other.getSearchWay());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasSearchWay()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay searchWay_ = com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay.AGE;
+      /**
+       * <code>required .com.qjoy.basjoo.core.model.pb.SearchWay searchWay = 1;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public boolean hasSearchWay() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .com.qjoy.basjoo.core.model.pb.SearchWay searchWay = 1;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay getSearchWay() {
+        return searchWay_;
+      }
+      /**
+       * <code>required .com.qjoy.basjoo.core.model.pb.SearchWay searchWay = 1;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder setSearchWay(com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        searchWay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .com.qjoy.basjoo.core.model.pb.SearchWay searchWay = 1;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder clearSearchWay() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        searchWay_ = com.qjoy.basjoo.core.model.pb.SearchHot.SearchWay.AGE;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetSearchWayRequest)
+    }
+
+    static {
+      defaultInstance = new GetSearchWayRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GetSearchWayRequest)
+  }
+
+  public interface GetSearchWayResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GetSearchWayResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo> 
+        getSearchWayInfosList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo getSearchWayInfos(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    int getSearchWayInfosCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder> 
+        getSearchWayInfosOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder getSearchWayInfosOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetSearchWayResult}
+   *
+   * <pre>
+   *获取搜索方式信息
+   * </pre>
+   */
+  public static final class GetSearchWayResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GetSearchWayResult)
+      GetSearchWayResultOrBuilder {
+    // Use GetSearchWayResult.newBuilder() to construct.
+    private GetSearchWayResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private GetSearchWayResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final GetSearchWayResult defaultInstance;
+    public static GetSearchWayResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public GetSearchWayResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetSearchWayResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                searchWayInfos_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              searchWayInfos_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          searchWayInfos_ = java.util.Collections.unmodifiableList(searchWayInfos_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult.class, com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<GetSearchWayResult> PARSER =
+        new com.google.protobuf.AbstractParser<GetSearchWayResult>() {
+      public GetSearchWayResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetSearchWayResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetSearchWayResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SEARCHWAYINFOS_FIELD_NUMBER = 3;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo> searchWayInfos_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo> getSearchWayInfosList() {
+      return searchWayInfos_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder> 
+        getSearchWayInfosOrBuilderList() {
+      return searchWayInfos_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    public int getSearchWayInfosCount() {
+      return searchWayInfos_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo getSearchWayInfos(int index) {
+      return searchWayInfos_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+     *
+     * <pre>
+     *搜索类型
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder getSearchWayInfosOrBuilder(
+        int index) {
+      return searchWayInfos_.get(index);
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+      searchWayInfos_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getSearchWayInfosCount(); i++) {
+        if (!getSearchWayInfos(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      for (int i = 0; i < searchWayInfos_.size(); i++) {
+        output.writeMessage(3, searchWayInfos_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      for (int i = 0; i < searchWayInfos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, searchWayInfos_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetSearchWayResult}
+     *
+     * <pre>
+     *获取搜索方式信息
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GetSearchWayResult)
+        com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult.class, com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getSearchWayInfosFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (searchWayInfosBuilder_ == null) {
+          searchWayInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          searchWayInfosBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult build() {
+        com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult result = new com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        if (searchWayInfosBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            searchWayInfos_ = java.util.Collections.unmodifiableList(searchWayInfos_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.searchWayInfos_ = searchWayInfos_;
+        } else {
+          result.searchWayInfos_ = searchWayInfosBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        if (searchWayInfosBuilder_ == null) {
+          if (!other.searchWayInfos_.isEmpty()) {
+            if (searchWayInfos_.isEmpty()) {
+              searchWayInfos_ = other.searchWayInfos_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureSearchWayInfosIsMutable();
+              searchWayInfos_.addAll(other.searchWayInfos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.searchWayInfos_.isEmpty()) {
+            if (searchWayInfosBuilder_.isEmpty()) {
+              searchWayInfosBuilder_.dispose();
+              searchWayInfosBuilder_ = null;
+              searchWayInfos_ = other.searchWayInfos_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              searchWayInfosBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getSearchWayInfosFieldBuilder() : null;
+            } else {
+              searchWayInfosBuilder_.addAllMessages(other.searchWayInfos_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        for (int i = 0; i < getSearchWayInfosCount(); i++) {
+          if (!getSearchWayInfos(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.SearchHot.GetSearchWayResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo> searchWayInfos_ =
+        java.util.Collections.emptyList();
+      private void ensureSearchWayInfosIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          searchWayInfos_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo>(searchWayInfos_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder> searchWayInfosBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo> getSearchWayInfosList() {
+        if (searchWayInfosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(searchWayInfos_);
+        } else {
+          return searchWayInfosBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public int getSearchWayInfosCount() {
+        if (searchWayInfosBuilder_ == null) {
+          return searchWayInfos_.size();
+        } else {
+          return searchWayInfosBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo getSearchWayInfos(int index) {
+        if (searchWayInfosBuilder_ == null) {
+          return searchWayInfos_.get(index);
+        } else {
+          return searchWayInfosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder setSearchWayInfos(
+          int index, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo value) {
+        if (searchWayInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchWayInfosIsMutable();
+          searchWayInfos_.set(index, value);
+          onChanged();
+        } else {
+          searchWayInfosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder setSearchWayInfos(
+          int index, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder builderForValue) {
+        if (searchWayInfosBuilder_ == null) {
+          ensureSearchWayInfosIsMutable();
+          searchWayInfos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          searchWayInfosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder addSearchWayInfos(com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo value) {
+        if (searchWayInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchWayInfosIsMutable();
+          searchWayInfos_.add(value);
+          onChanged();
+        } else {
+          searchWayInfosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder addSearchWayInfos(
+          int index, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo value) {
+        if (searchWayInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchWayInfosIsMutable();
+          searchWayInfos_.add(index, value);
+          onChanged();
+        } else {
+          searchWayInfosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder addSearchWayInfos(
+          com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder builderForValue) {
+        if (searchWayInfosBuilder_ == null) {
+          ensureSearchWayInfosIsMutable();
+          searchWayInfos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          searchWayInfosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder addSearchWayInfos(
+          int index, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder builderForValue) {
+        if (searchWayInfosBuilder_ == null) {
+          ensureSearchWayInfosIsMutable();
+          searchWayInfos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          searchWayInfosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder addAllSearchWayInfos(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo> values) {
+        if (searchWayInfosBuilder_ == null) {
+          ensureSearchWayInfosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, searchWayInfos_);
+          onChanged();
+        } else {
+          searchWayInfosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder clearSearchWayInfos() {
+        if (searchWayInfosBuilder_ == null) {
+          searchWayInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          searchWayInfosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public Builder removeSearchWayInfos(int index) {
+        if (searchWayInfosBuilder_ == null) {
+          ensureSearchWayInfosIsMutable();
+          searchWayInfos_.remove(index);
+          onChanged();
+        } else {
+          searchWayInfosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder getSearchWayInfosBuilder(
+          int index) {
+        return getSearchWayInfosFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder getSearchWayInfosOrBuilder(
+          int index) {
+        if (searchWayInfosBuilder_ == null) {
+          return searchWayInfos_.get(index);  } else {
+          return searchWayInfosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder> 
+           getSearchWayInfosOrBuilderList() {
+        if (searchWayInfosBuilder_ != null) {
+          return searchWayInfosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(searchWayInfos_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder addSearchWayInfosBuilder() {
+        return getSearchWayInfosFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder addSearchWayInfosBuilder(
+          int index) {
+        return getSearchWayInfosFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.SearchWayInfo searchWayInfos = 3;</code>
+       *
+       * <pre>
+       *搜索类型
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder> 
+           getSearchWayInfosBuilderList() {
+        return getSearchWayInfosFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder> 
+          getSearchWayInfosFieldBuilder() {
+        if (searchWayInfosBuilder_ == null) {
+          searchWayInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder>(
+                  searchWayInfos_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          searchWayInfos_ = null;
+        }
+        return searchWayInfosBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GetSearchWayResult)
+    }
+
+    static {
+      defaultInstance = new GetSearchWayResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GetSearchWayResult)
+  }
+
+  public interface SearchWayInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.SearchWayInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *背后的code，（上报服务端）
+     * </pre>
+     */
+    boolean hasCode();
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *背后的code，（上报服务端）
+     * </pre>
+     */
+    java.lang.String getCode();
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *背后的code，（上报服务端）
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes();
+
+    /**
+     * <code>required string showName = 2;</code>
+     *
+     * <pre>
+     *显示的名称
+     * </pre>
+     */
+    boolean hasShowName();
+    /**
+     * <code>required string showName = 2;</code>
+     *
+     * <pre>
+     *显示的名称
+     * </pre>
+     */
+    java.lang.String getShowName();
+    /**
+     * <code>required string showName = 2;</code>
+     *
+     * <pre>
+     *显示的名称
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getShowNameBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.SearchWayInfo}
+   *
+   * <pre>
+   *获取搜索热点
+   * </pre>
+   */
+  public static final class SearchWayInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.SearchWayInfo)
+      SearchWayInfoOrBuilder {
+    // Use SearchWayInfo.newBuilder() to construct.
+    private SearchWayInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private SearchWayInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final SearchWayInfo defaultInstance;
+    public static SearchWayInfo getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public SearchWayInfo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SearchWayInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              code_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              showName_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.class, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<SearchWayInfo> PARSER =
+        new com.google.protobuf.AbstractParser<SearchWayInfo>() {
+      public SearchWayInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SearchWayInfo(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SearchWayInfo> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int CODE_FIELD_NUMBER = 1;
+    private java.lang.Object code_;
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *背后的code，（上报服务端）
+     * </pre>
+     */
+    public boolean hasCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *背后的code，（上报服务端）
+     * </pre>
+     */
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          code_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string code = 1;</code>
+     *
+     * <pre>
+     *背后的code，（上报服务端）
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHOWNAME_FIELD_NUMBER = 2;
+    private java.lang.Object showName_;
+    /**
+     * <code>required string showName = 2;</code>
+     *
+     * <pre>
+     *显示的名称
+     * </pre>
+     */
+    public boolean hasShowName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string showName = 2;</code>
+     *
+     * <pre>
+     *显示的名称
+     * </pre>
+     */
+    public java.lang.String getShowName() {
+      java.lang.Object ref = showName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          showName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string showName = 2;</code>
+     *
+     * <pre>
+     *显示的名称
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getShowNameBytes() {
+      java.lang.Object ref = showName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        showName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      code_ = "";
+      showName_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasShowName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getShowNameBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getShowNameBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.SearchWayInfo}
+     *
+     * <pre>
+     *获取搜索热点
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.SearchWayInfo)
+        com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.class, com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        code_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        showName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo build() {
+        com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo buildPartial() {
+        com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo result = new com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.code_ = code_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.showName_ = showName_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo other) {
+        if (other == com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo.getDefaultInstance()) return this;
+        if (other.hasCode()) {
+          bitField0_ |= 0x00000001;
+          code_ = other.code_;
+          onChanged();
+        }
+        if (other.hasShowName()) {
+          bitField0_ |= 0x00000002;
+          showName_ = other.showName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasCode()) {
+          
+          return false;
+        }
+        if (!hasShowName()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.SearchHot.SearchWayInfo) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object code_ = "";
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *背后的code，（上报服务端）
+       * </pre>
+       */
+      public boolean hasCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *背后的code，（上报服务端）
+       * </pre>
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            code_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *背后的code，（上报服务端）
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *背后的code，（上报服务端）
+       * </pre>
+       */
+      public Builder setCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *背后的code，（上报服务端）
+       * </pre>
+       */
+      public Builder clearCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        code_ = getDefaultInstance().getCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string code = 1;</code>
+       *
+       * <pre>
+       *背后的code，（上报服务端）
+       * </pre>
+       */
+      public Builder setCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        code_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object showName_ = "";
+      /**
+       * <code>required string showName = 2;</code>
+       *
+       * <pre>
+       *显示的名称
+       * </pre>
+       */
+      public boolean hasShowName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string showName = 2;</code>
+       *
+       * <pre>
+       *显示的名称
+       * </pre>
+       */
+      public java.lang.String getShowName() {
+        java.lang.Object ref = showName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            showName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string showName = 2;</code>
+       *
+       * <pre>
+       *显示的名称
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getShowNameBytes() {
+        java.lang.Object ref = showName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          showName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string showName = 2;</code>
+       *
+       * <pre>
+       *显示的名称
+       * </pre>
+       */
+      public Builder setShowName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        showName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string showName = 2;</code>
+       *
+       * <pre>
+       *显示的名称
+       * </pre>
+       */
+      public Builder clearShowName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        showName_ = getDefaultInstance().getShowName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string showName = 2;</code>
+       *
+       * <pre>
+       *显示的名称
+       * </pre>
+       */
+      public Builder setShowNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        showName_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.SearchWayInfo)
+    }
+
+    static {
+      defaultInstance = new SearchWayInfo(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.SearchWayInfo)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_GetSearchHotRequest_descriptor;
   private static
@@ -2435,6 +4902,21 @@ public final class SearchHot {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_SearchHotInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2450,8 +4932,16 @@ public final class SearchHot {
       "g\030\002 \002(\t\022C\n\rsearchHotInfo\030\003 \003(\0132,.com.qjo" +
       "y.basjoo.core.model.pb.SearchHotInfo\"J\n\r" +
       "SearchHotInfo\022\020\n\010keywords\030\001 \002(\t\022\022\n\nsearc" +
-      "hType\030\002 \001(\t\022\023\n\013productType\030\003 \001(\tB\037\n\035com." +
-      "qjoy.basjoo.core.model.pb"
+      "hType\030\002 \001(\t\022\023\n\013productType\030\003 \001(\t\"R\n\023GetS" +
+      "earchWayRequest\022;\n\tsearchWay\030\001 \002(\0162(.com" +
+      ".qjoy.basjoo.core.model.pb.SearchWay\"\201\001\n" +
+      "\022GetSearchWayResult\022\022\n\nresultCode\030\001 \002(\t\022",
+      "\021\n\tresultMsg\030\002 \002(\t\022D\n\016searchWayInfos\030\003 \003" +
+      "(\0132,.com.qjoy.basjoo.core.model.pb.Searc" +
+      "hWayInfo\"/\n\rSearchWayInfo\022\014\n\004code\030\001 \002(\t\022" +
+      "\020\n\010showName\030\002 \002(\t*,\n\tSearchWay\022\007\n\003AGE\020\001\022" +
+      "\013\n\007PRODUCT\020\002\022\t\n\005BRAND\020\003B\037\n\035com.qjoy.basj" +
+      "oo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2483,6 +4973,24 @@ public final class SearchHot {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_SearchHotInfo_descriptor,
         new java.lang.String[] { "Keywords", "SearchType", "ProductType", });
+    internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayRequest_descriptor,
+        new java.lang.String[] { "SearchWay", });
+    internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_GetSearchWayResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", "SearchWayInfos", });
+    internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_SearchWayInfo_descriptor,
+        new java.lang.String[] { "Code", "ShowName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

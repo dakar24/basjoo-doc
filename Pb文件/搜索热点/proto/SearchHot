@@ -36,6 +36,49 @@ message SearchHotInfo{
 }
 
 
+//获取搜索热点
+message GetSearchWayRequest {  
+ //搜索类型
+   required SearchWay              searchWay =1;
+    
+}
+
+//获取搜索方式信息
+message GetSearchWayResult {  
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   //搜索类型
+   repeated SearchWayInfo          searchWayInfos =3;
+    
+}
+
+
+//获取搜索热点
+message SearchWayInfo {  
+   //背后的code，（上报服务端）
+   required string              code =1;
+   //显示的名称
+   required string              showName =2;
+    
+}
+
+//登录类型
+enum SearchWay {
+  //年龄段 
+  AGE = 1;
+  //产品类型
+  PRODUCT = 2;
+  //品牌类型
+  BRAND =3;
+}
+
+
+
+
+
+
 
 
 

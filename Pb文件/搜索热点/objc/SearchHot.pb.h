@@ -4,7 +4,16 @@
 
 @class GetSearchHotRequest;
 @class GetSearchHotResult;
+@class GetSearchWayRequest;
+@class GetSearchWayResult;
 @class SearchHotInfo;
+@class SearchWayInfo;
+
+typedef NS_ENUM(SInt32, SearchWay) {
+  SearchWayAge = 1,
+  SearchWayProduct = 2,
+  SearchWayBrand = 3,
+};
 
 @interface GetSearchHotRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @end
@@ -24,5 +33,25 @@
 @property (nonatomic,strong) NSString* keywords;
 @property (nonatomic,strong) NSString* searchType;
 @property (nonatomic,strong) NSString* productType;
+@end
+
+@interface GetSearchWayRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasSearchWay;
+@property (nonatomic)SearchWay searchWay;
+@end
+
+@interface GetSearchWayResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic,strong) NSMutableArray * searchWayInfos;
+@end
+
+@interface SearchWayInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasCode;
+@property (readonly) BOOL hasShowName;
+@property (nonatomic,strong) NSString* code;
+@property (nonatomic,strong) NSString* showName;
 @end
 

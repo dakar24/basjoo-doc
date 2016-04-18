@@ -9,6 +9,9 @@ import static com.squareup.wire.Message.Datatype.INT64;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
+/**
+ * 点赞用户
+ */
 public final class TopicPraiseUser extends Message {
 
   public static final int TAG_USERID = 1;
@@ -21,15 +24,27 @@ public final class TopicPraiseUser extends Message {
   public static final String DEFAULT_HEADICONURL = "";
   public static final Long DEFAULT_PRAISETIME = 0L;
 
+  /**
+   * 用户ID
+   */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String userId;
 
+  /**
+   * 用户昵称
+   */
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String userNickName;
 
+  /**
+   * 用户头像
+   */
   @ProtoField(tag = 3, type = STRING, label = REQUIRED)
   public String headIconUrl;
 
+  /**
+   * 用户点赞时间
+   */
   @ProtoField(tag = 4, type = INT64, label = REQUIRED)
   public Long praiseTime;
 

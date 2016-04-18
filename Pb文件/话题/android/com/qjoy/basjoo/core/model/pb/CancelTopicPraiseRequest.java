@@ -14,8 +14,10 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 public final class CancelTopicPraiseRequest extends Message {
 
   public static final int TAG_TOPICID = 1;
+  public static final int TAG_USERID = 2;
 
   public static final String DEFAULT_TOPICID = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 话题ID;
@@ -23,10 +25,17 @@ public final class CancelTopicPraiseRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String topicId;
 
+  /**
+   * 用户ID(可选)
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String userId;
+
   public CancelTopicPraiseRequest(CancelTopicPraiseRequest message) {
     super(message);
     if (message == null) return;
     this.topicId = message.topicId;
+    this.userId = message.userId;
   }
 
   public CancelTopicPraiseRequest() {
@@ -37,6 +46,9 @@ public final class CancelTopicPraiseRequest extends Message {
         case TAG_TOPICID:
         this.topicId = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -46,12 +58,19 @@ public final class CancelTopicPraiseRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof CancelTopicPraiseRequest)) return false;
-    return equals(topicId, ((CancelTopicPraiseRequest) other).topicId);
+    CancelTopicPraiseRequest o = (CancelTopicPraiseRequest) other;
+    return equals(topicId, o.topicId)
+        && equals(userId, o.userId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = topicId != null ? topicId.hashCode() : 0);
+    if (result == 0) {
+      result = topicId != null ? topicId.hashCode() : 0;
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }

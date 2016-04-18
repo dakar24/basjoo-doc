@@ -71,6 +71,32 @@ public final class Topic {
      */
     com.google.protobuf.ByteString
         getColumnIdBytes();
+
+    /**
+     * <code>optional string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>optional string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>optional string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetTopicListRequest}
@@ -142,6 +168,12 @@ public final class Topic {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
               columnId_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              userId_ = bs;
               break;
             }
           }
@@ -284,10 +316,65 @@ public final class Topic {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 4;
+    private java.lang.Object userId_;
+    /**
+     * <code>optional string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       topicType_ = 0;
       startIndex_ = 0;
       columnId_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -315,6 +402,9 @@ public final class Topic {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getColumnIdBytes());
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -335,6 +425,10 @@ public final class Topic {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, getColumnIdBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -463,6 +557,8 @@ public final class Topic {
         bitField0_ = (bitField0_ & ~0x00000002);
         columnId_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -503,6 +599,10 @@ public final class Topic {
           to_bitField0_ |= 0x00000004;
         }
         result.columnId_ = columnId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -528,6 +628,11 @@ public final class Topic {
         if (other.hasColumnId()) {
           bitField0_ |= 0x00000004;
           columnId_ = other.columnId_;
+          onChanged();
+        }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000008;
+          userId_ = other.userId_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -753,6 +858,106 @@ public final class Topic {
   }
   bitField0_ |= 0x00000004;
         columnId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>optional string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -4249,6 +4454,32 @@ public final class Topic {
      */
     com.google.protobuf.ByteString
         getTopicIdBytes();
+
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetTopicDetailRequest}
@@ -4310,6 +4541,12 @@ public final class Topic {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               topicId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -4406,8 +4643,63 @@ public final class Topic {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       topicId_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4429,6 +4721,9 @@ public final class Topic {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getTopicIdBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4441,6 +4736,10 @@ public final class Topic {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getTopicIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4565,6 +4864,8 @@ public final class Topic {
         super.clear();
         topicId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -4597,6 +4898,10 @@ public final class Topic {
           to_bitField0_ |= 0x00000001;
         }
         result.topicId_ = topicId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4616,6 +4921,11 @@ public final class Topic {
         if (other.hasTopicId()) {
           bitField0_ |= 0x00000001;
           topicId_ = other.topicId_;
+          onChanged();
+        }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4745,6 +5055,106 @@ public final class Topic {
   }
   bitField0_ |= 0x00000001;
         topicId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -5729,7 +6139,7 @@ public final class Topic {
      * <code>required bool setTop = 3;</code>
      *
      * <pre>
-     *是否置顶
+     *是否置顶 
      * </pre>
      */
     boolean hasSetTop();
@@ -5737,7 +6147,7 @@ public final class Topic {
      * <code>required bool setTop = 3;</code>
      *
      * <pre>
-     *是否置顶
+     *是否置顶 
      * </pre>
      */
     boolean getSetTop();
@@ -6314,7 +6724,7 @@ public final class Topic {
      * <code>required bool setTop = 3;</code>
      *
      * <pre>
-     *是否置顶
+     *是否置顶 
      * </pre>
      */
     public boolean hasSetTop() {
@@ -6324,7 +6734,7 @@ public final class Topic {
      * <code>required bool setTop = 3;</code>
      *
      * <pre>
-     *是否置顶
+     *是否置顶 
      * </pre>
      */
     public boolean getSetTop() {
@@ -7551,7 +7961,7 @@ public final class Topic {
        * <code>required bool setTop = 3;</code>
        *
        * <pre>
-       *是否置顶
+       *是否置顶 
        * </pre>
        */
       public boolean hasSetTop() {
@@ -7561,7 +7971,7 @@ public final class Topic {
        * <code>required bool setTop = 3;</code>
        *
        * <pre>
-       *是否置顶
+       *是否置顶 
        * </pre>
        */
       public boolean getSetTop() {
@@ -7571,7 +7981,7 @@ public final class Topic {
        * <code>required bool setTop = 3;</code>
        *
        * <pre>
-       *是否置顶
+       *是否置顶 
        * </pre>
        */
       public Builder setSetTop(boolean value) {
@@ -7584,7 +7994,7 @@ public final class Topic {
        * <code>required bool setTop = 3;</code>
        *
        * <pre>
-       *是否置顶
+       *是否置顶 
        * </pre>
        */
       public Builder clearSetTop() {
@@ -10704,6 +11114,32 @@ public final class Topic {
      */
     com.google.protobuf.ByteString
         getTopicIdBytes();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.AddTopicPraiseRequest}
@@ -10765,6 +11201,12 @@ public final class Topic {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               topicId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -10861,8 +11303,63 @@ public final class Topic {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       topicId_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -10871,6 +11368,10 @@ public final class Topic {
       if (isInitialized == 0) return false;
 
       if (!hasTopicId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -10884,6 +11385,9 @@ public final class Topic {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getTopicIdBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10896,6 +11400,10 @@ public final class Topic {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getTopicIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -11020,6 +11528,8 @@ public final class Topic {
         super.clear();
         topicId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -11052,6 +11562,10 @@ public final class Topic {
           to_bitField0_ |= 0x00000001;
         }
         result.topicId_ = topicId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -11073,12 +11587,21 @@ public final class Topic {
           topicId_ = other.topicId_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasTopicId()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -11200,6 +11723,106 @@ public final class Topic {
   }
   bitField0_ |= 0x00000001;
         topicId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -11901,6 +12524,32 @@ public final class Topic {
      */
     com.google.protobuf.ByteString
         getTopicIdBytes();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CancelTopicPraiseRequest}
@@ -11962,6 +12611,12 @@ public final class Topic {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               topicId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -12058,8 +12713,63 @@ public final class Topic {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       topicId_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -12068,6 +12778,10 @@ public final class Topic {
       if (isInitialized == 0) return false;
 
       if (!hasTopicId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -12081,6 +12795,9 @@ public final class Topic {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getTopicIdBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -12093,6 +12810,10 @@ public final class Topic {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getTopicIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -12217,6 +12938,8 @@ public final class Topic {
         super.clear();
         topicId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -12249,6 +12972,10 @@ public final class Topic {
           to_bitField0_ |= 0x00000001;
         }
         result.topicId_ = topicId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -12270,12 +12997,21 @@ public final class Topic {
           topicId_ = other.topicId_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasTopicId()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -12397,6 +13133,106 @@ public final class Topic {
   }
   bitField0_ |= 0x00000001;
         topicId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -13150,6 +13986,32 @@ public final class Topic {
      */
     com.google.protobuf.ByteString
         getReplyContentBytes();
+
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.AddTopicReplyRequest}
@@ -13223,6 +14085,12 @@ public final class Topic {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
               replyContent_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              userId_ = bs;
               break;
             }
           }
@@ -13427,10 +14295,65 @@ public final class Topic {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 4;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID(可选)
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       topicId_ = "";
       replyToId_ = "";
       replyContent_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -13450,6 +14373,10 @@ public final class Topic {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -13465,6 +14392,9 @@ public final class Topic {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getReplyContentBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -13486,6 +14416,10 @@ public final class Topic {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, getReplyContentBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -13614,6 +14548,8 @@ public final class Topic {
         bitField0_ = (bitField0_ & ~0x00000002);
         replyContent_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -13654,6 +14590,10 @@ public final class Topic {
           to_bitField0_ |= 0x00000004;
         }
         result.replyContent_ = replyContent_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -13685,6 +14625,11 @@ public final class Topic {
           replyContent_ = other.replyContent_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000008;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -13699,6 +14644,10 @@ public final class Topic {
           return false;
         }
         if (!hasReplyContent()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -14020,6 +14969,106 @@ public final class Topic {
   }
   bitField0_ |= 0x00000004;
         replyContent_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID(可选)
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -16813,57 +17862,105 @@ public final class Topic {
 
     /**
      * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
      */
     boolean hasUserId();
     /**
      * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
      */
     java.lang.String getUserId();
     /**
      * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
      */
     com.google.protobuf.ByteString
         getUserIdBytes();
 
     /**
      * <code>required string userNickName = 2;</code>
+     *
+     * <pre>
+     *用户昵称
+     * </pre>
      */
     boolean hasUserNickName();
     /**
      * <code>required string userNickName = 2;</code>
+     *
+     * <pre>
+     *用户昵称
+     * </pre>
      */
     java.lang.String getUserNickName();
     /**
      * <code>required string userNickName = 2;</code>
+     *
+     * <pre>
+     *用户昵称
+     * </pre>
      */
     com.google.protobuf.ByteString
         getUserNickNameBytes();
 
     /**
      * <code>required string headIconUrl = 3;</code>
+     *
+     * <pre>
+     *用户头像
+     * </pre>
      */
     boolean hasHeadIconUrl();
     /**
      * <code>required string headIconUrl = 3;</code>
+     *
+     * <pre>
+     *用户头像
+     * </pre>
      */
     java.lang.String getHeadIconUrl();
     /**
      * <code>required string headIconUrl = 3;</code>
+     *
+     * <pre>
+     *用户头像
+     * </pre>
      */
     com.google.protobuf.ByteString
         getHeadIconUrlBytes();
 
     /**
      * <code>required int64 praiseTime = 4;</code>
+     *
+     * <pre>
+     *用户点赞时间
+     * </pre>
      */
     boolean hasPraiseTime();
     /**
      * <code>required int64 praiseTime = 4;</code>
+     *
+     * <pre>
+     *用户点赞时间
+     * </pre>
      */
     long getPraiseTime();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.TopicPraiseUser}
+   *
+   * <pre>
+   *点赞用户
+   * </pre>
    */
   public static final class TopicPraiseUser extends
       com.google.protobuf.GeneratedMessage implements
@@ -16981,12 +18078,20 @@ public final class Topic {
     private java.lang.Object userId_;
     /**
      * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
      */
     public boolean hasUserId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
      */
     public java.lang.String getUserId() {
       java.lang.Object ref = userId_;
@@ -17004,6 +18109,10 @@ public final class Topic {
     }
     /**
      * <code>required string userId = 1;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
      */
     public com.google.protobuf.ByteString
         getUserIdBytes() {
@@ -17023,12 +18132,20 @@ public final class Topic {
     private java.lang.Object userNickName_;
     /**
      * <code>required string userNickName = 2;</code>
+     *
+     * <pre>
+     *用户昵称
+     * </pre>
      */
     public boolean hasUserNickName() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required string userNickName = 2;</code>
+     *
+     * <pre>
+     *用户昵称
+     * </pre>
      */
     public java.lang.String getUserNickName() {
       java.lang.Object ref = userNickName_;
@@ -17046,6 +18163,10 @@ public final class Topic {
     }
     /**
      * <code>required string userNickName = 2;</code>
+     *
+     * <pre>
+     *用户昵称
+     * </pre>
      */
     public com.google.protobuf.ByteString
         getUserNickNameBytes() {
@@ -17065,12 +18186,20 @@ public final class Topic {
     private java.lang.Object headIconUrl_;
     /**
      * <code>required string headIconUrl = 3;</code>
+     *
+     * <pre>
+     *用户头像
+     * </pre>
      */
     public boolean hasHeadIconUrl() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required string headIconUrl = 3;</code>
+     *
+     * <pre>
+     *用户头像
+     * </pre>
      */
     public java.lang.String getHeadIconUrl() {
       java.lang.Object ref = headIconUrl_;
@@ -17088,6 +18217,10 @@ public final class Topic {
     }
     /**
      * <code>required string headIconUrl = 3;</code>
+     *
+     * <pre>
+     *用户头像
+     * </pre>
      */
     public com.google.protobuf.ByteString
         getHeadIconUrlBytes() {
@@ -17107,12 +18240,20 @@ public final class Topic {
     private long praiseTime_;
     /**
      * <code>required int64 praiseTime = 4;</code>
+     *
+     * <pre>
+     *用户点赞时间
+     * </pre>
      */
     public boolean hasPraiseTime() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>required int64 praiseTime = 4;</code>
+     *
+     * <pre>
+     *用户点赞时间
+     * </pre>
      */
     public long getPraiseTime() {
       return praiseTime_;
@@ -17270,6 +18411,10 @@ public final class Topic {
     }
     /**
      * Protobuf type {@code com.qjoy.basjoo.core.model.pb.TopicPraiseUser}
+     *
+     * <pre>
+     *点赞用户
+     * </pre>
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
@@ -17439,12 +18584,20 @@ public final class Topic {
       private java.lang.Object userId_ = "";
       /**
        * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
        */
       public boolean hasUserId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
        */
       public java.lang.String getUserId() {
         java.lang.Object ref = userId_;
@@ -17462,6 +18615,10 @@ public final class Topic {
       }
       /**
        * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
        */
       public com.google.protobuf.ByteString
           getUserIdBytes() {
@@ -17478,6 +18635,10 @@ public final class Topic {
       }
       /**
        * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
        */
       public Builder setUserId(
           java.lang.String value) {
@@ -17491,6 +18652,10 @@ public final class Topic {
       }
       /**
        * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
        */
       public Builder clearUserId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -17500,6 +18665,10 @@ public final class Topic {
       }
       /**
        * <code>required string userId = 1;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
        */
       public Builder setUserIdBytes(
           com.google.protobuf.ByteString value) {
@@ -17515,12 +18684,20 @@ public final class Topic {
       private java.lang.Object userNickName_ = "";
       /**
        * <code>required string userNickName = 2;</code>
+       *
+       * <pre>
+       *用户昵称
+       * </pre>
        */
       public boolean hasUserNickName() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required string userNickName = 2;</code>
+       *
+       * <pre>
+       *用户昵称
+       * </pre>
        */
       public java.lang.String getUserNickName() {
         java.lang.Object ref = userNickName_;
@@ -17538,6 +18715,10 @@ public final class Topic {
       }
       /**
        * <code>required string userNickName = 2;</code>
+       *
+       * <pre>
+       *用户昵称
+       * </pre>
        */
       public com.google.protobuf.ByteString
           getUserNickNameBytes() {
@@ -17554,6 +18735,10 @@ public final class Topic {
       }
       /**
        * <code>required string userNickName = 2;</code>
+       *
+       * <pre>
+       *用户昵称
+       * </pre>
        */
       public Builder setUserNickName(
           java.lang.String value) {
@@ -17567,6 +18752,10 @@ public final class Topic {
       }
       /**
        * <code>required string userNickName = 2;</code>
+       *
+       * <pre>
+       *用户昵称
+       * </pre>
        */
       public Builder clearUserNickName() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -17576,6 +18765,10 @@ public final class Topic {
       }
       /**
        * <code>required string userNickName = 2;</code>
+       *
+       * <pre>
+       *用户昵称
+       * </pre>
        */
       public Builder setUserNickNameBytes(
           com.google.protobuf.ByteString value) {
@@ -17591,12 +18784,20 @@ public final class Topic {
       private java.lang.Object headIconUrl_ = "";
       /**
        * <code>required string headIconUrl = 3;</code>
+       *
+       * <pre>
+       *用户头像
+       * </pre>
        */
       public boolean hasHeadIconUrl() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required string headIconUrl = 3;</code>
+       *
+       * <pre>
+       *用户头像
+       * </pre>
        */
       public java.lang.String getHeadIconUrl() {
         java.lang.Object ref = headIconUrl_;
@@ -17614,6 +18815,10 @@ public final class Topic {
       }
       /**
        * <code>required string headIconUrl = 3;</code>
+       *
+       * <pre>
+       *用户头像
+       * </pre>
        */
       public com.google.protobuf.ByteString
           getHeadIconUrlBytes() {
@@ -17630,6 +18835,10 @@ public final class Topic {
       }
       /**
        * <code>required string headIconUrl = 3;</code>
+       *
+       * <pre>
+       *用户头像
+       * </pre>
        */
       public Builder setHeadIconUrl(
           java.lang.String value) {
@@ -17643,6 +18852,10 @@ public final class Topic {
       }
       /**
        * <code>required string headIconUrl = 3;</code>
+       *
+       * <pre>
+       *用户头像
+       * </pre>
        */
       public Builder clearHeadIconUrl() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -17652,6 +18865,10 @@ public final class Topic {
       }
       /**
        * <code>required string headIconUrl = 3;</code>
+       *
+       * <pre>
+       *用户头像
+       * </pre>
        */
       public Builder setHeadIconUrlBytes(
           com.google.protobuf.ByteString value) {
@@ -17667,18 +18884,30 @@ public final class Topic {
       private long praiseTime_ ;
       /**
        * <code>required int64 praiseTime = 4;</code>
+       *
+       * <pre>
+       *用户点赞时间
+       * </pre>
        */
       public boolean hasPraiseTime() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>required int64 praiseTime = 4;</code>
+       *
+       * <pre>
+       *用户点赞时间
+       * </pre>
        */
       public long getPraiseTime() {
         return praiseTime_;
       }
       /**
        * <code>required int64 praiseTime = 4;</code>
+       *
+       * <pre>
+       *用户点赞时间
+       * </pre>
        */
       public Builder setPraiseTime(long value) {
         bitField0_ |= 0x00000008;
@@ -17688,6 +18917,10 @@ public final class Topic {
       }
       /**
        * <code>required int64 praiseTime = 4;</code>
+       *
+       * <pre>
+       *用户点赞时间
+       * </pre>
        */
       public Builder clearPraiseTime() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -17796,46 +19029,48 @@ public final class Topic {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\005Topic\022\035com.qjoy.basjoo.core.model.pb\"N" +
+      "\n\005Topic\022\035com.qjoy.basjoo.core.model.pb\"^" +
       "\n\023GetTopicListRequest\022\021\n\ttopicType\030\001 \002(\005" +
-      "\022\022\n\nstartIndex\030\002 \001(\005\022\020\n\010columnId\030\003 \001(\t\"\243" +
-      "\001\n\022GetTopicListResult\022\022\n\nresultCode\030\001 \002(" +
-      "\t\022\021\n\tresultMsg\030\002 \002(\t\022C\n\rtopicLiteInfo\030\003 " +
-      "\003(\0132,.com.qjoy.basjoo.core.model.pb.Topi" +
-      "cLiteInfo\022\020\n\010maxIndex\030\004 \001(\005\022\017\n\007hasMore\030\005" +
-      " \002(\010\"\371\001\n\rTopicLiteInfo\022\017\n\007topicId\030\001 \002(\t\022" +
-      "\021\n\ttopicType\030\002 \001(\005\022\016\n\006setTop\030\003 \002(\010\022\022\n\nto" +
-      "picTitle\030\004 \002(\t\022\021\n\ttopicDesc\030\005 \001(\t\022\021\n\trea",
-      "dCount\030\006 \002(\003\022\023\n\013praiseCount\030\007 \002(\003\022\022\n\nrep" +
-      "lyCount\030\010 \002(\003\022\022\n\ncreateTime\030\t \002(\003\022\025\n\rlas" +
-      "tReplyTime\030\n \001(\003\022\017\n\007praised\030\013 \002(\010\022\025\n\rtop" +
-      "icImageUrl\030\014 \001(\t\"(\n\025GetTopicDetailReques" +
-      "t\022\017\n\007topicId\030\001 \002(\t\"\206\001\n\024GetTopicDetailRes" +
-      "ult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002" +
-      "(\t\022G\n\017topicDetailInfo\030\003 \001(\0132..com.qjoy.b" +
-      "asjoo.core.model.pb.TopicDetailInfo\"\365\002\n\017" +
-      "TopicDetailInfo\022\017\n\007topicId\030\001 \002(\t\022\021\n\ttopi" +
-      "cType\030\002 \001(\005\022\016\n\006setTop\030\003 \002(\010\022\022\n\ntopicTitl",
-      "e\030\004 \002(\t\022\021\n\ttopicDesc\030\005 \001(\t\022\024\n\014topicConte" +
-      "nt\030\006 \001(\t\022\021\n\treadCount\030\007 \002(\003\022\023\n\013praiseCou" +
-      "nt\030\010 \002(\003\022\022\n\nreplyCount\030\t \002(\003\022\022\n\ncreateTi" +
-      "me\030\n \002(\003\022\025\n\rlastReplyTime\030\013 \002(\003\022\032\n\022prais" +
-      "eHeadIconUrls\030\014 \003(\t\022E\n\016topicReplyInfo\030\r " +
-      "\003(\0132-.com.qjoy.basjoo.core.model.pb.Topi" +
-      "cReplyInfo\022\017\n\007praised\030\016 \002(\010\022\026\n\016topicImag" +
-      "eUrls\030\017 \003(\t\"\304\001\n\016TopicReplyInfo\022\017\n\007replyI" +
-      "d\030\001 \002(\t\022\023\n\013replyUserId\030\002 \002(\t\022\025\n\rreplyNic" +
-      "kName\030\003 \002(\t\022\034\n\024replyUserHeadIconUrl\030\004 \001(",
-      "\t\022\025\n\rreplyToUserId\030\005 \001(\t\022\027\n\017replyToNickN" +
-      "ame\030\006 \001(\t\022\024\n\014replyContent\030\007 \002(\t\022\021\n\treply" +
-      "Time\030\010 \002(\003\"(\n\025AddTopicPraiseRequest\022\017\n\007t" +
-      "opicId\030\001 \002(\t\"=\n\024AddTopicPraiseResult\022\022\n\n" +
-      "resultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"+\n\030C" +
-      "ancelTopicPraiseRequest\022\017\n\007topicId\030\001 \002(\t" +
-      "\"@\n\027CancelTopicPraiseResult\022\022\n\nresultCod" +
-      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"P\n\024AddTopicRe" +
-      "plyRequest\022\017\n\007topicId\030\001 \002(\t\022\021\n\treplyToId" +
-      "\030\002 \002(\t\022\024\n\014replyContent\030\003 \002(\t\"<\n\023AddTopic",
+      "\022\022\n\nstartIndex\030\002 \001(\005\022\020\n\010columnId\030\003 \001(\t\022\016" +
+      "\n\006userId\030\004 \001(\t\"\243\001\n\022GetTopicListResult\022\022\n" +
+      "\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022C\n\r" +
+      "topicLiteInfo\030\003 \003(\0132,.com.qjoy.basjoo.co" +
+      "re.model.pb.TopicLiteInfo\022\020\n\010maxIndex\030\004 " +
+      "\001(\005\022\017\n\007hasMore\030\005 \002(\010\"\371\001\n\rTopicLiteInfo\022\017" +
+      "\n\007topicId\030\001 \002(\t\022\021\n\ttopicType\030\002 \001(\005\022\016\n\006se" +
+      "tTop\030\003 \002(\010\022\022\n\ntopicTitle\030\004 \002(\t\022\021\n\ttopicD",
+      "esc\030\005 \001(\t\022\021\n\treadCount\030\006 \002(\003\022\023\n\013praiseCo" +
+      "unt\030\007 \002(\003\022\022\n\nreplyCount\030\010 \002(\003\022\022\n\ncreateT" +
+      "ime\030\t \002(\003\022\025\n\rlastReplyTime\030\n \001(\003\022\017\n\007prai" +
+      "sed\030\013 \002(\010\022\025\n\rtopicImageUrl\030\014 \001(\t\"8\n\025GetT" +
+      "opicDetailRequest\022\017\n\007topicId\030\001 \002(\t\022\016\n\006us" +
+      "erId\030\002 \001(\t\"\206\001\n\024GetTopicDetailResult\022\022\n\nr" +
+      "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017to" +
+      "picDetailInfo\030\003 \001(\0132..com.qjoy.basjoo.co" +
+      "re.model.pb.TopicDetailInfo\"\365\002\n\017TopicDet" +
+      "ailInfo\022\017\n\007topicId\030\001 \002(\t\022\021\n\ttopicType\030\002 ",
+      "\001(\005\022\016\n\006setTop\030\003 \002(\010\022\022\n\ntopicTitle\030\004 \002(\t\022" +
+      "\021\n\ttopicDesc\030\005 \001(\t\022\024\n\014topicContent\030\006 \001(\t" +
+      "\022\021\n\treadCount\030\007 \002(\003\022\023\n\013praiseCount\030\010 \002(\003" +
+      "\022\022\n\nreplyCount\030\t \002(\003\022\022\n\ncreateTime\030\n \002(\003" +
+      "\022\025\n\rlastReplyTime\030\013 \002(\003\022\032\n\022praiseHeadIco" +
+      "nUrls\030\014 \003(\t\022E\n\016topicReplyInfo\030\r \003(\0132-.co" +
+      "m.qjoy.basjoo.core.model.pb.TopicReplyIn" +
+      "fo\022\017\n\007praised\030\016 \002(\010\022\026\n\016topicImageUrls\030\017 " +
+      "\003(\t\"\304\001\n\016TopicReplyInfo\022\017\n\007replyId\030\001 \002(\t\022" +
+      "\023\n\013replyUserId\030\002 \002(\t\022\025\n\rreplyNickName\030\003 ",
+      "\002(\t\022\034\n\024replyUserHeadIconUrl\030\004 \001(\t\022\025\n\rrep" +
+      "lyToUserId\030\005 \001(\t\022\027\n\017replyToNickName\030\006 \001(" +
+      "\t\022\024\n\014replyContent\030\007 \002(\t\022\021\n\treplyTime\030\010 \002" +
+      "(\003\"8\n\025AddTopicPraiseRequest\022\017\n\007topicId\030\001" +
+      " \002(\t\022\016\n\006userId\030\002 \002(\t\"=\n\024AddTopicPraiseRe" +
+      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 " +
+      "\002(\t\";\n\030CancelTopicPraiseRequest\022\017\n\007topic" +
+      "Id\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"@\n\027CancelTopicP" +
+      "raiseResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
+      "tMsg\030\002 \002(\t\"`\n\024AddTopicReplyRequest\022\017\n\007to",
+      "picId\030\001 \002(\t\022\021\n\treplyToId\030\002 \002(\t\022\024\n\014replyC" +
+      "ontent\030\003 \002(\t\022\016\n\006userId\030\004 \002(\t\"<\n\023AddTopic" +
       "ReplyResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
       "tMsg\030\002 \002(\t\"A\n\032GetTopicPraiseUsersRequest" +
       "\022\017\n\007topicId\030\001 \002(\t\022\022\n\nstartIndex\030\002 \001(\005\"\252\001" +
@@ -17843,9 +19078,9 @@ public final class Topic {
       "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003" +
       " \001(\005\022\017\n\007hasMore\030\004 \002(\010\022C\n\013praiseUsers\030\005 \003" +
       "(\0132..com.qjoy.basjoo.core.model.pb.Topic" +
-      "PraiseUser\"`\n\017TopicPraiseUser\022\016\n\006userId\030" +
+      "PraiseUser\"`\n\017TopicPraiseUser\022\016\n\006userId\030",
       "\001 \002(\t\022\024\n\014userNickName\030\002 \002(\t\022\023\n\013headIconU" +
-      "rl\030\003 \002(\t\022\022\n\npraiseTime\030\004 \002(\003B\037\n\035com.qjoy",
+      "rl\030\003 \002(\t\022\022\n\npraiseTime\030\004 \002(\003B\037\n\035com.qjoy" +
       ".basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
@@ -17865,7 +19100,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetTopicListRequest_descriptor,
-        new java.lang.String[] { "TopicType", "StartIndex", "ColumnId", });
+        new java.lang.String[] { "TopicType", "StartIndex", "ColumnId", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicListResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicListResult_fieldAccessorTable = new
@@ -17883,7 +19118,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicDetailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetTopicDetailRequest_descriptor,
-        new java.lang.String[] { "TopicId", });
+        new java.lang.String[] { "TopicId", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicDetailResult_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_qjoy_basjoo_core_model_pb_GetTopicDetailResult_fieldAccessorTable = new
@@ -17907,7 +19142,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicPraiseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_AddTopicPraiseRequest_descriptor,
-        new java.lang.String[] { "TopicId", });
+        new java.lang.String[] { "TopicId", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicPraiseResult_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicPraiseResult_fieldAccessorTable = new
@@ -17919,7 +19154,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_CancelTopicPraiseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CancelTopicPraiseRequest_descriptor,
-        new java.lang.String[] { "TopicId", });
+        new java.lang.String[] { "TopicId", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_CancelTopicPraiseResult_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_com_qjoy_basjoo_core_model_pb_CancelTopicPraiseResult_fieldAccessorTable = new
@@ -17931,7 +19166,7 @@ public final class Topic {
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicReplyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_AddTopicReplyRequest_descriptor,
-        new java.lang.String[] { "TopicId", "ReplyToId", "ReplyContent", });
+        new java.lang.String[] { "TopicId", "ReplyToId", "ReplyContent", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicReplyResult_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_com_qjoy_basjoo_core_model_pb_AddTopicReplyResult_fieldAccessorTable = new

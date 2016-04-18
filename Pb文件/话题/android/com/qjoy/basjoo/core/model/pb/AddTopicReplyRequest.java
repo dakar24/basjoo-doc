@@ -16,10 +16,12 @@ public final class AddTopicReplyRequest extends Message {
   public static final int TAG_TOPICID = 1;
   public static final int TAG_REPLYTOID = 2;
   public static final int TAG_REPLYCONTENT = 3;
+  public static final int TAG_USERID = 4;
 
   public static final String DEFAULT_TOPICID = "";
   public static final String DEFAULT_REPLYTOID = "";
   public static final String DEFAULT_REPLYCONTENT = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 话题ID;
@@ -39,12 +41,19 @@ public final class AddTopicReplyRequest extends Message {
   @ProtoField(tag = 3, type = STRING, label = REQUIRED)
   public String replyContent;
 
+  /**
+   * 用户ID(可选)
+   */
+  @ProtoField(tag = 4, type = STRING, label = REQUIRED)
+  public String userId;
+
   public AddTopicReplyRequest(AddTopicReplyRequest message) {
     super(message);
     if (message == null) return;
     this.topicId = message.topicId;
     this.replyToId = message.replyToId;
     this.replyContent = message.replyContent;
+    this.userId = message.userId;
   }
 
   public AddTopicReplyRequest() {
@@ -61,6 +70,9 @@ public final class AddTopicReplyRequest extends Message {
         case TAG_REPLYCONTENT:
         this.replyContent = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -73,7 +85,8 @@ public final class AddTopicReplyRequest extends Message {
     AddTopicReplyRequest o = (AddTopicReplyRequest) other;
     return equals(topicId, o.topicId)
         && equals(replyToId, o.replyToId)
-        && equals(replyContent, o.replyContent);
+        && equals(replyContent, o.replyContent)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -83,6 +96,7 @@ public final class AddTopicReplyRequest extends Message {
       result = topicId != null ? topicId.hashCode() : 0;
       result = result * 37 + (replyToId != null ? replyToId.hashCode() : 0);
       result = result * 37 + (replyContent != null ? replyContent.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

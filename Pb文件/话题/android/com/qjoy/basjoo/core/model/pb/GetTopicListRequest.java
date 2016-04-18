@@ -17,10 +17,12 @@ public final class GetTopicListRequest extends Message {
   public static final int TAG_TOPICTYPE = 1;
   public static final int TAG_STARTINDEX = 2;
   public static final int TAG_COLUMNID = 3;
+  public static final int TAG_USERID = 4;
 
   public static final Integer DEFAULT_TOPICTYPE = 0;
   public static final Integer DEFAULT_STARTINDEX = 0;
   public static final String DEFAULT_COLUMNID = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 话题类型 1: 热门话题，2：圈子话题
@@ -40,12 +42,19 @@ public final class GetTopicListRequest extends Message {
   @ProtoField(tag = 3, type = STRING)
   public String columnId;
 
+  /**
+   * 用户ID(可选)
+   */
+  @ProtoField(tag = 4, type = STRING)
+  public String userId;
+
   public GetTopicListRequest(GetTopicListRequest message) {
     super(message);
     if (message == null) return;
     this.topicType = message.topicType;
     this.startIndex = message.startIndex;
     this.columnId = message.columnId;
+    this.userId = message.userId;
   }
 
   public GetTopicListRequest() {
@@ -62,6 +71,9 @@ public final class GetTopicListRequest extends Message {
         case TAG_COLUMNID:
         this.columnId = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -74,7 +86,8 @@ public final class GetTopicListRequest extends Message {
     GetTopicListRequest o = (GetTopicListRequest) other;
     return equals(topicType, o.topicType)
         && equals(startIndex, o.startIndex)
-        && equals(columnId, o.columnId);
+        && equals(columnId, o.columnId)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -84,6 +97,7 @@ public final class GetTopicListRequest extends Message {
       result = topicType != null ? topicType.hashCode() : 0;
       result = result * 37 + (startIndex != null ? startIndex.hashCode() : 0);
       result = result * 37 + (columnId != null ? columnId.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

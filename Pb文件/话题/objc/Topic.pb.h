@@ -23,9 +23,11 @@
 @property (readonly) BOOL hasTopicType;
 @property (readonly) BOOL hasStartIndex;
 @property (readonly) BOOL hasColumnId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic)SInt32 topicType;
 @property (nonatomic)SInt32 startIndex;
 @property (nonatomic,strong) NSString* columnId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetTopicListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -69,7 +71,9 @@
 
 @interface GetTopicDetailRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasTopicId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* topicId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetTopicDetailResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -132,7 +136,9 @@
 
 @interface AddTopicPraiseRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasTopicId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* topicId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface AddTopicPraiseResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -144,7 +150,9 @@
 
 @interface CancelTopicPraiseRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasTopicId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* topicId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface CancelTopicPraiseResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -158,9 +166,11 @@
 @property (readonly) BOOL hasTopicId;
 @property (readonly) BOOL hasReplyToId;
 @property (readonly) BOOL hasReplyContent;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* topicId;
 @property (nonatomic,strong) NSString* replyToId;
 @property (nonatomic,strong) NSString* replyContent;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface AddTopicReplyResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
