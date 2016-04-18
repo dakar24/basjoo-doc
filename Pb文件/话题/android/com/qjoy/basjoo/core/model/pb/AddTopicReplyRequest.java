@@ -32,7 +32,7 @@ public final class AddTopicReplyRequest extends Message {
   /**
    * 定向回复ID;
    */
-  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 2, type = STRING)
   public String replyToId;
 
   /**

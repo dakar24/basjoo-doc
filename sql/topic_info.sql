@@ -11,7 +11,7 @@ CREATE TABLE `topic_info` (
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
   `last_reply_time` timestamp NULL DEFAULT NULL COMMENT '最后回复时间',
   `praised` int(11) DEFAULT NULL COMMENT '用户本人是否已点赞 1是0否',
-  `topic_image_urls` varchar(255) NOT NULL DEFAULT '' COMMENT '话题图片地址',
+  `topic_image_url` varchar(255) NOT NULL DEFAULT '' COMMENT '话题图片地址',
   `gmt_create` datetime DEFAULT NULL COMMENT '创建时间',
   `gmt_modify` timestamp NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`topic_id`)

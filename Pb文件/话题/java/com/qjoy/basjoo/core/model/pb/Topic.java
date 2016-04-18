@@ -6299,7 +6299,7 @@ public final class Topic {
     long getCreateTime();
 
     /**
-     * <code>required int64 lastReplyTime = 11;</code>
+     * <code>optional int64 lastReplyTime = 11;</code>
      *
      * <pre>
      *最后回复时间
@@ -6307,7 +6307,7 @@ public final class Topic {
      */
     boolean hasLastReplyTime();
     /**
-     * <code>required int64 lastReplyTime = 11;</code>
+     * <code>optional int64 lastReplyTime = 11;</code>
      *
      * <pre>
      *最后回复时间
@@ -6998,7 +6998,7 @@ public final class Topic {
     public static final int LASTREPLYTIME_FIELD_NUMBER = 11;
     private long lastReplyTime_;
     /**
-     * <code>required int64 lastReplyTime = 11;</code>
+     * <code>optional int64 lastReplyTime = 11;</code>
      *
      * <pre>
      *最后回复时间
@@ -7008,7 +7008,7 @@ public final class Topic {
       return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>required int64 lastReplyTime = 11;</code>
+     * <code>optional int64 lastReplyTime = 11;</code>
      *
      * <pre>
      *最后回复时间
@@ -7234,10 +7234,6 @@ public final class Topic {
         return false;
       }
       if (!hasCreateTime()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasLastReplyTime()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -7769,10 +7765,6 @@ public final class Topic {
           return false;
         }
         if (!hasCreateTime()) {
-          
-          return false;
-        }
-        if (!hasLastReplyTime()) {
           
           return false;
         }
@@ -8498,7 +8490,7 @@ public final class Topic {
 
       private long lastReplyTime_ ;
       /**
-       * <code>required int64 lastReplyTime = 11;</code>
+       * <code>optional int64 lastReplyTime = 11;</code>
        *
        * <pre>
        *最后回复时间
@@ -8508,7 +8500,7 @@ public final class Topic {
         return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>required int64 lastReplyTime = 11;</code>
+       * <code>optional int64 lastReplyTime = 11;</code>
        *
        * <pre>
        *最后回复时间
@@ -8518,7 +8510,7 @@ public final class Topic {
         return lastReplyTime_;
       }
       /**
-       * <code>required int64 lastReplyTime = 11;</code>
+       * <code>optional int64 lastReplyTime = 11;</code>
        *
        * <pre>
        *最后回复时间
@@ -8531,7 +8523,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>required int64 lastReplyTime = 11;</code>
+       * <code>optional int64 lastReplyTime = 11;</code>
        *
        * <pre>
        *最后回复时间
@@ -13936,7 +13928,7 @@ public final class Topic {
         getTopicIdBytes();
 
     /**
-     * <code>required string replyToId = 2;</code>
+     * <code>optional string replyToId = 2;</code>
      *
      * <pre>
      *定向回复ID;
@@ -13944,7 +13936,7 @@ public final class Topic {
      */
     boolean hasReplyToId();
     /**
-     * <code>required string replyToId = 2;</code>
+     * <code>optional string replyToId = 2;</code>
      *
      * <pre>
      *定向回复ID;
@@ -13952,7 +13944,7 @@ public final class Topic {
      */
     java.lang.String getReplyToId();
     /**
-     * <code>required string replyToId = 2;</code>
+     * <code>optional string replyToId = 2;</code>
      *
      * <pre>
      *定向回复ID;
@@ -14190,7 +14182,7 @@ public final class Topic {
     public static final int REPLYTOID_FIELD_NUMBER = 2;
     private java.lang.Object replyToId_;
     /**
-     * <code>required string replyToId = 2;</code>
+     * <code>optional string replyToId = 2;</code>
      *
      * <pre>
      *定向回复ID;
@@ -14200,7 +14192,7 @@ public final class Topic {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string replyToId = 2;</code>
+     * <code>optional string replyToId = 2;</code>
      *
      * <pre>
      *定向回复ID;
@@ -14221,7 +14213,7 @@ public final class Topic {
       }
     }
     /**
-     * <code>required string replyToId = 2;</code>
+     * <code>optional string replyToId = 2;</code>
      *
      * <pre>
      *定向回复ID;
@@ -14362,10 +14354,6 @@ public final class Topic {
       if (isInitialized == 0) return false;
 
       if (!hasTopicId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasReplyToId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -14639,10 +14627,6 @@ public final class Topic {
           
           return false;
         }
-        if (!hasReplyToId()) {
-          
-          return false;
-        }
         if (!hasReplyContent()) {
           
           return false;
@@ -14775,7 +14759,7 @@ public final class Topic {
 
       private java.lang.Object replyToId_ = "";
       /**
-       * <code>required string replyToId = 2;</code>
+       * <code>optional string replyToId = 2;</code>
        *
        * <pre>
        *定向回复ID;
@@ -14785,7 +14769,7 @@ public final class Topic {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string replyToId = 2;</code>
+       * <code>optional string replyToId = 2;</code>
        *
        * <pre>
        *定向回复ID;
@@ -14806,7 +14790,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string replyToId = 2;</code>
+       * <code>optional string replyToId = 2;</code>
        *
        * <pre>
        *定向回复ID;
@@ -14826,7 +14810,7 @@ public final class Topic {
         }
       }
       /**
-       * <code>required string replyToId = 2;</code>
+       * <code>optional string replyToId = 2;</code>
        *
        * <pre>
        *定向回复ID;
@@ -14843,7 +14827,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>required string replyToId = 2;</code>
+       * <code>optional string replyToId = 2;</code>
        *
        * <pre>
        *定向回复ID;
@@ -14856,7 +14840,7 @@ public final class Topic {
         return this;
       }
       /**
-       * <code>required string replyToId = 2;</code>
+       * <code>optional string replyToId = 2;</code>
        *
        * <pre>
        *定向回复ID;
@@ -19053,7 +19037,7 @@ public final class Topic {
       "\021\n\ttopicDesc\030\005 \001(\t\022\024\n\014topicContent\030\006 \001(\t" +
       "\022\021\n\treadCount\030\007 \002(\003\022\023\n\013praiseCount\030\010 \002(\003" +
       "\022\022\n\nreplyCount\030\t \002(\003\022\022\n\ncreateTime\030\n \002(\003" +
-      "\022\025\n\rlastReplyTime\030\013 \002(\003\022\032\n\022praiseHeadIco" +
+      "\022\025\n\rlastReplyTime\030\013 \001(\003\022\032\n\022praiseHeadIco" +
       "nUrls\030\014 \003(\t\022E\n\016topicReplyInfo\030\r \003(\0132-.co" +
       "m.qjoy.basjoo.core.model.pb.TopicReplyIn" +
       "fo\022\017\n\007praised\030\016 \002(\010\022\026\n\016topicImageUrls\030\017 " +
@@ -19069,7 +19053,7 @@ public final class Topic {
       "Id\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"@\n\027CancelTopicP" +
       "raiseResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
       "tMsg\030\002 \002(\t\"`\n\024AddTopicReplyRequest\022\017\n\007to",
-      "picId\030\001 \002(\t\022\021\n\treplyToId\030\002 \002(\t\022\024\n\014replyC" +
+      "picId\030\001 \002(\t\022\021\n\treplyToId\030\002 \001(\t\022\024\n\014replyC" +
       "ontent\030\003 \002(\t\022\016\n\006userId\030\004 \002(\t\"<\n\023AddTopic" +
       "ReplyResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresul" +
       "tMsg\030\002 \002(\t\"A\n\032GetTopicPraiseUsersRequest" +

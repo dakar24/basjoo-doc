@@ -114,7 +114,7 @@ public final class TopicDetailInfo extends Message {
   /**
    * 最后回复时间
    */
-  @ProtoField(tag = 11, type = INT64, label = REQUIRED)
+  @ProtoField(tag = 11, type = INT64)
   public Long lastReplyTime;
 
   /**

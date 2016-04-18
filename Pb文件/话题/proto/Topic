@@ -137,7 +137,7 @@ message TopicDetailInfo{
    required int64                  createTime= 10; 
 
    //最后回复时间
-   required int64                  lastReplyTime= 11;  
+   optional int64                  lastReplyTime= 11;  
    
    //点赞的头像地址
    repeated string                 praiseHeadIconUrls = 12;   
@@ -236,7 +236,7 @@ message AddTopicReplyRequest {
   required string                 topicId = 1;  
   
   //定向回复ID;
-  required string                 replyToId = 2;
+  optional string                 replyToId = 2;
   
   //回复内容
   required string                 replyContent = 3;
