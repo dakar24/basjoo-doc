@@ -55,6 +55,29 @@ message WxLoginRequest {
    //微信openID
    required string                openId = 1; 
    
+}
+
+//获取微信登录预准备信息请求
+message GetWxPreInfoRequest{
+
+}
+
+//获取微信登录预准备信息结果
+message GetWxPreInfoResult{
+   //微信openID
+   required string                appId = 1; 
+   
+   //昵称
+   required string                appSecret = 2;
+}
+
+
+//微信绑定用户请求
+message BindWxUserRequest {   
+
+   //微信openID
+   required string                openId = 1; 
+   
    //昵称
    required string                nickName=2;
  
@@ -76,20 +99,12 @@ message WxLoginRequest {
    //开发平台账号
    optional string                unionId  =8;
 
-}
+   //手机号
+   required string                mobileNo = 9;
 
-//获取微信登录预准备信息请求
-message GetWxPreInfoRequest{
+   //短信验证码
+   required string                checkCode = 10;
 
-}
-
-//获取微信登录预准备信息结果
-message GetWxPreInfoResult{
-   //微信openID
-   required string                appId = 1; 
-   
-   //昵称
-   required string                appSecret = 2;
 }
  
 

@@ -3055,188 +3055,6 @@ public final class Login {
      */
     com.google.protobuf.ByteString
         getOpenIdBytes();
-
-    /**
-     * <code>required string nickName = 2;</code>
-     *
-     * <pre>
-     *昵称
-     * </pre>
-     */
-    boolean hasNickName();
-    /**
-     * <code>required string nickName = 2;</code>
-     *
-     * <pre>
-     *昵称
-     * </pre>
-     */
-    java.lang.String getNickName();
-    /**
-     * <code>required string nickName = 2;</code>
-     *
-     * <pre>
-     *昵称
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getNickNameBytes();
-
-    /**
-     * <code>optional string province = 3;</code>
-     *
-     * <pre>
-     *省份
-     * </pre>
-     */
-    boolean hasProvince();
-    /**
-     * <code>optional string province = 3;</code>
-     *
-     * <pre>
-     *省份
-     * </pre>
-     */
-    java.lang.String getProvince();
-    /**
-     * <code>optional string province = 3;</code>
-     *
-     * <pre>
-     *省份
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getProvinceBytes();
-
-    /**
-     * <code>optional string city = 4;</code>
-     *
-     * <pre>
-     *城市
-     * </pre>
-     */
-    boolean hasCity();
-    /**
-     * <code>optional string city = 4;</code>
-     *
-     * <pre>
-     *城市
-     * </pre>
-     */
-    java.lang.String getCity();
-    /**
-     * <code>optional string city = 4;</code>
-     *
-     * <pre>
-     *城市
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getCityBytes();
-
-    /**
-     * <code>optional string country = 5;</code>
-     *
-     * <pre>
-     *国家
-     * </pre>
-     */
-    boolean hasCountry();
-    /**
-     * <code>optional string country = 5;</code>
-     *
-     * <pre>
-     *国家
-     * </pre>
-     */
-    java.lang.String getCountry();
-    /**
-     * <code>optional string country = 5;</code>
-     *
-     * <pre>
-     *国家
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getCountryBytes();
-
-    /**
-     * <code>optional string headImgUrl = 6;</code>
-     *
-     * <pre>
-     *头像
-     * </pre>
-     */
-    boolean hasHeadImgUrl();
-    /**
-     * <code>optional string headImgUrl = 6;</code>
-     *
-     * <pre>
-     *头像
-     * </pre>
-     */
-    java.lang.String getHeadImgUrl();
-    /**
-     * <code>optional string headImgUrl = 6;</code>
-     *
-     * <pre>
-     *头像
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getHeadImgUrlBytes();
-
-    /**
-     * <code>optional string privilege = 7;</code>
-     *
-     * <pre>
-     *用户权限
-     * </pre>
-     */
-    boolean hasPrivilege();
-    /**
-     * <code>optional string privilege = 7;</code>
-     *
-     * <pre>
-     *用户权限
-     * </pre>
-     */
-    java.lang.String getPrivilege();
-    /**
-     * <code>optional string privilege = 7;</code>
-     *
-     * <pre>
-     *用户权限
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getPrivilegeBytes();
-
-    /**
-     * <code>optional string unionId = 8;</code>
-     *
-     * <pre>
-     *开发平台账号
-     * </pre>
-     */
-    boolean hasUnionId();
-    /**
-     * <code>optional string unionId = 8;</code>
-     *
-     * <pre>
-     *开发平台账号
-     * </pre>
-     */
-    java.lang.String getUnionId();
-    /**
-     * <code>optional string unionId = 8;</code>
-     *
-     * <pre>
-     *开发平台账号
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getUnionIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.WxLoginRequest}
@@ -3298,48 +3116,6 @@ public final class Login {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               openId_ = bs;
-              break;
-            }
-            case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000002;
-              nickName_ = bs;
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              province_ = bs;
-              break;
-            }
-            case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
-              city_ = bs;
-              break;
-            }
-            case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000010;
-              country_ = bs;
-              break;
-            }
-            case 50: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000020;
-              headImgUrl_ = bs;
-              break;
-            }
-            case 58: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000040;
-              privilege_ = bs;
-              break;
-            }
-            case 66: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000080;
-              unionId_ = bs;
               break;
             }
           }
@@ -3436,393 +3212,8 @@ public final class Login {
       }
     }
 
-    public static final int NICKNAME_FIELD_NUMBER = 2;
-    private java.lang.Object nickName_;
-    /**
-     * <code>required string nickName = 2;</code>
-     *
-     * <pre>
-     *昵称
-     * </pre>
-     */
-    public boolean hasNickName() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required string nickName = 2;</code>
-     *
-     * <pre>
-     *昵称
-     * </pre>
-     */
-    public java.lang.String getNickName() {
-      java.lang.Object ref = nickName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          nickName_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string nickName = 2;</code>
-     *
-     * <pre>
-     *昵称
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getNickNameBytes() {
-      java.lang.Object ref = nickName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nickName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PROVINCE_FIELD_NUMBER = 3;
-    private java.lang.Object province_;
-    /**
-     * <code>optional string province = 3;</code>
-     *
-     * <pre>
-     *省份
-     * </pre>
-     */
-    public boolean hasProvince() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string province = 3;</code>
-     *
-     * <pre>
-     *省份
-     * </pre>
-     */
-    public java.lang.String getProvince() {
-      java.lang.Object ref = province_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          province_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string province = 3;</code>
-     *
-     * <pre>
-     *省份
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getProvinceBytes() {
-      java.lang.Object ref = province_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        province_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CITY_FIELD_NUMBER = 4;
-    private java.lang.Object city_;
-    /**
-     * <code>optional string city = 4;</code>
-     *
-     * <pre>
-     *城市
-     * </pre>
-     */
-    public boolean hasCity() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional string city = 4;</code>
-     *
-     * <pre>
-     *城市
-     * </pre>
-     */
-    public java.lang.String getCity() {
-      java.lang.Object ref = city_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          city_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string city = 4;</code>
-     *
-     * <pre>
-     *城市
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getCityBytes() {
-      java.lang.Object ref = city_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        city_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int COUNTRY_FIELD_NUMBER = 5;
-    private java.lang.Object country_;
-    /**
-     * <code>optional string country = 5;</code>
-     *
-     * <pre>
-     *国家
-     * </pre>
-     */
-    public boolean hasCountry() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional string country = 5;</code>
-     *
-     * <pre>
-     *国家
-     * </pre>
-     */
-    public java.lang.String getCountry() {
-      java.lang.Object ref = country_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          country_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string country = 5;</code>
-     *
-     * <pre>
-     *国家
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getCountryBytes() {
-      java.lang.Object ref = country_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        country_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HEADIMGURL_FIELD_NUMBER = 6;
-    private java.lang.Object headImgUrl_;
-    /**
-     * <code>optional string headImgUrl = 6;</code>
-     *
-     * <pre>
-     *头像
-     * </pre>
-     */
-    public boolean hasHeadImgUrl() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional string headImgUrl = 6;</code>
-     *
-     * <pre>
-     *头像
-     * </pre>
-     */
-    public java.lang.String getHeadImgUrl() {
-      java.lang.Object ref = headImgUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          headImgUrl_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string headImgUrl = 6;</code>
-     *
-     * <pre>
-     *头像
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getHeadImgUrlBytes() {
-      java.lang.Object ref = headImgUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        headImgUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PRIVILEGE_FIELD_NUMBER = 7;
-    private java.lang.Object privilege_;
-    /**
-     * <code>optional string privilege = 7;</code>
-     *
-     * <pre>
-     *用户权限
-     * </pre>
-     */
-    public boolean hasPrivilege() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>optional string privilege = 7;</code>
-     *
-     * <pre>
-     *用户权限
-     * </pre>
-     */
-    public java.lang.String getPrivilege() {
-      java.lang.Object ref = privilege_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          privilege_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string privilege = 7;</code>
-     *
-     * <pre>
-     *用户权限
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getPrivilegeBytes() {
-      java.lang.Object ref = privilege_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        privilege_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UNIONID_FIELD_NUMBER = 8;
-    private java.lang.Object unionId_;
-    /**
-     * <code>optional string unionId = 8;</code>
-     *
-     * <pre>
-     *开发平台账号
-     * </pre>
-     */
-    public boolean hasUnionId() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    /**
-     * <code>optional string unionId = 8;</code>
-     *
-     * <pre>
-     *开发平台账号
-     * </pre>
-     */
-    public java.lang.String getUnionId() {
-      java.lang.Object ref = unionId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          unionId_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string unionId = 8;</code>
-     *
-     * <pre>
-     *开发平台账号
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getUnionIdBytes() {
-      java.lang.Object ref = unionId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        unionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private void initFields() {
       openId_ = "";
-      nickName_ = "";
-      province_ = "";
-      city_ = "";
-      country_ = "";
-      headImgUrl_ = "";
-      privilege_ = "";
-      unionId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3831,10 +3222,6 @@ public final class Login {
       if (isInitialized == 0) return false;
 
       if (!hasOpenId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasNickName()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3848,27 +3235,6 @@ public final class Login {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getOpenIdBytes());
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getNickNameBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getProvinceBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getCityBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getCountryBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(6, getHeadImgUrlBytes());
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(7, getPrivilegeBytes());
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBytes(8, getUnionIdBytes());
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3881,34 +3247,6 @@ public final class Login {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getOpenIdBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getNickNameBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getProvinceBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getCityBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getCountryBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getHeadImgUrlBytes());
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getPrivilegeBytes());
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, getUnionIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4033,20 +3371,6 @@ public final class Login {
         super.clear();
         openId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        nickName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        province_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        city_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        country_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
-        headImgUrl_ = "";
-        bitField0_ = (bitField0_ & ~0x00000020);
-        privilege_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
-        unionId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -4079,34 +3403,6 @@ public final class Login {
           to_bitField0_ |= 0x00000001;
         }
         result.openId_ = openId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.nickName_ = nickName_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.province_ = province_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.city_ = city_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.country_ = country_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.headImgUrl_ = headImgUrl_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.privilege_ = privilege_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.unionId_ = unionId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4128,51 +3424,12 @@ public final class Login {
           openId_ = other.openId_;
           onChanged();
         }
-        if (other.hasNickName()) {
-          bitField0_ |= 0x00000002;
-          nickName_ = other.nickName_;
-          onChanged();
-        }
-        if (other.hasProvince()) {
-          bitField0_ |= 0x00000004;
-          province_ = other.province_;
-          onChanged();
-        }
-        if (other.hasCity()) {
-          bitField0_ |= 0x00000008;
-          city_ = other.city_;
-          onChanged();
-        }
-        if (other.hasCountry()) {
-          bitField0_ |= 0x00000010;
-          country_ = other.country_;
-          onChanged();
-        }
-        if (other.hasHeadImgUrl()) {
-          bitField0_ |= 0x00000020;
-          headImgUrl_ = other.headImgUrl_;
-          onChanged();
-        }
-        if (other.hasPrivilege()) {
-          bitField0_ |= 0x00000040;
-          privilege_ = other.privilege_;
-          onChanged();
-        }
-        if (other.hasUnionId()) {
-          bitField0_ |= 0x00000080;
-          unionId_ = other.unionId_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasOpenId()) {
-          
-          return false;
-        }
-        if (!hasNickName()) {
           
           return false;
         }
@@ -4294,706 +3551,6 @@ public final class Login {
   }
   bitField0_ |= 0x00000001;
         openId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object nickName_ = "";
-      /**
-       * <code>required string nickName = 2;</code>
-       *
-       * <pre>
-       *昵称
-       * </pre>
-       */
-      public boolean hasNickName() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required string nickName = 2;</code>
-       *
-       * <pre>
-       *昵称
-       * </pre>
-       */
-      public java.lang.String getNickName() {
-        java.lang.Object ref = nickName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            nickName_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string nickName = 2;</code>
-       *
-       * <pre>
-       *昵称
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getNickNameBytes() {
-        java.lang.Object ref = nickName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nickName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string nickName = 2;</code>
-       *
-       * <pre>
-       *昵称
-       * </pre>
-       */
-      public Builder setNickName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        nickName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string nickName = 2;</code>
-       *
-       * <pre>
-       *昵称
-       * </pre>
-       */
-      public Builder clearNickName() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        nickName_ = getDefaultInstance().getNickName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string nickName = 2;</code>
-       *
-       * <pre>
-       *昵称
-       * </pre>
-       */
-      public Builder setNickNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        nickName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object province_ = "";
-      /**
-       * <code>optional string province = 3;</code>
-       *
-       * <pre>
-       *省份
-       * </pre>
-       */
-      public boolean hasProvince() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional string province = 3;</code>
-       *
-       * <pre>
-       *省份
-       * </pre>
-       */
-      public java.lang.String getProvince() {
-        java.lang.Object ref = province_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            province_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string province = 3;</code>
-       *
-       * <pre>
-       *省份
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getProvinceBytes() {
-        java.lang.Object ref = province_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          province_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string province = 3;</code>
-       *
-       * <pre>
-       *省份
-       * </pre>
-       */
-      public Builder setProvince(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        province_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string province = 3;</code>
-       *
-       * <pre>
-       *省份
-       * </pre>
-       */
-      public Builder clearProvince() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        province_ = getDefaultInstance().getProvince();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string province = 3;</code>
-       *
-       * <pre>
-       *省份
-       * </pre>
-       */
-      public Builder setProvinceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        province_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object city_ = "";
-      /**
-       * <code>optional string city = 4;</code>
-       *
-       * <pre>
-       *城市
-       * </pre>
-       */
-      public boolean hasCity() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional string city = 4;</code>
-       *
-       * <pre>
-       *城市
-       * </pre>
-       */
-      public java.lang.String getCity() {
-        java.lang.Object ref = city_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            city_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string city = 4;</code>
-       *
-       * <pre>
-       *城市
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getCityBytes() {
-        java.lang.Object ref = city_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          city_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string city = 4;</code>
-       *
-       * <pre>
-       *城市
-       * </pre>
-       */
-      public Builder setCity(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        city_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string city = 4;</code>
-       *
-       * <pre>
-       *城市
-       * </pre>
-       */
-      public Builder clearCity() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        city_ = getDefaultInstance().getCity();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string city = 4;</code>
-       *
-       * <pre>
-       *城市
-       * </pre>
-       */
-      public Builder setCityBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        city_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object country_ = "";
-      /**
-       * <code>optional string country = 5;</code>
-       *
-       * <pre>
-       *国家
-       * </pre>
-       */
-      public boolean hasCountry() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional string country = 5;</code>
-       *
-       * <pre>
-       *国家
-       * </pre>
-       */
-      public java.lang.String getCountry() {
-        java.lang.Object ref = country_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            country_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string country = 5;</code>
-       *
-       * <pre>
-       *国家
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getCountryBytes() {
-        java.lang.Object ref = country_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          country_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string country = 5;</code>
-       *
-       * <pre>
-       *国家
-       * </pre>
-       */
-      public Builder setCountry(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        country_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string country = 5;</code>
-       *
-       * <pre>
-       *国家
-       * </pre>
-       */
-      public Builder clearCountry() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        country_ = getDefaultInstance().getCountry();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string country = 5;</code>
-       *
-       * <pre>
-       *国家
-       * </pre>
-       */
-      public Builder setCountryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        country_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object headImgUrl_ = "";
-      /**
-       * <code>optional string headImgUrl = 6;</code>
-       *
-       * <pre>
-       *头像
-       * </pre>
-       */
-      public boolean hasHeadImgUrl() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional string headImgUrl = 6;</code>
-       *
-       * <pre>
-       *头像
-       * </pre>
-       */
-      public java.lang.String getHeadImgUrl() {
-        java.lang.Object ref = headImgUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            headImgUrl_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string headImgUrl = 6;</code>
-       *
-       * <pre>
-       *头像
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getHeadImgUrlBytes() {
-        java.lang.Object ref = headImgUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          headImgUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string headImgUrl = 6;</code>
-       *
-       * <pre>
-       *头像
-       * </pre>
-       */
-      public Builder setHeadImgUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        headImgUrl_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string headImgUrl = 6;</code>
-       *
-       * <pre>
-       *头像
-       * </pre>
-       */
-      public Builder clearHeadImgUrl() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        headImgUrl_ = getDefaultInstance().getHeadImgUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string headImgUrl = 6;</code>
-       *
-       * <pre>
-       *头像
-       * </pre>
-       */
-      public Builder setHeadImgUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        headImgUrl_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object privilege_ = "";
-      /**
-       * <code>optional string privilege = 7;</code>
-       *
-       * <pre>
-       *用户权限
-       * </pre>
-       */
-      public boolean hasPrivilege() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <code>optional string privilege = 7;</code>
-       *
-       * <pre>
-       *用户权限
-       * </pre>
-       */
-      public java.lang.String getPrivilege() {
-        java.lang.Object ref = privilege_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            privilege_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string privilege = 7;</code>
-       *
-       * <pre>
-       *用户权限
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getPrivilegeBytes() {
-        java.lang.Object ref = privilege_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          privilege_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string privilege = 7;</code>
-       *
-       * <pre>
-       *用户权限
-       * </pre>
-       */
-      public Builder setPrivilege(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
-        privilege_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string privilege = 7;</code>
-       *
-       * <pre>
-       *用户权限
-       * </pre>
-       */
-      public Builder clearPrivilege() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        privilege_ = getDefaultInstance().getPrivilege();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string privilege = 7;</code>
-       *
-       * <pre>
-       *用户权限
-       * </pre>
-       */
-      public Builder setPrivilegeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
-        privilege_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object unionId_ = "";
-      /**
-       * <code>optional string unionId = 8;</code>
-       *
-       * <pre>
-       *开发平台账号
-       * </pre>
-       */
-      public boolean hasUnionId() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
-      }
-      /**
-       * <code>optional string unionId = 8;</code>
-       *
-       * <pre>
-       *开发平台账号
-       * </pre>
-       */
-      public java.lang.String getUnionId() {
-        java.lang.Object ref = unionId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            unionId_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string unionId = 8;</code>
-       *
-       * <pre>
-       *开发平台账号
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getUnionIdBytes() {
-        java.lang.Object ref = unionId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          unionId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string unionId = 8;</code>
-       *
-       * <pre>
-       *开发平台账号
-       * </pre>
-       */
-      public Builder setUnionId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
-        unionId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string unionId = 8;</code>
-       *
-       * <pre>
-       *开发平台账号
-       * </pre>
-       */
-      public Builder clearUnionId() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        unionId_ = getDefaultInstance().getUnionId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string unionId = 8;</code>
-       *
-       * <pre>
-       *开发平台账号
-       * </pre>
-       */
-      public Builder setUnionIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
-        unionId_ = value;
         onChanged();
         return this;
       }
@@ -6083,6 +4640,2415 @@ public final class Login {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GetWxPreInfoResult)
   }
 
+  public interface BindWxUserRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.BindWxUserRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string openId = 1;</code>
+     *
+     * <pre>
+     *微信openID
+     * </pre>
+     */
+    boolean hasOpenId();
+    /**
+     * <code>required string openId = 1;</code>
+     *
+     * <pre>
+     *微信openID
+     * </pre>
+     */
+    java.lang.String getOpenId();
+    /**
+     * <code>required string openId = 1;</code>
+     *
+     * <pre>
+     *微信openID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getOpenIdBytes();
+
+    /**
+     * <code>required string nickName = 2;</code>
+     *
+     * <pre>
+     *昵称
+     * </pre>
+     */
+    boolean hasNickName();
+    /**
+     * <code>required string nickName = 2;</code>
+     *
+     * <pre>
+     *昵称
+     * </pre>
+     */
+    java.lang.String getNickName();
+    /**
+     * <code>required string nickName = 2;</code>
+     *
+     * <pre>
+     *昵称
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getNickNameBytes();
+
+    /**
+     * <code>optional string province = 3;</code>
+     *
+     * <pre>
+     *省份
+     * </pre>
+     */
+    boolean hasProvince();
+    /**
+     * <code>optional string province = 3;</code>
+     *
+     * <pre>
+     *省份
+     * </pre>
+     */
+    java.lang.String getProvince();
+    /**
+     * <code>optional string province = 3;</code>
+     *
+     * <pre>
+     *省份
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getProvinceBytes();
+
+    /**
+     * <code>optional string city = 4;</code>
+     *
+     * <pre>
+     *城市
+     * </pre>
+     */
+    boolean hasCity();
+    /**
+     * <code>optional string city = 4;</code>
+     *
+     * <pre>
+     *城市
+     * </pre>
+     */
+    java.lang.String getCity();
+    /**
+     * <code>optional string city = 4;</code>
+     *
+     * <pre>
+     *城市
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCityBytes();
+
+    /**
+     * <code>optional string country = 5;</code>
+     *
+     * <pre>
+     *国家
+     * </pre>
+     */
+    boolean hasCountry();
+    /**
+     * <code>optional string country = 5;</code>
+     *
+     * <pre>
+     *国家
+     * </pre>
+     */
+    java.lang.String getCountry();
+    /**
+     * <code>optional string country = 5;</code>
+     *
+     * <pre>
+     *国家
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCountryBytes();
+
+    /**
+     * <code>optional string headImgUrl = 6;</code>
+     *
+     * <pre>
+     *头像
+     * </pre>
+     */
+    boolean hasHeadImgUrl();
+    /**
+     * <code>optional string headImgUrl = 6;</code>
+     *
+     * <pre>
+     *头像
+     * </pre>
+     */
+    java.lang.String getHeadImgUrl();
+    /**
+     * <code>optional string headImgUrl = 6;</code>
+     *
+     * <pre>
+     *头像
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getHeadImgUrlBytes();
+
+    /**
+     * <code>optional string privilege = 7;</code>
+     *
+     * <pre>
+     *用户权限
+     * </pre>
+     */
+    boolean hasPrivilege();
+    /**
+     * <code>optional string privilege = 7;</code>
+     *
+     * <pre>
+     *用户权限
+     * </pre>
+     */
+    java.lang.String getPrivilege();
+    /**
+     * <code>optional string privilege = 7;</code>
+     *
+     * <pre>
+     *用户权限
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getPrivilegeBytes();
+
+    /**
+     * <code>optional string unionId = 8;</code>
+     *
+     * <pre>
+     *开发平台账号
+     * </pre>
+     */
+    boolean hasUnionId();
+    /**
+     * <code>optional string unionId = 8;</code>
+     *
+     * <pre>
+     *开发平台账号
+     * </pre>
+     */
+    java.lang.String getUnionId();
+    /**
+     * <code>optional string unionId = 8;</code>
+     *
+     * <pre>
+     *开发平台账号
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUnionIdBytes();
+
+    /**
+     * <code>required string mobileNo = 9;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    boolean hasMobileNo();
+    /**
+     * <code>required string mobileNo = 9;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    java.lang.String getMobileNo();
+    /**
+     * <code>required string mobileNo = 9;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getMobileNoBytes();
+
+    /**
+     * <code>required string checkCode = 10;</code>
+     *
+     * <pre>
+     *短信验证码
+     * </pre>
+     */
+    boolean hasCheckCode();
+    /**
+     * <code>required string checkCode = 10;</code>
+     *
+     * <pre>
+     *短信验证码
+     * </pre>
+     */
+    java.lang.String getCheckCode();
+    /**
+     * <code>required string checkCode = 10;</code>
+     *
+     * <pre>
+     *短信验证码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCheckCodeBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.BindWxUserRequest}
+   *
+   * <pre>
+   *微信绑定用户请求
+   * </pre>
+   */
+  public static final class BindWxUserRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.BindWxUserRequest)
+      BindWxUserRequestOrBuilder {
+    // Use BindWxUserRequest.newBuilder() to construct.
+    private BindWxUserRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private BindWxUserRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final BindWxUserRequest defaultInstance;
+    public static BindWxUserRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public BindWxUserRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BindWxUserRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              openId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              nickName_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              province_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              city_ = bs;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              country_ = bs;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              headImgUrl_ = bs;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              privilege_ = bs;
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000080;
+              unionId_ = bs;
+              break;
+            }
+            case 74: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000100;
+              mobileNo_ = bs;
+              break;
+            }
+            case 82: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000200;
+              checkCode_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Login.internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Login.internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest.class, com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<BindWxUserRequest> PARSER =
+        new com.google.protobuf.AbstractParser<BindWxUserRequest>() {
+      public BindWxUserRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BindWxUserRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BindWxUserRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int OPENID_FIELD_NUMBER = 1;
+    private java.lang.Object openId_;
+    /**
+     * <code>required string openId = 1;</code>
+     *
+     * <pre>
+     *微信openID
+     * </pre>
+     */
+    public boolean hasOpenId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string openId = 1;</code>
+     *
+     * <pre>
+     *微信openID
+     * </pre>
+     */
+    public java.lang.String getOpenId() {
+      java.lang.Object ref = openId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          openId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string openId = 1;</code>
+     *
+     * <pre>
+     *微信openID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getOpenIdBytes() {
+      java.lang.Object ref = openId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        openId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NICKNAME_FIELD_NUMBER = 2;
+    private java.lang.Object nickName_;
+    /**
+     * <code>required string nickName = 2;</code>
+     *
+     * <pre>
+     *昵称
+     * </pre>
+     */
+    public boolean hasNickName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string nickName = 2;</code>
+     *
+     * <pre>
+     *昵称
+     * </pre>
+     */
+    public java.lang.String getNickName() {
+      java.lang.Object ref = nickName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          nickName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string nickName = 2;</code>
+     *
+     * <pre>
+     *昵称
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getNickNameBytes() {
+      java.lang.Object ref = nickName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROVINCE_FIELD_NUMBER = 3;
+    private java.lang.Object province_;
+    /**
+     * <code>optional string province = 3;</code>
+     *
+     * <pre>
+     *省份
+     * </pre>
+     */
+    public boolean hasProvince() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string province = 3;</code>
+     *
+     * <pre>
+     *省份
+     * </pre>
+     */
+    public java.lang.String getProvince() {
+      java.lang.Object ref = province_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          province_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string province = 3;</code>
+     *
+     * <pre>
+     *省份
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getProvinceBytes() {
+      java.lang.Object ref = province_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        province_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CITY_FIELD_NUMBER = 4;
+    private java.lang.Object city_;
+    /**
+     * <code>optional string city = 4;</code>
+     *
+     * <pre>
+     *城市
+     * </pre>
+     */
+    public boolean hasCity() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string city = 4;</code>
+     *
+     * <pre>
+     *城市
+     * </pre>
+     */
+    public java.lang.String getCity() {
+      java.lang.Object ref = city_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          city_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string city = 4;</code>
+     *
+     * <pre>
+     *城市
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCityBytes() {
+      java.lang.Object ref = city_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        city_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COUNTRY_FIELD_NUMBER = 5;
+    private java.lang.Object country_;
+    /**
+     * <code>optional string country = 5;</code>
+     *
+     * <pre>
+     *国家
+     * </pre>
+     */
+    public boolean hasCountry() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string country = 5;</code>
+     *
+     * <pre>
+     *国家
+     * </pre>
+     */
+    public java.lang.String getCountry() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          country_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string country = 5;</code>
+     *
+     * <pre>
+     *国家
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCountryBytes() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        country_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HEADIMGURL_FIELD_NUMBER = 6;
+    private java.lang.Object headImgUrl_;
+    /**
+     * <code>optional string headImgUrl = 6;</code>
+     *
+     * <pre>
+     *头像
+     * </pre>
+     */
+    public boolean hasHeadImgUrl() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string headImgUrl = 6;</code>
+     *
+     * <pre>
+     *头像
+     * </pre>
+     */
+    public java.lang.String getHeadImgUrl() {
+      java.lang.Object ref = headImgUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          headImgUrl_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string headImgUrl = 6;</code>
+     *
+     * <pre>
+     *头像
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getHeadImgUrlBytes() {
+      java.lang.Object ref = headImgUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        headImgUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIVILEGE_FIELD_NUMBER = 7;
+    private java.lang.Object privilege_;
+    /**
+     * <code>optional string privilege = 7;</code>
+     *
+     * <pre>
+     *用户权限
+     * </pre>
+     */
+    public boolean hasPrivilege() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional string privilege = 7;</code>
+     *
+     * <pre>
+     *用户权限
+     * </pre>
+     */
+    public java.lang.String getPrivilege() {
+      java.lang.Object ref = privilege_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          privilege_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string privilege = 7;</code>
+     *
+     * <pre>
+     *用户权限
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getPrivilegeBytes() {
+      java.lang.Object ref = privilege_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        privilege_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UNIONID_FIELD_NUMBER = 8;
+    private java.lang.Object unionId_;
+    /**
+     * <code>optional string unionId = 8;</code>
+     *
+     * <pre>
+     *开发平台账号
+     * </pre>
+     */
+    public boolean hasUnionId() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional string unionId = 8;</code>
+     *
+     * <pre>
+     *开发平台账号
+     * </pre>
+     */
+    public java.lang.String getUnionId() {
+      java.lang.Object ref = unionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          unionId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string unionId = 8;</code>
+     *
+     * <pre>
+     *开发平台账号
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUnionIdBytes() {
+      java.lang.Object ref = unionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MOBILENO_FIELD_NUMBER = 9;
+    private java.lang.Object mobileNo_;
+    /**
+     * <code>required string mobileNo = 9;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    public boolean hasMobileNo() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>required string mobileNo = 9;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    public java.lang.String getMobileNo() {
+      java.lang.Object ref = mobileNo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          mobileNo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string mobileNo = 9;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getMobileNoBytes() {
+      java.lang.Object ref = mobileNo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mobileNo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHECKCODE_FIELD_NUMBER = 10;
+    private java.lang.Object checkCode_;
+    /**
+     * <code>required string checkCode = 10;</code>
+     *
+     * <pre>
+     *短信验证码
+     * </pre>
+     */
+    public boolean hasCheckCode() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>required string checkCode = 10;</code>
+     *
+     * <pre>
+     *短信验证码
+     * </pre>
+     */
+    public java.lang.String getCheckCode() {
+      java.lang.Object ref = checkCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          checkCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string checkCode = 10;</code>
+     *
+     * <pre>
+     *短信验证码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCheckCodeBytes() {
+      java.lang.Object ref = checkCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        checkCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      openId_ = "";
+      nickName_ = "";
+      province_ = "";
+      city_ = "";
+      country_ = "";
+      headImgUrl_ = "";
+      privilege_ = "";
+      unionId_ = "";
+      mobileNo_ = "";
+      checkCode_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasOpenId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasNickName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMobileNo()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasCheckCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getOpenIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getNickNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getProvinceBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getCityBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getCountryBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getHeadImgUrlBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getPrivilegeBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeBytes(8, getUnionIdBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeBytes(9, getMobileNoBytes());
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeBytes(10, getCheckCodeBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getOpenIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getNickNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getProvinceBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getCityBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getCountryBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getHeadImgUrlBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getPrivilegeBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, getUnionIdBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(9, getMobileNoBytes());
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(10, getCheckCodeBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.BindWxUserRequest}
+     *
+     * <pre>
+     *微信绑定用户请求
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.BindWxUserRequest)
+        com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Login.internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Login.internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest.class, com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        openId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        nickName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        province_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        city_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        country_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        headImgUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        privilege_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        unionId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
+        mobileNo_ = "";
+        bitField0_ = (bitField0_ & ~0x00000100);
+        checkCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000200);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Login.internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest build() {
+        com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest result = new com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.openId_ = openId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.nickName_ = nickName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.province_ = province_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.city_ = city_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.country_ = country_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.headImgUrl_ = headImgUrl_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.privilege_ = privilege_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.unionId_ = unionId_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.mobileNo_ = mobileNo_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.checkCode_ = checkCode_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest.getDefaultInstance()) return this;
+        if (other.hasOpenId()) {
+          bitField0_ |= 0x00000001;
+          openId_ = other.openId_;
+          onChanged();
+        }
+        if (other.hasNickName()) {
+          bitField0_ |= 0x00000002;
+          nickName_ = other.nickName_;
+          onChanged();
+        }
+        if (other.hasProvince()) {
+          bitField0_ |= 0x00000004;
+          province_ = other.province_;
+          onChanged();
+        }
+        if (other.hasCity()) {
+          bitField0_ |= 0x00000008;
+          city_ = other.city_;
+          onChanged();
+        }
+        if (other.hasCountry()) {
+          bitField0_ |= 0x00000010;
+          country_ = other.country_;
+          onChanged();
+        }
+        if (other.hasHeadImgUrl()) {
+          bitField0_ |= 0x00000020;
+          headImgUrl_ = other.headImgUrl_;
+          onChanged();
+        }
+        if (other.hasPrivilege()) {
+          bitField0_ |= 0x00000040;
+          privilege_ = other.privilege_;
+          onChanged();
+        }
+        if (other.hasUnionId()) {
+          bitField0_ |= 0x00000080;
+          unionId_ = other.unionId_;
+          onChanged();
+        }
+        if (other.hasMobileNo()) {
+          bitField0_ |= 0x00000100;
+          mobileNo_ = other.mobileNo_;
+          onChanged();
+        }
+        if (other.hasCheckCode()) {
+          bitField0_ |= 0x00000200;
+          checkCode_ = other.checkCode_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasOpenId()) {
+          
+          return false;
+        }
+        if (!hasNickName()) {
+          
+          return false;
+        }
+        if (!hasMobileNo()) {
+          
+          return false;
+        }
+        if (!hasCheckCode()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Login.BindWxUserRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object openId_ = "";
+      /**
+       * <code>required string openId = 1;</code>
+       *
+       * <pre>
+       *微信openID
+       * </pre>
+       */
+      public boolean hasOpenId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string openId = 1;</code>
+       *
+       * <pre>
+       *微信openID
+       * </pre>
+       */
+      public java.lang.String getOpenId() {
+        java.lang.Object ref = openId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            openId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string openId = 1;</code>
+       *
+       * <pre>
+       *微信openID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getOpenIdBytes() {
+        java.lang.Object ref = openId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          openId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string openId = 1;</code>
+       *
+       * <pre>
+       *微信openID
+       * </pre>
+       */
+      public Builder setOpenId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        openId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string openId = 1;</code>
+       *
+       * <pre>
+       *微信openID
+       * </pre>
+       */
+      public Builder clearOpenId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        openId_ = getDefaultInstance().getOpenId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string openId = 1;</code>
+       *
+       * <pre>
+       *微信openID
+       * </pre>
+       */
+      public Builder setOpenIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        openId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nickName_ = "";
+      /**
+       * <code>required string nickName = 2;</code>
+       *
+       * <pre>
+       *昵称
+       * </pre>
+       */
+      public boolean hasNickName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string nickName = 2;</code>
+       *
+       * <pre>
+       *昵称
+       * </pre>
+       */
+      public java.lang.String getNickName() {
+        java.lang.Object ref = nickName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            nickName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string nickName = 2;</code>
+       *
+       * <pre>
+       *昵称
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getNickNameBytes() {
+        java.lang.Object ref = nickName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nickName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string nickName = 2;</code>
+       *
+       * <pre>
+       *昵称
+       * </pre>
+       */
+      public Builder setNickName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        nickName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string nickName = 2;</code>
+       *
+       * <pre>
+       *昵称
+       * </pre>
+       */
+      public Builder clearNickName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nickName_ = getDefaultInstance().getNickName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string nickName = 2;</code>
+       *
+       * <pre>
+       *昵称
+       * </pre>
+       */
+      public Builder setNickNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        nickName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object province_ = "";
+      /**
+       * <code>optional string province = 3;</code>
+       *
+       * <pre>
+       *省份
+       * </pre>
+       */
+      public boolean hasProvince() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string province = 3;</code>
+       *
+       * <pre>
+       *省份
+       * </pre>
+       */
+      public java.lang.String getProvince() {
+        java.lang.Object ref = province_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            province_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string province = 3;</code>
+       *
+       * <pre>
+       *省份
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getProvinceBytes() {
+        java.lang.Object ref = province_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          province_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string province = 3;</code>
+       *
+       * <pre>
+       *省份
+       * </pre>
+       */
+      public Builder setProvince(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        province_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string province = 3;</code>
+       *
+       * <pre>
+       *省份
+       * </pre>
+       */
+      public Builder clearProvince() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        province_ = getDefaultInstance().getProvince();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string province = 3;</code>
+       *
+       * <pre>
+       *省份
+       * </pre>
+       */
+      public Builder setProvinceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        province_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object city_ = "";
+      /**
+       * <code>optional string city = 4;</code>
+       *
+       * <pre>
+       *城市
+       * </pre>
+       */
+      public boolean hasCity() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string city = 4;</code>
+       *
+       * <pre>
+       *城市
+       * </pre>
+       */
+      public java.lang.String getCity() {
+        java.lang.Object ref = city_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            city_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string city = 4;</code>
+       *
+       * <pre>
+       *城市
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCityBytes() {
+        java.lang.Object ref = city_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          city_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string city = 4;</code>
+       *
+       * <pre>
+       *城市
+       * </pre>
+       */
+      public Builder setCity(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        city_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string city = 4;</code>
+       *
+       * <pre>
+       *城市
+       * </pre>
+       */
+      public Builder clearCity() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        city_ = getDefaultInstance().getCity();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string city = 4;</code>
+       *
+       * <pre>
+       *城市
+       * </pre>
+       */
+      public Builder setCityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        city_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object country_ = "";
+      /**
+       * <code>optional string country = 5;</code>
+       *
+       * <pre>
+       *国家
+       * </pre>
+       */
+      public boolean hasCountry() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string country = 5;</code>
+       *
+       * <pre>
+       *国家
+       * </pre>
+       */
+      public java.lang.String getCountry() {
+        java.lang.Object ref = country_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            country_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string country = 5;</code>
+       *
+       * <pre>
+       *国家
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCountryBytes() {
+        java.lang.Object ref = country_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          country_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string country = 5;</code>
+       *
+       * <pre>
+       *国家
+       * </pre>
+       */
+      public Builder setCountry(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        country_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string country = 5;</code>
+       *
+       * <pre>
+       *国家
+       * </pre>
+       */
+      public Builder clearCountry() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        country_ = getDefaultInstance().getCountry();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string country = 5;</code>
+       *
+       * <pre>
+       *国家
+       * </pre>
+       */
+      public Builder setCountryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        country_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object headImgUrl_ = "";
+      /**
+       * <code>optional string headImgUrl = 6;</code>
+       *
+       * <pre>
+       *头像
+       * </pre>
+       */
+      public boolean hasHeadImgUrl() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string headImgUrl = 6;</code>
+       *
+       * <pre>
+       *头像
+       * </pre>
+       */
+      public java.lang.String getHeadImgUrl() {
+        java.lang.Object ref = headImgUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            headImgUrl_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string headImgUrl = 6;</code>
+       *
+       * <pre>
+       *头像
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getHeadImgUrlBytes() {
+        java.lang.Object ref = headImgUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          headImgUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string headImgUrl = 6;</code>
+       *
+       * <pre>
+       *头像
+       * </pre>
+       */
+      public Builder setHeadImgUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        headImgUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string headImgUrl = 6;</code>
+       *
+       * <pre>
+       *头像
+       * </pre>
+       */
+      public Builder clearHeadImgUrl() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        headImgUrl_ = getDefaultInstance().getHeadImgUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string headImgUrl = 6;</code>
+       *
+       * <pre>
+       *头像
+       * </pre>
+       */
+      public Builder setHeadImgUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        headImgUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object privilege_ = "";
+      /**
+       * <code>optional string privilege = 7;</code>
+       *
+       * <pre>
+       *用户权限
+       * </pre>
+       */
+      public boolean hasPrivilege() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional string privilege = 7;</code>
+       *
+       * <pre>
+       *用户权限
+       * </pre>
+       */
+      public java.lang.String getPrivilege() {
+        java.lang.Object ref = privilege_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            privilege_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string privilege = 7;</code>
+       *
+       * <pre>
+       *用户权限
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getPrivilegeBytes() {
+        java.lang.Object ref = privilege_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          privilege_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string privilege = 7;</code>
+       *
+       * <pre>
+       *用户权限
+       * </pre>
+       */
+      public Builder setPrivilege(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        privilege_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string privilege = 7;</code>
+       *
+       * <pre>
+       *用户权限
+       * </pre>
+       */
+      public Builder clearPrivilege() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        privilege_ = getDefaultInstance().getPrivilege();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string privilege = 7;</code>
+       *
+       * <pre>
+       *用户权限
+       * </pre>
+       */
+      public Builder setPrivilegeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        privilege_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object unionId_ = "";
+      /**
+       * <code>optional string unionId = 8;</code>
+       *
+       * <pre>
+       *开发平台账号
+       * </pre>
+       */
+      public boolean hasUnionId() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional string unionId = 8;</code>
+       *
+       * <pre>
+       *开发平台账号
+       * </pre>
+       */
+      public java.lang.String getUnionId() {
+        java.lang.Object ref = unionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            unionId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string unionId = 8;</code>
+       *
+       * <pre>
+       *开发平台账号
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUnionIdBytes() {
+        java.lang.Object ref = unionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          unionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string unionId = 8;</code>
+       *
+       * <pre>
+       *开发平台账号
+       * </pre>
+       */
+      public Builder setUnionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        unionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string unionId = 8;</code>
+       *
+       * <pre>
+       *开发平台账号
+       * </pre>
+       */
+      public Builder clearUnionId() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        unionId_ = getDefaultInstance().getUnionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string unionId = 8;</code>
+       *
+       * <pre>
+       *开发平台账号
+       * </pre>
+       */
+      public Builder setUnionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        unionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mobileNo_ = "";
+      /**
+       * <code>required string mobileNo = 9;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public boolean hasMobileNo() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>required string mobileNo = 9;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public java.lang.String getMobileNo() {
+        java.lang.Object ref = mobileNo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            mobileNo_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string mobileNo = 9;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getMobileNoBytes() {
+        java.lang.Object ref = mobileNo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mobileNo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string mobileNo = 9;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public Builder setMobileNo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
+        mobileNo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string mobileNo = 9;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public Builder clearMobileNo() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        mobileNo_ = getDefaultInstance().getMobileNo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string mobileNo = 9;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public Builder setMobileNoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
+        mobileNo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object checkCode_ = "";
+      /**
+       * <code>required string checkCode = 10;</code>
+       *
+       * <pre>
+       *短信验证码
+       * </pre>
+       */
+      public boolean hasCheckCode() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>required string checkCode = 10;</code>
+       *
+       * <pre>
+       *短信验证码
+       * </pre>
+       */
+      public java.lang.String getCheckCode() {
+        java.lang.Object ref = checkCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            checkCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string checkCode = 10;</code>
+       *
+       * <pre>
+       *短信验证码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCheckCodeBytes() {
+        java.lang.Object ref = checkCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          checkCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string checkCode = 10;</code>
+       *
+       * <pre>
+       *短信验证码
+       * </pre>
+       */
+      public Builder setCheckCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        checkCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string checkCode = 10;</code>
+       *
+       * <pre>
+       *短信验证码
+       * </pre>
+       */
+      public Builder clearCheckCode() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        checkCode_ = getDefaultInstance().getCheckCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string checkCode = 10;</code>
+       *
+       * <pre>
+       *短信验证码
+       * </pre>
+       */
+      public Builder setCheckCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        checkCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.BindWxUserRequest)
+    }
+
+    static {
+      defaultInstance = new BindWxUserRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.BindWxUserRequest)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_LoginRequest_descriptor;
   private static
@@ -6108,6 +7074,11 @@ public final class Login {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_GetWxPreInfoResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6125,15 +7096,16 @@ public final class Login {
       "\022\020\n\010mobileNo\030\006 \001(\t\022\020\n\010userName\030\007 \001(\t\022\020\n\010" +
       "nickName\030\010 \001(\t\022\025\n\rrecommendCode\030\t \001(\t\022;\n" +
       "\tloginType\030\n \001(\0162(.com.qjoy.basjoo.core." +
-      "model.pb.LoginType\"\233\001\n\016WxLoginRequest\022\016\n" +
-      "\006openId\030\001 \002(\t\022\020\n\010nickName\030\002 \002(\t\022\020\n\010provi",
-      "nce\030\003 \001(\t\022\014\n\004city\030\004 \001(\t\022\017\n\007country\030\005 \001(\t" +
-      "\022\022\n\nheadImgUrl\030\006 \001(\t\022\021\n\tprivilege\030\007 \001(\t\022" +
-      "\017\n\007unionId\030\010 \001(\t\"\025\n\023GetWxPreInfoRequest\"" +
-      "6\n\022GetWxPreInfoResult\022\r\n\005appId\030\001 \002(\t\022\021\n\t" +
-      "appSecret\030\002 \002(\t*$\n\tLoginType\022\n\n\006NORMAL\020\000" +
-      "\022\013\n\007WXLOGIN\020\001B\037\n\035com.qjoy.basjoo.core.mo" +
-      "del.pb"
+      "model.pb.LoginType\" \n\016WxLoginRequest\022\016\n\006" +
+      "openId\030\001 \002(\t\"\025\n\023GetWxPreInfoRequest\"6\n\022G",
+      "etWxPreInfoResult\022\r\n\005appId\030\001 \002(\t\022\021\n\tappS" +
+      "ecret\030\002 \002(\t\"\303\001\n\021BindWxUserRequest\022\016\n\006ope" +
+      "nId\030\001 \002(\t\022\020\n\010nickName\030\002 \002(\t\022\020\n\010province\030" +
+      "\003 \001(\t\022\014\n\004city\030\004 \001(\t\022\017\n\007country\030\005 \001(\t\022\022\n\n" +
+      "headImgUrl\030\006 \001(\t\022\021\n\tprivilege\030\007 \001(\t\022\017\n\007u" +
+      "nionId\030\010 \001(\t\022\020\n\010mobileNo\030\t \002(\t\022\021\n\tcheckC" +
+      "ode\030\n \002(\t*$\n\tLoginType\022\n\n\006NORMAL\020\000\022\013\n\007WX" +
+      "LOGIN\020\001B\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6164,7 +7136,7 @@ public final class Login {
     internal_static_com_qjoy_basjoo_core_model_pb_WxLoginRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_WxLoginRequest_descriptor,
-        new java.lang.String[] { "OpenId", "NickName", "Province", "City", "Country", "HeadImgUrl", "Privilege", "UnionId", });
+        new java.lang.String[] { "OpenId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetWxPreInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_GetWxPreInfoRequest_fieldAccessorTable = new
@@ -6177,6 +7149,12 @@ public final class Login {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetWxPreInfoResult_descriptor,
         new java.lang.String[] { "AppId", "AppSecret", });
+    internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_BindWxUserRequest_descriptor,
+        new java.lang.String[] { "OpenId", "NickName", "Province", "City", "Country", "HeadImgUrl", "Privilege", "UnionId", "MobileNo", "CheckCode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

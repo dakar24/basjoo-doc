@@ -2,6 +2,7 @@
 
 #import <QJProtocolBuffers/ProtocolBuffers.h>
 
+@class BindWxUserRequest;
 @class GetWxPreInfoRequest;
 @class GetWxPreInfoResult;
 @class LoginRequest;
@@ -45,21 +46,7 @@ typedef NS_ENUM(SInt32, LoginType) {
 
 @interface WxLoginRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOpenId;
-@property (readonly) BOOL hasNickName;
-@property (readonly) BOOL hasProvince;
-@property (readonly) BOOL hasCity;
-@property (readonly) BOOL hasCountry;
-@property (readonly) BOOL hasHeadImgUrl;
-@property (readonly) BOOL hasPrivilege;
-@property (readonly) BOOL hasUnionId;
 @property (nonatomic,strong) NSString* openId;
-@property (nonatomic,strong) NSString* nickName;
-@property (nonatomic,strong) NSString* province;
-@property (nonatomic,strong) NSString* city;
-@property (nonatomic,strong) NSString* country;
-@property (nonatomic,strong) NSString* headImgUrl;
-@property (nonatomic,strong) NSString* privilege;
-@property (nonatomic,strong) NSString* unionId;
 @end
 
 @interface GetWxPreInfoRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -70,5 +57,28 @@ typedef NS_ENUM(SInt32, LoginType) {
 @property (readonly) BOOL hasAppSecret;
 @property (nonatomic,strong) NSString* appId;
 @property (nonatomic,strong) NSString* appSecret;
+@end
+
+@interface BindWxUserRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasOpenId;
+@property (readonly) BOOL hasNickName;
+@property (readonly) BOOL hasProvince;
+@property (readonly) BOOL hasCity;
+@property (readonly) BOOL hasCountry;
+@property (readonly) BOOL hasHeadImgUrl;
+@property (readonly) BOOL hasPrivilege;
+@property (readonly) BOOL hasUnionId;
+@property (readonly) BOOL hasMobileNo;
+@property (readonly) BOOL hasCheckCode;
+@property (nonatomic,strong) NSString* openId;
+@property (nonatomic,strong) NSString* nickName;
+@property (nonatomic,strong) NSString* province;
+@property (nonatomic,strong) NSString* city;
+@property (nonatomic,strong) NSString* country;
+@property (nonatomic,strong) NSString* headImgUrl;
+@property (nonatomic,strong) NSString* privilege;
+@property (nonatomic,strong) NSString* unionId;
+@property (nonatomic,strong) NSString* mobileNo;
+@property (nonatomic,strong) NSString* checkCode;
 @end
 

@@ -14,22 +14,8 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 public final class WxLoginRequest extends Message {
 
   public static final int TAG_OPENID = 1;
-  public static final int TAG_NICKNAME = 2;
-  public static final int TAG_PROVINCE = 3;
-  public static final int TAG_CITY = 4;
-  public static final int TAG_COUNTRY = 5;
-  public static final int TAG_HEADIMGURL = 6;
-  public static final int TAG_PRIVILEGE = 7;
-  public static final int TAG_UNIONID = 8;
 
   public static final String DEFAULT_OPENID = "";
-  public static final String DEFAULT_NICKNAME = "";
-  public static final String DEFAULT_PROVINCE = "";
-  public static final String DEFAULT_CITY = "";
-  public static final String DEFAULT_COUNTRY = "";
-  public static final String DEFAULT_HEADIMGURL = "";
-  public static final String DEFAULT_PRIVILEGE = "";
-  public static final String DEFAULT_UNIONID = "";
 
   /**
    * 微信openID
@@ -37,59 +23,10 @@ public final class WxLoginRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String openId;
 
-  /**
-   * 昵称
-   */
-  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
-  public String nickName;
-
-  /**
-   * 省份
-   */
-  @ProtoField(tag = 3, type = STRING)
-  public String province;
-
-  /**
-   * 城市
-   */
-  @ProtoField(tag = 4, type = STRING)
-  public String city;
-
-  /**
-   * 国家
-   */
-  @ProtoField(tag = 5, type = STRING)
-  public String country;
-
-  /**
-   * 头像
-   */
-  @ProtoField(tag = 6, type = STRING)
-  public String headImgUrl;
-
-  /**
-   * 用户权限
-   */
-  @ProtoField(tag = 7, type = STRING)
-  public String privilege;
-
-  /**
-   * 开发平台账号
-   */
-  @ProtoField(tag = 8, type = STRING)
-  public String unionId;
-
   public WxLoginRequest(WxLoginRequest message) {
     super(message);
     if (message == null) return;
     this.openId = message.openId;
-    this.nickName = message.nickName;
-    this.province = message.province;
-    this.city = message.city;
-    this.country = message.country;
-    this.headImgUrl = message.headImgUrl;
-    this.privilege = message.privilege;
-    this.unionId = message.unionId;
   }
 
   public WxLoginRequest() {
@@ -100,27 +37,6 @@ public final class WxLoginRequest extends Message {
         case TAG_OPENID:
         this.openId = (String)value;
         break;
-        case TAG_NICKNAME:
-        this.nickName = (String)value;
-        break;
-        case TAG_PROVINCE:
-        this.province = (String)value;
-        break;
-        case TAG_CITY:
-        this.city = (String)value;
-        break;
-        case TAG_COUNTRY:
-        this.country = (String)value;
-        break;
-        case TAG_HEADIMGURL:
-        this.headImgUrl = (String)value;
-        break;
-        case TAG_PRIVILEGE:
-        this.privilege = (String)value;
-        break;
-        case TAG_UNIONID:
-        this.unionId = (String)value;
-        break;
         default: break;
         };
     return this;
@@ -130,31 +46,12 @@ public final class WxLoginRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof WxLoginRequest)) return false;
-    WxLoginRequest o = (WxLoginRequest) other;
-    return equals(openId, o.openId)
-        && equals(nickName, o.nickName)
-        && equals(province, o.province)
-        && equals(city, o.city)
-        && equals(country, o.country)
-        && equals(headImgUrl, o.headImgUrl)
-        && equals(privilege, o.privilege)
-        && equals(unionId, o.unionId);
+    return equals(openId, ((WxLoginRequest) other).openId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    if (result == 0) {
-      result = openId != null ? openId.hashCode() : 0;
-      result = result * 37 + (nickName != null ? nickName.hashCode() : 0);
-      result = result * 37 + (province != null ? province.hashCode() : 0);
-      result = result * 37 + (city != null ? city.hashCode() : 0);
-      result = result * 37 + (country != null ? country.hashCode() : 0);
-      result = result * 37 + (headImgUrl != null ? headImgUrl.hashCode() : 0);
-      result = result * 37 + (privilege != null ? privilege.hashCode() : 0);
-      result = result * 37 + (unionId != null ? unionId.hashCode() : 0);
-      hashCode = result;
-    }
-    return result;
+    return result != 0 ? result : (hashCode = openId != null ? openId.hashCode() : 0);
   }
 }
