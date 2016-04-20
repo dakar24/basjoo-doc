@@ -97,8 +97,11 @@ message ProductLiteInfo {
 //查看产品详情
 message ProductDetailRequest {   
 
-   //产品Id
+   //产品ID
    required string                 productId = 1; 
+   
+   //用户ID
+   optional string                 userId = 2;
     
 }
 

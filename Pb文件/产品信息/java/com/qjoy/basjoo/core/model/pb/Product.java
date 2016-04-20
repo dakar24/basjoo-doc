@@ -5332,7 +5332,7 @@ public final class Product {
      * <code>required string productId = 1;</code>
      *
      * <pre>
-     *产品Id
+     *产品ID
      * </pre>
      */
     boolean hasProductId();
@@ -5340,7 +5340,7 @@ public final class Product {
      * <code>required string productId = 1;</code>
      *
      * <pre>
-     *产品Id
+     *产品ID
      * </pre>
      */
     java.lang.String getProductId();
@@ -5348,11 +5348,37 @@ public final class Product {
      * <code>required string productId = 1;</code>
      *
      * <pre>
-     *产品Id
+     *产品ID
      * </pre>
      */
     com.google.protobuf.ByteString
         getProductIdBytes();
+
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductDetailRequest}
@@ -5416,6 +5442,12 @@ public final class Product {
               productId_ = bs;
               break;
             }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5462,7 +5494,7 @@ public final class Product {
      * <code>required string productId = 1;</code>
      *
      * <pre>
-     *产品Id
+     *产品ID
      * </pre>
      */
     public boolean hasProductId() {
@@ -5472,7 +5504,7 @@ public final class Product {
      * <code>required string productId = 1;</code>
      *
      * <pre>
-     *产品Id
+     *产品ID
      * </pre>
      */
     public java.lang.String getProductId() {
@@ -5493,7 +5525,7 @@ public final class Product {
      * <code>required string productId = 1;</code>
      *
      * <pre>
-     *产品Id
+     *产品ID
      * </pre>
      */
     public com.google.protobuf.ByteString
@@ -5510,8 +5542,63 @@ public final class Product {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       productId_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -5533,6 +5620,9 @@ public final class Product {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getProductIdBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5545,6 +5635,10 @@ public final class Product {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getProductIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5669,6 +5763,8 @@ public final class Product {
         super.clear();
         productId_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -5701,6 +5797,10 @@ public final class Product {
           to_bitField0_ |= 0x00000001;
         }
         result.productId_ = productId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -5720,6 +5820,11 @@ public final class Product {
         if (other.hasProductId()) {
           bitField0_ |= 0x00000001;
           productId_ = other.productId_;
+          onChanged();
+        }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -5758,7 +5863,7 @@ public final class Product {
        * <code>required string productId = 1;</code>
        *
        * <pre>
-       *产品Id
+       *产品ID
        * </pre>
        */
       public boolean hasProductId() {
@@ -5768,7 +5873,7 @@ public final class Product {
        * <code>required string productId = 1;</code>
        *
        * <pre>
-       *产品Id
+       *产品ID
        * </pre>
        */
       public java.lang.String getProductId() {
@@ -5789,7 +5894,7 @@ public final class Product {
        * <code>required string productId = 1;</code>
        *
        * <pre>
-       *产品Id
+       *产品ID
        * </pre>
        */
       public com.google.protobuf.ByteString
@@ -5809,7 +5914,7 @@ public final class Product {
        * <code>required string productId = 1;</code>
        *
        * <pre>
-       *产品Id
+       *产品ID
        * </pre>
        */
       public Builder setProductId(
@@ -5826,7 +5931,7 @@ public final class Product {
        * <code>required string productId = 1;</code>
        *
        * <pre>
-       *产品Id
+       *产品ID
        * </pre>
        */
       public Builder clearProductId() {
@@ -5839,7 +5944,7 @@ public final class Product {
        * <code>required string productId = 1;</code>
        *
        * <pre>
-       *产品Id
+       *产品ID
        * </pre>
        */
       public Builder setProductIdBytes(
@@ -5849,6 +5954,106 @@ public final class Product {
   }
   bitField0_ |= 0x00000001;
         productId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -23195,59 +23400,59 @@ public final class Product {
       "rentCount\030\010 \001(\003\022\023\n\013marketPrice\030\t \001(\001\022\023\n\013" +
       "pledgePrice\030\n \001(\001\022\021\n\tfavorited\030\013 \001(\010\022\024\n\014" +
       "productTitle\030\014 \002(\t\022\026\n\016bannerImageUrl\030\r \001" +
-      "(\t\")\n\024ProductDetailRequest\022\021\n\tproductId\030" +
-      "\001 \002(\t\"\211\001\n\023ProductDetailResult\022\022\n\nresultC" +
-      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022K\n\021productD" +
-      "etailInfo\030\003 \001(\01320.com.qjoy.basjoo.core.m",
-      "odel.pb.ProductDetailInfo\"\362\005\n\021ProductDet" +
-      "ailInfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productTyp" +
-      "e\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\020\n\010imageUrl\030\004 \003(\t" +
-      "\022\014\n\004desc\030\005 \002(\t\022\022\n\nageBracket\030\006 \001(\t\022\022\n\nlo" +
-      "westRent\030\007 \001(\001\022\014\n\004unit\030\010 \001(\005\022\021\n\trentCoun" +
-      "t\030\t \001(\003\022\024\n\014maxAvailable\030\n \001(\003\022\023\n\013marketP" +
-      "rice\030\013 \001(\001\022\023\n\013pledgePrice\030\014 \001(\001\022\033\n\023trans" +
-      "portationPrice\030\r \001(\001\022\020\n\010location\030\016 \001(\t\022A" +
-      "\n\014categoryInfo\030\017 \003(\0132+.com.qjoy.basjoo.c" +
-      "ore.model.pb.CategoryInfo\022C\n\rshortRentIn",
-      "fo\030\020 \003(\0132,.com.qjoy.basjoo.core.model.pb" +
-      ".ShortRentInfo\022A\n\014longRentInfo\030\021 \003(\0132+.c" +
-      "om.qjoy.basjoo.core.model.pb.LongRentInf" +
-      "o\022B\n\tbaseParam\030\022 \003(\0132/.com.qjoy.basjoo.c" +
-      "ore.model.pb.ProductBaseParam\022\026\n\016imagePa" +
-      "ramUrls\030\023 \003(\t\022\025\n\revaluateCount\030\024 \001(\003\022O\n\023" +
-      "productEvaluateInfo\030\025 \003(\01322.com.qjoy.bas" +
-      "joo.core.model.pb.ProductEvaluateInfo\022\021\n" +
-      "\tfavorited\030\026 \001(\010\022\024\n\014productTitle\030\027 \002(\t\022\026" +
-      "\n\016bannerImageUrl\030\030 \001(\t\"f\n\014CategoryInfo\022\024",
-      "\n\014categoryCode\030\001 \002(\t\022\024\n\014categoryName\030\002 \002" +
-      "(\t\022\022\n\nstockCount\030\003 \001(\003\022\026\n\016categoryImgUrl" +
-      "\030\004 \001(\t\"b\n\rShortRentInfo\022\020\n\010rentCode\030\001 \002(" +
-      "\t\022\022\n\nrentPeriod\030\002 \002(\t\022\027\n\017rentPricePerDay" +
-      "\030\003 \002(\001\022\022\n\ntotalPrice\030\004 \002(\001\"\224\001\n\014LongRentI" +
-      "nfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(" +
-      "\t\022\026\n\016rentPeriodName\030\003 \002(\t\022\027\n\017rentPricePe" +
-      "rDay\030\004 \002(\001\022\031\n\021rentPricePerMonth\030\005 \002(\001\022\022\n" +
-      "\ntotalPrice\030\006 \002(\001\"D\n\020ProductBaseParam\022\014\n" +
-      "\004code\030\001 \002(\t\022\017\n\007showKey\030\002 \002(\t\022\021\n\tshowValu",
-      "e\030\003 \002(\t\"\233\002\n\023ProductEvaluateInfo\022\014\n\004time\030" +
-      "\001 \002(\003\022\016\n\006userId\030\002 \002(\t\022\020\n\010userName\030\003 \002(\t\022" +
-      "\023\n\013headIconUrl\030\004 \002(\t\022\021\n\tuserLevel\030\005 \002(\005\022" +
-      "\030\n\020rentCategoryName\030\006 \002(\t\022\017\n\007content\030\007 \002" +
-      "(\t\022\021\n\timageUrls\030\010 \003(\t\022\r\n\005level\030\t \002(\005\022\022\n\n" +
-      "evaluateId\030\n \002(\t\022K\n\021evaluateReplyInfo\030\013 " +
-      "\003(\01320.com.qjoy.basjoo.core.model.pb.Eval" +
-      "uateReplyInfo\"X\n\021EvaluateReplyInfo\022\017\n\007re" +
-      "plyId\030\001 \002(\t\022\017\n\007content\030\002 \002(\t\022\014\n\004time\030\003 \002" +
-      "(\003\022\023\n\013fromMechant\030\004 \002(\010\"\\\n\035GetProductEva",
-      "luateListRequest\022\021\n\tproductId\030\001 \002(\t\022\024\n\014e" +
-      "valuateType\030\002 \002(\005\022\022\n\nstartIndex\030\003 \001(\005\"\346\001" +
-      "\n\034GetProductEvaluateListResult\022\022\n\nresult" +
-      "Code\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxInde" +
-      "x\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\022\n\ntotalCount\030\005" +
-      " \002(\003\022\027\n\017totalImageCount\030\006 \002(\003\022O\n\023product" +
-      "EvaluateInfo\030\007 \003(\01322.com.qjoy.basjoo.cor" +
-      "e.model.pb.ProductEvaluateInfoB\037\n\035com.qj" +
-      "oy.basjoo.core.model.pb"
+      "(\t\"9\n\024ProductDetailRequest\022\021\n\tproductId\030" +
+      "\001 \002(\t\022\016\n\006userId\030\002 \001(\t\"\211\001\n\023ProductDetailR" +
+      "esult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002" +
+      " \002(\t\022K\n\021productDetailInfo\030\003 \001(\01320.com.qj",
+      "oy.basjoo.core.model.pb.ProductDetailInf" +
+      "o\"\362\005\n\021ProductDetailInfo\022\021\n\tproductId\030\001 \002" +
+      "(\t\022\023\n\013productType\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\020" +
+      "\n\010imageUrl\030\004 \003(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nageBra" +
+      "cket\030\006 \001(\t\022\022\n\nlowestRent\030\007 \001(\001\022\014\n\004unit\030\010" +
+      " \001(\005\022\021\n\trentCount\030\t \001(\003\022\024\n\014maxAvailable\030" +
+      "\n \001(\003\022\023\n\013marketPrice\030\013 \001(\001\022\023\n\013pledgePric" +
+      "e\030\014 \001(\001\022\033\n\023transportationPrice\030\r \001(\001\022\020\n\010" +
+      "location\030\016 \001(\t\022A\n\014categoryInfo\030\017 \003(\0132+.c" +
+      "om.qjoy.basjoo.core.model.pb.CategoryInf",
+      "o\022C\n\rshortRentInfo\030\020 \003(\0132,.com.qjoy.basj" +
+      "oo.core.model.pb.ShortRentInfo\022A\n\014longRe" +
+      "ntInfo\030\021 \003(\0132+.com.qjoy.basjoo.core.mode" +
+      "l.pb.LongRentInfo\022B\n\tbaseParam\030\022 \003(\0132/.c" +
+      "om.qjoy.basjoo.core.model.pb.ProductBase" +
+      "Param\022\026\n\016imageParamUrls\030\023 \003(\t\022\025\n\revaluat" +
+      "eCount\030\024 \001(\003\022O\n\023productEvaluateInfo\030\025 \003(" +
+      "\01322.com.qjoy.basjoo.core.model.pb.Produc" +
+      "tEvaluateInfo\022\021\n\tfavorited\030\026 \001(\010\022\024\n\014prod" +
+      "uctTitle\030\027 \002(\t\022\026\n\016bannerImageUrl\030\030 \001(\t\"f",
+      "\n\014CategoryInfo\022\024\n\014categoryCode\030\001 \002(\t\022\024\n\014" +
+      "categoryName\030\002 \002(\t\022\022\n\nstockCount\030\003 \001(\003\022\026" +
+      "\n\016categoryImgUrl\030\004 \001(\t\"b\n\rShortRentInfo\022" +
+      "\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\027\n" +
+      "\017rentPricePerDay\030\003 \002(\001\022\022\n\ntotalPrice\030\004 \002" +
+      "(\001\"\224\001\n\014LongRentInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n" +
+      "\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002(" +
+      "\t\022\027\n\017rentPricePerDay\030\004 \002(\001\022\031\n\021rentPriceP" +
+      "erMonth\030\005 \002(\001\022\022\n\ntotalPrice\030\006 \002(\001\"D\n\020Pro" +
+      "ductBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030\002",
+      " \002(\t\022\021\n\tshowValue\030\003 \002(\t\"\233\002\n\023ProductEvalu" +
+      "ateInfo\022\014\n\004time\030\001 \002(\003\022\016\n\006userId\030\002 \002(\t\022\020\n" +
+      "\010userName\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \002(\t\022\021\n\t" +
+      "userLevel\030\005 \002(\005\022\030\n\020rentCategoryName\030\006 \002(" +
+      "\t\022\017\n\007content\030\007 \002(\t\022\021\n\timageUrls\030\010 \003(\t\022\r\n" +
+      "\005level\030\t \002(\005\022\022\n\nevaluateId\030\n \002(\t\022K\n\021eval" +
+      "uateReplyInfo\030\013 \003(\01320.com.qjoy.basjoo.co" +
+      "re.model.pb.EvaluateReplyInfo\"X\n\021Evaluat" +
+      "eReplyInfo\022\017\n\007replyId\030\001 \002(\t\022\017\n\007content\030\002" +
+      " \002(\t\022\014\n\004time\030\003 \002(\003\022\023\n\013fromMechant\030\004 \002(\010\"",
+      "\\\n\035GetProductEvaluateListRequest\022\021\n\tprod" +
+      "uctId\030\001 \002(\t\022\024\n\014evaluateType\030\002 \002(\005\022\022\n\nsta" +
+      "rtIndex\030\003 \001(\005\"\346\001\n\034GetProductEvaluateList" +
+      "Result\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030" +
+      "\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010" +
+      "\022\022\n\ntotalCount\030\005 \002(\003\022\027\n\017totalImageCount\030" +
+      "\006 \002(\003\022O\n\023productEvaluateInfo\030\007 \003(\01322.com" +
+      ".qjoy.basjoo.core.model.pb.ProductEvalua" +
+      "teInfoB\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -23284,7 +23489,7 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailRequest_descriptor,
-        new java.lang.String[] { "ProductId", });
+        new java.lang.String[] { "ProductId", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailResult_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailResult_fieldAccessorTable = new

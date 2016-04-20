@@ -77,7 +77,9 @@
 
 @interface ProductDetailRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasProductId;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* productId;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface ProductDetailResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

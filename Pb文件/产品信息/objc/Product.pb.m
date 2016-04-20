@@ -610,12 +610,16 @@
 - (instancetype) init {
   if ((self = [super init])) {
     _productId = @"";
+    _userId = @"";
   }
   return self;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
   if (self.hasProductId) {
     [output writeString:1 value:self.productId];
+  }
+  if (self.hasUserId) {
+    [output writeString:2 value:self.userId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -625,6 +629,9 @@
   size_ = 0;
   if (self.hasProductId) {
     size_ += computeStringSize(1, self.productId);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(2, self.userId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -639,12 +646,19 @@
   if (self.hasProductId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"productId", self.productId];
   }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
 - (void) setProductId:(NSString*) value {
   _hasProductId = YES;
   _productId = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -663,6 +677,10 @@
       }
       case 10: {
         [self setProductId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setUserId:[input readString]];
         break;
       }
     }
