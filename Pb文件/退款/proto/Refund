@@ -1,0 +1,62 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取退款详情
+message GetRefundDetailRequest {  
+
+   //用户ID
+   required string userId = 1; 
+   //订单ID
+   required string orderId = 2;
+}
+
+//获取退款结果
+message GetRefundDetailResult {   
+
+    required string                 resultCode = 1;
+    
+    required string                 resultMsg = 2;
+
+    optional int32                  orderStatus = 3; 
+    //退款类型 1：仅退款，2：退款＋退货
+    optional string                refundType = 4; 
+    //退款理由
+    optional string                refundReason = 5;
+ 
+    //退款金额
+    optional double                refundFee = 6;	
+
+
+    //申请退款时间
+    optional int64                applyTime = 7;	
+
+    //完成款时间
+    optional int64                refundTime = 8;	
+
+    //退款凭证图片
+    repeated string                evidentalImgs = 9;
+
+    //退款说明
+    optional string                refundIntro = 10;
+    //快递号
+    optional string                transportationId = 11; 	
+	
+    //快递公司
+    optional string                transportationCompany = 12;
+    //物流说明
+    optional string                transportationIntro = 13; 
+
+ }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+CREATE TABLE `refund_info` (
+  `refund_id` varchar(64) NOT NULL COMMENT '退款ID',
+  `user_id`  varchar(64) NOT NULL  COMMENT '用户ID',
+  `order_id`  varchar(64) NOT NULL  COMMENT '订单ID',
+  `refund_type` int(1) NOT NULL COMMENT '退款类型',
+  `refund_reason` varchar(255)  COMMENT '退款理由',
+  `refund_intro` varchar(255) COMMENT '退款说明',
+  `refund_fee` double(9,2)  COMMENT '退款金额',
+  `evidental_imgs` varchar(2048)   COMMENT '退款图片地址信息',
+  `apply_time` timestamp  COMMENT '申请退款时间',
+  `agree_time` timestamp   COMMENT '同意退款时间',
+  `refund_time` timestamp COMMENT '完成退款时间',
+  `trans_id` varchar(255) COMMENT '物流ID',
+  `trans_company` varchar(255)  COMMENT '物流公司',
+  `trans_intro` varchar(255)  COMMENT '	',
+  `commit_trans_time` timestamp  COMMENT '提交物流信息时间',
+  `gmt_create` timestamp DEFAULT NULL COMMENT '创建时间',
+  `gmt_modify` timestamp NULL DEFAULT NULL COMMENT '修改时间',
+  PRIMARY KEY (refund_id),
+  INDEX `refund_info_user_id_index` (user_id),
+  INDEX `refund_info_order_id_index` (order_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='退款信息';
