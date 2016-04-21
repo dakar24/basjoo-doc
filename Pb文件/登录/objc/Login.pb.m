@@ -541,6 +541,7 @@ BOOL LoginTypeIsValidValue(LoginType value) {
     _unionId = @"";
     _mobileNo = @"";
     _checkCode = @"";
+    _recommendCode = @"";
   }
   return self;
 }
@@ -574,6 +575,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   }
   if (self.hasCheckCode) {
     [output writeString:10 value:self.checkCode];
+  }
+  if (self.hasRecommendCode) {
+    [output writeString:11 value:self.recommendCode];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -610,6 +614,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   }
   if (self.hasCheckCode) {
     size_ += computeStringSize(10, self.checkCode);
+  }
+  if (self.hasRecommendCode) {
+    size_ += computeStringSize(11, self.recommendCode);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -650,6 +657,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   }
   if (self.hasCheckCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"checkCode", self.checkCode];
+  }
+  if (self.hasRecommendCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"recommendCode", self.recommendCode];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -693,6 +703,10 @@ BOOL LoginTypeIsValidValue(LoginType value) {
 - (void) setCheckCode:(NSString*) value {
   _hasCheckCode = YES;
   _checkCode = value;
+}
+- (void) setRecommendCode:(NSString*) value {
+  _hasRecommendCode = YES;
+  _recommendCode = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -747,6 +761,10 @@ BOOL LoginTypeIsValidValue(LoginType value) {
       }
       case 82: {
         [self setCheckCode:[input readString]];
+        break;
+      }
+      case 90: {
+        [self setRecommendCode:[input readString]];
         break;
       }
     }

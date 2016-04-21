@@ -70,6 +70,7 @@ typedef NS_ENUM(SInt32, LoginType) {
 @property (readonly) BOOL hasUnionId;
 @property (readonly) BOOL hasMobileNo;
 @property (readonly) BOOL hasCheckCode;
+@property (readonly) BOOL hasRecommendCode;
 @property (nonatomic,strong) NSString* openId;
 @property (nonatomic,strong) NSString* nickName;
 @property (nonatomic,strong) NSString* province;
@@ -80,5 +81,6 @@ typedef NS_ENUM(SInt32, LoginType) {
 @property (nonatomic,strong) NSString* unionId;
 @property (nonatomic,strong) NSString* mobileNo;
 @property (nonatomic,strong) NSString* checkCode;
+@property (nonatomic,strong) NSString* recommendCode;
 @end
 

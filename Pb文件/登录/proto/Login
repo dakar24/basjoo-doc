@@ -104,7 +104,9 @@ message BindWxUserRequest {
 
    //短信验证码
    required string                checkCode = 10;
-
+ 
+   //推荐码（邀请码）
+   optional string                recommendCode  =11;
 }
  
 
