@@ -57,7 +57,7 @@
 获取支付状态（微信收银台返回成功后）：qjoy.basjoo.getPayStatus
 申请退款：qjoy.basjoo.applyRefund
 提交退款物流信息：qjoy.basjoo.commitRefundTrans
-提交退款物流信息：qjoy.basjoo.getRefundDetail
+查看退款详情：qjoy.basjoo.getRefundDetail
 
 
 ##权益
