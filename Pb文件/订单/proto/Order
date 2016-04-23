@@ -458,6 +458,9 @@ message ApplyRevertRequest {
 
     //归还凭证图片
     repeated string                 evidentalImgs = 6;
+
+    //归还说明
+    optional string                 revertIntro = 7; 
     
     
 }

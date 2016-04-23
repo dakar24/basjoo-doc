@@ -1,0 +1,54 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取归还详情
+message GetRevertDetailRequest {  
+
+   //用户ID
+   required string userId = 1; 
+   //订单ID
+   required string orderId = 2;
+}
+
+//获取归还结果
+message GetRevertDetailResult {   
+
+    required string                 resultCode = 1;
+    
+    required string                 resultMsg = 2;
+
+    optional int32                  orderStatus = 3; 
+
+    //申请归还时间
+    optional int64                  applyTime = 4;	
+
+    //完成归还时间
+    optional int64                  revertTime = 5;	
+
+    //归还凭证图片
+    repeated string                 evidentalImgs = 6;
+
+    //归还说明
+    optional string                 revertIntro = 7;
+    //快递号
+    optional string                 transportationId = 8; 	
+	
+    //快递公司
+    optional string                transportationCompany = 9;
+    //物流说明
+    optional string                transportationIntro = 10; 
+
+ }
+
+
+
+
+
+
+
+
+
+
+

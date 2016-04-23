@@ -3046,6 +3046,7 @@
     _transportationId = @"";
     _transportationCompany = @"";
     _userId = @"";
+    _revertIntro = @"";
   }
   return self;
 }
@@ -3068,6 +3069,9 @@
   [self.evidentalImgs enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
     [output writeString:6 value:element];
   }];
+  if (self.hasRevertIntro) {
+    [output writeString:7 value:self.revertIntro];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -3098,6 +3102,9 @@
     size_ += dataSize;
     size_ += (SInt32)(1 * count);
   }
+  if (self.hasRevertIntro) {
+    size_ += computeStringSize(7, self.revertIntro);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -3126,6 +3133,9 @@
   [self.evidentalImgs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@: %@\n", indent, @"evidentalImgs", obj];
   }];
+  if (self.hasRevertIntro) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"revertIntro", self.revertIntro];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -3157,6 +3167,10 @@
     _evidentalImgs = [[NSMutableArray alloc]init];
   }
   [_evidentalImgs addObject:value];
+}
+- (void) setRevertIntro:(NSString*) value {
+  _hasRevertIntro = YES;
+  _revertIntro = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -3195,6 +3209,10 @@
       }
       case 50: {
         [self addEvidentalImgs:[input readString]];
+        break;
+      }
+      case 58: {
+        [self setRevertIntro:[input readString]];
         break;
       }
     }

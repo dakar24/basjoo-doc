@@ -22,6 +22,7 @@ public final class ApplyRevertRequest extends Message {
   public static final int TAG_TRANSPORTATIONCOMPANY = 4;
   public static final int TAG_USERID = 5;
   public static final int TAG_EVIDENTALIMGS = 6;
+  public static final int TAG_REVERTINTRO = 7;
 
   public static final String DEFAULT_ORDERID = "";
   public static final String DEFAULT_APPLYREVERTTYPE = "";
@@ -29,6 +30,7 @@ public final class ApplyRevertRequest extends Message {
   public static final String DEFAULT_TRANSPORTATIONCOMPANY = "";
   public static final String DEFAULT_USERID = "";
   public static final List<String> DEFAULT_EVIDENTALIMGS = Collections.emptyList();
+  public static final String DEFAULT_REVERTINTRO = "";
 
   /**
    * 订单ID
@@ -66,6 +68,12 @@ public final class ApplyRevertRequest extends Message {
   @ProtoField(tag = 6, type = STRING, label = REPEATED)
   public List<String> evidentalImgs;
 
+  /**
+   * 归还说明
+   */
+  @ProtoField(tag = 7, type = STRING)
+  public String revertIntro;
+
   public ApplyRevertRequest(ApplyRevertRequest message) {
     super(message);
     if (message == null) return;
@@ -75,6 +83,7 @@ public final class ApplyRevertRequest extends Message {
     this.transportationCompany = message.transportationCompany;
     this.userId = message.userId;
     this.evidentalImgs = copyOf(message.evidentalImgs);
+    this.revertIntro = message.revertIntro;
   }
 
   public ApplyRevertRequest() {
@@ -100,6 +109,9 @@ public final class ApplyRevertRequest extends Message {
         case TAG_EVIDENTALIMGS:
         this.evidentalImgs = immutableCopyOf((List<String>)value);
         break;
+        case TAG_REVERTINTRO:
+        this.revertIntro = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -115,7 +127,8 @@ public final class ApplyRevertRequest extends Message {
         && equals(transportationId, o.transportationId)
         && equals(transportationCompany, o.transportationCompany)
         && equals(userId, o.userId)
-        && equals(evidentalImgs, o.evidentalImgs);
+        && equals(evidentalImgs, o.evidentalImgs)
+        && equals(revertIntro, o.revertIntro);
   }
 
   @Override
@@ -128,6 +141,7 @@ public final class ApplyRevertRequest extends Message {
       result = result * 37 + (transportationCompany != null ? transportationCompany.hashCode() : 0);
       result = result * 37 + (userId != null ? userId.hashCode() : 0);
       result = result * 37 + (evidentalImgs != null ? evidentalImgs.hashCode() : 1);
+      result = result * 37 + (revertIntro != null ? revertIntro.hashCode() : 0);
       hashCode = result;
     }
     return result;

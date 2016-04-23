@@ -58,6 +58,7 @@
 申请退款：qjoy.basjoo.applyRefund
 提交退款物流信息：qjoy.basjoo.commitRefundTrans
 查看退款详情：qjoy.basjoo.getRefundDetail
+查看归还详情：qjoy.basjoo.getRevertDetail
 
 
 ##权益

@@ -326,12 +326,14 @@
 @property (readonly) BOOL hasTransportationId;
 @property (readonly) BOOL hasTransportationCompany;
 @property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasRevertIntro;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic,strong) NSString* applyRevertType;
 @property (nonatomic,strong) NSString* transportationId;
 @property (nonatomic,strong) NSString* transportationCompany;
 @property (nonatomic,strong) NSString* userId;
 @property (nonatomic,strong) NSMutableArray * evidentalImgs;
+@property (nonatomic,strong) NSString* revertIntro;
 @end
 
 @interface ApplyRevertResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
