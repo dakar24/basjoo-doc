@@ -36,6 +36,8 @@ CREATE TABLE `order_info` (
   `remark` varchar(512) DEFAULT NULL COMMENT '备注',
   `valid_status` bigint(20) DEFAULT NULL COMMENT '有效状态',
   `recycle_status` bigint(20) DEFAULT NULL COMMENT '回收状态',
+  `pay_valid_start` timestamp NULL DEFAULT NULL COMMENT '付款有效期开始',
+  `pay_valid_end` timestamp NULL DEFAULT NULL COMMENT '付款有效期结束',
   `gmt_create` timestamp NULL DEFAULT NULL,
   `gmt_modify` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`order_id`),
