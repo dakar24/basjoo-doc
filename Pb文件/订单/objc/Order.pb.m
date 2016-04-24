@@ -211,6 +211,7 @@
     _totalRentPrice = 0;
     _hasVoucher = NO;
     _totalPrice = 0;
+    _maxVoucherAmount = 0;
   }
   return self;
 }
@@ -259,6 +260,12 @@
   }
   [self.voucherInfo enumerateObjectsUsingBlock:^(OrderVoucherInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:15 value:element];
+  }];
+  if (self.hasMaxVoucherAmount) {
+    [output writeDouble:16 value:self.maxVoucherAmount];
+  }
+  [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:17 value:element];
   }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -311,6 +318,18 @@
   [self.voucherInfo enumerateObjectsUsingBlock:^(OrderVoucherInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(15, element);
   }];
+  if (self.hasMaxVoucherAmount) {
+    size_ += computeDoubleSize(16, self.maxVoucherAmount);
+  }
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.vouchers.count;
+    [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(2 * count);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -371,6 +390,12 @@
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
+  }];
+  if (self.hasMaxVoucherAmount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"maxVoucherAmount", [NSNumber numberWithDouble:self.maxVoucherAmount]];
+  }
+  [self.vouchers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"vouchers", obj];
   }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -439,6 +464,19 @@
     _voucherInfo = [[NSMutableArray alloc]init];
   }
   [_voucherInfo addObject:value];
+}
+- (void) setMaxVoucherAmount:(Float64) value {
+  _hasMaxVoucherAmount = YES;
+  _maxVoucherAmount = value;
+}
+- (void)setVouchersArray:(NSArray *)array {
+  _vouchers = [[NSMutableArray alloc] initWithArray:array];
+}
+- (void)addVouchers:(NSString*)value {
+  if (_vouchers == nil) {
+    _vouchers = [[NSMutableArray alloc]init];
+  }
+  [_vouchers addObject:value];
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -517,6 +555,14 @@
         OrderVoucherInfo* sub = [[OrderVoucherInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addVoucherInfo:sub];
+        break;
+      }
+      case 129: {
+        [self setMaxVoucherAmount:[input readDouble]];
+        break;
+      }
+      case 138: {
+        [self addVouchers:[input readString]];
         break;
       }
     }

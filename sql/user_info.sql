@@ -20,6 +20,7 @@ CREATE TABLE `user_info` (
   `active_status` bigint(20) DEFAULT NULL,
   `head_icon_url` varchar(256) DEFAULT NULL,
   `source` varchar(64) DEFAULT NULL,
+  `recommend_code` varchar(32) DEFAULT NULL,
   `gmt_create` timestamp NULL DEFAULT NULL,
   `gmt_modify` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`),

@@ -2060,6 +2060,58 @@ public final class Order {
      */
     com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder getVoucherInfoOrBuilder(
         int index);
+
+    /**
+     * <code>optional double maxVoucherAmount = 16;</code>
+     *
+     * <pre>
+     *优惠券，最大可用的额度
+     * </pre>
+     */
+    boolean hasMaxVoucherAmount();
+    /**
+     * <code>optional double maxVoucherAmount = 16;</code>
+     *
+     * <pre>
+     *优惠券，最大可用的额度
+     * </pre>
+     */
+    double getMaxVoucherAmount();
+
+    /**
+     * <code>repeated string vouchers = 17;</code>
+     *
+     * <pre>
+     *用户选择的权益
+     * </pre>
+     */
+    com.google.protobuf.ProtocolStringList
+        getVouchersList();
+    /**
+     * <code>repeated string vouchers = 17;</code>
+     *
+     * <pre>
+     *用户选择的权益
+     * </pre>
+     */
+    int getVouchersCount();
+    /**
+     * <code>repeated string vouchers = 17;</code>
+     *
+     * <pre>
+     *用户选择的权益
+     * </pre>
+     */
+    java.lang.String getVouchers(int index);
+    /**
+     * <code>repeated string vouchers = 17;</code>
+     *
+     * <pre>
+     *用户选择的权益
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getVouchersBytes(int index);
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CommitOrderResult}
@@ -2208,6 +2260,20 @@ public final class Order {
               voucherInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.PARSER, extensionRegistry));
               break;
             }
+            case 129: {
+              bitField0_ |= 0x00004000;
+              maxVoucherAmount_ = input.readDouble();
+              break;
+            }
+            case 138: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+                vouchers_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00010000;
+              }
+              vouchers_.add(bs);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2218,6 +2284,9 @@ public final class Order {
       } finally {
         if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
           voucherInfo_ = java.util.Collections.unmodifiableList(voucherInfo_);
+        }
+        if (((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+          vouchers_ = vouchers_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -2769,6 +2838,74 @@ public final class Order {
       return voucherInfo_.get(index);
     }
 
+    public static final int MAXVOUCHERAMOUNT_FIELD_NUMBER = 16;
+    private double maxVoucherAmount_;
+    /**
+     * <code>optional double maxVoucherAmount = 16;</code>
+     *
+     * <pre>
+     *优惠券，最大可用的额度
+     * </pre>
+     */
+    public boolean hasMaxVoucherAmount() {
+      return ((bitField0_ & 0x00004000) == 0x00004000);
+    }
+    /**
+     * <code>optional double maxVoucherAmount = 16;</code>
+     *
+     * <pre>
+     *优惠券，最大可用的额度
+     * </pre>
+     */
+    public double getMaxVoucherAmount() {
+      return maxVoucherAmount_;
+    }
+
+    public static final int VOUCHERS_FIELD_NUMBER = 17;
+    private com.google.protobuf.LazyStringList vouchers_;
+    /**
+     * <code>repeated string vouchers = 17;</code>
+     *
+     * <pre>
+     *用户选择的权益
+     * </pre>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getVouchersList() {
+      return vouchers_;
+    }
+    /**
+     * <code>repeated string vouchers = 17;</code>
+     *
+     * <pre>
+     *用户选择的权益
+     * </pre>
+     */
+    public int getVouchersCount() {
+      return vouchers_.size();
+    }
+    /**
+     * <code>repeated string vouchers = 17;</code>
+     *
+     * <pre>
+     *用户选择的权益
+     * </pre>
+     */
+    public java.lang.String getVouchers(int index) {
+      return vouchers_.get(index);
+    }
+    /**
+     * <code>repeated string vouchers = 17;</code>
+     *
+     * <pre>
+     *用户选择的权益
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getVouchersBytes(int index) {
+      return vouchers_.getByteString(index);
+    }
+
     private void initFields() {
       resultCode_ = "";
       resultMsg_ = "";
@@ -2785,6 +2922,8 @@ public final class Order {
       totalPrice_ = 0D;
       orderReceiveAddressInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance();
       voucherInfo_ = java.util.Collections.emptyList();
+      maxVoucherAmount_ = 0D;
+      vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2864,6 +3003,12 @@ public final class Order {
       for (int i = 0; i < voucherInfo_.size(); i++) {
         output.writeMessage(15, voucherInfo_.get(i));
       }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        output.writeDouble(16, maxVoucherAmount_);
+      }
+      for (int i = 0; i < vouchers_.size(); i++) {
+        output.writeBytes(17, vouchers_.getByteString(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2932,6 +3077,19 @@ public final class Order {
       for (int i = 0; i < voucherInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, voucherInfo_.get(i));
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(16, maxVoucherAmount_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < vouchers_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(vouchers_.getByteString(i));
+        }
+        size += dataSize;
+        size += 2 * getVouchersList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3094,6 +3252,10 @@ public final class Order {
         } else {
           voucherInfoBuilder_.clear();
         }
+        maxVoucherAmount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00008000);
+        vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
 
@@ -3191,6 +3353,15 @@ public final class Order {
         } else {
           result.voucherInfo_ = voucherInfoBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.maxVoucherAmount_ = maxVoucherAmount_;
+        if (((bitField0_ & 0x00010000) == 0x00010000)) {
+          vouchers_ = vouchers_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.vouchers_ = vouchers_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3284,6 +3455,19 @@ public final class Order {
               voucherInfoBuilder_.addAllMessages(other.voucherInfo_);
             }
           }
+        }
+        if (other.hasMaxVoucherAmount()) {
+          setMaxVoucherAmount(other.getMaxVoucherAmount());
+        }
+        if (!other.vouchers_.isEmpty()) {
+          if (vouchers_.isEmpty()) {
+            vouchers_ = other.vouchers_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureVouchersIsMutable();
+            vouchers_.addAll(other.vouchers_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -4630,6 +4814,183 @@ public final class Order {
           voucherInfo_ = null;
         }
         return voucherInfoBuilder_;
+      }
+
+      private double maxVoucherAmount_ ;
+      /**
+       * <code>optional double maxVoucherAmount = 16;</code>
+       *
+       * <pre>
+       *优惠券，最大可用的额度
+       * </pre>
+       */
+      public boolean hasMaxVoucherAmount() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      /**
+       * <code>optional double maxVoucherAmount = 16;</code>
+       *
+       * <pre>
+       *优惠券，最大可用的额度
+       * </pre>
+       */
+      public double getMaxVoucherAmount() {
+        return maxVoucherAmount_;
+      }
+      /**
+       * <code>optional double maxVoucherAmount = 16;</code>
+       *
+       * <pre>
+       *优惠券，最大可用的额度
+       * </pre>
+       */
+      public Builder setMaxVoucherAmount(double value) {
+        bitField0_ |= 0x00008000;
+        maxVoucherAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double maxVoucherAmount = 16;</code>
+       *
+       * <pre>
+       *优惠券，最大可用的额度
+       * </pre>
+       */
+      public Builder clearMaxVoucherAmount() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        maxVoucherAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureVouchersIsMutable() {
+        if (!((bitField0_ & 0x00010000) == 0x00010000)) {
+          vouchers_ = new com.google.protobuf.LazyStringArrayList(vouchers_);
+          bitField0_ |= 0x00010000;
+         }
+      }
+      /**
+       * <code>repeated string vouchers = 17;</code>
+       *
+       * <pre>
+       *用户选择的权益
+       * </pre>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getVouchersList() {
+        return vouchers_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string vouchers = 17;</code>
+       *
+       * <pre>
+       *用户选择的权益
+       * </pre>
+       */
+      public int getVouchersCount() {
+        return vouchers_.size();
+      }
+      /**
+       * <code>repeated string vouchers = 17;</code>
+       *
+       * <pre>
+       *用户选择的权益
+       * </pre>
+       */
+      public java.lang.String getVouchers(int index) {
+        return vouchers_.get(index);
+      }
+      /**
+       * <code>repeated string vouchers = 17;</code>
+       *
+       * <pre>
+       *用户选择的权益
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getVouchersBytes(int index) {
+        return vouchers_.getByteString(index);
+      }
+      /**
+       * <code>repeated string vouchers = 17;</code>
+       *
+       * <pre>
+       *用户选择的权益
+       * </pre>
+       */
+      public Builder setVouchers(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVouchersIsMutable();
+        vouchers_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string vouchers = 17;</code>
+       *
+       * <pre>
+       *用户选择的权益
+       * </pre>
+       */
+      public Builder addVouchers(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVouchersIsMutable();
+        vouchers_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string vouchers = 17;</code>
+       *
+       * <pre>
+       *用户选择的权益
+       * </pre>
+       */
+      public Builder addAllVouchers(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureVouchersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, vouchers_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string vouchers = 17;</code>
+       *
+       * <pre>
+       *用户选择的权益
+       * </pre>
+       */
+      public Builder clearVouchers() {
+        vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string vouchers = 17;</code>
+       *
+       * <pre>
+       *用户选择的权益
+       * </pre>
+       */
+      public Builder addVouchersBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVouchersIsMutable();
+        vouchers_.add(value);
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.CommitOrderResult)
@@ -44252,7 +44613,7 @@ public final class Order {
       "\022\024\n\014categoryCode\030\002 \002(\t\022\021\n\trentCount\030\003 \002(" +
       "\005\022\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance\030\005 \002(\010\022\017" +
       "\n\007orderId\030\006 \001(\t\022\024\n\014onlyCalPrice\030\007 \002(\010\022\016\n" +
-      "\006userId\030\010 \002(\t\"\302\003\n\021CommitOrderResult\022\022\n\nr" +
+      "\006userId\030\010 \002(\t\"\356\003\n\021CommitOrderResult\022\022\n\nr" +
       "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007or" +
       "derId\030\003 \001(\t\022\024\n\014categoryCode\030\004 \001(\t\022\021\n\tren" +
       "tCount\030\005 \001(\005\022\020\n\010rentCode\030\006 \001(\t\022\021\n\tinsura" +
@@ -44263,117 +44624,118 @@ public final class Order {
       "iveAddressInfo\030\016 \001(\01326.com.qjoy.basjoo.c" +
       "ore.model.pb.OrderReceiveAddressInfo\022D\n\013" +
       "voucherInfo\030\017 \003(\0132/.com.qjoy.basjoo.core" +
-      ".model.pb.OrderVoucherInfo\"\223\001\n\027OrderRece" +
-      "iveAddressInfo\022\020\n\010receiver\030\001 \002(\t\022\020\n\010mobi" +
-      "leNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006street\030\004 " +
-      "\002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 \002(\t\022\021\n",
-      "\taddressId\030\007 \001(\t\"\345\001\n\023ConfirmOrderRequest" +
-      "\022\021\n\tproductId\030\001 \002(\t\022\024\n\014categoryCode\030\002 \002(" +
-      "\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030\004 \002(\t\022\021" +
-      "\n\tinsurance\030\005 \001(\010\022\017\n\007orderId\030\006 \002(\t\022\021\n\tad" +
-      "dressId\030\007 \002(\t\022\020\n\010vouchers\030\010 \003(\t\022\023\n\013userM" +
-      "essage\030\t \001(\t\022\022\n\npayChannel\030\n \001(\005\022\016\n\006user" +
-      "Id\030\013 \002(\t\"\235\001\n\022ConfirmOrderResult\022\022\n\nresul" +
-      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderI" +
-      "d\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPayInfo" +
-      "\030\005 \001(\0132(.com.qjoy.basjoo.core.model.pb.W",
-      "xPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId\030\001 \002(" +
-      "\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t\022\020\n\010" +
-      "nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n\004sig" +
-      "n\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"H\n\021ConfirmPayRequ" +
-      "est\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030\002 \001(\005" +
-      "\022\016\n\006userId\030\003 \002(\t\"\233\001\n\020ConfirmPayResult\022\022\n" +
-      "\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007" +
-      "orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxP" +
-      "ayInfo\030\005 \001(\0132(.com.qjoy.basjoo.core.mode" +
-      "l.pb.WxPayInfo\"6\n\023GetPayStatusRequest\022\017\n",
-      "\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"\316\001\n\022GetPa" +
-      "yStatusResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
-      "ultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChan" +
-      "nel\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001\022W\n\027orderR" +
-      "eceiveAddressInfo\030\006 \001(\01326.com.qjoy.basjo" +
-      "o.core.model.pb.OrderReceiveAddressInfo\"" +
-      "\237\001\n\026SearchOrderListRequest\022\020\n\010keyWords\030\001" +
-      " \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016evaluateSta" +
-      "uts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022\021\n\tstartTi" +
-      "me\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006userId\030\007 \002(",
-      "\t\"\271\002\n\025SearchOrderListResult\022\022\n\nresultCod" +
-      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003" +
-      " \001(\005\022\017\n\007hasMore\030\004 \001(\010\022\024\n\014waitPayCount\030\005 " +
-      "\001(\005\022\031\n\021waitDeliveryCount\030\006 \001(\005\022\030\n\020waitRe" +
-      "ceiveCount\030\007 \001(\005\022\027\n\017waitRevertCount\030\010 \001(" +
-      "\005\022\031\n\021waitEvaluateCount\030\t \001(\005\022\022\n\ntotalCou" +
-      "nt\030\n \001(\005\022C\n\rorderLiteInfo\030\013 \003(\0132,.com.qj" +
-      "oy.basjoo.core.model.pb.OrderLiteInfo\"\362\002" +
-      "\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orde" +
-      "rStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rren",
-      "tStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n" +
-      "\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\tre" +
-      "ntPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033\n\023tr" +
-      "ansportationPrice\030\n \001(\001\022\022\n\ntotalPrice\030\013 " +
-      "\002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016evaluat" +
-      "eStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014main" +
-      "ImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014category" +
-      "Name\030\021 \002(\t\"5\n\022DeleteOrderRequest\022\017\n\007orde" +
-      "rId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021DeleteOrder" +
-      "Result\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030",
-      "\002 \002(\t\"E\n\022CancelOrderRequest\022\017\n\007orderId\030\001" +
-      " \002(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006userId\030\003 \002(\t\":\n\021" +
-      "CancelOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
-      "\tresultMsg\030\002 \002(\t\"8\n\025ConfirmReceiveReques" +
-      "t\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"=\n\024Co" +
-      "nfirmReceiveResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
-      "\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRevertRequest" +
-      "\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType\030\002 \002" +
-      "(\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025transpor" +
-      "tationCompany\030\004 \001(\t\022\016\n\006userId\030\005 \002(\t\022\025\n\re",
-      "videntalImgs\030\006 \003(\t\022\023\n\013revertIntro\030\007 \001(\t\"" +
-      ":\n\021ApplyRevertResult\022\022\n\nresultCode\030\001 \002(\t" +
-      "\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefundReque" +
-      "st\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\022\n\nr" +
-      "efundType\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001(\t\022\024\n\014" +
-      "refundReason\030\005 \002(\t\022\021\n\trefundFee\030\006 \001(\001\022\025\n" +
-      "\revidentalImgs\030\007 \003(\t\022\023\n\013refundIntro\030\010 \001(" +
-      "\t\":\n\021ApplyRefundResult\022\022\n\nresultCode\030\001 \002" +
-      "(\t\022\021\n\tresultMsg\030\002 \002(\t\"6\n\023GetRefundFeeReq" +
-      "uest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\"g\n",
-      "\022GetRefundFeeResult\022\022\n\nresultCode\030\001 \002(\t\022" +
-      "\021\n\tresultMsg\030\002 \002(\t\022\024\n\014maxRefundFee\030\003 \001(\001" +
-      "\022\024\n\014transportFee\030\004 \001(\001\"\252\001\n\030CommitRefundT" +
-      "ransRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002" +
-      " \002(\t\022\027\n\017refundTransType\030\003 \002(\t\022\030\n\020transpo" +
-      "rtationId\030\004 \001(\t\022\035\n\025transportationCompany" +
-      "\030\005 \001(\t\022\033\n\023transportationIntro\030\006 \001(\t\"@\n\027C" +
-      "ommitRefundTransResult\022\022\n\nresultCode\030\001 \002" +
-      "(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetOrderDetailR" +
-      "equest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"",
-      "\206\001\n\024GetOrderDetailResult\022\022\n\nresultCode\030\001" +
-      " \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDetailIn" +
-      "fo\030\003 \001(\0132..com.qjoy.basjoo.core.model.pb" +
-      ".OrderDetailInfo\"\301\005\n\017OrderDetailInfo\022\017\n\007" +
-      "orderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncr" +
-      "eateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n" +
-      "\013rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\t" +
-      "rentCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pl" +
-      "edgePrice\030\t \002(\001\022\033\n\023transportationPrice\030\n" +
-      " \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportati",
-      "onId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tpr" +
-      "oductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004d" +
-      "esc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTi" +
-      "me\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 " +
-      "\001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTime" +
-      "\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTi" +
-      "me\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030" +
-      "\032 \003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001(\01326" +
-      ".com.qjoy.basjoo.core.model.pb.OrderRece" +
-      "iveAddressInfo\022D\n\013voucherInfo\030\034 \003(\0132/.co",
-      "m.qjoy.basjoo.core.model.pb.OrderVoucher" +
-      "Info\"\300\001\n\020OrderVoucherInfo\022\021\n\tvoucherId\030\001" +
-      " \002(\t\022\024\n\014voucherTitle\030\002 \002(\t\022\023\n\013voucherTyp" +
-      "e\030\003 \002(\t\022\025\n\rvoucherStatus\030\004 \002(\t\022\026\n\016validS" +
-      "tartTime\030\005 \002(\003\022\024\n\014validEndTime\030\006 \002(\003\022\023\n\013" +
-      "voucherDesc\030\007 \002(\t\022\024\n\014deductAmount\030\010 \001(\001B" +
-      "\037\n\035com.qjoy.basjoo.core.model.pb"
+      ".model.pb.OrderVoucherInfo\022\030\n\020maxVoucher" +
+      "Amount\030\020 \001(\001\022\020\n\010vouchers\030\021 \003(\t\"\223\001\n\027Order" +
+      "ReceiveAddressInfo\022\020\n\010receiver\030\001 \002(\t\022\020\n\010" +
+      "mobileNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006stree",
+      "t\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 \002(" +
+      "\t\022\021\n\taddressId\030\007 \001(\t\"\345\001\n\023ConfirmOrderReq" +
+      "uest\022\021\n\tproductId\030\001 \002(\t\022\024\n\014categoryCode\030" +
+      "\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030\004 \002" +
+      "(\t\022\021\n\tinsurance\030\005 \001(\010\022\017\n\007orderId\030\006 \002(\t\022\021" +
+      "\n\taddressId\030\007 \002(\t\022\020\n\010vouchers\030\010 \003(\t\022\023\n\013u" +
+      "serMessage\030\t \001(\t\022\022\n\npayChannel\030\n \001(\005\022\016\n\006" +
+      "userId\030\013 \002(\t\"\235\001\n\022ConfirmOrderResult\022\022\n\nr" +
+      "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007or" +
+      "derId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPay",
+      "Info\030\005 \001(\0132(.com.qjoy.basjoo.core.model." +
+      "pb.WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId\030" +
+      "\001 \002(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t" +
+      "\022\020\n\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n" +
+      "\004sign\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"H\n\021ConfirmPay" +
+      "Request\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030\002" +
+      " \001(\005\022\016\n\006userId\030\003 \002(\t\"\233\001\n\020ConfirmPayResul" +
+      "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
+      "\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n" +
+      "\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo.core.",
+      "model.pb.WxPayInfo\"6\n\023GetPayStatusReques" +
+      "t\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"\316\001\n\022G" +
+      "etPayStatusResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
+      "\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npay" +
+      "Channel\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001\022W\n\027or" +
+      "derReceiveAddressInfo\030\006 \001(\01326.com.qjoy.b" +
+      "asjoo.core.model.pb.OrderReceiveAddressI" +
+      "nfo\"\237\001\n\026SearchOrderListRequest\022\020\n\010keyWor" +
+      "ds\030\001 \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016evaluat" +
+      "eStauts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022\021\n\tsta",
+      "rtTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006userId\030" +
+      "\007 \002(\t\"\271\002\n\025SearchOrderListResult\022\022\n\nresul" +
+      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxInd" +
+      "ex\030\003 \001(\005\022\017\n\007hasMore\030\004 \001(\010\022\024\n\014waitPayCoun" +
+      "t\030\005 \001(\005\022\031\n\021waitDeliveryCount\030\006 \001(\005\022\030\n\020wa" +
+      "itReceiveCount\030\007 \001(\005\022\027\n\017waitRevertCount\030" +
+      "\010 \001(\005\022\031\n\021waitEvaluateCount\030\t \001(\005\022\022\n\ntota" +
+      "lCount\030\n \001(\005\022C\n\rorderLiteInfo\030\013 \003(\0132,.co" +
+      "m.qjoy.basjoo.core.model.pb.OrderLiteInf" +
+      "o\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013",
+      "orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n" +
+      "\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(" +
+      "\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021" +
+      "\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033" +
+      "\n\023transportationPrice\030\n \001(\001\022\022\n\ntotalPric" +
+      "e\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016eva" +
+      "luateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014" +
+      "mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014cate" +
+      "goryName\030\021 \002(\t\"5\n\022DeleteOrderRequest\022\017\n\007" +
+      "orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021DeleteO",
+      "rderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresult" +
+      "Msg\030\002 \002(\t\"E\n\022CancelOrderRequest\022\017\n\007order" +
+      "Id\030\001 \002(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006userId\030\003 \002(\t" +
+      "\":\n\021CancelOrderResult\022\022\n\nresultCode\030\001 \002(" +
+      "\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025ConfirmReceiveRe" +
+      "quest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"=" +
+      "\n\024ConfirmReceiveResult\022\022\n\nresultCode\030\001 \002" +
+      "(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRevertReq" +
+      "uest\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType" +
+      "\030\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025tran",
+      "sportationCompany\030\004 \001(\t\022\016\n\006userId\030\005 \002(\t\022" +
+      "\025\n\revidentalImgs\030\006 \003(\t\022\023\n\013revertIntro\030\007 " +
+      "\001(\t\":\n\021ApplyRevertResult\022\022\n\nresultCode\030\001" +
+      " \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefundR" +
+      "equest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022" +
+      "\022\n\nrefundType\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001(\t" +
+      "\022\024\n\014refundReason\030\005 \002(\t\022\021\n\trefundFee\030\006 \001(" +
+      "\001\022\025\n\revidentalImgs\030\007 \003(\t\022\023\n\013refundIntro\030" +
+      "\010 \001(\t\":\n\021ApplyRefundResult\022\022\n\nresultCode" +
+      "\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"6\n\023GetRefundFe",
+      "eRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(" +
+      "\t\"g\n\022GetRefundFeeResult\022\022\n\nresultCode\030\001 " +
+      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\024\n\014maxRefundFee\030\003" +
+      " \001(\001\022\024\n\014transportFee\030\004 \001(\001\"\252\001\n\030CommitRef" +
+      "undTransRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007order" +
+      "Id\030\002 \002(\t\022\027\n\017refundTransType\030\003 \002(\t\022\030\n\020tra" +
+      "nsportationId\030\004 \001(\t\022\035\n\025transportationCom" +
+      "pany\030\005 \001(\t\022\033\n\023transportationIntro\030\006 \001(\t\"" +
+      "@\n\027CommitRefundTransResult\022\022\n\nresultCode" +
+      "\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetOrderDet",
+      "ailRequest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030\002 " +
+      "\002(\t\"\206\001\n\024GetOrderDetailResult\022\022\n\nresultCo" +
+      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDeta" +
+      "ilInfo\030\003 \001(\0132..com.qjoy.basjoo.core.mode" +
+      "l.pb.OrderDetailInfo\"\301\005\n\017OrderDetailInfo" +
+      "\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022" +
+      "\n\ncreateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(" +
+      "\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005" +
+      "\022\021\n\trentCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023" +
+      "\n\013pledgePrice\030\t \002(\001\022\033\n\023transportationPri",
+      "ce\030\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transpor" +
+      "tationId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021" +
+      "\n\tproductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022" +
+      "\014\n\004desc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007p" +
+      "ayTime\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChanne" +
+      "l\030\024 \001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receive" +
+      "Time\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014comple" +
+      "teTime\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouch" +
+      "ers\030\032 \003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001" +
+      "(\01326.com.qjoy.basjoo.core.model.pb.Order",
+      "ReceiveAddressInfo\022D\n\013voucherInfo\030\034 \003(\0132" +
+      "/.com.qjoy.basjoo.core.model.pb.OrderVou" +
+      "cherInfo\"\300\001\n\020OrderVoucherInfo\022\021\n\tvoucher" +
+      "Id\030\001 \002(\t\022\024\n\014voucherTitle\030\002 \002(\t\022\023\n\013vouche" +
+      "rType\030\003 \002(\t\022\025\n\rvoucherStatus\030\004 \002(\t\022\026\n\016va" +
+      "lidStartTime\030\005 \002(\003\022\024\n\014validEndTime\030\006 \002(\003" +
+      "\022\023\n\013voucherDesc\030\007 \002(\t\022\024\n\014deductAmount\030\010 " +
+      "\001(\001B\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -44398,7 +44760,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "CategoryCode", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", "VoucherInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "CategoryCode", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", "VoucherInfo", "MaxVoucherAmount", "Vouchers", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_fieldAccessorTable = new

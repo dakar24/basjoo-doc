@@ -68,6 +68,7 @@
 @property (readonly) BOOL hasHasVoucher;
 @property (readonly) BOOL hasTotalPrice;
 @property (readonly) BOOL hasOrderReceiveAddressInfo;
+@property (readonly) BOOL hasMaxVoucherAmount;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* orderId;
@@ -83,6 +84,8 @@
 @property (nonatomic)Float64 totalPrice;
 @property (nonatomic,strong) OrderReceiveAddressInfo* orderReceiveAddressInfo;
 @property (nonatomic,strong) NSMutableArray * voucherInfo;
+@property (nonatomic)Float64 maxVoucherAmount;
+@property (nonatomic,strong) NSMutableArray * vouchers;
 @end
 
 @interface OrderReceiveAddressInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>

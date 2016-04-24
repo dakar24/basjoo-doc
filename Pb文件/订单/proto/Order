@@ -83,7 +83,12 @@ message CommitOrderResult {
       
        //订单可使用优惠券信息
        repeated OrderVoucherInfo voucherInfo = 15;
-	
+      
+       //优惠券，最大可用的额度
+       optional double  maxVoucherAmount =16;
+
+       //用户选择的权益
+	repeated string                 vouchers = 17;
 
     
 }
