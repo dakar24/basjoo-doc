@@ -42,6 +42,9 @@
   if (self.hasUserId) {
     [output writeString:8 value:self.userId];
   }
+  [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:9 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -71,6 +74,15 @@
   }
   if (self.hasUserId) {
     size_ += computeStringSize(8, self.userId);
+  }
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.vouchers.count;
+    [self.vouchers enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(1 * count);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -106,6 +118,9 @@
   if (self.hasUserId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
   }
+  [self.vouchers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"vouchers", obj];
+  }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -140,6 +155,15 @@
 - (void) setUserId:(NSString*) value {
   _hasUserId = YES;
   _userId = value;
+}
+- (void)setVouchersArray:(NSArray *)array {
+  _vouchers = [[NSMutableArray alloc] initWithArray:array];
+}
+- (void)addVouchers:(NSString*)value {
+  if (_vouchers == nil) {
+    _vouchers = [[NSMutableArray alloc]init];
+  }
+  [_vouchers addObject:value];
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -186,6 +210,10 @@
       }
       case 66: {
         [self setUserId:[input readString]];
+        break;
+      }
+      case 74: {
+        [self addVouchers:[input readString]];
         break;
       }
     }

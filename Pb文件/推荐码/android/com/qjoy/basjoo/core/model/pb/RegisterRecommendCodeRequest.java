@@ -14,8 +14,10 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 public final class RegisterRecommendCodeRequest extends Message {
 
   public static final int TAG_RECOMMENDCODE = 1;
+  public static final int TAG_USERID = 2;
 
   public static final String DEFAULT_RECOMMENDCODE = "";
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 推荐码
@@ -23,10 +25,17 @@ public final class RegisterRecommendCodeRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String recommendCode;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
+  public String userId;
+
   public RegisterRecommendCodeRequest(RegisterRecommendCodeRequest message) {
     super(message);
     if (message == null) return;
     this.recommendCode = message.recommendCode;
+    this.userId = message.userId;
   }
 
   public RegisterRecommendCodeRequest() {
@@ -37,6 +46,9 @@ public final class RegisterRecommendCodeRequest extends Message {
         case TAG_RECOMMENDCODE:
         this.recommendCode = (String)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -46,12 +58,19 @@ public final class RegisterRecommendCodeRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof RegisterRecommendCodeRequest)) return false;
-    return equals(recommendCode, ((RegisterRecommendCodeRequest) other).recommendCode);
+    RegisterRecommendCodeRequest o = (RegisterRecommendCodeRequest) other;
+    return equals(recommendCode, o.recommendCode)
+        && equals(userId, o.userId);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = recommendCode != null ? recommendCode.hashCode() : 0);
+    if (result == 0) {
+      result = recommendCode != null ? recommendCode.hashCode() : 0;
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }

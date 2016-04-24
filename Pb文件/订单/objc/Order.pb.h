@@ -51,6 +51,7 @@
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)BOOL onlyCalPrice;
 @property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSMutableArray * vouchers;
 @end
 
 @interface CommitOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

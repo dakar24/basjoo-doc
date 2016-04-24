@@ -30,6 +30,9 @@ message CommitOrderRequest {
     //用户ID   
     required string                 userId = 8; 
 
+       //用户选择的权益
+	repeated string                 vouchers = 9;
+
 
 
     

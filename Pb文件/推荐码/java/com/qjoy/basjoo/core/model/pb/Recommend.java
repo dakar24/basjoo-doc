@@ -37,6 +37,32 @@ public final class Recommend {
      */
     com.google.protobuf.ByteString
         getRecommendCodeBytes();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.RegisterRecommendCodeRequest}
@@ -98,6 +124,12 @@ public final class Recommend {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
               recommendCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -194,8 +226,63 @@ public final class Recommend {
       }
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       recommendCode_ = "";
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -204,6 +291,10 @@ public final class Recommend {
       if (isInitialized == 0) return false;
 
       if (!hasRecommendCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -217,6 +308,9 @@ public final class Recommend {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, getRecommendCodeBytes());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -229,6 +323,10 @@ public final class Recommend {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, getRecommendCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -353,6 +451,8 @@ public final class Recommend {
         super.clear();
         recommendCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -385,6 +485,10 @@ public final class Recommend {
           to_bitField0_ |= 0x00000001;
         }
         result.recommendCode_ = recommendCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -406,12 +510,21 @@ public final class Recommend {
           recommendCode_ = other.recommendCode_;
           onChanged();
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasRecommendCode()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
           
           return false;
         }
@@ -533,6 +646,106 @@ public final class Recommend {
   }
   bitField0_ |= 0x00000001;
         recommendCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -1225,6 +1438,32 @@ public final class Recommend {
      * </pre>
      */
     int getStartIndex();
+
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetRecommendInfoRequest}
@@ -1285,6 +1524,12 @@ public final class Recommend {
             case 8: {
               bitField0_ |= 0x00000001;
               startIndex_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              userId_ = bs;
               break;
             }
           }
@@ -1350,8 +1595,63 @@ public final class Recommend {
       return startIndex_;
     }
 
+    public static final int USERID_FIELD_NUMBER = 2;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 2;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       startIndex_ = 0;
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1359,6 +1659,10 @@ public final class Recommend {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -1368,6 +1672,9 @@ public final class Recommend {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, startIndex_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -1381,6 +1688,10 @@ public final class Recommend {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, startIndex_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1505,6 +1816,8 @@ public final class Recommend {
         super.clear();
         startIndex_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1537,6 +1850,10 @@ public final class Recommend {
           to_bitField0_ |= 0x00000001;
         }
         result.startIndex_ = startIndex_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1556,11 +1873,20 @@ public final class Recommend {
         if (other.hasStartIndex()) {
           setStartIndex(other.getStartIndex());
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000002;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -1627,6 +1953,106 @@ public final class Recommend {
       public Builder clearStartIndex() {
         bitField0_ = (bitField0_ & ~0x00000001);
         startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 2;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -4626,20 +5052,21 @@ public final class Recommend {
   static {
     java.lang.String[] descriptorData = {
       "\n\tRecommend\022\035com.qjoy.basjoo.core.model." +
-      "pb\"5\n\034RegisterRecommendCodeRequest\022\025\n\rre" +
-      "commendCode\030\001 \002(\t\"D\n\033RegisterRecommendCo" +
-      "deResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMs" +
-      "g\030\002 \002(\t\"-\n\027GetRecommendInfoRequest\022\022\n\nst" +
-      "artIndex\030\001 \001(\005\"\212\002\n\026GetRecommendInfoResul" +
-      "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
-      "\022\025\n\rrecommendCode\030\003 \001(\t\022\026\n\016recommendTitl" +
-      "e\030\004 \001(\t\022\025\n\rrecommendDesc\030\005 \001(\t\022\026\n\016recomm" +
-      "endCount\030\006 \001(\005\022\020\n\010maxIndex\030\007 \001(\005\022\017\n\007hasM",
-      "ore\030\010 \001(\010\022H\n\016recommendUsers\030\t \003(\01320.com." +
-      "qjoy.basjoo.core.model.pb.RecommendUserI" +
-      "nfo\"L\n\021RecommendUserInfo\022\016\n\006userId\030\001 \002(\t" +
-      "\022\020\n\010userName\030\002 \002(\t\022\025\n\rrecommendTime\030\003 \002(" +
-      "\003B\037\n\035com.qjoy.basjoo.core.model.pb"
+      "pb\"E\n\034RegisterRecommendCodeRequest\022\025\n\rre" +
+      "commendCode\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"D\n\033Reg" +
+      "isterRecommendCodeResult\022\022\n\nresultCode\030\001" +
+      " \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"=\n\027GetRecommendI" +
+      "nfoRequest\022\022\n\nstartIndex\030\001 \001(\005\022\016\n\006userId" +
+      "\030\002 \002(\t\"\212\002\n\026GetRecommendInfoResult\022\022\n\nres" +
+      "ultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\025\n\rreco" +
+      "mmendCode\030\003 \001(\t\022\026\n\016recommendTitle\030\004 \001(\t\022" +
+      "\025\n\rrecommendDesc\030\005 \001(\t\022\026\n\016recommendCount",
+      "\030\006 \001(\005\022\020\n\010maxIndex\030\007 \001(\005\022\017\n\007hasMore\030\010 \001(" +
+      "\010\022H\n\016recommendUsers\030\t \003(\01320.com.qjoy.bas" +
+      "joo.core.model.pb.RecommendUserInfo\"L\n\021R" +
+      "ecommendUserInfo\022\016\n\006userId\030\001 \002(\t\022\020\n\010user" +
+      "Name\030\002 \002(\t\022\025\n\rrecommendTime\030\003 \002(\003B\037\n\035com" +
+      ".qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4658,7 +5085,7 @@ public final class Recommend {
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterRecommendCodeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_RegisterRecommendCodeRequest_descriptor,
-        new java.lang.String[] { "RecommendCode", });
+        new java.lang.String[] { "RecommendCode", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterRecommendCodeResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_RegisterRecommendCodeResult_fieldAccessorTable = new
@@ -4670,7 +5097,7 @@ public final class Recommend {
     internal_static_com_qjoy_basjoo_core_model_pb_GetRecommendInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetRecommendInfoRequest_descriptor,
-        new java.lang.String[] { "StartIndex", });
+        new java.lang.String[] { "StartIndex", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetRecommendInfoResult_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_GetRecommendInfoResult_fieldAccessorTable = new

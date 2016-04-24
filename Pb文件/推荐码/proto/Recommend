@@ -6,8 +6,10 @@ option java_package="com.qjoy.basjoo.core.model.pb";
 //注册推荐码
 message RegisterRecommendCodeRequest {     
   
-  //推荐码
+   //推荐码
    required string                 recommendCode = 1; 
+   //用户ID
+   required string userId = 2;  
     
 }
 
@@ -25,6 +27,9 @@ message GetRecommendInfoRequest {
   
   //起始index
   optional int32 startIndex = 1;  
+
+  //用户ID
+  required string userId = 2;  
 }
 
 

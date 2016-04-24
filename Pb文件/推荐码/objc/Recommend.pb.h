@@ -10,7 +10,9 @@
 
 @interface RegisterRecommendCodeRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasRecommendCode;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic,strong) NSString* recommendCode;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface RegisterRecommendCodeResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -22,7 +24,9 @@
 
 @interface GetRecommendInfoRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasStartIndex;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic)SInt32 startIndex;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetRecommendInfoResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

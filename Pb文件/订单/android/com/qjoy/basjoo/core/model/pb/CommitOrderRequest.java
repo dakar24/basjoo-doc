@@ -4,10 +4,13 @@ package com.qjoy.basjoo.core.model.pb;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 
 import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REPEATED;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
@@ -23,6 +26,7 @@ public final class CommitOrderRequest extends Message {
   public static final int TAG_ORDERID = 6;
   public static final int TAG_ONLYCALPRICE = 7;
   public static final int TAG_USERID = 8;
+  public static final int TAG_VOUCHERS = 9;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_CATEGORYCODE = "";
@@ -32,6 +36,7 @@ public final class CommitOrderRequest extends Message {
   public static final String DEFAULT_ORDERID = "";
   public static final Boolean DEFAULT_ONLYCALPRICE = false;
   public static final String DEFAULT_USERID = "";
+  public static final List<String> DEFAULT_VOUCHERS = Collections.emptyList();
 
   /**
    * 产品Id
@@ -81,6 +86,12 @@ public final class CommitOrderRequest extends Message {
   @ProtoField(tag = 8, type = STRING, label = REQUIRED)
   public String userId;
 
+  /**
+   * 用户选择的权益
+   */
+  @ProtoField(tag = 9, type = STRING, label = REPEATED)
+  public List<String> vouchers;
+
   public CommitOrderRequest(CommitOrderRequest message) {
     super(message);
     if (message == null) return;
@@ -92,6 +103,7 @@ public final class CommitOrderRequest extends Message {
     this.orderId = message.orderId;
     this.onlyCalPrice = message.onlyCalPrice;
     this.userId = message.userId;
+    this.vouchers = copyOf(message.vouchers);
   }
 
   public CommitOrderRequest() {
@@ -123,6 +135,9 @@ public final class CommitOrderRequest extends Message {
         case TAG_USERID:
         this.userId = (String)value;
         break;
+        case TAG_VOUCHERS:
+        this.vouchers = immutableCopyOf((List<String>)value);
+        break;
         default: break;
         };
     return this;
@@ -140,7 +155,8 @@ public final class CommitOrderRequest extends Message {
         && equals(insurance, o.insurance)
         && equals(orderId, o.orderId)
         && equals(onlyCalPrice, o.onlyCalPrice)
-        && equals(userId, o.userId);
+        && equals(userId, o.userId)
+        && equals(vouchers, o.vouchers);
   }
 
   @Override
@@ -155,6 +171,7 @@ public final class CommitOrderRequest extends Message {
       result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
       result = result * 37 + (onlyCalPrice != null ? onlyCalPrice.hashCode() : 0);
       result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      result = result * 37 + (vouchers != null ? vouchers.hashCode() : 1);
       hashCode = result;
     }
     return result;
