@@ -4,11 +4,14 @@ package com.qjoy.basjoo.core.model.pb;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 
 import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.DOUBLE;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REPEATED;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
@@ -30,6 +33,7 @@ public final class CommitOrderResult extends Message {
   public static final int TAG_HASVOUCHER = 12;
   public static final int TAG_TOTALPRICE = 13;
   public static final int TAG_ORDERRECEIVEADDRESSINFO = 14;
+  public static final int TAG_VOUCHERINFO = 15;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
@@ -44,6 +48,7 @@ public final class CommitOrderResult extends Message {
   public static final Double DEFAULT_TOTALRENTPRICE = 0D;
   public static final Boolean DEFAULT_HASVOUCHER = false;
   public static final Double DEFAULT_TOTALPRICE = 0D;
+  public static final List<OrderVoucherInfo> DEFAULT_VOUCHERINFO = Collections.emptyList();
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
@@ -123,6 +128,12 @@ public final class CommitOrderResult extends Message {
   @ProtoField(tag = 14)
   public OrderReceiveAddressInfo orderReceiveAddressInfo;
 
+  /**
+   * 订单可使用优惠券信息
+   */
+  @ProtoField(tag = 15, label = REPEATED)
+  public List<OrderVoucherInfo> voucherInfo;
+
   public CommitOrderResult(CommitOrderResult message) {
     super(message);
     if (message == null) return;
@@ -140,6 +151,7 @@ public final class CommitOrderResult extends Message {
     this.hasVoucher = message.hasVoucher;
     this.totalPrice = message.totalPrice;
     this.orderReceiveAddressInfo = message.orderReceiveAddressInfo;
+    this.voucherInfo = copyOf(message.voucherInfo);
   }
 
   public CommitOrderResult() {
@@ -189,6 +201,9 @@ public final class CommitOrderResult extends Message {
         case TAG_ORDERRECEIVEADDRESSINFO:
         this.orderReceiveAddressInfo = (OrderReceiveAddressInfo)value;
         break;
+        case TAG_VOUCHERINFO:
+        this.voucherInfo = immutableCopyOf((List<OrderVoucherInfo>)value);
+        break;
         default: break;
         };
     return this;
@@ -212,7 +227,8 @@ public final class CommitOrderResult extends Message {
         && equals(totalRentPrice, o.totalRentPrice)
         && equals(hasVoucher, o.hasVoucher)
         && equals(totalPrice, o.totalPrice)
-        && equals(orderReceiveAddressInfo, o.orderReceiveAddressInfo);
+        && equals(orderReceiveAddressInfo, o.orderReceiveAddressInfo)
+        && equals(voucherInfo, o.voucherInfo);
   }
 
   @Override
@@ -233,6 +249,7 @@ public final class CommitOrderResult extends Message {
       result = result * 37 + (hasVoucher != null ? hasVoucher.hashCode() : 0);
       result = result * 37 + (totalPrice != null ? totalPrice.hashCode() : 0);
       result = result * 37 + (orderReceiveAddressInfo != null ? orderReceiveAddressInfo.hashCode() : 0);
+      result = result * 37 + (voucherInfo != null ? voucherInfo.hashCode() : 1);
       hashCode = result;
     }
     return result;

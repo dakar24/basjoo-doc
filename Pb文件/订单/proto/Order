@@ -80,6 +80,9 @@ message CommitOrderResult {
 	
 	//订单的默认收货地址
 	optional OrderReceiveAddressInfo orderReceiveAddressInfo = 14;
+      
+       //订单可使用优惠券信息
+       repeated OrderVoucherInfo voucherInfo = 15;
 	
 
     
@@ -686,9 +689,41 @@ message OrderDetailInfo{
    repeated string     vouchers = 26;
    //订单收货地址信息
    optional OrderReceiveAddressInfo orderReceiveAddressInfo = 27;
+
+  //订单关联的优惠券信息
+  repeated OrderVoucherInfo voucherInfo = 28;
+
     
 }
 
+
+//订单优惠券信息
+message OrderVoucherInfo{
+   
+   //优惠券Id
+   required  string  voucherId = 1;
+   
+   //优惠券标题
+   required  string  voucherTitle = 2;
+   
+   //优惠券类型 1:抵价券，2：折扣券
+   required  string  voucherType = 3;
+   
+   //优惠券状态 1:有效券，2:已使用，3:已过期
+   required  string  voucherStatus = 4;
+   
+   //有效期开始时间
+   required  int64   validStartTime = 5;
+   
+   //有效期结束时间 
+   required  int64   validEndTime = 6;
+   
+   //券描述
+   required  string  voucherDesc = 7;
+   
+   //抵扣金额
+   optional  double  deductAmount = 8;
+}
 
 
 

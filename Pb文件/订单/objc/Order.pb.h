@@ -29,6 +29,7 @@
 @class OrderDetailInfo;
 @class OrderLiteInfo;
 @class OrderReceiveAddressInfo;
+@class OrderVoucherInfo;
 @class SearchOrderListRequest;
 @class SearchOrderListResult;
 @class WxPayInfo;
@@ -81,6 +82,7 @@
 @property (nonatomic)BOOL hasVoucher;
 @property (nonatomic)Float64 totalPrice;
 @property (nonatomic,strong) OrderReceiveAddressInfo* orderReceiveAddressInfo;
+@property (nonatomic,strong) NSMutableArray * voucherInfo;
 @end
 
 @interface OrderReceiveAddressInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -478,5 +480,25 @@
 @property (nonatomic)SInt64 closeTime;
 @property (nonatomic,strong) NSMutableArray * vouchers;
 @property (nonatomic,strong) OrderReceiveAddressInfo* orderReceiveAddressInfo;
+@property (nonatomic,strong) NSMutableArray * voucherInfo;
+@end
+
+@interface OrderVoucherInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasVoucherId;
+@property (readonly) BOOL hasVoucherTitle;
+@property (readonly) BOOL hasVoucherType;
+@property (readonly) BOOL hasVoucherStatus;
+@property (readonly) BOOL hasValidStartTime;
+@property (readonly) BOOL hasValidEndTime;
+@property (readonly) BOOL hasVoucherDesc;
+@property (readonly) BOOL hasDeductAmount;
+@property (nonatomic,strong) NSString* voucherId;
+@property (nonatomic,strong) NSString* voucherTitle;
+@property (nonatomic,strong) NSString* voucherType;
+@property (nonatomic,strong) NSString* voucherStatus;
+@property (nonatomic)SInt64 validStartTime;
+@property (nonatomic)SInt64 validEndTime;
+@property (nonatomic,strong) NSString* voucherDesc;
+@property (nonatomic)Float64 deductAmount;
 @end
 

@@ -47,6 +47,7 @@ public final class OrderDetailInfo extends Message {
   public static final int TAG_CLOSETIME = 25;
   public static final int TAG_VOUCHERS = 26;
   public static final int TAG_ORDERRECEIVEADDRESSINFO = 27;
+  public static final int TAG_VOUCHERINFO = 28;
 
   public static final String DEFAULT_ORDERID = "";
   public static final Integer DEFAULT_ORDERSTATUS = 0;
@@ -74,6 +75,7 @@ public final class OrderDetailInfo extends Message {
   public static final Long DEFAULT_COMPLETETIME = 0L;
   public static final Long DEFAULT_CLOSETIME = 0L;
   public static final List<String> DEFAULT_VOUCHERS = Collections.emptyList();
+  public static final List<OrderVoucherInfo> DEFAULT_VOUCHERINFO = Collections.emptyList();
 
   /**
    * 产品Id
@@ -237,6 +239,12 @@ public final class OrderDetailInfo extends Message {
   @ProtoField(tag = 27)
   public OrderReceiveAddressInfo orderReceiveAddressInfo;
 
+  /**
+   * 订单关联的优惠券信息
+   */
+  @ProtoField(tag = 28, label = REPEATED)
+  public List<OrderVoucherInfo> voucherInfo;
+
   public OrderDetailInfo(OrderDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -267,6 +275,7 @@ public final class OrderDetailInfo extends Message {
     this.closeTime = message.closeTime;
     this.vouchers = copyOf(message.vouchers);
     this.orderReceiveAddressInfo = message.orderReceiveAddressInfo;
+    this.voucherInfo = copyOf(message.voucherInfo);
   }
 
   public OrderDetailInfo() {
@@ -355,6 +364,9 @@ public final class OrderDetailInfo extends Message {
         case TAG_ORDERRECEIVEADDRESSINFO:
         this.orderReceiveAddressInfo = (OrderReceiveAddressInfo)value;
         break;
+        case TAG_VOUCHERINFO:
+        this.voucherInfo = immutableCopyOf((List<OrderVoucherInfo>)value);
+        break;
         default: break;
         };
     return this;
@@ -391,7 +403,8 @@ public final class OrderDetailInfo extends Message {
         && equals(completeTime, o.completeTime)
         && equals(closeTime, o.closeTime)
         && equals(vouchers, o.vouchers)
-        && equals(orderReceiveAddressInfo, o.orderReceiveAddressInfo);
+        && equals(orderReceiveAddressInfo, o.orderReceiveAddressInfo)
+        && equals(voucherInfo, o.voucherInfo);
   }
 
   @Override
@@ -425,6 +438,7 @@ public final class OrderDetailInfo extends Message {
       result = result * 37 + (closeTime != null ? closeTime.hashCode() : 0);
       result = result * 37 + (vouchers != null ? vouchers.hashCode() : 1);
       result = result * 37 + (orderReceiveAddressInfo != null ? orderReceiveAddressInfo.hashCode() : 0);
+      result = result * 37 + (voucherInfo != null ? voucherInfo.hashCode() : 1);
       hashCode = result;
     }
     return result;

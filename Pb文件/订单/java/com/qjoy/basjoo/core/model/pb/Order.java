@@ -2016,6 +2016,50 @@ public final class Order {
      * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder getOrderReceiveAddressInfoOrBuilder();
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> 
+        getVoucherInfoList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo getVoucherInfo(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    int getVoucherInfoCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> 
+        getVoucherInfoOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder getVoucherInfoOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CommitOrderResult}
@@ -2156,6 +2200,14 @@ public final class Order {
               bitField0_ |= 0x00002000;
               break;
             }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+                voucherInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo>();
+                mutable_bitField0_ |= 0x00004000;
+              }
+              voucherInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.PARSER, extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2164,6 +2216,9 @@ public final class Order {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+          voucherInfo_ = java.util.Collections.unmodifiableList(voucherInfo_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -2659,6 +2714,61 @@ public final class Order {
       return orderReceiveAddressInfo_;
     }
 
+    public static final int VOUCHERINFO_FIELD_NUMBER = 15;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> voucherInfo_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> getVoucherInfoList() {
+      return voucherInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> 
+        getVoucherInfoOrBuilderList() {
+      return voucherInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    public int getVoucherInfoCount() {
+      return voucherInfo_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo getVoucherInfo(int index) {
+      return voucherInfo_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+     *
+     * <pre>
+     *订单可使用优惠券信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder getVoucherInfoOrBuilder(
+        int index) {
+      return voucherInfo_.get(index);
+    }
+
     private void initFields() {
       resultCode_ = "";
       resultMsg_ = "";
@@ -2674,6 +2784,7 @@ public final class Order {
       hasVoucher_ = false;
       totalPrice_ = 0D;
       orderReceiveAddressInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance();
+      voucherInfo_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2691,6 +2802,12 @@ public final class Order {
       }
       if (hasOrderReceiveAddressInfo()) {
         if (!getOrderReceiveAddressInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getVoucherInfoCount(); i++) {
+        if (!getVoucherInfo(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -2743,6 +2860,9 @@ public final class Order {
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeMessage(14, orderReceiveAddressInfo_);
+      }
+      for (int i = 0; i < voucherInfo_.size(); i++) {
+        output.writeMessage(15, voucherInfo_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -2808,6 +2928,10 @@ public final class Order {
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, orderReceiveAddressInfo_);
+      }
+      for (int i = 0; i < voucherInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, voucherInfo_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2923,6 +3047,7 @@ public final class Order {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getOrderReceiveAddressInfoFieldBuilder();
+          getVoucherInfoFieldBuilder();
         }
       }
       private static Builder create() {
@@ -2963,6 +3088,12 @@ public final class Order {
           orderReceiveAddressInfoBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00002000);
+        if (voucherInfoBuilder_ == null) {
+          voucherInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00004000);
+        } else {
+          voucherInfoBuilder_.clear();
+        }
         return this;
       }
 
@@ -3051,6 +3182,15 @@ public final class Order {
         } else {
           result.orderReceiveAddressInfo_ = orderReceiveAddressInfoBuilder_.build();
         }
+        if (voucherInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00004000) == 0x00004000)) {
+            voucherInfo_ = java.util.Collections.unmodifiableList(voucherInfo_);
+            bitField0_ = (bitField0_ & ~0x00004000);
+          }
+          result.voucherInfo_ = voucherInfo_;
+        } else {
+          result.voucherInfo_ = voucherInfoBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3119,6 +3259,32 @@ public final class Order {
         if (other.hasOrderReceiveAddressInfo()) {
           mergeOrderReceiveAddressInfo(other.getOrderReceiveAddressInfo());
         }
+        if (voucherInfoBuilder_ == null) {
+          if (!other.voucherInfo_.isEmpty()) {
+            if (voucherInfo_.isEmpty()) {
+              voucherInfo_ = other.voucherInfo_;
+              bitField0_ = (bitField0_ & ~0x00004000);
+            } else {
+              ensureVoucherInfoIsMutable();
+              voucherInfo_.addAll(other.voucherInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.voucherInfo_.isEmpty()) {
+            if (voucherInfoBuilder_.isEmpty()) {
+              voucherInfoBuilder_.dispose();
+              voucherInfoBuilder_ = null;
+              voucherInfo_ = other.voucherInfo_;
+              bitField0_ = (bitField0_ & ~0x00004000);
+              voucherInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getVoucherInfoFieldBuilder() : null;
+            } else {
+              voucherInfoBuilder_.addAllMessages(other.voucherInfo_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -3134,6 +3300,12 @@ public final class Order {
         }
         if (hasOrderReceiveAddressInfo()) {
           if (!getOrderReceiveAddressInfo().isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getVoucherInfoCount(); i++) {
+          if (!getVoucherInfo(i).isInitialized()) {
             
             return false;
           }
@@ -4146,6 +4318,318 @@ public final class Order {
           orderReceiveAddressInfo_ = null;
         }
         return orderReceiveAddressInfoBuilder_;
+      }
+
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> voucherInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureVoucherInfoIsMutable() {
+        if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+          voucherInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo>(voucherInfo_);
+          bitField0_ |= 0x00004000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> voucherInfoBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> getVoucherInfoList() {
+        if (voucherInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(voucherInfo_);
+        } else {
+          return voucherInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public int getVoucherInfoCount() {
+        if (voucherInfoBuilder_ == null) {
+          return voucherInfo_.size();
+        } else {
+          return voucherInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo getVoucherInfo(int index) {
+        if (voucherInfoBuilder_ == null) {
+          return voucherInfo_.get(index);
+        } else {
+          return voucherInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public Builder setVoucherInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo value) {
+        if (voucherInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.set(index, value);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public Builder setVoucherInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder builderForValue) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          voucherInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public Builder addVoucherInfo(com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo value) {
+        if (voucherInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.add(value);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public Builder addVoucherInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo value) {
+        if (voucherInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.add(index, value);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public Builder addVoucherInfo(
+          com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder builderForValue) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public Builder addVoucherInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder builderForValue) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public Builder addAllVoucherInfo(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> values) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, voucherInfo_);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public Builder clearVoucherInfo() {
+        if (voucherInfoBuilder_ == null) {
+          voucherInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00004000);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public Builder removeVoucherInfo(int index) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.remove(index);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder getVoucherInfoBuilder(
+          int index) {
+        return getVoucherInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder getVoucherInfoOrBuilder(
+          int index) {
+        if (voucherInfoBuilder_ == null) {
+          return voucherInfo_.get(index);  } else {
+          return voucherInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> 
+           getVoucherInfoOrBuilderList() {
+        if (voucherInfoBuilder_ != null) {
+          return voucherInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(voucherInfo_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder addVoucherInfoBuilder() {
+        return getVoucherInfoFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder addVoucherInfoBuilder(
+          int index) {
+        return getVoucherInfoFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 15;</code>
+       *
+       * <pre>
+       *订单可使用优惠券信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder> 
+           getVoucherInfoBuilderList() {
+        return getVoucherInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> 
+          getVoucherInfoFieldBuilder() {
+        if (voucherInfoBuilder_ == null) {
+          voucherInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder>(
+                  voucherInfo_,
+                  ((bitField0_ & 0x00004000) == 0x00004000),
+                  getParentForChildren(),
+                  isClean());
+          voucherInfo_ = null;
+        }
+        return voucherInfoBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.CommitOrderResult)
@@ -37476,6 +37960,50 @@ public final class Order {
      * </pre>
      */
     com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfoOrBuilder getOrderReceiveAddressInfoOrBuilder();
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> 
+        getVoucherInfoList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo getVoucherInfo(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    int getVoucherInfoCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> 
+        getVoucherInfoOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder getVoucherInfoOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderDetailInfo}
@@ -37688,6 +38216,14 @@ public final class Order {
               bitField0_ |= 0x02000000;
               break;
             }
+            case 226: {
+              if (!((mutable_bitField0_ & 0x08000000) == 0x08000000)) {
+                voucherInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo>();
+                mutable_bitField0_ |= 0x08000000;
+              }
+              voucherInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.PARSER, extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -37698,6 +38234,9 @@ public final class Order {
       } finally {
         if (((mutable_bitField0_ & 0x02000000) == 0x02000000)) {
           vouchers_ = vouchers_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x08000000) == 0x08000000)) {
+          voucherInfo_ = java.util.Collections.unmodifiableList(voucherInfo_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -38632,6 +39171,61 @@ public final class Order {
       return orderReceiveAddressInfo_;
     }
 
+    public static final int VOUCHERINFO_FIELD_NUMBER = 28;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> voucherInfo_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> getVoucherInfoList() {
+      return voucherInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> 
+        getVoucherInfoOrBuilderList() {
+      return voucherInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    public int getVoucherInfoCount() {
+      return voucherInfo_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo getVoucherInfo(int index) {
+      return voucherInfo_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+     *
+     * <pre>
+     *订单关联的优惠券信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder getVoucherInfoOrBuilder(
+        int index) {
+      return voucherInfo_.get(index);
+    }
+
     private void initFields() {
       orderId_ = "";
       orderStatus_ = 0;
@@ -38660,6 +39254,7 @@ public final class Order {
       closeTime_ = 0L;
       vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       orderReceiveAddressInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance();
+      voucherInfo_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -38725,6 +39320,12 @@ public final class Order {
       }
       if (hasOrderReceiveAddressInfo()) {
         if (!getOrderReceiveAddressInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getVoucherInfoCount(); i++) {
+        if (!getVoucherInfo(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -38816,6 +39417,9 @@ public final class Order {
       }
       if (((bitField0_ & 0x02000000) == 0x02000000)) {
         output.writeMessage(27, orderReceiveAddressInfo_);
+      }
+      for (int i = 0; i < voucherInfo_.size(); i++) {
+        output.writeMessage(28, voucherInfo_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -38939,6 +39543,10 @@ public final class Order {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(27, orderReceiveAddressInfo_);
       }
+      for (int i = 0; i < voucherInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(28, voucherInfo_.get(i));
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -39053,6 +39661,7 @@ public final class Order {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getOrderReceiveAddressInfoFieldBuilder();
+          getVoucherInfoFieldBuilder();
         }
       }
       private static Builder create() {
@@ -39119,6 +39728,12 @@ public final class Order {
           orderReceiveAddressInfoBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x04000000);
+        if (voucherInfoBuilder_ == null) {
+          voucherInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x08000000);
+        } else {
+          voucherInfoBuilder_.clear();
+        }
         return this;
       }
 
@@ -39260,6 +39875,15 @@ public final class Order {
         } else {
           result.orderReceiveAddressInfo_ = orderReceiveAddressInfoBuilder_.build();
         }
+        if (voucherInfoBuilder_ == null) {
+          if (((bitField0_ & 0x08000000) == 0x08000000)) {
+            voucherInfo_ = java.util.Collections.unmodifiableList(voucherInfo_);
+            bitField0_ = (bitField0_ & ~0x08000000);
+          }
+          result.voucherInfo_ = voucherInfo_;
+        } else {
+          result.voucherInfo_ = voucherInfoBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -39380,6 +40004,32 @@ public final class Order {
         if (other.hasOrderReceiveAddressInfo()) {
           mergeOrderReceiveAddressInfo(other.getOrderReceiveAddressInfo());
         }
+        if (voucherInfoBuilder_ == null) {
+          if (!other.voucherInfo_.isEmpty()) {
+            if (voucherInfo_.isEmpty()) {
+              voucherInfo_ = other.voucherInfo_;
+              bitField0_ = (bitField0_ & ~0x08000000);
+            } else {
+              ensureVoucherInfoIsMutable();
+              voucherInfo_.addAll(other.voucherInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.voucherInfo_.isEmpty()) {
+            if (voucherInfoBuilder_.isEmpty()) {
+              voucherInfoBuilder_.dispose();
+              voucherInfoBuilder_ = null;
+              voucherInfo_ = other.voucherInfo_;
+              bitField0_ = (bitField0_ & ~0x08000000);
+              voucherInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getVoucherInfoFieldBuilder() : null;
+            } else {
+              voucherInfoBuilder_.addAllMessages(other.voucherInfo_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -39443,6 +40093,12 @@ public final class Order {
         }
         if (hasOrderReceiveAddressInfo()) {
           if (!getOrderReceiveAddressInfo().isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getVoucherInfoCount(); i++) {
+          if (!getVoucherInfo(i).isInitialized()) {
             
             return false;
           }
@@ -41366,6 +42022,318 @@ public final class Order {
         return orderReceiveAddressInfoBuilder_;
       }
 
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> voucherInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureVoucherInfoIsMutable() {
+        if (!((bitField0_ & 0x08000000) == 0x08000000)) {
+          voucherInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo>(voucherInfo_);
+          bitField0_ |= 0x08000000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> voucherInfoBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> getVoucherInfoList() {
+        if (voucherInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(voucherInfo_);
+        } else {
+          return voucherInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public int getVoucherInfoCount() {
+        if (voucherInfoBuilder_ == null) {
+          return voucherInfo_.size();
+        } else {
+          return voucherInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo getVoucherInfo(int index) {
+        if (voucherInfoBuilder_ == null) {
+          return voucherInfo_.get(index);
+        } else {
+          return voucherInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public Builder setVoucherInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo value) {
+        if (voucherInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.set(index, value);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public Builder setVoucherInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder builderForValue) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          voucherInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public Builder addVoucherInfo(com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo value) {
+        if (voucherInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.add(value);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public Builder addVoucherInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo value) {
+        if (voucherInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.add(index, value);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public Builder addVoucherInfo(
+          com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder builderForValue) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public Builder addVoucherInfo(
+          int index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder builderForValue) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public Builder addAllVoucherInfo(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo> values) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, voucherInfo_);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public Builder clearVoucherInfo() {
+        if (voucherInfoBuilder_ == null) {
+          voucherInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x08000000);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public Builder removeVoucherInfo(int index) {
+        if (voucherInfoBuilder_ == null) {
+          ensureVoucherInfoIsMutable();
+          voucherInfo_.remove(index);
+          onChanged();
+        } else {
+          voucherInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder getVoucherInfoBuilder(
+          int index) {
+        return getVoucherInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder getVoucherInfoOrBuilder(
+          int index) {
+        if (voucherInfoBuilder_ == null) {
+          return voucherInfo_.get(index);  } else {
+          return voucherInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> 
+           getVoucherInfoOrBuilderList() {
+        if (voucherInfoBuilder_ != null) {
+          return voucherInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(voucherInfo_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder addVoucherInfoBuilder() {
+        return getVoucherInfoFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder addVoucherInfoBuilder(
+          int index) {
+        return getVoucherInfoFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.OrderVoucherInfo voucherInfo = 28;</code>
+       *
+       * <pre>
+       *订单关联的优惠券信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder> 
+           getVoucherInfoBuilderList() {
+        return getVoucherInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder> 
+          getVoucherInfoFieldBuilder() {
+        if (voucherInfoBuilder_ == null) {
+          voucherInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder>(
+                  voucherInfo_,
+                  ((bitField0_ & 0x08000000) == 0x08000000),
+                  getParentForChildren(),
+                  isClean());
+          voucherInfo_ = null;
+        }
+        return voucherInfoBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.OrderDetailInfo)
     }
 
@@ -41375,6 +42343,1744 @@ public final class Order {
     }
 
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.OrderDetailInfo)
+  }
+
+  public interface OrderVoucherInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.OrderVoucherInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string voucherId = 1;</code>
+     *
+     * <pre>
+     *优惠券Id
+     * </pre>
+     */
+    boolean hasVoucherId();
+    /**
+     * <code>required string voucherId = 1;</code>
+     *
+     * <pre>
+     *优惠券Id
+     * </pre>
+     */
+    java.lang.String getVoucherId();
+    /**
+     * <code>required string voucherId = 1;</code>
+     *
+     * <pre>
+     *优惠券Id
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getVoucherIdBytes();
+
+    /**
+     * <code>required string voucherTitle = 2;</code>
+     *
+     * <pre>
+     *优惠券标题
+     * </pre>
+     */
+    boolean hasVoucherTitle();
+    /**
+     * <code>required string voucherTitle = 2;</code>
+     *
+     * <pre>
+     *优惠券标题
+     * </pre>
+     */
+    java.lang.String getVoucherTitle();
+    /**
+     * <code>required string voucherTitle = 2;</code>
+     *
+     * <pre>
+     *优惠券标题
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getVoucherTitleBytes();
+
+    /**
+     * <code>required string voucherType = 3;</code>
+     *
+     * <pre>
+     *优惠券类型 1:抵价券，2：折扣券
+     * </pre>
+     */
+    boolean hasVoucherType();
+    /**
+     * <code>required string voucherType = 3;</code>
+     *
+     * <pre>
+     *优惠券类型 1:抵价券，2：折扣券
+     * </pre>
+     */
+    java.lang.String getVoucherType();
+    /**
+     * <code>required string voucherType = 3;</code>
+     *
+     * <pre>
+     *优惠券类型 1:抵价券，2：折扣券
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getVoucherTypeBytes();
+
+    /**
+     * <code>required string voucherStatus = 4;</code>
+     *
+     * <pre>
+     *优惠券状态 1:有效券，2:已使用，3:已过期
+     * </pre>
+     */
+    boolean hasVoucherStatus();
+    /**
+     * <code>required string voucherStatus = 4;</code>
+     *
+     * <pre>
+     *优惠券状态 1:有效券，2:已使用，3:已过期
+     * </pre>
+     */
+    java.lang.String getVoucherStatus();
+    /**
+     * <code>required string voucherStatus = 4;</code>
+     *
+     * <pre>
+     *优惠券状态 1:有效券，2:已使用，3:已过期
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getVoucherStatusBytes();
+
+    /**
+     * <code>required int64 validStartTime = 5;</code>
+     *
+     * <pre>
+     *有效期开始时间
+     * </pre>
+     */
+    boolean hasValidStartTime();
+    /**
+     * <code>required int64 validStartTime = 5;</code>
+     *
+     * <pre>
+     *有效期开始时间
+     * </pre>
+     */
+    long getValidStartTime();
+
+    /**
+     * <code>required int64 validEndTime = 6;</code>
+     *
+     * <pre>
+     *有效期结束时间 
+     * </pre>
+     */
+    boolean hasValidEndTime();
+    /**
+     * <code>required int64 validEndTime = 6;</code>
+     *
+     * <pre>
+     *有效期结束时间 
+     * </pre>
+     */
+    long getValidEndTime();
+
+    /**
+     * <code>required string voucherDesc = 7;</code>
+     *
+     * <pre>
+     *券描述
+     * </pre>
+     */
+    boolean hasVoucherDesc();
+    /**
+     * <code>required string voucherDesc = 7;</code>
+     *
+     * <pre>
+     *券描述
+     * </pre>
+     */
+    java.lang.String getVoucherDesc();
+    /**
+     * <code>required string voucherDesc = 7;</code>
+     *
+     * <pre>
+     *券描述
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getVoucherDescBytes();
+
+    /**
+     * <code>optional double deductAmount = 8;</code>
+     *
+     * <pre>
+     *抵扣金额
+     * </pre>
+     */
+    boolean hasDeductAmount();
+    /**
+     * <code>optional double deductAmount = 8;</code>
+     *
+     * <pre>
+     *抵扣金额
+     * </pre>
+     */
+    double getDeductAmount();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderVoucherInfo}
+   *
+   * <pre>
+   *订单优惠券信息
+   * </pre>
+   */
+  public static final class OrderVoucherInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.OrderVoucherInfo)
+      OrderVoucherInfoOrBuilder {
+    // Use OrderVoucherInfo.newBuilder() to construct.
+    private OrderVoucherInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private OrderVoucherInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final OrderVoucherInfo defaultInstance;
+    public static OrderVoucherInfo getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public OrderVoucherInfo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private OrderVoucherInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              voucherId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              voucherTitle_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              voucherType_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              voucherStatus_ = bs;
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              validStartTime_ = input.readInt64();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              validEndTime_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              voucherDesc_ = bs;
+              break;
+            }
+            case 65: {
+              bitField0_ |= 0x00000080;
+              deductAmount_ = input.readDouble();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.class, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<OrderVoucherInfo> PARSER =
+        new com.google.protobuf.AbstractParser<OrderVoucherInfo>() {
+      public OrderVoucherInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new OrderVoucherInfo(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OrderVoucherInfo> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int VOUCHERID_FIELD_NUMBER = 1;
+    private java.lang.Object voucherId_;
+    /**
+     * <code>required string voucherId = 1;</code>
+     *
+     * <pre>
+     *优惠券Id
+     * </pre>
+     */
+    public boolean hasVoucherId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string voucherId = 1;</code>
+     *
+     * <pre>
+     *优惠券Id
+     * </pre>
+     */
+    public java.lang.String getVoucherId() {
+      java.lang.Object ref = voucherId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          voucherId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string voucherId = 1;</code>
+     *
+     * <pre>
+     *优惠券Id
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getVoucherIdBytes() {
+      java.lang.Object ref = voucherId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        voucherId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VOUCHERTITLE_FIELD_NUMBER = 2;
+    private java.lang.Object voucherTitle_;
+    /**
+     * <code>required string voucherTitle = 2;</code>
+     *
+     * <pre>
+     *优惠券标题
+     * </pre>
+     */
+    public boolean hasVoucherTitle() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string voucherTitle = 2;</code>
+     *
+     * <pre>
+     *优惠券标题
+     * </pre>
+     */
+    public java.lang.String getVoucherTitle() {
+      java.lang.Object ref = voucherTitle_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          voucherTitle_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string voucherTitle = 2;</code>
+     *
+     * <pre>
+     *优惠券标题
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getVoucherTitleBytes() {
+      java.lang.Object ref = voucherTitle_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        voucherTitle_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VOUCHERTYPE_FIELD_NUMBER = 3;
+    private java.lang.Object voucherType_;
+    /**
+     * <code>required string voucherType = 3;</code>
+     *
+     * <pre>
+     *优惠券类型 1:抵价券，2：折扣券
+     * </pre>
+     */
+    public boolean hasVoucherType() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string voucherType = 3;</code>
+     *
+     * <pre>
+     *优惠券类型 1:抵价券，2：折扣券
+     * </pre>
+     */
+    public java.lang.String getVoucherType() {
+      java.lang.Object ref = voucherType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          voucherType_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string voucherType = 3;</code>
+     *
+     * <pre>
+     *优惠券类型 1:抵价券，2：折扣券
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getVoucherTypeBytes() {
+      java.lang.Object ref = voucherType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        voucherType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VOUCHERSTATUS_FIELD_NUMBER = 4;
+    private java.lang.Object voucherStatus_;
+    /**
+     * <code>required string voucherStatus = 4;</code>
+     *
+     * <pre>
+     *优惠券状态 1:有效券，2:已使用，3:已过期
+     * </pre>
+     */
+    public boolean hasVoucherStatus() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string voucherStatus = 4;</code>
+     *
+     * <pre>
+     *优惠券状态 1:有效券，2:已使用，3:已过期
+     * </pre>
+     */
+    public java.lang.String getVoucherStatus() {
+      java.lang.Object ref = voucherStatus_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          voucherStatus_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string voucherStatus = 4;</code>
+     *
+     * <pre>
+     *优惠券状态 1:有效券，2:已使用，3:已过期
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getVoucherStatusBytes() {
+      java.lang.Object ref = voucherStatus_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        voucherStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALIDSTARTTIME_FIELD_NUMBER = 5;
+    private long validStartTime_;
+    /**
+     * <code>required int64 validStartTime = 5;</code>
+     *
+     * <pre>
+     *有效期开始时间
+     * </pre>
+     */
+    public boolean hasValidStartTime() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required int64 validStartTime = 5;</code>
+     *
+     * <pre>
+     *有效期开始时间
+     * </pre>
+     */
+    public long getValidStartTime() {
+      return validStartTime_;
+    }
+
+    public static final int VALIDENDTIME_FIELD_NUMBER = 6;
+    private long validEndTime_;
+    /**
+     * <code>required int64 validEndTime = 6;</code>
+     *
+     * <pre>
+     *有效期结束时间 
+     * </pre>
+     */
+    public boolean hasValidEndTime() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>required int64 validEndTime = 6;</code>
+     *
+     * <pre>
+     *有效期结束时间 
+     * </pre>
+     */
+    public long getValidEndTime() {
+      return validEndTime_;
+    }
+
+    public static final int VOUCHERDESC_FIELD_NUMBER = 7;
+    private java.lang.Object voucherDesc_;
+    /**
+     * <code>required string voucherDesc = 7;</code>
+     *
+     * <pre>
+     *券描述
+     * </pre>
+     */
+    public boolean hasVoucherDesc() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>required string voucherDesc = 7;</code>
+     *
+     * <pre>
+     *券描述
+     * </pre>
+     */
+    public java.lang.String getVoucherDesc() {
+      java.lang.Object ref = voucherDesc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          voucherDesc_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string voucherDesc = 7;</code>
+     *
+     * <pre>
+     *券描述
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getVoucherDescBytes() {
+      java.lang.Object ref = voucherDesc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        voucherDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEDUCTAMOUNT_FIELD_NUMBER = 8;
+    private double deductAmount_;
+    /**
+     * <code>optional double deductAmount = 8;</code>
+     *
+     * <pre>
+     *抵扣金额
+     * </pre>
+     */
+    public boolean hasDeductAmount() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional double deductAmount = 8;</code>
+     *
+     * <pre>
+     *抵扣金额
+     * </pre>
+     */
+    public double getDeductAmount() {
+      return deductAmount_;
+    }
+
+    private void initFields() {
+      voucherId_ = "";
+      voucherTitle_ = "";
+      voucherType_ = "";
+      voucherStatus_ = "";
+      validStartTime_ = 0L;
+      validEndTime_ = 0L;
+      voucherDesc_ = "";
+      deductAmount_ = 0D;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasVoucherId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasVoucherTitle()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasVoucherType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasVoucherStatus()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasValidStartTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasValidEndTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasVoucherDesc()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getVoucherIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getVoucherTitleBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getVoucherTypeBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getVoucherStatusBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt64(5, validStartTime_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt64(6, validEndTime_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getVoucherDescBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeDouble(8, deductAmount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getVoucherIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getVoucherTitleBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getVoucherTypeBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getVoucherStatusBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, validStartTime_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, validEndTime_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getVoucherDescBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(8, deductAmount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderVoucherInfo}
+     *
+     * <pre>
+     *订单优惠券信息
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.OrderVoucherInfo)
+        com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.class, com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        voucherId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        voucherTitle_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        voucherType_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        voucherStatus_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        validStartTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        validEndTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        voucherDesc_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        deductAmount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo build() {
+        com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo result = new com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.voucherId_ = voucherId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.voucherTitle_ = voucherTitle_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.voucherType_ = voucherType_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.voucherStatus_ = voucherStatus_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.validStartTime_ = validStartTime_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.validEndTime_ = validEndTime_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.voucherDesc_ = voucherDesc_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.deductAmount_ = deductAmount_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.getDefaultInstance()) return this;
+        if (other.hasVoucherId()) {
+          bitField0_ |= 0x00000001;
+          voucherId_ = other.voucherId_;
+          onChanged();
+        }
+        if (other.hasVoucherTitle()) {
+          bitField0_ |= 0x00000002;
+          voucherTitle_ = other.voucherTitle_;
+          onChanged();
+        }
+        if (other.hasVoucherType()) {
+          bitField0_ |= 0x00000004;
+          voucherType_ = other.voucherType_;
+          onChanged();
+        }
+        if (other.hasVoucherStatus()) {
+          bitField0_ |= 0x00000008;
+          voucherStatus_ = other.voucherStatus_;
+          onChanged();
+        }
+        if (other.hasValidStartTime()) {
+          setValidStartTime(other.getValidStartTime());
+        }
+        if (other.hasValidEndTime()) {
+          setValidEndTime(other.getValidEndTime());
+        }
+        if (other.hasVoucherDesc()) {
+          bitField0_ |= 0x00000040;
+          voucherDesc_ = other.voucherDesc_;
+          onChanged();
+        }
+        if (other.hasDeductAmount()) {
+          setDeductAmount(other.getDeductAmount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasVoucherId()) {
+          
+          return false;
+        }
+        if (!hasVoucherTitle()) {
+          
+          return false;
+        }
+        if (!hasVoucherType()) {
+          
+          return false;
+        }
+        if (!hasVoucherStatus()) {
+          
+          return false;
+        }
+        if (!hasValidStartTime()) {
+          
+          return false;
+        }
+        if (!hasValidEndTime()) {
+          
+          return false;
+        }
+        if (!hasVoucherDesc()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object voucherId_ = "";
+      /**
+       * <code>required string voucherId = 1;</code>
+       *
+       * <pre>
+       *优惠券Id
+       * </pre>
+       */
+      public boolean hasVoucherId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string voucherId = 1;</code>
+       *
+       * <pre>
+       *优惠券Id
+       * </pre>
+       */
+      public java.lang.String getVoucherId() {
+        java.lang.Object ref = voucherId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            voucherId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string voucherId = 1;</code>
+       *
+       * <pre>
+       *优惠券Id
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getVoucherIdBytes() {
+        java.lang.Object ref = voucherId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          voucherId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string voucherId = 1;</code>
+       *
+       * <pre>
+       *优惠券Id
+       * </pre>
+       */
+      public Builder setVoucherId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        voucherId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherId = 1;</code>
+       *
+       * <pre>
+       *优惠券Id
+       * </pre>
+       */
+      public Builder clearVoucherId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        voucherId_ = getDefaultInstance().getVoucherId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherId = 1;</code>
+       *
+       * <pre>
+       *优惠券Id
+       * </pre>
+       */
+      public Builder setVoucherIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        voucherId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object voucherTitle_ = "";
+      /**
+       * <code>required string voucherTitle = 2;</code>
+       *
+       * <pre>
+       *优惠券标题
+       * </pre>
+       */
+      public boolean hasVoucherTitle() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string voucherTitle = 2;</code>
+       *
+       * <pre>
+       *优惠券标题
+       * </pre>
+       */
+      public java.lang.String getVoucherTitle() {
+        java.lang.Object ref = voucherTitle_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            voucherTitle_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string voucherTitle = 2;</code>
+       *
+       * <pre>
+       *优惠券标题
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getVoucherTitleBytes() {
+        java.lang.Object ref = voucherTitle_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          voucherTitle_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string voucherTitle = 2;</code>
+       *
+       * <pre>
+       *优惠券标题
+       * </pre>
+       */
+      public Builder setVoucherTitle(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        voucherTitle_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherTitle = 2;</code>
+       *
+       * <pre>
+       *优惠券标题
+       * </pre>
+       */
+      public Builder clearVoucherTitle() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        voucherTitle_ = getDefaultInstance().getVoucherTitle();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherTitle = 2;</code>
+       *
+       * <pre>
+       *优惠券标题
+       * </pre>
+       */
+      public Builder setVoucherTitleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        voucherTitle_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object voucherType_ = "";
+      /**
+       * <code>required string voucherType = 3;</code>
+       *
+       * <pre>
+       *优惠券类型 1:抵价券，2：折扣券
+       * </pre>
+       */
+      public boolean hasVoucherType() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string voucherType = 3;</code>
+       *
+       * <pre>
+       *优惠券类型 1:抵价券，2：折扣券
+       * </pre>
+       */
+      public java.lang.String getVoucherType() {
+        java.lang.Object ref = voucherType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            voucherType_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string voucherType = 3;</code>
+       *
+       * <pre>
+       *优惠券类型 1:抵价券，2：折扣券
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getVoucherTypeBytes() {
+        java.lang.Object ref = voucherType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          voucherType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string voucherType = 3;</code>
+       *
+       * <pre>
+       *优惠券类型 1:抵价券，2：折扣券
+       * </pre>
+       */
+      public Builder setVoucherType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        voucherType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherType = 3;</code>
+       *
+       * <pre>
+       *优惠券类型 1:抵价券，2：折扣券
+       * </pre>
+       */
+      public Builder clearVoucherType() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        voucherType_ = getDefaultInstance().getVoucherType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherType = 3;</code>
+       *
+       * <pre>
+       *优惠券类型 1:抵价券，2：折扣券
+       * </pre>
+       */
+      public Builder setVoucherTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        voucherType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object voucherStatus_ = "";
+      /**
+       * <code>required string voucherStatus = 4;</code>
+       *
+       * <pre>
+       *优惠券状态 1:有效券，2:已使用，3:已过期
+       * </pre>
+       */
+      public boolean hasVoucherStatus() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string voucherStatus = 4;</code>
+       *
+       * <pre>
+       *优惠券状态 1:有效券，2:已使用，3:已过期
+       * </pre>
+       */
+      public java.lang.String getVoucherStatus() {
+        java.lang.Object ref = voucherStatus_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            voucherStatus_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string voucherStatus = 4;</code>
+       *
+       * <pre>
+       *优惠券状态 1:有效券，2:已使用，3:已过期
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getVoucherStatusBytes() {
+        java.lang.Object ref = voucherStatus_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          voucherStatus_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string voucherStatus = 4;</code>
+       *
+       * <pre>
+       *优惠券状态 1:有效券，2:已使用，3:已过期
+       * </pre>
+       */
+      public Builder setVoucherStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        voucherStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherStatus = 4;</code>
+       *
+       * <pre>
+       *优惠券状态 1:有效券，2:已使用，3:已过期
+       * </pre>
+       */
+      public Builder clearVoucherStatus() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        voucherStatus_ = getDefaultInstance().getVoucherStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherStatus = 4;</code>
+       *
+       * <pre>
+       *优惠券状态 1:有效券，2:已使用，3:已过期
+       * </pre>
+       */
+      public Builder setVoucherStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        voucherStatus_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long validStartTime_ ;
+      /**
+       * <code>required int64 validStartTime = 5;</code>
+       *
+       * <pre>
+       *有效期开始时间
+       * </pre>
+       */
+      public boolean hasValidStartTime() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required int64 validStartTime = 5;</code>
+       *
+       * <pre>
+       *有效期开始时间
+       * </pre>
+       */
+      public long getValidStartTime() {
+        return validStartTime_;
+      }
+      /**
+       * <code>required int64 validStartTime = 5;</code>
+       *
+       * <pre>
+       *有效期开始时间
+       * </pre>
+       */
+      public Builder setValidStartTime(long value) {
+        bitField0_ |= 0x00000010;
+        validStartTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 validStartTime = 5;</code>
+       *
+       * <pre>
+       *有效期开始时间
+       * </pre>
+       */
+      public Builder clearValidStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        validStartTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long validEndTime_ ;
+      /**
+       * <code>required int64 validEndTime = 6;</code>
+       *
+       * <pre>
+       *有效期结束时间 
+       * </pre>
+       */
+      public boolean hasValidEndTime() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required int64 validEndTime = 6;</code>
+       *
+       * <pre>
+       *有效期结束时间 
+       * </pre>
+       */
+      public long getValidEndTime() {
+        return validEndTime_;
+      }
+      /**
+       * <code>required int64 validEndTime = 6;</code>
+       *
+       * <pre>
+       *有效期结束时间 
+       * </pre>
+       */
+      public Builder setValidEndTime(long value) {
+        bitField0_ |= 0x00000020;
+        validEndTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 validEndTime = 6;</code>
+       *
+       * <pre>
+       *有效期结束时间 
+       * </pre>
+       */
+      public Builder clearValidEndTime() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        validEndTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object voucherDesc_ = "";
+      /**
+       * <code>required string voucherDesc = 7;</code>
+       *
+       * <pre>
+       *券描述
+       * </pre>
+       */
+      public boolean hasVoucherDesc() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>required string voucherDesc = 7;</code>
+       *
+       * <pre>
+       *券描述
+       * </pre>
+       */
+      public java.lang.String getVoucherDesc() {
+        java.lang.Object ref = voucherDesc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            voucherDesc_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string voucherDesc = 7;</code>
+       *
+       * <pre>
+       *券描述
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getVoucherDescBytes() {
+        java.lang.Object ref = voucherDesc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          voucherDesc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string voucherDesc = 7;</code>
+       *
+       * <pre>
+       *券描述
+       * </pre>
+       */
+      public Builder setVoucherDesc(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        voucherDesc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherDesc = 7;</code>
+       *
+       * <pre>
+       *券描述
+       * </pre>
+       */
+      public Builder clearVoucherDesc() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        voucherDesc_ = getDefaultInstance().getVoucherDesc();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string voucherDesc = 7;</code>
+       *
+       * <pre>
+       *券描述
+       * </pre>
+       */
+      public Builder setVoucherDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        voucherDesc_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double deductAmount_ ;
+      /**
+       * <code>optional double deductAmount = 8;</code>
+       *
+       * <pre>
+       *抵扣金额
+       * </pre>
+       */
+      public boolean hasDeductAmount() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional double deductAmount = 8;</code>
+       *
+       * <pre>
+       *抵扣金额
+       * </pre>
+       */
+      public double getDeductAmount() {
+        return deductAmount_;
+      }
+      /**
+       * <code>optional double deductAmount = 8;</code>
+       *
+       * <pre>
+       *抵扣金额
+       * </pre>
+       */
+      public Builder setDeductAmount(double value) {
+        bitField0_ |= 0x00000080;
+        deductAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double deductAmount = 8;</code>
+       *
+       * <pre>
+       *抵扣金额
+       * </pre>
+       */
+      public Builder clearDeductAmount() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        deductAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.OrderVoucherInfo)
+    }
+
+    static {
+      defaultInstance = new OrderVoucherInfo(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.OrderVoucherInfo)
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
@@ -41527,6 +44233,11 @@ public final class Order {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -41541,7 +44252,7 @@ public final class Order {
       "\022\024\n\014categoryCode\030\002 \002(\t\022\021\n\trentCount\030\003 \002(" +
       "\005\022\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance\030\005 \002(\010\022\017" +
       "\n\007orderId\030\006 \001(\t\022\024\n\014onlyCalPrice\030\007 \002(\010\022\016\n" +
-      "\006userId\030\010 \002(\t\"\374\002\n\021CommitOrderResult\022\022\n\nr" +
+      "\006userId\030\010 \002(\t\"\302\003\n\021CommitOrderResult\022\022\n\nr" +
       "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007or" +
       "derId\030\003 \001(\t\022\024\n\014categoryCode\030\004 \001(\t\022\021\n\tren" +
       "tCount\030\005 \001(\005\022\020\n\010rentCode\030\006 \001(\t\022\021\n\tinsura" +
@@ -41550,111 +44261,119 @@ public final class Order {
       "\001(\001\022\026\n\016totalRentPrice\030\013 \001(\001\022\022\n\nhasVouche" +
       "r\030\014 \001(\010\022\022\n\ntotalPrice\030\r \001(\001\022W\n\027orderRece" +
       "iveAddressInfo\030\016 \001(\01326.com.qjoy.basjoo.c" +
-      "ore.model.pb.OrderReceiveAddressInfo\"\223\001\n" +
-      "\027OrderReceiveAddressInfo\022\020\n\010receiver\030\001 \002" +
-      "(\t\022\020\n\010mobileNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n" +
-      "\006street\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCod" +
-      "e\030\006 \002(\t\022\021\n\taddressId\030\007 \001(\t\"\345\001\n\023ConfirmOr" +
-      "derRequest\022\021\n\tproductId\030\001 \002(\t\022\024\n\014categor",
-      "yCode\030\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCo" +
-      "de\030\004 \002(\t\022\021\n\tinsurance\030\005 \001(\010\022\017\n\007orderId\030\006" +
-      " \002(\t\022\021\n\taddressId\030\007 \002(\t\022\020\n\010vouchers\030\010 \003(" +
-      "\t\022\023\n\013userMessage\030\t \001(\t\022\022\n\npayChannel\030\n \001" +
-      "(\005\022\016\n\006userId\030\013 \002(\t\"\235\001\n\022ConfirmOrderResul" +
-      "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
-      "\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n" +
-      "\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo.core." +
-      "model.pb.WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpart" +
-      "nerId\030\001 \002(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package",
-      "\030\003 \002(\t\022\020\n\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 " +
-      "\002(\t\022\014\n\004sign\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"H\n\021Conf" +
-      "irmPayRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayCha" +
-      "nnel\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\"\233\001\n\020ConfirmPa" +
-      "yResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg" +
-      "\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 " +
-      "\001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo" +
-      ".core.model.pb.WxPayInfo\"6\n\023GetPayStatus" +
-      "Request\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t" +
-      "\"\316\001\n\022GetPayStatusResult\022\022\n\nresultCode\030\001 ",
-      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022" +
-      "\022\n\npayChannel\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001" +
-      "\022W\n\027orderReceiveAddressInfo\030\006 \001(\01326.com." +
-      "qjoy.basjoo.core.model.pb.OrderReceiveAd" +
-      "dressInfo\"\237\001\n\026SearchOrderListRequest\022\020\n\010" +
-      "keyWords\030\001 \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016e" +
-      "valuateStauts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022" +
-      "\021\n\tstartTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006u" +
-      "serId\030\007 \002(\t\"\271\002\n\025SearchOrderListResult\022\022\n" +
-      "\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010",
-      "maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \001(\010\022\024\n\014waitP" +
-      "ayCount\030\005 \001(\005\022\031\n\021waitDeliveryCount\030\006 \001(\005" +
-      "\022\030\n\020waitReceiveCount\030\007 \001(\005\022\027\n\017waitRevert" +
-      "Count\030\010 \001(\005\022\031\n\021waitEvaluateCount\030\t \001(\005\022\022" +
-      "\n\ntotalCount\030\n \001(\005\022C\n\rorderLiteInfo\030\013 \003(" +
-      "\0132,.com.qjoy.basjoo.core.model.pb.OrderL" +
-      "iteInfo\"\362\002\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002" +
-      "(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 " +
-      "\002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTim" +
-      "e\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007",
-      " \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t" +
-      " \002(\001\022\033\n\023transportationPrice\030\n \001(\001\022\022\n\ntot" +
-      "alPrice\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022" +
-      "\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002" +
-      "(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024" +
-      "\n\014categoryName\030\021 \002(\t\"5\n\022DeleteOrderReque" +
-      "st\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021D" +
-      "eleteOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
-      "resultMsg\030\002 \002(\t\"E\n\022CancelOrderRequest\022\017\n" +
-      "\007orderId\030\001 \002(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006userId",
-      "\030\003 \002(\t\":\n\021CancelOrderResult\022\022\n\nresultCod" +
-      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025ConfirmRec" +
-      "eiveRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002" +
-      " \002(\t\"=\n\024ConfirmReceiveResult\022\022\n\nresultCo" +
-      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRev" +
-      "ertRequest\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyReve" +
-      "rtType\030\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022\035" +
-      "\n\025transportationCompany\030\004 \001(\t\022\016\n\006userId\030" +
-      "\005 \002(\t\022\025\n\revidentalImgs\030\006 \003(\t\022\023\n\013revertIn" +
-      "tro\030\007 \001(\t\":\n\021ApplyRevertResult\022\022\n\nresult",
-      "Code\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyR" +
-      "efundRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030" +
-      "\002 \002(\t\022\022\n\nrefundType\030\003 \002(\t\022\023\n\013goodsStatus" +
-      "\030\004 \001(\t\022\024\n\014refundReason\030\005 \002(\t\022\021\n\trefundFe" +
-      "e\030\006 \001(\001\022\025\n\revidentalImgs\030\007 \003(\t\022\023\n\013refund" +
-      "Intro\030\010 \001(\t\":\n\021ApplyRefundResult\022\022\n\nresu" +
-      "ltCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"6\n\023GetRe" +
-      "fundFeeRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderI" +
-      "d\030\002 \002(\t\"g\n\022GetRefundFeeResult\022\022\n\nresultC" +
-      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\024\n\014maxRefun",
-      "dFee\030\003 \001(\001\022\024\n\014transportFee\030\004 \001(\001\"\252\001\n\030Com" +
-      "mitRefundTransRequest\022\016\n\006userId\030\001 \002(\t\022\017\n" +
-      "\007orderId\030\002 \002(\t\022\027\n\017refundTransType\030\003 \002(\t\022" +
-      "\030\n\020transportationId\030\004 \001(\t\022\035\n\025transportat" +
-      "ionCompany\030\005 \001(\t\022\033\n\023transportationIntro\030" +
-      "\006 \001(\t\"@\n\027CommitRefundTransResult\022\022\n\nresu" +
-      "ltCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetOr" +
-      "derDetailRequest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006use" +
-      "rId\030\002 \002(\t\"\206\001\n\024GetOrderDetailResult\022\022\n\nre" +
-      "sultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017ord",
-      "erDetailInfo\030\003 \001(\0132..com.qjoy.basjoo.cor" +
-      "e.model.pb.OrderDetailInfo\"\373\004\n\017OrderDeta" +
-      "ilInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030\002" +
-      " \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rrentStartTim" +
-      "e\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDays" +
-      "\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\trentPrice\030\010" +
-      " \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033\n\023transportat" +
-      "ionPrice\030\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020tr" +
-      "ansportationId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r" +
-      " \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014mainImageUrl\030",
-      "\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(" +
-      "\t\022\017\n\007payTime\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npay" +
-      "Channel\030\024 \001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013r" +
-      "eceiveTime\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014" +
-      "completeTime\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n" +
-      "\010vouchers\030\032 \003(\t\022W\n\027orderReceiveAddressIn" +
-      "fo\030\033 \001(\01326.com.qjoy.basjoo.core.model.pb" +
-      ".OrderReceiveAddressInfoB\037\n\035com.qjoy.bas" +
-      "joo.core.model.pb"
+      "ore.model.pb.OrderReceiveAddressInfo\022D\n\013" +
+      "voucherInfo\030\017 \003(\0132/.com.qjoy.basjoo.core" +
+      ".model.pb.OrderVoucherInfo\"\223\001\n\027OrderRece" +
+      "iveAddressInfo\022\020\n\010receiver\030\001 \002(\t\022\020\n\010mobi" +
+      "leNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006street\030\004 " +
+      "\002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 \002(\t\022\021\n",
+      "\taddressId\030\007 \001(\t\"\345\001\n\023ConfirmOrderRequest" +
+      "\022\021\n\tproductId\030\001 \002(\t\022\024\n\014categoryCode\030\002 \002(" +
+      "\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030\004 \002(\t\022\021" +
+      "\n\tinsurance\030\005 \001(\010\022\017\n\007orderId\030\006 \002(\t\022\021\n\tad" +
+      "dressId\030\007 \002(\t\022\020\n\010vouchers\030\010 \003(\t\022\023\n\013userM" +
+      "essage\030\t \001(\t\022\022\n\npayChannel\030\n \001(\005\022\016\n\006user" +
+      "Id\030\013 \002(\t\"\235\001\n\022ConfirmOrderResult\022\022\n\nresul" +
+      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderI" +
+      "d\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPayInfo" +
+      "\030\005 \001(\0132(.com.qjoy.basjoo.core.model.pb.W",
+      "xPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId\030\001 \002(" +
+      "\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(\t\022\020\n\010" +
+      "nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014\n\004sig" +
+      "n\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"H\n\021ConfirmPayRequ" +
+      "est\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030\002 \001(\005" +
+      "\022\016\n\006userId\030\003 \002(\t\"\233\001\n\020ConfirmPayResult\022\022\n" +
+      "\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007" +
+      "orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxP" +
+      "ayInfo\030\005 \001(\0132(.com.qjoy.basjoo.core.mode" +
+      "l.pb.WxPayInfo\"6\n\023GetPayStatusRequest\022\017\n",
+      "\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"\316\001\n\022GetPa" +
+      "yStatusResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
+      "ultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChan" +
+      "nel\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001\022W\n\027orderR" +
+      "eceiveAddressInfo\030\006 \001(\01326.com.qjoy.basjo" +
+      "o.core.model.pb.OrderReceiveAddressInfo\"" +
+      "\237\001\n\026SearchOrderListRequest\022\020\n\010keyWords\030\001" +
+      " \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016evaluateSta" +
+      "uts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022\021\n\tstartTi" +
+      "me\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006userId\030\007 \002(",
+      "\t\"\271\002\n\025SearchOrderListResult\022\022\n\nresultCod" +
+      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIndex\030\003" +
+      " \001(\005\022\017\n\007hasMore\030\004 \001(\010\022\024\n\014waitPayCount\030\005 " +
+      "\001(\005\022\031\n\021waitDeliveryCount\030\006 \001(\005\022\030\n\020waitRe" +
+      "ceiveCount\030\007 \001(\005\022\027\n\017waitRevertCount\030\010 \001(" +
+      "\005\022\031\n\021waitEvaluateCount\030\t \001(\005\022\022\n\ntotalCou" +
+      "nt\030\n \001(\005\022C\n\rorderLiteInfo\030\013 \003(\0132,.com.qj" +
+      "oy.basjoo.core.model.pb.OrderLiteInfo\"\362\002" +
+      "\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orde" +
+      "rStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rren",
+      "tStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n" +
+      "\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\tre" +
+      "ntPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033\n\023tr" +
+      "ansportationPrice\030\n \001(\001\022\022\n\ntotalPrice\030\013 " +
+      "\002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016evaluat" +
+      "eStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014main" +
+      "ImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014category" +
+      "Name\030\021 \002(\t\"5\n\022DeleteOrderRequest\022\017\n\007orde" +
+      "rId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021DeleteOrder" +
+      "Result\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030",
+      "\002 \002(\t\"E\n\022CancelOrderRequest\022\017\n\007orderId\030\001" +
+      " \002(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006userId\030\003 \002(\t\":\n\021" +
+      "CancelOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
+      "\tresultMsg\030\002 \002(\t\"8\n\025ConfirmReceiveReques" +
+      "t\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"=\n\024Co" +
+      "nfirmReceiveResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
+      "\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRevertRequest" +
+      "\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType\030\002 \002" +
+      "(\t\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025transpor" +
+      "tationCompany\030\004 \001(\t\022\016\n\006userId\030\005 \002(\t\022\025\n\re",
+      "videntalImgs\030\006 \003(\t\022\023\n\013revertIntro\030\007 \001(\t\"" +
+      ":\n\021ApplyRevertResult\022\022\n\nresultCode\030\001 \002(\t" +
+      "\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefundReque" +
+      "st\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\022\n\nr" +
+      "efundType\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001(\t\022\024\n\014" +
+      "refundReason\030\005 \002(\t\022\021\n\trefundFee\030\006 \001(\001\022\025\n" +
+      "\revidentalImgs\030\007 \003(\t\022\023\n\013refundIntro\030\010 \001(" +
+      "\t\":\n\021ApplyRefundResult\022\022\n\nresultCode\030\001 \002" +
+      "(\t\022\021\n\tresultMsg\030\002 \002(\t\"6\n\023GetRefundFeeReq" +
+      "uest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\"g\n",
+      "\022GetRefundFeeResult\022\022\n\nresultCode\030\001 \002(\t\022" +
+      "\021\n\tresultMsg\030\002 \002(\t\022\024\n\014maxRefundFee\030\003 \001(\001" +
+      "\022\024\n\014transportFee\030\004 \001(\001\"\252\001\n\030CommitRefundT" +
+      "ransRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002" +
+      " \002(\t\022\027\n\017refundTransType\030\003 \002(\t\022\030\n\020transpo" +
+      "rtationId\030\004 \001(\t\022\035\n\025transportationCompany" +
+      "\030\005 \001(\t\022\033\n\023transportationIntro\030\006 \001(\t\"@\n\027C" +
+      "ommitRefundTransResult\022\022\n\nresultCode\030\001 \002" +
+      "(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetOrderDetailR" +
+      "equest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"",
+      "\206\001\n\024GetOrderDetailResult\022\022\n\nresultCode\030\001" +
+      " \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDetailIn" +
+      "fo\030\003 \001(\0132..com.qjoy.basjoo.core.model.pb" +
+      ".OrderDetailInfo\"\301\005\n\017OrderDetailInfo\022\017\n\007" +
+      "orderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncr" +
+      "eateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n" +
+      "\013rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\t" +
+      "rentCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pl" +
+      "edgePrice\030\t \002(\001\022\033\n\023transportationPrice\030\n" +
+      " \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportati",
+      "onId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tpr" +
+      "oductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004d" +
+      "esc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTi" +
+      "me\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 " +
+      "\001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTime" +
+      "\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTi" +
+      "me\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030" +
+      "\032 \003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001(\01326" +
+      ".com.qjoy.basjoo.core.model.pb.OrderRece" +
+      "iveAddressInfo\022D\n\013voucherInfo\030\034 \003(\0132/.co",
+      "m.qjoy.basjoo.core.model.pb.OrderVoucher" +
+      "Info\"\300\001\n\020OrderVoucherInfo\022\021\n\tvoucherId\030\001" +
+      " \002(\t\022\024\n\014voucherTitle\030\002 \002(\t\022\023\n\013voucherTyp" +
+      "e\030\003 \002(\t\022\025\n\rvoucherStatus\030\004 \002(\t\022\026\n\016validS" +
+      "tartTime\030\005 \002(\003\022\024\n\014validEndTime\030\006 \002(\003\022\023\n\013" +
+      "voucherDesc\030\007 \002(\t\022\024\n\014deductAmount\030\010 \001(\001B" +
+      "\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -41679,7 +44398,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "CategoryCode", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "CategoryCode", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", "VoucherInfo", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_fieldAccessorTable = new
@@ -41847,7 +44566,13 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_descriptor,
-        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "PayTime", "PayId", "PayChannel", "DeliveryTime", "ReceiveTime", "RevertTime", "CompleteTime", "CloseTime", "Vouchers", "OrderReceiveAddressInfo", });
+        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "PayTime", "PayId", "PayChannel", "DeliveryTime", "ReceiveTime", "RevertTime", "CompleteTime", "CloseTime", "Vouchers", "OrderReceiveAddressInfo", "VoucherInfo", });
+    internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor,
+        new java.lang.String[] { "VoucherId", "VoucherTitle", "VoucherType", "VoucherStatus", "ValidStartTime", "ValidEndTime", "VoucherDesc", "DeductAmount", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -23,6 +23,7 @@
 
 ##搜索
 获取搜索热点：qjoy.basjoo.getSearchHot
+获取搜索方式信息：qjoy.basjoo.getSearchWay
 
 ##个人信息
 获取个人信息：qjoy.basjoo.getUserInfo

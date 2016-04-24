@@ -257,6 +257,9 @@
   if (self.hasOrderReceiveAddressInfo) {
     [output writeMessage:14 value:self.orderReceiveAddressInfo];
   }
+  [self.voucherInfo enumerateObjectsUsingBlock:^(OrderVoucherInfo *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:15 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -305,6 +308,9 @@
   if (self.hasOrderReceiveAddressInfo) {
     size_ += computeMessageSize(14, self.orderReceiveAddressInfo);
   }
+  [self.voucherInfo enumerateObjectsUsingBlock:^(OrderVoucherInfo *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(15, element);
+  }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -360,6 +366,12 @@
                          withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }
+  [self.voucherInfo enumerateObjectsUsingBlock:^(OrderVoucherInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"voucherInfo"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -418,6 +430,15 @@
 - (void) setOrderReceiveAddressInfo:(OrderReceiveAddressInfo*) value {
   _hasOrderReceiveAddressInfo = YES;
   _orderReceiveAddressInfo = value;
+}
+- (void)setVoucherInfoArray:(NSArray *)array {
+  _voucherInfo = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addVoucherInfo:(OrderVoucherInfo*)value {
+  if (_voucherInfo == nil) {
+    _voucherInfo = [[NSMutableArray alloc]init];
+  }
+  [_voucherInfo addObject:value];
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -490,6 +511,12 @@
         OrderReceiveAddressInfo* sub = [[OrderReceiveAddressInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self setOrderReceiveAddressInfo:sub];
+        break;
+      }
+      case 122: {
+        OrderVoucherInfo* sub = [[OrderVoucherInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addVoucherInfo:sub];
         break;
       }
     }
@@ -4339,6 +4366,9 @@
   if (self.hasOrderReceiveAddressInfo) {
     [output writeMessage:27 value:self.orderReceiveAddressInfo];
   }
+  [self.voucherInfo enumerateObjectsUsingBlock:^(OrderVoucherInfo *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:28 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -4432,6 +4462,9 @@
   if (self.hasOrderReceiveAddressInfo) {
     size_ += computeMessageSize(27, self.orderReceiveAddressInfo);
   }
+  [self.voucherInfo enumerateObjectsUsingBlock:^(OrderVoucherInfo *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(28, element);
+  }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -4526,6 +4559,12 @@
                          withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }
+  [self.voucherInfo enumerateObjectsUsingBlock:^(OrderVoucherInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"voucherInfo"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -4641,6 +4680,15 @@
 - (void) setOrderReceiveAddressInfo:(OrderReceiveAddressInfo*) value {
   _hasOrderReceiveAddressInfo = YES;
   _orderReceiveAddressInfo = value;
+}
+- (void)setVoucherInfoArray:(NSArray *)array {
+  _voucherInfo = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addVoucherInfo:(OrderVoucherInfo*)value {
+  if (_voucherInfo == nil) {
+    _voucherInfo = [[NSMutableArray alloc]init];
+  }
+  [_voucherInfo addObject:value];
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -4765,6 +4813,204 @@
         OrderReceiveAddressInfo* sub = [[OrderReceiveAddressInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self setOrderReceiveAddressInfo:sub];
+        break;
+      }
+      case 226: {
+        OrderVoucherInfo* sub = [[OrderVoucherInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addVoucherInfo:sub];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation OrderVoucherInfo
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _voucherId = @"";
+    _voucherTitle = @"";
+    _voucherType = @"";
+    _voucherStatus = @"";
+    _validStartTime = 0L;
+    _validEndTime = 0L;
+    _voucherDesc = @"";
+    _deductAmount = 0;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasVoucherId) {
+    [output writeString:1 value:self.voucherId];
+  }
+  if (self.hasVoucherTitle) {
+    [output writeString:2 value:self.voucherTitle];
+  }
+  if (self.hasVoucherType) {
+    [output writeString:3 value:self.voucherType];
+  }
+  if (self.hasVoucherStatus) {
+    [output writeString:4 value:self.voucherStatus];
+  }
+  if (self.hasValidStartTime) {
+    [output writeInt64:5 value:self.validStartTime];
+  }
+  if (self.hasValidEndTime) {
+    [output writeInt64:6 value:self.validEndTime];
+  }
+  if (self.hasVoucherDesc) {
+    [output writeString:7 value:self.voucherDesc];
+  }
+  if (self.hasDeductAmount) {
+    [output writeDouble:8 value:self.deductAmount];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasVoucherId) {
+    size_ += computeStringSize(1, self.voucherId);
+  }
+  if (self.hasVoucherTitle) {
+    size_ += computeStringSize(2, self.voucherTitle);
+  }
+  if (self.hasVoucherType) {
+    size_ += computeStringSize(3, self.voucherType);
+  }
+  if (self.hasVoucherStatus) {
+    size_ += computeStringSize(4, self.voucherStatus);
+  }
+  if (self.hasValidStartTime) {
+    size_ += computeInt64Size(5, self.validStartTime);
+  }
+  if (self.hasValidEndTime) {
+    size_ += computeInt64Size(6, self.validEndTime);
+  }
+  if (self.hasVoucherDesc) {
+    size_ += computeStringSize(7, self.voucherDesc);
+  }
+  if (self.hasDeductAmount) {
+    size_ += computeDoubleSize(8, self.deductAmount);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (OrderVoucherInfo*) parseFromData:(NSData*) data {
+  OrderVoucherInfo* result = [[OrderVoucherInfo alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasVoucherId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"voucherId", self.voucherId];
+  }
+  if (self.hasVoucherTitle) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"voucherTitle", self.voucherTitle];
+  }
+  if (self.hasVoucherType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"voucherType", self.voucherType];
+  }
+  if (self.hasVoucherStatus) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"voucherStatus", self.voucherStatus];
+  }
+  if (self.hasValidStartTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"validStartTime", [NSNumber numberWithLongLong:self.validStartTime]];
+  }
+  if (self.hasValidEndTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"validEndTime", [NSNumber numberWithLongLong:self.validEndTime]];
+  }
+  if (self.hasVoucherDesc) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"voucherDesc", self.voucherDesc];
+  }
+  if (self.hasDeductAmount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"deductAmount", [NSNumber numberWithDouble:self.deductAmount]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setVoucherId:(NSString*) value {
+  _hasVoucherId = YES;
+  _voucherId = value;
+}
+- (void) setVoucherTitle:(NSString*) value {
+  _hasVoucherTitle = YES;
+  _voucherTitle = value;
+}
+- (void) setVoucherType:(NSString*) value {
+  _hasVoucherType = YES;
+  _voucherType = value;
+}
+- (void) setVoucherStatus:(NSString*) value {
+  _hasVoucherStatus = YES;
+  _voucherStatus = value;
+}
+- (void) setValidStartTime:(SInt64) value {
+  _hasValidStartTime = YES;
+  _validStartTime = value;
+}
+- (void) setValidEndTime:(SInt64) value {
+  _hasValidEndTime = YES;
+  _validEndTime = value;
+}
+- (void) setVoucherDesc:(NSString*) value {
+  _hasVoucherDesc = YES;
+  _voucherDesc = value;
+}
+- (void) setDeductAmount:(Float64) value {
+  _hasDeductAmount = YES;
+  _deductAmount = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setVoucherId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setVoucherTitle:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setVoucherType:[input readString]];
+        break;
+      }
+      case 34: {
+        [self setVoucherStatus:[input readString]];
+        break;
+      }
+      case 40: {
+        [self setValidStartTime:[input readInt64]];
+        break;
+      }
+      case 48: {
+        [self setValidEndTime:[input readInt64]];
+        break;
+      }
+      case 58: {
+        [self setVoucherDesc:[input readString]];
+        break;
+      }
+      case 65: {
+        [self setDeductAmount:[input readDouble]];
         break;
       }
     }
