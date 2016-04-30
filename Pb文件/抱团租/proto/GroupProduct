@@ -1,0 +1,248 @@
+package com.qjoy.basjoo.core.model.pb;
+
+option java_package="com.qjoy.basjoo.core.model.pb";
+
+
+//获取抱团租产品列表
+message GetGroupProductListRequest {   
+
+	//起始index
+	optional int32                  startIndex = 1;
+	
+    //用户ID,可区分是否已经报名
+    optional string                 userId = 2;
+   
+}
+
+//获取抱团租产品列表
+message GetGroupProductListResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;     
+   
+   //当前最大index
+   optional int32                  maxIndex = 3;
+   
+   //是否还有更多数据
+   required bool                   hasMore  = 4;
+   
+   //团租产品简要信息列表
+   repeated GroupProductLite   groupProductLites = 5;
+}
+
+//团租简要信息
+message GroupProductLite {   
+
+   //产品Id
+   required string                 productId = 1; 
+   
+   //产品类型
+   required string                 productType = 2; 
+   
+   //抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
+   required int32                  promoType =3;
+    
+   //品牌
+   required string                 brand = 4; 
+   
+   //大图地址
+   required string                 mainImageUrl = 5; 
+ 
+   //横幅图片地址
+   optional string                 bannerImageUrl = 6;
+   
+   //标题
+   required string                 title = 7;
+   
+   //描述
+   required string                 desc = 8; 
+   
+   //生效（开始）状态
+   required int32                  validStatus = 9;
+   
+   //开始时间
+   required int64                  validStartTime = 10;
+    
+   //结束时间
+   required int64                  validEndTime = 11;
+  
+   //服务端当前时间
+   required int64                  serverTime = 12;
+     
+   //最少成团人数
+   optional int64                  minGroupCount = 13; 
+   
+   //成团折扣
+   optional double                 discount = 14; 
+   
+   //用户是否已经报名
+   optional bool                   applyed = 15;
+   
+   //当前已经报名人数
+   optional int64                  applyCount = 16;
+   
+   //当前租金
+   optional double                 rentAmount =17;
+   
+   //原始（优惠前）租金
+   optional double                 originalRentAmount=18;
+    
+}
+
+//查看抱团租产品详情
+message GetGroupProductDetailRequest {   
+
+   //产品ID
+   required string                 productId = 1; 
+   
+   //用户ID
+   optional string                 userId = 2;
+    
+}
+
+//抱团租产品详情
+message GetGroupProductDetailResult {   
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   //产品详情信息
+   optional GroupProductDetail      groupProductDetail=3;
+    
+}
+
+
+//抱团租产品详细信息
+message GroupProductDetail {   
+
+   //产品Id
+   required string                 productId = 1; 
+   
+   //产品类型
+   required string                 productType = 2; 
+   
+   //抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
+   required int32                  promoType =3;
+    
+   //品牌
+   required string                 brand = 4; 
+   
+   //大图地址
+   required string                 mainImageUrl = 5; 
+ 
+   //横幅图片地址
+   optional string                 bannerImageUrl = 6;
+   
+   //标题
+   required string                 title = 7;
+   
+   //描述
+   required string                 desc = 8; 
+   
+   //生效（开始）状态
+   required int32                  validStatus = 9;
+   
+   //开始时间
+   required int64                  validStartTime = 10;
+    
+   //结束时间
+   required int64                  validEndTime = 11;
+  
+   //服务端当前时间
+   required int64                  serverTime = 12;
+     
+   //最少成团人数
+   optional int64                  minGroupCount = 13; 
+    
+   //市场价
+   optional double                 marketPrice = 14; 
+   
+   //押金
+   optional double                 pledgeAmount = 15; 
+   
+   //运费
+   optional double                 transFee = 16; 
+   
+   //所在地
+   optional string                 location = 17; 
+   
+   //分类信息
+   repeated GroupProductCategory   categoryInfo = 18;   
+   
+   //产品基本参数
+   repeated GroupProductBaseParam    baseParam = 19;
+   
+   //图文参数地址（多图文）
+   repeated string                  imageParamUrls=20;
+   
+   //成团折扣
+   optional double                 discount = 21; 
+   
+   //用户是否已经报名
+   optional bool                   applyed = 22;
+   
+   //当前已经报名人数
+   optional int64                  applyCount = 23;
+   
+   
+   //当前租金
+   optional double                 rentAmount =24;
+   
+   //原始（优惠前）租金
+   optional double                 originalRentAmount=25;
+
+   //租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
+   required string                 rentPeriodName = 26; 
+ 
+   //折算后的单天价，单位 元/天
+   required double                 rentAmountPerDay = 27; 
+ 
+   //折算后的单月租金价，单位 元/月
+   required double                 rentAmountPerMonth = 28;
+ 
+ 
+
+    
+}
+
+//抱团租类别信息(颜色等)
+message GroupProductCategory {  
+
+    //类别编号
+    required string                categoryCode = 1; 
+ 
+    //类别名称
+    required string                categoryName = 2; 
+ 
+	//类目图片地址
+    optional string                categoryImgUrl = 3;
+   
+
+}
+
+//抱团租产品基本参数
+message GroupProductBaseParam{
+ 
+ //参数编码
+ required string                 code = 1; 
+ 
+ //展示Key
+ required string                 showKey = 2; 
+ 
+ //展示Value
+ required string                 showValue = 3; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
