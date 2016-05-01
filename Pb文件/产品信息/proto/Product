@@ -12,8 +12,7 @@ message SearchProductListRequest {
 	 //0：默认综合，1：品牌，2：类型 ，3 年龄
 	optional string                 searchType = 2;
 	
-	
-	 //排序方式，0：默认综合，1：年龄，2：价格,3：销量
+	//排序方式，0：默认综合，1：年龄，2：价格,3：销量
 	optional int32                  orderBy = 3;
 	
 	//起始index
@@ -25,8 +24,8 @@ message SearchProductListRequest {
 	//产品类型：0,默认全部,1,推车；2,安全座椅;3,提篮;4,吸奶器,5:胎心仪
 	optional string                 productType = 6;
 
-       //活动ID
-       optional string                 promoId = 7;
+    //活动ID
+    optional string                 promoId = 7;
 
     
 }
@@ -82,7 +81,7 @@ message ProductLiteInfo {
    optional double                 pledgePrice = 10; 
    
    //用户是否已收藏
-   optional bool                  favorited = 11; 
+   optional bool                   favorited = 11; 
    
    
    //产品标题
@@ -165,7 +164,7 @@ message ProductDetailInfo {
    
    //分类信息
    repeated CategoryInfo           categoryInfo = 15;   
-
+  
    //短租信息
    repeated ShortRentInfo          shortRentInfo = 16;
    
@@ -190,8 +189,12 @@ message ProductDetailInfo {
    //产品标题
    required string                productTitle = 23; 
 
-  //横幅图片地址
+   //横幅图片地址
    optional string                 bannerImageUrl = 24;
+   
+
+   //成色信息
+   repeated QualityInfo           qualityInfo = 25;
    
 
     
@@ -206,14 +209,39 @@ message CategoryInfo {
     //类别名称
     required string                categoryName = 2; 
  
-    //库存
-    optional int64                 stockCount = 3;  
-	
 	//类目图片地址
-    optional string                categoryImgUrl = 4;
+    optional string                categoryImgUrl = 3;
    
 
 }
+
+//成色信息
+message QualityInfo {  
+
+    //成色编码：10 全新，0非全新，后续可能会有9，8，7，6，5，4，3，2，1，以及 8.5 ，7.5等code 
+    required string                qualityCode = 1; 
+ 
+    //成色显示名称：如：全新，非全新，九成新，八成新
+    required string                qualityName = 2; 
+
+}
+
+
+
+//类目＋成色信息
+message CategoryQualityInfo{
+
+   
+
+   //库存信息
+   required int32                stockCount = 1; 
+   
+   //押金
+   optional double                 pledgePrice = 2;
+}
+
+
+
 
 //短租信息
 message ShortRentInfo {  

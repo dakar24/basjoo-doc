@@ -22,13 +22,13 @@ public final class GetGroupProductListResult extends Message {
   public static final int TAG_RESULTMSG = 2;
   public static final int TAG_MAXINDEX = 3;
   public static final int TAG_HASMORE = 4;
-  public static final int TAG_GROUPPRODUCTLITES = 5;
+  public static final int TAG_GROUPPRODUCTLIST = 5;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
   public static final Integer DEFAULT_MAXINDEX = 0;
   public static final Boolean DEFAULT_HASMORE = false;
-  public static final List<GroupProductLite> DEFAULT_GROUPPRODUCTLITES = Collections.emptyList();
+  public static final List<GroupProductLiteInfo> DEFAULT_GROUPPRODUCTLIST = Collections.emptyList();
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
@@ -52,7 +52,7 @@ public final class GetGroupProductListResult extends Message {
    * 团租产品简要信息列表
    */
   @ProtoField(tag = 5, label = REPEATED)
-  public List<GroupProductLite> groupProductLites;
+  public List<GroupProductLiteInfo> groupProductList;
 
   public GetGroupProductListResult(GetGroupProductListResult message) {
     super(message);
@@ -61,7 +61,7 @@ public final class GetGroupProductListResult extends Message {
     this.resultMsg = message.resultMsg;
     this.maxIndex = message.maxIndex;
     this.hasMore = message.hasMore;
-    this.groupProductLites = copyOf(message.groupProductLites);
+    this.groupProductList = copyOf(message.groupProductList);
   }
 
   public GetGroupProductListResult() {
@@ -81,8 +81,8 @@ public final class GetGroupProductListResult extends Message {
         case TAG_HASMORE:
         this.hasMore = (Boolean)value;
         break;
-        case TAG_GROUPPRODUCTLITES:
-        this.groupProductLites = immutableCopyOf((List<GroupProductLite>)value);
+        case TAG_GROUPPRODUCTLIST:
+        this.groupProductList = immutableCopyOf((List<GroupProductLiteInfo>)value);
         break;
         default: break;
         };
@@ -98,7 +98,7 @@ public final class GetGroupProductListResult extends Message {
         && equals(resultMsg, o.resultMsg)
         && equals(maxIndex, o.maxIndex)
         && equals(hasMore, o.hasMore)
-        && equals(groupProductLites, o.groupProductLites);
+        && equals(groupProductList, o.groupProductList);
   }
 
   @Override
@@ -109,7 +109,7 @@ public final class GetGroupProductListResult extends Message {
       result = result * 37 + (resultMsg != null ? resultMsg.hashCode() : 0);
       result = result * 37 + (maxIndex != null ? maxIndex.hashCode() : 0);
       result = result * 37 + (hasMore != null ? hasMore.hashCode() : 0);
-      result = result * 37 + (groupProductLites != null ? groupProductLites.hashCode() : 1);
+      result = result * 37 + (groupProductList != null ? groupProductList.hashCode() : 1);
       hashCode = result;
     }
     return result;

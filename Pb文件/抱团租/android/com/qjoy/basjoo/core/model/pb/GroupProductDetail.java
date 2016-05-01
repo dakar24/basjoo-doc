@@ -34,20 +34,17 @@ public final class GroupProductDetail extends Message {
   public static final int TAG_SERVERTIME = 12;
   public static final int TAG_MINGROUPCOUNT = 13;
   public static final int TAG_MARKETPRICE = 14;
-  public static final int TAG_PLEDGEAMOUNT = 15;
   public static final int TAG_TRANSFEE = 16;
   public static final int TAG_LOCATION = 17;
-  public static final int TAG_CATEGORYINFO = 18;
-  public static final int TAG_BASEPARAM = 19;
-  public static final int TAG_IMAGEPARAMURLS = 20;
+  public static final int TAG_BASEPARAM = 18;
+  public static final int TAG_IMAGEPARAMURLS = 19;
+  public static final int TAG_EARNESTAMOUNT = 20;
   public static final int TAG_DISCOUNT = 21;
   public static final int TAG_APPLYED = 22;
   public static final int TAG_APPLYCOUNT = 23;
-  public static final int TAG_RENTAMOUNT = 24;
-  public static final int TAG_ORIGINALRENTAMOUNT = 25;
-  public static final int TAG_RENTPERIODNAME = 26;
-  public static final int TAG_RENTAMOUNTPERDAY = 27;
-  public static final int TAG_RENTAMOUNTPERMONTH = 28;
+  public static final int TAG_CATEGORYINFO = 24;
+  public static final int TAG_SHORTRENTINFO = 25;
+  public static final int TAG_LONGRENTINFO = 26;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -63,20 +60,17 @@ public final class GroupProductDetail extends Message {
   public static final Long DEFAULT_SERVERTIME = 0L;
   public static final Long DEFAULT_MINGROUPCOUNT = 0L;
   public static final Double DEFAULT_MARKETPRICE = 0D;
-  public static final Double DEFAULT_PLEDGEAMOUNT = 0D;
   public static final Double DEFAULT_TRANSFEE = 0D;
   public static final String DEFAULT_LOCATION = "";
-  public static final List<GroupProductCategory> DEFAULT_CATEGORYINFO = Collections.emptyList();
   public static final List<GroupProductBaseParam> DEFAULT_BASEPARAM = Collections.emptyList();
   public static final List<String> DEFAULT_IMAGEPARAMURLS = Collections.emptyList();
+  public static final String DEFAULT_EARNESTAMOUNT = "";
   public static final Double DEFAULT_DISCOUNT = 0D;
   public static final Boolean DEFAULT_APPLYED = false;
   public static final Long DEFAULT_APPLYCOUNT = 0L;
-  public static final Double DEFAULT_RENTAMOUNT = 0D;
-  public static final Double DEFAULT_ORIGINALRENTAMOUNT = 0D;
-  public static final String DEFAULT_RENTPERIODNAME = "";
-  public static final Double DEFAULT_RENTAMOUNTPERDAY = 0D;
-  public static final Double DEFAULT_RENTAMOUNTPERMONTH = 0D;
+  public static final List<GroupProductCategory> DEFAULT_CATEGORYINFO = Collections.emptyList();
+  public static final List<GroupRentInfo> DEFAULT_SHORTRENTINFO = Collections.emptyList();
+  public static final List<GroupRentInfo> DEFAULT_LONGRENTINFO = Collections.emptyList();
 
   /**
    * 产品Id
@@ -163,12 +157,6 @@ public final class GroupProductDetail extends Message {
   public Double marketPrice;
 
   /**
-   * 押金
-   */
-  @ProtoField(tag = 15, type = DOUBLE)
-  public Double pledgeAmount;
-
-  /**
    * 运费
    */
   @ProtoField(tag = 16, type = DOUBLE)
@@ -181,25 +169,25 @@ public final class GroupProductDetail extends Message {
   public String location;
 
   /**
-   * 分类信息
-   */
-  @ProtoField(tag = 18, label = REPEATED)
-  public List<GroupProductCategory> categoryInfo;
-
-  /**
    * 产品基本参数
    */
-  @ProtoField(tag = 19, label = REPEATED)
+  @ProtoField(tag = 18, label = REPEATED)
   public List<GroupProductBaseParam> baseParam;
 
   /**
    * 图文参数地址（多图文）
    */
-  @ProtoField(tag = 20, type = STRING, label = REPEATED)
+  @ProtoField(tag = 19, type = STRING, label = REPEATED)
   public List<String> imageParamUrls;
 
   /**
-   * 成团折扣
+   * 定金金额
+   */
+  @ProtoField(tag = 20, type = STRING, label = REQUIRED)
+  public String earnestAmount;
+
+  /**
+   * 成团折扣力度
    */
   @ProtoField(tag = 21, type = DOUBLE)
   public Double discount;
@@ -217,34 +205,22 @@ public final class GroupProductDetail extends Message {
   public Long applyCount;
 
   /**
-   * 当前租金
+   * 分类信息
    */
-  @ProtoField(tag = 24, type = DOUBLE)
-  public Double rentAmount;
+  @ProtoField(tag = 24, label = REPEATED)
+  public List<GroupProductCategory> categoryInfo;
 
   /**
-   * 原始（优惠前）租金
+   * 短租信息
    */
-  @ProtoField(tag = 25, type = DOUBLE)
-  public Double originalRentAmount;
+  @ProtoField(tag = 25, label = REPEATED)
+  public List<GroupRentInfo> shortRentInfo;
 
   /**
-   * 租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
+   * 长租信息
    */
-  @ProtoField(tag = 26, type = STRING, label = REQUIRED)
-  public String rentPeriodName;
-
-  /**
-   * 折算后的单天价，单位 元/天
-   */
-  @ProtoField(tag = 27, type = DOUBLE, label = REQUIRED)
-  public Double rentAmountPerDay;
-
-  /**
-   * 折算后的单月租金价，单位 元/月
-   */
-  @ProtoField(tag = 28, type = DOUBLE, label = REQUIRED)
-  public Double rentAmountPerMonth;
+  @ProtoField(tag = 26, label = REPEATED)
+  public List<GroupRentInfo> longRentInfo;
 
   public GroupProductDetail(GroupProductDetail message) {
     super(message);
@@ -263,20 +239,17 @@ public final class GroupProductDetail extends Message {
     this.serverTime = message.serverTime;
     this.minGroupCount = message.minGroupCount;
     this.marketPrice = message.marketPrice;
-    this.pledgeAmount = message.pledgeAmount;
     this.transFee = message.transFee;
     this.location = message.location;
-    this.categoryInfo = copyOf(message.categoryInfo);
     this.baseParam = copyOf(message.baseParam);
     this.imageParamUrls = copyOf(message.imageParamUrls);
+    this.earnestAmount = message.earnestAmount;
     this.discount = message.discount;
     this.applyed = message.applyed;
     this.applyCount = message.applyCount;
-    this.rentAmount = message.rentAmount;
-    this.originalRentAmount = message.originalRentAmount;
-    this.rentPeriodName = message.rentPeriodName;
-    this.rentAmountPerDay = message.rentAmountPerDay;
-    this.rentAmountPerMonth = message.rentAmountPerMonth;
+    this.categoryInfo = copyOf(message.categoryInfo);
+    this.shortRentInfo = copyOf(message.shortRentInfo);
+    this.longRentInfo = copyOf(message.longRentInfo);
   }
 
   public GroupProductDetail() {
@@ -326,23 +299,20 @@ public final class GroupProductDetail extends Message {
         case TAG_MARKETPRICE:
         this.marketPrice = (Double)value;
         break;
-        case TAG_PLEDGEAMOUNT:
-        this.pledgeAmount = (Double)value;
-        break;
         case TAG_TRANSFEE:
         this.transFee = (Double)value;
         break;
         case TAG_LOCATION:
         this.location = (String)value;
         break;
-        case TAG_CATEGORYINFO:
-        this.categoryInfo = immutableCopyOf((List<GroupProductCategory>)value);
-        break;
         case TAG_BASEPARAM:
         this.baseParam = immutableCopyOf((List<GroupProductBaseParam>)value);
         break;
         case TAG_IMAGEPARAMURLS:
         this.imageParamUrls = immutableCopyOf((List<String>)value);
+        break;
+        case TAG_EARNESTAMOUNT:
+        this.earnestAmount = (String)value;
         break;
         case TAG_DISCOUNT:
         this.discount = (Double)value;
@@ -353,20 +323,14 @@ public final class GroupProductDetail extends Message {
         case TAG_APPLYCOUNT:
         this.applyCount = (Long)value;
         break;
-        case TAG_RENTAMOUNT:
-        this.rentAmount = (Double)value;
+        case TAG_CATEGORYINFO:
+        this.categoryInfo = immutableCopyOf((List<GroupProductCategory>)value);
         break;
-        case TAG_ORIGINALRENTAMOUNT:
-        this.originalRentAmount = (Double)value;
+        case TAG_SHORTRENTINFO:
+        this.shortRentInfo = immutableCopyOf((List<GroupRentInfo>)value);
         break;
-        case TAG_RENTPERIODNAME:
-        this.rentPeriodName = (String)value;
-        break;
-        case TAG_RENTAMOUNTPERDAY:
-        this.rentAmountPerDay = (Double)value;
-        break;
-        case TAG_RENTAMOUNTPERMONTH:
-        this.rentAmountPerMonth = (Double)value;
+        case TAG_LONGRENTINFO:
+        this.longRentInfo = immutableCopyOf((List<GroupRentInfo>)value);
         break;
         default: break;
         };
@@ -392,20 +356,17 @@ public final class GroupProductDetail extends Message {
         && equals(serverTime, o.serverTime)
         && equals(minGroupCount, o.minGroupCount)
         && equals(marketPrice, o.marketPrice)
-        && equals(pledgeAmount, o.pledgeAmount)
         && equals(transFee, o.transFee)
         && equals(location, o.location)
-        && equals(categoryInfo, o.categoryInfo)
         && equals(baseParam, o.baseParam)
         && equals(imageParamUrls, o.imageParamUrls)
+        && equals(earnestAmount, o.earnestAmount)
         && equals(discount, o.discount)
         && equals(applyed, o.applyed)
         && equals(applyCount, o.applyCount)
-        && equals(rentAmount, o.rentAmount)
-        && equals(originalRentAmount, o.originalRentAmount)
-        && equals(rentPeriodName, o.rentPeriodName)
-        && equals(rentAmountPerDay, o.rentAmountPerDay)
-        && equals(rentAmountPerMonth, o.rentAmountPerMonth);
+        && equals(categoryInfo, o.categoryInfo)
+        && equals(shortRentInfo, o.shortRentInfo)
+        && equals(longRentInfo, o.longRentInfo);
   }
 
   @Override
@@ -426,20 +387,17 @@ public final class GroupProductDetail extends Message {
       result = result * 37 + (serverTime != null ? serverTime.hashCode() : 0);
       result = result * 37 + (minGroupCount != null ? minGroupCount.hashCode() : 0);
       result = result * 37 + (marketPrice != null ? marketPrice.hashCode() : 0);
-      result = result * 37 + (pledgeAmount != null ? pledgeAmount.hashCode() : 0);
       result = result * 37 + (transFee != null ? transFee.hashCode() : 0);
       result = result * 37 + (location != null ? location.hashCode() : 0);
-      result = result * 37 + (categoryInfo != null ? categoryInfo.hashCode() : 1);
       result = result * 37 + (baseParam != null ? baseParam.hashCode() : 1);
       result = result * 37 + (imageParamUrls != null ? imageParamUrls.hashCode() : 1);
+      result = result * 37 + (earnestAmount != null ? earnestAmount.hashCode() : 0);
       result = result * 37 + (discount != null ? discount.hashCode() : 0);
       result = result * 37 + (applyed != null ? applyed.hashCode() : 0);
       result = result * 37 + (applyCount != null ? applyCount.hashCode() : 0);
-      result = result * 37 + (rentAmount != null ? rentAmount.hashCode() : 0);
-      result = result * 37 + (originalRentAmount != null ? originalRentAmount.hashCode() : 0);
-      result = result * 37 + (rentPeriodName != null ? rentPeriodName.hashCode() : 0);
-      result = result * 37 + (rentAmountPerDay != null ? rentAmountPerDay.hashCode() : 0);
-      result = result * 37 + (rentAmountPerMonth != null ? rentAmountPerMonth.hashCode() : 0);
+      result = result * 37 + (categoryInfo != null ? categoryInfo.hashCode() : 1);
+      result = result * 37 + (shortRentInfo != null ? shortRentInfo.hashCode() : 1);
+      result = result * 37 + (longRentInfo != null ? longRentInfo.hashCode() : 1);
       hashCode = result;
     }
     return result;

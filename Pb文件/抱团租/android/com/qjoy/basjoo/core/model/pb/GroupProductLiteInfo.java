@@ -15,7 +15,7 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 /**
  * 团租简要信息
  */
-public final class GroupProductLite extends Message {
+public final class GroupProductLiteInfo extends Message {
 
   public static final int TAG_PRODUCTID = 1;
   public static final int TAG_PRODUCTTYPE = 2;
@@ -33,8 +33,6 @@ public final class GroupProductLite extends Message {
   public static final int TAG_DISCOUNT = 14;
   public static final int TAG_APPLYED = 15;
   public static final int TAG_APPLYCOUNT = 16;
-  public static final int TAG_RENTAMOUNT = 17;
-  public static final int TAG_ORIGINALRENTAMOUNT = 18;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -52,8 +50,6 @@ public final class GroupProductLite extends Message {
   public static final Double DEFAULT_DISCOUNT = 0D;
   public static final Boolean DEFAULT_APPLYED = false;
   public static final Long DEFAULT_APPLYCOUNT = 0L;
-  public static final Double DEFAULT_RENTAMOUNT = 0D;
-  public static final Double DEFAULT_ORIGINALRENTAMOUNT = 0D;
 
   /**
    * 产品Id
@@ -151,19 +147,7 @@ public final class GroupProductLite extends Message {
   @ProtoField(tag = 16, type = INT64)
   public Long applyCount;
 
-  /**
-   * 当前租金
-   */
-  @ProtoField(tag = 17, type = DOUBLE)
-  public Double rentAmount;
-
-  /**
-   * 原始（优惠前）租金
-   */
-  @ProtoField(tag = 18, type = DOUBLE)
-  public Double originalRentAmount;
-
-  public GroupProductLite(GroupProductLite message) {
+  public GroupProductLiteInfo(GroupProductLiteInfo message) {
     super(message);
     if (message == null) return;
     this.productId = message.productId;
@@ -182,14 +166,12 @@ public final class GroupProductLite extends Message {
     this.discount = message.discount;
     this.applyed = message.applyed;
     this.applyCount = message.applyCount;
-    this.rentAmount = message.rentAmount;
-    this.originalRentAmount = message.originalRentAmount;
   }
 
-  public GroupProductLite() {
+  public GroupProductLiteInfo() {
   }
 
-  public GroupProductLite fillTagValue(int tag, Object value) {
+  public GroupProductLiteInfo fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_PRODUCTID:
         this.productId = (String)value;
@@ -239,12 +221,6 @@ public final class GroupProductLite extends Message {
         case TAG_APPLYCOUNT:
         this.applyCount = (Long)value;
         break;
-        case TAG_RENTAMOUNT:
-        this.rentAmount = (Double)value;
-        break;
-        case TAG_ORIGINALRENTAMOUNT:
-        this.originalRentAmount = (Double)value;
-        break;
         default: break;
         };
     return this;
@@ -253,8 +229,8 @@ public final class GroupProductLite extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof GroupProductLite)) return false;
-    GroupProductLite o = (GroupProductLite) other;
+    if (!(other instanceof GroupProductLiteInfo)) return false;
+    GroupProductLiteInfo o = (GroupProductLiteInfo) other;
     return equals(productId, o.productId)
         && equals(productType, o.productType)
         && equals(promoType, o.promoType)
@@ -270,9 +246,7 @@ public final class GroupProductLite extends Message {
         && equals(minGroupCount, o.minGroupCount)
         && equals(discount, o.discount)
         && equals(applyed, o.applyed)
-        && equals(applyCount, o.applyCount)
-        && equals(rentAmount, o.rentAmount)
-        && equals(originalRentAmount, o.originalRentAmount);
+        && equals(applyCount, o.applyCount);
   }
 
   @Override
@@ -295,8 +269,6 @@ public final class GroupProductLite extends Message {
       result = result * 37 + (discount != null ? discount.hashCode() : 0);
       result = result * 37 + (applyed != null ? applyed.hashCode() : 0);
       result = result * 37 + (applyCount != null ? applyCount.hashCode() : 0);
-      result = result * 37 + (rentAmount != null ? rentAmount.hashCode() : 0);
-      result = result * 37 + (originalRentAmount != null ? originalRentAmount.hashCode() : 0);
       hashCode = result;
     }
     return result;

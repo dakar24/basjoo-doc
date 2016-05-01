@@ -5,6 +5,8 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
+import static com.squareup.wire.Message.Datatype.DOUBLE;
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
@@ -16,10 +18,14 @@ public final class GroupProductCategory extends Message {
   public static final int TAG_CATEGORYCODE = 1;
   public static final int TAG_CATEGORYNAME = 2;
   public static final int TAG_CATEGORYIMGURL = 3;
+  public static final int TAG_STOCKCOUNT = 4;
+  public static final int TAG_PLEDGEAMOUNT = 5;
 
   public static final String DEFAULT_CATEGORYCODE = "";
   public static final String DEFAULT_CATEGORYNAME = "";
   public static final String DEFAULT_CATEGORYIMGURL = "";
+  public static final Integer DEFAULT_STOCKCOUNT = 0;
+  public static final Double DEFAULT_PLEDGEAMOUNT = 0D;
 
   /**
    * 类别编号
@@ -39,12 +45,26 @@ public final class GroupProductCategory extends Message {
   @ProtoField(tag = 3, type = STRING)
   public String categoryImgUrl;
 
+  /**
+   * 库存
+   */
+  @ProtoField(tag = 4, type = INT32, label = REQUIRED)
+  public Integer stockCount;
+
+  /**
+   * 押金
+   */
+  @ProtoField(tag = 5, type = DOUBLE, label = REQUIRED)
+  public Double pledgeAmount;
+
   public GroupProductCategory(GroupProductCategory message) {
     super(message);
     if (message == null) return;
     this.categoryCode = message.categoryCode;
     this.categoryName = message.categoryName;
     this.categoryImgUrl = message.categoryImgUrl;
+    this.stockCount = message.stockCount;
+    this.pledgeAmount = message.pledgeAmount;
   }
 
   public GroupProductCategory() {
@@ -61,6 +81,12 @@ public final class GroupProductCategory extends Message {
         case TAG_CATEGORYIMGURL:
         this.categoryImgUrl = (String)value;
         break;
+        case TAG_STOCKCOUNT:
+        this.stockCount = (Integer)value;
+        break;
+        case TAG_PLEDGEAMOUNT:
+        this.pledgeAmount = (Double)value;
+        break;
         default: break;
         };
     return this;
@@ -73,7 +99,9 @@ public final class GroupProductCategory extends Message {
     GroupProductCategory o = (GroupProductCategory) other;
     return equals(categoryCode, o.categoryCode)
         && equals(categoryName, o.categoryName)
-        && equals(categoryImgUrl, o.categoryImgUrl);
+        && equals(categoryImgUrl, o.categoryImgUrl)
+        && equals(stockCount, o.stockCount)
+        && equals(pledgeAmount, o.pledgeAmount);
   }
 
   @Override
@@ -83,6 +111,8 @@ public final class GroupProductCategory extends Message {
       result = categoryCode != null ? categoryCode.hashCode() : 0;
       result = result * 37 + (categoryName != null ? categoryName.hashCode() : 0);
       result = result * 37 + (categoryImgUrl != null ? categoryImgUrl.hashCode() : 0);
+      result = result * 37 + (stockCount != null ? stockCount.hashCode() : 0);
+      result = result * 37 + (pledgeAmount != null ? pledgeAmount.hashCode() : 0);
       hashCode = result;
     }
     return result;

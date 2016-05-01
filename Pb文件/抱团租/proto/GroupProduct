@@ -28,11 +28,11 @@ message GetGroupProductListResult {
    required bool                   hasMore  = 4;
    
    //团租产品简要信息列表
-   repeated GroupProductLite   groupProductLites = 5;
+   repeated GroupProductLiteInfo      groupProductList = 5;
 }
 
 //团租简要信息
-message GroupProductLite {   
+message GroupProductLiteInfo {   
 
    //产品Id
    required string                 productId = 1; 
@@ -82,11 +82,7 @@ message GroupProductLite {
    //当前已经报名人数
    optional int64                  applyCount = 16;
    
-   //当前租金
-   optional double                 rentAmount =17;
-   
-   //原始（优惠前）租金
-   optional double                 originalRentAmount=18;
+
     
 }
 
@@ -159,25 +155,22 @@ message GroupProductDetail {
    //市场价
    optional double                 marketPrice = 14; 
    
-   //押金
-   optional double                 pledgeAmount = 15; 
-   
    //运费
    optional double                 transFee = 16; 
    
    //所在地
    optional string                 location = 17; 
    
-   //分类信息
-   repeated GroupProductCategory   categoryInfo = 18;   
-   
    //产品基本参数
-   repeated GroupProductBaseParam    baseParam = 19;
+   repeated GroupProductBaseParam   baseParam = 18;
    
    //图文参数地址（多图文）
-   repeated string                  imageParamUrls=20;
+   repeated string                  imageParamUrls=19;
    
-   //成团折扣
+   //定金金额
+   required string                 earnestAmount = 20; 
+   
+   //成团折扣力度
    optional double                 discount = 21; 
    
    //用户是否已经报名
@@ -186,25 +179,15 @@ message GroupProductDetail {
    //当前已经报名人数
    optional int64                  applyCount = 23;
    
+   //分类信息
+   repeated GroupProductCategory   categoryInfo = 24;   
    
-   //当前租金
-   optional double                 rentAmount =24;
+   //短租信息
+   repeated GroupRentInfo          shortRentInfo = 25;
    
-   //原始（优惠前）租金
-   optional double                 originalRentAmount=25;
-
-   //租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
-   required string                 rentPeriodName = 26; 
- 
-   //折算后的单天价，单位 元/天
-   required double                 rentAmountPerDay = 27; 
- 
-   //折算后的单月租金价，单位 元/月
-   required double                 rentAmountPerMonth = 28;
- 
- 
-
-    
+   //长租信息
+   repeated GroupRentInfo          longRentInfo = 26;
+     
 }
 
 //抱团租类别信息(颜色等)
@@ -218,9 +201,40 @@ message GroupProductCategory {
  
 	//类目图片地址
     optional string                categoryImgUrl = 3;
+	
+	//库存
+    required int32                 stockCount = 4;
+	
+    //押金
+    required double                pledgeAmount = 5;
    
+}
+
+
+//抱团租期信息
+message GroupRentInfo {  
+
+ //租金编码
+ required string                 rentCode = 1; 
+ 
+ //周期，单位：天
+ required string                 rentPeriod = 2; 
+ 
+ //租用周期显示名称，如1天，2天，3天.... 1个月，3个月，12个月，24个月，36个月
+ required string                 rentPeriodName = 3; 
+ 
+ //折算后的单天价，单位 元/天
+ required double                 rentAmountPerDay = 4; 
+ 
+ //折算后的单月租金价，单位 元/月
+ optional double                 rentAmountPerMonth = 5;
+ 
+ //该周期内总价
+ required double                 totalRentAmount = 6; 
 
 }
+
+		
 
 //抱团租产品基本参数
 message GroupProductBaseParam{

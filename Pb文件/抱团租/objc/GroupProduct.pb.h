@@ -9,7 +9,8 @@
 @class GroupProductBaseParam;
 @class GroupProductCategory;
 @class GroupProductDetail;
-@class GroupProductLite;
+@class GroupProductLiteInfo;
+@class GroupRentInfo;
 
 @interface GetGroupProductListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasStartIndex;
@@ -27,10 +28,10 @@
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic)SInt32 maxIndex;
 @property (nonatomic)BOOL hasMore;
-@property (nonatomic,strong) NSMutableArray * groupProductLites;
+@property (nonatomic,strong) NSMutableArray * groupProductList;
 @end
 
-@interface GroupProductLite : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@interface GroupProductLiteInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasProductId;
 @property (readonly) BOOL hasProductType;
 @property (readonly) BOOL hasPromoType;
@@ -47,8 +48,6 @@
 @property (readonly) BOOL hasDiscount;
 @property (readonly) BOOL hasApplyed;
 @property (readonly) BOOL hasApplyCount;
-@property (readonly) BOOL hasRentAmount;
-@property (readonly) BOOL hasOriginalRentAmount;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic)SInt32 promoType;
@@ -65,8 +64,6 @@
 @property (nonatomic)Float64 discount;
 @property (nonatomic)BOOL applyed;
 @property (nonatomic)SInt64 applyCount;
-@property (nonatomic)Float64 rentAmount;
-@property (nonatomic)Float64 originalRentAmount;
 @end
 
 @interface GetGroupProductDetailRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -100,17 +97,12 @@
 @property (readonly) BOOL hasServerTime;
 @property (readonly) BOOL hasMinGroupCount;
 @property (readonly) BOOL hasMarketPrice;
-@property (readonly) BOOL hasPledgeAmount;
 @property (readonly) BOOL hasTransFee;
 @property (readonly) BOOL hasLocation;
+@property (readonly) BOOL hasEarnestAmount;
 @property (readonly) BOOL hasDiscount;
 @property (readonly) BOOL hasApplyed;
 @property (readonly) BOOL hasApplyCount;
-@property (readonly) BOOL hasRentAmount;
-@property (readonly) BOOL hasOriginalRentAmount;
-@property (readonly) BOOL hasRentPeriodName;
-@property (readonly) BOOL hasRentAmountPerDay;
-@property (readonly) BOOL hasRentAmountPerMonth;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic)SInt32 promoType;
@@ -125,29 +117,45 @@
 @property (nonatomic)SInt64 serverTime;
 @property (nonatomic)SInt64 minGroupCount;
 @property (nonatomic)Float64 marketPrice;
-@property (nonatomic)Float64 pledgeAmount;
 @property (nonatomic)Float64 transFee;
 @property (nonatomic,strong) NSString* location;
-@property (nonatomic,strong) NSMutableArray * categoryInfo;
 @property (nonatomic,strong) NSMutableArray * baseParam;
 @property (nonatomic,strong) NSMutableArray * imageParamUrls;
+@property (nonatomic,strong) NSString* earnestAmount;
 @property (nonatomic)Float64 discount;
 @property (nonatomic)BOOL applyed;
 @property (nonatomic)SInt64 applyCount;
-@property (nonatomic)Float64 rentAmount;
-@property (nonatomic)Float64 originalRentAmount;
-@property (nonatomic,strong) NSString* rentPeriodName;
-@property (nonatomic)Float64 rentAmountPerDay;
-@property (nonatomic)Float64 rentAmountPerMonth;
+@property (nonatomic,strong) NSMutableArray * categoryInfo;
+@property (nonatomic,strong) NSMutableArray * shortRentInfo;
+@property (nonatomic,strong) NSMutableArray * longRentInfo;
 @end
 
 @interface GroupProductCategory : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasCategoryCode;
 @property (readonly) BOOL hasCategoryName;
 @property (readonly) BOOL hasCategoryImgUrl;
+@property (readonly) BOOL hasStockCount;
+@property (readonly) BOOL hasPledgeAmount;
 @property (nonatomic,strong) NSString* categoryCode;
 @property (nonatomic,strong) NSString* categoryName;
 @property (nonatomic,strong) NSString* categoryImgUrl;
+@property (nonatomic)SInt32 stockCount;
+@property (nonatomic)Float64 pledgeAmount;
+@end
+
+@interface GroupRentInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasRentCode;
+@property (readonly) BOOL hasRentPeriod;
+@property (readonly) BOOL hasRentPeriodName;
+@property (readonly) BOOL hasRentAmountPerDay;
+@property (readonly) BOOL hasRentAmountPerMonth;
+@property (readonly) BOOL hasTotalRentAmount;
+@property (nonatomic,strong) NSString* rentCode;
+@property (nonatomic,strong) NSString* rentPeriod;
+@property (nonatomic,strong) NSString* rentPeriodName;
+@property (nonatomic)Float64 rentAmountPerDay;
+@property (nonatomic)Float64 rentAmountPerMonth;
+@property (nonatomic)Float64 totalRentAmount;
 @end
 
 @interface GroupProductBaseParam : QJPBGeneratedMessage<GeneratedMessageProtocol>
