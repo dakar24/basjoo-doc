@@ -33,6 +33,8 @@ public final class GroupProductLiteInfo extends Message {
   public static final int TAG_DISCOUNT = 14;
   public static final int TAG_APPLYED = 15;
   public static final int TAG_APPLYCOUNT = 16;
+  public static final int TAG_LOWESTRENT = 17;
+  public static final int TAG_ORIGINALRENTAMOUNT = 18;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -50,6 +52,8 @@ public final class GroupProductLiteInfo extends Message {
   public static final Double DEFAULT_DISCOUNT = 0D;
   public static final Boolean DEFAULT_APPLYED = false;
   public static final Long DEFAULT_APPLYCOUNT = 0L;
+  public static final Double DEFAULT_LOWESTRENT = 0D;
+  public static final Double DEFAULT_ORIGINALRENTAMOUNT = 0D;
 
   /**
    * 产品Id
@@ -147,6 +151,18 @@ public final class GroupProductLiteInfo extends Message {
   @ProtoField(tag = 16, type = INT64)
   public Long applyCount;
 
+  /**
+   * 最低租金（优惠后）
+   */
+  @ProtoField(tag = 17, type = DOUBLE)
+  public Double lowestRent;
+
+  /**
+   * 原始租金（优惠前）
+   */
+  @ProtoField(tag = 18, type = DOUBLE, label = REQUIRED)
+  public Double originalRentAmount;
+
   public GroupProductLiteInfo(GroupProductLiteInfo message) {
     super(message);
     if (message == null) return;
@@ -166,6 +182,8 @@ public final class GroupProductLiteInfo extends Message {
     this.discount = message.discount;
     this.applyed = message.applyed;
     this.applyCount = message.applyCount;
+    this.lowestRent = message.lowestRent;
+    this.originalRentAmount = message.originalRentAmount;
   }
 
   public GroupProductLiteInfo() {
@@ -221,6 +239,12 @@ public final class GroupProductLiteInfo extends Message {
         case TAG_APPLYCOUNT:
         this.applyCount = (Long)value;
         break;
+        case TAG_LOWESTRENT:
+        this.lowestRent = (Double)value;
+        break;
+        case TAG_ORIGINALRENTAMOUNT:
+        this.originalRentAmount = (Double)value;
+        break;
         default: break;
         };
     return this;
@@ -246,7 +270,9 @@ public final class GroupProductLiteInfo extends Message {
         && equals(minGroupCount, o.minGroupCount)
         && equals(discount, o.discount)
         && equals(applyed, o.applyed)
-        && equals(applyCount, o.applyCount);
+        && equals(applyCount, o.applyCount)
+        && equals(lowestRent, o.lowestRent)
+        && equals(originalRentAmount, o.originalRentAmount);
   }
 
   @Override
@@ -269,6 +295,8 @@ public final class GroupProductLiteInfo extends Message {
       result = result * 37 + (discount != null ? discount.hashCode() : 0);
       result = result * 37 + (applyed != null ? applyed.hashCode() : 0);
       result = result * 37 + (applyCount != null ? applyCount.hashCode() : 0);
+      result = result * 37 + (lowestRent != null ? lowestRent.hashCode() : 0);
+      result = result * 37 + (originalRentAmount != null ? originalRentAmount.hashCode() : 0);
       hashCode = result;
     }
     return result;

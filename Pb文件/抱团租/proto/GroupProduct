@@ -41,7 +41,7 @@ message GroupProductLiteInfo {
    required string                 productType = 2; 
    
    //抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
-   required int32                  promoType =3;
+   required int32                  promoType = 3;
     
    //品牌
    required string                 brand = 4; 
@@ -82,6 +82,12 @@ message GroupProductLiteInfo {
    //当前已经报名人数
    optional int64                  applyCount = 16;
    
+   //最低租金（优惠后）
+   optional double                 lowestRent = 17;
+   
+   //原始租金（优惠前）
+   required double                 originalRentAmount = 18;
+   
 
     
 }
@@ -120,7 +126,7 @@ message GroupProductDetail {
    required string                 productType = 2; 
    
    //抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
-   required int32                  promoType =3;
+   required int32                  promoType = 3;
     
    //品牌
    required string                 brand = 4; 
@@ -187,6 +193,9 @@ message GroupProductDetail {
    
    //长租信息
    repeated GroupRentInfo          longRentInfo = 26;
+   
+   //图片地址
+   repeated string                 imageUrl = 27;
      
 }
 
@@ -229,9 +238,12 @@ message GroupRentInfo {
  //折算后的单月租金价，单位 元/月
  optional double                 rentAmountPerMonth = 5;
  
- //该周期内总价
+ //该周期内总价（优惠后）
  required double                 totalRentAmount = 6; 
-
+ 
+ //原始租金（优惠前）
+ required double                 originalRentAmount = 7;
+ 
 }
 
 		

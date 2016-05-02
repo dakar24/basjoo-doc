@@ -20,6 +20,7 @@ public final class GroupRentInfo extends Message {
   public static final int TAG_RENTAMOUNTPERDAY = 4;
   public static final int TAG_RENTAMOUNTPERMONTH = 5;
   public static final int TAG_TOTALRENTAMOUNT = 6;
+  public static final int TAG_ORIGINALRENTAMOUNT = 7;
 
   public static final String DEFAULT_RENTCODE = "";
   public static final String DEFAULT_RENTPERIOD = "";
@@ -27,6 +28,7 @@ public final class GroupRentInfo extends Message {
   public static final Double DEFAULT_RENTAMOUNTPERDAY = 0D;
   public static final Double DEFAULT_RENTAMOUNTPERMONTH = 0D;
   public static final Double DEFAULT_TOTALRENTAMOUNT = 0D;
+  public static final Double DEFAULT_ORIGINALRENTAMOUNT = 0D;
 
   /**
    * 租金编码
@@ -59,10 +61,16 @@ public final class GroupRentInfo extends Message {
   public Double rentAmountPerMonth;
 
   /**
-   * 该周期内总价
+   * 该周期内总价（优惠后）
    */
   @ProtoField(tag = 6, type = DOUBLE, label = REQUIRED)
   public Double totalRentAmount;
+
+  /**
+   * 原始租金（优惠前）
+   */
+  @ProtoField(tag = 7, type = DOUBLE, label = REQUIRED)
+  public Double originalRentAmount;
 
   public GroupRentInfo(GroupRentInfo message) {
     super(message);
@@ -73,6 +81,7 @@ public final class GroupRentInfo extends Message {
     this.rentAmountPerDay = message.rentAmountPerDay;
     this.rentAmountPerMonth = message.rentAmountPerMonth;
     this.totalRentAmount = message.totalRentAmount;
+    this.originalRentAmount = message.originalRentAmount;
   }
 
   public GroupRentInfo() {
@@ -98,6 +107,9 @@ public final class GroupRentInfo extends Message {
         case TAG_TOTALRENTAMOUNT:
         this.totalRentAmount = (Double)value;
         break;
+        case TAG_ORIGINALRENTAMOUNT:
+        this.originalRentAmount = (Double)value;
+        break;
         default: break;
         };
     return this;
@@ -113,7 +125,8 @@ public final class GroupRentInfo extends Message {
         && equals(rentPeriodName, o.rentPeriodName)
         && equals(rentAmountPerDay, o.rentAmountPerDay)
         && equals(rentAmountPerMonth, o.rentAmountPerMonth)
-        && equals(totalRentAmount, o.totalRentAmount);
+        && equals(totalRentAmount, o.totalRentAmount)
+        && equals(originalRentAmount, o.originalRentAmount);
   }
 
   @Override
@@ -126,6 +139,7 @@ public final class GroupRentInfo extends Message {
       result = result * 37 + (rentAmountPerDay != null ? rentAmountPerDay.hashCode() : 0);
       result = result * 37 + (rentAmountPerMonth != null ? rentAmountPerMonth.hashCode() : 0);
       result = result * 37 + (totalRentAmount != null ? totalRentAmount.hashCode() : 0);
+      result = result * 37 + (originalRentAmount != null ? originalRentAmount.hashCode() : 0);
       hashCode = result;
     }
     return result;

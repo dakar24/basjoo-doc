@@ -45,6 +45,7 @@ public final class GroupProductDetail extends Message {
   public static final int TAG_CATEGORYINFO = 24;
   public static final int TAG_SHORTRENTINFO = 25;
   public static final int TAG_LONGRENTINFO = 26;
+  public static final int TAG_IMAGEURL = 27;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -71,6 +72,7 @@ public final class GroupProductDetail extends Message {
   public static final List<GroupProductCategory> DEFAULT_CATEGORYINFO = Collections.emptyList();
   public static final List<GroupRentInfo> DEFAULT_SHORTRENTINFO = Collections.emptyList();
   public static final List<GroupRentInfo> DEFAULT_LONGRENTINFO = Collections.emptyList();
+  public static final List<String> DEFAULT_IMAGEURL = Collections.emptyList();
 
   /**
    * 产品Id
@@ -222,6 +224,12 @@ public final class GroupProductDetail extends Message {
   @ProtoField(tag = 26, label = REPEATED)
   public List<GroupRentInfo> longRentInfo;
 
+  /**
+   * 图片地址
+   */
+  @ProtoField(tag = 27, type = STRING, label = REPEATED)
+  public List<String> imageUrl;
+
   public GroupProductDetail(GroupProductDetail message) {
     super(message);
     if (message == null) return;
@@ -250,6 +258,7 @@ public final class GroupProductDetail extends Message {
     this.categoryInfo = copyOf(message.categoryInfo);
     this.shortRentInfo = copyOf(message.shortRentInfo);
     this.longRentInfo = copyOf(message.longRentInfo);
+    this.imageUrl = copyOf(message.imageUrl);
   }
 
   public GroupProductDetail() {
@@ -332,6 +341,9 @@ public final class GroupProductDetail extends Message {
         case TAG_LONGRENTINFO:
         this.longRentInfo = immutableCopyOf((List<GroupRentInfo>)value);
         break;
+        case TAG_IMAGEURL:
+        this.imageUrl = immutableCopyOf((List<String>)value);
+        break;
         default: break;
         };
     return this;
@@ -366,7 +378,8 @@ public final class GroupProductDetail extends Message {
         && equals(applyCount, o.applyCount)
         && equals(categoryInfo, o.categoryInfo)
         && equals(shortRentInfo, o.shortRentInfo)
-        && equals(longRentInfo, o.longRentInfo);
+        && equals(longRentInfo, o.longRentInfo)
+        && equals(imageUrl, o.imageUrl);
   }
 
   @Override
@@ -398,6 +411,7 @@ public final class GroupProductDetail extends Message {
       result = result * 37 + (categoryInfo != null ? categoryInfo.hashCode() : 1);
       result = result * 37 + (shortRentInfo != null ? shortRentInfo.hashCode() : 1);
       result = result * 37 + (longRentInfo != null ? longRentInfo.hashCode() : 1);
+      result = result * 37 + (imageUrl != null ? imageUrl.hashCode() : 1);
       hashCode = result;
     }
     return result;

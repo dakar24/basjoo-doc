@@ -253,6 +253,8 @@
     _discount = 0;
     _applyed = NO;
     _applyCount = 0L;
+    _lowestRent = 0;
+    _originalRentAmount = 0;
   }
   return self;
 }
@@ -304,6 +306,12 @@
   }
   if (self.hasApplyCount) {
     [output writeInt64:16 value:self.applyCount];
+  }
+  if (self.hasLowestRent) {
+    [output writeDouble:17 value:self.lowestRent];
+  }
+  if (self.hasOriginalRentAmount) {
+    [output writeDouble:18 value:self.originalRentAmount];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -358,6 +366,12 @@
   }
   if (self.hasApplyCount) {
     size_ += computeInt64Size(16, self.applyCount);
+  }
+  if (self.hasLowestRent) {
+    size_ += computeDoubleSize(17, self.lowestRent);
+  }
+  if (self.hasOriginalRentAmount) {
+    size_ += computeDoubleSize(18, self.originalRentAmount);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -416,6 +430,12 @@
   }
   if (self.hasApplyCount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"applyCount", [NSNumber numberWithLongLong:self.applyCount]];
+  }
+  if (self.hasLowestRent) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"lowestRent", [NSNumber numberWithDouble:self.lowestRent]];
+  }
+  if (self.hasOriginalRentAmount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"originalRentAmount", [NSNumber numberWithDouble:self.originalRentAmount]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -483,6 +503,14 @@
 - (void) setApplyCount:(SInt64) value {
   _hasApplyCount = YES;
   _applyCount = value;
+}
+- (void) setLowestRent:(Float64) value {
+  _hasLowestRent = YES;
+  _lowestRent = value;
+}
+- (void) setOriginalRentAmount:(Float64) value {
+  _hasOriginalRentAmount = YES;
+  _originalRentAmount = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -561,6 +589,14 @@
       }
       case 128: {
         [self setApplyCount:[input readInt64]];
+        break;
+      }
+      case 137: {
+        [self setLowestRent:[input readDouble]];
+        break;
+      }
+      case 145: {
+        [self setOriginalRentAmount:[input readDouble]];
         break;
       }
     }
@@ -862,6 +898,9 @@
   [self.longRentInfo enumerateObjectsUsingBlock:^(GroupRentInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:26 value:element];
   }];
+  [self.imageUrl enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:27 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -949,6 +988,15 @@
   [self.longRentInfo enumerateObjectsUsingBlock:^(GroupRentInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(26, element);
   }];
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.imageUrl.count;
+    [self.imageUrl enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(2 * count);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -1045,6 +1093,9 @@
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
+  }];
+  [self.imageUrl enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"imageUrl", obj];
   }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -1174,6 +1225,15 @@
   }
   [_longRentInfo addObject:value];
 }
+- (void)setImageUrlArray:(NSArray *)array {
+  _imageUrl = [[NSMutableArray alloc] initWithArray:array];
+}
+- (void)addImageUrl:(NSString*)value {
+  if (_imageUrl == nil) {
+    _imageUrl = [[NSMutableArray alloc]init];
+  }
+  [_imageUrl addObject:value];
+}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -1295,6 +1355,10 @@
         GroupRentInfo* sub = [[GroupRentInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addLongRentInfo:sub];
+        break;
+      }
+      case 218: {
+        [self addImageUrl:[input readString]];
         break;
       }
     }
@@ -1451,6 +1515,7 @@
     _rentAmountPerDay = 0;
     _rentAmountPerMonth = 0;
     _totalRentAmount = 0;
+    _originalRentAmount = 0;
   }
   return self;
 }
@@ -1472,6 +1537,9 @@
   }
   if (self.hasTotalRentAmount) {
     [output writeDouble:6 value:self.totalRentAmount];
+  }
+  if (self.hasOriginalRentAmount) {
+    [output writeDouble:7 value:self.originalRentAmount];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1496,6 +1564,9 @@
   }
   if (self.hasTotalRentAmount) {
     size_ += computeDoubleSize(6, self.totalRentAmount);
+  }
+  if (self.hasOriginalRentAmount) {
+    size_ += computeDoubleSize(7, self.originalRentAmount);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1525,6 +1596,9 @@
   if (self.hasTotalRentAmount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"totalRentAmount", [NSNumber numberWithDouble:self.totalRentAmount]];
   }
+  if (self.hasOriginalRentAmount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"originalRentAmount", [NSNumber numberWithDouble:self.originalRentAmount]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -1551,6 +1625,10 @@
 - (void) setTotalRentAmount:(Float64) value {
   _hasTotalRentAmount = YES;
   _totalRentAmount = value;
+}
+- (void) setOriginalRentAmount:(Float64) value {
+  _hasOriginalRentAmount = YES;
+  _originalRentAmount = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -1589,6 +1667,10 @@
       }
       case 49: {
         [self setTotalRentAmount:[input readDouble]];
+        break;
+      }
+      case 57: {
+        [self setOriginalRentAmount:[input readDouble]];
         break;
       }
     }
