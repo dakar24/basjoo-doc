@@ -892,14 +892,17 @@
   [self.categoryInfo enumerateObjectsUsingBlock:^(GroupProductCategory *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:24 value:element];
   }];
-  [self.shortRentInfo enumerateObjectsUsingBlock:^(GroupRentInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.shortRentPeriod enumerateObjectsUsingBlock:^(GroupRentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:25 value:element];
   }];
-  [self.longRentInfo enumerateObjectsUsingBlock:^(GroupRentInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.longRentPeriod enumerateObjectsUsingBlock:^(GroupRentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:26 value:element];
   }];
+  [self.groupRentAmountInfo enumerateObjectsUsingBlock:^(GroupRentAmountInfo *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:27 value:element];
+  }];
   [self.imageUrl enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
-    [output writeString:27 value:element];
+    [output writeString:28 value:element];
   }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -982,11 +985,14 @@
   [self.categoryInfo enumerateObjectsUsingBlock:^(GroupProductCategory *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(24, element);
   }];
-  [self.shortRentInfo enumerateObjectsUsingBlock:^(GroupRentInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.shortRentPeriod enumerateObjectsUsingBlock:^(GroupRentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(25, element);
   }];
-  [self.longRentInfo enumerateObjectsUsingBlock:^(GroupRentInfo *element, NSUInteger idx, BOOL *stop) {
+  [self.longRentPeriod enumerateObjectsUsingBlock:^(GroupRentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(26, element);
+  }];
+  [self.groupRentAmountInfo enumerateObjectsUsingBlock:^(GroupRentAmountInfo *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(27, element);
   }];
   {
     __block SInt32 dataSize = 0;
@@ -1082,14 +1088,20 @@
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }];
-  [self.shortRentInfo enumerateObjectsUsingBlock:^(GroupRentInfo *element, NSUInteger idx, BOOL *stop) {
-    [output appendFormat:@"%@%@ {\n", indent, @"shortRentInfo"];
+  [self.shortRentPeriod enumerateObjectsUsingBlock:^(GroupRentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"shortRentPeriod"];
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }];
-  [self.longRentInfo enumerateObjectsUsingBlock:^(GroupRentInfo *element, NSUInteger idx, BOOL *stop) {
-    [output appendFormat:@"%@%@ {\n", indent, @"longRentInfo"];
+  [self.longRentPeriod enumerateObjectsUsingBlock:^(GroupRentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"longRentPeriod"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
+  [self.groupRentAmountInfo enumerateObjectsUsingBlock:^(GroupRentAmountInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"groupRentAmountInfo"];
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
@@ -1207,23 +1219,32 @@
   }
   [_categoryInfo addObject:value];
 }
-- (void)setShortRentInfoArray:(NSArray *)array {
-  _shortRentInfo = [[NSMutableArray alloc]initWithArray:array];
+- (void)setShortRentPeriodArray:(NSArray *)array {
+  _shortRentPeriod = [[NSMutableArray alloc]initWithArray:array];
 }
-- (void)addShortRentInfo:(GroupRentInfo*)value {
-  if (_shortRentInfo == nil) {
-    _shortRentInfo = [[NSMutableArray alloc]init];
+- (void)addShortRentPeriod:(GroupRentPeriodInfo*)value {
+  if (_shortRentPeriod == nil) {
+    _shortRentPeriod = [[NSMutableArray alloc]init];
   }
-  [_shortRentInfo addObject:value];
+  [_shortRentPeriod addObject:value];
 }
-- (void)setLongRentInfoArray:(NSArray *)array {
-  _longRentInfo = [[NSMutableArray alloc]initWithArray:array];
+- (void)setLongRentPeriodArray:(NSArray *)array {
+  _longRentPeriod = [[NSMutableArray alloc]initWithArray:array];
 }
-- (void)addLongRentInfo:(GroupRentInfo*)value {
-  if (_longRentInfo == nil) {
-    _longRentInfo = [[NSMutableArray alloc]init];
+- (void)addLongRentPeriod:(GroupRentPeriodInfo*)value {
+  if (_longRentPeriod == nil) {
+    _longRentPeriod = [[NSMutableArray alloc]init];
   }
-  [_longRentInfo addObject:value];
+  [_longRentPeriod addObject:value];
+}
+- (void)setGroupRentAmountInfoArray:(NSArray *)array {
+  _groupRentAmountInfo = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addGroupRentAmountInfo:(GroupRentAmountInfo*)value {
+  if (_groupRentAmountInfo == nil) {
+    _groupRentAmountInfo = [[NSMutableArray alloc]init];
+  }
+  [_groupRentAmountInfo addObject:value];
 }
 - (void)setImageUrlArray:(NSArray *)array {
   _imageUrl = [[NSMutableArray alloc] initWithArray:array];
@@ -1346,18 +1367,24 @@
         break;
       }
       case 202: {
-        GroupRentInfo* sub = [[GroupRentInfo alloc] init];
+        GroupRentPeriodInfo* sub = [[GroupRentPeriodInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
-        [self addShortRentInfo:sub];
+        [self addShortRentPeriod:sub];
         break;
       }
       case 210: {
-        GroupRentInfo* sub = [[GroupRentInfo alloc] init];
+        GroupRentPeriodInfo* sub = [[GroupRentPeriodInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
-        [self addLongRentInfo:sub];
+        [self addLongRentPeriod:sub];
         break;
       }
       case 218: {
+        GroupRentAmountInfo* sub = [[GroupRentAmountInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addGroupRentAmountInfo:sub];
+        break;
+      }
+      case 226: {
         [self addImageUrl:[input readString]];
         break;
       }
@@ -1505,17 +1532,13 @@
 @end
 
 
-@implementation GroupRentInfo
+@implementation GroupRentPeriodInfo
 
 - (instancetype) init {
   if ((self = [super init])) {
     _rentCode = @"";
     _rentPeriod = @"";
     _rentPeriodName = @"";
-    _rentAmountPerDay = 0;
-    _rentAmountPerMonth = 0;
-    _totalRentAmount = 0;
-    _originalRentAmount = 0;
   }
   return self;
 }
@@ -1528,18 +1551,6 @@
   }
   if (self.hasRentPeriodName) {
     [output writeString:3 value:self.rentPeriodName];
-  }
-  if (self.hasRentAmountPerDay) {
-    [output writeDouble:4 value:self.rentAmountPerDay];
-  }
-  if (self.hasRentAmountPerMonth) {
-    [output writeDouble:5 value:self.rentAmountPerMonth];
-  }
-  if (self.hasTotalRentAmount) {
-    [output writeDouble:6 value:self.totalRentAmount];
-  }
-  if (self.hasOriginalRentAmount) {
-    [output writeDouble:7 value:self.originalRentAmount];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1556,24 +1567,12 @@
   if (self.hasRentPeriodName) {
     size_ += computeStringSize(3, self.rentPeriodName);
   }
-  if (self.hasRentAmountPerDay) {
-    size_ += computeDoubleSize(4, self.rentAmountPerDay);
-  }
-  if (self.hasRentAmountPerMonth) {
-    size_ += computeDoubleSize(5, self.rentAmountPerMonth);
-  }
-  if (self.hasTotalRentAmount) {
-    size_ += computeDoubleSize(6, self.totalRentAmount);
-  }
-  if (self.hasOriginalRentAmount) {
-    size_ += computeDoubleSize(7, self.originalRentAmount);
-  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (GroupRentInfo*) parseFromData:(NSData*) data {
-  GroupRentInfo* result = [[GroupRentInfo alloc] init];
++ (GroupRentPeriodInfo*) parseFromData:(NSData*) data {
+  GroupRentPeriodInfo* result = [[GroupRentPeriodInfo alloc] init];
   [result mergeFromData:data];  return result;
 }
 #ifdef DEBUG
@@ -1586,6 +1585,116 @@
   }
   if (self.hasRentPeriodName) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentPeriodName", self.rentPeriodName];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setRentCode:(NSString*) value {
+  _hasRentCode = YES;
+  _rentCode = value;
+}
+- (void) setRentPeriod:(NSString*) value {
+  _hasRentPeriod = YES;
+  _rentPeriod = value;
+}
+- (void) setRentPeriodName:(NSString*) value {
+  _hasRentPeriodName = YES;
+  _rentPeriodName = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setRentCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setRentPeriod:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setRentPeriodName:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation GroupRentAmountInfo
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _codeKey = @"";
+    _rentAmountPerDay = 0;
+    _rentAmountPerMonth = 0;
+    _totalRentAmount = 0;
+    _originalRentAmount = 0;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasCodeKey) {
+    [output writeString:1 value:self.codeKey];
+  }
+  if (self.hasRentAmountPerDay) {
+    [output writeDouble:2 value:self.rentAmountPerDay];
+  }
+  if (self.hasRentAmountPerMonth) {
+    [output writeDouble:3 value:self.rentAmountPerMonth];
+  }
+  if (self.hasTotalRentAmount) {
+    [output writeDouble:4 value:self.totalRentAmount];
+  }
+  if (self.hasOriginalRentAmount) {
+    [output writeDouble:5 value:self.originalRentAmount];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasCodeKey) {
+    size_ += computeStringSize(1, self.codeKey);
+  }
+  if (self.hasRentAmountPerDay) {
+    size_ += computeDoubleSize(2, self.rentAmountPerDay);
+  }
+  if (self.hasRentAmountPerMonth) {
+    size_ += computeDoubleSize(3, self.rentAmountPerMonth);
+  }
+  if (self.hasTotalRentAmount) {
+    size_ += computeDoubleSize(4, self.totalRentAmount);
+  }
+  if (self.hasOriginalRentAmount) {
+    size_ += computeDoubleSize(5, self.originalRentAmount);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (GroupRentAmountInfo*) parseFromData:(NSData*) data {
+  GroupRentAmountInfo* result = [[GroupRentAmountInfo alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasCodeKey) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"codeKey", self.codeKey];
   }
   if (self.hasRentAmountPerDay) {
     [output appendFormat:@"%@%@: %@\n", indent, @"rentAmountPerDay", [NSNumber numberWithDouble:self.rentAmountPerDay]];
@@ -1602,17 +1711,9 @@
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
-- (void) setRentCode:(NSString*) value {
-  _hasRentCode = YES;
-  _rentCode = value;
-}
-- (void) setRentPeriod:(NSString*) value {
-  _hasRentPeriod = YES;
-  _rentPeriod = value;
-}
-- (void) setRentPeriodName:(NSString*) value {
-  _hasRentPeriodName = YES;
-  _rentPeriodName = value;
+- (void) setCodeKey:(NSString*) value {
+  _hasCodeKey = YES;
+  _codeKey = value;
 }
 - (void) setRentAmountPerDay:(Float64) value {
   _hasRentAmountPerDay = YES;
@@ -1646,30 +1747,22 @@
         break;
       }
       case 10: {
-        [self setRentCode:[input readString]];
+        [self setCodeKey:[input readString]];
         break;
       }
-      case 18: {
-        [self setRentPeriod:[input readString]];
-        break;
-      }
-      case 26: {
-        [self setRentPeriodName:[input readString]];
-        break;
-      }
-      case 33: {
+      case 17: {
         [self setRentAmountPerDay:[input readDouble]];
         break;
       }
-      case 41: {
+      case 25: {
         [self setRentAmountPerMonth:[input readDouble]];
         break;
       }
-      case 49: {
+      case 33: {
         [self setTotalRentAmount:[input readDouble]];
         break;
       }
-      case 57: {
+      case 41: {
         [self setOriginalRentAmount:[input readDouble]];
         break;
       }

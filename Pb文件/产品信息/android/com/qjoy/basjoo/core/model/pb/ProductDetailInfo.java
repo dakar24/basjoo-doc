@@ -9,6 +9,7 @@ import java.util.List;
 
 import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.DOUBLE;
+import static com.squareup.wire.Message.Datatype.ENUM;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.INT64;
 import static com.squareup.wire.Message.Datatype.STRING;
@@ -35,8 +36,8 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_TRANSPORTATIONPRICE = 13;
   public static final int TAG_LOCATION = 14;
   public static final int TAG_CATEGORYINFO = 15;
-  public static final int TAG_SHORTRENTINFO = 16;
-  public static final int TAG_LONGRENTINFO = 17;
+  public static final int TAG_SHORTRENTPERIOD = 16;
+  public static final int TAG_LONGRENTPERIOD = 17;
   public static final int TAG_BASEPARAM = 18;
   public static final int TAG_IMAGEPARAMURLS = 19;
   public static final int TAG_EVALUATECOUNT = 20;
@@ -44,6 +45,14 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_FAVORITED = 22;
   public static final int TAG_PRODUCTTITLE = 23;
   public static final int TAG_BANNERIMAGEURL = 24;
+  public static final int TAG_QUALITYINFO = 25;
+  public static final int TAG_PRODUCTPROMOTYPE = 26;
+  public static final int TAG_VALIDSTATUS = 27;
+  public static final int TAG_VALIDSTARTTIME = 28;
+  public static final int TAG_VALIDENDTIME = 29;
+  public static final int TAG_SERVERTIME = 30;
+  public static final int TAG_DISCOUNT = 31;
+  public static final int TAG_RENTAMOUNTINFO = 32;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -60,8 +69,8 @@ public final class ProductDetailInfo extends Message {
   public static final Double DEFAULT_TRANSPORTATIONPRICE = 0D;
   public static final String DEFAULT_LOCATION = "";
   public static final List<CategoryInfo> DEFAULT_CATEGORYINFO = Collections.emptyList();
-  public static final List<ShortRentInfo> DEFAULT_SHORTRENTINFO = Collections.emptyList();
-  public static final List<LongRentInfo> DEFAULT_LONGRENTINFO = Collections.emptyList();
+  public static final List<RentPeriodInfo> DEFAULT_SHORTRENTPERIOD = Collections.emptyList();
+  public static final List<RentPeriodInfo> DEFAULT_LONGRENTPERIOD = Collections.emptyList();
   public static final List<ProductBaseParam> DEFAULT_BASEPARAM = Collections.emptyList();
   public static final List<String> DEFAULT_IMAGEPARAMURLS = Collections.emptyList();
   public static final Long DEFAULT_EVALUATECOUNT = 0L;
@@ -69,6 +78,14 @@ public final class ProductDetailInfo extends Message {
   public static final Boolean DEFAULT_FAVORITED = false;
   public static final String DEFAULT_PRODUCTTITLE = "";
   public static final String DEFAULT_BANNERIMAGEURL = "";
+  public static final List<QualityInfo> DEFAULT_QUALITYINFO = Collections.emptyList();
+  public static final ProductPromoType DEFAULT_PRODUCTPROMOTYPE = ProductPromoType.NORMAL;
+  public static final Integer DEFAULT_VALIDSTATUS = 0;
+  public static final Long DEFAULT_VALIDSTARTTIME = 0L;
+  public static final Long DEFAULT_VALIDENDTIME = 0L;
+  public static final Long DEFAULT_SERVERTIME = 0L;
+  public static final Double DEFAULT_DISCOUNT = 0D;
+  public static final List<RentAmountinfo> DEFAULT_RENTAMOUNTINFO = Collections.emptyList();
 
   /**
    * 产品Id
@@ -164,13 +181,13 @@ public final class ProductDetailInfo extends Message {
    * 短租信息
    */
   @ProtoField(tag = 16, label = REPEATED)
-  public List<ShortRentInfo> shortRentInfo;
+  public List<RentPeriodInfo> shortRentPeriod;
 
   /**
    * 长租信息
    */
   @ProtoField(tag = 17, label = REPEATED)
-  public List<LongRentInfo> longRentInfo;
+  public List<RentPeriodInfo> longRentPeriod;
 
   /**
    * 产品基本参数
@@ -214,6 +231,54 @@ public final class ProductDetailInfo extends Message {
   @ProtoField(tag = 24, type = STRING)
   public String bannerImageUrl;
 
+  /**
+   * 成色信息
+   */
+  @ProtoField(tag = 25, label = REPEATED)
+  public List<QualityInfo> qualityInfo;
+
+  /**
+   * 产品活动类型
+   */
+  @ProtoField(tag = 26, type = ENUM)
+  public ProductPromoType productPromoType;
+
+  /**
+   * 生效（开始）状态
+   */
+  @ProtoField(tag = 27, type = INT32)
+  public Integer validStatus;
+
+  /**
+   * 开始时间
+   */
+  @ProtoField(tag = 28, type = INT64)
+  public Long validStartTime;
+
+  /**
+   * 结束时间
+   */
+  @ProtoField(tag = 29, type = INT64)
+  public Long validEndTime;
+
+  /**
+   * 服务端当前时间
+   */
+  @ProtoField(tag = 30, type = INT64)
+  public Long serverTime;
+
+  /**
+   * 折扣
+   */
+  @ProtoField(tag = 31, type = DOUBLE)
+  public Double discount;
+
+  /**
+   * 租金信息
+   */
+  @ProtoField(tag = 32, label = REPEATED)
+  public List<RentAmountinfo> rentAmountinfo;
+
   public ProductDetailInfo(ProductDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -232,8 +297,8 @@ public final class ProductDetailInfo extends Message {
     this.transportationPrice = message.transportationPrice;
     this.location = message.location;
     this.categoryInfo = copyOf(message.categoryInfo);
-    this.shortRentInfo = copyOf(message.shortRentInfo);
-    this.longRentInfo = copyOf(message.longRentInfo);
+    this.shortRentPeriod = copyOf(message.shortRentPeriod);
+    this.longRentPeriod = copyOf(message.longRentPeriod);
     this.baseParam = copyOf(message.baseParam);
     this.imageParamUrls = copyOf(message.imageParamUrls);
     this.evaluateCount = message.evaluateCount;
@@ -241,6 +306,14 @@ public final class ProductDetailInfo extends Message {
     this.favorited = message.favorited;
     this.productTitle = message.productTitle;
     this.bannerImageUrl = message.bannerImageUrl;
+    this.qualityInfo = copyOf(message.qualityInfo);
+    this.productPromoType = message.productPromoType;
+    this.validStatus = message.validStatus;
+    this.validStartTime = message.validStartTime;
+    this.validEndTime = message.validEndTime;
+    this.serverTime = message.serverTime;
+    this.discount = message.discount;
+    this.rentAmountinfo = copyOf(message.rentAmountinfo);
   }
 
   public ProductDetailInfo() {
@@ -293,11 +366,11 @@ public final class ProductDetailInfo extends Message {
         case TAG_CATEGORYINFO:
         this.categoryInfo = immutableCopyOf((List<CategoryInfo>)value);
         break;
-        case TAG_SHORTRENTINFO:
-        this.shortRentInfo = immutableCopyOf((List<ShortRentInfo>)value);
+        case TAG_SHORTRENTPERIOD:
+        this.shortRentPeriod = immutableCopyOf((List<RentPeriodInfo>)value);
         break;
-        case TAG_LONGRENTINFO:
-        this.longRentInfo = immutableCopyOf((List<LongRentInfo>)value);
+        case TAG_LONGRENTPERIOD:
+        this.longRentPeriod = immutableCopyOf((List<RentPeriodInfo>)value);
         break;
         case TAG_BASEPARAM:
         this.baseParam = immutableCopyOf((List<ProductBaseParam>)value);
@@ -319,6 +392,30 @@ public final class ProductDetailInfo extends Message {
         break;
         case TAG_BANNERIMAGEURL:
         this.bannerImageUrl = (String)value;
+        break;
+        case TAG_QUALITYINFO:
+        this.qualityInfo = immutableCopyOf((List<QualityInfo>)value);
+        break;
+        case TAG_PRODUCTPROMOTYPE:
+        this.productPromoType = (ProductPromoType)value;
+        break;
+        case TAG_VALIDSTATUS:
+        this.validStatus = (Integer)value;
+        break;
+        case TAG_VALIDSTARTTIME:
+        this.validStartTime = (Long)value;
+        break;
+        case TAG_VALIDENDTIME:
+        this.validEndTime = (Long)value;
+        break;
+        case TAG_SERVERTIME:
+        this.serverTime = (Long)value;
+        break;
+        case TAG_DISCOUNT:
+        this.discount = (Double)value;
+        break;
+        case TAG_RENTAMOUNTINFO:
+        this.rentAmountinfo = immutableCopyOf((List<RentAmountinfo>)value);
         break;
         default: break;
         };
@@ -345,15 +442,23 @@ public final class ProductDetailInfo extends Message {
         && equals(transportationPrice, o.transportationPrice)
         && equals(location, o.location)
         && equals(categoryInfo, o.categoryInfo)
-        && equals(shortRentInfo, o.shortRentInfo)
-        && equals(longRentInfo, o.longRentInfo)
+        && equals(shortRentPeriod, o.shortRentPeriod)
+        && equals(longRentPeriod, o.longRentPeriod)
         && equals(baseParam, o.baseParam)
         && equals(imageParamUrls, o.imageParamUrls)
         && equals(evaluateCount, o.evaluateCount)
         && equals(productEvaluateInfo, o.productEvaluateInfo)
         && equals(favorited, o.favorited)
         && equals(productTitle, o.productTitle)
-        && equals(bannerImageUrl, o.bannerImageUrl);
+        && equals(bannerImageUrl, o.bannerImageUrl)
+        && equals(qualityInfo, o.qualityInfo)
+        && equals(productPromoType, o.productPromoType)
+        && equals(validStatus, o.validStatus)
+        && equals(validStartTime, o.validStartTime)
+        && equals(validEndTime, o.validEndTime)
+        && equals(serverTime, o.serverTime)
+        && equals(discount, o.discount)
+        && equals(rentAmountinfo, o.rentAmountinfo);
   }
 
   @Override
@@ -375,8 +480,8 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (transportationPrice != null ? transportationPrice.hashCode() : 0);
       result = result * 37 + (location != null ? location.hashCode() : 0);
       result = result * 37 + (categoryInfo != null ? categoryInfo.hashCode() : 1);
-      result = result * 37 + (shortRentInfo != null ? shortRentInfo.hashCode() : 1);
-      result = result * 37 + (longRentInfo != null ? longRentInfo.hashCode() : 1);
+      result = result * 37 + (shortRentPeriod != null ? shortRentPeriod.hashCode() : 1);
+      result = result * 37 + (longRentPeriod != null ? longRentPeriod.hashCode() : 1);
       result = result * 37 + (baseParam != null ? baseParam.hashCode() : 1);
       result = result * 37 + (imageParamUrls != null ? imageParamUrls.hashCode() : 1);
       result = result * 37 + (evaluateCount != null ? evaluateCount.hashCode() : 0);
@@ -384,6 +489,14 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (favorited != null ? favorited.hashCode() : 0);
       result = result * 37 + (productTitle != null ? productTitle.hashCode() : 0);
       result = result * 37 + (bannerImageUrl != null ? bannerImageUrl.hashCode() : 0);
+      result = result * 37 + (qualityInfo != null ? qualityInfo.hashCode() : 1);
+      result = result * 37 + (productPromoType != null ? productPromoType.hashCode() : 0);
+      result = result * 37 + (validStatus != null ? validStatus.hashCode() : 0);
+      result = result * 37 + (validStartTime != null ? validStartTime.hashCode() : 0);
+      result = result * 37 + (validEndTime != null ? validEndTime.hashCode() : 0);
+      result = result * 37 + (serverTime != null ? serverTime.hashCode() : 0);
+      result = result * 37 + (discount != null ? discount.hashCode() : 0);
+      result = result * 37 + (rentAmountinfo != null ? rentAmountinfo.hashCode() : 1);
       hashCode = result;
     }
     return result;

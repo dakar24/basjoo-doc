@@ -189,13 +189,16 @@ message GroupProductDetail {
    repeated GroupProductCategory   categoryInfo = 24;   
    
    //短租信息
-   repeated GroupRentInfo          shortRentInfo = 25;
+   repeated GroupRentPeriodInfo       shortRentPeriod = 25;
    
    //长租信息
-   repeated GroupRentInfo          longRentInfo = 26;
+   repeated GroupRentPeriodInfo       longRentPeriod = 26;
+   
+   //租金信息
+   repeated GroupRentAmountInfo       groupRentAmountInfo = 27;
    
    //图片地址
-   repeated string                 imageUrl = 27;
+   repeated string                 imageUrl = 28;
      
 }
 
@@ -221,7 +224,7 @@ message GroupProductCategory {
 
 
 //抱团租期信息
-message GroupRentInfo {  
+message GroupRentPeriodInfo {  
 
  //租金编码
  required string                 rentCode = 1; 
@@ -232,18 +235,25 @@ message GroupRentInfo {
  //租用周期显示名称，如1天，2天，3天.... 1个月，3个月，12个月，24个月，36个月
  required string                 rentPeriodName = 3; 
  
- //折算后的单天价，单位 元/天
- required double                 rentAmountPerDay = 4; 
+}
+
+//租金信息，根据categoryCode,rentCode组合条件确定租金的信息
+message GroupRentAmountInfo{
+
+   //codeKey （categoryCode_rentCode）
+   required string                 codeKey = 1; 
+
+   //折算后的单天价，单位 元/天
+   required double                 rentAmountPerDay = 2; 
  
- //折算后的单月租金价，单位 元/月
- optional double                 rentAmountPerMonth = 5;
+   //折算后的单月租金价，单位 元/月
+   optional double                 rentAmountPerMonth = 3;
  
- //该周期内总价（优惠后）
- required double                 totalRentAmount = 6; 
+   //该周期内总价（优惠后）
+   required double                 totalRentAmount = 4; 
  
- //原始租金（优惠前）
- required double                 originalRentAmount = 7;
- 
+   //原始租金（优惠前）
+   required double                 originalRentAmount = 5;
 }
 
 		

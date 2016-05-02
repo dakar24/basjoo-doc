@@ -36,7 +36,7 @@ public final class SearchProductListRequest extends Message {
   public String keywords;
 
   /**
-   * 0：默认综合，1：品牌，2：类型 ，3 年龄
+   * 0：默认综合，1：品牌，2：类型 ，3 年龄，4 抱团租
    */
   @ProtoField(tag = 2, type = STRING)
   public String searchType;

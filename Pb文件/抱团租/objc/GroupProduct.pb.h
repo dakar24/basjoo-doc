@@ -10,7 +10,8 @@
 @class GroupProductCategory;
 @class GroupProductDetail;
 @class GroupProductLiteInfo;
-@class GroupRentInfo;
+@class GroupRentAmountInfo;
+@class GroupRentPeriodInfo;
 
 @interface GetGroupProductListRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasStartIndex;
@@ -130,8 +131,9 @@
 @property (nonatomic)BOOL applyed;
 @property (nonatomic)SInt64 applyCount;
 @property (nonatomic,strong) NSMutableArray * categoryInfo;
-@property (nonatomic,strong) NSMutableArray * shortRentInfo;
-@property (nonatomic,strong) NSMutableArray * longRentInfo;
+@property (nonatomic,strong) NSMutableArray * shortRentPeriod;
+@property (nonatomic,strong) NSMutableArray * longRentPeriod;
+@property (nonatomic,strong) NSMutableArray * groupRentAmountInfo;
 @property (nonatomic,strong) NSMutableArray * imageUrl;
 @end
 
@@ -148,17 +150,22 @@
 @property (nonatomic)Float64 pledgeAmount;
 @end
 
-@interface GroupRentInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@interface GroupRentPeriodInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasRentCode;
 @property (readonly) BOOL hasRentPeriod;
 @property (readonly) BOOL hasRentPeriodName;
+@property (nonatomic,strong) NSString* rentCode;
+@property (nonatomic,strong) NSString* rentPeriod;
+@property (nonatomic,strong) NSString* rentPeriodName;
+@end
+
+@interface GroupRentAmountInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasCodeKey;
 @property (readonly) BOOL hasRentAmountPerDay;
 @property (readonly) BOOL hasRentAmountPerMonth;
 @property (readonly) BOOL hasTotalRentAmount;
 @property (readonly) BOOL hasOriginalRentAmount;
-@property (nonatomic,strong) NSString* rentCode;
-@property (nonatomic,strong) NSString* rentPeriod;
-@property (nonatomic,strong) NSString* rentPeriodName;
+@property (nonatomic,strong) NSString* codeKey;
 @property (nonatomic)Float64 rentAmountPerDay;
 @property (nonatomic)Float64 rentAmountPerMonth;
 @property (nonatomic)Float64 totalRentAmount;

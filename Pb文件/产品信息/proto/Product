@@ -6,10 +6,10 @@ option java_package="com.qjoy.basjoo.core.model.pb";
 //搜索产品列表
 message SearchProductListRequest {   
 
-     //关键字
+    //关键字
     optional string                 keywords = 1; 
 	
-	 //0：默认综合，1：品牌，2：类型 ，3 年龄
+	//0：默认综合，1：品牌，2：类型 ，3 年龄，4 抱团租
 	optional string                 searchType = 2;
 	
 	//排序方式，0：默认综合，1：年龄，2：价格,3：销量
@@ -89,6 +89,25 @@ message ProductLiteInfo {
 
    //横幅图片地址
    optional string                 bannerImageUrl = 13; 
+
+   //产品活动类型
+   optional ProductPromoType       productPromoType = 14; 
+
+   //生效（开始）状态
+   optional int32                  validStatus = 15;
+   
+   //开始时间
+   optional int64                  validStartTime = 16;
+    
+   //结束时间
+   optional int64                  validEndTime = 17;
+  
+   //服务端当前时间
+   optional int64                  serverTime = 18;
+   
+   //折扣
+   optional double                 discount = 19;
+
    
     
 }
@@ -166,10 +185,10 @@ message ProductDetailInfo {
    repeated CategoryInfo           categoryInfo = 15;   
   
    //短租信息
-   repeated ShortRentInfo          shortRentInfo = 16;
+   repeated RentPeriodInfo         shortRentPeriod = 16;
    
    //长租信息
-   repeated LongRentInfo           longRentInfo = 17;
+   repeated RentPeriodInfo         longRentPeriod = 17;
    
    //产品基本参数
    repeated ProductBaseParam       baseParam = 18;
@@ -184,20 +203,38 @@ message ProductDetailInfo {
    repeated ProductEvaluateInfo    productEvaluateInfo=21;
    
    //用户是否已收藏
-   optional bool                  favorited = 22; 
+   optional bool                   favorited = 22; 
    
    //产品标题
-   required string                productTitle = 23; 
+   required string                 productTitle = 23; 
 
    //横幅图片地址
    optional string                 bannerImageUrl = 24;
    
-
    //成色信息
-   repeated QualityInfo           qualityInfo = 25;
-   
+   repeated QualityInfo            qualityInfo = 25;
 
+   //产品活动类型
+   optional ProductPromoType       productPromoType = 26;
+
+   //生效（开始）状态
+   optional int32                  validStatus = 27;
+   
+   //开始时间
+   optional int64                  validStartTime = 28;
     
+   //结束时间
+   optional int64                  validEndTime = 29;
+  
+   //服务端当前时间
+   optional int64                  serverTime = 30;
+   
+   //折扣
+   optional double                 discount = 31;
+   
+   //租金信息
+   repeated RentAmountinfo         rentAmountinfo = 32;
+   
 }
 
 //类别信息(颜色等)
@@ -228,23 +265,24 @@ message QualityInfo {
 
 
 
-//类目＋成色信息
+//库存，押金信息,根据categoryCode,rentCode组合条件确定
 message CategoryQualityInfo{
 
-   
+   //codeKey （组合条件确定：categoryCode_qualityCode）
+   required string               codeKey = 1; 
 
    //库存信息
-   required int32                stockCount = 1; 
+   required int32                stockCount = 2; 
    
    //押金
-   optional double                 pledgePrice = 2;
+   required double               pledgePrice = 3;
 }
 
 
 
 
-//短租信息
-message ShortRentInfo {  
+//抱团租期信息
+message RentPeriodInfo {  
 
  //租金编码
  required string                 rentCode = 1; 
@@ -252,36 +290,32 @@ message ShortRentInfo {
  //周期，单位：天
  required string                 rentPeriod = 2; 
  
- //折算后的单天价，单位 元/天
- required double                 rentPricePerDay = 3; 
- 
- //该周期内总价
- required double                 totalPrice = 4; 
-
-}
-
-//长租信息
-message LongRentInfo {  
-
- //租金编码
- required string                 rentCode = 1; 
- 
- //周期，单位：天
- required string                 rentPeriod = 2; 
- 
- //租用周期显示名称，如 1个月，3个月，12个月，24个月，36个月
+ //租用周期显示名称，如1天，2天，3天.... 1个月，3个月，12个月，24个月，36个月
  required string                 rentPeriodName = 3; 
  
- //折算后的单天价，单位 元/天
- required double                 rentPricePerDay = 4; 
- 
- //折算后的单月租金价，单位 元/月
- required double                 rentPricePerMonth = 5;
- 
- //该周期内总价
- required double                 totalPrice = 6; 
-
 }
+
+
+
+//租金信息，根据categoryCode,qualityCode,rentCode组合条件确定租金的信息
+message RentAmountinfo{
+
+   //codeKey （categoryCode_qualityCode_rentCode）
+   required string               codeKey = 1; 
+
+   //折算后的单天价，单位 元/天
+   required double                 rentAmountPerDay = 2; 
+ 
+   //折算后的单月租金价，单位 元/月
+   optional double                 rentAmountPerMonth = 3;
+ 
+   //该周期内总价（优惠后）
+   required double                 totalRentAmount = 4; 
+ 
+   //原始租金（优惠前）
+   required double                 originalRentAmount = 5;
+}
+
 
 //产品基本参数
 message ProductBaseParam{
@@ -389,6 +423,19 @@ message GetProductEvaluateListResult{
    
    //评论列表
    repeated ProductEvaluateInfo    productEvaluateInfo = 7;
+}
+
+
+//产品活动类型
+enum ProductPromoType {
+  //普通产品  
+  NORMAL = 0;
+  //抱团租
+  GROUP = 1;
+  //抢购
+  RUSH = 2;
+  //免费（0元租）
+  FREE = 3;
 }
 
 

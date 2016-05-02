@@ -43,9 +43,10 @@ public final class GroupProductDetail extends Message {
   public static final int TAG_APPLYED = 22;
   public static final int TAG_APPLYCOUNT = 23;
   public static final int TAG_CATEGORYINFO = 24;
-  public static final int TAG_SHORTRENTINFO = 25;
-  public static final int TAG_LONGRENTINFO = 26;
-  public static final int TAG_IMAGEURL = 27;
+  public static final int TAG_SHORTRENTPERIOD = 25;
+  public static final int TAG_LONGRENTPERIOD = 26;
+  public static final int TAG_GROUPRENTAMOUNTINFO = 27;
+  public static final int TAG_IMAGEURL = 28;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -70,8 +71,9 @@ public final class GroupProductDetail extends Message {
   public static final Boolean DEFAULT_APPLYED = false;
   public static final Long DEFAULT_APPLYCOUNT = 0L;
   public static final List<GroupProductCategory> DEFAULT_CATEGORYINFO = Collections.emptyList();
-  public static final List<GroupRentInfo> DEFAULT_SHORTRENTINFO = Collections.emptyList();
-  public static final List<GroupRentInfo> DEFAULT_LONGRENTINFO = Collections.emptyList();
+  public static final List<GroupRentPeriodInfo> DEFAULT_SHORTRENTPERIOD = Collections.emptyList();
+  public static final List<GroupRentPeriodInfo> DEFAULT_LONGRENTPERIOD = Collections.emptyList();
+  public static final List<GroupRentAmountInfo> DEFAULT_GROUPRENTAMOUNTINFO = Collections.emptyList();
   public static final List<String> DEFAULT_IMAGEURL = Collections.emptyList();
 
   /**
@@ -216,18 +218,24 @@ public final class GroupProductDetail extends Message {
    * 短租信息
    */
   @ProtoField(tag = 25, label = REPEATED)
-  public List<GroupRentInfo> shortRentInfo;
+  public List<GroupRentPeriodInfo> shortRentPeriod;
 
   /**
    * 长租信息
    */
   @ProtoField(tag = 26, label = REPEATED)
-  public List<GroupRentInfo> longRentInfo;
+  public List<GroupRentPeriodInfo> longRentPeriod;
+
+  /**
+   * 租金信息
+   */
+  @ProtoField(tag = 27, label = REPEATED)
+  public List<GroupRentAmountInfo> groupRentAmountInfo;
 
   /**
    * 图片地址
    */
-  @ProtoField(tag = 27, type = STRING, label = REPEATED)
+  @ProtoField(tag = 28, type = STRING, label = REPEATED)
   public List<String> imageUrl;
 
   public GroupProductDetail(GroupProductDetail message) {
@@ -256,8 +264,9 @@ public final class GroupProductDetail extends Message {
     this.applyed = message.applyed;
     this.applyCount = message.applyCount;
     this.categoryInfo = copyOf(message.categoryInfo);
-    this.shortRentInfo = copyOf(message.shortRentInfo);
-    this.longRentInfo = copyOf(message.longRentInfo);
+    this.shortRentPeriod = copyOf(message.shortRentPeriod);
+    this.longRentPeriod = copyOf(message.longRentPeriod);
+    this.groupRentAmountInfo = copyOf(message.groupRentAmountInfo);
     this.imageUrl = copyOf(message.imageUrl);
   }
 
@@ -335,11 +344,14 @@ public final class GroupProductDetail extends Message {
         case TAG_CATEGORYINFO:
         this.categoryInfo = immutableCopyOf((List<GroupProductCategory>)value);
         break;
-        case TAG_SHORTRENTINFO:
-        this.shortRentInfo = immutableCopyOf((List<GroupRentInfo>)value);
+        case TAG_SHORTRENTPERIOD:
+        this.shortRentPeriod = immutableCopyOf((List<GroupRentPeriodInfo>)value);
         break;
-        case TAG_LONGRENTINFO:
-        this.longRentInfo = immutableCopyOf((List<GroupRentInfo>)value);
+        case TAG_LONGRENTPERIOD:
+        this.longRentPeriod = immutableCopyOf((List<GroupRentPeriodInfo>)value);
+        break;
+        case TAG_GROUPRENTAMOUNTINFO:
+        this.groupRentAmountInfo = immutableCopyOf((List<GroupRentAmountInfo>)value);
         break;
         case TAG_IMAGEURL:
         this.imageUrl = immutableCopyOf((List<String>)value);
@@ -377,8 +389,9 @@ public final class GroupProductDetail extends Message {
         && equals(applyed, o.applyed)
         && equals(applyCount, o.applyCount)
         && equals(categoryInfo, o.categoryInfo)
-        && equals(shortRentInfo, o.shortRentInfo)
-        && equals(longRentInfo, o.longRentInfo)
+        && equals(shortRentPeriod, o.shortRentPeriod)
+        && equals(longRentPeriod, o.longRentPeriod)
+        && equals(groupRentAmountInfo, o.groupRentAmountInfo)
         && equals(imageUrl, o.imageUrl);
   }
 
@@ -409,8 +422,9 @@ public final class GroupProductDetail extends Message {
       result = result * 37 + (applyed != null ? applyed.hashCode() : 0);
       result = result * 37 + (applyCount != null ? applyCount.hashCode() : 0);
       result = result * 37 + (categoryInfo != null ? categoryInfo.hashCode() : 1);
-      result = result * 37 + (shortRentInfo != null ? shortRentInfo.hashCode() : 1);
-      result = result * 37 + (longRentInfo != null ? longRentInfo.hashCode() : 1);
+      result = result * 37 + (shortRentPeriod != null ? shortRentPeriod.hashCode() : 1);
+      result = result * 37 + (longRentPeriod != null ? longRentPeriod.hashCode() : 1);
+      result = result * 37 + (groupRentAmountInfo != null ? groupRentAmountInfo.hashCode() : 1);
       result = result * 37 + (imageUrl != null ? imageUrl.hashCode() : 1);
       hashCode = result;
     }

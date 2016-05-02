@@ -7,6 +7,7 @@ import com.squareup.wire.ProtoField;
 
 import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.DOUBLE;
+import static com.squareup.wire.Message.Datatype.ENUM;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.INT64;
 import static com.squareup.wire.Message.Datatype.STRING;
@@ -30,6 +31,12 @@ public final class ProductLiteInfo extends Message {
   public static final int TAG_FAVORITED = 11;
   public static final int TAG_PRODUCTTITLE = 12;
   public static final int TAG_BANNERIMAGEURL = 13;
+  public static final int TAG_PRODUCTPROMOTYPE = 14;
+  public static final int TAG_VALIDSTATUS = 15;
+  public static final int TAG_VALIDSTARTTIME = 16;
+  public static final int TAG_VALIDENDTIME = 17;
+  public static final int TAG_SERVERTIME = 18;
+  public static final int TAG_DISCOUNT = 19;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -44,6 +51,12 @@ public final class ProductLiteInfo extends Message {
   public static final Boolean DEFAULT_FAVORITED = false;
   public static final String DEFAULT_PRODUCTTITLE = "";
   public static final String DEFAULT_BANNERIMAGEURL = "";
+  public static final ProductPromoType DEFAULT_PRODUCTPROMOTYPE = ProductPromoType.NORMAL;
+  public static final Integer DEFAULT_VALIDSTATUS = 0;
+  public static final Long DEFAULT_VALIDSTARTTIME = 0L;
+  public static final Long DEFAULT_VALIDENDTIME = 0L;
+  public static final Long DEFAULT_SERVERTIME = 0L;
+  public static final Double DEFAULT_DISCOUNT = 0D;
 
   /**
    * 产品Id
@@ -123,6 +136,42 @@ public final class ProductLiteInfo extends Message {
   @ProtoField(tag = 13, type = STRING)
   public String bannerImageUrl;
 
+  /**
+   * 产品活动类型
+   */
+  @ProtoField(tag = 14, type = ENUM)
+  public ProductPromoType productPromoType;
+
+  /**
+   * 生效（开始）状态
+   */
+  @ProtoField(tag = 15, type = INT32)
+  public Integer validStatus;
+
+  /**
+   * 开始时间
+   */
+  @ProtoField(tag = 16, type = INT64)
+  public Long validStartTime;
+
+  /**
+   * 结束时间
+   */
+  @ProtoField(tag = 17, type = INT64)
+  public Long validEndTime;
+
+  /**
+   * 服务端当前时间
+   */
+  @ProtoField(tag = 18, type = INT64)
+  public Long serverTime;
+
+  /**
+   * 折扣
+   */
+  @ProtoField(tag = 19, type = DOUBLE)
+  public Double discount;
+
   public ProductLiteInfo(ProductLiteInfo message) {
     super(message);
     if (message == null) return;
@@ -139,6 +188,12 @@ public final class ProductLiteInfo extends Message {
     this.favorited = message.favorited;
     this.productTitle = message.productTitle;
     this.bannerImageUrl = message.bannerImageUrl;
+    this.productPromoType = message.productPromoType;
+    this.validStatus = message.validStatus;
+    this.validStartTime = message.validStartTime;
+    this.validEndTime = message.validEndTime;
+    this.serverTime = message.serverTime;
+    this.discount = message.discount;
   }
 
   public ProductLiteInfo() {
@@ -185,6 +240,24 @@ public final class ProductLiteInfo extends Message {
         case TAG_BANNERIMAGEURL:
         this.bannerImageUrl = (String)value;
         break;
+        case TAG_PRODUCTPROMOTYPE:
+        this.productPromoType = (ProductPromoType)value;
+        break;
+        case TAG_VALIDSTATUS:
+        this.validStatus = (Integer)value;
+        break;
+        case TAG_VALIDSTARTTIME:
+        this.validStartTime = (Long)value;
+        break;
+        case TAG_VALIDENDTIME:
+        this.validEndTime = (Long)value;
+        break;
+        case TAG_SERVERTIME:
+        this.serverTime = (Long)value;
+        break;
+        case TAG_DISCOUNT:
+        this.discount = (Double)value;
+        break;
         default: break;
         };
     return this;
@@ -207,7 +280,13 @@ public final class ProductLiteInfo extends Message {
         && equals(pledgePrice, o.pledgePrice)
         && equals(favorited, o.favorited)
         && equals(productTitle, o.productTitle)
-        && equals(bannerImageUrl, o.bannerImageUrl);
+        && equals(bannerImageUrl, o.bannerImageUrl)
+        && equals(productPromoType, o.productPromoType)
+        && equals(validStatus, o.validStatus)
+        && equals(validStartTime, o.validStartTime)
+        && equals(validEndTime, o.validEndTime)
+        && equals(serverTime, o.serverTime)
+        && equals(discount, o.discount);
   }
 
   @Override
@@ -227,6 +306,12 @@ public final class ProductLiteInfo extends Message {
       result = result * 37 + (favorited != null ? favorited.hashCode() : 0);
       result = result * 37 + (productTitle != null ? productTitle.hashCode() : 0);
       result = result * 37 + (bannerImageUrl != null ? bannerImageUrl.hashCode() : 0);
+      result = result * 37 + (productPromoType != null ? productPromoType.hashCode() : 0);
+      result = result * 37 + (validStatus != null ? validStatus.hashCode() : 0);
+      result = result * 37 + (validStartTime != null ? validStartTime.hashCode() : 0);
+      result = result * 37 + (validEndTime != null ? validEndTime.hashCode() : 0);
+      result = result * 37 + (serverTime != null ? serverTime.hashCode() : 0);
+      result = result * 37 + (discount != null ? discount.hashCode() : 0);
       hashCode = result;
     }
     return result;

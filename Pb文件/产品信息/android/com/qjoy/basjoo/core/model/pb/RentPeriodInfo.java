@@ -5,24 +5,21 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
-import static com.squareup.wire.Message.Datatype.DOUBLE;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 短租信息
+ * 抱团租期信息
  */
-public final class ShortRentInfo extends Message {
+public final class RentPeriodInfo extends Message {
 
   public static final int TAG_RENTCODE = 1;
   public static final int TAG_RENTPERIOD = 2;
-  public static final int TAG_RENTPRICEPERDAY = 3;
-  public static final int TAG_TOTALPRICE = 4;
+  public static final int TAG_RENTPERIODNAME = 3;
 
   public static final String DEFAULT_RENTCODE = "";
   public static final String DEFAULT_RENTPERIOD = "";
-  public static final Double DEFAULT_RENTPRICEPERDAY = 0D;
-  public static final Double DEFAULT_TOTALPRICE = 0D;
+  public static final String DEFAULT_RENTPERIODNAME = "";
 
   /**
    * 租金编码
@@ -37,30 +34,23 @@ public final class ShortRentInfo extends Message {
   public String rentPeriod;
 
   /**
-   * 折算后的单天价，单位 元/天
+   * 租用周期显示名称，如1天，2天，3天.... 1个月，3个月，12个月，24个月，36个月
    */
-  @ProtoField(tag = 3, type = DOUBLE, label = REQUIRED)
-  public Double rentPricePerDay;
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  public String rentPeriodName;
 
-  /**
-   * 该周期内总价
-   */
-  @ProtoField(tag = 4, type = DOUBLE, label = REQUIRED)
-  public Double totalPrice;
-
-  public ShortRentInfo(ShortRentInfo message) {
+  public RentPeriodInfo(RentPeriodInfo message) {
     super(message);
     if (message == null) return;
     this.rentCode = message.rentCode;
     this.rentPeriod = message.rentPeriod;
-    this.rentPricePerDay = message.rentPricePerDay;
-    this.totalPrice = message.totalPrice;
+    this.rentPeriodName = message.rentPeriodName;
   }
 
-  public ShortRentInfo() {
+  public RentPeriodInfo() {
   }
 
-  public ShortRentInfo fillTagValue(int tag, Object value) {
+  public RentPeriodInfo fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_RENTCODE:
         this.rentCode = (String)value;
@@ -68,11 +58,8 @@ public final class ShortRentInfo extends Message {
         case TAG_RENTPERIOD:
         this.rentPeriod = (String)value;
         break;
-        case TAG_RENTPRICEPERDAY:
-        this.rentPricePerDay = (Double)value;
-        break;
-        case TAG_TOTALPRICE:
-        this.totalPrice = (Double)value;
+        case TAG_RENTPERIODNAME:
+        this.rentPeriodName = (String)value;
         break;
         default: break;
         };
@@ -82,12 +69,11 @@ public final class ShortRentInfo extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof ShortRentInfo)) return false;
-    ShortRentInfo o = (ShortRentInfo) other;
+    if (!(other instanceof RentPeriodInfo)) return false;
+    RentPeriodInfo o = (RentPeriodInfo) other;
     return equals(rentCode, o.rentCode)
         && equals(rentPeriod, o.rentPeriod)
-        && equals(rentPricePerDay, o.rentPricePerDay)
-        && equals(totalPrice, o.totalPrice);
+        && equals(rentPeriodName, o.rentPeriodName);
   }
 
   @Override
@@ -96,8 +82,7 @@ public final class ShortRentInfo extends Message {
     if (result == 0) {
       result = rentCode != null ? rentCode.hashCode() : 0;
       result = result * 37 + (rentPeriod != null ? rentPeriod.hashCode() : 0);
-      result = result * 37 + (rentPricePerDay != null ? rentPricePerDay.hashCode() : 0);
-      result = result * 37 + (totalPrice != null ? totalPrice.hashCode() : 0);
+      result = result * 37 + (rentPeriodName != null ? rentPeriodName.hashCode() : 0);
       hashCode = result;
     }
     return result;

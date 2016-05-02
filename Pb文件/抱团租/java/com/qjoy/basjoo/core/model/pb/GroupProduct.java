@@ -7299,95 +7299,139 @@ public final class GroupProduct {
         int index);
 
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> 
-        getShortRentInfoList();
+    java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> 
+        getShortRentPeriodList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo getShortRentInfo(int index);
+    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo getShortRentPeriod(int index);
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    int getShortRentInfoCount();
+    int getShortRentPeriodCount();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> 
-        getShortRentInfoOrBuilderList();
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> 
+        getShortRentPeriodOrBuilderList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder getShortRentInfoOrBuilder(
+    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder getShortRentPeriodOrBuilder(
         int index);
 
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> 
-        getLongRentInfoList();
+    java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> 
+        getLongRentPeriodList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo getLongRentInfo(int index);
+    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo getLongRentPeriod(int index);
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    int getLongRentInfoCount();
+    int getLongRentPeriodCount();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> 
-        getLongRentInfoOrBuilderList();
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> 
+        getLongRentPeriodOrBuilderList();
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder getLongRentInfoOrBuilder(
+    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder getLongRentPeriodOrBuilder(
         int index);
 
     /**
-     * <code>repeated string imageUrl = 27;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo> 
+        getGroupRentAmountInfoList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo getGroupRentAmountInfo(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    int getGroupRentAmountInfoCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder> 
+        getGroupRentAmountInfoOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder getGroupRentAmountInfoOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated string imageUrl = 28;</code>
      *
      * <pre>
      *图片地址
@@ -7396,7 +7440,7 @@ public final class GroupProduct {
     com.google.protobuf.ProtocolStringList
         getImageUrlList();
     /**
-     * <code>repeated string imageUrl = 27;</code>
+     * <code>repeated string imageUrl = 28;</code>
      *
      * <pre>
      *图片地址
@@ -7404,7 +7448,7 @@ public final class GroupProduct {
      */
     int getImageUrlCount();
     /**
-     * <code>repeated string imageUrl = 27;</code>
+     * <code>repeated string imageUrl = 28;</code>
      *
      * <pre>
      *图片地址
@@ -7412,7 +7456,7 @@ public final class GroupProduct {
      */
     java.lang.String getImageUrl(int index);
     /**
-     * <code>repeated string imageUrl = 27;</code>
+     * <code>repeated string imageUrl = 28;</code>
      *
      * <pre>
      *图片地址
@@ -7613,25 +7657,33 @@ public final class GroupProduct {
             }
             case 202: {
               if (!((mutable_bitField0_ & 0x00800000) == 0x00800000)) {
-                shortRentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo>();
+                shortRentPeriod_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo>();
                 mutable_bitField0_ |= 0x00800000;
               }
-              shortRentInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.PARSER, extensionRegistry));
+              shortRentPeriod_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.PARSER, extensionRegistry));
               break;
             }
             case 210: {
               if (!((mutable_bitField0_ & 0x01000000) == 0x01000000)) {
-                longRentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo>();
+                longRentPeriod_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo>();
                 mutable_bitField0_ |= 0x01000000;
               }
-              longRentInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.PARSER, extensionRegistry));
+              longRentPeriod_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.PARSER, extensionRegistry));
               break;
             }
             case 218: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               if (!((mutable_bitField0_ & 0x02000000) == 0x02000000)) {
-                imageUrl_ = new com.google.protobuf.LazyStringArrayList();
+                groupRentAmountInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo>();
                 mutable_bitField0_ |= 0x02000000;
+              }
+              groupRentAmountInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.PARSER, extensionRegistry));
+              break;
+            }
+            case 226: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x04000000) == 0x04000000)) {
+                imageUrl_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x04000000;
               }
               imageUrl_.add(bs);
               break;
@@ -7654,12 +7706,15 @@ public final class GroupProduct {
           categoryInfo_ = java.util.Collections.unmodifiableList(categoryInfo_);
         }
         if (((mutable_bitField0_ & 0x00800000) == 0x00800000)) {
-          shortRentInfo_ = java.util.Collections.unmodifiableList(shortRentInfo_);
+          shortRentPeriod_ = java.util.Collections.unmodifiableList(shortRentPeriod_);
         }
         if (((mutable_bitField0_ & 0x01000000) == 0x01000000)) {
-          longRentInfo_ = java.util.Collections.unmodifiableList(longRentInfo_);
+          longRentPeriod_ = java.util.Collections.unmodifiableList(longRentPeriod_);
         }
         if (((mutable_bitField0_ & 0x02000000) == 0x02000000)) {
+          groupRentAmountInfo_ = java.util.Collections.unmodifiableList(groupRentAmountInfo_);
+        }
+        if (((mutable_bitField0_ & 0x04000000) == 0x04000000)) {
           imageUrl_ = imageUrl_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -8588,120 +8643,175 @@ public final class GroupProduct {
       return categoryInfo_.get(index);
     }
 
-    public static final int SHORTRENTINFO_FIELD_NUMBER = 25;
-    private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> shortRentInfo_;
+    public static final int SHORTRENTPERIOD_FIELD_NUMBER = 25;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> shortRentPeriod_;
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> getShortRentInfoList() {
-      return shortRentInfo_;
+    public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> getShortRentPeriodList() {
+      return shortRentPeriod_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> 
-        getShortRentInfoOrBuilderList() {
-      return shortRentInfo_;
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> 
+        getShortRentPeriodOrBuilderList() {
+      return shortRentPeriod_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    public int getShortRentInfoCount() {
-      return shortRentInfo_.size();
+    public int getShortRentPeriodCount() {
+      return shortRentPeriod_.size();
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo getShortRentInfo(int index) {
-      return shortRentInfo_.get(index);
+    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo getShortRentPeriod(int index) {
+      return shortRentPeriod_.get(index);
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
      *
      * <pre>
      *短租信息
      * </pre>
      */
-    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder getShortRentInfoOrBuilder(
+    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder getShortRentPeriodOrBuilder(
         int index) {
-      return shortRentInfo_.get(index);
+      return shortRentPeriod_.get(index);
     }
 
-    public static final int LONGRENTINFO_FIELD_NUMBER = 26;
-    private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> longRentInfo_;
+    public static final int LONGRENTPERIOD_FIELD_NUMBER = 26;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> longRentPeriod_;
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> getLongRentInfoList() {
-      return longRentInfo_;
+    public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> getLongRentPeriodList() {
+      return longRentPeriod_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> 
-        getLongRentInfoOrBuilderList() {
-      return longRentInfo_;
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> 
+        getLongRentPeriodOrBuilderList() {
+      return longRentPeriod_;
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    public int getLongRentInfoCount() {
-      return longRentInfo_.size();
+    public int getLongRentPeriodCount() {
+      return longRentPeriod_.size();
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo getLongRentInfo(int index) {
-      return longRentInfo_.get(index);
+    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo getLongRentPeriod(int index) {
+      return longRentPeriod_.get(index);
     }
     /**
-     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
      *
      * <pre>
      *长租信息
      * </pre>
      */
-    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder getLongRentInfoOrBuilder(
+    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder getLongRentPeriodOrBuilder(
         int index) {
-      return longRentInfo_.get(index);
+      return longRentPeriod_.get(index);
     }
 
-    public static final int IMAGEURL_FIELD_NUMBER = 27;
+    public static final int GROUPRENTAMOUNTINFO_FIELD_NUMBER = 27;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo> groupRentAmountInfo_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo> getGroupRentAmountInfoList() {
+      return groupRentAmountInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder> 
+        getGroupRentAmountInfoOrBuilderList() {
+      return groupRentAmountInfo_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    public int getGroupRentAmountInfoCount() {
+      return groupRentAmountInfo_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo getGroupRentAmountInfo(int index) {
+      return groupRentAmountInfo_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+     *
+     * <pre>
+     *租金信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder getGroupRentAmountInfoOrBuilder(
+        int index) {
+      return groupRentAmountInfo_.get(index);
+    }
+
+    public static final int IMAGEURL_FIELD_NUMBER = 28;
     private com.google.protobuf.LazyStringList imageUrl_;
     /**
-     * <code>repeated string imageUrl = 27;</code>
+     * <code>repeated string imageUrl = 28;</code>
      *
      * <pre>
      *图片地址
@@ -8712,7 +8822,7 @@ public final class GroupProduct {
       return imageUrl_;
     }
     /**
-     * <code>repeated string imageUrl = 27;</code>
+     * <code>repeated string imageUrl = 28;</code>
      *
      * <pre>
      *图片地址
@@ -8722,7 +8832,7 @@ public final class GroupProduct {
       return imageUrl_.size();
     }
     /**
-     * <code>repeated string imageUrl = 27;</code>
+     * <code>repeated string imageUrl = 28;</code>
      *
      * <pre>
      *图片地址
@@ -8732,7 +8842,7 @@ public final class GroupProduct {
       return imageUrl_.get(index);
     }
     /**
-     * <code>repeated string imageUrl = 27;</code>
+     * <code>repeated string imageUrl = 28;</code>
      *
      * <pre>
      *图片地址
@@ -8767,8 +8877,9 @@ public final class GroupProduct {
       applyed_ = false;
       applyCount_ = 0L;
       categoryInfo_ = java.util.Collections.emptyList();
-      shortRentInfo_ = java.util.Collections.emptyList();
-      longRentInfo_ = java.util.Collections.emptyList();
+      shortRentPeriod_ = java.util.Collections.emptyList();
+      longRentPeriod_ = java.util.Collections.emptyList();
+      groupRentAmountInfo_ = java.util.Collections.emptyList();
       imageUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
@@ -8837,14 +8948,20 @@ public final class GroupProduct {
           return false;
         }
       }
-      for (int i = 0; i < getShortRentInfoCount(); i++) {
-        if (!getShortRentInfo(i).isInitialized()) {
+      for (int i = 0; i < getShortRentPeriodCount(); i++) {
+        if (!getShortRentPeriod(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
       }
-      for (int i = 0; i < getLongRentInfoCount(); i++) {
-        if (!getLongRentInfo(i).isInitialized()) {
+      for (int i = 0; i < getLongRentPeriodCount(); i++) {
+        if (!getLongRentPeriod(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getGroupRentAmountInfoCount(); i++) {
+        if (!getGroupRentAmountInfo(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -8925,14 +9042,17 @@ public final class GroupProduct {
       for (int i = 0; i < categoryInfo_.size(); i++) {
         output.writeMessage(24, categoryInfo_.get(i));
       }
-      for (int i = 0; i < shortRentInfo_.size(); i++) {
-        output.writeMessage(25, shortRentInfo_.get(i));
+      for (int i = 0; i < shortRentPeriod_.size(); i++) {
+        output.writeMessage(25, shortRentPeriod_.get(i));
       }
-      for (int i = 0; i < longRentInfo_.size(); i++) {
-        output.writeMessage(26, longRentInfo_.get(i));
+      for (int i = 0; i < longRentPeriod_.size(); i++) {
+        output.writeMessage(26, longRentPeriod_.get(i));
+      }
+      for (int i = 0; i < groupRentAmountInfo_.size(); i++) {
+        output.writeMessage(27, groupRentAmountInfo_.get(i));
       }
       for (int i = 0; i < imageUrl_.size(); i++) {
-        output.writeBytes(27, imageUrl_.getByteString(i));
+        output.writeBytes(28, imageUrl_.getByteString(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -9040,13 +9160,17 @@ public final class GroupProduct {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(24, categoryInfo_.get(i));
       }
-      for (int i = 0; i < shortRentInfo_.size(); i++) {
+      for (int i = 0; i < shortRentPeriod_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(25, shortRentInfo_.get(i));
+          .computeMessageSize(25, shortRentPeriod_.get(i));
       }
-      for (int i = 0; i < longRentInfo_.size(); i++) {
+      for (int i = 0; i < longRentPeriod_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(26, longRentInfo_.get(i));
+          .computeMessageSize(26, longRentPeriod_.get(i));
+      }
+      for (int i = 0; i < groupRentAmountInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(27, groupRentAmountInfo_.get(i));
       }
       {
         int dataSize = 0;
@@ -9172,8 +9296,9 @@ public final class GroupProduct {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getBaseParamFieldBuilder();
           getCategoryInfoFieldBuilder();
-          getShortRentInfoFieldBuilder();
-          getLongRentInfoFieldBuilder();
+          getShortRentPeriodFieldBuilder();
+          getLongRentPeriodFieldBuilder();
+          getGroupRentAmountInfoFieldBuilder();
         }
       }
       private static Builder create() {
@@ -9236,20 +9361,26 @@ public final class GroupProduct {
         } else {
           categoryInfoBuilder_.clear();
         }
-        if (shortRentInfoBuilder_ == null) {
-          shortRentInfo_ = java.util.Collections.emptyList();
+        if (shortRentPeriodBuilder_ == null) {
+          shortRentPeriod_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00800000);
         } else {
-          shortRentInfoBuilder_.clear();
+          shortRentPeriodBuilder_.clear();
         }
-        if (longRentInfoBuilder_ == null) {
-          longRentInfo_ = java.util.Collections.emptyList();
+        if (longRentPeriodBuilder_ == null) {
+          longRentPeriod_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x01000000);
         } else {
-          longRentInfoBuilder_.clear();
+          longRentPeriodBuilder_.clear();
+        }
+        if (groupRentAmountInfoBuilder_ == null) {
+          groupRentAmountInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x02000000);
+        } else {
+          groupRentAmountInfoBuilder_.clear();
         }
         imageUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         return this;
       }
 
@@ -9381,27 +9512,36 @@ public final class GroupProduct {
         } else {
           result.categoryInfo_ = categoryInfoBuilder_.build();
         }
-        if (shortRentInfoBuilder_ == null) {
+        if (shortRentPeriodBuilder_ == null) {
           if (((bitField0_ & 0x00800000) == 0x00800000)) {
-            shortRentInfo_ = java.util.Collections.unmodifiableList(shortRentInfo_);
+            shortRentPeriod_ = java.util.Collections.unmodifiableList(shortRentPeriod_);
             bitField0_ = (bitField0_ & ~0x00800000);
           }
-          result.shortRentInfo_ = shortRentInfo_;
+          result.shortRentPeriod_ = shortRentPeriod_;
         } else {
-          result.shortRentInfo_ = shortRentInfoBuilder_.build();
+          result.shortRentPeriod_ = shortRentPeriodBuilder_.build();
         }
-        if (longRentInfoBuilder_ == null) {
+        if (longRentPeriodBuilder_ == null) {
           if (((bitField0_ & 0x01000000) == 0x01000000)) {
-            longRentInfo_ = java.util.Collections.unmodifiableList(longRentInfo_);
+            longRentPeriod_ = java.util.Collections.unmodifiableList(longRentPeriod_);
             bitField0_ = (bitField0_ & ~0x01000000);
           }
-          result.longRentInfo_ = longRentInfo_;
+          result.longRentPeriod_ = longRentPeriod_;
         } else {
-          result.longRentInfo_ = longRentInfoBuilder_.build();
+          result.longRentPeriod_ = longRentPeriodBuilder_.build();
         }
-        if (((bitField0_ & 0x02000000) == 0x02000000)) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          if (((bitField0_ & 0x02000000) == 0x02000000)) {
+            groupRentAmountInfo_ = java.util.Collections.unmodifiableList(groupRentAmountInfo_);
+            bitField0_ = (bitField0_ & ~0x02000000);
+          }
+          result.groupRentAmountInfo_ = groupRentAmountInfo_;
+        } else {
+          result.groupRentAmountInfo_ = groupRentAmountInfoBuilder_.build();
+        }
+        if (((bitField0_ & 0x04000000) == 0x04000000)) {
           imageUrl_ = imageUrl_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x02000000);
+          bitField0_ = (bitField0_ & ~0x04000000);
         }
         result.imageUrl_ = imageUrl_;
         result.bitField0_ = to_bitField0_;
@@ -9560,62 +9700,88 @@ public final class GroupProduct {
             }
           }
         }
-        if (shortRentInfoBuilder_ == null) {
-          if (!other.shortRentInfo_.isEmpty()) {
-            if (shortRentInfo_.isEmpty()) {
-              shortRentInfo_ = other.shortRentInfo_;
+        if (shortRentPeriodBuilder_ == null) {
+          if (!other.shortRentPeriod_.isEmpty()) {
+            if (shortRentPeriod_.isEmpty()) {
+              shortRentPeriod_ = other.shortRentPeriod_;
               bitField0_ = (bitField0_ & ~0x00800000);
             } else {
-              ensureShortRentInfoIsMutable();
-              shortRentInfo_.addAll(other.shortRentInfo_);
+              ensureShortRentPeriodIsMutable();
+              shortRentPeriod_.addAll(other.shortRentPeriod_);
             }
             onChanged();
           }
         } else {
-          if (!other.shortRentInfo_.isEmpty()) {
-            if (shortRentInfoBuilder_.isEmpty()) {
-              shortRentInfoBuilder_.dispose();
-              shortRentInfoBuilder_ = null;
-              shortRentInfo_ = other.shortRentInfo_;
+          if (!other.shortRentPeriod_.isEmpty()) {
+            if (shortRentPeriodBuilder_.isEmpty()) {
+              shortRentPeriodBuilder_.dispose();
+              shortRentPeriodBuilder_ = null;
+              shortRentPeriod_ = other.shortRentPeriod_;
               bitField0_ = (bitField0_ & ~0x00800000);
-              shortRentInfoBuilder_ = 
+              shortRentPeriodBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getShortRentInfoFieldBuilder() : null;
+                   getShortRentPeriodFieldBuilder() : null;
             } else {
-              shortRentInfoBuilder_.addAllMessages(other.shortRentInfo_);
+              shortRentPeriodBuilder_.addAllMessages(other.shortRentPeriod_);
             }
           }
         }
-        if (longRentInfoBuilder_ == null) {
-          if (!other.longRentInfo_.isEmpty()) {
-            if (longRentInfo_.isEmpty()) {
-              longRentInfo_ = other.longRentInfo_;
+        if (longRentPeriodBuilder_ == null) {
+          if (!other.longRentPeriod_.isEmpty()) {
+            if (longRentPeriod_.isEmpty()) {
+              longRentPeriod_ = other.longRentPeriod_;
               bitField0_ = (bitField0_ & ~0x01000000);
             } else {
-              ensureLongRentInfoIsMutable();
-              longRentInfo_.addAll(other.longRentInfo_);
+              ensureLongRentPeriodIsMutable();
+              longRentPeriod_.addAll(other.longRentPeriod_);
             }
             onChanged();
           }
         } else {
-          if (!other.longRentInfo_.isEmpty()) {
-            if (longRentInfoBuilder_.isEmpty()) {
-              longRentInfoBuilder_.dispose();
-              longRentInfoBuilder_ = null;
-              longRentInfo_ = other.longRentInfo_;
+          if (!other.longRentPeriod_.isEmpty()) {
+            if (longRentPeriodBuilder_.isEmpty()) {
+              longRentPeriodBuilder_.dispose();
+              longRentPeriodBuilder_ = null;
+              longRentPeriod_ = other.longRentPeriod_;
               bitField0_ = (bitField0_ & ~0x01000000);
-              longRentInfoBuilder_ = 
+              longRentPeriodBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getLongRentInfoFieldBuilder() : null;
+                   getLongRentPeriodFieldBuilder() : null;
             } else {
-              longRentInfoBuilder_.addAllMessages(other.longRentInfo_);
+              longRentPeriodBuilder_.addAllMessages(other.longRentPeriod_);
+            }
+          }
+        }
+        if (groupRentAmountInfoBuilder_ == null) {
+          if (!other.groupRentAmountInfo_.isEmpty()) {
+            if (groupRentAmountInfo_.isEmpty()) {
+              groupRentAmountInfo_ = other.groupRentAmountInfo_;
+              bitField0_ = (bitField0_ & ~0x02000000);
+            } else {
+              ensureGroupRentAmountInfoIsMutable();
+              groupRentAmountInfo_.addAll(other.groupRentAmountInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.groupRentAmountInfo_.isEmpty()) {
+            if (groupRentAmountInfoBuilder_.isEmpty()) {
+              groupRentAmountInfoBuilder_.dispose();
+              groupRentAmountInfoBuilder_ = null;
+              groupRentAmountInfo_ = other.groupRentAmountInfo_;
+              bitField0_ = (bitField0_ & ~0x02000000);
+              groupRentAmountInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getGroupRentAmountInfoFieldBuilder() : null;
+            } else {
+              groupRentAmountInfoBuilder_.addAllMessages(other.groupRentAmountInfo_);
             }
           }
         }
         if (!other.imageUrl_.isEmpty()) {
           if (imageUrl_.isEmpty()) {
             imageUrl_ = other.imageUrl_;
-            bitField0_ = (bitField0_ & ~0x02000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
           } else {
             ensureImageUrlIsMutable();
             imageUrl_.addAll(other.imageUrl_);
@@ -9687,14 +9853,20 @@ public final class GroupProduct {
             return false;
           }
         }
-        for (int i = 0; i < getShortRentInfoCount(); i++) {
-          if (!getShortRentInfo(i).isInitialized()) {
+        for (int i = 0; i < getShortRentPeriodCount(); i++) {
+          if (!getShortRentPeriod(i).isInitialized()) {
             
             return false;
           }
         }
-        for (int i = 0; i < getLongRentInfoCount(); i++) {
-          if (!getLongRentInfo(i).isInitialized()) {
+        for (int i = 0; i < getLongRentPeriodCount(); i++) {
+          if (!getLongRentPeriod(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getGroupRentAmountInfoCount(); i++) {
+          if (!getGroupRentAmountInfo(i).isInitialized()) {
             
             return false;
           }
@@ -11902,639 +12074,951 @@ public final class GroupProduct {
         return categoryInfoBuilder_;
       }
 
-      private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> shortRentInfo_ =
+      private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> shortRentPeriod_ =
         java.util.Collections.emptyList();
-      private void ensureShortRentInfoIsMutable() {
+      private void ensureShortRentPeriodIsMutable() {
         if (!((bitField0_ & 0x00800000) == 0x00800000)) {
-          shortRentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo>(shortRentInfo_);
+          shortRentPeriod_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo>(shortRentPeriod_);
           bitField0_ |= 0x00800000;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> shortRentInfoBuilder_;
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> shortRentPeriodBuilder_;
 
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> getShortRentInfoList() {
-        if (shortRentInfoBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(shortRentInfo_);
+      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> getShortRentPeriodList() {
+        if (shortRentPeriodBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(shortRentPeriod_);
         } else {
-          return shortRentInfoBuilder_.getMessageList();
+          return shortRentPeriodBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public int getShortRentInfoCount() {
-        if (shortRentInfoBuilder_ == null) {
-          return shortRentInfo_.size();
+      public int getShortRentPeriodCount() {
+        if (shortRentPeriodBuilder_ == null) {
+          return shortRentPeriod_.size();
         } else {
-          return shortRentInfoBuilder_.getCount();
+          return shortRentPeriodBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo getShortRentInfo(int index) {
-        if (shortRentInfoBuilder_ == null) {
-          return shortRentInfo_.get(index);
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo getShortRentPeriod(int index) {
+        if (shortRentPeriodBuilder_ == null) {
+          return shortRentPeriod_.get(index);
         } else {
-          return shortRentInfoBuilder_.getMessage(index);
+          return shortRentPeriodBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public Builder setShortRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo value) {
-        if (shortRentInfoBuilder_ == null) {
+      public Builder setShortRentPeriod(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo value) {
+        if (shortRentPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureShortRentInfoIsMutable();
-          shortRentInfo_.set(index, value);
+          ensureShortRentPeriodIsMutable();
+          shortRentPeriod_.set(index, value);
           onChanged();
         } else {
-          shortRentInfoBuilder_.setMessage(index, value);
+          shortRentPeriodBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public Builder setShortRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder builderForValue) {
-        if (shortRentInfoBuilder_ == null) {
-          ensureShortRentInfoIsMutable();
-          shortRentInfo_.set(index, builderForValue.build());
+      public Builder setShortRentPeriod(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder builderForValue) {
+        if (shortRentPeriodBuilder_ == null) {
+          ensureShortRentPeriodIsMutable();
+          shortRentPeriod_.set(index, builderForValue.build());
           onChanged();
         } else {
-          shortRentInfoBuilder_.setMessage(index, builderForValue.build());
+          shortRentPeriodBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public Builder addShortRentInfo(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo value) {
-        if (shortRentInfoBuilder_ == null) {
+      public Builder addShortRentPeriod(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo value) {
+        if (shortRentPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureShortRentInfoIsMutable();
-          shortRentInfo_.add(value);
+          ensureShortRentPeriodIsMutable();
+          shortRentPeriod_.add(value);
           onChanged();
         } else {
-          shortRentInfoBuilder_.addMessage(value);
+          shortRentPeriodBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public Builder addShortRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo value) {
-        if (shortRentInfoBuilder_ == null) {
+      public Builder addShortRentPeriod(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo value) {
+        if (shortRentPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureShortRentInfoIsMutable();
-          shortRentInfo_.add(index, value);
+          ensureShortRentPeriodIsMutable();
+          shortRentPeriod_.add(index, value);
           onChanged();
         } else {
-          shortRentInfoBuilder_.addMessage(index, value);
+          shortRentPeriodBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public Builder addShortRentInfo(
-          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder builderForValue) {
-        if (shortRentInfoBuilder_ == null) {
-          ensureShortRentInfoIsMutable();
-          shortRentInfo_.add(builderForValue.build());
+      public Builder addShortRentPeriod(
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder builderForValue) {
+        if (shortRentPeriodBuilder_ == null) {
+          ensureShortRentPeriodIsMutable();
+          shortRentPeriod_.add(builderForValue.build());
           onChanged();
         } else {
-          shortRentInfoBuilder_.addMessage(builderForValue.build());
+          shortRentPeriodBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public Builder addShortRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder builderForValue) {
-        if (shortRentInfoBuilder_ == null) {
-          ensureShortRentInfoIsMutable();
-          shortRentInfo_.add(index, builderForValue.build());
+      public Builder addShortRentPeriod(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder builderForValue) {
+        if (shortRentPeriodBuilder_ == null) {
+          ensureShortRentPeriodIsMutable();
+          shortRentPeriod_.add(index, builderForValue.build());
           onChanged();
         } else {
-          shortRentInfoBuilder_.addMessage(index, builderForValue.build());
+          shortRentPeriodBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public Builder addAllShortRentInfo(
-          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> values) {
-        if (shortRentInfoBuilder_ == null) {
-          ensureShortRentInfoIsMutable();
+      public Builder addAllShortRentPeriod(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> values) {
+        if (shortRentPeriodBuilder_ == null) {
+          ensureShortRentPeriodIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, shortRentInfo_);
+              values, shortRentPeriod_);
           onChanged();
         } else {
-          shortRentInfoBuilder_.addAllMessages(values);
+          shortRentPeriodBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public Builder clearShortRentInfo() {
-        if (shortRentInfoBuilder_ == null) {
-          shortRentInfo_ = java.util.Collections.emptyList();
+      public Builder clearShortRentPeriod() {
+        if (shortRentPeriodBuilder_ == null) {
+          shortRentPeriod_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00800000);
           onChanged();
         } else {
-          shortRentInfoBuilder_.clear();
+          shortRentPeriodBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public Builder removeShortRentInfo(int index) {
-        if (shortRentInfoBuilder_ == null) {
-          ensureShortRentInfoIsMutable();
-          shortRentInfo_.remove(index);
+      public Builder removeShortRentPeriod(int index) {
+        if (shortRentPeriodBuilder_ == null) {
+          ensureShortRentPeriodIsMutable();
+          shortRentPeriod_.remove(index);
           onChanged();
         } else {
-          shortRentInfoBuilder_.remove(index);
+          shortRentPeriodBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder getShortRentInfoBuilder(
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder getShortRentPeriodBuilder(
           int index) {
-        return getShortRentInfoFieldBuilder().getBuilder(index);
+        return getShortRentPeriodFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder getShortRentInfoOrBuilder(
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder getShortRentPeriodOrBuilder(
           int index) {
-        if (shortRentInfoBuilder_ == null) {
-          return shortRentInfo_.get(index);  } else {
-          return shortRentInfoBuilder_.getMessageOrBuilder(index);
+        if (shortRentPeriodBuilder_ == null) {
+          return shortRentPeriod_.get(index);  } else {
+          return shortRentPeriodBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> 
-           getShortRentInfoOrBuilderList() {
-        if (shortRentInfoBuilder_ != null) {
-          return shortRentInfoBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> 
+           getShortRentPeriodOrBuilderList() {
+        if (shortRentPeriodBuilder_ != null) {
+          return shortRentPeriodBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(shortRentInfo_);
+          return java.util.Collections.unmodifiableList(shortRentPeriod_);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder addShortRentInfoBuilder() {
-        return getShortRentInfoFieldBuilder().addBuilder(
-            com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.getDefaultInstance());
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder addShortRentPeriodBuilder() {
+        return getShortRentPeriodFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder addShortRentInfoBuilder(
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder addShortRentPeriodBuilder(
           int index) {
-        return getShortRentInfoFieldBuilder().addBuilder(
-            index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.getDefaultInstance());
+        return getShortRentPeriodFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo shortRentInfo = 25;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo shortRentPeriod = 25;</code>
        *
        * <pre>
        *短租信息
        * </pre>
        */
-      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder> 
-           getShortRentInfoBuilderList() {
-        return getShortRentInfoFieldBuilder().getBuilderList();
+      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder> 
+           getShortRentPeriodBuilderList() {
+        return getShortRentPeriodFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> 
-          getShortRentInfoFieldBuilder() {
-        if (shortRentInfoBuilder_ == null) {
-          shortRentInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder>(
-                  shortRentInfo_,
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> 
+          getShortRentPeriodFieldBuilder() {
+        if (shortRentPeriodBuilder_ == null) {
+          shortRentPeriodBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder>(
+                  shortRentPeriod_,
                   ((bitField0_ & 0x00800000) == 0x00800000),
                   getParentForChildren(),
                   isClean());
-          shortRentInfo_ = null;
+          shortRentPeriod_ = null;
         }
-        return shortRentInfoBuilder_;
+        return shortRentPeriodBuilder_;
       }
 
-      private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> longRentInfo_ =
+      private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> longRentPeriod_ =
         java.util.Collections.emptyList();
-      private void ensureLongRentInfoIsMutable() {
+      private void ensureLongRentPeriodIsMutable() {
         if (!((bitField0_ & 0x01000000) == 0x01000000)) {
-          longRentInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo>(longRentInfo_);
+          longRentPeriod_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo>(longRentPeriod_);
           bitField0_ |= 0x01000000;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> longRentInfoBuilder_;
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> longRentPeriodBuilder_;
 
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> getLongRentInfoList() {
-        if (longRentInfoBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(longRentInfo_);
+      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> getLongRentPeriodList() {
+        if (longRentPeriodBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(longRentPeriod_);
         } else {
-          return longRentInfoBuilder_.getMessageList();
+          return longRentPeriodBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public int getLongRentInfoCount() {
-        if (longRentInfoBuilder_ == null) {
-          return longRentInfo_.size();
+      public int getLongRentPeriodCount() {
+        if (longRentPeriodBuilder_ == null) {
+          return longRentPeriod_.size();
         } else {
-          return longRentInfoBuilder_.getCount();
+          return longRentPeriodBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo getLongRentInfo(int index) {
-        if (longRentInfoBuilder_ == null) {
-          return longRentInfo_.get(index);
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo getLongRentPeriod(int index) {
+        if (longRentPeriodBuilder_ == null) {
+          return longRentPeriod_.get(index);
         } else {
-          return longRentInfoBuilder_.getMessage(index);
+          return longRentPeriodBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public Builder setLongRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo value) {
-        if (longRentInfoBuilder_ == null) {
+      public Builder setLongRentPeriod(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo value) {
+        if (longRentPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureLongRentInfoIsMutable();
-          longRentInfo_.set(index, value);
+          ensureLongRentPeriodIsMutable();
+          longRentPeriod_.set(index, value);
           onChanged();
         } else {
-          longRentInfoBuilder_.setMessage(index, value);
+          longRentPeriodBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public Builder setLongRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder builderForValue) {
-        if (longRentInfoBuilder_ == null) {
-          ensureLongRentInfoIsMutable();
-          longRentInfo_.set(index, builderForValue.build());
+      public Builder setLongRentPeriod(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder builderForValue) {
+        if (longRentPeriodBuilder_ == null) {
+          ensureLongRentPeriodIsMutable();
+          longRentPeriod_.set(index, builderForValue.build());
           onChanged();
         } else {
-          longRentInfoBuilder_.setMessage(index, builderForValue.build());
+          longRentPeriodBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public Builder addLongRentInfo(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo value) {
-        if (longRentInfoBuilder_ == null) {
+      public Builder addLongRentPeriod(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo value) {
+        if (longRentPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureLongRentInfoIsMutable();
-          longRentInfo_.add(value);
+          ensureLongRentPeriodIsMutable();
+          longRentPeriod_.add(value);
           onChanged();
         } else {
-          longRentInfoBuilder_.addMessage(value);
+          longRentPeriodBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public Builder addLongRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo value) {
-        if (longRentInfoBuilder_ == null) {
+      public Builder addLongRentPeriod(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo value) {
+        if (longRentPeriodBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureLongRentInfoIsMutable();
-          longRentInfo_.add(index, value);
+          ensureLongRentPeriodIsMutable();
+          longRentPeriod_.add(index, value);
           onChanged();
         } else {
-          longRentInfoBuilder_.addMessage(index, value);
+          longRentPeriodBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public Builder addLongRentInfo(
-          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder builderForValue) {
-        if (longRentInfoBuilder_ == null) {
-          ensureLongRentInfoIsMutable();
-          longRentInfo_.add(builderForValue.build());
+      public Builder addLongRentPeriod(
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder builderForValue) {
+        if (longRentPeriodBuilder_ == null) {
+          ensureLongRentPeriodIsMutable();
+          longRentPeriod_.add(builderForValue.build());
           onChanged();
         } else {
-          longRentInfoBuilder_.addMessage(builderForValue.build());
+          longRentPeriodBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public Builder addLongRentInfo(
-          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder builderForValue) {
-        if (longRentInfoBuilder_ == null) {
-          ensureLongRentInfoIsMutable();
-          longRentInfo_.add(index, builderForValue.build());
+      public Builder addLongRentPeriod(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder builderForValue) {
+        if (longRentPeriodBuilder_ == null) {
+          ensureLongRentPeriodIsMutable();
+          longRentPeriod_.add(index, builderForValue.build());
           onChanged();
         } else {
-          longRentInfoBuilder_.addMessage(index, builderForValue.build());
+          longRentPeriodBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public Builder addAllLongRentInfo(
-          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo> values) {
-        if (longRentInfoBuilder_ == null) {
-          ensureLongRentInfoIsMutable();
+      public Builder addAllLongRentPeriod(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo> values) {
+        if (longRentPeriodBuilder_ == null) {
+          ensureLongRentPeriodIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, longRentInfo_);
+              values, longRentPeriod_);
           onChanged();
         } else {
-          longRentInfoBuilder_.addAllMessages(values);
+          longRentPeriodBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public Builder clearLongRentInfo() {
-        if (longRentInfoBuilder_ == null) {
-          longRentInfo_ = java.util.Collections.emptyList();
+      public Builder clearLongRentPeriod() {
+        if (longRentPeriodBuilder_ == null) {
+          longRentPeriod_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x01000000);
           onChanged();
         } else {
-          longRentInfoBuilder_.clear();
+          longRentPeriodBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public Builder removeLongRentInfo(int index) {
-        if (longRentInfoBuilder_ == null) {
-          ensureLongRentInfoIsMutable();
-          longRentInfo_.remove(index);
+      public Builder removeLongRentPeriod(int index) {
+        if (longRentPeriodBuilder_ == null) {
+          ensureLongRentPeriodIsMutable();
+          longRentPeriod_.remove(index);
           onChanged();
         } else {
-          longRentInfoBuilder_.remove(index);
+          longRentPeriodBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder getLongRentInfoBuilder(
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder getLongRentPeriodBuilder(
           int index) {
-        return getLongRentInfoFieldBuilder().getBuilder(index);
+        return getLongRentPeriodFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder getLongRentInfoOrBuilder(
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder getLongRentPeriodOrBuilder(
           int index) {
-        if (longRentInfoBuilder_ == null) {
-          return longRentInfo_.get(index);  } else {
-          return longRentInfoBuilder_.getMessageOrBuilder(index);
+        if (longRentPeriodBuilder_ == null) {
+          return longRentPeriod_.get(index);  } else {
+          return longRentPeriodBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> 
-           getLongRentInfoOrBuilderList() {
-        if (longRentInfoBuilder_ != null) {
-          return longRentInfoBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> 
+           getLongRentPeriodOrBuilderList() {
+        if (longRentPeriodBuilder_ != null) {
+          return longRentPeriodBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(longRentInfo_);
+          return java.util.Collections.unmodifiableList(longRentPeriod_);
         }
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder addLongRentInfoBuilder() {
-        return getLongRentInfoFieldBuilder().addBuilder(
-            com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.getDefaultInstance());
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder addLongRentPeriodBuilder() {
+        return getLongRentPeriodFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder addLongRentInfoBuilder(
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder addLongRentPeriodBuilder(
           int index) {
-        return getLongRentInfoFieldBuilder().addBuilder(
-            index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.getDefaultInstance());
+        return getLongRentPeriodFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentInfo longRentInfo = 26;</code>
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo longRentPeriod = 26;</code>
        *
        * <pre>
        *长租信息
        * </pre>
        */
-      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder> 
-           getLongRentInfoBuilderList() {
-        return getLongRentInfoFieldBuilder().getBuilderList();
+      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder> 
+           getLongRentPeriodBuilderList() {
+        return getLongRentPeriodFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder> 
-          getLongRentInfoFieldBuilder() {
-        if (longRentInfoBuilder_ == null) {
-          longRentInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder>(
-                  longRentInfo_,
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder> 
+          getLongRentPeriodFieldBuilder() {
+        if (longRentPeriodBuilder_ == null) {
+          longRentPeriodBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder>(
+                  longRentPeriod_,
                   ((bitField0_ & 0x01000000) == 0x01000000),
                   getParentForChildren(),
                   isClean());
-          longRentInfo_ = null;
+          longRentPeriod_ = null;
         }
-        return longRentInfoBuilder_;
+        return longRentPeriodBuilder_;
+      }
+
+      private java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo> groupRentAmountInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureGroupRentAmountInfoIsMutable() {
+        if (!((bitField0_ & 0x02000000) == 0x02000000)) {
+          groupRentAmountInfo_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo>(groupRentAmountInfo_);
+          bitField0_ |= 0x02000000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder> groupRentAmountInfoBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo> getGroupRentAmountInfoList() {
+        if (groupRentAmountInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(groupRentAmountInfo_);
+        } else {
+          return groupRentAmountInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public int getGroupRentAmountInfoCount() {
+        if (groupRentAmountInfoBuilder_ == null) {
+          return groupRentAmountInfo_.size();
+        } else {
+          return groupRentAmountInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo getGroupRentAmountInfo(int index) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          return groupRentAmountInfo_.get(index);
+        } else {
+          return groupRentAmountInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public Builder setGroupRentAmountInfo(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo value) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGroupRentAmountInfoIsMutable();
+          groupRentAmountInfo_.set(index, value);
+          onChanged();
+        } else {
+          groupRentAmountInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public Builder setGroupRentAmountInfo(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder builderForValue) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          ensureGroupRentAmountInfoIsMutable();
+          groupRentAmountInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          groupRentAmountInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public Builder addGroupRentAmountInfo(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo value) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGroupRentAmountInfoIsMutable();
+          groupRentAmountInfo_.add(value);
+          onChanged();
+        } else {
+          groupRentAmountInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public Builder addGroupRentAmountInfo(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo value) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGroupRentAmountInfoIsMutable();
+          groupRentAmountInfo_.add(index, value);
+          onChanged();
+        } else {
+          groupRentAmountInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public Builder addGroupRentAmountInfo(
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder builderForValue) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          ensureGroupRentAmountInfoIsMutable();
+          groupRentAmountInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          groupRentAmountInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public Builder addGroupRentAmountInfo(
+          int index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder builderForValue) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          ensureGroupRentAmountInfoIsMutable();
+          groupRentAmountInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          groupRentAmountInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public Builder addAllGroupRentAmountInfo(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo> values) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          ensureGroupRentAmountInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, groupRentAmountInfo_);
+          onChanged();
+        } else {
+          groupRentAmountInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public Builder clearGroupRentAmountInfo() {
+        if (groupRentAmountInfoBuilder_ == null) {
+          groupRentAmountInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x02000000);
+          onChanged();
+        } else {
+          groupRentAmountInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public Builder removeGroupRentAmountInfo(int index) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          ensureGroupRentAmountInfoIsMutable();
+          groupRentAmountInfo_.remove(index);
+          onChanged();
+        } else {
+          groupRentAmountInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder getGroupRentAmountInfoBuilder(
+          int index) {
+        return getGroupRentAmountInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder getGroupRentAmountInfoOrBuilder(
+          int index) {
+        if (groupRentAmountInfoBuilder_ == null) {
+          return groupRentAmountInfo_.get(index);  } else {
+          return groupRentAmountInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder> 
+           getGroupRentAmountInfoOrBuilderList() {
+        if (groupRentAmountInfoBuilder_ != null) {
+          return groupRentAmountInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(groupRentAmountInfo_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder addGroupRentAmountInfoBuilder() {
+        return getGroupRentAmountInfoFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder addGroupRentAmountInfoBuilder(
+          int index) {
+        return getGroupRentAmountInfoFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo groupRentAmountInfo = 27;</code>
+       *
+       * <pre>
+       *租金信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder> 
+           getGroupRentAmountInfoBuilderList() {
+        return getGroupRentAmountInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder> 
+          getGroupRentAmountInfoFieldBuilder() {
+        if (groupRentAmountInfoBuilder_ == null) {
+          groupRentAmountInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder>(
+                  groupRentAmountInfo_,
+                  ((bitField0_ & 0x02000000) == 0x02000000),
+                  getParentForChildren(),
+                  isClean());
+          groupRentAmountInfo_ = null;
+        }
+        return groupRentAmountInfoBuilder_;
       }
 
       private com.google.protobuf.LazyStringList imageUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureImageUrlIsMutable() {
-        if (!((bitField0_ & 0x02000000) == 0x02000000)) {
+        if (!((bitField0_ & 0x04000000) == 0x04000000)) {
           imageUrl_ = new com.google.protobuf.LazyStringArrayList(imageUrl_);
-          bitField0_ |= 0x02000000;
+          bitField0_ |= 0x04000000;
          }
       }
       /**
-       * <code>repeated string imageUrl = 27;</code>
+       * <code>repeated string imageUrl = 28;</code>
        *
        * <pre>
        *图片地址
@@ -12545,7 +13029,7 @@ public final class GroupProduct {
         return imageUrl_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string imageUrl = 27;</code>
+       * <code>repeated string imageUrl = 28;</code>
        *
        * <pre>
        *图片地址
@@ -12555,7 +13039,7 @@ public final class GroupProduct {
         return imageUrl_.size();
       }
       /**
-       * <code>repeated string imageUrl = 27;</code>
+       * <code>repeated string imageUrl = 28;</code>
        *
        * <pre>
        *图片地址
@@ -12565,7 +13049,7 @@ public final class GroupProduct {
         return imageUrl_.get(index);
       }
       /**
-       * <code>repeated string imageUrl = 27;</code>
+       * <code>repeated string imageUrl = 28;</code>
        *
        * <pre>
        *图片地址
@@ -12576,7 +13060,7 @@ public final class GroupProduct {
         return imageUrl_.getByteString(index);
       }
       /**
-       * <code>repeated string imageUrl = 27;</code>
+       * <code>repeated string imageUrl = 28;</code>
        *
        * <pre>
        *图片地址
@@ -12593,7 +13077,7 @@ public final class GroupProduct {
         return this;
       }
       /**
-       * <code>repeated string imageUrl = 27;</code>
+       * <code>repeated string imageUrl = 28;</code>
        *
        * <pre>
        *图片地址
@@ -12610,7 +13094,7 @@ public final class GroupProduct {
         return this;
       }
       /**
-       * <code>repeated string imageUrl = 27;</code>
+       * <code>repeated string imageUrl = 28;</code>
        *
        * <pre>
        *图片地址
@@ -12625,7 +13109,7 @@ public final class GroupProduct {
         return this;
       }
       /**
-       * <code>repeated string imageUrl = 27;</code>
+       * <code>repeated string imageUrl = 28;</code>
        *
        * <pre>
        *图片地址
@@ -12633,12 +13117,12 @@ public final class GroupProduct {
        */
       public Builder clearImageUrl() {
         imageUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string imageUrl = 27;</code>
+       * <code>repeated string imageUrl = 28;</code>
        *
        * <pre>
        *图片地址
@@ -13860,8 +14344,8 @@ public final class GroupProduct {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GroupProductCategory)
   }
 
-  public interface GroupRentInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GroupRentInfo)
+  public interface GroupRentPeriodInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -13941,99 +14425,31 @@ public final class GroupProduct {
      */
     com.google.protobuf.ByteString
         getRentPeriodNameBytes();
-
-    /**
-     * <code>required double rentAmountPerDay = 4;</code>
-     *
-     * <pre>
-     *折算后的单天价，单位 元/天
-     * </pre>
-     */
-    boolean hasRentAmountPerDay();
-    /**
-     * <code>required double rentAmountPerDay = 4;</code>
-     *
-     * <pre>
-     *折算后的单天价，单位 元/天
-     * </pre>
-     */
-    double getRentAmountPerDay();
-
-    /**
-     * <code>optional double rentAmountPerMonth = 5;</code>
-     *
-     * <pre>
-     *折算后的单月租金价，单位 元/月
-     * </pre>
-     */
-    boolean hasRentAmountPerMonth();
-    /**
-     * <code>optional double rentAmountPerMonth = 5;</code>
-     *
-     * <pre>
-     *折算后的单月租金价，单位 元/月
-     * </pre>
-     */
-    double getRentAmountPerMonth();
-
-    /**
-     * <code>required double totalRentAmount = 6;</code>
-     *
-     * <pre>
-     *该周期内总价（优惠后）
-     * </pre>
-     */
-    boolean hasTotalRentAmount();
-    /**
-     * <code>required double totalRentAmount = 6;</code>
-     *
-     * <pre>
-     *该周期内总价（优惠后）
-     * </pre>
-     */
-    double getTotalRentAmount();
-
-    /**
-     * <code>required double originalRentAmount = 7;</code>
-     *
-     * <pre>
-     *原始租金（优惠前）
-     * </pre>
-     */
-    boolean hasOriginalRentAmount();
-    /**
-     * <code>required double originalRentAmount = 7;</code>
-     *
-     * <pre>
-     *原始租金（优惠前）
-     * </pre>
-     */
-    double getOriginalRentAmount();
   }
   /**
-   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupRentInfo}
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo}
    *
    * <pre>
    *抱团租期信息
    * </pre>
    */
-  public static final class GroupRentInfo extends
+  public static final class GroupRentPeriodInfo extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GroupRentInfo)
-      GroupRentInfoOrBuilder {
-    // Use GroupRentInfo.newBuilder() to construct.
-    private GroupRentInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo)
+      GroupRentPeriodInfoOrBuilder {
+    // Use GroupRentPeriodInfo.newBuilder() to construct.
+    private GroupRentPeriodInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private GroupRentInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private GroupRentPeriodInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final GroupRentInfo defaultInstance;
-    public static GroupRentInfo getDefaultInstance() {
+    private static final GroupRentPeriodInfo defaultInstance;
+    public static GroupRentPeriodInfo getDefaultInstance() {
       return defaultInstance;
     }
 
-    public GroupRentInfo getDefaultInstanceForType() {
+    public GroupRentPeriodInfo getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -14043,7 +14459,7 @@ public final class GroupProduct {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private GroupRentInfo(
+    private GroupRentPeriodInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -14084,26 +14500,6 @@ public final class GroupProduct {
               rentPeriodName_ = bs;
               break;
             }
-            case 33: {
-              bitField0_ |= 0x00000008;
-              rentAmountPerDay_ = input.readDouble();
-              break;
-            }
-            case 41: {
-              bitField0_ |= 0x00000010;
-              rentAmountPerMonth_ = input.readDouble();
-              break;
-            }
-            case 49: {
-              bitField0_ |= 0x00000020;
-              totalRentAmount_ = input.readDouble();
-              break;
-            }
-            case 57: {
-              bitField0_ |= 0x00000040;
-              originalRentAmount_ = input.readDouble();
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -14118,28 +14514,28 @@ public final class GroupProduct {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_descriptor;
+      return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_fieldAccessorTable
+      return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.class, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder.class);
+              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.class, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<GroupRentInfo> PARSER =
-        new com.google.protobuf.AbstractParser<GroupRentInfo>() {
-      public GroupRentInfo parsePartialFrom(
+    public static com.google.protobuf.Parser<GroupRentPeriodInfo> PARSER =
+        new com.google.protobuf.AbstractParser<GroupRentPeriodInfo>() {
+      public GroupRentPeriodInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GroupRentInfo(input, extensionRegistry);
+        return new GroupRentPeriodInfo(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GroupRentInfo> getParserForType() {
+    public com.google.protobuf.Parser<GroupRentPeriodInfo> getParserForType() {
       return PARSER;
     }
 
@@ -14306,106 +14702,10 @@ public final class GroupProduct {
       }
     }
 
-    public static final int RENTAMOUNTPERDAY_FIELD_NUMBER = 4;
-    private double rentAmountPerDay_;
-    /**
-     * <code>required double rentAmountPerDay = 4;</code>
-     *
-     * <pre>
-     *折算后的单天价，单位 元/天
-     * </pre>
-     */
-    public boolean hasRentAmountPerDay() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>required double rentAmountPerDay = 4;</code>
-     *
-     * <pre>
-     *折算后的单天价，单位 元/天
-     * </pre>
-     */
-    public double getRentAmountPerDay() {
-      return rentAmountPerDay_;
-    }
-
-    public static final int RENTAMOUNTPERMONTH_FIELD_NUMBER = 5;
-    private double rentAmountPerMonth_;
-    /**
-     * <code>optional double rentAmountPerMonth = 5;</code>
-     *
-     * <pre>
-     *折算后的单月租金价，单位 元/月
-     * </pre>
-     */
-    public boolean hasRentAmountPerMonth() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional double rentAmountPerMonth = 5;</code>
-     *
-     * <pre>
-     *折算后的单月租金价，单位 元/月
-     * </pre>
-     */
-    public double getRentAmountPerMonth() {
-      return rentAmountPerMonth_;
-    }
-
-    public static final int TOTALRENTAMOUNT_FIELD_NUMBER = 6;
-    private double totalRentAmount_;
-    /**
-     * <code>required double totalRentAmount = 6;</code>
-     *
-     * <pre>
-     *该周期内总价（优惠后）
-     * </pre>
-     */
-    public boolean hasTotalRentAmount() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>required double totalRentAmount = 6;</code>
-     *
-     * <pre>
-     *该周期内总价（优惠后）
-     * </pre>
-     */
-    public double getTotalRentAmount() {
-      return totalRentAmount_;
-    }
-
-    public static final int ORIGINALRENTAMOUNT_FIELD_NUMBER = 7;
-    private double originalRentAmount_;
-    /**
-     * <code>required double originalRentAmount = 7;</code>
-     *
-     * <pre>
-     *原始租金（优惠前）
-     * </pre>
-     */
-    public boolean hasOriginalRentAmount() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>required double originalRentAmount = 7;</code>
-     *
-     * <pre>
-     *原始租金（优惠前）
-     * </pre>
-     */
-    public double getOriginalRentAmount() {
-      return originalRentAmount_;
-    }
-
     private void initFields() {
       rentCode_ = "";
       rentPeriod_ = "";
       rentPeriodName_ = "";
-      rentAmountPerDay_ = 0D;
-      rentAmountPerMonth_ = 0D;
-      totalRentAmount_ = 0D;
-      originalRentAmount_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -14425,18 +14725,6 @@ public final class GroupProduct {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasRentAmountPerDay()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTotalRentAmount()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOriginalRentAmount()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -14452,18 +14740,6 @@ public final class GroupProduct {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getRentPeriodNameBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeDouble(4, rentAmountPerDay_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeDouble(5, rentAmountPerMonth_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeDouble(6, totalRentAmount_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeDouble(7, originalRentAmount_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -14486,22 +14762,6 @@ public final class GroupProduct {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, getRentPeriodNameBytes());
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, rentAmountPerDay_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, rentAmountPerMonth_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, totalRentAmount_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, originalRentAmount_);
-      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -14514,53 +14774,53 @@ public final class GroupProduct {
       return super.writeReplace();
     }
 
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseFrom(byte[] data)
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseDelimitedFrom(
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parseFrom(
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -14569,7 +14829,7 @@ public final class GroupProduct {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo prototype) {
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -14581,7 +14841,7 @@ public final class GroupProduct {
       return builder;
     }
     /**
-     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupRentInfo}
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo}
      *
      * <pre>
      *抱团租期信息
@@ -14589,21 +14849,21 @@ public final class GroupProduct {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GroupRentInfo)
-        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo)
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_descriptor;
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_fieldAccessorTable
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.class, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.Builder.class);
+                com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.class, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.Builder.class);
       }
 
-      // Construct using com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.newBuilder()
+      // Construct using com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -14629,14 +14889,6 @@ public final class GroupProduct {
         bitField0_ = (bitField0_ & ~0x00000002);
         rentPeriodName_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        rentAmountPerDay_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        rentAmountPerMonth_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        totalRentAmount_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        originalRentAmount_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -14646,23 +14898,23 @@ public final class GroupProduct {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_descriptor;
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_descriptor;
       }
 
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo getDefaultInstanceForType() {
-        return com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.getDefaultInstance();
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.getDefaultInstance();
       }
 
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo build() {
-        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo result = buildPartial();
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo build() {
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo buildPartial() {
-        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo result = new com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo(this);
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo buildPartial() {
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo result = new com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -14677,38 +14929,22 @@ public final class GroupProduct {
           to_bitField0_ |= 0x00000004;
         }
         result.rentPeriodName_ = rentPeriodName_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.rentAmountPerDay_ = rentAmountPerDay_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.rentAmountPerMonth_ = rentAmountPerMonth_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.totalRentAmount_ = totalRentAmount_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.originalRentAmount_ = originalRentAmount_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo) {
-          return mergeFrom((com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo)other);
+        if (other instanceof com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo other) {
-        if (other == com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo other) {
+        if (other == com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo.getDefaultInstance()) return this;
         if (other.hasRentCode()) {
           bitField0_ |= 0x00000001;
           rentCode_ = other.rentCode_;
@@ -14723,18 +14959,6 @@ public final class GroupProduct {
           bitField0_ |= 0x00000004;
           rentPeriodName_ = other.rentPeriodName_;
           onChanged();
-        }
-        if (other.hasRentAmountPerDay()) {
-          setRentAmountPerDay(other.getRentAmountPerDay());
-        }
-        if (other.hasRentAmountPerMonth()) {
-          setRentAmountPerMonth(other.getRentAmountPerMonth());
-        }
-        if (other.hasTotalRentAmount()) {
-          setTotalRentAmount(other.getTotalRentAmount());
-        }
-        if (other.hasOriginalRentAmount()) {
-          setOriginalRentAmount(other.getOriginalRentAmount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -14753,18 +14977,6 @@ public final class GroupProduct {
           
           return false;
         }
-        if (!hasRentAmountPerDay()) {
-          
-          return false;
-        }
-        if (!hasTotalRentAmount()) {
-          
-          return false;
-        }
-        if (!hasOriginalRentAmount()) {
-          
-          return false;
-        }
         return true;
       }
 
@@ -14772,11 +14984,11 @@ public final class GroupProduct {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo parsedMessage = null;
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentPeriodInfo) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -15087,19 +15299,831 @@ public final class GroupProduct {
         return this;
       }
 
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo)
+    }
+
+    static {
+      defaultInstance = new GroupRentPeriodInfo(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GroupRentPeriodInfo)
+  }
+
+  public interface GroupRentAmountInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string codeKey = 1;</code>
+     *
+     * <pre>
+     *codeKey （categoryCode_rentCode）
+     * </pre>
+     */
+    boolean hasCodeKey();
+    /**
+     * <code>required string codeKey = 1;</code>
+     *
+     * <pre>
+     *codeKey （categoryCode_rentCode）
+     * </pre>
+     */
+    java.lang.String getCodeKey();
+    /**
+     * <code>required string codeKey = 1;</code>
+     *
+     * <pre>
+     *codeKey （categoryCode_rentCode）
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCodeKeyBytes();
+
+    /**
+     * <code>required double rentAmountPerDay = 2;</code>
+     *
+     * <pre>
+     *折算后的单天价，单位 元/天
+     * </pre>
+     */
+    boolean hasRentAmountPerDay();
+    /**
+     * <code>required double rentAmountPerDay = 2;</code>
+     *
+     * <pre>
+     *折算后的单天价，单位 元/天
+     * </pre>
+     */
+    double getRentAmountPerDay();
+
+    /**
+     * <code>optional double rentAmountPerMonth = 3;</code>
+     *
+     * <pre>
+     *折算后的单月租金价，单位 元/月
+     * </pre>
+     */
+    boolean hasRentAmountPerMonth();
+    /**
+     * <code>optional double rentAmountPerMonth = 3;</code>
+     *
+     * <pre>
+     *折算后的单月租金价，单位 元/月
+     * </pre>
+     */
+    double getRentAmountPerMonth();
+
+    /**
+     * <code>required double totalRentAmount = 4;</code>
+     *
+     * <pre>
+     *该周期内总价（优惠后）
+     * </pre>
+     */
+    boolean hasTotalRentAmount();
+    /**
+     * <code>required double totalRentAmount = 4;</code>
+     *
+     * <pre>
+     *该周期内总价（优惠后）
+     * </pre>
+     */
+    double getTotalRentAmount();
+
+    /**
+     * <code>required double originalRentAmount = 5;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    boolean hasOriginalRentAmount();
+    /**
+     * <code>required double originalRentAmount = 5;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    double getOriginalRentAmount();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo}
+   *
+   * <pre>
+   *租金信息，根据categoryCode,rentCode组合条件确定租金的信息
+   * </pre>
+   */
+  public static final class GroupRentAmountInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo)
+      GroupRentAmountInfoOrBuilder {
+    // Use GroupRentAmountInfo.newBuilder() to construct.
+    private GroupRentAmountInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private GroupRentAmountInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final GroupRentAmountInfo defaultInstance;
+    public static GroupRentAmountInfo getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public GroupRentAmountInfo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GroupRentAmountInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              codeKey_ = bs;
+              break;
+            }
+            case 17: {
+              bitField0_ |= 0x00000002;
+              rentAmountPerDay_ = input.readDouble();
+              break;
+            }
+            case 25: {
+              bitField0_ |= 0x00000004;
+              rentAmountPerMonth_ = input.readDouble();
+              break;
+            }
+            case 33: {
+              bitField0_ |= 0x00000008;
+              totalRentAmount_ = input.readDouble();
+              break;
+            }
+            case 41: {
+              bitField0_ |= 0x00000010;
+              originalRentAmount_ = input.readDouble();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.class, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<GroupRentAmountInfo> PARSER =
+        new com.google.protobuf.AbstractParser<GroupRentAmountInfo>() {
+      public GroupRentAmountInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GroupRentAmountInfo(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GroupRentAmountInfo> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int CODEKEY_FIELD_NUMBER = 1;
+    private java.lang.Object codeKey_;
+    /**
+     * <code>required string codeKey = 1;</code>
+     *
+     * <pre>
+     *codeKey （categoryCode_rentCode）
+     * </pre>
+     */
+    public boolean hasCodeKey() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string codeKey = 1;</code>
+     *
+     * <pre>
+     *codeKey （categoryCode_rentCode）
+     * </pre>
+     */
+    public java.lang.String getCodeKey() {
+      java.lang.Object ref = codeKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          codeKey_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string codeKey = 1;</code>
+     *
+     * <pre>
+     *codeKey （categoryCode_rentCode）
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCodeKeyBytes() {
+      java.lang.Object ref = codeKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        codeKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RENTAMOUNTPERDAY_FIELD_NUMBER = 2;
+    private double rentAmountPerDay_;
+    /**
+     * <code>required double rentAmountPerDay = 2;</code>
+     *
+     * <pre>
+     *折算后的单天价，单位 元/天
+     * </pre>
+     */
+    public boolean hasRentAmountPerDay() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required double rentAmountPerDay = 2;</code>
+     *
+     * <pre>
+     *折算后的单天价，单位 元/天
+     * </pre>
+     */
+    public double getRentAmountPerDay() {
+      return rentAmountPerDay_;
+    }
+
+    public static final int RENTAMOUNTPERMONTH_FIELD_NUMBER = 3;
+    private double rentAmountPerMonth_;
+    /**
+     * <code>optional double rentAmountPerMonth = 3;</code>
+     *
+     * <pre>
+     *折算后的单月租金价，单位 元/月
+     * </pre>
+     */
+    public boolean hasRentAmountPerMonth() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional double rentAmountPerMonth = 3;</code>
+     *
+     * <pre>
+     *折算后的单月租金价，单位 元/月
+     * </pre>
+     */
+    public double getRentAmountPerMonth() {
+      return rentAmountPerMonth_;
+    }
+
+    public static final int TOTALRENTAMOUNT_FIELD_NUMBER = 4;
+    private double totalRentAmount_;
+    /**
+     * <code>required double totalRentAmount = 4;</code>
+     *
+     * <pre>
+     *该周期内总价（优惠后）
+     * </pre>
+     */
+    public boolean hasTotalRentAmount() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required double totalRentAmount = 4;</code>
+     *
+     * <pre>
+     *该周期内总价（优惠后）
+     * </pre>
+     */
+    public double getTotalRentAmount() {
+      return totalRentAmount_;
+    }
+
+    public static final int ORIGINALRENTAMOUNT_FIELD_NUMBER = 5;
+    private double originalRentAmount_;
+    /**
+     * <code>required double originalRentAmount = 5;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    public boolean hasOriginalRentAmount() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required double originalRentAmount = 5;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    public double getOriginalRentAmount() {
+      return originalRentAmount_;
+    }
+
+    private void initFields() {
+      codeKey_ = "";
+      rentAmountPerDay_ = 0D;
+      rentAmountPerMonth_ = 0D;
+      totalRentAmount_ = 0D;
+      originalRentAmount_ = 0D;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasCodeKey()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRentAmountPerDay()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTotalRentAmount()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasOriginalRentAmount()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getCodeKeyBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeDouble(2, rentAmountPerDay_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeDouble(3, rentAmountPerMonth_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeDouble(4, totalRentAmount_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeDouble(5, originalRentAmount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getCodeKeyBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, rentAmountPerDay_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, rentAmountPerMonth_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, totalRentAmount_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, originalRentAmount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo}
+     *
+     * <pre>
+     *租金信息，根据categoryCode,rentCode组合条件确定租金的信息
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo)
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.class, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        codeKey_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rentAmountPerDay_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rentAmountPerMonth_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        totalRentAmount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        originalRentAmount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo build() {
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo buildPartial() {
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo result = new com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.codeKey_ = codeKey_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.rentAmountPerDay_ = rentAmountPerDay_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.rentAmountPerMonth_ = rentAmountPerMonth_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.totalRentAmount_ = totalRentAmount_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.originalRentAmount_ = originalRentAmount_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo other) {
+        if (other == com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo.getDefaultInstance()) return this;
+        if (other.hasCodeKey()) {
+          bitField0_ |= 0x00000001;
+          codeKey_ = other.codeKey_;
+          onChanged();
+        }
+        if (other.hasRentAmountPerDay()) {
+          setRentAmountPerDay(other.getRentAmountPerDay());
+        }
+        if (other.hasRentAmountPerMonth()) {
+          setRentAmountPerMonth(other.getRentAmountPerMonth());
+        }
+        if (other.hasTotalRentAmount()) {
+          setTotalRentAmount(other.getTotalRentAmount());
+        }
+        if (other.hasOriginalRentAmount()) {
+          setOriginalRentAmount(other.getOriginalRentAmount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasCodeKey()) {
+          
+          return false;
+        }
+        if (!hasRentAmountPerDay()) {
+          
+          return false;
+        }
+        if (!hasTotalRentAmount()) {
+          
+          return false;
+        }
+        if (!hasOriginalRentAmount()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.GroupProduct.GroupRentAmountInfo) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object codeKey_ = "";
+      /**
+       * <code>required string codeKey = 1;</code>
+       *
+       * <pre>
+       *codeKey （categoryCode_rentCode）
+       * </pre>
+       */
+      public boolean hasCodeKey() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string codeKey = 1;</code>
+       *
+       * <pre>
+       *codeKey （categoryCode_rentCode）
+       * </pre>
+       */
+      public java.lang.String getCodeKey() {
+        java.lang.Object ref = codeKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            codeKey_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string codeKey = 1;</code>
+       *
+       * <pre>
+       *codeKey （categoryCode_rentCode）
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCodeKeyBytes() {
+        java.lang.Object ref = codeKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          codeKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string codeKey = 1;</code>
+       *
+       * <pre>
+       *codeKey （categoryCode_rentCode）
+       * </pre>
+       */
+      public Builder setCodeKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        codeKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string codeKey = 1;</code>
+       *
+       * <pre>
+       *codeKey （categoryCode_rentCode）
+       * </pre>
+       */
+      public Builder clearCodeKey() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        codeKey_ = getDefaultInstance().getCodeKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string codeKey = 1;</code>
+       *
+       * <pre>
+       *codeKey （categoryCode_rentCode）
+       * </pre>
+       */
+      public Builder setCodeKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        codeKey_ = value;
+        onChanged();
+        return this;
+      }
+
       private double rentAmountPerDay_ ;
       /**
-       * <code>required double rentAmountPerDay = 4;</code>
+       * <code>required double rentAmountPerDay = 2;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
       public boolean hasRentAmountPerDay() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required double rentAmountPerDay = 4;</code>
+       * <code>required double rentAmountPerDay = 2;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
@@ -15109,27 +16133,27 @@ public final class GroupProduct {
         return rentAmountPerDay_;
       }
       /**
-       * <code>required double rentAmountPerDay = 4;</code>
+       * <code>required double rentAmountPerDay = 2;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
       public Builder setRentAmountPerDay(double value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
         rentAmountPerDay_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double rentAmountPerDay = 4;</code>
+       * <code>required double rentAmountPerDay = 2;</code>
        *
        * <pre>
        *折算后的单天价，单位 元/天
        * </pre>
        */
       public Builder clearRentAmountPerDay() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         rentAmountPerDay_ = 0D;
         onChanged();
         return this;
@@ -15137,17 +16161,17 @@ public final class GroupProduct {
 
       private double rentAmountPerMonth_ ;
       /**
-       * <code>optional double rentAmountPerMonth = 5;</code>
+       * <code>optional double rentAmountPerMonth = 3;</code>
        *
        * <pre>
        *折算后的单月租金价，单位 元/月
        * </pre>
        */
       public boolean hasRentAmountPerMonth() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional double rentAmountPerMonth = 5;</code>
+       * <code>optional double rentAmountPerMonth = 3;</code>
        *
        * <pre>
        *折算后的单月租金价，单位 元/月
@@ -15157,27 +16181,27 @@ public final class GroupProduct {
         return rentAmountPerMonth_;
       }
       /**
-       * <code>optional double rentAmountPerMonth = 5;</code>
+       * <code>optional double rentAmountPerMonth = 3;</code>
        *
        * <pre>
        *折算后的单月租金价，单位 元/月
        * </pre>
        */
       public Builder setRentAmountPerMonth(double value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
         rentAmountPerMonth_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double rentAmountPerMonth = 5;</code>
+       * <code>optional double rentAmountPerMonth = 3;</code>
        *
        * <pre>
        *折算后的单月租金价，单位 元/月
        * </pre>
        */
       public Builder clearRentAmountPerMonth() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         rentAmountPerMonth_ = 0D;
         onChanged();
         return this;
@@ -15185,17 +16209,17 @@ public final class GroupProduct {
 
       private double totalRentAmount_ ;
       /**
-       * <code>required double totalRentAmount = 6;</code>
+       * <code>required double totalRentAmount = 4;</code>
        *
        * <pre>
        *该周期内总价（优惠后）
        * </pre>
        */
       public boolean hasTotalRentAmount() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required double totalRentAmount = 6;</code>
+       * <code>required double totalRentAmount = 4;</code>
        *
        * <pre>
        *该周期内总价（优惠后）
@@ -15205,27 +16229,27 @@ public final class GroupProduct {
         return totalRentAmount_;
       }
       /**
-       * <code>required double totalRentAmount = 6;</code>
+       * <code>required double totalRentAmount = 4;</code>
        *
        * <pre>
        *该周期内总价（优惠后）
        * </pre>
        */
       public Builder setTotalRentAmount(double value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000008;
         totalRentAmount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double totalRentAmount = 6;</code>
+       * <code>required double totalRentAmount = 4;</code>
        *
        * <pre>
        *该周期内总价（优惠后）
        * </pre>
        */
       public Builder clearTotalRentAmount() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000008);
         totalRentAmount_ = 0D;
         onChanged();
         return this;
@@ -15233,17 +16257,17 @@ public final class GroupProduct {
 
       private double originalRentAmount_ ;
       /**
-       * <code>required double originalRentAmount = 7;</code>
+       * <code>required double originalRentAmount = 5;</code>
        *
        * <pre>
        *原始租金（优惠前）
        * </pre>
        */
       public boolean hasOriginalRentAmount() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required double originalRentAmount = 7;</code>
+       * <code>required double originalRentAmount = 5;</code>
        *
        * <pre>
        *原始租金（优惠前）
@@ -15253,41 +16277,41 @@ public final class GroupProduct {
         return originalRentAmount_;
       }
       /**
-       * <code>required double originalRentAmount = 7;</code>
+       * <code>required double originalRentAmount = 5;</code>
        *
        * <pre>
        *原始租金（优惠前）
        * </pre>
        */
       public Builder setOriginalRentAmount(double value) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000010;
         originalRentAmount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required double originalRentAmount = 7;</code>
+       * <code>required double originalRentAmount = 5;</code>
        *
        * <pre>
        *原始租金（优惠前）
        * </pre>
        */
       public Builder clearOriginalRentAmount() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000010);
         originalRentAmount_ = 0D;
         onChanged();
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GroupRentInfo)
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo)
     }
 
     static {
-      defaultInstance = new GroupRentInfo(true);
+      defaultInstance = new GroupRentAmountInfo(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GroupRentInfo)
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GroupRentAmountInfo)
   }
 
   public interface GroupProductBaseParamOrBuilder extends
@@ -16292,10 +17316,15 @@ public final class GroupProduct {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_descriptor;
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_fieldAccessorTable;
+      internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductBaseParam_descriptor;
   private static
@@ -16332,7 +17361,7 @@ public final class GroupProduct {
       "pProductDetailResult\022\022\n\nresultCode\030\001 \002(\t",
       "\022\021\n\tresultMsg\030\002 \002(\t\022M\n\022groupProductDetai" +
       "l\030\003 \001(\01321.com.qjoy.basjoo.core.model.pb." +
-      "GroupProductDetail\"\345\005\n\022GroupProductDetai" +
+      "GroupProductDetail\"\306\006\n\022GroupProductDetai" +
       "l\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productType\030\002 \002(" +
       "\t\022\021\n\tpromoType\030\003 \002(\005\022\r\n\005brand\030\004 \002(\t\022\024\n\014m" +
       "ainImageUrl\030\005 \002(\t\022\026\n\016bannerImageUrl\030\006 \001(" +
@@ -16347,21 +17376,25 @@ public final class GroupProduct {
       "\010discount\030\025 \001(\001\022\017\n\007applyed\030\026 \001(\010\022\022\n\nappl" +
       "yCount\030\027 \001(\003\022I\n\014categoryInfo\030\030 \003(\01323.com" +
       ".qjoy.basjoo.core.model.pb.GroupProductC" +
-      "ategory\022C\n\rshortRentInfo\030\031 \003(\0132,.com.qjo" +
-      "y.basjoo.core.model.pb.GroupRentInfo\022B\n\014" +
-      "longRentInfo\030\032 \003(\0132,.com.qjoy.basjoo.cor",
-      "e.model.pb.GroupRentInfo\022\020\n\010imageUrl\030\033 \003" +
-      "(\t\"\204\001\n\024GroupProductCategory\022\024\n\014categoryC" +
-      "ode\030\001 \002(\t\022\024\n\014categoryName\030\002 \002(\t\022\026\n\016categ" +
-      "oryImgUrl\030\003 \001(\t\022\022\n\nstockCount\030\004 \002(\005\022\024\n\014p" +
-      "ledgeAmount\030\005 \002(\001\"\270\001\n\rGroupRentInfo\022\020\n\010r" +
-      "entCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\026\n\016ren" +
-      "tPeriodName\030\003 \002(\t\022\030\n\020rentAmountPerDay\030\004 " +
-      "\002(\001\022\032\n\022rentAmountPerMonth\030\005 \001(\001\022\027\n\017total" +
-      "RentAmount\030\006 \002(\001\022\032\n\022originalRentAmount\030\007" +
-      " \002(\001\"I\n\025GroupProductBaseParam\022\014\n\004code\030\001 ",
-      "\002(\t\022\017\n\007showKey\030\002 \002(\t\022\021\n\tshowValue\030\003 \002(\tB" +
-      "\037\n\035com.qjoy.basjoo.core.model.pb"
+      "ategory\022K\n\017shortRentPeriod\030\031 \003(\01322.com.q" +
+      "joy.basjoo.core.model.pb.GroupRentPeriod" +
+      "Info\022J\n\016longRentPeriod\030\032 \003(\01322.com.qjoy.",
+      "basjoo.core.model.pb.GroupRentPeriodInfo" +
+      "\022O\n\023groupRentAmountInfo\030\033 \003(\01322.com.qjoy" +
+      ".basjoo.core.model.pb.GroupRentAmountInf" +
+      "o\022\020\n\010imageUrl\030\034 \003(\t\"\204\001\n\024GroupProductCate" +
+      "gory\022\024\n\014categoryCode\030\001 \002(\t\022\024\n\014categoryNa" +
+      "me\030\002 \002(\t\022\026\n\016categoryImgUrl\030\003 \001(\t\022\022\n\nstoc" +
+      "kCount\030\004 \002(\005\022\024\n\014pledgeAmount\030\005 \002(\001\"S\n\023Gr" +
+      "oupRentPeriodInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nr" +
+      "entPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002(\t\"" +
+      "\221\001\n\023GroupRentAmountInfo\022\017\n\007codeKey\030\001 \002(\t",
+      "\022\030\n\020rentAmountPerDay\030\002 \002(\001\022\032\n\022rentAmount" +
+      "PerMonth\030\003 \001(\001\022\027\n\017totalRentAmount\030\004 \002(\001\022" +
+      "\032\n\022originalRentAmount\030\005 \002(\001\"I\n\025GroupProd" +
+      "uctBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030\002 " +
+      "\002(\t\022\021\n\tshowValue\030\003 \002(\tB\037\n\035com.qjoy.basjo" +
+      "o.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16410,21 +17443,27 @@ public final class GroupProduct {
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GroupProductDetail_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "PromoType", "Brand", "MainImageUrl", "BannerImageUrl", "Title", "Desc", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "MinGroupCount", "MarketPrice", "TransFee", "Location", "BaseParam", "ImageParamUrls", "EarnestAmount", "Discount", "Applyed", "ApplyCount", "CategoryInfo", "ShortRentInfo", "LongRentInfo", "ImageUrl", });
+        new java.lang.String[] { "ProductId", "ProductType", "PromoType", "Brand", "MainImageUrl", "BannerImageUrl", "Title", "Desc", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "MinGroupCount", "MarketPrice", "TransFee", "Location", "BaseParam", "ImageParamUrls", "EarnestAmount", "Discount", "Applyed", "ApplyCount", "CategoryInfo", "ShortRentPeriod", "LongRentPeriod", "GroupRentAmountInfo", "ImageUrl", });
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_descriptor,
         new java.lang.String[] { "CategoryCode", "CategoryName", "CategoryImgUrl", "StockCount", "PledgeAmount", });
-    internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_descriptor =
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_fieldAccessorTable = new
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_qjoy_basjoo_core_model_pb_GroupRentInfo_descriptor,
-        new java.lang.String[] { "RentCode", "RentPeriod", "RentPeriodName", "RentAmountPerDay", "RentAmountPerMonth", "TotalRentAmount", "OriginalRentAmount", });
-    internal_static_com_qjoy_basjoo_core_model_pb_GroupProductBaseParam_descriptor =
+        internal_static_com_qjoy_basjoo_core_model_pb_GroupRentPeriodInfo_descriptor,
+        new java.lang.String[] { "RentCode", "RentPeriod", "RentPeriodName", });
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_GroupRentAmountInfo_descriptor,
+        new java.lang.String[] { "CodeKey", "RentAmountPerDay", "RentAmountPerMonth", "TotalRentAmount", "OriginalRentAmount", });
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupProductBaseParam_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductBaseParam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GroupProductBaseParam_descriptor,

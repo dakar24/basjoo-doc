@@ -5,7 +5,6 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
-import static com.squareup.wire.Message.Datatype.INT64;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
@@ -16,12 +15,10 @@ public final class CategoryInfo extends Message {
 
   public static final int TAG_CATEGORYCODE = 1;
   public static final int TAG_CATEGORYNAME = 2;
-  public static final int TAG_STOCKCOUNT = 3;
-  public static final int TAG_CATEGORYIMGURL = 4;
+  public static final int TAG_CATEGORYIMGURL = 3;
 
   public static final String DEFAULT_CATEGORYCODE = "";
   public static final String DEFAULT_CATEGORYNAME = "";
-  public static final Long DEFAULT_STOCKCOUNT = 0L;
   public static final String DEFAULT_CATEGORYIMGURL = "";
 
   /**
@@ -37,15 +34,9 @@ public final class CategoryInfo extends Message {
   public String categoryName;
 
   /**
-   * 库存
-   */
-  @ProtoField(tag = 3, type = INT64)
-  public Long stockCount;
-
-  /**
    * 类目图片地址
    */
-  @ProtoField(tag = 4, type = STRING)
+  @ProtoField(tag = 3, type = STRING)
   public String categoryImgUrl;
 
   public CategoryInfo(CategoryInfo message) {
@@ -53,7 +44,6 @@ public final class CategoryInfo extends Message {
     if (message == null) return;
     this.categoryCode = message.categoryCode;
     this.categoryName = message.categoryName;
-    this.stockCount = message.stockCount;
     this.categoryImgUrl = message.categoryImgUrl;
   }
 
@@ -67,9 +57,6 @@ public final class CategoryInfo extends Message {
         break;
         case TAG_CATEGORYNAME:
         this.categoryName = (String)value;
-        break;
-        case TAG_STOCKCOUNT:
-        this.stockCount = (Long)value;
         break;
         case TAG_CATEGORYIMGURL:
         this.categoryImgUrl = (String)value;
@@ -86,7 +73,6 @@ public final class CategoryInfo extends Message {
     CategoryInfo o = (CategoryInfo) other;
     return equals(categoryCode, o.categoryCode)
         && equals(categoryName, o.categoryName)
-        && equals(stockCount, o.stockCount)
         && equals(categoryImgUrl, o.categoryImgUrl);
   }
 
@@ -96,7 +82,6 @@ public final class CategoryInfo extends Message {
     if (result == 0) {
       result = categoryCode != null ? categoryCode.hashCode() : 0;
       result = result * 37 + (categoryName != null ? categoryName.hashCode() : 0);
-      result = result * 37 + (stockCount != null ? stockCount.hashCode() : 0);
       result = result * 37 + (categoryImgUrl != null ? categoryImgUrl.hashCode() : 0);
       hashCode = result;
     }
