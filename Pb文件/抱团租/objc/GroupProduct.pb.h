@@ -10,6 +10,7 @@
 @class GroupProductCategory;
 @class GroupProductDetail;
 @class GroupProductLiteInfo;
+@class GroupProductReceiveAddress;
 @class GroupRentAmountInfo;
 @class GroupRentPeriodInfo;
 
@@ -108,6 +109,7 @@
 @property (readonly) BOOL hasDiscount;
 @property (readonly) BOOL hasApplyed;
 @property (readonly) BOOL hasApplyCount;
+@property (readonly) BOOL hasReceiveAddress;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic)SInt32 promoType;
@@ -126,7 +128,7 @@
 @property (nonatomic,strong) NSString* location;
 @property (nonatomic,strong) NSMutableArray * baseParam;
 @property (nonatomic,strong) NSMutableArray * imageParamUrls;
-@property (nonatomic,strong) NSString* earnestAmount;
+@property (nonatomic)Float64 earnestAmount;
 @property (nonatomic)Float64 discount;
 @property (nonatomic)BOOL applyed;
 @property (nonatomic)SInt64 applyCount;
@@ -135,6 +137,7 @@
 @property (nonatomic,strong) NSMutableArray * longRentPeriod;
 @property (nonatomic,strong) NSMutableArray * groupRentAmountInfo;
 @property (nonatomic,strong) NSMutableArray * imageUrl;
+@property (nonatomic,strong) GroupProductReceiveAddress* receiveAddress;
 @end
 
 @interface GroupProductCategory : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -179,5 +182,22 @@
 @property (nonatomic,strong) NSString* code;
 @property (nonatomic,strong) NSString* showKey;
 @property (nonatomic,strong) NSString* showValue;
+@end
+
+@interface GroupProductReceiveAddress : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasReceiver;
+@property (readonly) BOOL hasMobileNo;
+@property (readonly) BOOL hasSection;
+@property (readonly) BOOL hasStreet;
+@property (readonly) BOOL hasDetail;
+@property (readonly) BOOL hasPostCode;
+@property (readonly) BOOL hasAddressId;
+@property (nonatomic,strong) NSString* receiver;
+@property (nonatomic,strong) NSString* mobileNo;
+@property (nonatomic,strong) NSString* section;
+@property (nonatomic,strong) NSString* street;
+@property (nonatomic,strong) NSString* detail;
+@property (nonatomic,strong) NSString* postCode;
+@property (nonatomic,strong) NSString* addressId;
 @end
 

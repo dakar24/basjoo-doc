@@ -29,6 +29,7 @@ public final class ConfirmOrderRequest extends Message {
   public static final int TAG_USERMESSAGE = 9;
   public static final int TAG_PAYCHANNEL = 10;
   public static final int TAG_USERID = 11;
+  public static final int TAG_QUALITYCODE = 12;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_CATEGORYCODE = "";
@@ -41,6 +42,7 @@ public final class ConfirmOrderRequest extends Message {
   public static final String DEFAULT_USERMESSAGE = "";
   public static final Integer DEFAULT_PAYCHANNEL = 0;
   public static final String DEFAULT_USERID = "";
+  public static final String DEFAULT_QUALITYCODE = "";
 
   /**
    * 产品Id
@@ -108,6 +110,12 @@ public final class ConfirmOrderRequest extends Message {
   @ProtoField(tag = 11, type = STRING, label = REQUIRED)
   public String userId;
 
+  /**
+   * 选择成色编码
+   */
+  @ProtoField(tag = 12, type = STRING, label = REQUIRED)
+  public String qualityCode;
+
   public ConfirmOrderRequest(ConfirmOrderRequest message) {
     super(message);
     if (message == null) return;
@@ -122,6 +130,7 @@ public final class ConfirmOrderRequest extends Message {
     this.userMessage = message.userMessage;
     this.payChannel = message.payChannel;
     this.userId = message.userId;
+    this.qualityCode = message.qualityCode;
   }
 
   public ConfirmOrderRequest() {
@@ -162,6 +171,9 @@ public final class ConfirmOrderRequest extends Message {
         case TAG_USERID:
         this.userId = (String)value;
         break;
+        case TAG_QUALITYCODE:
+        this.qualityCode = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -182,7 +194,8 @@ public final class ConfirmOrderRequest extends Message {
         && equals(vouchers, o.vouchers)
         && equals(userMessage, o.userMessage)
         && equals(payChannel, o.payChannel)
-        && equals(userId, o.userId);
+        && equals(userId, o.userId)
+        && equals(qualityCode, o.qualityCode);
   }
 
   @Override
@@ -200,6 +213,7 @@ public final class ConfirmOrderRequest extends Message {
       result = result * 37 + (userMessage != null ? userMessage.hashCode() : 0);
       result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
       result = result * 37 + (userId != null ? userId.hashCode() : 0);
+      result = result * 37 + (qualityCode != null ? qualityCode.hashCode() : 0);
       hashCode = result;
     }
     return result;

@@ -8,6 +8,125 @@ public final class Order {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code com.qjoy.basjoo.core.model.pb.PayStatusQueryType}
+   *
+   * <pre>
+   *查询支付结果的查询类型
+   * </pre>
+   */
+  public enum PayStatusQueryType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>ORDER = 0;</code>
+     *
+     * <pre>
+     *普通的订单 
+     * </pre>
+     */
+    ORDER(0, 0),
+    /**
+     * <code>EARNEST = 1;</code>
+     *
+     * <pre>
+     *定金
+     * </pre>
+     */
+    EARNEST(1, 1),
+    /**
+     * <code>REMAIN = 2;</code>
+     *
+     * <pre>
+     *尾款
+     * </pre>
+     */
+    REMAIN(2, 2),
+    ;
+
+    /**
+     * <code>ORDER = 0;</code>
+     *
+     * <pre>
+     *普通的订单 
+     * </pre>
+     */
+    public static final int ORDER_VALUE = 0;
+    /**
+     * <code>EARNEST = 1;</code>
+     *
+     * <pre>
+     *定金
+     * </pre>
+     */
+    public static final int EARNEST_VALUE = 1;
+    /**
+     * <code>REMAIN = 2;</code>
+     *
+     * <pre>
+     *尾款
+     * </pre>
+     */
+    public static final int REMAIN_VALUE = 2;
+
+
+    public final int getNumber() { return value; }
+
+    public static PayStatusQueryType valueOf(int value) {
+      switch (value) {
+        case 0: return ORDER;
+        case 1: return EARNEST;
+        case 2: return REMAIN;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PayStatusQueryType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PayStatusQueryType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PayStatusQueryType>() {
+            public PayStatusQueryType findValueByNumber(int number) {
+              return PayStatusQueryType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PayStatusQueryType[] VALUES = values();
+
+    public static PayStatusQueryType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PayStatusQueryType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.qjoy.basjoo.core.model.pb.PayStatusQueryType)
+  }
+
   public interface CommitOrderRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.CommitOrderRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -227,6 +346,32 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getVouchersBytes(int index);
+
+    /**
+     * <code>required string qualityCode = 10;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    boolean hasQualityCode();
+    /**
+     * <code>required string qualityCode = 10;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    java.lang.String getQualityCode();
+    /**
+     * <code>required string qualityCode = 10;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getQualityCodeBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CommitOrderRequest}
@@ -336,6 +481,12 @@ public final class Order {
                 mutable_bitField0_ |= 0x00000100;
               }
               vouchers_.add(bs);
+              break;
+            }
+            case 82: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000100;
+              qualityCode_ = bs;
               break;
             }
           }
@@ -765,6 +916,60 @@ public final class Order {
       return vouchers_.getByteString(index);
     }
 
+    public static final int QUALITYCODE_FIELD_NUMBER = 10;
+    private java.lang.Object qualityCode_;
+    /**
+     * <code>required string qualityCode = 10;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public boolean hasQualityCode() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>required string qualityCode = 10;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public java.lang.String getQualityCode() {
+      java.lang.Object ref = qualityCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          qualityCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string qualityCode = 10;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getQualityCodeBytes() {
+      java.lang.Object ref = qualityCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        qualityCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       productId_ = "";
       categoryCode_ = "";
@@ -775,6 +980,7 @@ public final class Order {
       onlyCalPrice_ = false;
       userId_ = "";
       vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      qualityCode_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -807,6 +1013,10 @@ public final class Order {
         return false;
       }
       if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasQualityCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -843,6 +1053,9 @@ public final class Order {
       }
       for (int i = 0; i < vouchers_.size(); i++) {
         output.writeBytes(9, vouchers_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeBytes(10, getQualityCodeBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -893,6 +1106,10 @@ public final class Order {
         }
         size += dataSize;
         size += 1 * getVouchersList().size();
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(10, getQualityCodeBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1033,6 +1250,8 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000080);
         vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000100);
+        qualityCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -1098,6 +1317,10 @@ public final class Order {
           bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.vouchers_ = vouchers_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.qualityCode_ = qualityCode_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1158,6 +1381,11 @@ public final class Order {
           }
           onChanged();
         }
+        if (other.hasQualityCode()) {
+          bitField0_ |= 0x00000200;
+          qualityCode_ = other.qualityCode_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -1188,6 +1416,10 @@ public final class Order {
           return false;
         }
         if (!hasUserId()) {
+          
+          return false;
+        }
+        if (!hasQualityCode()) {
           
           return false;
         }
@@ -1986,6 +2218,106 @@ public final class Order {
         return this;
       }
 
+      private java.lang.Object qualityCode_ = "";
+      /**
+       * <code>required string qualityCode = 10;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public boolean hasQualityCode() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>required string qualityCode = 10;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public java.lang.String getQualityCode() {
+        java.lang.Object ref = qualityCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            qualityCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string qualityCode = 10;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getQualityCodeBytes() {
+        java.lang.Object ref = qualityCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          qualityCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string qualityCode = 10;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder setQualityCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        qualityCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string qualityCode = 10;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder clearQualityCode() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        qualityCode_ = getDefaultInstance().getQualityCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string qualityCode = 10;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder setQualityCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
+        qualityCode_ = value;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.CommitOrderRequest)
     }
 
@@ -2363,6 +2695,32 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getVouchersBytes(int index);
+
+    /**
+     * <code>required string qualityCode = 18;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    boolean hasQualityCode();
+    /**
+     * <code>required string qualityCode = 18;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    java.lang.String getQualityCode();
+    /**
+     * <code>required string qualityCode = 18;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getQualityCodeBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.CommitOrderResult}
@@ -2523,6 +2881,12 @@ public final class Order {
                 mutable_bitField0_ |= 0x00010000;
               }
               vouchers_.add(bs);
+              break;
+            }
+            case 146: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00008000;
+              qualityCode_ = bs;
               break;
             }
           }
@@ -3157,6 +3521,60 @@ public final class Order {
       return vouchers_.getByteString(index);
     }
 
+    public static final int QUALITYCODE_FIELD_NUMBER = 18;
+    private java.lang.Object qualityCode_;
+    /**
+     * <code>required string qualityCode = 18;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public boolean hasQualityCode() {
+      return ((bitField0_ & 0x00008000) == 0x00008000);
+    }
+    /**
+     * <code>required string qualityCode = 18;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public java.lang.String getQualityCode() {
+      java.lang.Object ref = qualityCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          qualityCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string qualityCode = 18;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getQualityCodeBytes() {
+      java.lang.Object ref = qualityCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        qualityCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       resultCode_ = "";
       resultMsg_ = "";
@@ -3175,6 +3593,7 @@ public final class Order {
       voucherInfo_ = java.util.Collections.emptyList();
       maxVoucherAmount_ = 0D;
       vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      qualityCode_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3187,6 +3606,10 @@ public final class Order {
         return false;
       }
       if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasQualityCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3259,6 +3682,9 @@ public final class Order {
       }
       for (int i = 0; i < vouchers_.size(); i++) {
         output.writeBytes(17, vouchers_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        output.writeBytes(18, getQualityCodeBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -3341,6 +3767,10 @@ public final class Order {
         }
         size += dataSize;
         size += 2 * getVouchersList().size();
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(18, getQualityCodeBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3507,6 +3937,8 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00008000);
         vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00010000);
+        qualityCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00020000);
         return this;
       }
 
@@ -3613,6 +4045,10 @@ public final class Order {
           bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.vouchers_ = vouchers_;
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        result.qualityCode_ = qualityCode_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3720,6 +4156,11 @@ public final class Order {
           }
           onChanged();
         }
+        if (other.hasQualityCode()) {
+          bitField0_ |= 0x00020000;
+          qualityCode_ = other.qualityCode_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -3730,6 +4171,10 @@ public final class Order {
           return false;
         }
         if (!hasResultMsg()) {
+          
+          return false;
+        }
+        if (!hasQualityCode()) {
           
           return false;
         }
@@ -5240,6 +5685,106 @@ public final class Order {
   }
   ensureVouchersIsMutable();
         vouchers_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object qualityCode_ = "";
+      /**
+       * <code>required string qualityCode = 18;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public boolean hasQualityCode() {
+        return ((bitField0_ & 0x00020000) == 0x00020000);
+      }
+      /**
+       * <code>required string qualityCode = 18;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public java.lang.String getQualityCode() {
+        java.lang.Object ref = qualityCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            qualityCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string qualityCode = 18;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getQualityCodeBytes() {
+        java.lang.Object ref = qualityCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          qualityCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string qualityCode = 18;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder setQualityCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00020000;
+        qualityCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string qualityCode = 18;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder clearQualityCode() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        qualityCode_ = getDefaultInstance().getQualityCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string qualityCode = 18;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder setQualityCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00020000;
+        qualityCode_ = value;
         onChanged();
         return this;
       }
@@ -7336,6 +7881,32 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getUserIdBytes();
+
+    /**
+     * <code>required string qualityCode = 12;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    boolean hasQualityCode();
+    /**
+     * <code>required string qualityCode = 12;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    java.lang.String getQualityCode();
+    /**
+     * <code>required string qualityCode = 12;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getQualityCodeBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmOrderRequest}
@@ -7457,6 +8028,12 @@ public final class Order {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000200;
               userId_ = bs;
+              break;
+            }
+            case 98: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000400;
+              qualityCode_ = bs;
               break;
             }
           }
@@ -7994,6 +8571,60 @@ public final class Order {
       }
     }
 
+    public static final int QUALITYCODE_FIELD_NUMBER = 12;
+    private java.lang.Object qualityCode_;
+    /**
+     * <code>required string qualityCode = 12;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public boolean hasQualityCode() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    /**
+     * <code>required string qualityCode = 12;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public java.lang.String getQualityCode() {
+      java.lang.Object ref = qualityCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          qualityCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string qualityCode = 12;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getQualityCodeBytes() {
+      java.lang.Object ref = qualityCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        qualityCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       productId_ = "";
       categoryCode_ = "";
@@ -8006,6 +8637,7 @@ public final class Order {
       userMessage_ = "";
       payChannel_ = 0;
       userId_ = "";
+      qualityCode_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -8038,6 +8670,10 @@ public final class Order {
         return false;
       }
       if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasQualityCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -8080,6 +8716,9 @@ public final class Order {
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeBytes(11, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeBytes(12, getQualityCodeBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -8138,6 +8777,10 @@ public final class Order {
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(11, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, getQualityCodeBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -8282,6 +8925,8 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000200);
         userId_ = "";
         bitField0_ = (bitField0_ & ~0x00000400);
+        qualityCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
 
@@ -8355,6 +9000,10 @@ public final class Order {
           to_bitField0_ |= 0x00000200;
         }
         result.userId_ = userId_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.qualityCode_ = qualityCode_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -8425,6 +9074,11 @@ public final class Order {
           userId_ = other.userId_;
           onChanged();
         }
+        if (other.hasQualityCode()) {
+          bitField0_ |= 0x00000800;
+          qualityCode_ = other.qualityCode_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -8455,6 +9109,10 @@ public final class Order {
           return false;
         }
         if (!hasUserId()) {
+          
+          return false;
+        }
+        if (!hasQualityCode()) {
           
           return false;
         }
@@ -9449,6 +10107,106 @@ public final class Order {
   }
   bitField0_ |= 0x00000400;
         userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object qualityCode_ = "";
+      /**
+       * <code>required string qualityCode = 12;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public boolean hasQualityCode() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>required string qualityCode = 12;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public java.lang.String getQualityCode() {
+        java.lang.Object ref = qualityCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            qualityCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string qualityCode = 12;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getQualityCodeBytes() {
+        java.lang.Object ref = qualityCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          qualityCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string qualityCode = 12;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder setQualityCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        qualityCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string qualityCode = 12;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder clearQualityCode() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        qualityCode_ = getDefaultInstance().getQualityCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string qualityCode = 12;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder setQualityCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        qualityCode_ = value;
         onChanged();
         return this;
       }
@@ -14666,6 +15424,23 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getUserIdBytes();
+
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.PayStatusQueryType payStatusQueryType = 3;</code>
+     *
+     * <pre>
+     *支付结果查询类型
+     * </pre>
+     */
+    boolean hasPayStatusQueryType();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.PayStatusQueryType payStatusQueryType = 3;</code>
+     *
+     * <pre>
+     *支付结果查询类型
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType getPayStatusQueryType();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetPayStatusRequest}
@@ -14733,6 +15508,17 @@ public final class Order {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
               userId_ = bs;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType value = com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                bitField0_ |= 0x00000004;
+                payStatusQueryType_ = value;
+              }
               break;
             }
           }
@@ -14883,9 +15669,33 @@ public final class Order {
       }
     }
 
+    public static final int PAYSTATUSQUERYTYPE_FIELD_NUMBER = 3;
+    private com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType payStatusQueryType_;
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.PayStatusQueryType payStatusQueryType = 3;</code>
+     *
+     * <pre>
+     *支付结果查询类型
+     * </pre>
+     */
+    public boolean hasPayStatusQueryType() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.PayStatusQueryType payStatusQueryType = 3;</code>
+     *
+     * <pre>
+     *支付结果查询类型
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType getPayStatusQueryType() {
+      return payStatusQueryType_;
+    }
+
     private void initFields() {
       orderId_ = "";
       userId_ = "";
+      payStatusQueryType_ = com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType.ORDER;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -14914,6 +15724,9 @@ public final class Order {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getUserIdBytes());
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeEnum(3, payStatusQueryType_.getNumber());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -14930,6 +15743,10 @@ public final class Order {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, payStatusQueryType_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -15056,6 +15873,8 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000001);
         userId_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        payStatusQueryType_ = com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType.ORDER;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -15092,6 +15911,10 @@ public final class Order {
           to_bitField0_ |= 0x00000002;
         }
         result.userId_ = userId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.payStatusQueryType_ = payStatusQueryType_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -15117,6 +15940,9 @@ public final class Order {
           bitField0_ |= 0x00000002;
           userId_ = other.userId_;
           onChanged();
+        }
+        if (other.hasPayStatusQueryType()) {
+          setPayStatusQueryType(other.getPayStatusQueryType());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -15349,6 +16175,57 @@ public final class Order {
   }
   bitField0_ |= 0x00000002;
         userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType payStatusQueryType_ = com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType.ORDER;
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.PayStatusQueryType payStatusQueryType = 3;</code>
+       *
+       * <pre>
+       *支付结果查询类型
+       * </pre>
+       */
+      public boolean hasPayStatusQueryType() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.PayStatusQueryType payStatusQueryType = 3;</code>
+       *
+       * <pre>
+       *支付结果查询类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType getPayStatusQueryType() {
+        return payStatusQueryType_;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.PayStatusQueryType payStatusQueryType = 3;</code>
+       *
+       * <pre>
+       *支付结果查询类型
+       * </pre>
+       */
+      public Builder setPayStatusQueryType(com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        payStatusQueryType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.PayStatusQueryType payStatusQueryType = 3;</code>
+       *
+       * <pre>
+       *支付结果查询类型
+       * </pre>
+       */
+      public Builder clearPayStatusQueryType() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        payStatusQueryType_ = com.qjoy.basjoo.core.model.pb.Order.PayStatusQueryType.ORDER;
         onChanged();
         return this;
       }
@@ -20417,6 +21294,40 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getCategoryNameBytes();
+
+    /**
+     * <code>optional double discount = 18;</code>
+     *
+     * <pre>
+     *折扣信息
+     * </pre>
+     */
+    boolean hasDiscount();
+    /**
+     * <code>optional double discount = 18;</code>
+     *
+     * <pre>
+     *折扣信息
+     * </pre>
+     */
+    double getDiscount();
+
+    /**
+     * <code>optional double originalRentAmount = 19;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    boolean hasOriginalRentAmount();
+    /**
+     * <code>optional double originalRentAmount = 19;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    double getOriginalRentAmount();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderLiteInfo}
@@ -20563,6 +21474,16 @@ public final class Order {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00010000;
               categoryName_ = bs;
+              break;
+            }
+            case 145: {
+              bitField0_ |= 0x00020000;
+              discount_ = input.readDouble();
+              break;
+            }
+            case 153: {
+              bitField0_ |= 0x00040000;
+              originalRentAmount_ = input.readDouble();
               break;
             }
           }
@@ -21182,6 +22103,52 @@ public final class Order {
       }
     }
 
+    public static final int DISCOUNT_FIELD_NUMBER = 18;
+    private double discount_;
+    /**
+     * <code>optional double discount = 18;</code>
+     *
+     * <pre>
+     *折扣信息
+     * </pre>
+     */
+    public boolean hasDiscount() {
+      return ((bitField0_ & 0x00020000) == 0x00020000);
+    }
+    /**
+     * <code>optional double discount = 18;</code>
+     *
+     * <pre>
+     *折扣信息
+     * </pre>
+     */
+    public double getDiscount() {
+      return discount_;
+    }
+
+    public static final int ORIGINALRENTAMOUNT_FIELD_NUMBER = 19;
+    private double originalRentAmount_;
+    /**
+     * <code>optional double originalRentAmount = 19;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    public boolean hasOriginalRentAmount() {
+      return ((bitField0_ & 0x00040000) == 0x00040000);
+    }
+    /**
+     * <code>optional double originalRentAmount = 19;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    public double getOriginalRentAmount() {
+      return originalRentAmount_;
+    }
+
     private void initFields() {
       orderId_ = "";
       orderStatus_ = 0;
@@ -21200,6 +22167,8 @@ public final class Order {
       mainImageUrl_ = "";
       desc_ = "";
       categoryName_ = "";
+      discount_ = 0D;
+      originalRentAmount_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -21321,6 +22290,12 @@ public final class Order {
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         output.writeBytes(17, getCategoryNameBytes());
       }
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        output.writeDouble(18, discount_);
+      }
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        output.writeDouble(19, originalRentAmount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -21397,6 +22372,14 @@ public final class Order {
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(17, getCategoryNameBytes());
+      }
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(18, discount_);
+      }
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(19, originalRentAmount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -21553,6 +22536,10 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00008000);
         categoryName_ = "";
         bitField0_ = (bitField0_ & ~0x00010000);
+        discount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00020000);
+        originalRentAmount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00040000);
         return this;
       }
 
@@ -21649,6 +22636,14 @@ public final class Order {
           to_bitField0_ |= 0x00010000;
         }
         result.categoryName_ = categoryName_;
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+          to_bitField0_ |= 0x00020000;
+        }
+        result.discount_ = discount_;
+        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+          to_bitField0_ |= 0x00040000;
+        }
+        result.originalRentAmount_ = originalRentAmount_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -21727,6 +22722,12 @@ public final class Order {
           bitField0_ |= 0x00010000;
           categoryName_ = other.categoryName_;
           onChanged();
+        }
+        if (other.hasDiscount()) {
+          setDiscount(other.getDiscount());
+        }
+        if (other.hasOriginalRentAmount()) {
+          setOriginalRentAmount(other.getOriginalRentAmount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -22935,6 +23936,102 @@ public final class Order {
   }
   bitField0_ |= 0x00010000;
         categoryName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double discount_ ;
+      /**
+       * <code>optional double discount = 18;</code>
+       *
+       * <pre>
+       *折扣信息
+       * </pre>
+       */
+      public boolean hasDiscount() {
+        return ((bitField0_ & 0x00020000) == 0x00020000);
+      }
+      /**
+       * <code>optional double discount = 18;</code>
+       *
+       * <pre>
+       *折扣信息
+       * </pre>
+       */
+      public double getDiscount() {
+        return discount_;
+      }
+      /**
+       * <code>optional double discount = 18;</code>
+       *
+       * <pre>
+       *折扣信息
+       * </pre>
+       */
+      public Builder setDiscount(double value) {
+        bitField0_ |= 0x00020000;
+        discount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double discount = 18;</code>
+       *
+       * <pre>
+       *折扣信息
+       * </pre>
+       */
+      public Builder clearDiscount() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        discount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double originalRentAmount_ ;
+      /**
+       * <code>optional double originalRentAmount = 19;</code>
+       *
+       * <pre>
+       *原始租金（优惠前）
+       * </pre>
+       */
+      public boolean hasOriginalRentAmount() {
+        return ((bitField0_ & 0x00040000) == 0x00040000);
+      }
+      /**
+       * <code>optional double originalRentAmount = 19;</code>
+       *
+       * <pre>
+       *原始租金（优惠前）
+       * </pre>
+       */
+      public double getOriginalRentAmount() {
+        return originalRentAmount_;
+      }
+      /**
+       * <code>optional double originalRentAmount = 19;</code>
+       *
+       * <pre>
+       *原始租金（优惠前）
+       * </pre>
+       */
+      public Builder setOriginalRentAmount(double value) {
+        bitField0_ |= 0x00040000;
+        originalRentAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double originalRentAmount = 19;</code>
+       *
+       * <pre>
+       *原始租金（优惠前）
+       * </pre>
+       */
+      public Builder clearOriginalRentAmount() {
+        bitField0_ = (bitField0_ & ~0x00040000);
+        originalRentAmount_ = 0D;
         onChanged();
         return this;
       }
@@ -38616,6 +39713,74 @@ public final class Order {
      */
     com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfoOrBuilder getVoucherInfoOrBuilder(
         int index);
+
+    /**
+     * <code>optional double discount = 29;</code>
+     *
+     * <pre>
+     *折扣信息
+     * </pre>
+     */
+    boolean hasDiscount();
+    /**
+     * <code>optional double discount = 29;</code>
+     *
+     * <pre>
+     *折扣信息
+     * </pre>
+     */
+    double getDiscount();
+
+    /**
+     * <code>optional double originalRentAmount = 30;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    boolean hasOriginalRentAmount();
+    /**
+     * <code>optional double originalRentAmount = 30;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    double getOriginalRentAmount();
+
+    /**
+     * <code>optional double earnestAmount = 31;</code>
+     *
+     * <pre>
+     *定金金额
+     * </pre>
+     */
+    boolean hasEarnestAmount();
+    /**
+     * <code>optional double earnestAmount = 31;</code>
+     *
+     * <pre>
+     *定金金额
+     * </pre>
+     */
+    double getEarnestAmount();
+
+    /**
+     * <code>optional double remailAmount = 32;</code>
+     *
+     * <pre>
+     *尾款金额
+     * </pre>
+     */
+    boolean hasRemailAmount();
+    /**
+     * <code>optional double remailAmount = 32;</code>
+     *
+     * <pre>
+     *尾款金额
+     * </pre>
+     */
+    double getRemailAmount();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderDetailInfo}
@@ -38834,6 +39999,26 @@ public final class Order {
                 mutable_bitField0_ |= 0x08000000;
               }
               voucherInfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Order.OrderVoucherInfo.PARSER, extensionRegistry));
+              break;
+            }
+            case 233: {
+              bitField0_ |= 0x04000000;
+              discount_ = input.readDouble();
+              break;
+            }
+            case 241: {
+              bitField0_ |= 0x08000000;
+              originalRentAmount_ = input.readDouble();
+              break;
+            }
+            case 249: {
+              bitField0_ |= 0x10000000;
+              earnestAmount_ = input.readDouble();
+              break;
+            }
+            case 257: {
+              bitField0_ |= 0x20000000;
+              remailAmount_ = input.readDouble();
               break;
             }
           }
@@ -39838,6 +41023,98 @@ public final class Order {
       return voucherInfo_.get(index);
     }
 
+    public static final int DISCOUNT_FIELD_NUMBER = 29;
+    private double discount_;
+    /**
+     * <code>optional double discount = 29;</code>
+     *
+     * <pre>
+     *折扣信息
+     * </pre>
+     */
+    public boolean hasDiscount() {
+      return ((bitField0_ & 0x04000000) == 0x04000000);
+    }
+    /**
+     * <code>optional double discount = 29;</code>
+     *
+     * <pre>
+     *折扣信息
+     * </pre>
+     */
+    public double getDiscount() {
+      return discount_;
+    }
+
+    public static final int ORIGINALRENTAMOUNT_FIELD_NUMBER = 30;
+    private double originalRentAmount_;
+    /**
+     * <code>optional double originalRentAmount = 30;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    public boolean hasOriginalRentAmount() {
+      return ((bitField0_ & 0x08000000) == 0x08000000);
+    }
+    /**
+     * <code>optional double originalRentAmount = 30;</code>
+     *
+     * <pre>
+     *原始租金（优惠前）
+     * </pre>
+     */
+    public double getOriginalRentAmount() {
+      return originalRentAmount_;
+    }
+
+    public static final int EARNESTAMOUNT_FIELD_NUMBER = 31;
+    private double earnestAmount_;
+    /**
+     * <code>optional double earnestAmount = 31;</code>
+     *
+     * <pre>
+     *定金金额
+     * </pre>
+     */
+    public boolean hasEarnestAmount() {
+      return ((bitField0_ & 0x10000000) == 0x10000000);
+    }
+    /**
+     * <code>optional double earnestAmount = 31;</code>
+     *
+     * <pre>
+     *定金金额
+     * </pre>
+     */
+    public double getEarnestAmount() {
+      return earnestAmount_;
+    }
+
+    public static final int REMAILAMOUNT_FIELD_NUMBER = 32;
+    private double remailAmount_;
+    /**
+     * <code>optional double remailAmount = 32;</code>
+     *
+     * <pre>
+     *尾款金额
+     * </pre>
+     */
+    public boolean hasRemailAmount() {
+      return ((bitField0_ & 0x20000000) == 0x20000000);
+    }
+    /**
+     * <code>optional double remailAmount = 32;</code>
+     *
+     * <pre>
+     *尾款金额
+     * </pre>
+     */
+    public double getRemailAmount() {
+      return remailAmount_;
+    }
+
     private void initFields() {
       orderId_ = "";
       orderStatus_ = 0;
@@ -39867,6 +41144,10 @@ public final class Order {
       vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       orderReceiveAddressInfo_ = com.qjoy.basjoo.core.model.pb.Order.OrderReceiveAddressInfo.getDefaultInstance();
       voucherInfo_ = java.util.Collections.emptyList();
+      discount_ = 0D;
+      originalRentAmount_ = 0D;
+      earnestAmount_ = 0D;
+      remailAmount_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -40033,6 +41314,18 @@ public final class Order {
       for (int i = 0; i < voucherInfo_.size(); i++) {
         output.writeMessage(28, voucherInfo_.get(i));
       }
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+        output.writeDouble(29, discount_);
+      }
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+        output.writeDouble(30, originalRentAmount_);
+      }
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+        output.writeDouble(31, earnestAmount_);
+      }
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+        output.writeDouble(32, remailAmount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -40158,6 +41451,22 @@ public final class Order {
       for (int i = 0; i < voucherInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(28, voucherInfo_.get(i));
+      }
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(29, discount_);
+      }
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(30, originalRentAmount_);
+      }
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(31, earnestAmount_);
+      }
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(32, remailAmount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -40346,6 +41655,14 @@ public final class Order {
         } else {
           voucherInfoBuilder_.clear();
         }
+        discount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x10000000);
+        originalRentAmount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x20000000);
+        earnestAmount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x40000000);
+        remailAmount_ = 0D;
+        bitField0_ = (bitField0_ & ~0x80000000);
         return this;
       }
 
@@ -40496,6 +41813,22 @@ public final class Order {
         } else {
           result.voucherInfo_ = voucherInfoBuilder_.build();
         }
+        if (((from_bitField0_ & 0x10000000) == 0x10000000)) {
+          to_bitField0_ |= 0x04000000;
+        }
+        result.discount_ = discount_;
+        if (((from_bitField0_ & 0x20000000) == 0x20000000)) {
+          to_bitField0_ |= 0x08000000;
+        }
+        result.originalRentAmount_ = originalRentAmount_;
+        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
+          to_bitField0_ |= 0x10000000;
+        }
+        result.earnestAmount_ = earnestAmount_;
+        if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
+          to_bitField0_ |= 0x20000000;
+        }
+        result.remailAmount_ = remailAmount_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -40641,6 +41974,18 @@ public final class Order {
               voucherInfoBuilder_.addAllMessages(other.voucherInfo_);
             }
           }
+        }
+        if (other.hasDiscount()) {
+          setDiscount(other.getDiscount());
+        }
+        if (other.hasOriginalRentAmount()) {
+          setOriginalRentAmount(other.getOriginalRentAmount());
+        }
+        if (other.hasEarnestAmount()) {
+          setEarnestAmount(other.getEarnestAmount());
+        }
+        if (other.hasRemailAmount()) {
+          setRemailAmount(other.getRemailAmount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -42946,6 +44291,198 @@ public final class Order {
         return voucherInfoBuilder_;
       }
 
+      private double discount_ ;
+      /**
+       * <code>optional double discount = 29;</code>
+       *
+       * <pre>
+       *折扣信息
+       * </pre>
+       */
+      public boolean hasDiscount() {
+        return ((bitField0_ & 0x10000000) == 0x10000000);
+      }
+      /**
+       * <code>optional double discount = 29;</code>
+       *
+       * <pre>
+       *折扣信息
+       * </pre>
+       */
+      public double getDiscount() {
+        return discount_;
+      }
+      /**
+       * <code>optional double discount = 29;</code>
+       *
+       * <pre>
+       *折扣信息
+       * </pre>
+       */
+      public Builder setDiscount(double value) {
+        bitField0_ |= 0x10000000;
+        discount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double discount = 29;</code>
+       *
+       * <pre>
+       *折扣信息
+       * </pre>
+       */
+      public Builder clearDiscount() {
+        bitField0_ = (bitField0_ & ~0x10000000);
+        discount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double originalRentAmount_ ;
+      /**
+       * <code>optional double originalRentAmount = 30;</code>
+       *
+       * <pre>
+       *原始租金（优惠前）
+       * </pre>
+       */
+      public boolean hasOriginalRentAmount() {
+        return ((bitField0_ & 0x20000000) == 0x20000000);
+      }
+      /**
+       * <code>optional double originalRentAmount = 30;</code>
+       *
+       * <pre>
+       *原始租金（优惠前）
+       * </pre>
+       */
+      public double getOriginalRentAmount() {
+        return originalRentAmount_;
+      }
+      /**
+       * <code>optional double originalRentAmount = 30;</code>
+       *
+       * <pre>
+       *原始租金（优惠前）
+       * </pre>
+       */
+      public Builder setOriginalRentAmount(double value) {
+        bitField0_ |= 0x20000000;
+        originalRentAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double originalRentAmount = 30;</code>
+       *
+       * <pre>
+       *原始租金（优惠前）
+       * </pre>
+       */
+      public Builder clearOriginalRentAmount() {
+        bitField0_ = (bitField0_ & ~0x20000000);
+        originalRentAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double earnestAmount_ ;
+      /**
+       * <code>optional double earnestAmount = 31;</code>
+       *
+       * <pre>
+       *定金金额
+       * </pre>
+       */
+      public boolean hasEarnestAmount() {
+        return ((bitField0_ & 0x40000000) == 0x40000000);
+      }
+      /**
+       * <code>optional double earnestAmount = 31;</code>
+       *
+       * <pre>
+       *定金金额
+       * </pre>
+       */
+      public double getEarnestAmount() {
+        return earnestAmount_;
+      }
+      /**
+       * <code>optional double earnestAmount = 31;</code>
+       *
+       * <pre>
+       *定金金额
+       * </pre>
+       */
+      public Builder setEarnestAmount(double value) {
+        bitField0_ |= 0x40000000;
+        earnestAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double earnestAmount = 31;</code>
+       *
+       * <pre>
+       *定金金额
+       * </pre>
+       */
+      public Builder clearEarnestAmount() {
+        bitField0_ = (bitField0_ & ~0x40000000);
+        earnestAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double remailAmount_ ;
+      /**
+       * <code>optional double remailAmount = 32;</code>
+       *
+       * <pre>
+       *尾款金额
+       * </pre>
+       */
+      public boolean hasRemailAmount() {
+        return ((bitField0_ & 0x80000000) == 0x80000000);
+      }
+      /**
+       * <code>optional double remailAmount = 32;</code>
+       *
+       * <pre>
+       *尾款金额
+       * </pre>
+       */
+      public double getRemailAmount() {
+        return remailAmount_;
+      }
+      /**
+       * <code>optional double remailAmount = 32;</code>
+       *
+       * <pre>
+       *尾款金额
+       * </pre>
+       */
+      public Builder setRemailAmount(double value) {
+        bitField0_ |= 0x80000000;
+        remailAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double remailAmount = 32;</code>
+       *
+       * <pre>
+       *尾款金额
+       * </pre>
+       */
+      public Builder clearRemailAmount() {
+        bitField0_ = (bitField0_ & ~0x80000000);
+        remailAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.OrderDetailInfo)
     }
 
@@ -44695,6 +46232,7507 @@ public final class Order {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.OrderVoucherInfo)
   }
 
+  public interface ConfirmEarnestRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ConfirmEarnestRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    boolean hasProductId();
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    java.lang.String getProductId();
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getProductIdBytes();
+
+    /**
+     * <code>required string categoryCode = 2;</code>
+     *
+     * <pre>
+     *类别信息
+     * </pre>
+     */
+    boolean hasCategoryCode();
+    /**
+     * <code>required string categoryCode = 2;</code>
+     *
+     * <pre>
+     *类别信息
+     * </pre>
+     */
+    java.lang.String getCategoryCode();
+    /**
+     * <code>required string categoryCode = 2;</code>
+     *
+     * <pre>
+     *类别信息
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCategoryCodeBytes();
+
+    /**
+     * <code>required int32 rentCount = 3;</code>
+     *
+     * <pre>
+     *租用数量
+     * </pre>
+     */
+    boolean hasRentCount();
+    /**
+     * <code>required int32 rentCount = 3;</code>
+     *
+     * <pre>
+     *租用数量
+     * </pre>
+     */
+    int getRentCount();
+
+    /**
+     * <code>required string rentCode = 4;</code>
+     *
+     * <pre>
+     *选择租金的编码
+     * </pre>
+     */
+    boolean hasRentCode();
+    /**
+     * <code>required string rentCode = 4;</code>
+     *
+     * <pre>
+     *选择租金的编码
+     * </pre>
+     */
+    java.lang.String getRentCode();
+    /**
+     * <code>required string rentCode = 4;</code>
+     *
+     * <pre>
+     *选择租金的编码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getRentCodeBytes();
+
+    /**
+     * <code>optional int32 payChannel = 5;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    boolean hasPayChannel();
+    /**
+     * <code>optional int32 payChannel = 5;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    int getPayChannel();
+
+    /**
+     * <code>required string userId = 6;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 6;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 6;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>required string addressId = 7;</code>
+     *
+     * <pre>
+     *收货地址ID   
+     * </pre>
+     */
+    boolean hasAddressId();
+    /**
+     * <code>required string addressId = 7;</code>
+     *
+     * <pre>
+     *收货地址ID   
+     * </pre>
+     */
+    java.lang.String getAddressId();
+    /**
+     * <code>required string addressId = 7;</code>
+     *
+     * <pre>
+     *收货地址ID   
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getAddressIdBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmEarnestRequest}
+   *
+   * <pre>
+   *确认提交支付定金
+   * </pre>
+   */
+  public static final class ConfirmEarnestRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ConfirmEarnestRequest)
+      ConfirmEarnestRequestOrBuilder {
+    // Use ConfirmEarnestRequest.newBuilder() to construct.
+    private ConfirmEarnestRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ConfirmEarnestRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ConfirmEarnestRequest defaultInstance;
+    public static ConfirmEarnestRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ConfirmEarnestRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ConfirmEarnestRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              productId_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              categoryCode_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              rentCount_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              rentCode_ = bs;
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              payChannel_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              userId_ = bs;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              addressId_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest.class, com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ConfirmEarnestRequest> PARSER =
+        new com.google.protobuf.AbstractParser<ConfirmEarnestRequest>() {
+      public ConfirmEarnestRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ConfirmEarnestRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfirmEarnestRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int PRODUCTID_FIELD_NUMBER = 1;
+    private java.lang.Object productId_;
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    public boolean hasProductId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          productId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string productId = 1;</code>
+     *
+     * <pre>
+     *产品Id
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORYCODE_FIELD_NUMBER = 2;
+    private java.lang.Object categoryCode_;
+    /**
+     * <code>required string categoryCode = 2;</code>
+     *
+     * <pre>
+     *类别信息
+     * </pre>
+     */
+    public boolean hasCategoryCode() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string categoryCode = 2;</code>
+     *
+     * <pre>
+     *类别信息
+     * </pre>
+     */
+    public java.lang.String getCategoryCode() {
+      java.lang.Object ref = categoryCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          categoryCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string categoryCode = 2;</code>
+     *
+     * <pre>
+     *类别信息
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCategoryCodeBytes() {
+      java.lang.Object ref = categoryCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        categoryCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RENTCOUNT_FIELD_NUMBER = 3;
+    private int rentCount_;
+    /**
+     * <code>required int32 rentCount = 3;</code>
+     *
+     * <pre>
+     *租用数量
+     * </pre>
+     */
+    public boolean hasRentCount() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int32 rentCount = 3;</code>
+     *
+     * <pre>
+     *租用数量
+     * </pre>
+     */
+    public int getRentCount() {
+      return rentCount_;
+    }
+
+    public static final int RENTCODE_FIELD_NUMBER = 4;
+    private java.lang.Object rentCode_;
+    /**
+     * <code>required string rentCode = 4;</code>
+     *
+     * <pre>
+     *选择租金的编码
+     * </pre>
+     */
+    public boolean hasRentCode() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string rentCode = 4;</code>
+     *
+     * <pre>
+     *选择租金的编码
+     * </pre>
+     */
+    public java.lang.String getRentCode() {
+      java.lang.Object ref = rentCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rentCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string rentCode = 4;</code>
+     *
+     * <pre>
+     *选择租金的编码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getRentCodeBytes() {
+      java.lang.Object ref = rentCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rentCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAYCHANNEL_FIELD_NUMBER = 5;
+    private int payChannel_;
+    /**
+     * <code>optional int32 payChannel = 5;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public boolean hasPayChannel() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int32 payChannel = 5;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public int getPayChannel() {
+      return payChannel_;
+    }
+
+    public static final int USERID_FIELD_NUMBER = 6;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 6;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>required string userId = 6;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 6;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESSID_FIELD_NUMBER = 7;
+    private java.lang.Object addressId_;
+    /**
+     * <code>required string addressId = 7;</code>
+     *
+     * <pre>
+     *收货地址ID   
+     * </pre>
+     */
+    public boolean hasAddressId() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>required string addressId = 7;</code>
+     *
+     * <pre>
+     *收货地址ID   
+     * </pre>
+     */
+    public java.lang.String getAddressId() {
+      java.lang.Object ref = addressId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          addressId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string addressId = 7;</code>
+     *
+     * <pre>
+     *收货地址ID   
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getAddressIdBytes() {
+      java.lang.Object ref = addressId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        addressId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      productId_ = "";
+      categoryCode_ = "";
+      rentCount_ = 0;
+      rentCode_ = "";
+      payChannel_ = 0;
+      userId_ = "";
+      addressId_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasProductId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasCategoryCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRentCount()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRentCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasAddressId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getProductIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getCategoryCodeBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, rentCount_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getRentCodeBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(5, payChannel_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getAddressIdBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getProductIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getCategoryCodeBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, rentCount_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getRentCodeBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, payChannel_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getAddressIdBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmEarnestRequest}
+     *
+     * <pre>
+     *确认提交支付定金
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ConfirmEarnestRequest)
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest.class, com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        productId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        categoryCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rentCount_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        rentCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        payChannel_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        addressId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest build() {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest result = new com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.productId_ = productId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.categoryCode_ = categoryCode_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.rentCount_ = rentCount_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.rentCode_ = rentCode_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.payChannel_ = payChannel_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.userId_ = userId_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.addressId_ = addressId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest.getDefaultInstance()) return this;
+        if (other.hasProductId()) {
+          bitField0_ |= 0x00000001;
+          productId_ = other.productId_;
+          onChanged();
+        }
+        if (other.hasCategoryCode()) {
+          bitField0_ |= 0x00000002;
+          categoryCode_ = other.categoryCode_;
+          onChanged();
+        }
+        if (other.hasRentCount()) {
+          setRentCount(other.getRentCount());
+        }
+        if (other.hasRentCode()) {
+          bitField0_ |= 0x00000008;
+          rentCode_ = other.rentCode_;
+          onChanged();
+        }
+        if (other.hasPayChannel()) {
+          setPayChannel(other.getPayChannel());
+        }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000020;
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (other.hasAddressId()) {
+          bitField0_ |= 0x00000040;
+          addressId_ = other.addressId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasProductId()) {
+          
+          return false;
+        }
+        if (!hasCategoryCode()) {
+          
+          return false;
+        }
+        if (!hasRentCount()) {
+          
+          return false;
+        }
+        if (!hasRentCode()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
+          
+          return false;
+        }
+        if (!hasAddressId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object productId_ = "";
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public boolean hasProductId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public java.lang.String getProductId() {
+        java.lang.Object ref = productId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            productId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getProductIdBytes() {
+        java.lang.Object ref = productId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public Builder setProductId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        productId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public Builder clearProductId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        productId_ = getDefaultInstance().getProductId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string productId = 1;</code>
+       *
+       * <pre>
+       *产品Id
+       * </pre>
+       */
+      public Builder setProductIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        productId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object categoryCode_ = "";
+      /**
+       * <code>required string categoryCode = 2;</code>
+       *
+       * <pre>
+       *类别信息
+       * </pre>
+       */
+      public boolean hasCategoryCode() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string categoryCode = 2;</code>
+       *
+       * <pre>
+       *类别信息
+       * </pre>
+       */
+      public java.lang.String getCategoryCode() {
+        java.lang.Object ref = categoryCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            categoryCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string categoryCode = 2;</code>
+       *
+       * <pre>
+       *类别信息
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCategoryCodeBytes() {
+        java.lang.Object ref = categoryCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          categoryCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string categoryCode = 2;</code>
+       *
+       * <pre>
+       *类别信息
+       * </pre>
+       */
+      public Builder setCategoryCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        categoryCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string categoryCode = 2;</code>
+       *
+       * <pre>
+       *类别信息
+       * </pre>
+       */
+      public Builder clearCategoryCode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        categoryCode_ = getDefaultInstance().getCategoryCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string categoryCode = 2;</code>
+       *
+       * <pre>
+       *类别信息
+       * </pre>
+       */
+      public Builder setCategoryCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        categoryCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int rentCount_ ;
+      /**
+       * <code>required int32 rentCount = 3;</code>
+       *
+       * <pre>
+       *租用数量
+       * </pre>
+       */
+      public boolean hasRentCount() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int32 rentCount = 3;</code>
+       *
+       * <pre>
+       *租用数量
+       * </pre>
+       */
+      public int getRentCount() {
+        return rentCount_;
+      }
+      /**
+       * <code>required int32 rentCount = 3;</code>
+       *
+       * <pre>
+       *租用数量
+       * </pre>
+       */
+      public Builder setRentCount(int value) {
+        bitField0_ |= 0x00000004;
+        rentCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 rentCount = 3;</code>
+       *
+       * <pre>
+       *租用数量
+       * </pre>
+       */
+      public Builder clearRentCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        rentCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rentCode_ = "";
+      /**
+       * <code>required string rentCode = 4;</code>
+       *
+       * <pre>
+       *选择租金的编码
+       * </pre>
+       */
+      public boolean hasRentCode() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string rentCode = 4;</code>
+       *
+       * <pre>
+       *选择租金的编码
+       * </pre>
+       */
+      public java.lang.String getRentCode() {
+        java.lang.Object ref = rentCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            rentCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string rentCode = 4;</code>
+       *
+       * <pre>
+       *选择租金的编码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getRentCodeBytes() {
+        java.lang.Object ref = rentCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rentCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string rentCode = 4;</code>
+       *
+       * <pre>
+       *选择租金的编码
+       * </pre>
+       */
+      public Builder setRentCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        rentCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string rentCode = 4;</code>
+       *
+       * <pre>
+       *选择租金的编码
+       * </pre>
+       */
+      public Builder clearRentCode() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        rentCode_ = getDefaultInstance().getRentCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string rentCode = 4;</code>
+       *
+       * <pre>
+       *选择租金的编码
+       * </pre>
+       */
+      public Builder setRentCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        rentCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int payChannel_ ;
+      /**
+       * <code>optional int32 payChannel = 5;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public boolean hasPayChannel() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional int32 payChannel = 5;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public int getPayChannel() {
+        return payChannel_;
+      }
+      /**
+       * <code>optional int32 payChannel = 5;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder setPayChannel(int value) {
+        bitField0_ |= 0x00000010;
+        payChannel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 payChannel = 5;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder clearPayChannel() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        payChannel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 6;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required string userId = 6;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 6;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 6;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 6;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 6;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object addressId_ = "";
+      /**
+       * <code>required string addressId = 7;</code>
+       *
+       * <pre>
+       *收货地址ID   
+       * </pre>
+       */
+      public boolean hasAddressId() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>required string addressId = 7;</code>
+       *
+       * <pre>
+       *收货地址ID   
+       * </pre>
+       */
+      public java.lang.String getAddressId() {
+        java.lang.Object ref = addressId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            addressId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string addressId = 7;</code>
+       *
+       * <pre>
+       *收货地址ID   
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getAddressIdBytes() {
+        java.lang.Object ref = addressId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          addressId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string addressId = 7;</code>
+       *
+       * <pre>
+       *收货地址ID   
+       * </pre>
+       */
+      public Builder setAddressId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        addressId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string addressId = 7;</code>
+       *
+       * <pre>
+       *收货地址ID   
+       * </pre>
+       */
+      public Builder clearAddressId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        addressId_ = getDefaultInstance().getAddressId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string addressId = 7;</code>
+       *
+       * <pre>
+       *收货地址ID   
+       * </pre>
+       */
+      public Builder setAddressIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        addressId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ConfirmEarnestRequest)
+    }
+
+    static {
+      defaultInstance = new ConfirmEarnestRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ConfirmEarnestRequest)
+  }
+
+  public interface ConfirmEarnestResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ConfirmEarnestResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    java.lang.String getOrderId();
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getOrderIdBytes();
+
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    boolean hasPayChannel();
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    int getPayChannel();
+
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    boolean hasWxPayInfo();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder getWxPayInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmEarnestResult}
+   *
+   * <pre>
+   *确认订单结果
+   * </pre>
+   */
+  public static final class ConfirmEarnestResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ConfirmEarnestResult)
+      ConfirmEarnestResultOrBuilder {
+    // Use ConfirmEarnestResult.newBuilder() to construct.
+    private ConfirmEarnestResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ConfirmEarnestResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ConfirmEarnestResult defaultInstance;
+    public static ConfirmEarnestResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ConfirmEarnestResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ConfirmEarnestResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              orderId_ = bs;
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              payChannel_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = wxPayInfo_.toBuilder();
+              }
+              wxPayInfo_ = input.readMessage(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(wxPayInfo_);
+                wxPayInfo_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult.class, com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ConfirmEarnestResult> PARSER =
+        new com.google.protobuf.AbstractParser<ConfirmEarnestResult>() {
+      public ConfirmEarnestResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ConfirmEarnestResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfirmEarnestResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORDERID_FIELD_NUMBER = 3;
+    private java.lang.Object orderId_;
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public java.lang.String getOrderId() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          orderId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getOrderIdBytes() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAYCHANNEL_FIELD_NUMBER = 4;
+    private int payChannel_;
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public boolean hasPayChannel() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public int getPayChannel() {
+      return payChannel_;
+    }
+
+    public static final int WXPAYINFO_FIELD_NUMBER = 5;
+    private com.qjoy.basjoo.core.model.pb.Order.WxPayInfo wxPayInfo_;
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    public boolean hasWxPayInfo() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo() {
+      return wxPayInfo_;
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder getWxPayInfoOrBuilder() {
+      return wxPayInfo_;
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+      orderId_ = "";
+      payChannel_ = 0;
+      wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasWxPayInfo()) {
+        if (!getWxPayInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, payChannel_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(5, wxPayInfo_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, payChannel_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, wxPayInfo_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmEarnestResult}
+     *
+     * <pre>
+     *确认订单结果
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ConfirmEarnestResult)
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult.class, com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getWxPayInfoFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        orderId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        payChannel_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+        } else {
+          wxPayInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult build() {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult result = new com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.orderId_ = orderId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.payChannel_ = payChannel_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (wxPayInfoBuilder_ == null) {
+          result.wxPayInfo_ = wxPayInfo_;
+        } else {
+          result.wxPayInfo_ = wxPayInfoBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        if (other.hasOrderId()) {
+          bitField0_ |= 0x00000004;
+          orderId_ = other.orderId_;
+          onChanged();
+        }
+        if (other.hasPayChannel()) {
+          setPayChannel(other.getPayChannel());
+        }
+        if (other.hasWxPayInfo()) {
+          mergeWxPayInfo(other.getWxPayInfo());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        if (hasWxPayInfo()) {
+          if (!getWxPayInfo().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Order.ConfirmEarnestResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object orderId_ = "";
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public java.lang.String getOrderId() {
+        java.lang.Object ref = orderId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            orderId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getOrderIdBytes() {
+        java.lang.Object ref = orderId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder setOrderId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        orderId_ = getDefaultInstance().getOrderId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder setOrderIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int payChannel_ ;
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public boolean hasPayChannel() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public int getPayChannel() {
+        return payChannel_;
+      }
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder setPayChannel(int value) {
+        bitField0_ |= 0x00000008;
+        payChannel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder clearPayChannel() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        payChannel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.qjoy.basjoo.core.model.pb.Order.WxPayInfo wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder> wxPayInfoBuilder_;
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public boolean hasWxPayInfo() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo() {
+        if (wxPayInfoBuilder_ == null) {
+          return wxPayInfo_;
+        } else {
+          return wxPayInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder setWxPayInfo(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo value) {
+        if (wxPayInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          wxPayInfo_ = value;
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder setWxPayInfo(
+          com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder builderForValue) {
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder mergeWxPayInfo(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo value) {
+        if (wxPayInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              wxPayInfo_ != com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance()) {
+            wxPayInfo_ =
+              com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.newBuilder(wxPayInfo_).mergeFrom(value).buildPartial();
+          } else {
+            wxPayInfo_ = value;
+          }
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder clearWxPayInfo() {
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder getWxPayInfoBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getWxPayInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder getWxPayInfoOrBuilder() {
+        if (wxPayInfoBuilder_ != null) {
+          return wxPayInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return wxPayInfo_;
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder> 
+          getWxPayInfoFieldBuilder() {
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder>(
+                  getWxPayInfo(),
+                  getParentForChildren(),
+                  isClean());
+          wxPayInfo_ = null;
+        }
+        return wxPayInfoBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ConfirmEarnestResult)
+    }
+
+    static {
+      defaultInstance = new ConfirmEarnestResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ConfirmEarnestResult)
+  }
+
+  public interface ContinuePayEarnestRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    java.lang.String getOrderId();
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getOrderIdBytes();
+
+    /**
+     * <code>optional int32 payChannel = 2;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    boolean hasPayChannel();
+    /**
+     * <code>optional int32 payChannel = 2;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    int getPayChannel();
+
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ContinuePayEarnestRequest}
+   *
+   * <pre>
+   *继续支付定金（从未完成定金付款的订单列表提交）
+   * </pre>
+   */
+  public static final class ContinuePayEarnestRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestRequest)
+      ContinuePayEarnestRequestOrBuilder {
+    // Use ContinuePayEarnestRequest.newBuilder() to construct.
+    private ContinuePayEarnestRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ContinuePayEarnestRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ContinuePayEarnestRequest defaultInstance;
+    public static ContinuePayEarnestRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ContinuePayEarnestRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ContinuePayEarnestRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              orderId_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              payChannel_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              userId_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest.class, com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ContinuePayEarnestRequest> PARSER =
+        new com.google.protobuf.AbstractParser<ContinuePayEarnestRequest>() {
+      public ContinuePayEarnestRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ContinuePayEarnestRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ContinuePayEarnestRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int ORDERID_FIELD_NUMBER = 1;
+    private java.lang.Object orderId_;
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    public java.lang.String getOrderId() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          orderId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getOrderIdBytes() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAYCHANNEL_FIELD_NUMBER = 2;
+    private int payChannel_;
+    /**
+     * <code>optional int32 payChannel = 2;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public boolean hasPayChannel() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 payChannel = 2;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public int getPayChannel() {
+      return payChannel_;
+    }
+
+    public static final int USERID_FIELD_NUMBER = 3;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      orderId_ = "";
+      payChannel_ = 0;
+      userId_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasOrderId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, payChannel_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getUserIdBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, payChannel_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getUserIdBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ContinuePayEarnestRequest}
+     *
+     * <pre>
+     *继续支付定金（从未完成定金付款的订单列表提交）
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestRequest)
+        com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest.class, com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        orderId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        payChannel_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest build() {
+        com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest result = new com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.orderId_ = orderId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.payChannel_ = payChannel_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.userId_ = userId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest.getDefaultInstance()) return this;
+        if (other.hasOrderId()) {
+          bitField0_ |= 0x00000001;
+          orderId_ = other.orderId_;
+          onChanged();
+        }
+        if (other.hasPayChannel()) {
+          setPayChannel(other.getPayChannel());
+        }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000004;
+          userId_ = other.userId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasOrderId()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object orderId_ = "";
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public java.lang.String getOrderId() {
+        java.lang.Object ref = orderId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            orderId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getOrderIdBytes() {
+        java.lang.Object ref = orderId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public Builder setOrderId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        orderId_ = getDefaultInstance().getOrderId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public Builder setOrderIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int payChannel_ ;
+      /**
+       * <code>optional int32 payChannel = 2;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public boolean hasPayChannel() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 payChannel = 2;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public int getPayChannel() {
+        return payChannel_;
+      }
+      /**
+       * <code>optional int32 payChannel = 2;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder setPayChannel(int value) {
+        bitField0_ |= 0x00000002;
+        payChannel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 payChannel = 2;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder clearPayChannel() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        payChannel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestRequest)
+    }
+
+    static {
+      defaultInstance = new ContinuePayEarnestRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestRequest)
+  }
+
+  public interface ContinuePayEarnestResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    java.lang.String getOrderId();
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getOrderIdBytes();
+
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    boolean hasPayChannel();
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    int getPayChannel();
+
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    boolean hasWxPayInfo();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder getWxPayInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ContinuePayEarnestResult}
+   *
+   * <pre>
+   *继续支付定金结果（从未完成定金付款的订单列表提交）
+   * </pre>
+   */
+  public static final class ContinuePayEarnestResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestResult)
+      ContinuePayEarnestResultOrBuilder {
+    // Use ContinuePayEarnestResult.newBuilder() to construct.
+    private ContinuePayEarnestResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ContinuePayEarnestResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ContinuePayEarnestResult defaultInstance;
+    public static ContinuePayEarnestResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ContinuePayEarnestResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ContinuePayEarnestResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              orderId_ = bs;
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              payChannel_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = wxPayInfo_.toBuilder();
+              }
+              wxPayInfo_ = input.readMessage(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(wxPayInfo_);
+                wxPayInfo_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult.class, com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ContinuePayEarnestResult> PARSER =
+        new com.google.protobuf.AbstractParser<ContinuePayEarnestResult>() {
+      public ContinuePayEarnestResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ContinuePayEarnestResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ContinuePayEarnestResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORDERID_FIELD_NUMBER = 3;
+    private java.lang.Object orderId_;
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public java.lang.String getOrderId() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          orderId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getOrderIdBytes() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAYCHANNEL_FIELD_NUMBER = 4;
+    private int payChannel_;
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public boolean hasPayChannel() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public int getPayChannel() {
+      return payChannel_;
+    }
+
+    public static final int WXPAYINFO_FIELD_NUMBER = 5;
+    private com.qjoy.basjoo.core.model.pb.Order.WxPayInfo wxPayInfo_;
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    public boolean hasWxPayInfo() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo() {
+      return wxPayInfo_;
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder getWxPayInfoOrBuilder() {
+      return wxPayInfo_;
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+      orderId_ = "";
+      payChannel_ = 0;
+      wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasWxPayInfo()) {
+        if (!getWxPayInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, payChannel_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(5, wxPayInfo_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, payChannel_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, wxPayInfo_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ContinuePayEarnestResult}
+     *
+     * <pre>
+     *继续支付定金结果（从未完成定金付款的订单列表提交）
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestResult)
+        com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult.class, com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getWxPayInfoFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        orderId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        payChannel_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+        } else {
+          wxPayInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult build() {
+        com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult result = new com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.orderId_ = orderId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.payChannel_ = payChannel_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (wxPayInfoBuilder_ == null) {
+          result.wxPayInfo_ = wxPayInfo_;
+        } else {
+          result.wxPayInfo_ = wxPayInfoBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        if (other.hasOrderId()) {
+          bitField0_ |= 0x00000004;
+          orderId_ = other.orderId_;
+          onChanged();
+        }
+        if (other.hasPayChannel()) {
+          setPayChannel(other.getPayChannel());
+        }
+        if (other.hasWxPayInfo()) {
+          mergeWxPayInfo(other.getWxPayInfo());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        if (hasWxPayInfo()) {
+          if (!getWxPayInfo().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Order.ContinuePayEarnestResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object orderId_ = "";
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public java.lang.String getOrderId() {
+        java.lang.Object ref = orderId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            orderId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getOrderIdBytes() {
+        java.lang.Object ref = orderId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder setOrderId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        orderId_ = getDefaultInstance().getOrderId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder setOrderIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int payChannel_ ;
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public boolean hasPayChannel() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public int getPayChannel() {
+        return payChannel_;
+      }
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder setPayChannel(int value) {
+        bitField0_ |= 0x00000008;
+        payChannel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder clearPayChannel() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        payChannel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.qjoy.basjoo.core.model.pb.Order.WxPayInfo wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder> wxPayInfoBuilder_;
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public boolean hasWxPayInfo() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo() {
+        if (wxPayInfoBuilder_ == null) {
+          return wxPayInfo_;
+        } else {
+          return wxPayInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder setWxPayInfo(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo value) {
+        if (wxPayInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          wxPayInfo_ = value;
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder setWxPayInfo(
+          com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder builderForValue) {
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder mergeWxPayInfo(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo value) {
+        if (wxPayInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              wxPayInfo_ != com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance()) {
+            wxPayInfo_ =
+              com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.newBuilder(wxPayInfo_).mergeFrom(value).buildPartial();
+          } else {
+            wxPayInfo_ = value;
+          }
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder clearWxPayInfo() {
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder getWxPayInfoBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getWxPayInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder getWxPayInfoOrBuilder() {
+        if (wxPayInfoBuilder_ != null) {
+          return wxPayInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return wxPayInfo_;
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder> 
+          getWxPayInfoFieldBuilder() {
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder>(
+                  getWxPayInfo(),
+                  getParentForChildren(),
+                  isClean());
+          wxPayInfo_ = null;
+        }
+        return wxPayInfoBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestResult)
+    }
+
+    static {
+      defaultInstance = new ContinuePayEarnestResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ContinuePayEarnestResult)
+  }
+
+  public interface ConfirmPayRemainRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    java.lang.String getOrderId();
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getOrderIdBytes();
+
+    /**
+     * <code>optional int32 payChannel = 2;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    boolean hasPayChannel();
+    /**
+     * <code>optional int32 payChannel = 2;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    int getPayChannel();
+
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>repeated string vouchers = 4;</code>
+     *
+     * <pre>
+     *用户选择的权益（券）
+     * </pre>
+     */
+    com.google.protobuf.ProtocolStringList
+        getVouchersList();
+    /**
+     * <code>repeated string vouchers = 4;</code>
+     *
+     * <pre>
+     *用户选择的权益（券）
+     * </pre>
+     */
+    int getVouchersCount();
+    /**
+     * <code>repeated string vouchers = 4;</code>
+     *
+     * <pre>
+     *用户选择的权益（券）
+     * </pre>
+     */
+    java.lang.String getVouchers(int index);
+    /**
+     * <code>repeated string vouchers = 4;</code>
+     *
+     * <pre>
+     *用户选择的权益（券）
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getVouchersBytes(int index);
+
+    /**
+     * <code>optional string addressId = 5;</code>
+     *
+     * <pre>
+     *用户重现选择的地址ID（可选）
+     * </pre>
+     */
+    boolean hasAddressId();
+    /**
+     * <code>optional string addressId = 5;</code>
+     *
+     * <pre>
+     *用户重现选择的地址ID（可选）
+     * </pre>
+     */
+    java.lang.String getAddressId();
+    /**
+     * <code>optional string addressId = 5;</code>
+     *
+     * <pre>
+     *用户重现选择的地址ID（可选）
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getAddressIdBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmPayRemainRequest}
+   *
+   * <pre>
+   *确认提交支付尾款
+   * </pre>
+   */
+  public static final class ConfirmPayRemainRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainRequest)
+      ConfirmPayRemainRequestOrBuilder {
+    // Use ConfirmPayRemainRequest.newBuilder() to construct.
+    private ConfirmPayRemainRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ConfirmPayRemainRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ConfirmPayRemainRequest defaultInstance;
+    public static ConfirmPayRemainRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ConfirmPayRemainRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ConfirmPayRemainRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              orderId_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              payChannel_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              userId_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                vouchers_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              vouchers_.add(bs);
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              addressId_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          vouchers_ = vouchers_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest.class, com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ConfirmPayRemainRequest> PARSER =
+        new com.google.protobuf.AbstractParser<ConfirmPayRemainRequest>() {
+      public ConfirmPayRemainRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ConfirmPayRemainRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfirmPayRemainRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int ORDERID_FIELD_NUMBER = 1;
+    private java.lang.Object orderId_;
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    public java.lang.String getOrderId() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          orderId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string orderId = 1;</code>
+     *
+     * <pre>
+     *订单ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getOrderIdBytes() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAYCHANNEL_FIELD_NUMBER = 2;
+    private int payChannel_;
+    /**
+     * <code>optional int32 payChannel = 2;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public boolean hasPayChannel() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 payChannel = 2;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public int getPayChannel() {
+      return payChannel_;
+    }
+
+    public static final int USERID_FIELD_NUMBER = 3;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 3;</code>
+     *
+     * <pre>
+     *用户ID   
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VOUCHERS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList vouchers_;
+    /**
+     * <code>repeated string vouchers = 4;</code>
+     *
+     * <pre>
+     *用户选择的权益（券）
+     * </pre>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getVouchersList() {
+      return vouchers_;
+    }
+    /**
+     * <code>repeated string vouchers = 4;</code>
+     *
+     * <pre>
+     *用户选择的权益（券）
+     * </pre>
+     */
+    public int getVouchersCount() {
+      return vouchers_.size();
+    }
+    /**
+     * <code>repeated string vouchers = 4;</code>
+     *
+     * <pre>
+     *用户选择的权益（券）
+     * </pre>
+     */
+    public java.lang.String getVouchers(int index) {
+      return vouchers_.get(index);
+    }
+    /**
+     * <code>repeated string vouchers = 4;</code>
+     *
+     * <pre>
+     *用户选择的权益（券）
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getVouchersBytes(int index) {
+      return vouchers_.getByteString(index);
+    }
+
+    public static final int ADDRESSID_FIELD_NUMBER = 5;
+    private java.lang.Object addressId_;
+    /**
+     * <code>optional string addressId = 5;</code>
+     *
+     * <pre>
+     *用户重现选择的地址ID（可选）
+     * </pre>
+     */
+    public boolean hasAddressId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string addressId = 5;</code>
+     *
+     * <pre>
+     *用户重现选择的地址ID（可选）
+     * </pre>
+     */
+    public java.lang.String getAddressId() {
+      java.lang.Object ref = addressId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          addressId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string addressId = 5;</code>
+     *
+     * <pre>
+     *用户重现选择的地址ID（可选）
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getAddressIdBytes() {
+      java.lang.Object ref = addressId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        addressId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      orderId_ = "";
+      payChannel_ = 0;
+      userId_ = "";
+      vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      addressId_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasOrderId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, payChannel_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getUserIdBytes());
+      }
+      for (int i = 0; i < vouchers_.size(); i++) {
+        output.writeBytes(4, vouchers_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(5, getAddressIdBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, payChannel_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getUserIdBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < vouchers_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(vouchers_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getVouchersList().size();
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getAddressIdBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmPayRemainRequest}
+     *
+     * <pre>
+     *确认提交支付尾款
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainRequest)
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest.class, com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        orderId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        payChannel_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        addressId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest build() {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest result = new com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.orderId_ = orderId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.payChannel_ = payChannel_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.userId_ = userId_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          vouchers_ = vouchers_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.vouchers_ = vouchers_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.addressId_ = addressId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest.getDefaultInstance()) return this;
+        if (other.hasOrderId()) {
+          bitField0_ |= 0x00000001;
+          orderId_ = other.orderId_;
+          onChanged();
+        }
+        if (other.hasPayChannel()) {
+          setPayChannel(other.getPayChannel());
+        }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000004;
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.vouchers_.isEmpty()) {
+          if (vouchers_.isEmpty()) {
+            vouchers_ = other.vouchers_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureVouchersIsMutable();
+            vouchers_.addAll(other.vouchers_);
+          }
+          onChanged();
+        }
+        if (other.hasAddressId()) {
+          bitField0_ |= 0x00000010;
+          addressId_ = other.addressId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasOrderId()) {
+          
+          return false;
+        }
+        if (!hasUserId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object orderId_ = "";
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public java.lang.String getOrderId() {
+        java.lang.Object ref = orderId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            orderId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getOrderIdBytes() {
+        java.lang.Object ref = orderId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public Builder setOrderId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        orderId_ = getDefaultInstance().getOrderId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string orderId = 1;</code>
+       *
+       * <pre>
+       *订单ID
+       * </pre>
+       */
+      public Builder setOrderIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int payChannel_ ;
+      /**
+       * <code>optional int32 payChannel = 2;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public boolean hasPayChannel() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 payChannel = 2;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public int getPayChannel() {
+        return payChannel_;
+      }
+      /**
+       * <code>optional int32 payChannel = 2;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder setPayChannel(int value) {
+        bitField0_ |= 0x00000002;
+        payChannel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 payChannel = 2;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder clearPayChannel() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        payChannel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 3;</code>
+       *
+       * <pre>
+       *用户ID   
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureVouchersIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          vouchers_ = new com.google.protobuf.LazyStringArrayList(vouchers_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated string vouchers = 4;</code>
+       *
+       * <pre>
+       *用户选择的权益（券）
+       * </pre>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getVouchersList() {
+        return vouchers_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string vouchers = 4;</code>
+       *
+       * <pre>
+       *用户选择的权益（券）
+       * </pre>
+       */
+      public int getVouchersCount() {
+        return vouchers_.size();
+      }
+      /**
+       * <code>repeated string vouchers = 4;</code>
+       *
+       * <pre>
+       *用户选择的权益（券）
+       * </pre>
+       */
+      public java.lang.String getVouchers(int index) {
+        return vouchers_.get(index);
+      }
+      /**
+       * <code>repeated string vouchers = 4;</code>
+       *
+       * <pre>
+       *用户选择的权益（券）
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getVouchersBytes(int index) {
+        return vouchers_.getByteString(index);
+      }
+      /**
+       * <code>repeated string vouchers = 4;</code>
+       *
+       * <pre>
+       *用户选择的权益（券）
+       * </pre>
+       */
+      public Builder setVouchers(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVouchersIsMutable();
+        vouchers_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string vouchers = 4;</code>
+       *
+       * <pre>
+       *用户选择的权益（券）
+       * </pre>
+       */
+      public Builder addVouchers(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVouchersIsMutable();
+        vouchers_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string vouchers = 4;</code>
+       *
+       * <pre>
+       *用户选择的权益（券）
+       * </pre>
+       */
+      public Builder addAllVouchers(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureVouchersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, vouchers_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string vouchers = 4;</code>
+       *
+       * <pre>
+       *用户选择的权益（券）
+       * </pre>
+       */
+      public Builder clearVouchers() {
+        vouchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string vouchers = 4;</code>
+       *
+       * <pre>
+       *用户选择的权益（券）
+       * </pre>
+       */
+      public Builder addVouchersBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVouchersIsMutable();
+        vouchers_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object addressId_ = "";
+      /**
+       * <code>optional string addressId = 5;</code>
+       *
+       * <pre>
+       *用户重现选择的地址ID（可选）
+       * </pre>
+       */
+      public boolean hasAddressId() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string addressId = 5;</code>
+       *
+       * <pre>
+       *用户重现选择的地址ID（可选）
+       * </pre>
+       */
+      public java.lang.String getAddressId() {
+        java.lang.Object ref = addressId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            addressId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string addressId = 5;</code>
+       *
+       * <pre>
+       *用户重现选择的地址ID（可选）
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getAddressIdBytes() {
+        java.lang.Object ref = addressId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          addressId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string addressId = 5;</code>
+       *
+       * <pre>
+       *用户重现选择的地址ID（可选）
+       * </pre>
+       */
+      public Builder setAddressId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        addressId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string addressId = 5;</code>
+       *
+       * <pre>
+       *用户重现选择的地址ID（可选）
+       * </pre>
+       */
+      public Builder clearAddressId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        addressId_ = getDefaultInstance().getAddressId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string addressId = 5;</code>
+       *
+       * <pre>
+       *用户重现选择的地址ID（可选）
+       * </pre>
+       */
+      public Builder setAddressIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        addressId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainRequest)
+    }
+
+    static {
+      defaultInstance = new ConfirmPayRemainRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainRequest)
+  }
+
+  public interface ConfirmPayRemainResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    boolean hasResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    java.lang.String getResultCode();
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultCodeBytes();
+
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    boolean hasResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    java.lang.String getResultMsg();
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultMsgBytes();
+
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    java.lang.String getOrderId();
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getOrderIdBytes();
+
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    boolean hasPayChannel();
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    int getPayChannel();
+
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    boolean hasWxPayInfo();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder getWxPayInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmPayRemainResult}
+   *
+   * <pre>
+   *确认订单结果
+   * </pre>
+   */
+  public static final class ConfirmPayRemainResult extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainResult)
+      ConfirmPayRemainResultOrBuilder {
+    // Use ConfirmPayRemainResult.newBuilder() to construct.
+    private ConfirmPayRemainResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ConfirmPayRemainResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ConfirmPayRemainResult defaultInstance;
+    public static ConfirmPayRemainResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ConfirmPayRemainResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ConfirmPayRemainResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              resultCode_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              resultMsg_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              orderId_ = bs;
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              payChannel_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = wxPayInfo_.toBuilder();
+              }
+              wxPayInfo_ = input.readMessage(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(wxPayInfo_);
+                wxPayInfo_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult.class, com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ConfirmPayRemainResult> PARSER =
+        new com.google.protobuf.AbstractParser<ConfirmPayRemainResult>() {
+      public ConfirmPayRemainResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ConfirmPayRemainResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfirmPayRemainResult> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RESULTCODE_FIELD_NUMBER = 1;
+    private java.lang.Object resultCode_;
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public boolean hasResultCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public java.lang.String getResultCode() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultCode = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultCodeBytes() {
+      java.lang.Object ref = resultCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESULTMSG_FIELD_NUMBER = 2;
+    private java.lang.Object resultMsg_;
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public boolean hasResultMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public java.lang.String getResultMsg() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          resultMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string resultMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultMsgBytes() {
+      java.lang.Object ref = resultMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORDERID_FIELD_NUMBER = 3;
+    private java.lang.Object orderId_;
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public java.lang.String getOrderId() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          orderId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string orderId = 3;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getOrderIdBytes() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAYCHANNEL_FIELD_NUMBER = 4;
+    private int payChannel_;
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public boolean hasPayChannel() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int32 payChannel = 4;</code>
+     *
+     * <pre>
+     *支付渠道，0：微信支付，1：支付宝
+     * </pre>
+     */
+    public int getPayChannel() {
+      return payChannel_;
+    }
+
+    public static final int WXPAYINFO_FIELD_NUMBER = 5;
+    private com.qjoy.basjoo.core.model.pb.Order.WxPayInfo wxPayInfo_;
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    public boolean hasWxPayInfo() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo() {
+      return wxPayInfo_;
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+     *
+     * <pre>
+     *微信订单支付信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder getWxPayInfoOrBuilder() {
+      return wxPayInfo_;
+    }
+
+    private void initFields() {
+      resultCode_ = "";
+      resultMsg_ = "";
+      orderId_ = "";
+      payChannel_ = 0;
+      wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasResultCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasResultMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasWxPayInfo()) {
+        if (!getWxPayInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, payChannel_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(5, wxPayInfo_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getResultCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getResultMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getOrderIdBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, payChannel_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, wxPayInfo_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmPayRemainResult}
+     *
+     * <pre>
+     *确认订单结果
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainResult)
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult.class, com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getWxPayInfoFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        resultCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        orderId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        payChannel_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+        } else {
+          wxPayInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult build() {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult buildPartial() {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult result = new com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.resultCode_ = resultCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.resultMsg_ = resultMsg_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.orderId_ = orderId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.payChannel_ = payChannel_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (wxPayInfoBuilder_ == null) {
+          result.wxPayInfo_ = wxPayInfo_;
+        } else {
+          result.wxPayInfo_ = wxPayInfoBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult other) {
+        if (other == com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult.getDefaultInstance()) return this;
+        if (other.hasResultCode()) {
+          bitField0_ |= 0x00000001;
+          resultCode_ = other.resultCode_;
+          onChanged();
+        }
+        if (other.hasResultMsg()) {
+          bitField0_ |= 0x00000002;
+          resultMsg_ = other.resultMsg_;
+          onChanged();
+        }
+        if (other.hasOrderId()) {
+          bitField0_ |= 0x00000004;
+          orderId_ = other.orderId_;
+          onChanged();
+        }
+        if (other.hasPayChannel()) {
+          setPayChannel(other.getPayChannel());
+        }
+        if (other.hasWxPayInfo()) {
+          mergeWxPayInfo(other.getWxPayInfo());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasResultCode()) {
+          
+          return false;
+        }
+        if (!hasResultMsg()) {
+          
+          return false;
+        }
+        if (hasWxPayInfo()) {
+          if (!getWxPayInfo().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.Order.ConfirmPayRemainResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object resultCode_ = "";
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public boolean hasResultCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public java.lang.String getResultCode() {
+        java.lang.Object ref = resultCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultCodeBytes() {
+        java.lang.Object ref = resultCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder clearResultCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resultCode_ = getDefaultInstance().getResultCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultCode = 1;</code>
+       */
+      public Builder setResultCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        resultCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultMsg_ = "";
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public boolean hasResultMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public java.lang.String getResultMsg() {
+        java.lang.Object ref = resultMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            resultMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultMsgBytes() {
+        java.lang.Object ref = resultMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder clearResultMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resultMsg_ = getDefaultInstance().getResultMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string resultMsg = 2;</code>
+       */
+      public Builder setResultMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        resultMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object orderId_ = "";
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public java.lang.String getOrderId() {
+        java.lang.Object ref = orderId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            orderId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getOrderIdBytes() {
+        java.lang.Object ref = orderId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder setOrderId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        orderId_ = getDefaultInstance().getOrderId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string orderId = 3;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder setOrderIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int payChannel_ ;
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public boolean hasPayChannel() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public int getPayChannel() {
+        return payChannel_;
+      }
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder setPayChannel(int value) {
+        bitField0_ |= 0x00000008;
+        payChannel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 payChannel = 4;</code>
+       *
+       * <pre>
+       *支付渠道，0：微信支付，1：支付宝
+       * </pre>
+       */
+      public Builder clearPayChannel() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        payChannel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.qjoy.basjoo.core.model.pb.Order.WxPayInfo wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder> wxPayInfoBuilder_;
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public boolean hasWxPayInfo() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo getWxPayInfo() {
+        if (wxPayInfoBuilder_ == null) {
+          return wxPayInfo_;
+        } else {
+          return wxPayInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder setWxPayInfo(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo value) {
+        if (wxPayInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          wxPayInfo_ = value;
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder setWxPayInfo(
+          com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder builderForValue) {
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder mergeWxPayInfo(com.qjoy.basjoo.core.model.pb.Order.WxPayInfo value) {
+        if (wxPayInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              wxPayInfo_ != com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance()) {
+            wxPayInfo_ =
+              com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.newBuilder(wxPayInfo_).mergeFrom(value).buildPartial();
+          } else {
+            wxPayInfo_ = value;
+          }
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public Builder clearWxPayInfo() {
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfo_ = com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.getDefaultInstance();
+          onChanged();
+        } else {
+          wxPayInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder getWxPayInfoBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getWxPayInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder getWxPayInfoOrBuilder() {
+        if (wxPayInfoBuilder_ != null) {
+          return wxPayInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return wxPayInfo_;
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.WxPayInfo wxPayInfo = 5;</code>
+       *
+       * <pre>
+       *微信订单支付信息
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder> 
+          getWxPayInfoFieldBuilder() {
+        if (wxPayInfoBuilder_ == null) {
+          wxPayInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Order.WxPayInfo, com.qjoy.basjoo.core.model.pb.Order.WxPayInfo.Builder, com.qjoy.basjoo.core.model.pb.Order.WxPayInfoOrBuilder>(
+                  getWxPayInfo(),
+                  getParentForChildren(),
+                  isClean());
+          wxPayInfo_ = null;
+        }
+        return wxPayInfoBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainResult)
+    }
+
+    static {
+      defaultInstance = new ConfirmPayRemainResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.ConfirmPayRemainResult)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderRequest_descriptor;
   private static
@@ -44850,6 +53888,36 @@ public final class Order {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -44859,135 +53927,165 @@ public final class Order {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\005Order\022\035com.qjoy.basjoo.core.model.pb\"\276" +
+      "\n\005Order\022\035com.qjoy.basjoo.core.model.pb\"\323" +
       "\001\n\022CommitOrderRequest\022\021\n\tproductId\030\001 \002(\t" +
       "\022\024\n\014categoryCode\030\002 \002(\t\022\021\n\trentCount\030\003 \002(" +
       "\005\022\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance\030\005 \002(\010\022\017" +
       "\n\007orderId\030\006 \001(\t\022\024\n\014onlyCalPrice\030\007 \002(\010\022\016\n" +
-      "\006userId\030\010 \002(\t\022\020\n\010vouchers\030\t \003(\t\"\356\003\n\021Comm" +
-      "itOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
-      "ultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\024\n\014categor" +
-      "yCode\030\004 \001(\t\022\021\n\trentCount\030\005 \001(\005\022\020\n\010rentCo" +
-      "de\030\006 \001(\t\022\021\n\tinsurance\030\007 \001(\010\022\026\n\016insurance",
-      "Price\030\010 \001(\001\022\023\n\013pledgePrice\030\t \001(\001\022\033\n\023tran" +
-      "sportationPrice\030\n \001(\001\022\026\n\016totalRentPrice\030" +
-      "\013 \001(\001\022\022\n\nhasVoucher\030\014 \001(\010\022\022\n\ntotalPrice\030" +
-      "\r \001(\001\022W\n\027orderReceiveAddressInfo\030\016 \001(\01326" +
-      ".com.qjoy.basjoo.core.model.pb.OrderRece" +
-      "iveAddressInfo\022D\n\013voucherInfo\030\017 \003(\0132/.co" +
-      "m.qjoy.basjoo.core.model.pb.OrderVoucher" +
-      "Info\022\030\n\020maxVoucherAmount\030\020 \001(\001\022\020\n\010vouche" +
-      "rs\030\021 \003(\t\"\223\001\n\027OrderReceiveAddressInfo\022\020\n\010" +
-      "receiver\030\001 \002(\t\022\020\n\010mobileNo\030\002 \002(\t\022\017\n\007sect",
-      "ion\030\003 \002(\t\022\016\n\006street\030\004 \002(\t\022\016\n\006detail\030\005 \002(" +
-      "\t\022\020\n\010postCode\030\006 \002(\t\022\021\n\taddressId\030\007 \001(\t\"\345" +
-      "\001\n\023ConfirmOrderRequest\022\021\n\tproductId\030\001 \002(" +
-      "\t\022\024\n\014categoryCode\030\002 \002(\t\022\021\n\trentCount\030\003 \002" +
-      "(\005\022\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance\030\005 \001(\010\022" +
-      "\017\n\007orderId\030\006 \002(\t\022\021\n\taddressId\030\007 \002(\t\022\020\n\010v" +
-      "ouchers\030\010 \003(\t\022\023\n\013userMessage\030\t \001(\t\022\022\n\npa" +
-      "yChannel\030\n \001(\005\022\016\n\006userId\030\013 \002(\t\"\235\001\n\022Confi" +
-      "rmOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
-      "ultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChan",
-      "nel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy." +
-      "basjoo.core.model.pb.WxPayInfo\"\203\001\n\tWxPay" +
-      "Info\022\021\n\tpartnerId\030\001 \002(\t\022\020\n\010prepayId\030\002 \002(" +
-      "\t\022\017\n\007package\030\003 \002(\t\022\020\n\010nonceStr\030\004 \002(\t\022\021\n\t" +
-      "timeStamp\030\005 \002(\t\022\014\n\004sign\030\006 \002(\t\022\r\n\005appId\030\007" +
-      " \002(\t\"H\n\021ConfirmPayRequest\022\017\n\007orderId\030\001 \002" +
-      "(\t\022\022\n\npayChannel\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\"\233" +
-      "\001\n\020ConfirmPayResult\022\022\n\nresultCode\030\001 \002(\t\022" +
-      "\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\np" +
-      "ayChannel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com",
-      ".qjoy.basjoo.core.model.pb.WxPayInfo\"6\n\023" +
-      "GetPayStatusRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006" +
-      "userId\030\002 \002(\t\"\316\001\n\022GetPayStatusResult\022\022\n\nr" +
-      "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007or" +
-      "derId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022\023\n\013total" +
-      "PayFee\030\005 \001(\001\022W\n\027orderReceiveAddressInfo\030" +
-      "\006 \001(\01326.com.qjoy.basjoo.core.model.pb.Or" +
-      "derReceiveAddressInfo\"\237\001\n\026SearchOrderLis" +
-      "tRequest\022\020\n\010keyWords\030\001 \001(\t\022\023\n\013orderStatu" +
-      "s\030\002 \001(\005\022\026\n\016evaluateStauts\030\003 \001(\010\022\022\n\nstart",
-      "Index\030\004 \001(\005\022\021\n\tstartTime\030\005 \001(\003\022\017\n\007endTim" +
-      "e\030\006 \001(\003\022\016\n\006userId\030\007 \002(\t\"\271\002\n\025SearchOrderL" +
-      "istResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultM" +
-      "sg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 " +
-      "\001(\010\022\024\n\014waitPayCount\030\005 \001(\005\022\031\n\021waitDeliver" +
-      "yCount\030\006 \001(\005\022\030\n\020waitReceiveCount\030\007 \001(\005\022\027" +
-      "\n\017waitRevertCount\030\010 \001(\005\022\031\n\021waitEvaluateC" +
-      "ount\030\t \001(\005\022\022\n\ntotalCount\030\n \001(\005\022C\n\rorderL" +
-      "iteInfo\030\013 \003(\0132,.com.qjoy.basjoo.core.mod" +
-      "el.pb.OrderLiteInfo\"\362\002\n\rOrderLiteInfo\022\017\n",
-      "\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\nc" +
-      "reateTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023" +
-      "\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n" +
-      "\trentCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013p" +
-      "ledgePrice\030\t \002(\001\022\033\n\023transportationPrice\030" +
-      "\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportat" +
-      "ionId\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tp" +
-      "roductId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004" +
-      "desc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\"5\n\022Dele" +
-      "teOrderRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userI",
-      "d\030\002 \002(\t\":\n\021DeleteOrderResult\022\022\n\nresultCo" +
-      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"E\n\022CancelOrd" +
-      "erRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006reason\030\002 \001" +
-      "(\t\022\016\n\006userId\030\003 \002(\t\":\n\021CancelOrderResult\022" +
-      "\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8" +
-      "\n\025ConfirmReceiveRequest\022\017\n\007orderId\030\001 \002(\t" +
-      "\022\016\n\006userId\030\002 \002(\t\"=\n\024ConfirmReceiveResult" +
-      "\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"" +
-      "\263\001\n\022ApplyRevertRequest\022\017\n\007orderId\030\001 \002(\t\022" +
-      "\027\n\017applyRevertType\030\002 \002(\t\022\030\n\020transportati",
-      "onId\030\003 \001(\t\022\035\n\025transportationCompany\030\004 \001(" +
-      "\t\022\016\n\006userId\030\005 \002(\t\022\025\n\revidentalImgs\030\006 \003(\t" +
-      "\022\023\n\013revertIntro\030\007 \001(\t\":\n\021ApplyRevertResu" +
-      "lt\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(" +
-      "\t\"\263\001\n\022ApplyRefundRequest\022\016\n\006userId\030\001 \002(\t" +
-      "\022\017\n\007orderId\030\002 \002(\t\022\022\n\nrefundType\030\003 \002(\t\022\023\n" +
-      "\013goodsStatus\030\004 \001(\t\022\024\n\014refundReason\030\005 \002(\t" +
-      "\022\021\n\trefundFee\030\006 \001(\001\022\025\n\revidentalImgs\030\007 \003" +
-      "(\t\022\023\n\013refundIntro\030\010 \001(\t\":\n\021ApplyRefundRe" +
-      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 ",
-      "\002(\t\"6\n\023GetRefundFeeRequest\022\016\n\006userId\030\001 \002" +
-      "(\t\022\017\n\007orderId\030\002 \002(\t\"g\n\022GetRefundFeeResul" +
-      "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
-      "\022\024\n\014maxRefundFee\030\003 \001(\001\022\024\n\014transportFee\030\004" +
-      " \001(\001\"\252\001\n\030CommitRefundTransRequest\022\016\n\006use" +
-      "rId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\027\n\017refundTran" +
-      "sType\030\003 \002(\t\022\030\n\020transportationId\030\004 \001(\t\022\035\n" +
-      "\025transportationCompany\030\005 \001(\t\022\033\n\023transpor" +
-      "tationIntro\030\006 \001(\t\"@\n\027CommitRefundTransRe" +
-      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 ",
-      "\002(\t\"8\n\025GetOrderDetailRequest\022\017\n\007orderId\030" +
-      "\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"\206\001\n\024GetOrderDetail" +
-      "Result\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030" +
-      "\002 \002(\t\022G\n\017orderDetailInfo\030\003 \001(\0132..com.qjo" +
-      "y.basjoo.core.model.pb.OrderDetailInfo\"\301" +
-      "\005\n\017OrderDetailInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013o" +
-      "rderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\r" +
-      "rentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003" +
-      "\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n" +
-      "\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033\n",
-      "\023transportationPrice\030\n \001(\001\022\022\n\ntotalPrice" +
-      "\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016eval" +
-      "uateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014m" +
-      "ainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014categ" +
-      "oryName\030\021 \002(\t\022\017\n\007payTime\030\022 \001(\003\022\r\n\005payId\030" +
-      "\023 \001(\t\022\022\n\npayChannel\030\024 \001(\t\022\024\n\014deliveryTim" +
-      "e\030\025 \001(\003\022\023\n\013receiveTime\030\026 \001(\003\022\022\n\nrevertTi" +
-      "me\030\027 \001(\003\022\024\n\014completeTime\030\030 \001(\003\022\021\n\tcloseT" +
-      "ime\030\031 \001(\003\022\020\n\010vouchers\030\032 \003(\t\022W\n\027orderRece" +
-      "iveAddressInfo\030\033 \001(\01326.com.qjoy.basjoo.c",
-      "ore.model.pb.OrderReceiveAddressInfo\022D\n\013" +
-      "voucherInfo\030\034 \003(\0132/.com.qjoy.basjoo.core" +
-      ".model.pb.OrderVoucherInfo\"\300\001\n\020OrderVouc" +
+      "\006userId\030\010 \002(\t\022\020\n\010vouchers\030\t \003(\t\022\023\n\013quali" +
+      "tyCode\030\n \002(\t\"\203\004\n\021CommitOrderResult\022\022\n\nre" +
+      "sultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007ord" +
+      "erId\030\003 \001(\t\022\024\n\014categoryCode\030\004 \001(\t\022\021\n\trent" +
+      "Count\030\005 \001(\005\022\020\n\010rentCode\030\006 \001(\t\022\021\n\tinsuran",
+      "ce\030\007 \001(\010\022\026\n\016insurancePrice\030\010 \001(\001\022\023\n\013pled" +
+      "gePrice\030\t \001(\001\022\033\n\023transportationPrice\030\n \001" +
+      "(\001\022\026\n\016totalRentPrice\030\013 \001(\001\022\022\n\nhasVoucher" +
+      "\030\014 \001(\010\022\022\n\ntotalPrice\030\r \001(\001\022W\n\027orderRecei" +
+      "veAddressInfo\030\016 \001(\01326.com.qjoy.basjoo.co" +
+      "re.model.pb.OrderReceiveAddressInfo\022D\n\013v" +
+      "oucherInfo\030\017 \003(\0132/.com.qjoy.basjoo.core." +
+      "model.pb.OrderVoucherInfo\022\030\n\020maxVoucherA" +
+      "mount\030\020 \001(\001\022\020\n\010vouchers\030\021 \003(\t\022\023\n\013quality" +
+      "Code\030\022 \002(\t\"\223\001\n\027OrderReceiveAddressInfo\022\020",
+      "\n\010receiver\030\001 \002(\t\022\020\n\010mobileNo\030\002 \002(\t\022\017\n\007se" +
+      "ction\030\003 \002(\t\022\016\n\006street\030\004 \002(\t\022\016\n\006detail\030\005 " +
+      "\002(\t\022\020\n\010postCode\030\006 \002(\t\022\021\n\taddressId\030\007 \001(\t" +
+      "\"\372\001\n\023ConfirmOrderRequest\022\021\n\tproductId\030\001 " +
+      "\002(\t\022\024\n\014categoryCode\030\002 \002(\t\022\021\n\trentCount\030\003" +
+      " \002(\005\022\020\n\010rentCode\030\004 \002(\t\022\021\n\tinsurance\030\005 \001(" +
+      "\010\022\017\n\007orderId\030\006 \002(\t\022\021\n\taddressId\030\007 \002(\t\022\020\n" +
+      "\010vouchers\030\010 \003(\t\022\023\n\013userMessage\030\t \001(\t\022\022\n\n" +
+      "payChannel\030\n \001(\005\022\016\n\006userId\030\013 \002(\t\022\023\n\013qual" +
+      "ityCode\030\014 \002(\t\"\235\001\n\022ConfirmOrderResult\022\022\n\n",
+      "resultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007o" +
+      "rderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPa" +
+      "yInfo\030\005 \001(\0132(.com.qjoy.basjoo.core.model" +
+      ".pb.WxPayInfo\"\203\001\n\tWxPayInfo\022\021\n\tpartnerId" +
+      "\030\001 \002(\t\022\020\n\010prepayId\030\002 \002(\t\022\017\n\007package\030\003 \002(" +
+      "\t\022\020\n\010nonceStr\030\004 \002(\t\022\021\n\ttimeStamp\030\005 \002(\t\022\014" +
+      "\n\004sign\030\006 \002(\t\022\r\n\005appId\030\007 \002(\t\"H\n\021ConfirmPa" +
+      "yRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChannel\030" +
+      "\002 \001(\005\022\016\n\006userId\030\003 \002(\t\"\233\001\n\020ConfirmPayResu" +
+      "lt\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(",
+      "\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;" +
+      "\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo.core" +
+      ".model.pb.WxPayInfo\"\205\001\n\023GetPayStatusRequ" +
+      "est\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\022M\n\022" +
+      "payStatusQueryType\030\003 \001(\01621.com.qjoy.basj" +
+      "oo.core.model.pb.PayStatusQueryType\"\316\001\n\022" +
+      "GetPayStatusResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
+      "\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npa" +
+      "yChannel\030\004 \001(\005\022\023\n\013totalPayFee\030\005 \001(\001\022W\n\027o" +
+      "rderReceiveAddressInfo\030\006 \001(\01326.com.qjoy.",
+      "basjoo.core.model.pb.OrderReceiveAddress" +
+      "Info\"\237\001\n\026SearchOrderListRequest\022\020\n\010keyWo" +
+      "rds\030\001 \001(\t\022\023\n\013orderStatus\030\002 \001(\005\022\026\n\016evalua" +
+      "teStauts\030\003 \001(\010\022\022\n\nstartIndex\030\004 \001(\005\022\021\n\tst" +
+      "artTime\030\005 \001(\003\022\017\n\007endTime\030\006 \001(\003\022\016\n\006userId" +
+      "\030\007 \002(\t\"\271\002\n\025SearchOrderListResult\022\022\n\nresu" +
+      "ltCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020\n\010maxIn" +
+      "dex\030\003 \001(\005\022\017\n\007hasMore\030\004 \001(\010\022\024\n\014waitPayCou" +
+      "nt\030\005 \001(\005\022\031\n\021waitDeliveryCount\030\006 \001(\005\022\030\n\020w" +
+      "aitReceiveCount\030\007 \001(\005\022\027\n\017waitRevertCount",
+      "\030\010 \001(\005\022\031\n\021waitEvaluateCount\030\t \001(\005\022\022\n\ntot" +
+      "alCount\030\n \001(\005\022C\n\rorderLiteInfo\030\013 \003(\0132,.c" +
+      "om.qjoy.basjoo.core.model.pb.OrderLiteIn" +
+      "fo\"\240\003\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n" +
+      "\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025" +
+      "\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002" +
+      "(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022" +
+      "\021\n\trentPrice\030\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022" +
+      "\033\n\023transportationPrice\030\n \001(\001\022\022\n\ntotalPri" +
+      "ce\030\013 \002(\001\022\030\n\020transportationId\030\014 \001(\t\022\026\n\016ev",
+      "aluateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n" +
+      "\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014cat" +
+      "egoryName\030\021 \002(\t\022\020\n\010discount\030\022 \001(\001\022\032\n\022ori" +
+      "ginalRentAmount\030\023 \001(\001\"5\n\022DeleteOrderRequ" +
+      "est\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021" +
+      "DeleteOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
+      "\tresultMsg\030\002 \002(\t\"E\n\022CancelOrderRequest\022\017" +
+      "\n\007orderId\030\001 \002(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006userI" +
+      "d\030\003 \002(\t\":\n\021CancelOrderResult\022\022\n\nresultCo" +
+      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025ConfirmRe",
+      "ceiveRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030" +
+      "\002 \002(\t\"=\n\024ConfirmReceiveResult\022\022\n\nresultC" +
+      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRe" +
+      "vertRequest\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRev" +
+      "ertType\030\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022" +
+      "\035\n\025transportationCompany\030\004 \001(\t\022\016\n\006userId" +
+      "\030\005 \002(\t\022\025\n\revidentalImgs\030\006 \003(\t\022\023\n\013revertI" +
+      "ntro\030\007 \001(\t\":\n\021ApplyRevertResult\022\022\n\nresul" +
+      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022Apply" +
+      "RefundRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId",
+      "\030\002 \002(\t\022\022\n\nrefundType\030\003 \002(\t\022\023\n\013goodsStatu" +
+      "s\030\004 \001(\t\022\024\n\014refundReason\030\005 \002(\t\022\021\n\trefundF" +
+      "ee\030\006 \001(\001\022\025\n\revidentalImgs\030\007 \003(\t\022\023\n\013refun" +
+      "dIntro\030\010 \001(\t\":\n\021ApplyRefundResult\022\022\n\nres" +
+      "ultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"6\n\023GetR" +
+      "efundFeeRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007order" +
+      "Id\030\002 \002(\t\"g\n\022GetRefundFeeResult\022\022\n\nresult" +
+      "Code\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\024\n\014maxRefu" +
+      "ndFee\030\003 \001(\001\022\024\n\014transportFee\030\004 \001(\001\"\252\001\n\030Co" +
+      "mmitRefundTransRequest\022\016\n\006userId\030\001 \002(\t\022\017",
+      "\n\007orderId\030\002 \002(\t\022\027\n\017refundTransType\030\003 \002(\t" +
+      "\022\030\n\020transportationId\030\004 \001(\t\022\035\n\025transporta" +
+      "tionCompany\030\005 \001(\t\022\033\n\023transportationIntro" +
+      "\030\006 \001(\t\"@\n\027CommitRefundTransResult\022\022\n\nres" +
+      "ultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetO" +
+      "rderDetailRequest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006us" +
+      "erId\030\002 \002(\t\"\206\001\n\024GetOrderDetailResult\022\022\n\nr" +
+      "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017or" +
+      "derDetailInfo\030\003 \001(\0132..com.qjoy.basjoo.co" +
+      "re.model.pb.OrderDetailInfo\"\234\006\n\017OrderDet",
+      "ailInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030" +
+      "\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rrentStartTi" +
+      "me\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDay" +
+      "s\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\trentPrice\030" +
+      "\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033\n\023transporta" +
+      "tionPrice\030\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020t" +
+      "ransportationId\030\014 \001(\t\022\026\n\016evaluateStauts\030" +
+      "\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014mainImageUrl" +
+      "\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002" +
+      "(\t\022\017\n\007payTime\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npa",
+      "yChannel\030\024 \001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013" +
+      "receiveTime\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n" +
+      "\014completeTime\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020" +
+      "\n\010vouchers\030\032 \003(\t\022W\n\027orderReceiveAddressI" +
+      "nfo\030\033 \001(\01326.com.qjoy.basjoo.core.model.p" +
+      "b.OrderReceiveAddressInfo\022D\n\013voucherInfo" +
+      "\030\034 \003(\0132/.com.qjoy.basjoo.core.model.pb.O" +
+      "rderVoucherInfo\022\020\n\010discount\030\035 \001(\001\022\032\n\022ori" +
+      "ginalRentAmount\030\036 \001(\001\022\025\n\rearnestAmount\030\037" +
+      " \001(\001\022\024\n\014remailAmount\030  \001(\001\"\300\001\n\020OrderVouc",
       "herInfo\022\021\n\tvoucherId\030\001 \002(\t\022\024\n\014voucherTit" +
       "le\030\002 \002(\t\022\023\n\013voucherType\030\003 \002(\t\022\025\n\rvoucher" +
       "Status\030\004 \002(\t\022\026\n\016validStartTime\030\005 \002(\003\022\024\n\014" +
       "validEndTime\030\006 \002(\003\022\023\n\013voucherDesc\030\007 \002(\t\022" +
-      "\024\n\014deductAmount\030\010 \001(\001B\037\n\035com.qjoy.basjoo" +
-      ".core.model.pb"
+      "\024\n\014deductAmount\030\010 \001(\001\"\234\001\n\025ConfirmEarnest" +
+      "Request\022\021\n\tproductId\030\001 \002(\t\022\024\n\014categoryCo" +
+      "de\030\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030" +
+      "\004 \002(\t\022\022\n\npayChannel\030\005 \001(\005\022\016\n\006userId\030\006 \002(" +
+      "\t\022\021\n\taddressId\030\007 \002(\t\"\237\001\n\024ConfirmEarnestR" +
+      "esult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002",
+      " \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(" +
+      "\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo.c" +
+      "ore.model.pb.WxPayInfo\"P\n\031ContinuePayEar" +
+      "nestRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChann" +
+      "el\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\"\243\001\n\030ContinuePay" +
+      "EarnestResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
+      "ultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChan" +
+      "nel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy." +
+      "basjoo.core.model.pb.WxPayInfo\"s\n\027Confir" +
+      "mPayRemainRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npa",
+      "yChannel\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\022\020\n\010vouche" +
+      "rs\030\004 \003(\t\022\021\n\taddressId\030\005 \001(\t\"\241\001\n\026ConfirmP" +
+      "ayRemainResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tre" +
+      "sultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayCha" +
+      "nnel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy" +
+      ".basjoo.core.model.pb.WxPayInfo*8\n\022PaySt" +
+      "atusQueryType\022\t\n\005ORDER\020\000\022\013\n\007EARNEST\020\001\022\n\n" +
+      "\006REMAIN\020\002B\037\n\035com.qjoy.basjoo.core.model." +
+      "pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -45006,13 +54104,13 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderRequest_descriptor,
-        new java.lang.String[] { "ProductId", "CategoryCode", "RentCount", "RentCode", "Insurance", "OrderId", "OnlyCalPrice", "UserId", "Vouchers", });
+        new java.lang.String[] { "ProductId", "CategoryCode", "RentCount", "RentCode", "Insurance", "OrderId", "OnlyCalPrice", "UserId", "Vouchers", "QualityCode", });
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_CommitOrderResult_descriptor,
-        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "CategoryCode", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", "VoucherInfo", "MaxVoucherAmount", "Vouchers", });
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "CategoryCode", "RentCount", "RentCode", "Insurance", "InsurancePrice", "PledgePrice", "TransportationPrice", "TotalRentPrice", "HasVoucher", "TotalPrice", "OrderReceiveAddressInfo", "VoucherInfo", "MaxVoucherAmount", "Vouchers", "QualityCode", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderReceiveAddressInfo_fieldAccessorTable = new
@@ -45024,7 +54122,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderRequest_descriptor,
-        new java.lang.String[] { "ProductId", "CategoryCode", "RentCount", "RentCode", "Insurance", "OrderId", "AddressId", "Vouchers", "UserMessage", "PayChannel", "UserId", });
+        new java.lang.String[] { "ProductId", "CategoryCode", "RentCount", "RentCode", "Insurance", "OrderId", "AddressId", "Vouchers", "UserMessage", "PayChannel", "UserId", "QualityCode", });
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderResult_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmOrderResult_fieldAccessorTable = new
@@ -45054,7 +54152,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusRequest_descriptor,
-        new java.lang.String[] { "OrderId", "UserId", });
+        new java.lang.String[] { "OrderId", "UserId", "PayStatusQueryType", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusResult_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_com_qjoy_basjoo_core_model_pb_GetPayStatusResult_fieldAccessorTable = new
@@ -45078,7 +54176,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_OrderLiteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_OrderLiteInfo_descriptor,
-        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", });
+        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "Discount", "OriginalRentAmount", });
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteOrderRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteOrderRequest_fieldAccessorTable = new
@@ -45180,13 +54278,49 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_descriptor,
-        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "PayTime", "PayId", "PayChannel", "DeliveryTime", "ReceiveTime", "RevertTime", "CompleteTime", "CloseTime", "Vouchers", "OrderReceiveAddressInfo", "VoucherInfo", });
+        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "PayTime", "PayId", "PayChannel", "DeliveryTime", "ReceiveTime", "RevertTime", "CompleteTime", "CloseTime", "Vouchers", "OrderReceiveAddressInfo", "VoucherInfo", "Discount", "OriginalRentAmount", "EarnestAmount", "RemailAmount", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor,
         new java.lang.String[] { "VoucherId", "VoucherTitle", "VoucherType", "VoucherStatus", "ValidStartTime", "ValidEndTime", "VoucherDesc", "DeductAmount", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_descriptor,
+        new java.lang.String[] { "ProductId", "CategoryCode", "RentCount", "RentCode", "PayChannel", "UserId", "AddressId", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "PayChannel", "WxPayInfo", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestRequest_descriptor,
+        new java.lang.String[] { "OrderId", "PayChannel", "UserId", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ContinuePayEarnestResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "PayChannel", "WxPayInfo", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainRequest_descriptor,
+        new java.lang.String[] { "OrderId", "PayChannel", "UserId", "Vouchers", "AddressId", });
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_ConfirmPayRemainResult_descriptor,
+        new java.lang.String[] { "ResultCode", "ResultMsg", "OrderId", "PayChannel", "WxPayInfo", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

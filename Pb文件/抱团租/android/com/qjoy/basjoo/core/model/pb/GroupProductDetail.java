@@ -47,6 +47,7 @@ public final class GroupProductDetail extends Message {
   public static final int TAG_LONGRENTPERIOD = 26;
   public static final int TAG_GROUPRENTAMOUNTINFO = 27;
   public static final int TAG_IMAGEURL = 28;
+  public static final int TAG_RECEIVEADDRESS = 29;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -66,7 +67,7 @@ public final class GroupProductDetail extends Message {
   public static final String DEFAULT_LOCATION = "";
   public static final List<GroupProductBaseParam> DEFAULT_BASEPARAM = Collections.emptyList();
   public static final List<String> DEFAULT_IMAGEPARAMURLS = Collections.emptyList();
-  public static final String DEFAULT_EARNESTAMOUNT = "";
+  public static final Double DEFAULT_EARNESTAMOUNT = 0D;
   public static final Double DEFAULT_DISCOUNT = 0D;
   public static final Boolean DEFAULT_APPLYED = false;
   public static final Long DEFAULT_APPLYCOUNT = 0L;
@@ -187,8 +188,8 @@ public final class GroupProductDetail extends Message {
   /**
    * 定金金额
    */
-  @ProtoField(tag = 20, type = STRING, label = REQUIRED)
-  public String earnestAmount;
+  @ProtoField(tag = 20, type = DOUBLE, label = REQUIRED)
+  public Double earnestAmount;
 
   /**
    * 成团折扣力度
@@ -238,6 +239,12 @@ public final class GroupProductDetail extends Message {
   @ProtoField(tag = 28, type = STRING, label = REPEATED)
   public List<String> imageUrl;
 
+  /**
+   * 参团用户的默认收货地址
+   */
+  @ProtoField(tag = 29)
+  public GroupProductReceiveAddress receiveAddress;
+
   public GroupProductDetail(GroupProductDetail message) {
     super(message);
     if (message == null) return;
@@ -268,6 +275,7 @@ public final class GroupProductDetail extends Message {
     this.longRentPeriod = copyOf(message.longRentPeriod);
     this.groupRentAmountInfo = copyOf(message.groupRentAmountInfo);
     this.imageUrl = copyOf(message.imageUrl);
+    this.receiveAddress = message.receiveAddress;
   }
 
   public GroupProductDetail() {
@@ -330,7 +338,7 @@ public final class GroupProductDetail extends Message {
         this.imageParamUrls = immutableCopyOf((List<String>)value);
         break;
         case TAG_EARNESTAMOUNT:
-        this.earnestAmount = (String)value;
+        this.earnestAmount = (Double)value;
         break;
         case TAG_DISCOUNT:
         this.discount = (Double)value;
@@ -355,6 +363,9 @@ public final class GroupProductDetail extends Message {
         break;
         case TAG_IMAGEURL:
         this.imageUrl = immutableCopyOf((List<String>)value);
+        break;
+        case TAG_RECEIVEADDRESS:
+        this.receiveAddress = (GroupProductReceiveAddress)value;
         break;
         default: break;
         };
@@ -392,7 +403,8 @@ public final class GroupProductDetail extends Message {
         && equals(shortRentPeriod, o.shortRentPeriod)
         && equals(longRentPeriod, o.longRentPeriod)
         && equals(groupRentAmountInfo, o.groupRentAmountInfo)
-        && equals(imageUrl, o.imageUrl);
+        && equals(imageUrl, o.imageUrl)
+        && equals(receiveAddress, o.receiveAddress);
   }
 
   @Override
@@ -426,6 +438,7 @@ public final class GroupProductDetail extends Message {
       result = result * 37 + (longRentPeriod != null ? longRentPeriod.hashCode() : 1);
       result = result * 37 + (groupRentAmountInfo != null ? groupRentAmountInfo.hashCode() : 1);
       result = result * 37 + (imageUrl != null ? imageUrl.hashCode() : 1);
+      result = result * 37 + (receiveAddress != null ? receiveAddress.hashCode() : 0);
       hashCode = result;
     }
     return result;

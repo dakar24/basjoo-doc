@@ -7178,7 +7178,7 @@ public final class GroupProduct {
         getImageParamUrlsBytes(int index);
 
     /**
-     * <code>required string earnestAmount = 20;</code>
+     * <code>required double earnestAmount = 20;</code>
      *
      * <pre>
      *定金金额
@@ -7186,22 +7186,13 @@ public final class GroupProduct {
      */
     boolean hasEarnestAmount();
     /**
-     * <code>required string earnestAmount = 20;</code>
+     * <code>required double earnestAmount = 20;</code>
      *
      * <pre>
      *定金金额
      * </pre>
      */
-    java.lang.String getEarnestAmount();
-    /**
-     * <code>required string earnestAmount = 20;</code>
-     *
-     * <pre>
-     *定金金额
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getEarnestAmountBytes();
+    double getEarnestAmount();
 
     /**
      * <code>optional double discount = 21;</code>
@@ -7464,6 +7455,31 @@ public final class GroupProduct {
      */
     com.google.protobuf.ByteString
         getImageUrlBytes(int index);
+
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+     *
+     * <pre>
+     *参团用户的默认收货地址
+     * </pre>
+     */
+    boolean hasReceiveAddress();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+     *
+     * <pre>
+     *参团用户的默认收货地址
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress getReceiveAddress();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+     *
+     * <pre>
+     *参团用户的默认收货地址
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddressOrBuilder getReceiveAddressOrBuilder();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupProductDetail}
@@ -7626,10 +7642,9 @@ public final class GroupProduct {
               imageParamUrls_.add(bs);
               break;
             }
-            case 162: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 161: {
               bitField0_ |= 0x00010000;
-              earnestAmount_ = bs;
+              earnestAmount_ = input.readDouble();
               break;
             }
             case 169: {
@@ -7686,6 +7701,19 @@ public final class GroupProduct {
                 mutable_bitField0_ |= 0x04000000;
               }
               imageUrl_.add(bs);
+              break;
+            }
+            case 234: {
+              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.Builder subBuilder = null;
+              if (((bitField0_ & 0x00100000) == 0x00100000)) {
+                subBuilder = receiveAddress_.toBuilder();
+              }
+              receiveAddress_ = input.readMessage(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(receiveAddress_);
+                receiveAddress_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00100000;
               break;
             }
           }
@@ -8466,9 +8494,9 @@ public final class GroupProduct {
     }
 
     public static final int EARNESTAMOUNT_FIELD_NUMBER = 20;
-    private java.lang.Object earnestAmount_;
+    private double earnestAmount_;
     /**
-     * <code>required string earnestAmount = 20;</code>
+     * <code>required double earnestAmount = 20;</code>
      *
      * <pre>
      *定金金额
@@ -8478,45 +8506,14 @@ public final class GroupProduct {
       return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
-     * <code>required string earnestAmount = 20;</code>
+     * <code>required double earnestAmount = 20;</code>
      *
      * <pre>
      *定金金额
      * </pre>
      */
-    public java.lang.String getEarnestAmount() {
-      java.lang.Object ref = earnestAmount_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          earnestAmount_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string earnestAmount = 20;</code>
-     *
-     * <pre>
-     *定金金额
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getEarnestAmountBytes() {
-      java.lang.Object ref = earnestAmount_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        earnestAmount_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public double getEarnestAmount() {
+      return earnestAmount_;
     }
 
     public static final int DISCOUNT_FIELD_NUMBER = 21;
@@ -8853,6 +8850,39 @@ public final class GroupProduct {
       return imageUrl_.getByteString(index);
     }
 
+    public static final int RECEIVEADDRESS_FIELD_NUMBER = 29;
+    private com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress receiveAddress_;
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+     *
+     * <pre>
+     *参团用户的默认收货地址
+     * </pre>
+     */
+    public boolean hasReceiveAddress() {
+      return ((bitField0_ & 0x00100000) == 0x00100000);
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+     *
+     * <pre>
+     *参团用户的默认收货地址
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress getReceiveAddress() {
+      return receiveAddress_;
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+     *
+     * <pre>
+     *参团用户的默认收货地址
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddressOrBuilder getReceiveAddressOrBuilder() {
+      return receiveAddress_;
+    }
+
     private void initFields() {
       productId_ = "";
       productType_ = "";
@@ -8872,7 +8902,7 @@ public final class GroupProduct {
       location_ = "";
       baseParam_ = java.util.Collections.emptyList();
       imageParamUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      earnestAmount_ = "";
+      earnestAmount_ = 0D;
       discount_ = 0D;
       applyed_ = false;
       applyCount_ = 0L;
@@ -8881,6 +8911,7 @@ public final class GroupProduct {
       longRentPeriod_ = java.util.Collections.emptyList();
       groupRentAmountInfo_ = java.util.Collections.emptyList();
       imageUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      receiveAddress_ = com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -8966,6 +8997,12 @@ public final class GroupProduct {
           return false;
         }
       }
+      if (hasReceiveAddress()) {
+        if (!getReceiveAddress().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -9028,7 +9065,7 @@ public final class GroupProduct {
         output.writeBytes(19, imageParamUrls_.getByteString(i));
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        output.writeBytes(20, getEarnestAmountBytes());
+        output.writeDouble(20, earnestAmount_);
       }
       if (((bitField0_ & 0x00020000) == 0x00020000)) {
         output.writeDouble(21, discount_);
@@ -9053,6 +9090,9 @@ public final class GroupProduct {
       }
       for (int i = 0; i < imageUrl_.size(); i++) {
         output.writeBytes(28, imageUrl_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        output.writeMessage(29, receiveAddress_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -9142,7 +9182,7 @@ public final class GroupProduct {
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(20, getEarnestAmountBytes());
+          .computeDoubleSize(20, earnestAmount_);
       }
       if (((bitField0_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
@@ -9180,6 +9220,10 @@ public final class GroupProduct {
         }
         size += dataSize;
         size += 2 * getImageUrlList().size();
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(29, receiveAddress_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9299,6 +9343,7 @@ public final class GroupProduct {
           getShortRentPeriodFieldBuilder();
           getLongRentPeriodFieldBuilder();
           getGroupRentAmountInfoFieldBuilder();
+          getReceiveAddressFieldBuilder();
         }
       }
       private static Builder create() {
@@ -9347,7 +9392,7 @@ public final class GroupProduct {
         }
         imageParamUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00020000);
-        earnestAmount_ = "";
+        earnestAmount_ = 0D;
         bitField0_ = (bitField0_ & ~0x00040000);
         discount_ = 0D;
         bitField0_ = (bitField0_ & ~0x00080000);
@@ -9381,6 +9426,12 @@ public final class GroupProduct {
         }
         imageUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x04000000);
+        if (receiveAddressBuilder_ == null) {
+          receiveAddress_ = com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.getDefaultInstance();
+        } else {
+          receiveAddressBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x08000000);
         return this;
       }
 
@@ -9544,6 +9595,14 @@ public final class GroupProduct {
           bitField0_ = (bitField0_ & ~0x04000000);
         }
         result.imageUrl_ = imageUrl_;
+        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
+          to_bitField0_ |= 0x00100000;
+        }
+        if (receiveAddressBuilder_ == null) {
+          result.receiveAddress_ = receiveAddress_;
+        } else {
+          result.receiveAddress_ = receiveAddressBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -9661,9 +9720,7 @@ public final class GroupProduct {
           onChanged();
         }
         if (other.hasEarnestAmount()) {
-          bitField0_ |= 0x00040000;
-          earnestAmount_ = other.earnestAmount_;
-          onChanged();
+          setEarnestAmount(other.getEarnestAmount());
         }
         if (other.hasDiscount()) {
           setDiscount(other.getDiscount());
@@ -9788,6 +9845,9 @@ public final class GroupProduct {
           }
           onChanged();
         }
+        if (other.hasReceiveAddress()) {
+          mergeReceiveAddress(other.getReceiveAddress());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -9867,6 +9927,12 @@ public final class GroupProduct {
         }
         for (int i = 0; i < getGroupRentAmountInfoCount(); i++) {
           if (!getGroupRentAmountInfo(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasReceiveAddress()) {
+          if (!getReceiveAddress().isInitialized()) {
             
             return false;
           }
@@ -11518,9 +11584,9 @@ public final class GroupProduct {
         return this;
       }
 
-      private java.lang.Object earnestAmount_ = "";
+      private double earnestAmount_ ;
       /**
-       * <code>required string earnestAmount = 20;</code>
+       * <code>required double earnestAmount = 20;</code>
        *
        * <pre>
        *定金金额
@@ -11530,65 +11596,30 @@ public final class GroupProduct {
         return ((bitField0_ & 0x00040000) == 0x00040000);
       }
       /**
-       * <code>required string earnestAmount = 20;</code>
+       * <code>required double earnestAmount = 20;</code>
        *
        * <pre>
        *定金金额
        * </pre>
        */
-      public java.lang.String getEarnestAmount() {
-        java.lang.Object ref = earnestAmount_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            earnestAmount_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public double getEarnestAmount() {
+        return earnestAmount_;
       }
       /**
-       * <code>required string earnestAmount = 20;</code>
+       * <code>required double earnestAmount = 20;</code>
        *
        * <pre>
        *定金金额
        * </pre>
        */
-      public com.google.protobuf.ByteString
-          getEarnestAmountBytes() {
-        java.lang.Object ref = earnestAmount_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          earnestAmount_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string earnestAmount = 20;</code>
-       *
-       * <pre>
-       *定金金额
-       * </pre>
-       */
-      public Builder setEarnestAmount(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00040000;
+      public Builder setEarnestAmount(double value) {
+        bitField0_ |= 0x00040000;
         earnestAmount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string earnestAmount = 20;</code>
+       * <code>required double earnestAmount = 20;</code>
        *
        * <pre>
        *定金金额
@@ -11596,24 +11627,7 @@ public final class GroupProduct {
        */
       public Builder clearEarnestAmount() {
         bitField0_ = (bitField0_ & ~0x00040000);
-        earnestAmount_ = getDefaultInstance().getEarnestAmount();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string earnestAmount = 20;</code>
-       *
-       * <pre>
-       *定金金额
-       * </pre>
-       */
-      public Builder setEarnestAmountBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00040000;
-        earnestAmount_ = value;
+        earnestAmount_ = 0D;
         onChanged();
         return this;
       }
@@ -13137,6 +13151,158 @@ public final class GroupProduct {
         imageUrl_.add(value);
         onChanged();
         return this;
+      }
+
+      private com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress receiveAddress_ = com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddressOrBuilder> receiveAddressBuilder_;
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+       *
+       * <pre>
+       *参团用户的默认收货地址
+       * </pre>
+       */
+      public boolean hasReceiveAddress() {
+        return ((bitField0_ & 0x08000000) == 0x08000000);
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+       *
+       * <pre>
+       *参团用户的默认收货地址
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress getReceiveAddress() {
+        if (receiveAddressBuilder_ == null) {
+          return receiveAddress_;
+        } else {
+          return receiveAddressBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+       *
+       * <pre>
+       *参团用户的默认收货地址
+       * </pre>
+       */
+      public Builder setReceiveAddress(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress value) {
+        if (receiveAddressBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          receiveAddress_ = value;
+          onChanged();
+        } else {
+          receiveAddressBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x08000000;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+       *
+       * <pre>
+       *参团用户的默认收货地址
+       * </pre>
+       */
+      public Builder setReceiveAddress(
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.Builder builderForValue) {
+        if (receiveAddressBuilder_ == null) {
+          receiveAddress_ = builderForValue.build();
+          onChanged();
+        } else {
+          receiveAddressBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x08000000;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+       *
+       * <pre>
+       *参团用户的默认收货地址
+       * </pre>
+       */
+      public Builder mergeReceiveAddress(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress value) {
+        if (receiveAddressBuilder_ == null) {
+          if (((bitField0_ & 0x08000000) == 0x08000000) &&
+              receiveAddress_ != com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.getDefaultInstance()) {
+            receiveAddress_ =
+              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.newBuilder(receiveAddress_).mergeFrom(value).buildPartial();
+          } else {
+            receiveAddress_ = value;
+          }
+          onChanged();
+        } else {
+          receiveAddressBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x08000000;
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+       *
+       * <pre>
+       *参团用户的默认收货地址
+       * </pre>
+       */
+      public Builder clearReceiveAddress() {
+        if (receiveAddressBuilder_ == null) {
+          receiveAddress_ = com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.getDefaultInstance();
+          onChanged();
+        } else {
+          receiveAddressBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x08000000);
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+       *
+       * <pre>
+       *参团用户的默认收货地址
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.Builder getReceiveAddressBuilder() {
+        bitField0_ |= 0x08000000;
+        onChanged();
+        return getReceiveAddressFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+       *
+       * <pre>
+       *参团用户的默认收货地址
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddressOrBuilder getReceiveAddressOrBuilder() {
+        if (receiveAddressBuilder_ != null) {
+          return receiveAddressBuilder_.getMessageOrBuilder();
+        } else {
+          return receiveAddress_;
+        }
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress receiveAddress = 29;</code>
+       *
+       * <pre>
+       *参团用户的默认收货地址
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddressOrBuilder> 
+          getReceiveAddressFieldBuilder() {
+        if (receiveAddressBuilder_ == null) {
+          receiveAddressBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.Builder, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddressOrBuilder>(
+                  getReceiveAddress(),
+                  getParentForChildren(),
+                  isClean());
+          receiveAddress_ = null;
+        }
+        return receiveAddressBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GroupProductDetail)
@@ -17280,6 +17446,1816 @@ public final class GroupProduct {
     // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GroupProductBaseParam)
   }
 
+  public interface GroupProductReceiveAddressOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    boolean hasReceiver();
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    java.lang.String getReceiver();
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getReceiverBytes();
+
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    boolean hasMobileNo();
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    java.lang.String getMobileNo();
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getMobileNoBytes();
+
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    boolean hasSection();
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    java.lang.String getSection();
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getSectionBytes();
+
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    boolean hasStreet();
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    java.lang.String getStreet();
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getStreetBytes();
+
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    boolean hasDetail();
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    java.lang.String getDetail();
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getDetailBytes();
+
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    boolean hasPostCode();
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    java.lang.String getPostCode();
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getPostCodeBytes();
+
+    /**
+     * <code>optional string addressId = 7;</code>
+     *
+     * <pre>
+     *地址ID
+     * </pre>
+     */
+    boolean hasAddressId();
+    /**
+     * <code>optional string addressId = 7;</code>
+     *
+     * <pre>
+     *地址ID
+     * </pre>
+     */
+    java.lang.String getAddressId();
+    /**
+     * <code>optional string addressId = 7;</code>
+     *
+     * <pre>
+     *地址ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getAddressIdBytes();
+  }
+  /**
+   * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress}
+   *
+   * <pre>
+   *参团用户的默认收货地址
+   * </pre>
+   */
+  public static final class GroupProductReceiveAddress extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress)
+      GroupProductReceiveAddressOrBuilder {
+    // Use GroupProductReceiveAddress.newBuilder() to construct.
+    private GroupProductReceiveAddress(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private GroupProductReceiveAddress(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final GroupProductReceiveAddress defaultInstance;
+    public static GroupProductReceiveAddress getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public GroupProductReceiveAddress getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GroupProductReceiveAddress(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              receiver_ = bs;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              mobileNo_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              section_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              street_ = bs;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              detail_ = bs;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              postCode_ = bs;
+              break;
+            }
+            case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              addressId_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.class, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<GroupProductReceiveAddress> PARSER =
+        new com.google.protobuf.AbstractParser<GroupProductReceiveAddress>() {
+      public GroupProductReceiveAddress parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GroupProductReceiveAddress(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GroupProductReceiveAddress> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int RECEIVER_FIELD_NUMBER = 1;
+    private java.lang.Object receiver_;
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    public boolean hasReceiver() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    public java.lang.String getReceiver() {
+      java.lang.Object ref = receiver_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          receiver_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string receiver = 1;</code>
+     *
+     * <pre>
+     *收货人
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getReceiverBytes() {
+      java.lang.Object ref = receiver_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        receiver_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MOBILENO_FIELD_NUMBER = 2;
+    private java.lang.Object mobileNo_;
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    public boolean hasMobileNo() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    public java.lang.String getMobileNo() {
+      java.lang.Object ref = mobileNo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          mobileNo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string mobileNo = 2;</code>
+     *
+     * <pre>
+     *联系电话
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getMobileNoBytes() {
+      java.lang.Object ref = mobileNo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mobileNo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SECTION_FIELD_NUMBER = 3;
+    private java.lang.Object section_;
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    public boolean hasSection() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    public java.lang.String getSection() {
+      java.lang.Object ref = section_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          section_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string section = 3;</code>
+     *
+     * <pre>
+     *所在地区
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getSectionBytes() {
+      java.lang.Object ref = section_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        section_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STREET_FIELD_NUMBER = 4;
+    private java.lang.Object street_;
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    public boolean hasStreet() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    public java.lang.String getStreet() {
+      java.lang.Object ref = street_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          street_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string street = 4;</code>
+     *
+     * <pre>
+     *所在街道
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getStreetBytes() {
+      java.lang.Object ref = street_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        street_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DETAIL_FIELD_NUMBER = 5;
+    private java.lang.Object detail_;
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    public boolean hasDetail() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    public java.lang.String getDetail() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          detail_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string detail = 5;</code>
+     *
+     * <pre>
+     *详细地址
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getDetailBytes() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        detail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POSTCODE_FIELD_NUMBER = 6;
+    private java.lang.Object postCode_;
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    public boolean hasPostCode() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    public java.lang.String getPostCode() {
+      java.lang.Object ref = postCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          postCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string postCode = 6;</code>
+     *
+     * <pre>
+     *邮编
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getPostCodeBytes() {
+      java.lang.Object ref = postCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        postCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESSID_FIELD_NUMBER = 7;
+    private java.lang.Object addressId_;
+    /**
+     * <code>optional string addressId = 7;</code>
+     *
+     * <pre>
+     *地址ID
+     * </pre>
+     */
+    public boolean hasAddressId() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional string addressId = 7;</code>
+     *
+     * <pre>
+     *地址ID
+     * </pre>
+     */
+    public java.lang.String getAddressId() {
+      java.lang.Object ref = addressId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          addressId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string addressId = 7;</code>
+     *
+     * <pre>
+     *地址ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getAddressIdBytes() {
+      java.lang.Object ref = addressId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        addressId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      receiver_ = "";
+      mobileNo_ = "";
+      section_ = "";
+      street_ = "";
+      detail_ = "";
+      postCode_ = "";
+      addressId_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasReceiver()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMobileNo()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSection()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasStreet()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasDetail()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPostCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getReceiverBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getMobileNoBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getSectionBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getStreetBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getDetailBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getPostCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getAddressIdBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getReceiverBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getMobileNoBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getSectionBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getStreetBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getDetailBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getPostCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getAddressIdBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress}
+     *
+     * <pre>
+     *参团用户的默认收货地址
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress)
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddressOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.class, com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.Builder.class);
+      }
+
+      // Construct using com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        receiver_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        mobileNo_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        section_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        street_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        detail_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        postCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        addressId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_descriptor;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress getDefaultInstanceForType() {
+        return com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.getDefaultInstance();
+      }
+
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress build() {
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress buildPartial() {
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress result = new com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.receiver_ = receiver_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.mobileNo_ = mobileNo_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.section_ = section_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.street_ = street_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.detail_ = detail_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.postCode_ = postCode_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.addressId_ = addressId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress) {
+          return mergeFrom((com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress other) {
+        if (other == com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress.getDefaultInstance()) return this;
+        if (other.hasReceiver()) {
+          bitField0_ |= 0x00000001;
+          receiver_ = other.receiver_;
+          onChanged();
+        }
+        if (other.hasMobileNo()) {
+          bitField0_ |= 0x00000002;
+          mobileNo_ = other.mobileNo_;
+          onChanged();
+        }
+        if (other.hasSection()) {
+          bitField0_ |= 0x00000004;
+          section_ = other.section_;
+          onChanged();
+        }
+        if (other.hasStreet()) {
+          bitField0_ |= 0x00000008;
+          street_ = other.street_;
+          onChanged();
+        }
+        if (other.hasDetail()) {
+          bitField0_ |= 0x00000010;
+          detail_ = other.detail_;
+          onChanged();
+        }
+        if (other.hasPostCode()) {
+          bitField0_ |= 0x00000020;
+          postCode_ = other.postCode_;
+          onChanged();
+        }
+        if (other.hasAddressId()) {
+          bitField0_ |= 0x00000040;
+          addressId_ = other.addressId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasReceiver()) {
+          
+          return false;
+        }
+        if (!hasMobileNo()) {
+          
+          return false;
+        }
+        if (!hasSection()) {
+          
+          return false;
+        }
+        if (!hasStreet()) {
+          
+          return false;
+        }
+        if (!hasDetail()) {
+          
+          return false;
+        }
+        if (!hasPostCode()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.qjoy.basjoo.core.model.pb.GroupProduct.GroupProductReceiveAddress) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object receiver_ = "";
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public boolean hasReceiver() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public java.lang.String getReceiver() {
+        java.lang.Object ref = receiver_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            receiver_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getReceiverBytes() {
+        java.lang.Object ref = receiver_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          receiver_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public Builder setReceiver(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        receiver_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public Builder clearReceiver() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        receiver_ = getDefaultInstance().getReceiver();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string receiver = 1;</code>
+       *
+       * <pre>
+       *收货人
+       * </pre>
+       */
+      public Builder setReceiverBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        receiver_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mobileNo_ = "";
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public boolean hasMobileNo() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public java.lang.String getMobileNo() {
+        java.lang.Object ref = mobileNo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            mobileNo_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getMobileNoBytes() {
+        java.lang.Object ref = mobileNo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mobileNo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public Builder setMobileNo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        mobileNo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public Builder clearMobileNo() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        mobileNo_ = getDefaultInstance().getMobileNo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string mobileNo = 2;</code>
+       *
+       * <pre>
+       *联系电话
+       * </pre>
+       */
+      public Builder setMobileNoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        mobileNo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object section_ = "";
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public boolean hasSection() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public java.lang.String getSection() {
+        java.lang.Object ref = section_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            section_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getSectionBytes() {
+        java.lang.Object ref = section_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          section_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public Builder setSection(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        section_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public Builder clearSection() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        section_ = getDefaultInstance().getSection();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string section = 3;</code>
+       *
+       * <pre>
+       *所在地区
+       * </pre>
+       */
+      public Builder setSectionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        section_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object street_ = "";
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public boolean hasStreet() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public java.lang.String getStreet() {
+        java.lang.Object ref = street_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            street_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getStreetBytes() {
+        java.lang.Object ref = street_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          street_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public Builder setStreet(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        street_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public Builder clearStreet() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        street_ = getDefaultInstance().getStreet();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string street = 4;</code>
+       *
+       * <pre>
+       *所在街道
+       * </pre>
+       */
+      public Builder setStreetBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        street_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object detail_ = "";
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public boolean hasDetail() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public java.lang.String getDetail() {
+        java.lang.Object ref = detail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            detail_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getDetailBytes() {
+        java.lang.Object ref = detail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          detail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public Builder setDetail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        detail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public Builder clearDetail() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        detail_ = getDefaultInstance().getDetail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string detail = 5;</code>
+       *
+       * <pre>
+       *详细地址
+       * </pre>
+       */
+      public Builder setDetailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        detail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object postCode_ = "";
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public boolean hasPostCode() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public java.lang.String getPostCode() {
+        java.lang.Object ref = postCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            postCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getPostCodeBytes() {
+        java.lang.Object ref = postCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          postCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public Builder setPostCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        postCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public Builder clearPostCode() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        postCode_ = getDefaultInstance().getPostCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string postCode = 6;</code>
+       *
+       * <pre>
+       *邮编
+       * </pre>
+       */
+      public Builder setPostCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        postCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object addressId_ = "";
+      /**
+       * <code>optional string addressId = 7;</code>
+       *
+       * <pre>
+       *地址ID
+       * </pre>
+       */
+      public boolean hasAddressId() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional string addressId = 7;</code>
+       *
+       * <pre>
+       *地址ID
+       * </pre>
+       */
+      public java.lang.String getAddressId() {
+        java.lang.Object ref = addressId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            addressId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string addressId = 7;</code>
+       *
+       * <pre>
+       *地址ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getAddressIdBytes() {
+        java.lang.Object ref = addressId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          addressId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string addressId = 7;</code>
+       *
+       * <pre>
+       *地址ID
+       * </pre>
+       */
+      public Builder setAddressId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        addressId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string addressId = 7;</code>
+       *
+       * <pre>
+       *地址ID
+       * </pre>
+       */
+      public Builder clearAddressId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        addressId_ = getDefaultInstance().getAddressId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string addressId = 7;</code>
+       *
+       * <pre>
+       *地址ID
+       * </pre>
+       */
+      public Builder setAddressIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        addressId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress)
+    }
+
+    static {
+      defaultInstance = new GroupProductReceiveAddress(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.qjoy.basjoo.core.model.pb.GroupProductReceiveAddress)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_qjoy_basjoo_core_model_pb_GetGroupProductListRequest_descriptor;
   private static
@@ -17330,6 +19306,11 @@ public final class GroupProduct {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_qjoy_basjoo_core_model_pb_GroupProductBaseParam_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -17361,7 +19342,7 @@ public final class GroupProduct {
       "pProductDetailResult\022\022\n\nresultCode\030\001 \002(\t",
       "\022\021\n\tresultMsg\030\002 \002(\t\022M\n\022groupProductDetai" +
       "l\030\003 \001(\01321.com.qjoy.basjoo.core.model.pb." +
-      "GroupProductDetail\"\306\006\n\022GroupProductDetai" +
+      "GroupProductDetail\"\231\007\n\022GroupProductDetai" +
       "l\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productType\030\002 \002(" +
       "\t\022\021\n\tpromoType\030\003 \002(\005\022\r\n\005brand\030\004 \002(\t\022\024\n\014m" +
       "ainImageUrl\030\005 \002(\t\022\026\n\016bannerImageUrl\030\006 \001(" +
@@ -17372,7 +19353,7 @@ public final class GroupProduct {
       "\001\022\020\n\010transFee\030\020 \001(\001\022\020\n\010location\030\021 \001(\t\022G\n" +
       "\tbaseParam\030\022 \003(\01324.com.qjoy.basjoo.core." +
       "model.pb.GroupProductBaseParam\022\026\n\016imageP" +
-      "aramUrls\030\023 \003(\t\022\025\n\rearnestAmount\030\024 \002(\t\022\020\n" +
+      "aramUrls\030\023 \003(\t\022\025\n\rearnestAmount\030\024 \002(\001\022\020\n" +
       "\010discount\030\025 \001(\001\022\017\n\007applyed\030\026 \001(\010\022\022\n\nappl" +
       "yCount\030\027 \001(\003\022I\n\014categoryInfo\030\030 \003(\01323.com" +
       ".qjoy.basjoo.core.model.pb.GroupProductC" +
@@ -17382,19 +19363,25 @@ public final class GroupProduct {
       "basjoo.core.model.pb.GroupRentPeriodInfo" +
       "\022O\n\023groupRentAmountInfo\030\033 \003(\01322.com.qjoy" +
       ".basjoo.core.model.pb.GroupRentAmountInf" +
-      "o\022\020\n\010imageUrl\030\034 \003(\t\"\204\001\n\024GroupProductCate" +
-      "gory\022\024\n\014categoryCode\030\001 \002(\t\022\024\n\014categoryNa" +
-      "me\030\002 \002(\t\022\026\n\016categoryImgUrl\030\003 \001(\t\022\022\n\nstoc" +
-      "kCount\030\004 \002(\005\022\024\n\014pledgeAmount\030\005 \002(\001\"S\n\023Gr" +
-      "oupRentPeriodInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nr" +
-      "entPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002(\t\"" +
-      "\221\001\n\023GroupRentAmountInfo\022\017\n\007codeKey\030\001 \002(\t",
-      "\022\030\n\020rentAmountPerDay\030\002 \002(\001\022\032\n\022rentAmount" +
-      "PerMonth\030\003 \001(\001\022\027\n\017totalRentAmount\030\004 \002(\001\022" +
-      "\032\n\022originalRentAmount\030\005 \002(\001\"I\n\025GroupProd" +
-      "uctBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030\002 " +
-      "\002(\t\022\021\n\tshowValue\030\003 \002(\tB\037\n\035com.qjoy.basjo" +
-      "o.core.model.pb"
+      "o\022\020\n\010imageUrl\030\034 \003(\t\022Q\n\016receiveAddress\030\035 " +
+      "\001(\01329.com.qjoy.basjoo.core.model.pb.Grou" +
+      "pProductReceiveAddress\"\204\001\n\024GroupProductC" +
+      "ategory\022\024\n\014categoryCode\030\001 \002(\t\022\024\n\014categor" +
+      "yName\030\002 \002(\t\022\026\n\016categoryImgUrl\030\003 \001(\t\022\022\n\ns" +
+      "tockCount\030\004 \002(\005\022\024\n\014pledgeAmount\030\005 \002(\001\"S\n" +
+      "\023GroupRentPeriodInfo\022\020\n\010rentCode\030\001 \002(\t\022\022",
+      "\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002" +
+      "(\t\"\221\001\n\023GroupRentAmountInfo\022\017\n\007codeKey\030\001 " +
+      "\002(\t\022\030\n\020rentAmountPerDay\030\002 \002(\001\022\032\n\022rentAmo" +
+      "untPerMonth\030\003 \001(\001\022\027\n\017totalRentAmount\030\004 \002" +
+      "(\001\022\032\n\022originalRentAmount\030\005 \002(\001\"I\n\025GroupP" +
+      "roductBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey" +
+      "\030\002 \002(\t\022\021\n\tshowValue\030\003 \002(\t\"\226\001\n\032GroupProdu" +
+      "ctReceiveAddress\022\020\n\010receiver\030\001 \002(\t\022\020\n\010mo" +
+      "bileNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006street\030" +
+      "\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 \002(\t\022",
+      "\021\n\taddressId\030\007 \001(\tB\037\n\035com.qjoy.basjoo.co" +
+      "re.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17443,7 +19430,7 @@ public final class GroupProduct {
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GroupProductDetail_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "PromoType", "Brand", "MainImageUrl", "BannerImageUrl", "Title", "Desc", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "MinGroupCount", "MarketPrice", "TransFee", "Location", "BaseParam", "ImageParamUrls", "EarnestAmount", "Discount", "Applyed", "ApplyCount", "CategoryInfo", "ShortRentPeriod", "LongRentPeriod", "GroupRentAmountInfo", "ImageUrl", });
+        new java.lang.String[] { "ProductId", "ProductType", "PromoType", "Brand", "MainImageUrl", "BannerImageUrl", "Title", "Desc", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "MinGroupCount", "MarketPrice", "TransFee", "Location", "BaseParam", "ImageParamUrls", "EarnestAmount", "Discount", "Applyed", "ApplyCount", "CategoryInfo", "ShortRentPeriod", "LongRentPeriod", "GroupRentAmountInfo", "ImageUrl", "ReceiveAddress", });
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_fieldAccessorTable = new
@@ -17468,6 +19455,12 @@ public final class GroupProduct {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GroupProductBaseParam_descriptor,
         new java.lang.String[] { "Code", "ShowKey", "ShowValue", });
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_qjoy_basjoo_core_model_pb_GroupProductReceiveAddress_descriptor,
+        new java.lang.String[] { "Receiver", "MobileNo", "Section", "Street", "Detail", "PostCode", "AddressId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

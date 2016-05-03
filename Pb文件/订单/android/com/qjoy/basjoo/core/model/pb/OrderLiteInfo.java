@@ -34,6 +34,8 @@ public final class OrderLiteInfo extends Message {
   public static final int TAG_MAINIMAGEURL = 15;
   public static final int TAG_DESC = 16;
   public static final int TAG_CATEGORYNAME = 17;
+  public static final int TAG_DISCOUNT = 18;
+  public static final int TAG_ORIGINALRENTAMOUNT = 19;
 
   public static final String DEFAULT_ORDERID = "";
   public static final Integer DEFAULT_ORDERSTATUS = 0;
@@ -52,6 +54,8 @@ public final class OrderLiteInfo extends Message {
   public static final String DEFAULT_MAINIMAGEURL = "";
   public static final String DEFAULT_DESC = "";
   public static final String DEFAULT_CATEGORYNAME = "";
+  public static final Double DEFAULT_DISCOUNT = 0D;
+  public static final Double DEFAULT_ORIGINALRENTAMOUNT = 0D;
 
   /**
    * 订单Id
@@ -155,6 +159,18 @@ public final class OrderLiteInfo extends Message {
   @ProtoField(tag = 17, type = STRING, label = REQUIRED)
   public String categoryName;
 
+  /**
+   * 折扣信息
+   */
+  @ProtoField(tag = 18, type = DOUBLE)
+  public Double discount;
+
+  /**
+   * 原始租金（优惠前）
+   */
+  @ProtoField(tag = 19, type = DOUBLE)
+  public Double originalRentAmount;
+
   public OrderLiteInfo(OrderLiteInfo message) {
     super(message);
     if (message == null) return;
@@ -175,6 +191,8 @@ public final class OrderLiteInfo extends Message {
     this.mainImageUrl = message.mainImageUrl;
     this.desc = message.desc;
     this.categoryName = message.categoryName;
+    this.discount = message.discount;
+    this.originalRentAmount = message.originalRentAmount;
   }
 
   public OrderLiteInfo() {
@@ -233,6 +251,12 @@ public final class OrderLiteInfo extends Message {
         case TAG_CATEGORYNAME:
         this.categoryName = (String)value;
         break;
+        case TAG_DISCOUNT:
+        this.discount = (Double)value;
+        break;
+        case TAG_ORIGINALRENTAMOUNT:
+        this.originalRentAmount = (Double)value;
+        break;
         default: break;
         };
     return this;
@@ -259,7 +283,9 @@ public final class OrderLiteInfo extends Message {
         && equals(productId, o.productId)
         && equals(mainImageUrl, o.mainImageUrl)
         && equals(desc, o.desc)
-        && equals(categoryName, o.categoryName);
+        && equals(categoryName, o.categoryName)
+        && equals(discount, o.discount)
+        && equals(originalRentAmount, o.originalRentAmount);
   }
 
   @Override
@@ -283,6 +309,8 @@ public final class OrderLiteInfo extends Message {
       result = result * 37 + (mainImageUrl != null ? mainImageUrl.hashCode() : 0);
       result = result * 37 + (desc != null ? desc.hashCode() : 0);
       result = result * 37 + (categoryName != null ? categoryName.hashCode() : 0);
+      result = result * 37 + (discount != null ? discount.hashCode() : 0);
+      result = result * 37 + (originalRentAmount != null ? originalRentAmount.hashCode() : 0);
       hashCode = result;
     }
     return result;

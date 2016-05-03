@@ -30,8 +30,11 @@ message CommitOrderRequest {
     //用户ID   
     required string                 userId = 8; 
 
-       //用户选择的权益
+    //用户选择的权益
 	repeated string                 vouchers = 9;
+	
+	//选择成色编码
+	required string                 qualityCode = 10;
 
 
 
@@ -80,18 +83,20 @@ message CommitOrderResult {
 	//总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
 	optional double                 totalPrice = 13;
 	
-	
 	//订单的默认收货地址
 	optional OrderReceiveAddressInfo orderReceiveAddressInfo = 14;
       
-       //订单可使用优惠券信息
-       repeated OrderVoucherInfo voucherInfo = 15;
+    //订单可使用优惠券信息
+    repeated OrderVoucherInfo voucherInfo = 15;
       
-       //优惠券，最大可用的额度
-       optional double  maxVoucherAmount =16;
+    //优惠券，最大可用的额度
+    optional double  maxVoucherAmount = 16;
 
-       //用户选择的权益
+    //用户选择的权益
 	repeated string                 vouchers = 17;
+	
+	//选择成色编码
+	required string                 qualityCode = 18;
 
     
 }
@@ -149,6 +154,9 @@ message ConfirmOrderRequest {
 	optional int32                  payChannel = 10;
     //用户ID   
     required string                 userId = 11; 
+	
+	//选择成色编码
+	required string                 qualityCode = 12;
     
 }
 
@@ -236,6 +244,9 @@ message GetPayStatusRequest {
 
     //用户ID   
     required string                 userId = 2;  
+	
+	//支付结果查询类型
+	optional PayStatusQueryType     payStatusQueryType = 3;
     
 }
 
@@ -378,6 +389,12 @@ message OrderLiteInfo{
  
    //类别名称
    required string      categoryName = 17; 
+   
+   //折扣信息
+   optional double      discount = 18;
+   
+   //原始租金（优惠前）
+   optional double      originalRentAmount = 19;
  
 }
 
@@ -700,6 +717,20 @@ message OrderDetailInfo{
 
   //订单关联的优惠券信息
   repeated OrderVoucherInfo voucherInfo = 28;
+  
+  //折扣信息
+  optional double      discount = 29;
+  
+  //原始租金（优惠前）
+  optional double      originalRentAmount = 30;
+  
+  //定金金额
+  optional double      earnestAmount = 31;
+  
+  //尾款金额
+  optional double      remailAmount = 32;
+  
+  
 
     
 }
@@ -732,6 +763,149 @@ message OrderVoucherInfo{
    //抵扣金额
    optional  double  deductAmount = 8;
 }
+
+
+
+//确认提交支付定金
+message ConfirmEarnestRequest {   
+
+     //产品Id
+    required string                 productId = 1; 
+	
+	//类别信息
+	required string                 categoryCode = 2;	
+	
+	 //租用数量
+	required int32                  rentCount = 3;
+	
+	 //选择租金的编码
+	required string                 rentCode = 4;
+	
+	//支付渠道，0：微信支付，1：支付宝
+	optional int32                  payChannel = 5;
+    
+	//用户ID   
+    required string                 userId = 6; 
+	
+    //收货地址ID   
+    required string                 addressId = 7;
+    
+}
+
+//确认订单结果
+message ConfirmEarnestResult { 
+
+
+    required string                 resultCode = 1;
+    
+    required string                 resultMsg = 2; 
+
+    //订单Id
+    optional string                 orderId = 3; 
+	
+	//支付渠道，0：微信支付，1：支付宝
+	optional int32                  payChannel = 4;
+
+    //微信订单支付信息
+    optional WxPayInfo              wxPayInfo = 5; 
+
+	
+}
+
+
+
+
+//继续支付定金（从未完成定金付款的订单列表提交）
+message ContinuePayEarnestRequest {   
+
+    //订单ID
+    required string                 orderId = 1; 	
+	
+    //支付渠道，0：微信支付，1：支付宝
+	optional int32                  payChannel = 2;
+
+    //用户ID   
+    required string                 userId = 3; 	
+    
+}
+
+//继续支付定金结果（从未完成定金付款的订单列表提交）
+message ContinuePayEarnestResult {   
+
+
+    required string                 resultCode = 1;
+    
+    required string                 resultMsg = 2; 
+
+    //订单Id
+    optional string                 orderId = 3; 
+	
+	//支付渠道，0：微信支付，1：支付宝
+	optional int32                  payChannel = 4;
+
+    //微信订单支付信息
+    optional WxPayInfo              wxPayInfo = 5; 		
+    
+}
+
+
+//确认提交支付尾款
+message ConfirmPayRemainRequest {   
+
+   //订单ID
+   required string                 orderId = 1; 	
+
+   //支付渠道，0：微信支付，1：支付宝
+   optional int32                  payChannel = 2;
+
+   //用户ID   
+   required string                 userId = 3;
+   
+   //用户选择的权益（券）
+   repeated string                 vouchers = 4;
+   
+   //用户重现选择的地址ID（可选）
+   optional string                 addressId = 5;
+    
+}
+
+
+//确认订单结果
+message ConfirmPayRemainResult { 
+
+
+    required string                 resultCode = 1;
+    
+    required string                 resultMsg = 2; 
+
+    //订单Id
+    optional string                 orderId = 3; 
+	
+	//支付渠道，0：微信支付，1：支付宝
+	optional int32                  payChannel = 4;
+
+    //微信订单支付信息
+    optional WxPayInfo              wxPayInfo = 5; 
+
+	
+}
+
+
+//查询支付结果的查询类型
+enum PayStatusQueryType {
+  //普通的订单 
+  ORDER = 0;
+  //定金
+  EARNEST = 1;
+  //尾款
+  REMAIN = 2;
+  
+}
+
+
+
+
+
 
 
 

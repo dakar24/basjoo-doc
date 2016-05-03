@@ -5,22 +5,22 @@ package com.qjoy.basjoo.core.model.pb;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
-import static com.squareup.wire.Message.Datatype.ENUM;
+import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 查询支付状态结果
+ * 继续支付定金（从未完成定金付款的订单列表提交）
  */
-public final class GetPayStatusRequest extends Message {
+public final class ContinuePayEarnestRequest extends Message {
 
   public static final int TAG_ORDERID = 1;
-  public static final int TAG_USERID = 2;
-  public static final int TAG_PAYSTATUSQUERYTYPE = 3;
+  public static final int TAG_PAYCHANNEL = 2;
+  public static final int TAG_USERID = 3;
 
   public static final String DEFAULT_ORDERID = "";
+  public static final Integer DEFAULT_PAYCHANNEL = 0;
   public static final String DEFAULT_USERID = "";
-  public static final PayStatusQueryType DEFAULT_PAYSTATUSQUERYTYPE = PayStatusQueryType.ORDER;
 
   /**
    * 订单ID
@@ -29,38 +29,38 @@ public final class GetPayStatusRequest extends Message {
   public String orderId;
 
   /**
-   * 用户ID
+   * 支付渠道，0：微信支付，1：支付宝
    */
-  @ProtoField(tag = 2, type = STRING, label = REQUIRED)
-  public String userId;
+  @ProtoField(tag = 2, type = INT32)
+  public Integer payChannel;
 
   /**
-   * 支付结果查询类型
+   * 用户ID
    */
-  @ProtoField(tag = 3, type = ENUM)
-  public PayStatusQueryType payStatusQueryType;
+  @ProtoField(tag = 3, type = STRING, label = REQUIRED)
+  public String userId;
 
-  public GetPayStatusRequest(GetPayStatusRequest message) {
+  public ContinuePayEarnestRequest(ContinuePayEarnestRequest message) {
     super(message);
     if (message == null) return;
     this.orderId = message.orderId;
+    this.payChannel = message.payChannel;
     this.userId = message.userId;
-    this.payStatusQueryType = message.payStatusQueryType;
   }
 
-  public GetPayStatusRequest() {
+  public ContinuePayEarnestRequest() {
   }
 
-  public GetPayStatusRequest fillTagValue(int tag, Object value) {
+  public ContinuePayEarnestRequest fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_ORDERID:
         this.orderId = (String)value;
         break;
+        case TAG_PAYCHANNEL:
+        this.payChannel = (Integer)value;
+        break;
         case TAG_USERID:
         this.userId = (String)value;
-        break;
-        case TAG_PAYSTATUSQUERYTYPE:
-        this.payStatusQueryType = (PayStatusQueryType)value;
         break;
         default: break;
         };
@@ -70,11 +70,11 @@ public final class GetPayStatusRequest extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof GetPayStatusRequest)) return false;
-    GetPayStatusRequest o = (GetPayStatusRequest) other;
+    if (!(other instanceof ContinuePayEarnestRequest)) return false;
+    ContinuePayEarnestRequest o = (ContinuePayEarnestRequest) other;
     return equals(orderId, o.orderId)
-        && equals(userId, o.userId)
-        && equals(payStatusQueryType, o.payStatusQueryType);
+        && equals(payChannel, o.payChannel)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -82,8 +82,8 @@ public final class GetPayStatusRequest extends Message {
     int result = hashCode;
     if (result == 0) {
       result = orderId != null ? orderId.hashCode() : 0;
+      result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
       result = result * 37 + (userId != null ? userId.hashCode() : 0);
-      result = result * 37 + (payStatusQueryType != null ? payStatusQueryType.hashCode() : 0);
       hashCode = result;
     }
     return result;

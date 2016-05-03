@@ -36,6 +36,7 @@ public final class CommitOrderResult extends Message {
   public static final int TAG_VOUCHERINFO = 15;
   public static final int TAG_MAXVOUCHERAMOUNT = 16;
   public static final int TAG_VOUCHERS = 17;
+  public static final int TAG_QUALITYCODE = 18;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
@@ -53,6 +54,7 @@ public final class CommitOrderResult extends Message {
   public static final List<OrderVoucherInfo> DEFAULT_VOUCHERINFO = Collections.emptyList();
   public static final Double DEFAULT_MAXVOUCHERAMOUNT = 0D;
   public static final List<String> DEFAULT_VOUCHERS = Collections.emptyList();
+  public static final String DEFAULT_QUALITYCODE = "";
 
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
@@ -150,6 +152,12 @@ public final class CommitOrderResult extends Message {
   @ProtoField(tag = 17, type = STRING, label = REPEATED)
   public List<String> vouchers;
 
+  /**
+   * 选择成色编码
+   */
+  @ProtoField(tag = 18, type = STRING, label = REQUIRED)
+  public String qualityCode;
+
   public CommitOrderResult(CommitOrderResult message) {
     super(message);
     if (message == null) return;
@@ -170,6 +178,7 @@ public final class CommitOrderResult extends Message {
     this.voucherInfo = copyOf(message.voucherInfo);
     this.maxVoucherAmount = message.maxVoucherAmount;
     this.vouchers = copyOf(message.vouchers);
+    this.qualityCode = message.qualityCode;
   }
 
   public CommitOrderResult() {
@@ -228,6 +237,9 @@ public final class CommitOrderResult extends Message {
         case TAG_VOUCHERS:
         this.vouchers = immutableCopyOf((List<String>)value);
         break;
+        case TAG_QUALITYCODE:
+        this.qualityCode = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -254,7 +266,8 @@ public final class CommitOrderResult extends Message {
         && equals(orderReceiveAddressInfo, o.orderReceiveAddressInfo)
         && equals(voucherInfo, o.voucherInfo)
         && equals(maxVoucherAmount, o.maxVoucherAmount)
-        && equals(vouchers, o.vouchers);
+        && equals(vouchers, o.vouchers)
+        && equals(qualityCode, o.qualityCode);
   }
 
   @Override
@@ -278,6 +291,7 @@ public final class CommitOrderResult extends Message {
       result = result * 37 + (voucherInfo != null ? voucherInfo.hashCode() : 1);
       result = result * 37 + (maxVoucherAmount != null ? maxVoucherAmount.hashCode() : 0);
       result = result * 37 + (vouchers != null ? vouchers.hashCode() : 1);
+      result = result * 37 + (qualityCode != null ? qualityCode.hashCode() : 0);
       hashCode = result;
     }
     return result;

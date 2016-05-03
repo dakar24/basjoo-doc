@@ -27,6 +27,7 @@ public final class CommitOrderRequest extends Message {
   public static final int TAG_ONLYCALPRICE = 7;
   public static final int TAG_USERID = 8;
   public static final int TAG_VOUCHERS = 9;
+  public static final int TAG_QUALITYCODE = 10;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_CATEGORYCODE = "";
@@ -37,6 +38,7 @@ public final class CommitOrderRequest extends Message {
   public static final Boolean DEFAULT_ONLYCALPRICE = false;
   public static final String DEFAULT_USERID = "";
   public static final List<String> DEFAULT_VOUCHERS = Collections.emptyList();
+  public static final String DEFAULT_QUALITYCODE = "";
 
   /**
    * 产品Id
@@ -92,6 +94,12 @@ public final class CommitOrderRequest extends Message {
   @ProtoField(tag = 9, type = STRING, label = REPEATED)
   public List<String> vouchers;
 
+  /**
+   * 选择成色编码
+   */
+  @ProtoField(tag = 10, type = STRING, label = REQUIRED)
+  public String qualityCode;
+
   public CommitOrderRequest(CommitOrderRequest message) {
     super(message);
     if (message == null) return;
@@ -104,6 +112,7 @@ public final class CommitOrderRequest extends Message {
     this.onlyCalPrice = message.onlyCalPrice;
     this.userId = message.userId;
     this.vouchers = copyOf(message.vouchers);
+    this.qualityCode = message.qualityCode;
   }
 
   public CommitOrderRequest() {
@@ -138,6 +147,9 @@ public final class CommitOrderRequest extends Message {
         case TAG_VOUCHERS:
         this.vouchers = immutableCopyOf((List<String>)value);
         break;
+        case TAG_QUALITYCODE:
+        this.qualityCode = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -156,7 +168,8 @@ public final class CommitOrderRequest extends Message {
         && equals(orderId, o.orderId)
         && equals(onlyCalPrice, o.onlyCalPrice)
         && equals(userId, o.userId)
-        && equals(vouchers, o.vouchers);
+        && equals(vouchers, o.vouchers)
+        && equals(qualityCode, o.qualityCode);
   }
 
   @Override
@@ -172,6 +185,7 @@ public final class CommitOrderRequest extends Message {
       result = result * 37 + (onlyCalPrice != null ? onlyCalPrice.hashCode() : 0);
       result = result * 37 + (userId != null ? userId.hashCode() : 0);
       result = result * 37 + (vouchers != null ? vouchers.hashCode() : 1);
+      result = result * 37 + (qualityCode != null ? qualityCode.hashCode() : 0);
       hashCode = result;
     }
     return result;

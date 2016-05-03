@@ -12,12 +12,18 @@
 @class CommitOrderResult;
 @class CommitRefundTransRequest;
 @class CommitRefundTransResult;
+@class ConfirmEarnestRequest;
+@class ConfirmEarnestResult;
 @class ConfirmOrderRequest;
 @class ConfirmOrderResult;
+@class ConfirmPayRemainRequest;
+@class ConfirmPayRemainResult;
 @class ConfirmPayRequest;
 @class ConfirmPayResult;
 @class ConfirmReceiveRequest;
 @class ConfirmReceiveResult;
+@class ContinuePayEarnestRequest;
+@class ContinuePayEarnestResult;
 @class DeleteOrderRequest;
 @class DeleteOrderResult;
 @class GetOrderDetailRequest;
@@ -34,6 +40,12 @@
 @class SearchOrderListResult;
 @class WxPayInfo;
 
+typedef NS_ENUM(SInt32, PayStatusQueryType) {
+  PayStatusQueryTypeOrder = 0,
+  PayStatusQueryTypeEarnest = 1,
+  PayStatusQueryTypeRemain = 2,
+};
+
 @interface CommitOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasProductId;
 @property (readonly) BOOL hasCategoryCode;
@@ -43,6 +55,7 @@
 @property (readonly) BOOL hasOrderId;
 @property (readonly) BOOL hasOnlyCalPrice;
 @property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasQualityCode;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* categoryCode;
 @property (nonatomic)SInt32 rentCount;
@@ -52,6 +65,7 @@
 @property (nonatomic)BOOL onlyCalPrice;
 @property (nonatomic,strong) NSString* userId;
 @property (nonatomic,strong) NSMutableArray * vouchers;
+@property (nonatomic,strong) NSString* qualityCode;
 @end
 
 @interface CommitOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -70,6 +84,7 @@
 @property (readonly) BOOL hasTotalPrice;
 @property (readonly) BOOL hasOrderReceiveAddressInfo;
 @property (readonly) BOOL hasMaxVoucherAmount;
+@property (readonly) BOOL hasQualityCode;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* orderId;
@@ -87,6 +102,7 @@
 @property (nonatomic,strong) NSMutableArray * voucherInfo;
 @property (nonatomic)Float64 maxVoucherAmount;
 @property (nonatomic,strong) NSMutableArray * vouchers;
+@property (nonatomic,strong) NSString* qualityCode;
 @end
 
 @interface OrderReceiveAddressInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -117,6 +133,7 @@
 @property (readonly) BOOL hasUserMessage;
 @property (readonly) BOOL hasPayChannel;
 @property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasQualityCode;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* categoryCode;
 @property (nonatomic)SInt32 rentCount;
@@ -128,6 +145,7 @@
 @property (nonatomic,strong) NSString* userMessage;
 @property (nonatomic)SInt32 payChannel;
 @property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSString* qualityCode;
 @end
 
 @interface ConfirmOrderResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -185,8 +203,10 @@
 @interface GetPayStatusRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOrderId;
 @property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasPayStatusQueryType;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic,strong) NSString* userId;
+@property (nonatomic)PayStatusQueryType payStatusQueryType;
 @end
 
 @interface GetPayStatusResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -263,6 +283,8 @@
 @property (readonly) BOOL hasMainImageUrl;
 @property (readonly) BOOL hasDesc;
 @property (readonly) BOOL hasCategoryName;
+@property (readonly) BOOL hasDiscount;
+@property (readonly) BOOL hasOriginalRentAmount;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)SInt32 orderStatus;
 @property (nonatomic)SInt64 createTime;
@@ -280,6 +302,8 @@
 @property (nonatomic,strong) NSString* mainImageUrl;
 @property (nonatomic,strong) NSString* desc;
 @property (nonatomic,strong) NSString* categoryName;
+@property (nonatomic)Float64 discount;
+@property (nonatomic)Float64 originalRentAmount;
 @end
 
 @interface DeleteOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -457,6 +481,10 @@
 @property (readonly) BOOL hasCompleteTime;
 @property (readonly) BOOL hasCloseTime;
 @property (readonly) BOOL hasOrderReceiveAddressInfo;
+@property (readonly) BOOL hasDiscount;
+@property (readonly) BOOL hasOriginalRentAmount;
+@property (readonly) BOOL hasEarnestAmount;
+@property (readonly) BOOL hasRemailAmount;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)SInt32 orderStatus;
 @property (nonatomic)SInt64 createTime;
@@ -485,6 +513,10 @@
 @property (nonatomic,strong) NSMutableArray * vouchers;
 @property (nonatomic,strong) OrderReceiveAddressInfo* orderReceiveAddressInfo;
 @property (nonatomic,strong) NSMutableArray * voucherInfo;
+@property (nonatomic)Float64 discount;
+@property (nonatomic)Float64 originalRentAmount;
+@property (nonatomic)Float64 earnestAmount;
+@property (nonatomic)Float64 remailAmount;
 @end
 
 @interface OrderVoucherInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -504,5 +536,82 @@
 @property (nonatomic)SInt64 validEndTime;
 @property (nonatomic,strong) NSString* voucherDesc;
 @property (nonatomic)Float64 deductAmount;
+@end
+
+@interface ConfirmEarnestRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasProductId;
+@property (readonly) BOOL hasCategoryCode;
+@property (readonly) BOOL hasRentCount;
+@property (readonly) BOOL hasRentCode;
+@property (readonly) BOOL hasPayChannel;
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasAddressId;
+@property (nonatomic,strong) NSString* productId;
+@property (nonatomic,strong) NSString* categoryCode;
+@property (nonatomic)SInt32 rentCount;
+@property (nonatomic,strong) NSString* rentCode;
+@property (nonatomic)SInt32 payChannel;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSString* addressId;
+@end
+
+@interface ConfirmEarnestResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasPayChannel;
+@property (readonly) BOOL hasWxPayInfo;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic)SInt32 payChannel;
+@property (nonatomic,strong) WxPayInfo* wxPayInfo;
+@end
+
+@interface ContinuePayEarnestRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasPayChannel;
+@property (readonly) BOOL hasUserId;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic)SInt32 payChannel;
+@property (nonatomic,strong) NSString* userId;
+@end
+
+@interface ContinuePayEarnestResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasPayChannel;
+@property (readonly) BOOL hasWxPayInfo;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic)SInt32 payChannel;
+@property (nonatomic,strong) WxPayInfo* wxPayInfo;
+@end
+
+@interface ConfirmPayRemainRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasPayChannel;
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasAddressId;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic)SInt32 payChannel;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSMutableArray * vouchers;
+@property (nonatomic,strong) NSString* addressId;
+@end
+
+@interface ConfirmPayRemainResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasPayChannel;
+@property (readonly) BOOL hasWxPayInfo;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic)SInt32 payChannel;
+@property (nonatomic,strong) WxPayInfo* wxPayInfo;
 @end
 

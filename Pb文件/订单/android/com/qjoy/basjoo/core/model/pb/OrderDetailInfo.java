@@ -48,6 +48,10 @@ public final class OrderDetailInfo extends Message {
   public static final int TAG_VOUCHERS = 26;
   public static final int TAG_ORDERRECEIVEADDRESSINFO = 27;
   public static final int TAG_VOUCHERINFO = 28;
+  public static final int TAG_DISCOUNT = 29;
+  public static final int TAG_ORIGINALRENTAMOUNT = 30;
+  public static final int TAG_EARNESTAMOUNT = 31;
+  public static final int TAG_REMAILAMOUNT = 32;
 
   public static final String DEFAULT_ORDERID = "";
   public static final Integer DEFAULT_ORDERSTATUS = 0;
@@ -76,6 +80,10 @@ public final class OrderDetailInfo extends Message {
   public static final Long DEFAULT_CLOSETIME = 0L;
   public static final List<String> DEFAULT_VOUCHERS = Collections.emptyList();
   public static final List<OrderVoucherInfo> DEFAULT_VOUCHERINFO = Collections.emptyList();
+  public static final Double DEFAULT_DISCOUNT = 0D;
+  public static final Double DEFAULT_ORIGINALRENTAMOUNT = 0D;
+  public static final Double DEFAULT_EARNESTAMOUNT = 0D;
+  public static final Double DEFAULT_REMAILAMOUNT = 0D;
 
   /**
    * 产品Id
@@ -245,6 +253,30 @@ public final class OrderDetailInfo extends Message {
   @ProtoField(tag = 28, label = REPEATED)
   public List<OrderVoucherInfo> voucherInfo;
 
+  /**
+   * 折扣信息
+   */
+  @ProtoField(tag = 29, type = DOUBLE)
+  public Double discount;
+
+  /**
+   * 原始租金（优惠前）
+   */
+  @ProtoField(tag = 30, type = DOUBLE)
+  public Double originalRentAmount;
+
+  /**
+   * 定金金额
+   */
+  @ProtoField(tag = 31, type = DOUBLE)
+  public Double earnestAmount;
+
+  /**
+   * 尾款金额
+   */
+  @ProtoField(tag = 32, type = DOUBLE)
+  public Double remailAmount;
+
   public OrderDetailInfo(OrderDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -276,6 +308,10 @@ public final class OrderDetailInfo extends Message {
     this.vouchers = copyOf(message.vouchers);
     this.orderReceiveAddressInfo = message.orderReceiveAddressInfo;
     this.voucherInfo = copyOf(message.voucherInfo);
+    this.discount = message.discount;
+    this.originalRentAmount = message.originalRentAmount;
+    this.earnestAmount = message.earnestAmount;
+    this.remailAmount = message.remailAmount;
   }
 
   public OrderDetailInfo() {
@@ -367,6 +403,18 @@ public final class OrderDetailInfo extends Message {
         case TAG_VOUCHERINFO:
         this.voucherInfo = immutableCopyOf((List<OrderVoucherInfo>)value);
         break;
+        case TAG_DISCOUNT:
+        this.discount = (Double)value;
+        break;
+        case TAG_ORIGINALRENTAMOUNT:
+        this.originalRentAmount = (Double)value;
+        break;
+        case TAG_EARNESTAMOUNT:
+        this.earnestAmount = (Double)value;
+        break;
+        case TAG_REMAILAMOUNT:
+        this.remailAmount = (Double)value;
+        break;
         default: break;
         };
     return this;
@@ -404,7 +452,11 @@ public final class OrderDetailInfo extends Message {
         && equals(closeTime, o.closeTime)
         && equals(vouchers, o.vouchers)
         && equals(orderReceiveAddressInfo, o.orderReceiveAddressInfo)
-        && equals(voucherInfo, o.voucherInfo);
+        && equals(voucherInfo, o.voucherInfo)
+        && equals(discount, o.discount)
+        && equals(originalRentAmount, o.originalRentAmount)
+        && equals(earnestAmount, o.earnestAmount)
+        && equals(remailAmount, o.remailAmount);
   }
 
   @Override
@@ -439,6 +491,10 @@ public final class OrderDetailInfo extends Message {
       result = result * 37 + (vouchers != null ? vouchers.hashCode() : 1);
       result = result * 37 + (orderReceiveAddressInfo != null ? orderReceiveAddressInfo.hashCode() : 0);
       result = result * 37 + (voucherInfo != null ? voucherInfo.hashCode() : 1);
+      result = result * 37 + (discount != null ? discount.hashCode() : 0);
+      result = result * 37 + (originalRentAmount != null ? originalRentAmount.hashCode() : 0);
+      result = result * 37 + (earnestAmount != null ? earnestAmount.hashCode() : 0);
+      result = result * 37 + (remailAmount != null ? remailAmount.hashCode() : 0);
       hashCode = result;
     }
     return result;

@@ -174,7 +174,7 @@ message GroupProductDetail {
    repeated string                  imageParamUrls=19;
    
    //定金金额
-   required string                 earnestAmount = 20; 
+   required double                 earnestAmount = 20; 
    
    //成团折扣力度
    optional double                 discount = 21; 
@@ -199,6 +199,9 @@ message GroupProductDetail {
    
    //图片地址
    repeated string                 imageUrl = 28;
+   
+   //参团用户的默认收货地址
+   optional GroupProductReceiveAddress receiveAddress = 29;
      
 }
 
@@ -270,6 +273,26 @@ message GroupProductBaseParam{
  //展示Value
  required string                 showValue = 3; 
 }
+
+
+//参团用户的默认收货地址
+message GroupProductReceiveAddress{
+        //收货人
+        required string                 receiver = 1;
+        //联系电话
+        required string                 mobileNo = 2;
+        //所在地区
+    	required string                 section = 3;
+    	//所在街道
+    	required string                 street=4;
+    	//详细地址
+    	required string                 detail=5;
+    	//邮编
+        required string                 postCode=6;
+        //地址ID
+        optional string                 addressId = 7;
+}
+
 
 
 
