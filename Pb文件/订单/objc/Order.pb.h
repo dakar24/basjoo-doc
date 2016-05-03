@@ -485,6 +485,8 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @property (readonly) BOOL hasOriginalRentAmount;
 @property (readonly) BOOL hasEarnestAmount;
 @property (readonly) BOOL hasRemailAmount;
+@property (readonly) BOOL hasQualityCode;
+@property (readonly) BOOL hasQualityName;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)SInt32 orderStatus;
 @property (nonatomic)SInt64 createTime;
@@ -517,6 +519,8 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @property (nonatomic)Float64 originalRentAmount;
 @property (nonatomic)Float64 earnestAmount;
 @property (nonatomic)Float64 remailAmount;
+@property (nonatomic,strong) NSString* qualityCode;
+@property (nonatomic,strong) NSString* qualityName;
 @end
 
 @interface OrderVoucherInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>

@@ -39781,6 +39781,58 @@ public final class Order {
      * </pre>
      */
     double getRemailAmount();
+
+    /**
+     * <code>optional string qualityCode = 33;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    boolean hasQualityCode();
+    /**
+     * <code>optional string qualityCode = 33;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    java.lang.String getQualityCode();
+    /**
+     * <code>optional string qualityCode = 33;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getQualityCodeBytes();
+
+    /**
+     * <code>optional string qualityName = 34;</code>
+     *
+     * <pre>
+     *选择成色的名称
+     * </pre>
+     */
+    boolean hasQualityName();
+    /**
+     * <code>optional string qualityName = 34;</code>
+     *
+     * <pre>
+     *选择成色的名称
+     * </pre>
+     */
+    java.lang.String getQualityName();
+    /**
+     * <code>optional string qualityName = 34;</code>
+     *
+     * <pre>
+     *选择成色的名称
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getQualityNameBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderDetailInfo}
@@ -39821,6 +39873,7 @@ public final class Order {
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      int mutable_bitField1_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -40019,6 +40072,18 @@ public final class Order {
             case 257: {
               bitField0_ |= 0x20000000;
               remailAmount_ = input.readDouble();
+              break;
+            }
+            case 266: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x40000000;
+              qualityCode_ = bs;
+              break;
+            }
+            case 274: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x80000000;
+              qualityName_ = bs;
               break;
             }
           }
@@ -41115,6 +41180,114 @@ public final class Order {
       return remailAmount_;
     }
 
+    public static final int QUALITYCODE_FIELD_NUMBER = 33;
+    private java.lang.Object qualityCode_;
+    /**
+     * <code>optional string qualityCode = 33;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public boolean hasQualityCode() {
+      return ((bitField0_ & 0x40000000) == 0x40000000);
+    }
+    /**
+     * <code>optional string qualityCode = 33;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public java.lang.String getQualityCode() {
+      java.lang.Object ref = qualityCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          qualityCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string qualityCode = 33;</code>
+     *
+     * <pre>
+     *选择成色编码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getQualityCodeBytes() {
+      java.lang.Object ref = qualityCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        qualityCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUALITYNAME_FIELD_NUMBER = 34;
+    private java.lang.Object qualityName_;
+    /**
+     * <code>optional string qualityName = 34;</code>
+     *
+     * <pre>
+     *选择成色的名称
+     * </pre>
+     */
+    public boolean hasQualityName() {
+      return ((bitField0_ & 0x80000000) == 0x80000000);
+    }
+    /**
+     * <code>optional string qualityName = 34;</code>
+     *
+     * <pre>
+     *选择成色的名称
+     * </pre>
+     */
+    public java.lang.String getQualityName() {
+      java.lang.Object ref = qualityName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          qualityName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string qualityName = 34;</code>
+     *
+     * <pre>
+     *选择成色的名称
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getQualityNameBytes() {
+      java.lang.Object ref = qualityName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        qualityName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       orderId_ = "";
       orderStatus_ = 0;
@@ -41148,6 +41321,8 @@ public final class Order {
       originalRentAmount_ = 0D;
       earnestAmount_ = 0D;
       remailAmount_ = 0D;
+      qualityCode_ = "";
+      qualityName_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -41326,6 +41501,12 @@ public final class Order {
       if (((bitField0_ & 0x20000000) == 0x20000000)) {
         output.writeDouble(32, remailAmount_);
       }
+      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+        output.writeBytes(33, getQualityCodeBytes());
+      }
+      if (((bitField0_ & 0x80000000) == 0x80000000)) {
+        output.writeBytes(34, getQualityNameBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -41467,6 +41648,14 @@ public final class Order {
       if (((bitField0_ & 0x20000000) == 0x20000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(32, remailAmount_);
+      }
+      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(33, getQualityCodeBytes());
+      }
+      if (((bitField0_ & 0x80000000) == 0x80000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(34, getQualityNameBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -41663,6 +41852,10 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x40000000);
         remailAmount_ = 0D;
         bitField0_ = (bitField0_ & ~0x80000000);
+        qualityCode_ = "";
+        bitField1_ = (bitField1_ & ~0x00000001);
+        qualityName_ = "";
+        bitField1_ = (bitField1_ & ~0x00000002);
         return this;
       }
 
@@ -41690,6 +41883,7 @@ public final class Order {
       public com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo buildPartial() {
         com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo result = new com.qjoy.basjoo.core.model.pb.Order.OrderDetailInfo(this);
         int from_bitField0_ = bitField0_;
+        int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
@@ -41829,6 +42023,14 @@ public final class Order {
           to_bitField0_ |= 0x20000000;
         }
         result.remailAmount_ = remailAmount_;
+        if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x40000000;
+        }
+        result.qualityCode_ = qualityCode_;
+        if (((from_bitField1_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x80000000;
+        }
+        result.qualityName_ = qualityName_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -41987,6 +42189,16 @@ public final class Order {
         if (other.hasRemailAmount()) {
           setRemailAmount(other.getRemailAmount());
         }
+        if (other.hasQualityCode()) {
+          bitField1_ |= 0x00000001;
+          qualityCode_ = other.qualityCode_;
+          onChanged();
+        }
+        if (other.hasQualityName()) {
+          bitField1_ |= 0x00000002;
+          qualityName_ = other.qualityName_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -42081,6 +42293,7 @@ public final class Order {
         return this;
       }
       private int bitField0_;
+      private int bitField1_;
 
       private java.lang.Object orderId_ = "";
       /**
@@ -44479,6 +44692,206 @@ public final class Order {
       public Builder clearRemailAmount() {
         bitField0_ = (bitField0_ & ~0x80000000);
         remailAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object qualityCode_ = "";
+      /**
+       * <code>optional string qualityCode = 33;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public boolean hasQualityCode() {
+        return ((bitField1_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string qualityCode = 33;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public java.lang.String getQualityCode() {
+        java.lang.Object ref = qualityCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            qualityCode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string qualityCode = 33;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getQualityCodeBytes() {
+        java.lang.Object ref = qualityCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          qualityCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string qualityCode = 33;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder setQualityCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000001;
+        qualityCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string qualityCode = 33;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder clearQualityCode() {
+        bitField1_ = (bitField1_ & ~0x00000001);
+        qualityCode_ = getDefaultInstance().getQualityCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string qualityCode = 33;</code>
+       *
+       * <pre>
+       *选择成色编码
+       * </pre>
+       */
+      public Builder setQualityCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000001;
+        qualityCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object qualityName_ = "";
+      /**
+       * <code>optional string qualityName = 34;</code>
+       *
+       * <pre>
+       *选择成色的名称
+       * </pre>
+       */
+      public boolean hasQualityName() {
+        return ((bitField1_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string qualityName = 34;</code>
+       *
+       * <pre>
+       *选择成色的名称
+       * </pre>
+       */
+      public java.lang.String getQualityName() {
+        java.lang.Object ref = qualityName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            qualityName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string qualityName = 34;</code>
+       *
+       * <pre>
+       *选择成色的名称
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getQualityNameBytes() {
+        java.lang.Object ref = qualityName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          qualityName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string qualityName = 34;</code>
+       *
+       * <pre>
+       *选择成色的名称
+       * </pre>
+       */
+      public Builder setQualityName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000002;
+        qualityName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string qualityName = 34;</code>
+       *
+       * <pre>
+       *选择成色的名称
+       * </pre>
+       */
+      public Builder clearQualityName() {
+        bitField1_ = (bitField1_ & ~0x00000002);
+        qualityName_ = getDefaultInstance().getQualityName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string qualityName = 34;</code>
+       *
+       * <pre>
+       *选择成色的名称
+       * </pre>
+       */
+      public Builder setQualityNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000002;
+        qualityName_ = value;
         onChanged();
         return this;
       }
@@ -54036,7 +54449,7 @@ public final class Order {
       "erId\030\002 \002(\t\"\206\001\n\024GetOrderDetailResult\022\022\n\nr" +
       "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017or" +
       "derDetailInfo\030\003 \001(\0132..com.qjoy.basjoo.co" +
-      "re.model.pb.OrderDetailInfo\"\234\006\n\017OrderDet",
+      "re.model.pb.OrderDetailInfo\"\306\006\n\017OrderDet",
       "ailInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030" +
       "\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rrentStartTi" +
       "me\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDay" +
@@ -54056,36 +54469,37 @@ public final class Order {
       "\030\034 \003(\0132/.com.qjoy.basjoo.core.model.pb.O" +
       "rderVoucherInfo\022\020\n\010discount\030\035 \001(\001\022\032\n\022ori" +
       "ginalRentAmount\030\036 \001(\001\022\025\n\rearnestAmount\030\037" +
-      " \001(\001\022\024\n\014remailAmount\030  \001(\001\"\300\001\n\020OrderVouc",
-      "herInfo\022\021\n\tvoucherId\030\001 \002(\t\022\024\n\014voucherTit" +
-      "le\030\002 \002(\t\022\023\n\013voucherType\030\003 \002(\t\022\025\n\rvoucher" +
-      "Status\030\004 \002(\t\022\026\n\016validStartTime\030\005 \002(\003\022\024\n\014" +
-      "validEndTime\030\006 \002(\003\022\023\n\013voucherDesc\030\007 \002(\t\022" +
-      "\024\n\014deductAmount\030\010 \001(\001\"\234\001\n\025ConfirmEarnest" +
-      "Request\022\021\n\tproductId\030\001 \002(\t\022\024\n\014categoryCo" +
-      "de\030\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030" +
-      "\004 \002(\t\022\022\n\npayChannel\030\005 \001(\005\022\016\n\006userId\030\006 \002(" +
-      "\t\022\021\n\taddressId\030\007 \002(\t\"\237\001\n\024ConfirmEarnestR" +
-      "esult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002",
-      " \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(" +
-      "\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo.c" +
-      "ore.model.pb.WxPayInfo\"P\n\031ContinuePayEar" +
-      "nestRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChann" +
-      "el\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\"\243\001\n\030ContinuePay" +
-      "EarnestResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tres" +
-      "ultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChan" +
-      "nel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy." +
-      "basjoo.core.model.pb.WxPayInfo\"s\n\027Confir" +
-      "mPayRemainRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npa",
-      "yChannel\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\022\020\n\010vouche" +
-      "rs\030\004 \003(\t\022\021\n\taddressId\030\005 \001(\t\"\241\001\n\026ConfirmP" +
-      "ayRemainResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tre" +
-      "sultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayCha" +
-      "nnel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy" +
-      ".basjoo.core.model.pb.WxPayInfo*8\n\022PaySt" +
-      "atusQueryType\022\t\n\005ORDER\020\000\022\013\n\007EARNEST\020\001\022\n\n" +
-      "\006REMAIN\020\002B\037\n\035com.qjoy.basjoo.core.model." +
-      "pb"
+      " \001(\001\022\024\n\014remailAmount\030  \001(\001\022\023\n\013qualityCod",
+      "e\030! \001(\t\022\023\n\013qualityName\030\" \001(\t\"\300\001\n\020OrderVo" +
+      "ucherInfo\022\021\n\tvoucherId\030\001 \002(\t\022\024\n\014voucherT" +
+      "itle\030\002 \002(\t\022\023\n\013voucherType\030\003 \002(\t\022\025\n\rvouch" +
+      "erStatus\030\004 \002(\t\022\026\n\016validStartTime\030\005 \002(\003\022\024" +
+      "\n\014validEndTime\030\006 \002(\003\022\023\n\013voucherDesc\030\007 \002(" +
+      "\t\022\024\n\014deductAmount\030\010 \001(\001\"\234\001\n\025ConfirmEarne" +
+      "stRequest\022\021\n\tproductId\030\001 \002(\t\022\024\n\014category" +
+      "Code\030\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCod" +
+      "e\030\004 \002(\t\022\022\n\npayChannel\030\005 \001(\005\022\016\n\006userId\030\006 " +
+      "\002(\t\022\021\n\taddressId\030\007 \002(\t\"\237\001\n\024ConfirmEarnes",
+      "tResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg" +
+      "\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 " +
+      "\001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo" +
+      ".core.model.pb.WxPayInfo\"P\n\031ContinuePayE" +
+      "arnestRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayCha" +
+      "nnel\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\"\243\001\n\030ContinueP" +
+      "ayEarnestResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tr" +
+      "esultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayCh" +
+      "annel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjo" +
+      "y.basjoo.core.model.pb.WxPayInfo\"s\n\027Conf",
+      "irmPayRemainRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\n" +
+      "payChannel\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\022\020\n\010vouc" +
+      "hers\030\004 \003(\t\022\021\n\taddressId\030\005 \001(\t\"\241\001\n\026Confir" +
+      "mPayRemainResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
+      "resultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayC" +
+      "hannel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qj" +
+      "oy.basjoo.core.model.pb.WxPayInfo*8\n\022Pay" +
+      "StatusQueryType\022\t\n\005ORDER\020\000\022\013\n\007EARNEST\020\001\022" +
+      "\n\n\006REMAIN\020\002B\037\n\035com.qjoy.basjoo.core.mode" +
+      "l.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54278,7 +54692,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_descriptor,
-        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "PayTime", "PayId", "PayChannel", "DeliveryTime", "ReceiveTime", "RevertTime", "CompleteTime", "CloseTime", "Vouchers", "OrderReceiveAddressInfo", "VoucherInfo", "Discount", "OriginalRentAmount", "EarnestAmount", "RemailAmount", });
+        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "PayTime", "PayId", "PayChannel", "DeliveryTime", "ReceiveTime", "RevertTime", "CompleteTime", "CloseTime", "Vouchers", "OrderReceiveAddressInfo", "VoucherInfo", "Discount", "OriginalRentAmount", "EarnestAmount", "RemailAmount", "QualityCode", "QualityName", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_fieldAccessorTable = new

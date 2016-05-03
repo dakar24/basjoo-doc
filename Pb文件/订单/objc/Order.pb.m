@@ -4483,6 +4483,8 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
     _originalRentAmount = 0;
     _earnestAmount = 0;
     _remailAmount = 0;
+    _qualityCode = @"";
+    _qualityName = @"";
   }
   return self;
 }
@@ -4582,6 +4584,12 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasRemailAmount) {
     [output writeDouble:32 value:self.remailAmount];
+  }
+  if (self.hasQualityCode) {
+    [output writeString:33 value:self.qualityCode];
+  }
+  if (self.hasQualityName) {
+    [output writeString:34 value:self.qualityName];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -4690,6 +4698,12 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasRemailAmount) {
     size_ += computeDoubleSize(32, self.remailAmount);
+  }
+  if (self.hasQualityCode) {
+    size_ += computeStringSize(33, self.qualityCode);
+  }
+  if (self.hasQualityName) {
+    size_ += computeStringSize(34, self.qualityName);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -4802,6 +4816,12 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasRemailAmount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"remailAmount", [NSNumber numberWithDouble:self.remailAmount]];
+  }
+  if (self.hasQualityCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"qualityCode", self.qualityCode];
+  }
+  if (self.hasQualityName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"qualityName", self.qualityName];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -4943,6 +4963,14 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
 - (void) setRemailAmount:(Float64) value {
   _hasRemailAmount = YES;
   _remailAmount = value;
+}
+- (void) setQualityCode:(NSString*) value {
+  _hasQualityCode = YES;
+  _qualityCode = value;
+}
+- (void) setQualityName:(NSString*) value {
+  _hasQualityName = YES;
+  _qualityName = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -5089,6 +5117,14 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
       }
       case 257: {
         [self setRemailAmount:[input readDouble]];
+        break;
+      }
+      case 266: {
+        [self setQualityCode:[input readString]];
+        break;
+      }
+      case 274: {
+        [self setQualityName:[input readString]];
         break;
       }
     }

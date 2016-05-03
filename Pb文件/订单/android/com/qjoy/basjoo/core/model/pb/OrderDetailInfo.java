@@ -52,6 +52,8 @@ public final class OrderDetailInfo extends Message {
   public static final int TAG_ORIGINALRENTAMOUNT = 30;
   public static final int TAG_EARNESTAMOUNT = 31;
   public static final int TAG_REMAILAMOUNT = 32;
+  public static final int TAG_QUALITYCODE = 33;
+  public static final int TAG_QUALITYNAME = 34;
 
   public static final String DEFAULT_ORDERID = "";
   public static final Integer DEFAULT_ORDERSTATUS = 0;
@@ -84,6 +86,8 @@ public final class OrderDetailInfo extends Message {
   public static final Double DEFAULT_ORIGINALRENTAMOUNT = 0D;
   public static final Double DEFAULT_EARNESTAMOUNT = 0D;
   public static final Double DEFAULT_REMAILAMOUNT = 0D;
+  public static final String DEFAULT_QUALITYCODE = "";
+  public static final String DEFAULT_QUALITYNAME = "";
 
   /**
    * 产品Id
@@ -277,6 +281,18 @@ public final class OrderDetailInfo extends Message {
   @ProtoField(tag = 32, type = DOUBLE)
   public Double remailAmount;
 
+  /**
+   * 选择成色编码
+   */
+  @ProtoField(tag = 33, type = STRING)
+  public String qualityCode;
+
+  /**
+   * 选择成色的名称
+   */
+  @ProtoField(tag = 34, type = STRING)
+  public String qualityName;
+
   public OrderDetailInfo(OrderDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -312,6 +328,8 @@ public final class OrderDetailInfo extends Message {
     this.originalRentAmount = message.originalRentAmount;
     this.earnestAmount = message.earnestAmount;
     this.remailAmount = message.remailAmount;
+    this.qualityCode = message.qualityCode;
+    this.qualityName = message.qualityName;
   }
 
   public OrderDetailInfo() {
@@ -415,6 +433,12 @@ public final class OrderDetailInfo extends Message {
         case TAG_REMAILAMOUNT:
         this.remailAmount = (Double)value;
         break;
+        case TAG_QUALITYCODE:
+        this.qualityCode = (String)value;
+        break;
+        case TAG_QUALITYNAME:
+        this.qualityName = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -456,7 +480,9 @@ public final class OrderDetailInfo extends Message {
         && equals(discount, o.discount)
         && equals(originalRentAmount, o.originalRentAmount)
         && equals(earnestAmount, o.earnestAmount)
-        && equals(remailAmount, o.remailAmount);
+        && equals(remailAmount, o.remailAmount)
+        && equals(qualityCode, o.qualityCode)
+        && equals(qualityName, o.qualityName);
   }
 
   @Override
@@ -495,6 +521,8 @@ public final class OrderDetailInfo extends Message {
       result = result * 37 + (originalRentAmount != null ? originalRentAmount.hashCode() : 0);
       result = result * 37 + (earnestAmount != null ? earnestAmount.hashCode() : 0);
       result = result * 37 + (remailAmount != null ? remailAmount.hashCode() : 0);
+      result = result * 37 + (qualityCode != null ? qualityCode.hashCode() : 0);
+      result = result * 37 + (qualityName != null ? qualityName.hashCode() : 0);
       hashCode = result;
     }
     return result;

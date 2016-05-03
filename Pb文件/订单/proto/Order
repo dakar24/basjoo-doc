@@ -530,7 +530,7 @@ message ApplyRefundRequest {
     //退款凭证图片
     repeated string                 evidentalImgs = 7;
 
-   //退款说明
+    //退款说明
     optional string                 refundIntro = 8;
 
        
@@ -729,6 +729,12 @@ message OrderDetailInfo{
   
   //尾款金额
   optional double      remailAmount = 32;
+  
+  //选择成色编码
+  optional string      qualityCode = 33;
+  
+  //选择成色的名称
+  optional string      qualityName = 34;
   
   
 
