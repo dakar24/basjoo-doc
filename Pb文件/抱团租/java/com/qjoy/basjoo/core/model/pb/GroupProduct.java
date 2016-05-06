@@ -6807,21 +6807,21 @@ public final class GroupProduct {
         getProductTypeBytes();
 
     /**
-     * <code>required int32 promoType = 3;</code>
+     * <code>required int32 preferType = 3;</code>
      *
      * <pre>
      *抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
      * </pre>
      */
-    boolean hasPromoType();
+    boolean hasPreferType();
     /**
-     * <code>required int32 promoType = 3;</code>
+     * <code>required int32 preferType = 3;</code>
      *
      * <pre>
      *抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
      * </pre>
      */
-    int getPromoType();
+    int getPreferType();
 
     /**
      * <code>required string brand = 4;</code>
@@ -7551,7 +7551,7 @@ public final class GroupProduct {
             }
             case 24: {
               bitField0_ |= 0x00000004;
-              promoType_ = input.readInt32();
+              preferType_ = input.readInt32();
               break;
             }
             case 34: {
@@ -7885,27 +7885,27 @@ public final class GroupProduct {
       }
     }
 
-    public static final int PROMOTYPE_FIELD_NUMBER = 3;
-    private int promoType_;
+    public static final int PREFERTYPE_FIELD_NUMBER = 3;
+    private int preferType_;
     /**
-     * <code>required int32 promoType = 3;</code>
+     * <code>required int32 preferType = 3;</code>
      *
      * <pre>
      *抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
      * </pre>
      */
-    public boolean hasPromoType() {
+    public boolean hasPreferType() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required int32 promoType = 3;</code>
+     * <code>required int32 preferType = 3;</code>
      *
      * <pre>
      *抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
      * </pre>
      */
-    public int getPromoType() {
-      return promoType_;
+    public int getPreferType() {
+      return preferType_;
     }
 
     public static final int BRAND_FIELD_NUMBER = 4;
@@ -8886,7 +8886,7 @@ public final class GroupProduct {
     private void initFields() {
       productId_ = "";
       productType_ = "";
-      promoType_ = 0;
+      preferType_ = 0;
       brand_ = "";
       mainImageUrl_ = "";
       bannerImageUrl_ = "";
@@ -8927,7 +8927,7 @@ public final class GroupProduct {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasPromoType()) {
+      if (!hasPreferType()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -9017,7 +9017,7 @@ public final class GroupProduct {
         output.writeBytes(2, getProductTypeBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, promoType_);
+        output.writeInt32(3, preferType_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(4, getBrandBytes());
@@ -9113,7 +9113,7 @@ public final class GroupProduct {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, promoType_);
+          .computeInt32Size(3, preferType_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
@@ -9356,7 +9356,7 @@ public final class GroupProduct {
         bitField0_ = (bitField0_ & ~0x00000001);
         productType_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        promoType_ = 0;
+        preferType_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
         brand_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -9471,7 +9471,7 @@ public final class GroupProduct {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.promoType_ = promoType_;
+        result.preferType_ = preferType_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
@@ -9629,8 +9629,8 @@ public final class GroupProduct {
           productType_ = other.productType_;
           onChanged();
         }
-        if (other.hasPromoType()) {
-          setPromoType(other.getPromoType());
+        if (other.hasPreferType()) {
+          setPreferType(other.getPreferType());
         }
         if (other.hasBrand()) {
           bitField0_ |= 0x00000008;
@@ -9861,7 +9861,7 @@ public final class GroupProduct {
           
           return false;
         }
-        if (!hasPromoType()) {
+        if (!hasPreferType()) {
           
           return false;
         }
@@ -10159,50 +10159,50 @@ public final class GroupProduct {
         return this;
       }
 
-      private int promoType_ ;
+      private int preferType_ ;
       /**
-       * <code>required int32 promoType = 3;</code>
+       * <code>required int32 preferType = 3;</code>
        *
        * <pre>
        *抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
        * </pre>
        */
-      public boolean hasPromoType() {
+      public boolean hasPreferType() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required int32 promoType = 3;</code>
+       * <code>required int32 preferType = 3;</code>
        *
        * <pre>
        *抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
        * </pre>
        */
-      public int getPromoType() {
-        return promoType_;
+      public int getPreferType() {
+        return preferType_;
       }
       /**
-       * <code>required int32 promoType = 3;</code>
+       * <code>required int32 preferType = 3;</code>
        *
        * <pre>
        *抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
        * </pre>
        */
-      public Builder setPromoType(int value) {
+      public Builder setPreferType(int value) {
         bitField0_ |= 0x00000004;
-        promoType_ = value;
+        preferType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 promoType = 3;</code>
+       * <code>required int32 preferType = 3;</code>
        *
        * <pre>
        *抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
        * </pre>
        */
-      public Builder clearPromoType() {
+      public Builder clearPreferType() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        promoType_ = 0;
+        preferType_ = 0;
         onChanged();
         return this;
       }
@@ -19342,46 +19342,46 @@ public final class GroupProduct {
       "pProductDetailResult\022\022\n\nresultCode\030\001 \002(\t",
       "\022\021\n\tresultMsg\030\002 \002(\t\022M\n\022groupProductDetai" +
       "l\030\003 \001(\01321.com.qjoy.basjoo.core.model.pb." +
-      "GroupProductDetail\"\231\007\n\022GroupProductDetai" +
+      "GroupProductDetail\"\232\007\n\022GroupProductDetai" +
       "l\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productType\030\002 \002(" +
-      "\t\022\021\n\tpromoType\030\003 \002(\005\022\r\n\005brand\030\004 \002(\t\022\024\n\014m" +
-      "ainImageUrl\030\005 \002(\t\022\026\n\016bannerImageUrl\030\006 \001(" +
-      "\t\022\r\n\005title\030\007 \002(\t\022\014\n\004desc\030\010 \002(\t\022\023\n\013validS" +
-      "tatus\030\t \002(\005\022\026\n\016validStartTime\030\n \002(\003\022\024\n\014v" +
-      "alidEndTime\030\013 \002(\003\022\022\n\nserverTime\030\014 \002(\003\022\025\n" +
-      "\rminGroupCount\030\r \001(\003\022\023\n\013marketPrice\030\016 \001(",
-      "\001\022\020\n\010transFee\030\020 \001(\001\022\020\n\010location\030\021 \001(\t\022G\n" +
-      "\tbaseParam\030\022 \003(\01324.com.qjoy.basjoo.core." +
-      "model.pb.GroupProductBaseParam\022\026\n\016imageP" +
-      "aramUrls\030\023 \003(\t\022\025\n\rearnestAmount\030\024 \002(\001\022\020\n" +
-      "\010discount\030\025 \001(\001\022\017\n\007applyed\030\026 \001(\010\022\022\n\nappl" +
-      "yCount\030\027 \001(\003\022I\n\014categoryInfo\030\030 \003(\01323.com" +
-      ".qjoy.basjoo.core.model.pb.GroupProductC" +
-      "ategory\022K\n\017shortRentPeriod\030\031 \003(\01322.com.q" +
-      "joy.basjoo.core.model.pb.GroupRentPeriod" +
-      "Info\022J\n\016longRentPeriod\030\032 \003(\01322.com.qjoy.",
-      "basjoo.core.model.pb.GroupRentPeriodInfo" +
-      "\022O\n\023groupRentAmountInfo\030\033 \003(\01322.com.qjoy" +
-      ".basjoo.core.model.pb.GroupRentAmountInf" +
-      "o\022\020\n\010imageUrl\030\034 \003(\t\022Q\n\016receiveAddress\030\035 " +
-      "\001(\01329.com.qjoy.basjoo.core.model.pb.Grou" +
-      "pProductReceiveAddress\"\204\001\n\024GroupProductC" +
-      "ategory\022\024\n\014categoryCode\030\001 \002(\t\022\024\n\014categor" +
-      "yName\030\002 \002(\t\022\026\n\016categoryImgUrl\030\003 \001(\t\022\022\n\ns" +
-      "tockCount\030\004 \002(\005\022\024\n\014pledgeAmount\030\005 \002(\001\"S\n" +
-      "\023GroupRentPeriodInfo\022\020\n\010rentCode\030\001 \002(\t\022\022",
-      "\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002" +
-      "(\t\"\221\001\n\023GroupRentAmountInfo\022\017\n\007codeKey\030\001 " +
-      "\002(\t\022\030\n\020rentAmountPerDay\030\002 \002(\001\022\032\n\022rentAmo" +
-      "untPerMonth\030\003 \001(\001\022\027\n\017totalRentAmount\030\004 \002" +
-      "(\001\022\032\n\022originalRentAmount\030\005 \002(\001\"I\n\025GroupP" +
-      "roductBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey" +
-      "\030\002 \002(\t\022\021\n\tshowValue\030\003 \002(\t\"\226\001\n\032GroupProdu" +
-      "ctReceiveAddress\022\020\n\010receiver\030\001 \002(\t\022\020\n\010mo" +
-      "bileNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006street\030" +
-      "\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 \002(\t\022",
-      "\021\n\taddressId\030\007 \001(\tB\037\n\035com.qjoy.basjoo.co" +
-      "re.model.pb"
+      "\t\022\022\n\npreferType\030\003 \002(\005\022\r\n\005brand\030\004 \002(\t\022\024\n\014" +
+      "mainImageUrl\030\005 \002(\t\022\026\n\016bannerImageUrl\030\006 \001" +
+      "(\t\022\r\n\005title\030\007 \002(\t\022\014\n\004desc\030\010 \002(\t\022\023\n\013valid" +
+      "Status\030\t \002(\005\022\026\n\016validStartTime\030\n \002(\003\022\024\n\014" +
+      "validEndTime\030\013 \002(\003\022\022\n\nserverTime\030\014 \002(\003\022\025" +
+      "\n\rminGroupCount\030\r \001(\003\022\023\n\013marketPrice\030\016 \001",
+      "(\001\022\020\n\010transFee\030\020 \001(\001\022\020\n\010location\030\021 \001(\t\022G" +
+      "\n\tbaseParam\030\022 \003(\01324.com.qjoy.basjoo.core" +
+      ".model.pb.GroupProductBaseParam\022\026\n\016image" +
+      "ParamUrls\030\023 \003(\t\022\025\n\rearnestAmount\030\024 \002(\001\022\020" +
+      "\n\010discount\030\025 \001(\001\022\017\n\007applyed\030\026 \001(\010\022\022\n\napp" +
+      "lyCount\030\027 \001(\003\022I\n\014categoryInfo\030\030 \003(\01323.co" +
+      "m.qjoy.basjoo.core.model.pb.GroupProduct" +
+      "Category\022K\n\017shortRentPeriod\030\031 \003(\01322.com." +
+      "qjoy.basjoo.core.model.pb.GroupRentPerio" +
+      "dInfo\022J\n\016longRentPeriod\030\032 \003(\01322.com.qjoy",
+      ".basjoo.core.model.pb.GroupRentPeriodInf" +
+      "o\022O\n\023groupRentAmountInfo\030\033 \003(\01322.com.qjo" +
+      "y.basjoo.core.model.pb.GroupRentAmountIn" +
+      "fo\022\020\n\010imageUrl\030\034 \003(\t\022Q\n\016receiveAddress\030\035" +
+      " \001(\01329.com.qjoy.basjoo.core.model.pb.Gro" +
+      "upProductReceiveAddress\"\204\001\n\024GroupProduct" +
+      "Category\022\024\n\014categoryCode\030\001 \002(\t\022\024\n\014catego" +
+      "ryName\030\002 \002(\t\022\026\n\016categoryImgUrl\030\003 \001(\t\022\022\n\n" +
+      "stockCount\030\004 \002(\005\022\024\n\014pledgeAmount\030\005 \002(\001\"S" +
+      "\n\023GroupRentPeriodInfo\022\020\n\010rentCode\030\001 \002(\t\022",
+      "\022\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 " +
+      "\002(\t\"\221\001\n\023GroupRentAmountInfo\022\017\n\007codeKey\030\001" +
+      " \002(\t\022\030\n\020rentAmountPerDay\030\002 \002(\001\022\032\n\022rentAm" +
+      "ountPerMonth\030\003 \001(\001\022\027\n\017totalRentAmount\030\004 " +
+      "\002(\001\022\032\n\022originalRentAmount\030\005 \002(\001\"I\n\025Group" +
+      "ProductBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKe" +
+      "y\030\002 \002(\t\022\021\n\tshowValue\030\003 \002(\t\"\226\001\n\032GroupProd" +
+      "uctReceiveAddress\022\020\n\010receiver\030\001 \002(\t\022\020\n\010m" +
+      "obileNo\030\002 \002(\t\022\017\n\007section\030\003 \002(\t\022\016\n\006street" +
+      "\030\004 \002(\t\022\016\n\006detail\030\005 \002(\t\022\020\n\010postCode\030\006 \002(\t",
+      "\022\021\n\taddressId\030\007 \001(\tB\037\n\035com.qjoy.basjoo.c" +
+      "ore.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19430,7 +19430,7 @@ public final class GroupProduct {
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GroupProductDetail_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "PromoType", "Brand", "MainImageUrl", "BannerImageUrl", "Title", "Desc", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "MinGroupCount", "MarketPrice", "TransFee", "Location", "BaseParam", "ImageParamUrls", "EarnestAmount", "Discount", "Applyed", "ApplyCount", "CategoryInfo", "ShortRentPeriod", "LongRentPeriod", "GroupRentAmountInfo", "ImageUrl", "ReceiveAddress", });
+        new java.lang.String[] { "ProductId", "ProductType", "PreferType", "Brand", "MainImageUrl", "BannerImageUrl", "Title", "Desc", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "MinGroupCount", "MarketPrice", "TransFee", "Location", "BaseParam", "ImageParamUrls", "EarnestAmount", "Discount", "Applyed", "ApplyCount", "CategoryInfo", "ShortRentPeriod", "LongRentPeriod", "GroupRentAmountInfo", "ImageUrl", "ReceiveAddress", });
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_fieldAccessorTable = new

@@ -126,7 +126,7 @@ message GroupProductDetail {
    required string                 productType = 2; 
    
    //抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
-   required int32                  promoType = 3;
+   required int32                  preferType = 3;
     
    //品牌
    required string                 brand = 4; 

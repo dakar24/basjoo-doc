@@ -22,7 +22,7 @@ public final class GroupProductDetail extends Message {
 
   public static final int TAG_PRODUCTID = 1;
   public static final int TAG_PRODUCTTYPE = 2;
-  public static final int TAG_PROMOTYPE = 3;
+  public static final int TAG_PREFERTYPE = 3;
   public static final int TAG_BRAND = 4;
   public static final int TAG_MAINIMAGEURL = 5;
   public static final int TAG_BANNERIMAGEURL = 6;
@@ -51,7 +51,7 @@ public final class GroupProductDetail extends Message {
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
-  public static final Integer DEFAULT_PROMOTYPE = 0;
+  public static final Integer DEFAULT_PREFERTYPE = 0;
   public static final String DEFAULT_BRAND = "";
   public static final String DEFAULT_MAINIMAGEURL = "";
   public static final String DEFAULT_BANNERIMAGEURL = "";
@@ -93,7 +93,7 @@ public final class GroupProductDetail extends Message {
    * 抱团活动类型 ：0 打固定折扣活动，1：直接价格优惠
    */
   @ProtoField(tag = 3, type = INT32, label = REQUIRED)
-  public Integer promoType;
+  public Integer preferType;
 
   /**
    * 品牌
@@ -250,7 +250,7 @@ public final class GroupProductDetail extends Message {
     if (message == null) return;
     this.productId = message.productId;
     this.productType = message.productType;
-    this.promoType = message.promoType;
+    this.preferType = message.preferType;
     this.brand = message.brand;
     this.mainImageUrl = message.mainImageUrl;
     this.bannerImageUrl = message.bannerImageUrl;
@@ -289,8 +289,8 @@ public final class GroupProductDetail extends Message {
         case TAG_PRODUCTTYPE:
         this.productType = (String)value;
         break;
-        case TAG_PROMOTYPE:
-        this.promoType = (Integer)value;
+        case TAG_PREFERTYPE:
+        this.preferType = (Integer)value;
         break;
         case TAG_BRAND:
         this.brand = (String)value;
@@ -379,7 +379,7 @@ public final class GroupProductDetail extends Message {
     GroupProductDetail o = (GroupProductDetail) other;
     return equals(productId, o.productId)
         && equals(productType, o.productType)
-        && equals(promoType, o.promoType)
+        && equals(preferType, o.preferType)
         && equals(brand, o.brand)
         && equals(mainImageUrl, o.mainImageUrl)
         && equals(bannerImageUrl, o.bannerImageUrl)
@@ -413,7 +413,7 @@ public final class GroupProductDetail extends Message {
     if (result == 0) {
       result = productId != null ? productId.hashCode() : 0;
       result = result * 37 + (productType != null ? productType.hashCode() : 0);
-      result = result * 37 + (promoType != null ? promoType.hashCode() : 0);
+      result = result * 37 + (preferType != null ? preferType.hashCode() : 0);
       result = result * 37 + (brand != null ? brand.hashCode() : 0);
       result = result * 37 + (mainImageUrl != null ? mainImageUrl.hashCode() : 0);
       result = result * 37 + (bannerImageUrl != null ? bannerImageUrl.hashCode() : 0);

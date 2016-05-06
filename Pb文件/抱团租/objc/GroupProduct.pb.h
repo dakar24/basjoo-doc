@@ -91,7 +91,7 @@
 @interface GroupProductDetail : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasProductId;
 @property (readonly) BOOL hasProductType;
-@property (readonly) BOOL hasPromoType;
+@property (readonly) BOOL hasPreferType;
 @property (readonly) BOOL hasBrand;
 @property (readonly) BOOL hasMainImageUrl;
 @property (readonly) BOOL hasBannerImageUrl;
@@ -112,7 +112,7 @@
 @property (readonly) BOOL hasReceiveAddress;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
-@property (nonatomic)SInt32 promoType;
+@property (nonatomic)SInt32 preferType;
 @property (nonatomic,strong) NSString* brand;
 @property (nonatomic,strong) NSString* mainImageUrl;
 @property (nonatomic,strong) NSString* bannerImageUrl;

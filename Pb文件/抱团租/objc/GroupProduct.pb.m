@@ -801,7 +801,7 @@
   if ((self = [super init])) {
     _productId = @"";
     _productType = @"";
-    _promoType = 0;
+    _preferType = 0;
     _brand = @"";
     _mainImageUrl = @"";
     _bannerImageUrl = @"";
@@ -829,8 +829,8 @@
   if (self.hasProductType) {
     [output writeString:2 value:self.productType];
   }
-  if (self.hasPromoType) {
-    [output writeInt32:3 value:self.promoType];
+  if (self.hasPreferType) {
+    [output writeInt32:3 value:self.preferType];
   }
   if (self.hasBrand) {
     [output writeString:4 value:self.brand];
@@ -919,8 +919,8 @@
   if (self.hasProductType) {
     size_ += computeStringSize(2, self.productType);
   }
-  if (self.hasPromoType) {
-    size_ += computeInt32Size(3, self.promoType);
+  if (self.hasPreferType) {
+    size_ += computeInt32Size(3, self.preferType);
   }
   if (self.hasBrand) {
     size_ += computeStringSize(4, self.brand);
@@ -1025,8 +1025,8 @@
   if (self.hasProductType) {
     [output appendFormat:@"%@%@: %@\n", indent, @"productType", self.productType];
   }
-  if (self.hasPromoType) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"promoType", [NSNumber numberWithInteger:self.promoType]];
+  if (self.hasPreferType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"preferType", [NSNumber numberWithInteger:self.preferType]];
   }
   if (self.hasBrand) {
     [output appendFormat:@"%@%@: %@\n", indent, @"brand", self.brand];
@@ -1132,9 +1132,9 @@
   _hasProductType = YES;
   _productType = value;
 }
-- (void) setPromoType:(SInt32) value {
-  _hasPromoType = YES;
-  _promoType = value;
+- (void) setPreferType:(SInt32) value {
+  _hasPreferType = YES;
+  _preferType = value;
 }
 - (void) setBrand:(NSString*) value {
   _hasBrand = YES;
@@ -1295,7 +1295,7 @@
         break;
       }
       case 24: {
-        [self setPromoType:[input readInt32]];
+        [self setPreferType:[input readInt32]];
         break;
       }
       case 34: {
