@@ -904,9 +904,6 @@
   [self.imageUrl enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
     [output writeString:28 value:element];
   }];
-  if (self.hasReceiveAddress) {
-    [output writeMessage:29 value:self.receiveAddress];
-  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -1005,9 +1002,6 @@
     }];
     size_ += dataSize;
     size_ += (SInt32)(2 * count);
-  }
-  if (self.hasReceiveAddress) {
-    size_ += computeMessageSize(29, self.receiveAddress);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1115,12 +1109,6 @@
   [self.imageUrl enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@: %@\n", indent, @"imageUrl", obj];
   }];
-  if (self.hasReceiveAddress) {
-    [output appendFormat:@"%@%@ {\n", indent, @"receiveAddress"];
-    [self.receiveAddress writeDescriptionTo:output
-                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
-    [output appendFormat:@"%@}\n", indent];
-  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -1267,10 +1255,6 @@
   }
   [_imageUrl addObject:value];
 }
-- (void) setReceiveAddress:(GroupProductReceiveAddress*) value {
-  _hasReceiveAddress = YES;
-  _receiveAddress = value;
-}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -1402,12 +1386,6 @@
       }
       case 226: {
         [self addImageUrl:[input readString]];
-        break;
-      }
-      case 234: {
-        GroupProductReceiveAddress* sub = [[GroupProductReceiveAddress alloc] init];
-        [input readQJMessage:sub extensionRegistry:extensionRegistry];
-        [self setReceiveAddress:sub];
         break;
       }
     }
@@ -1888,180 +1866,6 @@
       }
       case 26: {
         [self setShowValue:[input readString]];
-        break;
-      }
-    }
-  }
-}
-@end
-
-
-@implementation GroupProductReceiveAddress
-
-- (instancetype) init {
-  if ((self = [super init])) {
-    _receiver = @"";
-    _mobileNo = @"";
-    _section = @"";
-    _street = @"";
-    _detail = @"";
-    _postCode = @"";
-    _addressId = @"";
-  }
-  return self;
-}
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasReceiver) {
-    [output writeString:1 value:self.receiver];
-  }
-  if (self.hasMobileNo) {
-    [output writeString:2 value:self.mobileNo];
-  }
-  if (self.hasSection) {
-    [output writeString:3 value:self.section];
-  }
-  if (self.hasStreet) {
-    [output writeString:4 value:self.street];
-  }
-  if (self.hasDetail) {
-    [output writeString:5 value:self.detail];
-  }
-  if (self.hasPostCode) {
-    [output writeString:6 value:self.postCode];
-  }
-  if (self.hasAddressId) {
-    [output writeString:7 value:self.addressId];
-  }
-  [self.unknownFields writeToCodedOutputStream:output];
-}
-- (SInt32) serializedSize {
-  __block SInt32 size_ = memoizedSerializedSize;
-
-  size_ = 0;
-  if (self.hasReceiver) {
-    size_ += computeStringSize(1, self.receiver);
-  }
-  if (self.hasMobileNo) {
-    size_ += computeStringSize(2, self.mobileNo);
-  }
-  if (self.hasSection) {
-    size_ += computeStringSize(3, self.section);
-  }
-  if (self.hasStreet) {
-    size_ += computeStringSize(4, self.street);
-  }
-  if (self.hasDetail) {
-    size_ += computeStringSize(5, self.detail);
-  }
-  if (self.hasPostCode) {
-    size_ += computeStringSize(6, self.postCode);
-  }
-  if (self.hasAddressId) {
-    size_ += computeStringSize(7, self.addressId);
-  }
-  size_ += self.unknownFields.serializedSize;
-  memoizedSerializedSize = size_;
-  return size_;
-}
-+ (GroupProductReceiveAddress*) parseFromData:(NSData*) data {
-  GroupProductReceiveAddress* result = [[GroupProductReceiveAddress alloc] init];
-  [result mergeFromData:data];  return result;
-}
-#ifdef DEBUG
-- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasReceiver) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"receiver", self.receiver];
-  }
-  if (self.hasMobileNo) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"mobileNo", self.mobileNo];
-  }
-  if (self.hasSection) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"section", self.section];
-  }
-  if (self.hasStreet) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"street", self.street];
-  }
-  if (self.hasDetail) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"detail", self.detail];
-  }
-  if (self.hasPostCode) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"postCode", self.postCode];
-  }
-  if (self.hasAddressId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
-  }
-  [self.unknownFields writeDescriptionTo:output withIndent:indent];
-}
-#endif
-- (void) setReceiver:(NSString*) value {
-  _hasReceiver = YES;
-  _receiver = value;
-}
-- (void) setMobileNo:(NSString*) value {
-  _hasMobileNo = YES;
-  _mobileNo = value;
-}
-- (void) setSection:(NSString*) value {
-  _hasSection = YES;
-  _section = value;
-}
-- (void) setStreet:(NSString*) value {
-  _hasStreet = YES;
-  _street = value;
-}
-- (void) setDetail:(NSString*) value {
-  _hasDetail = YES;
-  _detail = value;
-}
-- (void) setPostCode:(NSString*) value {
-  _hasPostCode = YES;
-  _postCode = value;
-}
-- (void) setAddressId:(NSString*) value {
-  _hasAddressId = YES;
-  _addressId = value;
-}
-- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
-  while (YES) {
-    SInt32 tag = [input readTag];
-    switch (tag) {
-      case 0:
-        [self setUnknownFields:[unknownFields_ build]];
-        return ;
-      default: {
-        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
-          [self setUnknownFields:[unknownFields_ build]];
-          return ;
-        }
-        break;
-      }
-      case 10: {
-        [self setReceiver:[input readString]];
-        break;
-      }
-      case 18: {
-        [self setMobileNo:[input readString]];
-        break;
-      }
-      case 26: {
-        [self setSection:[input readString]];
-        break;
-      }
-      case 34: {
-        [self setStreet:[input readString]];
-        break;
-      }
-      case 42: {
-        [self setDetail:[input readString]];
-        break;
-      }
-      case 50: {
-        [self setPostCode:[input readString]];
-        break;
-      }
-      case 58: {
-        [self setAddressId:[input readString]];
         break;
       }
     }

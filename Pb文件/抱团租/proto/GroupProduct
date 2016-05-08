@@ -199,9 +199,6 @@ message GroupProductDetail {
    
    //图片地址
    repeated string                 imageUrl = 28;
-   
-   //参团用户的默认收货地址
-   optional GroupProductReceiveAddress receiveAddress = 29;
      
 }
 
@@ -274,24 +271,6 @@ message GroupProductBaseParam{
  required string                 showValue = 3; 
 }
 
-
-//参团用户的默认收货地址
-message GroupProductReceiveAddress{
-        //收货人
-        required string                 receiver = 1;
-        //联系电话
-        required string                 mobileNo = 2;
-        //所在地区
-    	required string                 section = 3;
-    	//所在街道
-    	required string                 street=4;
-    	//详细地址
-    	required string                 detail=5;
-    	//邮编
-        required string                 postCode=6;
-        //地址ID
-        optional string                 addressId = 7;
-}
 
 
 

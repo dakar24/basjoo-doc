@@ -47,7 +47,6 @@ public final class GroupProductDetail extends Message {
   public static final int TAG_LONGRENTPERIOD = 26;
   public static final int TAG_GROUPRENTAMOUNTINFO = 27;
   public static final int TAG_IMAGEURL = 28;
-  public static final int TAG_RECEIVEADDRESS = 29;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -239,12 +238,6 @@ public final class GroupProductDetail extends Message {
   @ProtoField(tag = 28, type = STRING, label = REPEATED)
   public List<String> imageUrl;
 
-  /**
-   * 参团用户的默认收货地址
-   */
-  @ProtoField(tag = 29)
-  public GroupProductReceiveAddress receiveAddress;
-
   public GroupProductDetail(GroupProductDetail message) {
     super(message);
     if (message == null) return;
@@ -275,7 +268,6 @@ public final class GroupProductDetail extends Message {
     this.longRentPeriod = copyOf(message.longRentPeriod);
     this.groupRentAmountInfo = copyOf(message.groupRentAmountInfo);
     this.imageUrl = copyOf(message.imageUrl);
-    this.receiveAddress = message.receiveAddress;
   }
 
   public GroupProductDetail() {
@@ -364,9 +356,6 @@ public final class GroupProductDetail extends Message {
         case TAG_IMAGEURL:
         this.imageUrl = immutableCopyOf((List<String>)value);
         break;
-        case TAG_RECEIVEADDRESS:
-        this.receiveAddress = (GroupProductReceiveAddress)value;
-        break;
         default: break;
         };
     return this;
@@ -403,8 +392,7 @@ public final class GroupProductDetail extends Message {
         && equals(shortRentPeriod, o.shortRentPeriod)
         && equals(longRentPeriod, o.longRentPeriod)
         && equals(groupRentAmountInfo, o.groupRentAmountInfo)
-        && equals(imageUrl, o.imageUrl)
-        && equals(receiveAddress, o.receiveAddress);
+        && equals(imageUrl, o.imageUrl);
   }
 
   @Override
@@ -438,7 +426,6 @@ public final class GroupProductDetail extends Message {
       result = result * 37 + (longRentPeriod != null ? longRentPeriod.hashCode() : 1);
       result = result * 37 + (groupRentAmountInfo != null ? groupRentAmountInfo.hashCode() : 1);
       result = result * 37 + (imageUrl != null ? imageUrl.hashCode() : 1);
-      result = result * 37 + (receiveAddress != null ? receiveAddress.hashCode() : 0);
       hashCode = result;
     }
     return result;
