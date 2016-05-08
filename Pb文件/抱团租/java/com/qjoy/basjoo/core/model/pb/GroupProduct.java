@@ -2376,7 +2376,7 @@ public final class GroupProduct {
     double getLowestRent();
 
     /**
-     * <code>required double originalRentAmount = 18;</code>
+     * <code>optional double originalRentAmount = 18;</code>
      *
      * <pre>
      *原始租金（优惠前）
@@ -2384,7 +2384,7 @@ public final class GroupProduct {
      */
     boolean hasOriginalRentAmount();
     /**
-     * <code>required double originalRentAmount = 18;</code>
+     * <code>optional double originalRentAmount = 18;</code>
      *
      * <pre>
      *原始租金（优惠前）
@@ -3196,7 +3196,7 @@ public final class GroupProduct {
     public static final int ORIGINALRENTAMOUNT_FIELD_NUMBER = 18;
     private double originalRentAmount_;
     /**
-     * <code>required double originalRentAmount = 18;</code>
+     * <code>optional double originalRentAmount = 18;</code>
      *
      * <pre>
      *原始租金（优惠前）
@@ -3206,7 +3206,7 @@ public final class GroupProduct {
       return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     /**
-     * <code>required double originalRentAmount = 18;</code>
+     * <code>optional double originalRentAmount = 18;</code>
      *
      * <pre>
      *原始租金（优惠前）
@@ -3283,10 +3283,6 @@ public final class GroupProduct {
         return false;
       }
       if (!hasServerTime()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasOriginalRentAmount()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3819,10 +3815,6 @@ public final class GroupProduct {
           return false;
         }
         if (!hasServerTime()) {
-          
-          return false;
-        }
-        if (!hasOriginalRentAmount()) {
           
           return false;
         }
@@ -5030,7 +5022,7 @@ public final class GroupProduct {
 
       private double originalRentAmount_ ;
       /**
-       * <code>required double originalRentAmount = 18;</code>
+       * <code>optional double originalRentAmount = 18;</code>
        *
        * <pre>
        *原始租金（优惠前）
@@ -5040,7 +5032,7 @@ public final class GroupProduct {
         return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       /**
-       * <code>required double originalRentAmount = 18;</code>
+       * <code>optional double originalRentAmount = 18;</code>
        *
        * <pre>
        *原始租金（优惠前）
@@ -5050,7 +5042,7 @@ public final class GroupProduct {
         return originalRentAmount_;
       }
       /**
-       * <code>required double originalRentAmount = 18;</code>
+       * <code>optional double originalRentAmount = 18;</code>
        *
        * <pre>
        *原始租金（优惠前）
@@ -5063,7 +5055,7 @@ public final class GroupProduct {
         return this;
       }
       /**
-       * <code>required double originalRentAmount = 18;</code>
+       * <code>optional double originalRentAmount = 18;</code>
        *
        * <pre>
        *原始租金（优惠前）
@@ -19336,7 +19328,7 @@ public final class GroupProduct {
       "idEndTime\030\013 \002(\003\022\022\n\nserverTime\030\014 \002(\003\022\025\n\rm" +
       "inGroupCount\030\r \001(\003\022\020\n\010discount\030\016 \001(\001\022\017\n\007" +
       "applyed\030\017 \001(\010\022\022\n\napplyCount\030\020 \001(\003\022\022\n\nlow" +
-      "estRent\030\021 \001(\001\022\032\n\022originalRentAmount\030\022 \002(" +
+      "estRent\030\021 \001(\001\022\032\n\022originalRentAmount\030\022 \001(" +
       "\001\"A\n\034GetGroupProductDetailRequest\022\021\n\tpro" +
       "ductId\030\001 \002(\t\022\016\n\006userId\030\002 \001(\t\"\223\001\n\033GetGrou" +
       "pProductDetailResult\022\022\n\nresultCode\030\001 \002(\t",

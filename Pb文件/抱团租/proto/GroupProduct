@@ -86,7 +86,7 @@ message GroupProductLiteInfo {
    optional double                 lowestRent = 17;
    
    //原始租金（优惠前）
-   required double                 originalRentAmount = 18;
+   optional double                 originalRentAmount = 18;
    
 
     

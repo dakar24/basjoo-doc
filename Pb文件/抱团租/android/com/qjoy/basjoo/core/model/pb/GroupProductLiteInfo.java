@@ -160,7 +160,7 @@ public final class GroupProductLiteInfo extends Message {
   /**
    * 原始租金（优惠前）
    */
-  @ProtoField(tag = 18, type = DOUBLE, label = REQUIRED)
+  @ProtoField(tag = 18, type = DOUBLE)
   public Double originalRentAmount;
 
   public GroupProductLiteInfo(GroupProductLiteInfo message) {
