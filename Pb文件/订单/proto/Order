@@ -771,6 +771,78 @@ message OrderVoucherInfo{
 }
 
 
+//提交定金
+message CommitEarnestRequest {   
+
+        //产品Id
+        required string                 productId = 1; 
+	
+	//类别信息
+	required string                 categoryCode = 2;	
+	
+	 //租用数量
+	required int32                  rentCount = 3;
+	
+	 //选择租金的编码
+	required string                 rentCode = 4;
+	
+	//订单Id（如果对已提交的订单进行修改时需要带之前返回的orderId）
+       optional string                 orderId = 5; 
+	
+	//只计算价格，不需要返回权益和收货地址等信息
+	required bool                   onlyCalPrice = 6;
+
+       //用户ID   
+       required string                 userId = 7; 
+
+       //是否选择运费险
+	optional bool                   insurance = 8;
+   
+}
+
+
+//提交定金结果
+message CommitEarnestResult {  
+
+
+    required string                 resultCode = 1;
+    
+    required string                 resultMsg = 2; 
+	
+    //订单Id
+    optional string                 orderId = 3; 
+	 
+	//用户提交订单时所选的类别信息
+	optional string                 categoryCode = 4;	
+	
+	 //用户提交订单时所选的租用数量
+	optional int32                  rentCount = 5;
+	
+	 //用户提交订单时所选的租金的编码
+	optional string                 rentCode = 6;
+
+	//押金
+       optional double                 pledgeAmount = 7; 
+       //租金（优惠后）
+       optional double                 totalRentAmount = 8;
+       //原始租金（优惠前）
+       optional double                 originalRentAmount = 9;
+       //运费
+       optional double                 transFee = 10; 
+       
+       //总金额 （押金+运费）*数量 +运费险 ,运费和运费险金额可为 0
+       optional double                 totalAmount = 11; 
+
+       //当前需要支付的定金
+       optional double                 earnestAmount = 12; 
+
+       //订单的默认收货地址
+       optional OrderReceiveAddressInfo orderReceiveAddressInfo = 13;
+      
+
+    
+}
+
 
 //确认提交支付定金
 message ConfirmEarnestRequest {   

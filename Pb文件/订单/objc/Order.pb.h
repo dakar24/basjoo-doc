@@ -8,6 +8,8 @@
 @class ApplyRevertResult;
 @class CancelOrderRequest;
 @class CancelOrderResult;
+@class CommitEarnestRequest;
+@class CommitEarnestResult;
 @class CommitOrderRequest;
 @class CommitOrderResult;
 @class CommitRefundTransRequest;
@@ -540,6 +542,54 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @property (nonatomic)SInt64 validEndTime;
 @property (nonatomic,strong) NSString* voucherDesc;
 @property (nonatomic)Float64 deductAmount;
+@end
+
+@interface CommitEarnestRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasProductId;
+@property (readonly) BOOL hasCategoryCode;
+@property (readonly) BOOL hasRentCount;
+@property (readonly) BOOL hasRentCode;
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasOnlyCalPrice;
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasInsurance;
+@property (nonatomic,strong) NSString* productId;
+@property (nonatomic,strong) NSString* categoryCode;
+@property (nonatomic)SInt32 rentCount;
+@property (nonatomic,strong) NSString* rentCode;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic)BOOL onlyCalPrice;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic)BOOL insurance;
+@end
+
+@interface CommitEarnestResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasOrderId;
+@property (readonly) BOOL hasCategoryCode;
+@property (readonly) BOOL hasRentCount;
+@property (readonly) BOOL hasRentCode;
+@property (readonly) BOOL hasPledgeAmount;
+@property (readonly) BOOL hasTotalRentAmount;
+@property (readonly) BOOL hasOriginalRentAmount;
+@property (readonly) BOOL hasTransFee;
+@property (readonly) BOOL hasTotalAmount;
+@property (readonly) BOOL hasEarnestAmount;
+@property (readonly) BOOL hasOrderReceiveAddressInfo;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic,strong) NSString* orderId;
+@property (nonatomic,strong) NSString* categoryCode;
+@property (nonatomic)SInt32 rentCount;
+@property (nonatomic,strong) NSString* rentCode;
+@property (nonatomic)Float64 pledgeAmount;
+@property (nonatomic)Float64 totalRentAmount;
+@property (nonatomic)Float64 originalRentAmount;
+@property (nonatomic)Float64 transFee;
+@property (nonatomic)Float64 totalAmount;
+@property (nonatomic)Float64 earnestAmount;
+@property (nonatomic,strong) OrderReceiveAddressInfo* orderReceiveAddressInfo;
 @end
 
 @interface ConfirmEarnestRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>

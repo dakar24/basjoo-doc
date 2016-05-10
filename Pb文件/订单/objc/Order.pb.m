@@ -5325,6 +5325,484 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
 @end
 
 
+@implementation CommitEarnestRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _productId = @"";
+    _categoryCode = @"";
+    _rentCount = 0;
+    _rentCode = @"";
+    _orderId = @"";
+    _onlyCalPrice = NO;
+    _userId = @"";
+    _insurance = NO;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasProductId) {
+    [output writeString:1 value:self.productId];
+  }
+  if (self.hasCategoryCode) {
+    [output writeString:2 value:self.categoryCode];
+  }
+  if (self.hasRentCount) {
+    [output writeInt32:3 value:self.rentCount];
+  }
+  if (self.hasRentCode) {
+    [output writeString:4 value:self.rentCode];
+  }
+  if (self.hasOrderId) {
+    [output writeString:5 value:self.orderId];
+  }
+  if (self.hasOnlyCalPrice) {
+    [output writeBool:6 value:self.onlyCalPrice];
+  }
+  if (self.hasUserId) {
+    [output writeString:7 value:self.userId];
+  }
+  if (self.hasInsurance) {
+    [output writeBool:8 value:self.insurance];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasProductId) {
+    size_ += computeStringSize(1, self.productId);
+  }
+  if (self.hasCategoryCode) {
+    size_ += computeStringSize(2, self.categoryCode);
+  }
+  if (self.hasRentCount) {
+    size_ += computeInt32Size(3, self.rentCount);
+  }
+  if (self.hasRentCode) {
+    size_ += computeStringSize(4, self.rentCode);
+  }
+  if (self.hasOrderId) {
+    size_ += computeStringSize(5, self.orderId);
+  }
+  if (self.hasOnlyCalPrice) {
+    size_ += computeBoolSize(6, self.onlyCalPrice);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(7, self.userId);
+  }
+  if (self.hasInsurance) {
+    size_ += computeBoolSize(8, self.insurance);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CommitEarnestRequest*) parseFromData:(NSData*) data {
+  CommitEarnestRequest* result = [[CommitEarnestRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasProductId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"productId", self.productId];
+  }
+  if (self.hasCategoryCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryCode", self.categoryCode];
+  }
+  if (self.hasRentCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCount", [NSNumber numberWithInteger:self.rentCount]];
+  }
+  if (self.hasRentCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCode", self.rentCode];
+  }
+  if (self.hasOrderId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
+  }
+  if (self.hasOnlyCalPrice) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"onlyCalPrice", [NSNumber numberWithBool:self.onlyCalPrice]];
+  }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
+  if (self.hasInsurance) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"insurance", [NSNumber numberWithBool:self.insurance]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setProductId:(NSString*) value {
+  _hasProductId = YES;
+  _productId = value;
+}
+- (void) setCategoryCode:(NSString*) value {
+  _hasCategoryCode = YES;
+  _categoryCode = value;
+}
+- (void) setRentCount:(SInt32) value {
+  _hasRentCount = YES;
+  _rentCount = value;
+}
+- (void) setRentCode:(NSString*) value {
+  _hasRentCode = YES;
+  _rentCode = value;
+}
+- (void) setOrderId:(NSString*) value {
+  _hasOrderId = YES;
+  _orderId = value;
+}
+- (void) setOnlyCalPrice:(BOOL) value {
+  _hasOnlyCalPrice = YES;
+  _onlyCalPrice = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
+- (void) setInsurance:(BOOL) value {
+  _hasInsurance = YES;
+  _insurance = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setProductId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setCategoryCode:[input readString]];
+        break;
+      }
+      case 24: {
+        [self setRentCount:[input readInt32]];
+        break;
+      }
+      case 34: {
+        [self setRentCode:[input readString]];
+        break;
+      }
+      case 42: {
+        [self setOrderId:[input readString]];
+        break;
+      }
+      case 48: {
+        [self setOnlyCalPrice:[input readBool]];
+        break;
+      }
+      case 58: {
+        [self setUserId:[input readString]];
+        break;
+      }
+      case 64: {
+        [self setInsurance:[input readBool]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation CommitEarnestResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+    _orderId = @"";
+    _categoryCode = @"";
+    _rentCount = 0;
+    _rentCode = @"";
+    _pledgeAmount = 0;
+    _totalRentAmount = 0;
+    _originalRentAmount = 0;
+    _transFee = 0;
+    _totalAmount = 0;
+    _earnestAmount = 0;
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  if (self.hasOrderId) {
+    [output writeString:3 value:self.orderId];
+  }
+  if (self.hasCategoryCode) {
+    [output writeString:4 value:self.categoryCode];
+  }
+  if (self.hasRentCount) {
+    [output writeInt32:5 value:self.rentCount];
+  }
+  if (self.hasRentCode) {
+    [output writeString:6 value:self.rentCode];
+  }
+  if (self.hasPledgeAmount) {
+    [output writeDouble:7 value:self.pledgeAmount];
+  }
+  if (self.hasTotalRentAmount) {
+    [output writeDouble:8 value:self.totalRentAmount];
+  }
+  if (self.hasOriginalRentAmount) {
+    [output writeDouble:9 value:self.originalRentAmount];
+  }
+  if (self.hasTransFee) {
+    [output writeDouble:10 value:self.transFee];
+  }
+  if (self.hasTotalAmount) {
+    [output writeDouble:11 value:self.totalAmount];
+  }
+  if (self.hasEarnestAmount) {
+    [output writeDouble:12 value:self.earnestAmount];
+  }
+  if (self.hasOrderReceiveAddressInfo) {
+    [output writeMessage:13 value:self.orderReceiveAddressInfo];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  if (self.hasOrderId) {
+    size_ += computeStringSize(3, self.orderId);
+  }
+  if (self.hasCategoryCode) {
+    size_ += computeStringSize(4, self.categoryCode);
+  }
+  if (self.hasRentCount) {
+    size_ += computeInt32Size(5, self.rentCount);
+  }
+  if (self.hasRentCode) {
+    size_ += computeStringSize(6, self.rentCode);
+  }
+  if (self.hasPledgeAmount) {
+    size_ += computeDoubleSize(7, self.pledgeAmount);
+  }
+  if (self.hasTotalRentAmount) {
+    size_ += computeDoubleSize(8, self.totalRentAmount);
+  }
+  if (self.hasOriginalRentAmount) {
+    size_ += computeDoubleSize(9, self.originalRentAmount);
+  }
+  if (self.hasTransFee) {
+    size_ += computeDoubleSize(10, self.transFee);
+  }
+  if (self.hasTotalAmount) {
+    size_ += computeDoubleSize(11, self.totalAmount);
+  }
+  if (self.hasEarnestAmount) {
+    size_ += computeDoubleSize(12, self.earnestAmount);
+  }
+  if (self.hasOrderReceiveAddressInfo) {
+    size_ += computeMessageSize(13, self.orderReceiveAddressInfo);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CommitEarnestResult*) parseFromData:(NSData*) data {
+  CommitEarnestResult* result = [[CommitEarnestResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  if (self.hasOrderId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
+  }
+  if (self.hasCategoryCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"categoryCode", self.categoryCode];
+  }
+  if (self.hasRentCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCount", [NSNumber numberWithInteger:self.rentCount]];
+  }
+  if (self.hasRentCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rentCode", self.rentCode];
+  }
+  if (self.hasPledgeAmount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"pledgeAmount", [NSNumber numberWithDouble:self.pledgeAmount]];
+  }
+  if (self.hasTotalRentAmount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalRentAmount", [NSNumber numberWithDouble:self.totalRentAmount]];
+  }
+  if (self.hasOriginalRentAmount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"originalRentAmount", [NSNumber numberWithDouble:self.originalRentAmount]];
+  }
+  if (self.hasTransFee) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"transFee", [NSNumber numberWithDouble:self.transFee]];
+  }
+  if (self.hasTotalAmount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"totalAmount", [NSNumber numberWithDouble:self.totalAmount]];
+  }
+  if (self.hasEarnestAmount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"earnestAmount", [NSNumber numberWithDouble:self.earnestAmount]];
+  }
+  if (self.hasOrderReceiveAddressInfo) {
+    [output appendFormat:@"%@%@ {\n", indent, @"orderReceiveAddressInfo"];
+    [self.orderReceiveAddressInfo writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) setOrderId:(NSString*) value {
+  _hasOrderId = YES;
+  _orderId = value;
+}
+- (void) setCategoryCode:(NSString*) value {
+  _hasCategoryCode = YES;
+  _categoryCode = value;
+}
+- (void) setRentCount:(SInt32) value {
+  _hasRentCount = YES;
+  _rentCount = value;
+}
+- (void) setRentCode:(NSString*) value {
+  _hasRentCode = YES;
+  _rentCode = value;
+}
+- (void) setPledgeAmount:(Float64) value {
+  _hasPledgeAmount = YES;
+  _pledgeAmount = value;
+}
+- (void) setTotalRentAmount:(Float64) value {
+  _hasTotalRentAmount = YES;
+  _totalRentAmount = value;
+}
+- (void) setOriginalRentAmount:(Float64) value {
+  _hasOriginalRentAmount = YES;
+  _originalRentAmount = value;
+}
+- (void) setTransFee:(Float64) value {
+  _hasTransFee = YES;
+  _transFee = value;
+}
+- (void) setTotalAmount:(Float64) value {
+  _hasTotalAmount = YES;
+  _totalAmount = value;
+}
+- (void) setEarnestAmount:(Float64) value {
+  _hasEarnestAmount = YES;
+  _earnestAmount = value;
+}
+- (void) setOrderReceiveAddressInfo:(OrderReceiveAddressInfo*) value {
+  _hasOrderReceiveAddressInfo = YES;
+  _orderReceiveAddressInfo = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setOrderId:[input readString]];
+        break;
+      }
+      case 34: {
+        [self setCategoryCode:[input readString]];
+        break;
+      }
+      case 40: {
+        [self setRentCount:[input readInt32]];
+        break;
+      }
+      case 50: {
+        [self setRentCode:[input readString]];
+        break;
+      }
+      case 57: {
+        [self setPledgeAmount:[input readDouble]];
+        break;
+      }
+      case 65: {
+        [self setTotalRentAmount:[input readDouble]];
+        break;
+      }
+      case 73: {
+        [self setOriginalRentAmount:[input readDouble]];
+        break;
+      }
+      case 81: {
+        [self setTransFee:[input readDouble]];
+        break;
+      }
+      case 89: {
+        [self setTotalAmount:[input readDouble]];
+        break;
+      }
+      case 97: {
+        [self setEarnestAmount:[input readDouble]];
+        break;
+      }
+      case 106: {
+        OrderReceiveAddressInfo* sub = [[OrderReceiveAddressInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self setOrderReceiveAddressInfo:sub];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
 @implementation ConfirmEarnestRequest
 
 - (instancetype) init {
