@@ -893,38 +893,7 @@ message ConfirmEarnestResult {
 
 
 
-//继续支付定金（从未完成定金付款的订单列表提交）
-message ContinuePayEarnestRequest {   
 
-    //订单ID
-    required string                 orderId = 1; 	
-	
-    //支付渠道，0：微信支付，1：支付宝
-	optional int32                  payChannel = 2;
-
-    //用户ID   
-    required string                 userId = 3; 	
-    
-}
-
-//继续支付定金结果（从未完成定金付款的订单列表提交）
-message ContinuePayEarnestResult {   
-
-
-    required string                 resultCode = 1;
-    
-    required string                 resultMsg = 2; 
-
-    //订单Id
-    optional string                 orderId = 3; 
-	
-	//支付渠道，0：微信支付，1：支付宝
-	optional int32                  payChannel = 4;
-
-    //微信订单支付信息
-    optional WxPayInfo              wxPayInfo = 5; 		
-    
-}
 
 
 //确认提交支付尾款

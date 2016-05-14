@@ -24,8 +24,6 @@
 @class ConfirmPayResult;
 @class ConfirmReceiveRequest;
 @class ConfirmReceiveResult;
-@class ContinuePayEarnestRequest;
-@class ContinuePayEarnestResult;
 @class DeleteOrderRequest;
 @class DeleteOrderResult;
 @class GetOrderDetailRequest;
@@ -610,28 +608,6 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @end
 
 @interface ConfirmEarnestResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasResultCode;
-@property (readonly) BOOL hasResultMsg;
-@property (readonly) BOOL hasOrderId;
-@property (readonly) BOOL hasPayChannel;
-@property (readonly) BOOL hasWxPayInfo;
-@property (nonatomic,strong) NSString* resultCode;
-@property (nonatomic,strong) NSString* resultMsg;
-@property (nonatomic,strong) NSString* orderId;
-@property (nonatomic)SInt32 payChannel;
-@property (nonatomic,strong) WxPayInfo* wxPayInfo;
-@end
-
-@interface ContinuePayEarnestRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
-@property (readonly) BOOL hasOrderId;
-@property (readonly) BOOL hasPayChannel;
-@property (readonly) BOOL hasUserId;
-@property (nonatomic,strong) NSString* orderId;
-@property (nonatomic)SInt32 payChannel;
-@property (nonatomic,strong) NSString* userId;
-@end
-
-@interface ContinuePayEarnestResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasResultCode;
 @property (readonly) BOOL hasResultMsg;
 @property (readonly) BOOL hasOrderId;
