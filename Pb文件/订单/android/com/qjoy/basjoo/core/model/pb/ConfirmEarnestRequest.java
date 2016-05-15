@@ -21,6 +21,7 @@ public final class ConfirmEarnestRequest extends Message {
   public static final int TAG_PAYCHANNEL = 5;
   public static final int TAG_USERID = 6;
   public static final int TAG_ADDRESSID = 7;
+  public static final int TAG_ORDERID = 8;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_CATEGORYCODE = "";
@@ -29,6 +30,7 @@ public final class ConfirmEarnestRequest extends Message {
   public static final Integer DEFAULT_PAYCHANNEL = 0;
   public static final String DEFAULT_USERID = "";
   public static final String DEFAULT_ADDRESSID = "";
+  public static final String DEFAULT_ORDERID = "";
 
   /**
    * 产品Id
@@ -72,6 +74,12 @@ public final class ConfirmEarnestRequest extends Message {
   @ProtoField(tag = 7, type = STRING, label = REQUIRED)
   public String addressId;
 
+  /**
+   * 订单Id
+   */
+  @ProtoField(tag = 8, type = STRING, label = REQUIRED)
+  public String orderId;
+
   public ConfirmEarnestRequest(ConfirmEarnestRequest message) {
     super(message);
     if (message == null) return;
@@ -82,6 +90,7 @@ public final class ConfirmEarnestRequest extends Message {
     this.payChannel = message.payChannel;
     this.userId = message.userId;
     this.addressId = message.addressId;
+    this.orderId = message.orderId;
   }
 
   public ConfirmEarnestRequest() {
@@ -110,6 +119,9 @@ public final class ConfirmEarnestRequest extends Message {
         case TAG_ADDRESSID:
         this.addressId = (String)value;
         break;
+        case TAG_ORDERID:
+        this.orderId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -126,7 +138,8 @@ public final class ConfirmEarnestRequest extends Message {
         && equals(rentCode, o.rentCode)
         && equals(payChannel, o.payChannel)
         && equals(userId, o.userId)
-        && equals(addressId, o.addressId);
+        && equals(addressId, o.addressId)
+        && equals(orderId, o.orderId);
   }
 
   @Override
@@ -140,6 +153,7 @@ public final class ConfirmEarnestRequest extends Message {
       result = result * 37 + (payChannel != null ? payChannel.hashCode() : 0);
       result = result * 37 + (userId != null ? userId.hashCode() : 0);
       result = result * 37 + (addressId != null ? addressId.hashCode() : 0);
+      result = result * 37 + (orderId != null ? orderId.hashCode() : 0);
       hashCode = result;
     }
     return result;

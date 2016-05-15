@@ -598,6 +598,7 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @property (readonly) BOOL hasPayChannel;
 @property (readonly) BOOL hasUserId;
 @property (readonly) BOOL hasAddressId;
+@property (readonly) BOOL hasOrderId;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* categoryCode;
 @property (nonatomic)SInt32 rentCount;
@@ -605,6 +606,7 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @property (nonatomic)SInt32 payChannel;
 @property (nonatomic,strong) NSString* userId;
 @property (nonatomic,strong) NSString* addressId;
+@property (nonatomic,strong) NSString* orderId;
 @end
 
 @interface ConfirmEarnestResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

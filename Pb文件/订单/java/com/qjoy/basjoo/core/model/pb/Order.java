@@ -50845,6 +50845,32 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getAddressIdBytes();
+
+    /**
+     * <code>required string orderId = 8;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    boolean hasOrderId();
+    /**
+     * <code>required string orderId = 8;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    java.lang.String getOrderId();
+    /**
+     * <code>required string orderId = 8;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getOrderIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ConfirmEarnestRequest}
@@ -50940,6 +50966,12 @@ public final class Order {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000040;
               addressId_ = bs;
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000080;
+              orderId_ = bs;
               break;
             }
           }
@@ -51298,6 +51330,60 @@ public final class Order {
       }
     }
 
+    public static final int ORDERID_FIELD_NUMBER = 8;
+    private java.lang.Object orderId_;
+    /**
+     * <code>required string orderId = 8;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>required string orderId = 8;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public java.lang.String getOrderId() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          orderId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string orderId = 8;</code>
+     *
+     * <pre>
+     *订单Id
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getOrderIdBytes() {
+      java.lang.Object ref = orderId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       productId_ = "";
       categoryCode_ = "";
@@ -51306,6 +51392,7 @@ public final class Order {
       payChannel_ = 0;
       userId_ = "";
       addressId_ = "";
+      orderId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -51337,6 +51424,10 @@ public final class Order {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasOrderId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -51364,6 +51455,9 @@ public final class Order {
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBytes(7, getAddressIdBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeBytes(8, getOrderIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -51401,6 +51495,10 @@ public final class Order {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(7, getAddressIdBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, getOrderIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -51537,6 +51635,8 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00000020);
         addressId_ = "";
         bitField0_ = (bitField0_ & ~0x00000040);
+        orderId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -51593,6 +51693,10 @@ public final class Order {
           to_bitField0_ |= 0x00000040;
         }
         result.addressId_ = addressId_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.orderId_ = orderId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -51640,6 +51744,11 @@ public final class Order {
           addressId_ = other.addressId_;
           onChanged();
         }
+        if (other.hasOrderId()) {
+          bitField0_ |= 0x00000080;
+          orderId_ = other.orderId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -51666,6 +51775,10 @@ public final class Order {
           return false;
         }
         if (!hasAddressId()) {
+          
+          return false;
+        }
+        if (!hasOrderId()) {
           
           return false;
         }
@@ -52283,6 +52396,106 @@ public final class Order {
   }
   bitField0_ |= 0x00000040;
         addressId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object orderId_ = "";
+      /**
+       * <code>required string orderId = 8;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public boolean hasOrderId() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>required string orderId = 8;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public java.lang.String getOrderId() {
+        java.lang.Object ref = orderId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            orderId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string orderId = 8;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getOrderIdBytes() {
+        java.lang.Object ref = orderId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string orderId = 8;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder setOrderId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        orderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string orderId = 8;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder clearOrderId() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        orderId_ = getDefaultInstance().getOrderId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string orderId = 8;</code>
+       *
+       * <pre>
+       *订单Id
+       * </pre>
+       */
+      public Builder setOrderIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        orderId_ = value;
         onChanged();
         return this;
       }
@@ -56426,24 +56639,24 @@ public final class Order {
       "lAmount\030\013 \001(\001\022\025\n\rearnestAmount\030\014 \001(\001\022W\n\027" +
       "orderReceiveAddressInfo\030\r \001(\01326.com.qjoy" +
       ".basjoo.core.model.pb.OrderReceiveAddres" +
-      "sInfo\"\234\001\n\025ConfirmEarnestRequest\022\021\n\tprodu",
+      "sInfo\"\255\001\n\025ConfirmEarnestRequest\022\021\n\tprodu",
       "ctId\030\001 \002(\t\022\024\n\014categoryCode\030\002 \002(\t\022\021\n\trent" +
       "Count\030\003 \002(\005\022\020\n\010rentCode\030\004 \002(\t\022\022\n\npayChan" +
       "nel\030\005 \001(\005\022\016\n\006userId\030\006 \002(\t\022\021\n\taddressId\030\007" +
-      " \002(\t\"\237\001\n\024ConfirmEarnestResult\022\022\n\nresultC" +
-      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030" +
-      "\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPayInfo\030\005" +
-      " \001(\0132(.com.qjoy.basjoo.core.model.pb.WxP" +
-      "ayInfo\"s\n\027ConfirmPayRemainRequest\022\017\n\007ord" +
-      "erId\030\001 \002(\t\022\022\n\npayChannel\030\002 \001(\005\022\016\n\006userId" +
-      "\030\003 \002(\t\022\020\n\010vouchers\030\004 \003(\t\022\021\n\taddressId\030\005 ",
-      "\001(\t\"\241\001\n\026ConfirmPayRemainResult\022\022\n\nresult" +
-      "Code\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId" +
-      "\030\003 \001(\t\022\022\n\npayChannel\030\004 \001(\005\022;\n\twxPayInfo\030" +
-      "\005 \001(\0132(.com.qjoy.basjoo.core.model.pb.Wx" +
-      "PayInfo*8\n\022PayStatusQueryType\022\t\n\005ORDER\020\000" +
-      "\022\013\n\007EARNEST\020\001\022\n\n\006REMAIN\020\002B\037\n\035com.qjoy.ba" +
-      "sjoo.core.model.pb"
+      " \002(\t\022\017\n\007orderId\030\010 \002(\t\"\237\001\n\024ConfirmEarnest" +
+      "Result\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030" +
+      "\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001" +
+      "(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo." +
+      "core.model.pb.WxPayInfo\"s\n\027ConfirmPayRem" +
+      "ainRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChanne" +
+      "l\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\022\020\n\010vouchers\030\004 \003(",
+      "\t\022\021\n\taddressId\030\005 \001(\t\"\241\001\n\026ConfirmPayRemai" +
+      "nResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg" +
+      "\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 " +
+      "\001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo" +
+      ".core.model.pb.WxPayInfo*8\n\022PayStatusQue" +
+      "ryType\022\t\n\005ORDER\020\000\022\013\n\007EARNEST\020\001\022\n\n\006REMAIN" +
+      "\020\002B\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -56660,7 +56873,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestRequest_descriptor,
-        new java.lang.String[] { "ProductId", "CategoryCode", "RentCount", "RentCode", "PayChannel", "UserId", "AddressId", });
+        new java.lang.String[] { "ProductId", "CategoryCode", "RentCount", "RentCode", "PayChannel", "UserId", "AddressId", "OrderId", });
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_com_qjoy_basjoo_core_model_pb_ConfirmEarnestResult_fieldAccessorTable = new

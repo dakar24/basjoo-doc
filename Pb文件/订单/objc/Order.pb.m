@@ -5814,6 +5814,7 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
     _payChannel = 0;
     _userId = @"";
     _addressId = @"";
+    _orderId = @"";
   }
   return self;
 }
@@ -5838,6 +5839,9 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasAddressId) {
     [output writeString:7 value:self.addressId];
+  }
+  if (self.hasOrderId) {
+    [output writeString:8 value:self.orderId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -5865,6 +5869,9 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasAddressId) {
     size_ += computeStringSize(7, self.addressId);
+  }
+  if (self.hasOrderId) {
+    size_ += computeStringSize(8, self.orderId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -5897,6 +5904,9 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   if (self.hasAddressId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"addressId", self.addressId];
   }
+  if (self.hasOrderId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"orderId", self.orderId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -5927,6 +5937,10 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
 - (void) setAddressId:(NSString*) value {
   _hasAddressId = YES;
   _addressId = value;
+}
+- (void) setOrderId:(NSString*) value {
+  _hasOrderId = YES;
+  _orderId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -5969,6 +5983,10 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
       }
       case 58: {
         [self setAddressId:[input readString]];
+        break;
+      }
+      case 66: {
+        [self setOrderId:[input readString]];
         break;
       }
     }

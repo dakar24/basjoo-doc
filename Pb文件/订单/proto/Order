@@ -867,6 +867,9 @@ message ConfirmEarnestRequest {
 	
     //收货地址ID   
     required string                 addressId = 7;
+
+    //订单Id
+    required string                 orderId = 8; 
     
 }
 
