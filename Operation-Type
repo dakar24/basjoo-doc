@@ -104,7 +104,8 @@
 获取抱团租产品列表：qjoy.basjoo.getGroupProductList
 获取抱团租产品详情：qjoy.basjoo.getGroupProductDetail
 提交定金请求：qjoy.basjoo.commitEarnest
-确认支付定金：qjoy.basjoo.confirmEarnest
+确认支付定金：qjoy.basjoo.confirmPayEarnest
+确认支付尾款：qjoy.basjoo.confirmPayRemain
 
 
 
