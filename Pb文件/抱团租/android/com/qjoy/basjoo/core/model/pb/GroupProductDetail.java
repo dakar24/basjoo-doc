@@ -47,6 +47,7 @@ public final class GroupProductDetail extends Message {
   public static final int TAG_LONGRENTPERIOD = 26;
   public static final int TAG_GROUPRENTAMOUNTINFO = 27;
   public static final int TAG_IMAGEURL = 28;
+  public static final int TAG_MAXAVAILABLE = 29;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -75,6 +76,7 @@ public final class GroupProductDetail extends Message {
   public static final List<GroupRentPeriodInfo> DEFAULT_LONGRENTPERIOD = Collections.emptyList();
   public static final List<GroupRentAmountInfo> DEFAULT_GROUPRENTAMOUNTINFO = Collections.emptyList();
   public static final List<String> DEFAULT_IMAGEURL = Collections.emptyList();
+  public static final Long DEFAULT_MAXAVAILABLE = 0L;
 
   /**
    * 产品Id
@@ -238,6 +240,12 @@ public final class GroupProductDetail extends Message {
   @ProtoField(tag = 28, type = STRING, label = REPEATED)
   public List<String> imageUrl;
 
+  /**
+   * 最大可租数
+   */
+  @ProtoField(tag = 29, type = INT64)
+  public Long maxAvailable;
+
   public GroupProductDetail(GroupProductDetail message) {
     super(message);
     if (message == null) return;
@@ -268,6 +276,7 @@ public final class GroupProductDetail extends Message {
     this.longRentPeriod = copyOf(message.longRentPeriod);
     this.groupRentAmountInfo = copyOf(message.groupRentAmountInfo);
     this.imageUrl = copyOf(message.imageUrl);
+    this.maxAvailable = message.maxAvailable;
   }
 
   public GroupProductDetail() {
@@ -356,6 +365,9 @@ public final class GroupProductDetail extends Message {
         case TAG_IMAGEURL:
         this.imageUrl = immutableCopyOf((List<String>)value);
         break;
+        case TAG_MAXAVAILABLE:
+        this.maxAvailable = (Long)value;
+        break;
         default: break;
         };
     return this;
@@ -392,7 +404,8 @@ public final class GroupProductDetail extends Message {
         && equals(shortRentPeriod, o.shortRentPeriod)
         && equals(longRentPeriod, o.longRentPeriod)
         && equals(groupRentAmountInfo, o.groupRentAmountInfo)
-        && equals(imageUrl, o.imageUrl);
+        && equals(imageUrl, o.imageUrl)
+        && equals(maxAvailable, o.maxAvailable);
   }
 
   @Override
@@ -426,6 +439,7 @@ public final class GroupProductDetail extends Message {
       result = result * 37 + (longRentPeriod != null ? longRentPeriod.hashCode() : 1);
       result = result * 37 + (groupRentAmountInfo != null ? groupRentAmountInfo.hashCode() : 1);
       result = result * 37 + (imageUrl != null ? imageUrl.hashCode() : 1);
+      result = result * 37 + (maxAvailable != null ? maxAvailable.hashCode() : 0);
       hashCode = result;
     }
     return result;

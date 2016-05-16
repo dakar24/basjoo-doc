@@ -7447,6 +7447,23 @@ public final class GroupProduct {
      */
     com.google.protobuf.ByteString
         getImageUrlBytes(int index);
+
+    /**
+     * <code>optional int64 maxAvailable = 29;</code>
+     *
+     * <pre>
+     *最大可租数
+     * </pre>
+     */
+    boolean hasMaxAvailable();
+    /**
+     * <code>optional int64 maxAvailable = 29;</code>
+     *
+     * <pre>
+     *最大可租数
+     * </pre>
+     */
+    long getMaxAvailable();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GroupProductDetail}
@@ -7668,6 +7685,11 @@ public final class GroupProduct {
                 mutable_bitField0_ |= 0x04000000;
               }
               imageUrl_.add(bs);
+              break;
+            }
+            case 232: {
+              bitField0_ |= 0x00100000;
+              maxAvailable_ = input.readInt64();
               break;
             }
           }
@@ -8804,6 +8826,29 @@ public final class GroupProduct {
       return imageUrl_.getByteString(index);
     }
 
+    public static final int MAXAVAILABLE_FIELD_NUMBER = 29;
+    private long maxAvailable_;
+    /**
+     * <code>optional int64 maxAvailable = 29;</code>
+     *
+     * <pre>
+     *最大可租数
+     * </pre>
+     */
+    public boolean hasMaxAvailable() {
+      return ((bitField0_ & 0x00100000) == 0x00100000);
+    }
+    /**
+     * <code>optional int64 maxAvailable = 29;</code>
+     *
+     * <pre>
+     *最大可租数
+     * </pre>
+     */
+    public long getMaxAvailable() {
+      return maxAvailable_;
+    }
+
     private void initFields() {
       productId_ = "";
       productType_ = "";
@@ -8832,6 +8877,7 @@ public final class GroupProduct {
       longRentPeriod_ = java.util.Collections.emptyList();
       groupRentAmountInfo_ = java.util.Collections.emptyList();
       imageUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      maxAvailable_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9005,6 +9051,9 @@ public final class GroupProduct {
       for (int i = 0; i < imageUrl_.size(); i++) {
         output.writeBytes(28, imageUrl_.getByteString(i));
       }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        output.writeInt64(29, maxAvailable_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9131,6 +9180,10 @@ public final class GroupProduct {
         }
         size += dataSize;
         size += 2 * getImageUrlList().size();
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(29, maxAvailable_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9332,6 +9385,8 @@ public final class GroupProduct {
         }
         imageUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x04000000);
+        maxAvailable_ = 0L;
+        bitField0_ = (bitField0_ & ~0x08000000);
         return this;
       }
 
@@ -9495,6 +9550,10 @@ public final class GroupProduct {
           bitField0_ = (bitField0_ & ~0x04000000);
         }
         result.imageUrl_ = imageUrl_;
+        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
+          to_bitField0_ |= 0x00100000;
+        }
+        result.maxAvailable_ = maxAvailable_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -9736,6 +9795,9 @@ public final class GroupProduct {
             imageUrl_.addAll(other.imageUrl_);
           }
           onChanged();
+        }
+        if (other.hasMaxAvailable()) {
+          setMaxAvailable(other.getMaxAvailable());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -13032,6 +13094,54 @@ public final class GroupProduct {
   }
   ensureImageUrlIsMutable();
         imageUrl_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private long maxAvailable_ ;
+      /**
+       * <code>optional int64 maxAvailable = 29;</code>
+       *
+       * <pre>
+       *最大可租数
+       * </pre>
+       */
+      public boolean hasMaxAvailable() {
+        return ((bitField0_ & 0x08000000) == 0x08000000);
+      }
+      /**
+       * <code>optional int64 maxAvailable = 29;</code>
+       *
+       * <pre>
+       *最大可租数
+       * </pre>
+       */
+      public long getMaxAvailable() {
+        return maxAvailable_;
+      }
+      /**
+       * <code>optional int64 maxAvailable = 29;</code>
+       *
+       * <pre>
+       *最大可租数
+       * </pre>
+       */
+      public Builder setMaxAvailable(long value) {
+        bitField0_ |= 0x08000000;
+        maxAvailable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 maxAvailable = 29;</code>
+       *
+       * <pre>
+       *最大可租数
+       * </pre>
+       */
+      public Builder clearMaxAvailable() {
+        bitField0_ = (bitField0_ & ~0x08000000);
+        maxAvailable_ = 0L;
         onChanged();
         return this;
       }
@@ -17258,7 +17368,7 @@ public final class GroupProduct {
       "pProductDetailResult\022\022\n\nresultCode\030\001 \002(\t",
       "\022\021\n\tresultMsg\030\002 \002(\t\022M\n\022groupProductDetai" +
       "l\030\003 \001(\01321.com.qjoy.basjoo.core.model.pb." +
-      "GroupProductDetail\"\307\006\n\022GroupProductDetai" +
+      "GroupProductDetail\"\335\006\n\022GroupProductDetai" +
       "l\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productType\030\002 \002(" +
       "\t\022\022\n\npreferType\030\003 \002(\005\022\r\n\005brand\030\004 \002(\t\022\024\n\014" +
       "mainImageUrl\030\005 \002(\t\022\026\n\016bannerImageUrl\030\006 \001" +
@@ -17279,19 +17389,19 @@ public final class GroupProduct {
       ".basjoo.core.model.pb.GroupRentPeriodInf" +
       "o\022O\n\023groupRentAmountInfo\030\033 \003(\01322.com.qjo" +
       "y.basjoo.core.model.pb.GroupRentAmountIn" +
-      "fo\022\020\n\010imageUrl\030\034 \003(\t\"\204\001\n\024GroupProductCat" +
-      "egory\022\024\n\014categoryCode\030\001 \002(\t\022\024\n\014categoryN" +
-      "ame\030\002 \002(\t\022\026\n\016categoryImgUrl\030\003 \001(\t\022\022\n\nsto" +
-      "ckCount\030\004 \002(\005\022\024\n\014pledgeAmount\030\005 \002(\001\"S\n\023G" +
-      "roupRentPeriodInfo\022\020\n\010rentCode\030\001 \002(\t\022\022\n\n" +
-      "rentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 \002(\t" +
-      "\"\221\001\n\023GroupRentAmountInfo\022\017\n\007codeKey\030\001 \002(",
-      "\t\022\030\n\020rentAmountPerDay\030\002 \002(\001\022\032\n\022rentAmoun" +
-      "tPerMonth\030\003 \001(\001\022\027\n\017totalRentAmount\030\004 \002(\001" +
-      "\022\032\n\022originalRentAmount\030\005 \002(\001\"I\n\025GroupPro" +
-      "ductBaseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030\002" +
-      " \002(\t\022\021\n\tshowValue\030\003 \002(\tB\037\n\035com.qjoy.basj" +
-      "oo.core.model.pb"
+      "fo\022\020\n\010imageUrl\030\034 \003(\t\022\024\n\014maxAvailable\030\035 \001" +
+      "(\003\"\204\001\n\024GroupProductCategory\022\024\n\014categoryC" +
+      "ode\030\001 \002(\t\022\024\n\014categoryName\030\002 \002(\t\022\026\n\016categ" +
+      "oryImgUrl\030\003 \001(\t\022\022\n\nstockCount\030\004 \002(\005\022\024\n\014p" +
+      "ledgeAmount\030\005 \002(\001\"S\n\023GroupRentPeriodInfo" +
+      "\022\020\n\010rentCode\030\001 \002(\t\022\022\n\nrentPeriod\030\002 \002(\t\022\026" +
+      "\n\016rentPeriodName\030\003 \002(\t\"\221\001\n\023GroupRentAmou",
+      "ntInfo\022\017\n\007codeKey\030\001 \002(\t\022\030\n\020rentAmountPer" +
+      "Day\030\002 \002(\001\022\032\n\022rentAmountPerMonth\030\003 \001(\001\022\027\n" +
+      "\017totalRentAmount\030\004 \002(\001\022\032\n\022originalRentAm" +
+      "ount\030\005 \002(\001\"I\n\025GroupProductBaseParam\022\014\n\004c" +
+      "ode\030\001 \002(\t\022\017\n\007showKey\030\002 \002(\t\022\021\n\tshowValue\030" +
+      "\003 \002(\tB\037\n\035com.qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17340,7 +17450,7 @@ public final class GroupProduct {
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GroupProductDetail_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "PreferType", "Brand", "MainImageUrl", "BannerImageUrl", "Title", "Desc", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "MinGroupCount", "MarketPrice", "TransFee", "Location", "BaseParam", "ImageParamUrls", "EarnestAmount", "Discount", "Applyed", "ApplyCount", "CategoryInfo", "ShortRentPeriod", "LongRentPeriod", "GroupRentAmountInfo", "ImageUrl", });
+        new java.lang.String[] { "ProductId", "ProductType", "PreferType", "Brand", "MainImageUrl", "BannerImageUrl", "Title", "Desc", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "MinGroupCount", "MarketPrice", "TransFee", "Location", "BaseParam", "ImageParamUrls", "EarnestAmount", "Discount", "Applyed", "ApplyCount", "CategoryInfo", "ShortRentPeriod", "LongRentPeriod", "GroupRentAmountInfo", "ImageUrl", "MaxAvailable", });
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_GroupProductCategory_fieldAccessorTable = new

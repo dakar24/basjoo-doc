@@ -108,6 +108,7 @@
 @property (readonly) BOOL hasDiscount;
 @property (readonly) BOOL hasApplyed;
 @property (readonly) BOOL hasApplyCount;
+@property (readonly) BOOL hasMaxAvailable;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
 @property (nonatomic)SInt32 preferType;
@@ -135,6 +136,7 @@
 @property (nonatomic,strong) NSMutableArray * longRentPeriod;
 @property (nonatomic,strong) NSMutableArray * groupRentAmountInfo;
 @property (nonatomic,strong) NSMutableArray * imageUrl;
+@property (nonatomic)SInt64 maxAvailable;
 @end
 
 @interface GroupProductCategory : QJPBGeneratedMessage<GeneratedMessageProtocol>

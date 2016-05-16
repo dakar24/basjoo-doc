@@ -199,6 +199,9 @@ message GroupProductDetail {
    
    //图片地址
    repeated string                 imageUrl = 28;
+   
+   //最大可租数
+   optional int64                  maxAvailable = 29; 
      
 }
 

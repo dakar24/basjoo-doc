@@ -819,6 +819,7 @@
     _discount = 0;
     _applyed = NO;
     _applyCount = 0L;
+    _maxAvailable = 0L;
   }
   return self;
 }
@@ -904,6 +905,9 @@
   [self.imageUrl enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
     [output writeString:28 value:element];
   }];
+  if (self.hasMaxAvailable) {
+    [output writeInt64:29 value:self.maxAvailable];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -1002,6 +1006,9 @@
     }];
     size_ += dataSize;
     size_ += (SInt32)(2 * count);
+  }
+  if (self.hasMaxAvailable) {
+    size_ += computeInt64Size(29, self.maxAvailable);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1109,6 +1116,9 @@
   [self.imageUrl enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@: %@\n", indent, @"imageUrl", obj];
   }];
+  if (self.hasMaxAvailable) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"maxAvailable", [NSNumber numberWithLongLong:self.maxAvailable]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -1255,6 +1265,10 @@
   }
   [_imageUrl addObject:value];
 }
+- (void) setMaxAvailable:(SInt64) value {
+  _hasMaxAvailable = YES;
+  _maxAvailable = value;
+}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -1386,6 +1400,10 @@
       }
       case 226: {
         [self addImageUrl:[input readString]];
+        break;
+      }
+      case 232: {
+        [self setMaxAvailable:[input readInt64]];
         break;
       }
     }
