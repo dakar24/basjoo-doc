@@ -9,6 +9,7 @@ import java.util.List;
 
 import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.DOUBLE;
+import static com.squareup.wire.Message.Datatype.ENUM;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.INT64;
 import static com.squareup.wire.Message.Datatype.STRING;
@@ -54,6 +55,9 @@ public final class OrderDetailInfo extends Message {
   public static final int TAG_REMAILAMOUNT = 32;
   public static final int TAG_QUALITYCODE = 33;
   public static final int TAG_QUALITYNAME = 34;
+  public static final int TAG_ORDERTYPE = 35;
+  public static final int TAG_SERVERTIME = 36;
+  public static final int TAG_CANPAYREMAINTIME = 37;
 
   public static final String DEFAULT_ORDERID = "";
   public static final Integer DEFAULT_ORDERSTATUS = 0;
@@ -88,6 +92,9 @@ public final class OrderDetailInfo extends Message {
   public static final Double DEFAULT_REMAILAMOUNT = 0D;
   public static final String DEFAULT_QUALITYCODE = "";
   public static final String DEFAULT_QUALITYNAME = "";
+  public static final OrderType DEFAULT_ORDERTYPE = OrderType.NORMAL;
+  public static final Long DEFAULT_SERVERTIME = 0L;
+  public static final Long DEFAULT_CANPAYREMAINTIME = 0L;
 
   /**
    * 产品Id
@@ -293,6 +300,24 @@ public final class OrderDetailInfo extends Message {
   @ProtoField(tag = 34, type = STRING)
   public String qualityName;
 
+  /**
+   * 订单类型
+   */
+  @ProtoField(tag = 35, type = ENUM)
+  public OrderType orderType;
+
+  /**
+   * 服务端时间
+   */
+  @ProtoField(tag = 36, type = INT64)
+  public Long serverTime;
+
+  /**
+   * 可支付尾款时间
+   */
+  @ProtoField(tag = 37, type = INT64)
+  public Long canPayRemainTime;
+
   public OrderDetailInfo(OrderDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -330,6 +355,9 @@ public final class OrderDetailInfo extends Message {
     this.remailAmount = message.remailAmount;
     this.qualityCode = message.qualityCode;
     this.qualityName = message.qualityName;
+    this.orderType = message.orderType;
+    this.serverTime = message.serverTime;
+    this.canPayRemainTime = message.canPayRemainTime;
   }
 
   public OrderDetailInfo() {
@@ -439,6 +467,15 @@ public final class OrderDetailInfo extends Message {
         case TAG_QUALITYNAME:
         this.qualityName = (String)value;
         break;
+        case TAG_ORDERTYPE:
+        this.orderType = (OrderType)value;
+        break;
+        case TAG_SERVERTIME:
+        this.serverTime = (Long)value;
+        break;
+        case TAG_CANPAYREMAINTIME:
+        this.canPayRemainTime = (Long)value;
+        break;
         default: break;
         };
     return this;
@@ -482,7 +519,10 @@ public final class OrderDetailInfo extends Message {
         && equals(earnestAmount, o.earnestAmount)
         && equals(remailAmount, o.remailAmount)
         && equals(qualityCode, o.qualityCode)
-        && equals(qualityName, o.qualityName);
+        && equals(qualityName, o.qualityName)
+        && equals(orderType, o.orderType)
+        && equals(serverTime, o.serverTime)
+        && equals(canPayRemainTime, o.canPayRemainTime);
   }
 
   @Override
@@ -523,6 +563,9 @@ public final class OrderDetailInfo extends Message {
       result = result * 37 + (remailAmount != null ? remailAmount.hashCode() : 0);
       result = result * 37 + (qualityCode != null ? qualityCode.hashCode() : 0);
       result = result * 37 + (qualityName != null ? qualityName.hashCode() : 0);
+      result = result * 37 + (orderType != null ? orderType.hashCode() : 0);
+      result = result * 37 + (serverTime != null ? serverTime.hashCode() : 0);
+      result = result * 37 + (canPayRemainTime != null ? canPayRemainTime.hashCode() : 0);
       hashCode = result;
     }
     return result;

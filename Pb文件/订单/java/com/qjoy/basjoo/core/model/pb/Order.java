@@ -127,6 +127,142 @@ public final class Order {
     // @@protoc_insertion_point(enum_scope:com.qjoy.basjoo.core.model.pb.PayStatusQueryType)
   }
 
+  /**
+   * Protobuf enum {@code com.qjoy.basjoo.core.model.pb.OrderType}
+   *
+   * <pre>
+   *订单活动类型
+   * </pre>
+   */
+  public enum OrderType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NORMAL = 0;</code>
+     *
+     * <pre>
+     *普通产品订单
+     * </pre>
+     */
+    NORMAL(0, 0),
+    /**
+     * <code>GROUP = 1;</code>
+     *
+     * <pre>
+     *抱团租产品订单
+     * </pre>
+     */
+    GROUP(1, 1),
+    /**
+     * <code>RUSH = 2;</code>
+     *
+     * <pre>
+     *抢购产品订单
+     * </pre>
+     */
+    RUSH(2, 2),
+    /**
+     * <code>FREE = 3;</code>
+     *
+     * <pre>
+     *免费（0元租）产品订单
+     * </pre>
+     */
+    FREE(3, 3),
+    ;
+
+    /**
+     * <code>NORMAL = 0;</code>
+     *
+     * <pre>
+     *普通产品订单
+     * </pre>
+     */
+    public static final int NORMAL_VALUE = 0;
+    /**
+     * <code>GROUP = 1;</code>
+     *
+     * <pre>
+     *抱团租产品订单
+     * </pre>
+     */
+    public static final int GROUP_VALUE = 1;
+    /**
+     * <code>RUSH = 2;</code>
+     *
+     * <pre>
+     *抢购产品订单
+     * </pre>
+     */
+    public static final int RUSH_VALUE = 2;
+    /**
+     * <code>FREE = 3;</code>
+     *
+     * <pre>
+     *免费（0元租）产品订单
+     * </pre>
+     */
+    public static final int FREE_VALUE = 3;
+
+
+    public final int getNumber() { return value; }
+
+    public static OrderType valueOf(int value) {
+      switch (value) {
+        case 0: return NORMAL;
+        case 1: return GROUP;
+        case 2: return RUSH;
+        case 3: return FREE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OrderType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<OrderType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OrderType>() {
+            public OrderType findValueByNumber(int number) {
+              return OrderType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.qjoy.basjoo.core.model.pb.Order.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final OrderType[] VALUES = values();
+
+    public static OrderType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private OrderType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.qjoy.basjoo.core.model.pb.OrderType)
+  }
+
   public interface CommitOrderRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.qjoy.basjoo.core.model.pb.CommitOrderRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -21328,6 +21464,57 @@ public final class Order {
      * </pre>
      */
     double getOriginalRentAmount();
+
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 20;</code>
+     *
+     * <pre>
+     *订单类型
+     * </pre>
+     */
+    boolean hasOrderType();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 20;</code>
+     *
+     * <pre>
+     *订单类型
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.OrderType getOrderType();
+
+    /**
+     * <code>optional int64 serverTime = 21;</code>
+     *
+     * <pre>
+     *服务端时间
+     * </pre>
+     */
+    boolean hasServerTime();
+    /**
+     * <code>optional int64 serverTime = 21;</code>
+     *
+     * <pre>
+     *服务端时间
+     * </pre>
+     */
+    long getServerTime();
+
+    /**
+     * <code>optional int64 canPayRemainTime = 22;</code>
+     *
+     * <pre>
+     *可支付尾款时间
+     * </pre>
+     */
+    boolean hasCanPayRemainTime();
+    /**
+     * <code>optional int64 canPayRemainTime = 22;</code>
+     *
+     * <pre>
+     *可支付尾款时间
+     * </pre>
+     */
+    long getCanPayRemainTime();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderLiteInfo}
@@ -21484,6 +21671,27 @@ public final class Order {
             case 153: {
               bitField0_ |= 0x00040000;
               originalRentAmount_ = input.readDouble();
+              break;
+            }
+            case 160: {
+              int rawValue = input.readEnum();
+              com.qjoy.basjoo.core.model.pb.Order.OrderType value = com.qjoy.basjoo.core.model.pb.Order.OrderType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(20, rawValue);
+              } else {
+                bitField0_ |= 0x00080000;
+                orderType_ = value;
+              }
+              break;
+            }
+            case 168: {
+              bitField0_ |= 0x00100000;
+              serverTime_ = input.readInt64();
+              break;
+            }
+            case 176: {
+              bitField0_ |= 0x00200000;
+              canPayRemainTime_ = input.readInt64();
               break;
             }
           }
@@ -22149,6 +22357,75 @@ public final class Order {
       return originalRentAmount_;
     }
 
+    public static final int ORDERTYPE_FIELD_NUMBER = 20;
+    private com.qjoy.basjoo.core.model.pb.Order.OrderType orderType_;
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 20;</code>
+     *
+     * <pre>
+     *订单类型
+     * </pre>
+     */
+    public boolean hasOrderType() {
+      return ((bitField0_ & 0x00080000) == 0x00080000);
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 20;</code>
+     *
+     * <pre>
+     *订单类型
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.OrderType getOrderType() {
+      return orderType_;
+    }
+
+    public static final int SERVERTIME_FIELD_NUMBER = 21;
+    private long serverTime_;
+    /**
+     * <code>optional int64 serverTime = 21;</code>
+     *
+     * <pre>
+     *服务端时间
+     * </pre>
+     */
+    public boolean hasServerTime() {
+      return ((bitField0_ & 0x00100000) == 0x00100000);
+    }
+    /**
+     * <code>optional int64 serverTime = 21;</code>
+     *
+     * <pre>
+     *服务端时间
+     * </pre>
+     */
+    public long getServerTime() {
+      return serverTime_;
+    }
+
+    public static final int CANPAYREMAINTIME_FIELD_NUMBER = 22;
+    private long canPayRemainTime_;
+    /**
+     * <code>optional int64 canPayRemainTime = 22;</code>
+     *
+     * <pre>
+     *可支付尾款时间
+     * </pre>
+     */
+    public boolean hasCanPayRemainTime() {
+      return ((bitField0_ & 0x00200000) == 0x00200000);
+    }
+    /**
+     * <code>optional int64 canPayRemainTime = 22;</code>
+     *
+     * <pre>
+     *可支付尾款时间
+     * </pre>
+     */
+    public long getCanPayRemainTime() {
+      return canPayRemainTime_;
+    }
+
     private void initFields() {
       orderId_ = "";
       orderStatus_ = 0;
@@ -22169,6 +22446,9 @@ public final class Order {
       categoryName_ = "";
       discount_ = 0D;
       originalRentAmount_ = 0D;
+      orderType_ = com.qjoy.basjoo.core.model.pb.Order.OrderType.NORMAL;
+      serverTime_ = 0L;
+      canPayRemainTime_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -22296,6 +22576,15 @@ public final class Order {
       if (((bitField0_ & 0x00040000) == 0x00040000)) {
         output.writeDouble(19, originalRentAmount_);
       }
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        output.writeEnum(20, orderType_.getNumber());
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        output.writeInt64(21, serverTime_);
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        output.writeInt64(22, canPayRemainTime_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -22380,6 +22669,18 @@ public final class Order {
       if (((bitField0_ & 0x00040000) == 0x00040000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(19, originalRentAmount_);
+      }
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(20, orderType_.getNumber());
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(21, serverTime_);
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(22, canPayRemainTime_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -22540,6 +22841,12 @@ public final class Order {
         bitField0_ = (bitField0_ & ~0x00020000);
         originalRentAmount_ = 0D;
         bitField0_ = (bitField0_ & ~0x00040000);
+        orderType_ = com.qjoy.basjoo.core.model.pb.Order.OrderType.NORMAL;
+        bitField0_ = (bitField0_ & ~0x00080000);
+        serverTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00100000);
+        canPayRemainTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00200000);
         return this;
       }
 
@@ -22644,6 +22951,18 @@ public final class Order {
           to_bitField0_ |= 0x00040000;
         }
         result.originalRentAmount_ = originalRentAmount_;
+        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
+          to_bitField0_ |= 0x00080000;
+        }
+        result.orderType_ = orderType_;
+        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+          to_bitField0_ |= 0x00100000;
+        }
+        result.serverTime_ = serverTime_;
+        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
+          to_bitField0_ |= 0x00200000;
+        }
+        result.canPayRemainTime_ = canPayRemainTime_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -22728,6 +23047,15 @@ public final class Order {
         }
         if (other.hasOriginalRentAmount()) {
           setOriginalRentAmount(other.getOriginalRentAmount());
+        }
+        if (other.hasOrderType()) {
+          setOrderType(other.getOrderType());
+        }
+        if (other.hasServerTime()) {
+          setServerTime(other.getServerTime());
+        }
+        if (other.hasCanPayRemainTime()) {
+          setCanPayRemainTime(other.getCanPayRemainTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -24032,6 +24360,153 @@ public final class Order {
       public Builder clearOriginalRentAmount() {
         bitField0_ = (bitField0_ & ~0x00040000);
         originalRentAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private com.qjoy.basjoo.core.model.pb.Order.OrderType orderType_ = com.qjoy.basjoo.core.model.pb.Order.OrderType.NORMAL;
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 20;</code>
+       *
+       * <pre>
+       *订单类型
+       * </pre>
+       */
+      public boolean hasOrderType() {
+        return ((bitField0_ & 0x00080000) == 0x00080000);
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 20;</code>
+       *
+       * <pre>
+       *订单类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderType getOrderType() {
+        return orderType_;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 20;</code>
+       *
+       * <pre>
+       *订单类型
+       * </pre>
+       */
+      public Builder setOrderType(com.qjoy.basjoo.core.model.pb.Order.OrderType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00080000;
+        orderType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 20;</code>
+       *
+       * <pre>
+       *订单类型
+       * </pre>
+       */
+      public Builder clearOrderType() {
+        bitField0_ = (bitField0_ & ~0x00080000);
+        orderType_ = com.qjoy.basjoo.core.model.pb.Order.OrderType.NORMAL;
+        onChanged();
+        return this;
+      }
+
+      private long serverTime_ ;
+      /**
+       * <code>optional int64 serverTime = 21;</code>
+       *
+       * <pre>
+       *服务端时间
+       * </pre>
+       */
+      public boolean hasServerTime() {
+        return ((bitField0_ & 0x00100000) == 0x00100000);
+      }
+      /**
+       * <code>optional int64 serverTime = 21;</code>
+       *
+       * <pre>
+       *服务端时间
+       * </pre>
+       */
+      public long getServerTime() {
+        return serverTime_;
+      }
+      /**
+       * <code>optional int64 serverTime = 21;</code>
+       *
+       * <pre>
+       *服务端时间
+       * </pre>
+       */
+      public Builder setServerTime(long value) {
+        bitField0_ |= 0x00100000;
+        serverTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 serverTime = 21;</code>
+       *
+       * <pre>
+       *服务端时间
+       * </pre>
+       */
+      public Builder clearServerTime() {
+        bitField0_ = (bitField0_ & ~0x00100000);
+        serverTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long canPayRemainTime_ ;
+      /**
+       * <code>optional int64 canPayRemainTime = 22;</code>
+       *
+       * <pre>
+       *可支付尾款时间
+       * </pre>
+       */
+      public boolean hasCanPayRemainTime() {
+        return ((bitField0_ & 0x00200000) == 0x00200000);
+      }
+      /**
+       * <code>optional int64 canPayRemainTime = 22;</code>
+       *
+       * <pre>
+       *可支付尾款时间
+       * </pre>
+       */
+      public long getCanPayRemainTime() {
+        return canPayRemainTime_;
+      }
+      /**
+       * <code>optional int64 canPayRemainTime = 22;</code>
+       *
+       * <pre>
+       *可支付尾款时间
+       * </pre>
+       */
+      public Builder setCanPayRemainTime(long value) {
+        bitField0_ |= 0x00200000;
+        canPayRemainTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 canPayRemainTime = 22;</code>
+       *
+       * <pre>
+       *可支付尾款时间
+       * </pre>
+       */
+      public Builder clearCanPayRemainTime() {
+        bitField0_ = (bitField0_ & ~0x00200000);
+        canPayRemainTime_ = 0L;
         onChanged();
         return this;
       }
@@ -39833,6 +40308,57 @@ public final class Order {
      */
     com.google.protobuf.ByteString
         getQualityNameBytes();
+
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 35;</code>
+     *
+     * <pre>
+     *订单类型
+     * </pre>
+     */
+    boolean hasOrderType();
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 35;</code>
+     *
+     * <pre>
+     *订单类型
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Order.OrderType getOrderType();
+
+    /**
+     * <code>optional int64 serverTime = 36;</code>
+     *
+     * <pre>
+     *服务端时间
+     * </pre>
+     */
+    boolean hasServerTime();
+    /**
+     * <code>optional int64 serverTime = 36;</code>
+     *
+     * <pre>
+     *服务端时间
+     * </pre>
+     */
+    long getServerTime();
+
+    /**
+     * <code>optional int64 canPayRemainTime = 37;</code>
+     *
+     * <pre>
+     *可支付尾款时间
+     * </pre>
+     */
+    boolean hasCanPayRemainTime();
+    /**
+     * <code>optional int64 canPayRemainTime = 37;</code>
+     *
+     * <pre>
+     *可支付尾款时间
+     * </pre>
+     */
+    long getCanPayRemainTime();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.OrderDetailInfo}
@@ -40086,6 +40612,27 @@ public final class Order {
               qualityName_ = bs;
               break;
             }
+            case 280: {
+              int rawValue = input.readEnum();
+              com.qjoy.basjoo.core.model.pb.Order.OrderType value = com.qjoy.basjoo.core.model.pb.Order.OrderType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(35, rawValue);
+              } else {
+                bitField1_ |= 0x00000001;
+                orderType_ = value;
+              }
+              break;
+            }
+            case 288: {
+              bitField1_ |= 0x00000002;
+              serverTime_ = input.readInt64();
+              break;
+            }
+            case 296: {
+              bitField1_ |= 0x00000004;
+              canPayRemainTime_ = input.readInt64();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -40132,6 +40679,7 @@ public final class Order {
     }
 
     private int bitField0_;
+    private int bitField1_;
     public static final int ORDERID_FIELD_NUMBER = 1;
     private java.lang.Object orderId_;
     /**
@@ -41288,6 +41836,75 @@ public final class Order {
       }
     }
 
+    public static final int ORDERTYPE_FIELD_NUMBER = 35;
+    private com.qjoy.basjoo.core.model.pb.Order.OrderType orderType_;
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 35;</code>
+     *
+     * <pre>
+     *订单类型
+     * </pre>
+     */
+    public boolean hasOrderType() {
+      return ((bitField1_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 35;</code>
+     *
+     * <pre>
+     *订单类型
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Order.OrderType getOrderType() {
+      return orderType_;
+    }
+
+    public static final int SERVERTIME_FIELD_NUMBER = 36;
+    private long serverTime_;
+    /**
+     * <code>optional int64 serverTime = 36;</code>
+     *
+     * <pre>
+     *服务端时间
+     * </pre>
+     */
+    public boolean hasServerTime() {
+      return ((bitField1_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int64 serverTime = 36;</code>
+     *
+     * <pre>
+     *服务端时间
+     * </pre>
+     */
+    public long getServerTime() {
+      return serverTime_;
+    }
+
+    public static final int CANPAYREMAINTIME_FIELD_NUMBER = 37;
+    private long canPayRemainTime_;
+    /**
+     * <code>optional int64 canPayRemainTime = 37;</code>
+     *
+     * <pre>
+     *可支付尾款时间
+     * </pre>
+     */
+    public boolean hasCanPayRemainTime() {
+      return ((bitField1_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 canPayRemainTime = 37;</code>
+     *
+     * <pre>
+     *可支付尾款时间
+     * </pre>
+     */
+    public long getCanPayRemainTime() {
+      return canPayRemainTime_;
+    }
+
     private void initFields() {
       orderId_ = "";
       orderStatus_ = 0;
@@ -41323,6 +41940,9 @@ public final class Order {
       remailAmount_ = 0D;
       qualityCode_ = "";
       qualityName_ = "";
+      orderType_ = com.qjoy.basjoo.core.model.pb.Order.OrderType.NORMAL;
+      serverTime_ = 0L;
+      canPayRemainTime_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -41507,6 +42127,15 @@ public final class Order {
       if (((bitField0_ & 0x80000000) == 0x80000000)) {
         output.writeBytes(34, getQualityNameBytes());
       }
+      if (((bitField1_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(35, orderType_.getNumber());
+      }
+      if (((bitField1_ & 0x00000002) == 0x00000002)) {
+        output.writeInt64(36, serverTime_);
+      }
+      if (((bitField1_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(37, canPayRemainTime_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -41656,6 +42285,18 @@ public final class Order {
       if (((bitField0_ & 0x80000000) == 0x80000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(34, getQualityNameBytes());
+      }
+      if (((bitField1_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(35, orderType_.getNumber());
+      }
+      if (((bitField1_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(36, serverTime_);
+      }
+      if (((bitField1_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(37, canPayRemainTime_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -41856,6 +42497,12 @@ public final class Order {
         bitField1_ = (bitField1_ & ~0x00000001);
         qualityName_ = "";
         bitField1_ = (bitField1_ & ~0x00000002);
+        orderType_ = com.qjoy.basjoo.core.model.pb.Order.OrderType.NORMAL;
+        bitField1_ = (bitField1_ & ~0x00000004);
+        serverTime_ = 0L;
+        bitField1_ = (bitField1_ & ~0x00000008);
+        canPayRemainTime_ = 0L;
+        bitField1_ = (bitField1_ & ~0x00000010);
         return this;
       }
 
@@ -41885,6 +42532,7 @@ public final class Order {
         int from_bitField0_ = bitField0_;
         int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
+        int to_bitField1_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
@@ -42031,7 +42679,20 @@ public final class Order {
           to_bitField0_ |= 0x80000000;
         }
         result.qualityName_ = qualityName_;
+        if (((from_bitField1_ & 0x00000004) == 0x00000004)) {
+          to_bitField1_ |= 0x00000001;
+        }
+        result.orderType_ = orderType_;
+        if (((from_bitField1_ & 0x00000008) == 0x00000008)) {
+          to_bitField1_ |= 0x00000002;
+        }
+        result.serverTime_ = serverTime_;
+        if (((from_bitField1_ & 0x00000010) == 0x00000010)) {
+          to_bitField1_ |= 0x00000004;
+        }
+        result.canPayRemainTime_ = canPayRemainTime_;
         result.bitField0_ = to_bitField0_;
+        result.bitField1_ = to_bitField1_;
         onBuilt();
         return result;
       }
@@ -42198,6 +42859,15 @@ public final class Order {
           bitField1_ |= 0x00000002;
           qualityName_ = other.qualityName_;
           onChanged();
+        }
+        if (other.hasOrderType()) {
+          setOrderType(other.getOrderType());
+        }
+        if (other.hasServerTime()) {
+          setServerTime(other.getServerTime());
+        }
+        if (other.hasCanPayRemainTime()) {
+          setCanPayRemainTime(other.getCanPayRemainTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -44892,6 +45562,153 @@ public final class Order {
   }
   bitField1_ |= 0x00000002;
         qualityName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.qjoy.basjoo.core.model.pb.Order.OrderType orderType_ = com.qjoy.basjoo.core.model.pb.Order.OrderType.NORMAL;
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 35;</code>
+       *
+       * <pre>
+       *订单类型
+       * </pre>
+       */
+      public boolean hasOrderType() {
+        return ((bitField1_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 35;</code>
+       *
+       * <pre>
+       *订单类型
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Order.OrderType getOrderType() {
+        return orderType_;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 35;</code>
+       *
+       * <pre>
+       *订单类型
+       * </pre>
+       */
+      public Builder setOrderType(com.qjoy.basjoo.core.model.pb.Order.OrderType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField1_ |= 0x00000004;
+        orderType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .com.qjoy.basjoo.core.model.pb.OrderType orderType = 35;</code>
+       *
+       * <pre>
+       *订单类型
+       * </pre>
+       */
+      public Builder clearOrderType() {
+        bitField1_ = (bitField1_ & ~0x00000004);
+        orderType_ = com.qjoy.basjoo.core.model.pb.Order.OrderType.NORMAL;
+        onChanged();
+        return this;
+      }
+
+      private long serverTime_ ;
+      /**
+       * <code>optional int64 serverTime = 36;</code>
+       *
+       * <pre>
+       *服务端时间
+       * </pre>
+       */
+      public boolean hasServerTime() {
+        return ((bitField1_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int64 serverTime = 36;</code>
+       *
+       * <pre>
+       *服务端时间
+       * </pre>
+       */
+      public long getServerTime() {
+        return serverTime_;
+      }
+      /**
+       * <code>optional int64 serverTime = 36;</code>
+       *
+       * <pre>
+       *服务端时间
+       * </pre>
+       */
+      public Builder setServerTime(long value) {
+        bitField1_ |= 0x00000008;
+        serverTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 serverTime = 36;</code>
+       *
+       * <pre>
+       *服务端时间
+       * </pre>
+       */
+      public Builder clearServerTime() {
+        bitField1_ = (bitField1_ & ~0x00000008);
+        serverTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long canPayRemainTime_ ;
+      /**
+       * <code>optional int64 canPayRemainTime = 37;</code>
+       *
+       * <pre>
+       *可支付尾款时间
+       * </pre>
+       */
+      public boolean hasCanPayRemainTime() {
+        return ((bitField1_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional int64 canPayRemainTime = 37;</code>
+       *
+       * <pre>
+       *可支付尾款时间
+       * </pre>
+       */
+      public long getCanPayRemainTime() {
+        return canPayRemainTime_;
+      }
+      /**
+       * <code>optional int64 canPayRemainTime = 37;</code>
+       *
+       * <pre>
+       *可支付尾款时间
+       * </pre>
+       */
+      public Builder setCanPayRemainTime(long value) {
+        bitField1_ |= 0x00000010;
+        canPayRemainTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 canPayRemainTime = 37;</code>
+       *
+       * <pre>
+       *可支付尾款时间
+       * </pre>
+       */
+      public Builder clearCanPayRemainTime() {
+        bitField1_ = (bitField1_ & ~0x00000010);
+        canPayRemainTime_ = 0L;
         onChanged();
         return this;
       }
@@ -56553,7 +57370,7 @@ public final class Order {
       "\030\010 \001(\005\022\031\n\021waitEvaluateCount\030\t \001(\005\022\022\n\ntot" +
       "alCount\030\n \001(\005\022C\n\rorderLiteInfo\030\013 \003(\0132,.c" +
       "om.qjoy.basjoo.core.model.pb.OrderLiteIn" +
-      "fo\"\240\003\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n" +
+      "fo\"\213\004\n\rOrderLiteInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n" +
       "\013orderStatus\030\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025" +
       "\n\rrentStartTime\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002" +
       "(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022" +
@@ -56563,100 +57380,107 @@ public final class Order {
       "aluateStauts\030\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n" +
       "\014mainImageUrl\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014cat" +
       "egoryName\030\021 \002(\t\022\020\n\010discount\030\022 \001(\001\022\032\n\022ori" +
-      "ginalRentAmount\030\023 \001(\001\"5\n\022DeleteOrderRequ" +
-      "est\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021" +
-      "DeleteOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n" +
-      "\tresultMsg\030\002 \002(\t\"E\n\022CancelOrderRequest\022\017" +
-      "\n\007orderId\030\001 \002(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006userI" +
-      "d\030\003 \002(\t\":\n\021CancelOrderResult\022\022\n\nresultCo" +
-      "de\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025ConfirmRe",
-      "ceiveRequest\022\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030" +
-      "\002 \002(\t\"=\n\024ConfirmReceiveResult\022\022\n\nresultC" +
-      "ode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRe" +
-      "vertRequest\022\017\n\007orderId\030\001 \002(\t\022\027\n\017applyRev" +
-      "ertType\030\002 \002(\t\022\030\n\020transportationId\030\003 \001(\t\022" +
-      "\035\n\025transportationCompany\030\004 \001(\t\022\016\n\006userId" +
-      "\030\005 \002(\t\022\025\n\revidentalImgs\030\006 \003(\t\022\023\n\013revertI" +
-      "ntro\030\007 \001(\t\":\n\021ApplyRevertResult\022\022\n\nresul" +
-      "tCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"\263\001\n\022Apply" +
-      "RefundRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId",
-      "\030\002 \002(\t\022\022\n\nrefundType\030\003 \002(\t\022\023\n\013goodsStatu" +
-      "s\030\004 \001(\t\022\024\n\014refundReason\030\005 \002(\t\022\021\n\trefundF" +
-      "ee\030\006 \001(\001\022\025\n\revidentalImgs\030\007 \003(\t\022\023\n\013refun" +
-      "dIntro\030\010 \001(\t\":\n\021ApplyRefundResult\022\022\n\nres" +
-      "ultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"6\n\023GetR" +
-      "efundFeeRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007order" +
-      "Id\030\002 \002(\t\"g\n\022GetRefundFeeResult\022\022\n\nresult" +
-      "Code\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\024\n\014maxRefu" +
-      "ndFee\030\003 \001(\001\022\024\n\014transportFee\030\004 \001(\001\"\252\001\n\030Co" +
-      "mmitRefundTransRequest\022\016\n\006userId\030\001 \002(\t\022\017",
-      "\n\007orderId\030\002 \002(\t\022\027\n\017refundTransType\030\003 \002(\t" +
-      "\022\030\n\020transportationId\030\004 \001(\t\022\035\n\025transporta" +
-      "tionCompany\030\005 \001(\t\022\033\n\023transportationIntro" +
-      "\030\006 \001(\t\"@\n\027CommitRefundTransResult\022\022\n\nres" +
-      "ultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetO" +
-      "rderDetailRequest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006us" +
-      "erId\030\002 \002(\t\"\206\001\n\024GetOrderDetailResult\022\022\n\nr" +
-      "esultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017or" +
-      "derDetailInfo\030\003 \001(\0132..com.qjoy.basjoo.co" +
-      "re.model.pb.OrderDetailInfo\"\306\006\n\017OrderDet",
-      "ailInfo\022\017\n\007orderId\030\001 \002(\t\022\023\n\013orderStatus\030" +
-      "\002 \002(\005\022\022\n\ncreateTime\030\003 \002(\003\022\025\n\rrentStartTi" +
-      "me\030\004 \002(\003\022\023\n\013rentEndTime\030\005 \002(\003\022\020\n\010rentDay" +
-      "s\030\006 \002(\005\022\021\n\trentCount\030\007 \002(\005\022\021\n\trentPrice\030" +
-      "\010 \002(\001\022\023\n\013pledgePrice\030\t \002(\001\022\033\n\023transporta" +
-      "tionPrice\030\n \001(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020t" +
-      "ransportationId\030\014 \001(\t\022\026\n\016evaluateStauts\030" +
-      "\r \001(\010\022\021\n\tproductId\030\016 \002(\t\022\024\n\014mainImageUrl" +
-      "\030\017 \002(\t\022\014\n\004desc\030\020 \002(\t\022\024\n\014categoryName\030\021 \002" +
-      "(\t\022\017\n\007payTime\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npa",
-      "yChannel\030\024 \001(\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013" +
-      "receiveTime\030\026 \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n" +
-      "\014completeTime\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020" +
-      "\n\010vouchers\030\032 \003(\t\022W\n\027orderReceiveAddressI" +
-      "nfo\030\033 \001(\01326.com.qjoy.basjoo.core.model.p" +
-      "b.OrderReceiveAddressInfo\022D\n\013voucherInfo" +
-      "\030\034 \003(\0132/.com.qjoy.basjoo.core.model.pb.O" +
-      "rderVoucherInfo\022\020\n\010discount\030\035 \001(\001\022\032\n\022ori" +
-      "ginalRentAmount\030\036 \001(\001\022\025\n\rearnestAmount\030\037" +
-      " \001(\001\022\024\n\014remailAmount\030  \001(\001\022\023\n\013qualityCod",
-      "e\030! \001(\t\022\023\n\013qualityName\030\" \001(\t\"\300\001\n\020OrderVo" +
-      "ucherInfo\022\021\n\tvoucherId\030\001 \002(\t\022\024\n\014voucherT" +
-      "itle\030\002 \002(\t\022\023\n\013voucherType\030\003 \002(\t\022\025\n\rvouch" +
-      "erStatus\030\004 \002(\t\022\026\n\016validStartTime\030\005 \002(\003\022\024" +
-      "\n\014validEndTime\030\006 \002(\003\022\023\n\013voucherDesc\030\007 \002(" +
-      "\t\022\024\n\014deductAmount\030\010 \001(\001\"\256\001\n\024CommitEarnes" +
-      "tRequest\022\021\n\tproductId\030\001 \002(\t\022\024\n\014categoryC" +
-      "ode\030\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode" +
-      "\030\004 \002(\t\022\017\n\007orderId\030\005 \001(\t\022\024\n\014onlyCalPrice\030" +
-      "\006 \002(\010\022\016\n\006userId\030\007 \002(\t\022\021\n\tinsurance\030\010 \001(\010",
-      "\"\352\002\n\023CommitEarnestResult\022\022\n\nresultCode\030\001" +
-      " \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t" +
-      "\022\024\n\014categoryCode\030\004 \001(\t\022\021\n\trentCount\030\005 \001(" +
-      "\005\022\020\n\010rentCode\030\006 \001(\t\022\024\n\014pledgeAmount\030\007 \001(" +
-      "\001\022\027\n\017totalRentAmount\030\010 \001(\001\022\032\n\022originalRe" +
-      "ntAmount\030\t \001(\001\022\020\n\010transFee\030\n \001(\001\022\023\n\013tota" +
-      "lAmount\030\013 \001(\001\022\025\n\rearnestAmount\030\014 \001(\001\022W\n\027" +
-      "orderReceiveAddressInfo\030\r \001(\01326.com.qjoy" +
-      ".basjoo.core.model.pb.OrderReceiveAddres" +
-      "sInfo\"\255\001\n\025ConfirmEarnestRequest\022\021\n\tprodu",
-      "ctId\030\001 \002(\t\022\024\n\014categoryCode\030\002 \002(\t\022\021\n\trent" +
-      "Count\030\003 \002(\005\022\020\n\010rentCode\030\004 \002(\t\022\022\n\npayChan" +
-      "nel\030\005 \001(\005\022\016\n\006userId\030\006 \002(\t\022\021\n\taddressId\030\007" +
-      " \002(\t\022\017\n\007orderId\030\010 \002(\t\"\237\001\n\024ConfirmEarnest" +
-      "Result\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030" +
-      "\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 \001" +
-      "(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo." +
-      "core.model.pb.WxPayInfo\"s\n\027ConfirmPayRem" +
-      "ainRequest\022\017\n\007orderId\030\001 \002(\t\022\022\n\npayChanne" +
-      "l\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\022\020\n\010vouchers\030\004 \003(",
-      "\t\022\021\n\taddressId\030\005 \001(\t\"\241\001\n\026ConfirmPayRemai" +
-      "nResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg" +
-      "\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\npayChannel\030\004 " +
-      "\001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.com.qjoy.basjoo" +
-      ".core.model.pb.WxPayInfo*8\n\022PayStatusQue" +
-      "ryType\022\t\n\005ORDER\020\000\022\013\n\007EARNEST\020\001\022\n\n\006REMAIN" +
-      "\020\002B\037\n\035com.qjoy.basjoo.core.model.pb"
+      "ginalRentAmount\030\023 \001(\001\022;\n\torderType\030\024 \001(\016" +
+      "2(.com.qjoy.basjoo.core.model.pb.OrderTy" +
+      "pe\022\022\n\nserverTime\030\025 \001(\003\022\030\n\020canPayRemainTi" +
+      "me\030\026 \001(\003\"5\n\022DeleteOrderRequest\022\017\n\007orderI" +
+      "d\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\":\n\021DeleteOrderRe" +
+      "sult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 " +
+      "\002(\t\"E\n\022CancelOrderRequest\022\017\n\007orderId\030\001 \002",
+      "(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006userId\030\003 \002(\t\":\n\021Ca" +
+      "ncelOrderResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tr" +
+      "esultMsg\030\002 \002(\t\"8\n\025ConfirmReceiveRequest\022" +
+      "\017\n\007orderId\030\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"=\n\024Conf" +
+      "irmReceiveResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\t" +
+      "resultMsg\030\002 \002(\t\"\263\001\n\022ApplyRevertRequest\022\017" +
+      "\n\007orderId\030\001 \002(\t\022\027\n\017applyRevertType\030\002 \002(\t" +
+      "\022\030\n\020transportationId\030\003 \001(\t\022\035\n\025transporta" +
+      "tionCompany\030\004 \001(\t\022\016\n\006userId\030\005 \002(\t\022\025\n\revi" +
+      "dentalImgs\030\006 \003(\t\022\023\n\013revertIntro\030\007 \001(\t\":\n",
+      "\021ApplyRevertResult\022\022\n\nresultCode\030\001 \002(\t\022\021" +
+      "\n\tresultMsg\030\002 \002(\t\"\263\001\n\022ApplyRefundRequest" +
+      "\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\022\022\n\nref" +
+      "undType\030\003 \002(\t\022\023\n\013goodsStatus\030\004 \001(\t\022\024\n\014re" +
+      "fundReason\030\005 \002(\t\022\021\n\trefundFee\030\006 \001(\001\022\025\n\re" +
+      "videntalImgs\030\007 \003(\t\022\023\n\013refundIntro\030\010 \001(\t\"" +
+      ":\n\021ApplyRefundResult\022\022\n\nresultCode\030\001 \002(\t" +
+      "\022\021\n\tresultMsg\030\002 \002(\t\"6\n\023GetRefundFeeReque" +
+      "st\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002(\t\"g\n\022G" +
+      "etRefundFeeResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n",
+      "\tresultMsg\030\002 \002(\t\022\024\n\014maxRefundFee\030\003 \001(\001\022\024" +
+      "\n\014transportFee\030\004 \001(\001\"\252\001\n\030CommitRefundTra" +
+      "nsRequest\022\016\n\006userId\030\001 \002(\t\022\017\n\007orderId\030\002 \002" +
+      "(\t\022\027\n\017refundTransType\030\003 \002(\t\022\030\n\020transport" +
+      "ationId\030\004 \001(\t\022\035\n\025transportationCompany\030\005" +
+      " \001(\t\022\033\n\023transportationIntro\030\006 \001(\t\"@\n\027Com" +
+      "mitRefundTransResult\022\022\n\nresultCode\030\001 \002(\t" +
+      "\022\021\n\tresultMsg\030\002 \002(\t\"8\n\025GetOrderDetailReq" +
+      "uest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006userId\030\002 \002(\t\"\206\001" +
+      "\n\024GetOrderDetailResult\022\022\n\nresultCode\030\001 \002",
+      "(\t\022\021\n\tresultMsg\030\002 \002(\t\022G\n\017orderDetailInfo" +
+      "\030\003 \001(\0132..com.qjoy.basjoo.core.model.pb.O" +
+      "rderDetailInfo\"\261\007\n\017OrderDetailInfo\022\017\n\007or" +
+      "derId\030\001 \002(\t\022\023\n\013orderStatus\030\002 \002(\005\022\022\n\ncrea" +
+      "teTime\030\003 \002(\003\022\025\n\rrentStartTime\030\004 \002(\003\022\023\n\013r" +
+      "entEndTime\030\005 \002(\003\022\020\n\010rentDays\030\006 \002(\005\022\021\n\tre" +
+      "ntCount\030\007 \002(\005\022\021\n\trentPrice\030\010 \002(\001\022\023\n\013pled" +
+      "gePrice\030\t \002(\001\022\033\n\023transportationPrice\030\n \001" +
+      "(\001\022\022\n\ntotalPrice\030\013 \002(\001\022\030\n\020transportation" +
+      "Id\030\014 \001(\t\022\026\n\016evaluateStauts\030\r \001(\010\022\021\n\tprod",
+      "uctId\030\016 \002(\t\022\024\n\014mainImageUrl\030\017 \002(\t\022\014\n\004des" +
+      "c\030\020 \002(\t\022\024\n\014categoryName\030\021 \002(\t\022\017\n\007payTime" +
+      "\030\022 \001(\003\022\r\n\005payId\030\023 \001(\t\022\022\n\npayChannel\030\024 \001(" +
+      "\t\022\024\n\014deliveryTime\030\025 \001(\003\022\023\n\013receiveTime\030\026" +
+      " \001(\003\022\022\n\nrevertTime\030\027 \001(\003\022\024\n\014completeTime" +
+      "\030\030 \001(\003\022\021\n\tcloseTime\030\031 \001(\003\022\020\n\010vouchers\030\032 " +
+      "\003(\t\022W\n\027orderReceiveAddressInfo\030\033 \001(\01326.c" +
+      "om.qjoy.basjoo.core.model.pb.OrderReceiv" +
+      "eAddressInfo\022D\n\013voucherInfo\030\034 \003(\0132/.com." +
+      "qjoy.basjoo.core.model.pb.OrderVoucherIn",
+      "fo\022\020\n\010discount\030\035 \001(\001\022\032\n\022originalRentAmou" +
+      "nt\030\036 \001(\001\022\025\n\rearnestAmount\030\037 \001(\001\022\024\n\014remai" +
+      "lAmount\030  \001(\001\022\023\n\013qualityCode\030! \001(\t\022\023\n\013qu" +
+      "alityName\030\" \001(\t\022;\n\torderType\030# \001(\0162(.com" +
+      ".qjoy.basjoo.core.model.pb.OrderType\022\022\n\n" +
+      "serverTime\030$ \001(\003\022\030\n\020canPayRemainTime\030% \001" +
+      "(\003\"\300\001\n\020OrderVoucherInfo\022\021\n\tvoucherId\030\001 \002" +
+      "(\t\022\024\n\014voucherTitle\030\002 \002(\t\022\023\n\013voucherType\030" +
+      "\003 \002(\t\022\025\n\rvoucherStatus\030\004 \002(\t\022\026\n\016validSta" +
+      "rtTime\030\005 \002(\003\022\024\n\014validEndTime\030\006 \002(\003\022\023\n\013vo",
+      "ucherDesc\030\007 \002(\t\022\024\n\014deductAmount\030\010 \001(\001\"\256\001" +
+      "\n\024CommitEarnestRequest\022\021\n\tproductId\030\001 \002(" +
+      "\t\022\024\n\014categoryCode\030\002 \002(\t\022\021\n\trentCount\030\003 \002" +
+      "(\005\022\020\n\010rentCode\030\004 \002(\t\022\017\n\007orderId\030\005 \001(\t\022\024\n" +
+      "\014onlyCalPrice\030\006 \002(\010\022\016\n\006userId\030\007 \002(\t\022\021\n\ti" +
+      "nsurance\030\010 \001(\010\"\352\002\n\023CommitEarnestResult\022\022" +
+      "\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n" +
+      "\007orderId\030\003 \001(\t\022\024\n\014categoryCode\030\004 \001(\t\022\021\n\t" +
+      "rentCount\030\005 \001(\005\022\020\n\010rentCode\030\006 \001(\t\022\024\n\014ple" +
+      "dgeAmount\030\007 \001(\001\022\027\n\017totalRentAmount\030\010 \001(\001",
+      "\022\032\n\022originalRentAmount\030\t \001(\001\022\020\n\010transFee" +
+      "\030\n \001(\001\022\023\n\013totalAmount\030\013 \001(\001\022\025\n\rearnestAm" +
+      "ount\030\014 \001(\001\022W\n\027orderReceiveAddressInfo\030\r " +
+      "\001(\01326.com.qjoy.basjoo.core.model.pb.Orde" +
+      "rReceiveAddressInfo\"\255\001\n\025ConfirmEarnestRe" +
+      "quest\022\021\n\tproductId\030\001 \002(\t\022\024\n\014categoryCode" +
+      "\030\002 \002(\t\022\021\n\trentCount\030\003 \002(\005\022\020\n\010rentCode\030\004 " +
+      "\002(\t\022\022\n\npayChannel\030\005 \001(\005\022\016\n\006userId\030\006 \002(\t\022" +
+      "\021\n\taddressId\030\007 \002(\t\022\017\n\007orderId\030\010 \002(\t\"\237\001\n\024" +
+      "ConfirmEarnestResult\022\022\n\nresultCode\030\001 \002(\t",
+      "\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n\n" +
+      "payChannel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.co" +
+      "m.qjoy.basjoo.core.model.pb.WxPayInfo\"s\n" +
+      "\027ConfirmPayRemainRequest\022\017\n\007orderId\030\001 \002(" +
+      "\t\022\022\n\npayChannel\030\002 \001(\005\022\016\n\006userId\030\003 \002(\t\022\020\n" +
+      "\010vouchers\030\004 \003(\t\022\021\n\taddressId\030\005 \001(\t\"\241\001\n\026C" +
+      "onfirmPayRemainResult\022\022\n\nresultCode\030\001 \002(" +
+      "\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007orderId\030\003 \001(\t\022\022\n" +
+      "\npayChannel\030\004 \001(\005\022;\n\twxPayInfo\030\005 \001(\0132(.c" +
+      "om.qjoy.basjoo.core.model.pb.WxPayInfo*8",
+      "\n\022PayStatusQueryType\022\t\n\005ORDER\020\000\022\013\n\007EARNE" +
+      "ST\020\001\022\n\n\006REMAIN\020\002*6\n\tOrderType\022\n\n\006NORMAL\020" +
+      "\000\022\t\n\005GROUP\020\001\022\010\n\004RUSH\020\002\022\010\n\004FREE\020\003B\037\n\035com." +
+      "qjoy.basjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -56747,7 +57571,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_OrderLiteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_OrderLiteInfo_descriptor,
-        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "Discount", "OriginalRentAmount", });
+        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "Discount", "OriginalRentAmount", "OrderType", "ServerTime", "CanPayRemainTime", });
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteOrderRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_com_qjoy_basjoo_core_model_pb_DeleteOrderRequest_fieldAccessorTable = new
@@ -56849,7 +57673,7 @@ public final class Order {
     internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_OrderDetailInfo_descriptor,
-        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "PayTime", "PayId", "PayChannel", "DeliveryTime", "ReceiveTime", "RevertTime", "CompleteTime", "CloseTime", "Vouchers", "OrderReceiveAddressInfo", "VoucherInfo", "Discount", "OriginalRentAmount", "EarnestAmount", "RemailAmount", "QualityCode", "QualityName", });
+        new java.lang.String[] { "OrderId", "OrderStatus", "CreateTime", "RentStartTime", "RentEndTime", "RentDays", "RentCount", "RentPrice", "PledgePrice", "TransportationPrice", "TotalPrice", "TransportationId", "EvaluateStauts", "ProductId", "MainImageUrl", "Desc", "CategoryName", "PayTime", "PayId", "PayChannel", "DeliveryTime", "ReceiveTime", "RevertTime", "CompleteTime", "CloseTime", "Vouchers", "OrderReceiveAddressInfo", "VoucherInfo", "Discount", "OriginalRentAmount", "EarnestAmount", "RemailAmount", "QualityCode", "QualityName", "OrderType", "ServerTime", "CanPayRemainTime", });
     internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_com_qjoy_basjoo_core_model_pb_OrderVoucherInfo_fieldAccessorTable = new

@@ -395,6 +395,16 @@ message OrderLiteInfo{
    
    //原始租金（优惠前）
    optional double      originalRentAmount = 19;
+
+   //订单类型
+   optional OrderType   orderType = 20;
+
+   //服务端时间
+   optional int64       serverTime = 21;
+
+   //可支付尾款时间
+   optional int64       canPayRemainTime = 22;
+
  
 }
 
@@ -735,6 +745,15 @@ message OrderDetailInfo{
   
   //选择成色的名称
   optional string      qualityName = 34;
+
+   //订单类型
+   optional OrderType   orderType = 35;
+
+   //服务端时间
+   optional int64       serverTime = 36;
+
+   //可支付尾款时间
+   optional int64       canPayRemainTime = 37;
   
   
 
@@ -951,6 +970,19 @@ enum PayStatusQueryType {
   REMAIN = 2;
   
 }
+
+//订单活动类型
+enum OrderType {
+  //普通产品订单
+  NORMAL = 0;
+  //抱团租产品订单
+  GROUP = 1;
+  //抢购产品订单
+  RUSH = 2;
+  //免费（0元租）产品订单
+  FREE = 3;
+}
+
 
 
 

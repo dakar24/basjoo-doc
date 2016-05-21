@@ -46,6 +46,13 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
   PayStatusQueryTypeRemain = 2,
 };
 
+typedef NS_ENUM(SInt32, OrderType) {
+  OrderTypeNormal = 0,
+  OrderTypeGroup = 1,
+  OrderTypeRush = 2,
+  OrderTypeFree = 3,
+};
+
 @interface CommitOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasProductId;
 @property (readonly) BOOL hasCategoryCode;
@@ -285,6 +292,9 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @property (readonly) BOOL hasCategoryName;
 @property (readonly) BOOL hasDiscount;
 @property (readonly) BOOL hasOriginalRentAmount;
+@property (readonly) BOOL hasOrderType;
+@property (readonly) BOOL hasServerTime;
+@property (readonly) BOOL hasCanPayRemainTime;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)SInt32 orderStatus;
 @property (nonatomic)SInt64 createTime;
@@ -304,6 +314,9 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @property (nonatomic,strong) NSString* categoryName;
 @property (nonatomic)Float64 discount;
 @property (nonatomic)Float64 originalRentAmount;
+@property (nonatomic)OrderType orderType;
+@property (nonatomic)SInt64 serverTime;
+@property (nonatomic)SInt64 canPayRemainTime;
 @end
 
 @interface DeleteOrderRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -487,6 +500,9 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @property (readonly) BOOL hasRemailAmount;
 @property (readonly) BOOL hasQualityCode;
 @property (readonly) BOOL hasQualityName;
+@property (readonly) BOOL hasOrderType;
+@property (readonly) BOOL hasServerTime;
+@property (readonly) BOOL hasCanPayRemainTime;
 @property (nonatomic,strong) NSString* orderId;
 @property (nonatomic)SInt32 orderStatus;
 @property (nonatomic)SInt64 createTime;
@@ -521,6 +537,9 @@ typedef NS_ENUM(SInt32, PayStatusQueryType) {
 @property (nonatomic)Float64 remailAmount;
 @property (nonatomic,strong) NSString* qualityCode;
 @property (nonatomic,strong) NSString* qualityName;
+@property (nonatomic)OrderType orderType;
+@property (nonatomic)SInt64 serverTime;
+@property (nonatomic)SInt64 canPayRemainTime;
 @end
 
 @interface OrderVoucherInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>

@@ -13,6 +13,18 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
 }
 
+BOOL OrderTypeIsValidValue(OrderType value) {
+  switch (value) {
+    case OrderTypeNormal:
+    case OrderTypeGroup:
+    case OrderTypeRush:
+    case OrderTypeFree:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
 @implementation CommitOrderRequest
 
 - (instancetype) init {
@@ -2373,6 +2385,9 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
     _categoryName = @"";
     _discount = 0;
     _originalRentAmount = 0;
+    _orderType = OrderTypeNormal;
+    _serverTime = 0L;
+    _canPayRemainTime = 0L;
   }
   return self;
 }
@@ -2433,6 +2448,15 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasOriginalRentAmount) {
     [output writeDouble:19 value:self.originalRentAmount];
+  }
+  if (self.hasOrderType) {
+    [output writeEnum:20 value:self.orderType];
+  }
+  if (self.hasServerTime) {
+    [output writeInt64:21 value:self.serverTime];
+  }
+  if (self.hasCanPayRemainTime) {
+    [output writeInt64:22 value:self.canPayRemainTime];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -2496,6 +2520,15 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasOriginalRentAmount) {
     size_ += computeDoubleSize(19, self.originalRentAmount);
+  }
+  if (self.hasOrderType) {
+    size_ += computeEnumSize(20, self.orderType);
+  }
+  if (self.hasServerTime) {
+    size_ += computeInt64Size(21, self.serverTime);
+  }
+  if (self.hasCanPayRemainTime) {
+    size_ += computeInt64Size(22, self.canPayRemainTime);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -2563,6 +2596,15 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasOriginalRentAmount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"originalRentAmount", [NSNumber numberWithDouble:self.originalRentAmount]];
+  }
+  if (self.hasOrderType) {
+    [output appendFormat:@"%@%@: %d\n", indent, @"orderType", (int)self.orderType];
+  }
+  if (self.hasServerTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"serverTime", [NSNumber numberWithLongLong:self.serverTime]];
+  }
+  if (self.hasCanPayRemainTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"canPayRemainTime", [NSNumber numberWithLongLong:self.canPayRemainTime]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -2642,6 +2684,18 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
 - (void) setOriginalRentAmount:(Float64) value {
   _hasOriginalRentAmount = YES;
   _originalRentAmount = value;
+}
+- (void) setOrderType:(OrderType) value {
+  _hasOrderType = YES;
+  _orderType = value;
+}
+- (void) setServerTime:(SInt64) value {
+  _hasServerTime = YES;
+  _serverTime = value;
+}
+- (void) setCanPayRemainTime:(SInt64) value {
+  _hasCanPayRemainTime = YES;
+  _canPayRemainTime = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -2732,6 +2786,23 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
       }
       case 153: {
         [self setOriginalRentAmount:[input readDouble]];
+        break;
+      }
+      case 160: {
+        OrderType value = (OrderType)[input readEnum];
+        if (OrderTypeIsValidValue(value)) {
+          [self setOrderType:value];
+        } else {
+          [unknownFields_ mergeVarintField:20 value:value];
+        }
+        break;
+      }
+      case 168: {
+        [self setServerTime:[input readInt64]];
+        break;
+      }
+      case 176: {
+        [self setCanPayRemainTime:[input readInt64]];
         break;
       }
     }
@@ -4485,6 +4556,9 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
     _remailAmount = 0;
     _qualityCode = @"";
     _qualityName = @"";
+    _orderType = OrderTypeNormal;
+    _serverTime = 0L;
+    _canPayRemainTime = 0L;
   }
   return self;
 }
@@ -4590,6 +4664,15 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasQualityName) {
     [output writeString:34 value:self.qualityName];
+  }
+  if (self.hasOrderType) {
+    [output writeEnum:35 value:self.orderType];
+  }
+  if (self.hasServerTime) {
+    [output writeInt64:36 value:self.serverTime];
+  }
+  if (self.hasCanPayRemainTime) {
+    [output writeInt64:37 value:self.canPayRemainTime];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -4704,6 +4787,15 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasQualityName) {
     size_ += computeStringSize(34, self.qualityName);
+  }
+  if (self.hasOrderType) {
+    size_ += computeEnumSize(35, self.orderType);
+  }
+  if (self.hasServerTime) {
+    size_ += computeInt64Size(36, self.serverTime);
+  }
+  if (self.hasCanPayRemainTime) {
+    size_ += computeInt64Size(37, self.canPayRemainTime);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -4822,6 +4914,15 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
   }
   if (self.hasQualityName) {
     [output appendFormat:@"%@%@: %@\n", indent, @"qualityName", self.qualityName];
+  }
+  if (self.hasOrderType) {
+    [output appendFormat:@"%@%@: %d\n", indent, @"orderType", (int)self.orderType];
+  }
+  if (self.hasServerTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"serverTime", [NSNumber numberWithLongLong:self.serverTime]];
+  }
+  if (self.hasCanPayRemainTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"canPayRemainTime", [NSNumber numberWithLongLong:self.canPayRemainTime]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -4971,6 +5072,18 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
 - (void) setQualityName:(NSString*) value {
   _hasQualityName = YES;
   _qualityName = value;
+}
+- (void) setOrderType:(OrderType) value {
+  _hasOrderType = YES;
+  _orderType = value;
+}
+- (void) setServerTime:(SInt64) value {
+  _hasServerTime = YES;
+  _serverTime = value;
+}
+- (void) setCanPayRemainTime:(SInt64) value {
+  _hasCanPayRemainTime = YES;
+  _canPayRemainTime = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -5125,6 +5238,23 @@ BOOL PayStatusQueryTypeIsValidValue(PayStatusQueryType value) {
       }
       case 274: {
         [self setQualityName:[input readString]];
+        break;
+      }
+      case 280: {
+        OrderType value = (OrderType)[input readEnum];
+        if (OrderTypeIsValidValue(value)) {
+          [self setOrderType:value];
+        } else {
+          [unknownFields_ mergeVarintField:35 value:value];
+        }
+        break;
+      }
+      case 288: {
+        [self setServerTime:[input readInt64]];
+        break;
+      }
+      case 296: {
+        [self setCanPayRemainTime:[input readInt64]];
         break;
       }
     }

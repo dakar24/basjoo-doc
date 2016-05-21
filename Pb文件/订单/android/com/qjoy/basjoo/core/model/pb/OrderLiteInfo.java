@@ -7,6 +7,7 @@ import com.squareup.wire.ProtoField;
 
 import static com.squareup.wire.Message.Datatype.BOOL;
 import static com.squareup.wire.Message.Datatype.DOUBLE;
+import static com.squareup.wire.Message.Datatype.ENUM;
 import static com.squareup.wire.Message.Datatype.INT32;
 import static com.squareup.wire.Message.Datatype.INT64;
 import static com.squareup.wire.Message.Datatype.STRING;
@@ -36,6 +37,9 @@ public final class OrderLiteInfo extends Message {
   public static final int TAG_CATEGORYNAME = 17;
   public static final int TAG_DISCOUNT = 18;
   public static final int TAG_ORIGINALRENTAMOUNT = 19;
+  public static final int TAG_ORDERTYPE = 20;
+  public static final int TAG_SERVERTIME = 21;
+  public static final int TAG_CANPAYREMAINTIME = 22;
 
   public static final String DEFAULT_ORDERID = "";
   public static final Integer DEFAULT_ORDERSTATUS = 0;
@@ -56,6 +60,9 @@ public final class OrderLiteInfo extends Message {
   public static final String DEFAULT_CATEGORYNAME = "";
   public static final Double DEFAULT_DISCOUNT = 0D;
   public static final Double DEFAULT_ORIGINALRENTAMOUNT = 0D;
+  public static final OrderType DEFAULT_ORDERTYPE = OrderType.NORMAL;
+  public static final Long DEFAULT_SERVERTIME = 0L;
+  public static final Long DEFAULT_CANPAYREMAINTIME = 0L;
 
   /**
    * 订单Id
@@ -171,6 +178,24 @@ public final class OrderLiteInfo extends Message {
   @ProtoField(tag = 19, type = DOUBLE)
   public Double originalRentAmount;
 
+  /**
+   * 订单类型
+   */
+  @ProtoField(tag = 20, type = ENUM)
+  public OrderType orderType;
+
+  /**
+   * 服务端时间
+   */
+  @ProtoField(tag = 21, type = INT64)
+  public Long serverTime;
+
+  /**
+   * 可支付尾款时间
+   */
+  @ProtoField(tag = 22, type = INT64)
+  public Long canPayRemainTime;
+
   public OrderLiteInfo(OrderLiteInfo message) {
     super(message);
     if (message == null) return;
@@ -193,6 +218,9 @@ public final class OrderLiteInfo extends Message {
     this.categoryName = message.categoryName;
     this.discount = message.discount;
     this.originalRentAmount = message.originalRentAmount;
+    this.orderType = message.orderType;
+    this.serverTime = message.serverTime;
+    this.canPayRemainTime = message.canPayRemainTime;
   }
 
   public OrderLiteInfo() {
@@ -257,6 +285,15 @@ public final class OrderLiteInfo extends Message {
         case TAG_ORIGINALRENTAMOUNT:
         this.originalRentAmount = (Double)value;
         break;
+        case TAG_ORDERTYPE:
+        this.orderType = (OrderType)value;
+        break;
+        case TAG_SERVERTIME:
+        this.serverTime = (Long)value;
+        break;
+        case TAG_CANPAYREMAINTIME:
+        this.canPayRemainTime = (Long)value;
+        break;
         default: break;
         };
     return this;
@@ -285,7 +322,10 @@ public final class OrderLiteInfo extends Message {
         && equals(desc, o.desc)
         && equals(categoryName, o.categoryName)
         && equals(discount, o.discount)
-        && equals(originalRentAmount, o.originalRentAmount);
+        && equals(originalRentAmount, o.originalRentAmount)
+        && equals(orderType, o.orderType)
+        && equals(serverTime, o.serverTime)
+        && equals(canPayRemainTime, o.canPayRemainTime);
   }
 
   @Override
@@ -311,6 +351,9 @@ public final class OrderLiteInfo extends Message {
       result = result * 37 + (categoryName != null ? categoryName.hashCode() : 0);
       result = result * 37 + (discount != null ? discount.hashCode() : 0);
       result = result * 37 + (originalRentAmount != null ? originalRentAmount.hashCode() : 0);
+      result = result * 37 + (orderType != null ? orderType.hashCode() : 0);
+      result = result * 37 + (serverTime != null ? serverTime.hashCode() : 0);
+      result = result * 37 + (canPayRemainTime != null ? canPayRemainTime.hashCode() : 0);
       hashCode = result;
     }
     return result;
