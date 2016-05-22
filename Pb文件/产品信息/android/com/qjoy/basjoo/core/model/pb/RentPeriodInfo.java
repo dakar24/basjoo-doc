@@ -9,7 +9,7 @@ import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 抱团租期信息
+ * 租期信息
  */
 public final class RentPeriodInfo extends Message {
 
@@ -22,7 +22,7 @@ public final class RentPeriodInfo extends Message {
   public static final String DEFAULT_RENTPERIODNAME = "";
 
   /**
-   * 租金编码
+   * 租期编码
    */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String rentCode;

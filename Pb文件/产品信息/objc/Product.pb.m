@@ -1047,6 +1047,9 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   [self.rentAmountinfo enumerateObjectsUsingBlock:^(RentAmountinfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:32 value:element];
   }];
+  [self.categoryQualityInfos enumerateObjectsUsingBlock:^(CategoryQualityInfo *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:33 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -1160,6 +1163,9 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   }
   [self.rentAmountinfo enumerateObjectsUsingBlock:^(RentAmountinfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(32, element);
+  }];
+  [self.categoryQualityInfos enumerateObjectsUsingBlock:^(CategoryQualityInfo *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(33, element);
   }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1284,6 +1290,12 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   }
   [self.rentAmountinfo enumerateObjectsUsingBlock:^(RentAmountinfo *element, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@ {\n", indent, @"rentAmountinfo"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
+  [self.categoryQualityInfos enumerateObjectsUsingBlock:^(CategoryQualityInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"categoryQualityInfos"];
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
@@ -1464,6 +1476,15 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   }
   [_rentAmountinfo addObject:value];
 }
+- (void)setCategoryQualityInfosArray:(NSArray *)array {
+  _categoryQualityInfos = [[NSMutableArray alloc]initWithArray:array];
+}
+- (void)addCategoryQualityInfos:(CategoryQualityInfo*)value {
+  if (_categoryQualityInfos == nil) {
+    _categoryQualityInfos = [[NSMutableArray alloc]init];
+  }
+  [_categoryQualityInfos addObject:value];
+}
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
@@ -1624,6 +1645,12 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
         RentAmountinfo* sub = [[RentAmountinfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addRentAmountinfo:sub];
+        break;
+      }
+      case 266: {
+        CategoryQualityInfo* sub = [[CategoryQualityInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self addCategoryQualityInfos:sub];
         break;
       }
     }

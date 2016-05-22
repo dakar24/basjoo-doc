@@ -168,6 +168,7 @@ typedef NS_ENUM(SInt32, ProductPromoType) {
 @property (nonatomic)SInt64 serverTime;
 @property (nonatomic)Float64 discount;
 @property (nonatomic,strong) NSMutableArray * rentAmountinfo;
+@property (nonatomic,strong) NSMutableArray * categoryQualityInfos;
 @end
 
 @interface CategoryInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>

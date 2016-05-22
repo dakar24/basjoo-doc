@@ -234,6 +234,9 @@ message ProductDetailInfo {
    
    //租金信息
    repeated RentAmountinfo         rentAmountinfo = 32;
+
+   //库存，押金信息
+   repeated CategoryQualityInfo    categoryQualityInfos = 33;
    
 }
 
@@ -281,10 +284,10 @@ message CategoryQualityInfo{
 
 
 
-//抱团租期信息
+//租期信息
 message RentPeriodInfo {  
 
- //租金编码
+ //租期编码
  required string                 rentCode = 1; 
  
  //周期，单位：天

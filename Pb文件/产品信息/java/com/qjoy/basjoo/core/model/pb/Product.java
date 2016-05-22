@@ -8636,6 +8636,50 @@ public final class Product {
      */
     com.qjoy.basjoo.core.model.pb.Product.RentAmountinfoOrBuilder getRentAmountinfoOrBuilder(
         int index);
+
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo> 
+        getCategoryQualityInfosList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo getCategoryQualityInfos(int index);
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    int getCategoryQualityInfosCount();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfoOrBuilder> 
+        getCategoryQualityInfosOrBuilderList();
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfoOrBuilder getCategoryQualityInfosOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.ProductDetailInfo}
@@ -8676,6 +8720,7 @@ public final class Product {
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      int mutable_bitField1_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8896,6 +8941,14 @@ public final class Product {
               rentAmountinfo_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.RentAmountinfo.PARSER, extensionRegistry));
               break;
             }
+            case 266: {
+              if (!((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
+                categoryQualityInfos_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo>();
+                mutable_bitField1_ |= 0x00000001;
+              }
+              categoryQualityInfos_.add(input.readMessage(com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.PARSER, extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8930,6 +8983,9 @@ public final class Product {
         }
         if (((mutable_bitField0_ & 0x80000000) == 0x80000000)) {
           rentAmountinfo_ = java.util.Collections.unmodifiableList(rentAmountinfo_);
+        }
+        if (((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
+          categoryQualityInfos_ = java.util.Collections.unmodifiableList(categoryQualityInfos_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -10215,6 +10271,61 @@ public final class Product {
       return rentAmountinfo_.get(index);
     }
 
+    public static final int CATEGORYQUALITYINFOS_FIELD_NUMBER = 33;
+    private java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo> categoryQualityInfos_;
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    public java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo> getCategoryQualityInfosList() {
+      return categoryQualityInfos_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfoOrBuilder> 
+        getCategoryQualityInfosOrBuilderList() {
+      return categoryQualityInfos_;
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    public int getCategoryQualityInfosCount() {
+      return categoryQualityInfos_.size();
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo getCategoryQualityInfos(int index) {
+      return categoryQualityInfos_.get(index);
+    }
+    /**
+     * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+     *
+     * <pre>
+     *库存，押金信息
+     * </pre>
+     */
+    public com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfoOrBuilder getCategoryQualityInfosOrBuilder(
+        int index) {
+      return categoryQualityInfos_.get(index);
+    }
+
     private void initFields() {
       productId_ = "";
       productType_ = "";
@@ -10248,6 +10359,7 @@ public final class Product {
       serverTime_ = 0L;
       discount_ = 0D;
       rentAmountinfo_ = java.util.Collections.emptyList();
+      categoryQualityInfos_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -10313,6 +10425,12 @@ public final class Product {
       }
       for (int i = 0; i < getRentAmountinfoCount(); i++) {
         if (!getRentAmountinfo(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getCategoryQualityInfosCount(); i++) {
+        if (!getCategoryQualityInfos(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -10419,6 +10537,9 @@ public final class Product {
       }
       for (int i = 0; i < rentAmountinfo_.size(); i++) {
         output.writeMessage(32, rentAmountinfo_.get(i));
+      }
+      for (int i = 0; i < categoryQualityInfos_.size(); i++) {
+        output.writeMessage(33, categoryQualityInfos_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -10567,6 +10688,10 @@ public final class Product {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(32, rentAmountinfo_.get(i));
       }
+      for (int i = 0; i < categoryQualityInfos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(33, categoryQualityInfos_.get(i));
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -10687,6 +10812,7 @@ public final class Product {
           getProductEvaluateInfoFieldBuilder();
           getQualityInfoFieldBuilder();
           getRentAmountinfoFieldBuilder();
+          getCategoryQualityInfosFieldBuilder();
         }
       }
       private static Builder create() {
@@ -10787,6 +10913,12 @@ public final class Product {
         } else {
           rentAmountinfoBuilder_.clear();
         }
+        if (categoryQualityInfosBuilder_ == null) {
+          categoryQualityInfos_ = java.util.Collections.emptyList();
+          bitField1_ = (bitField1_ & ~0x00000001);
+        } else {
+          categoryQualityInfosBuilder_.clear();
+        }
         return this;
       }
 
@@ -10814,6 +10946,7 @@ public final class Product {
       public com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo buildPartial() {
         com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo result = new com.qjoy.basjoo.core.model.pb.Product.ProductDetailInfo(this);
         int from_bitField0_ = bitField0_;
+        int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
@@ -10979,6 +11112,15 @@ public final class Product {
           result.rentAmountinfo_ = rentAmountinfo_;
         } else {
           result.rentAmountinfo_ = rentAmountinfoBuilder_.build();
+        }
+        if (categoryQualityInfosBuilder_ == null) {
+          if (((bitField1_ & 0x00000001) == 0x00000001)) {
+            categoryQualityInfos_ = java.util.Collections.unmodifiableList(categoryQualityInfos_);
+            bitField1_ = (bitField1_ & ~0x00000001);
+          }
+          result.categoryQualityInfos_ = categoryQualityInfos_;
+        } else {
+          result.categoryQualityInfos_ = categoryQualityInfosBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -11283,6 +11425,32 @@ public final class Product {
             }
           }
         }
+        if (categoryQualityInfosBuilder_ == null) {
+          if (!other.categoryQualityInfos_.isEmpty()) {
+            if (categoryQualityInfos_.isEmpty()) {
+              categoryQualityInfos_ = other.categoryQualityInfos_;
+              bitField1_ = (bitField1_ & ~0x00000001);
+            } else {
+              ensureCategoryQualityInfosIsMutable();
+              categoryQualityInfos_.addAll(other.categoryQualityInfos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.categoryQualityInfos_.isEmpty()) {
+            if (categoryQualityInfosBuilder_.isEmpty()) {
+              categoryQualityInfosBuilder_.dispose();
+              categoryQualityInfosBuilder_ = null;
+              categoryQualityInfos_ = other.categoryQualityInfos_;
+              bitField1_ = (bitField1_ & ~0x00000001);
+              categoryQualityInfosBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getCategoryQualityInfosFieldBuilder() : null;
+            } else {
+              categoryQualityInfosBuilder_.addAllMessages(other.categoryQualityInfos_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -11350,6 +11518,12 @@ public final class Product {
             return false;
           }
         }
+        for (int i = 0; i < getCategoryQualityInfosCount(); i++) {
+          if (!getCategoryQualityInfos(i).isInitialized()) {
+            
+            return false;
+          }
+        }
         return true;
       }
 
@@ -11371,6 +11545,7 @@ public final class Product {
         return this;
       }
       private int bitField0_;
+      private int bitField1_;
 
       private java.lang.Object productId_ = "";
       /**
@@ -15337,6 +15512,318 @@ public final class Product {
         return rentAmountinfoBuilder_;
       }
 
+      private java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo> categoryQualityInfos_ =
+        java.util.Collections.emptyList();
+      private void ensureCategoryQualityInfosIsMutable() {
+        if (!((bitField1_ & 0x00000001) == 0x00000001)) {
+          categoryQualityInfos_ = new java.util.ArrayList<com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo>(categoryQualityInfos_);
+          bitField1_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfoOrBuilder> categoryQualityInfosBuilder_;
+
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo> getCategoryQualityInfosList() {
+        if (categoryQualityInfosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(categoryQualityInfos_);
+        } else {
+          return categoryQualityInfosBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public int getCategoryQualityInfosCount() {
+        if (categoryQualityInfosBuilder_ == null) {
+          return categoryQualityInfos_.size();
+        } else {
+          return categoryQualityInfosBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo getCategoryQualityInfos(int index) {
+        if (categoryQualityInfosBuilder_ == null) {
+          return categoryQualityInfos_.get(index);
+        } else {
+          return categoryQualityInfosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public Builder setCategoryQualityInfos(
+          int index, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo value) {
+        if (categoryQualityInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCategoryQualityInfosIsMutable();
+          categoryQualityInfos_.set(index, value);
+          onChanged();
+        } else {
+          categoryQualityInfosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public Builder setCategoryQualityInfos(
+          int index, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder builderForValue) {
+        if (categoryQualityInfosBuilder_ == null) {
+          ensureCategoryQualityInfosIsMutable();
+          categoryQualityInfos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          categoryQualityInfosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public Builder addCategoryQualityInfos(com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo value) {
+        if (categoryQualityInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCategoryQualityInfosIsMutable();
+          categoryQualityInfos_.add(value);
+          onChanged();
+        } else {
+          categoryQualityInfosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public Builder addCategoryQualityInfos(
+          int index, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo value) {
+        if (categoryQualityInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCategoryQualityInfosIsMutable();
+          categoryQualityInfos_.add(index, value);
+          onChanged();
+        } else {
+          categoryQualityInfosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public Builder addCategoryQualityInfos(
+          com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder builderForValue) {
+        if (categoryQualityInfosBuilder_ == null) {
+          ensureCategoryQualityInfosIsMutable();
+          categoryQualityInfos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          categoryQualityInfosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public Builder addCategoryQualityInfos(
+          int index, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder builderForValue) {
+        if (categoryQualityInfosBuilder_ == null) {
+          ensureCategoryQualityInfosIsMutable();
+          categoryQualityInfos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          categoryQualityInfosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public Builder addAllCategoryQualityInfos(
+          java.lang.Iterable<? extends com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo> values) {
+        if (categoryQualityInfosBuilder_ == null) {
+          ensureCategoryQualityInfosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, categoryQualityInfos_);
+          onChanged();
+        } else {
+          categoryQualityInfosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public Builder clearCategoryQualityInfos() {
+        if (categoryQualityInfosBuilder_ == null) {
+          categoryQualityInfos_ = java.util.Collections.emptyList();
+          bitField1_ = (bitField1_ & ~0x00000001);
+          onChanged();
+        } else {
+          categoryQualityInfosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public Builder removeCategoryQualityInfos(int index) {
+        if (categoryQualityInfosBuilder_ == null) {
+          ensureCategoryQualityInfosIsMutable();
+          categoryQualityInfos_.remove(index);
+          onChanged();
+        } else {
+          categoryQualityInfosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder getCategoryQualityInfosBuilder(
+          int index) {
+        return getCategoryQualityInfosFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfoOrBuilder getCategoryQualityInfosOrBuilder(
+          int index) {
+        if (categoryQualityInfosBuilder_ == null) {
+          return categoryQualityInfos_.get(index);  } else {
+          return categoryQualityInfosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public java.util.List<? extends com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfoOrBuilder> 
+           getCategoryQualityInfosOrBuilderList() {
+        if (categoryQualityInfosBuilder_ != null) {
+          return categoryQualityInfosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(categoryQualityInfos_);
+        }
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder addCategoryQualityInfosBuilder() {
+        return getCategoryQualityInfosFieldBuilder().addBuilder(
+            com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder addCategoryQualityInfosBuilder(
+          int index) {
+        return getCategoryQualityInfosFieldBuilder().addBuilder(
+            index, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.qjoy.basjoo.core.model.pb.CategoryQualityInfo categoryQualityInfos = 33;</code>
+       *
+       * <pre>
+       *库存，押金信息
+       * </pre>
+       */
+      public java.util.List<com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder> 
+           getCategoryQualityInfosBuilderList() {
+        return getCategoryQualityInfosFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfoOrBuilder> 
+          getCategoryQualityInfosFieldBuilder() {
+        if (categoryQualityInfosBuilder_ == null) {
+          categoryQualityInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfo.Builder, com.qjoy.basjoo.core.model.pb.Product.CategoryQualityInfoOrBuilder>(
+                  categoryQualityInfos_,
+                  ((bitField1_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          categoryQualityInfos_ = null;
+        }
+        return categoryQualityInfosBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:com.qjoy.basjoo.core.model.pb.ProductDetailInfo)
     }
 
@@ -17843,7 +18330,7 @@ public final class Product {
      * <code>required string rentCode = 1;</code>
      *
      * <pre>
-     *租金编码
+     *租期编码
      * </pre>
      */
     boolean hasRentCode();
@@ -17851,7 +18338,7 @@ public final class Product {
      * <code>required string rentCode = 1;</code>
      *
      * <pre>
-     *租金编码
+     *租期编码
      * </pre>
      */
     java.lang.String getRentCode();
@@ -17859,7 +18346,7 @@ public final class Product {
      * <code>required string rentCode = 1;</code>
      *
      * <pre>
-     *租金编码
+     *租期编码
      * </pre>
      */
     com.google.protobuf.ByteString
@@ -17921,7 +18408,7 @@ public final class Product {
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.RentPeriodInfo}
    *
    * <pre>
-   *抱团租期信息
+   *租期信息
    * </pre>
    */
   public static final class RentPeriodInfo extends
@@ -18037,7 +18524,7 @@ public final class Product {
      * <code>required string rentCode = 1;</code>
      *
      * <pre>
-     *租金编码
+     *租期编码
      * </pre>
      */
     public boolean hasRentCode() {
@@ -18047,7 +18534,7 @@ public final class Product {
      * <code>required string rentCode = 1;</code>
      *
      * <pre>
-     *租金编码
+     *租期编码
      * </pre>
      */
     public java.lang.String getRentCode() {
@@ -18068,7 +18555,7 @@ public final class Product {
      * <code>required string rentCode = 1;</code>
      *
      * <pre>
-     *租金编码
+     *租期编码
      * </pre>
      */
     public com.google.protobuf.ByteString
@@ -18335,7 +18822,7 @@ public final class Product {
      * Protobuf type {@code com.qjoy.basjoo.core.model.pb.RentPeriodInfo}
      *
      * <pre>
-     *抱团租期信息
+     *租期信息
      * </pre>
      */
     public static final class Builder extends
@@ -18495,7 +18982,7 @@ public final class Product {
        * <code>required string rentCode = 1;</code>
        *
        * <pre>
-       *租金编码
+       *租期编码
        * </pre>
        */
       public boolean hasRentCode() {
@@ -18505,7 +18992,7 @@ public final class Product {
        * <code>required string rentCode = 1;</code>
        *
        * <pre>
-       *租金编码
+       *租期编码
        * </pre>
        */
       public java.lang.String getRentCode() {
@@ -18526,7 +19013,7 @@ public final class Product {
        * <code>required string rentCode = 1;</code>
        *
        * <pre>
-       *租金编码
+       *租期编码
        * </pre>
        */
       public com.google.protobuf.ByteString
@@ -18546,7 +19033,7 @@ public final class Product {
        * <code>required string rentCode = 1;</code>
        *
        * <pre>
-       *租金编码
+       *租期编码
        * </pre>
        */
       public Builder setRentCode(
@@ -18563,7 +19050,7 @@ public final class Product {
        * <code>required string rentCode = 1;</code>
        *
        * <pre>
-       *租金编码
+       *租期编码
        * </pre>
        */
       public Builder clearRentCode() {
@@ -18576,7 +19063,7 @@ public final class Product {
        * <code>required string rentCode = 1;</code>
        *
        * <pre>
-       *租金编码
+       *租期编码
        * </pre>
        */
       public Builder setRentCodeBytes(
@@ -26941,7 +27428,7 @@ public final class Product {
       "\t\"\211\001\n\023ProductDetailResult\022\022\n\nresultCode\030" +
       "\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022K\n\021productDetai" +
       "lInfo\030\003 \001(\01320.com.qjoy.basjoo.core.model" +
-      ".pb.ProductDetailInfo\"\265\010\n\021ProductDetailI" +
+      ".pb.ProductDetailInfo\"\207\t\n\021ProductDetailI" +
       "nfo\022\021\n\tproductId\030\001 \002(\t\022\023\n\013productType\030\002 " +
       "\002(\t\022\r\n\005brand\030\003 \002(\t\022\020\n\010imageUrl\030\004 \003(\t\022\014\n\004" +
       "desc\030\005 \002(\t\022\022\n\nageBracket\030\006 \001(\t\022\022\n\nlowest" +
@@ -26968,40 +27455,42 @@ public final class Product {
       "Time\030\034 \001(\003\022\024\n\014validEndTime\030\035 \001(\003\022\022\n\nserv",
       "erTime\030\036 \001(\003\022\020\n\010discount\030\037 \001(\001\022E\n\016rentAm" +
       "ountinfo\030  \003(\0132-.com.qjoy.basjoo.core.mo" +
-      "del.pb.RentAmountinfo\"R\n\014CategoryInfo\022\024\n" +
-      "\014categoryCode\030\001 \002(\t\022\024\n\014categoryName\030\002 \002(" +
-      "\t\022\026\n\016categoryImgUrl\030\003 \001(\t\"7\n\013QualityInfo" +
-      "\022\023\n\013qualityCode\030\001 \002(\t\022\023\n\013qualityName\030\002 \002" +
-      "(\t\"O\n\023CategoryQualityInfo\022\017\n\007codeKey\030\001 \002" +
-      "(\t\022\022\n\nstockCount\030\002 \002(\005\022\023\n\013pledgePrice\030\003 " +
-      "\002(\001\"N\n\016RentPeriodInfo\022\020\n\010rentCode\030\001 \002(\t\022" +
-      "\022\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030\003 ",
-      "\002(\t\"\214\001\n\016RentAmountinfo\022\017\n\007codeKey\030\001 \002(\t\022" +
-      "\030\n\020rentAmountPerDay\030\002 \002(\001\022\032\n\022rentAmountP" +
-      "erMonth\030\003 \001(\001\022\027\n\017totalRentAmount\030\004 \002(\001\022\032" +
-      "\n\022originalRentAmount\030\005 \002(\001\"D\n\020ProductBas" +
-      "eParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030\002 \002(\t\022\021\n" +
-      "\tshowValue\030\003 \002(\t\"\233\002\n\023ProductEvaluateInfo" +
-      "\022\014\n\004time\030\001 \002(\003\022\016\n\006userId\030\002 \002(\t\022\020\n\010userNa" +
-      "me\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \002(\t\022\021\n\tuserLev" +
-      "el\030\005 \002(\005\022\030\n\020rentCategoryName\030\006 \002(\t\022\017\n\007co" +
-      "ntent\030\007 \002(\t\022\021\n\timageUrls\030\010 \003(\t\022\r\n\005level\030",
-      "\t \002(\005\022\022\n\nevaluateId\030\n \002(\t\022K\n\021evaluateRep" +
-      "lyInfo\030\013 \003(\01320.com.qjoy.basjoo.core.mode" +
-      "l.pb.EvaluateReplyInfo\"X\n\021EvaluateReplyI" +
-      "nfo\022\017\n\007replyId\030\001 \002(\t\022\017\n\007content\030\002 \002(\t\022\014\n" +
-      "\004time\030\003 \002(\003\022\023\n\013fromMechant\030\004 \002(\010\"\\\n\035GetP" +
-      "roductEvaluateListRequest\022\021\n\tproductId\030\001" +
-      " \002(\t\022\024\n\014evaluateType\030\002 \002(\005\022\022\n\nstartIndex" +
-      "\030\003 \001(\005\"\346\001\n\034GetProductEvaluateListResult\022" +
-      "\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\020" +
-      "\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\022\n\ntot",
-      "alCount\030\005 \002(\003\022\027\n\017totalImageCount\030\006 \002(\003\022O" +
-      "\n\023productEvaluateInfo\030\007 \003(\01322.com.qjoy.b" +
-      "asjoo.core.model.pb.ProductEvaluateInfo*" +
-      "=\n\020ProductPromoType\022\n\n\006NORMAL\020\000\022\t\n\005GROUP" +
-      "\020\001\022\010\n\004RUSH\020\002\022\010\n\004FREE\020\003B\037\n\035com.qjoy.basjo" +
-      "o.core.model.pb"
+      "del.pb.RentAmountinfo\022P\n\024categoryQuality" +
+      "Infos\030! \003(\01322.com.qjoy.basjoo.core.model" +
+      ".pb.CategoryQualityInfo\"R\n\014CategoryInfo\022" +
+      "\024\n\014categoryCode\030\001 \002(\t\022\024\n\014categoryName\030\002 " +
+      "\002(\t\022\026\n\016categoryImgUrl\030\003 \001(\t\"7\n\013QualityIn" +
+      "fo\022\023\n\013qualityCode\030\001 \002(\t\022\023\n\013qualityName\030\002" +
+      " \002(\t\"O\n\023CategoryQualityInfo\022\017\n\007codeKey\030\001" +
+      " \002(\t\022\022\n\nstockCount\030\002 \002(\005\022\023\n\013pledgePrice\030",
+      "\003 \002(\001\"N\n\016RentPeriodInfo\022\020\n\010rentCode\030\001 \002(" +
+      "\t\022\022\n\nrentPeriod\030\002 \002(\t\022\026\n\016rentPeriodName\030" +
+      "\003 \002(\t\"\214\001\n\016RentAmountinfo\022\017\n\007codeKey\030\001 \002(" +
+      "\t\022\030\n\020rentAmountPerDay\030\002 \002(\001\022\032\n\022rentAmoun" +
+      "tPerMonth\030\003 \001(\001\022\027\n\017totalRentAmount\030\004 \002(\001" +
+      "\022\032\n\022originalRentAmount\030\005 \002(\001\"D\n\020ProductB" +
+      "aseParam\022\014\n\004code\030\001 \002(\t\022\017\n\007showKey\030\002 \002(\t\022" +
+      "\021\n\tshowValue\030\003 \002(\t\"\233\002\n\023ProductEvaluateIn" +
+      "fo\022\014\n\004time\030\001 \002(\003\022\016\n\006userId\030\002 \002(\t\022\020\n\010user" +
+      "Name\030\003 \002(\t\022\023\n\013headIconUrl\030\004 \002(\t\022\021\n\tuserL",
+      "evel\030\005 \002(\005\022\030\n\020rentCategoryName\030\006 \002(\t\022\017\n\007" +
+      "content\030\007 \002(\t\022\021\n\timageUrls\030\010 \003(\t\022\r\n\005leve" +
+      "l\030\t \002(\005\022\022\n\nevaluateId\030\n \002(\t\022K\n\021evaluateR" +
+      "eplyInfo\030\013 \003(\01320.com.qjoy.basjoo.core.mo" +
+      "del.pb.EvaluateReplyInfo\"X\n\021EvaluateRepl" +
+      "yInfo\022\017\n\007replyId\030\001 \002(\t\022\017\n\007content\030\002 \002(\t\022" +
+      "\014\n\004time\030\003 \002(\003\022\023\n\013fromMechant\030\004 \002(\010\"\\\n\035Ge" +
+      "tProductEvaluateListRequest\022\021\n\tproductId" +
+      "\030\001 \002(\t\022\024\n\014evaluateType\030\002 \002(\005\022\022\n\nstartInd" +
+      "ex\030\003 \001(\005\"\346\001\n\034GetProductEvaluateListResul",
+      "t\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t" +
+      "\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 \002(\010\022\022\n\nt" +
+      "otalCount\030\005 \002(\003\022\027\n\017totalImageCount\030\006 \002(\003" +
+      "\022O\n\023productEvaluateInfo\030\007 \003(\01322.com.qjoy" +
+      ".basjoo.core.model.pb.ProductEvaluateInf" +
+      "o*=\n\020ProductPromoType\022\n\n\006NORMAL\020\000\022\t\n\005GRO" +
+      "UP\020\001\022\010\n\004RUSH\020\002\022\010\n\004FREE\020\003B\037\n\035com.qjoy.bas" +
+      "joo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -27050,7 +27539,7 @@ public final class Product {
     internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_ProductDetailInfo_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "AgeBracket", "LowestRent", "Unit", "RentCount", "MaxAvailable", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "CategoryInfo", "ShortRentPeriod", "LongRentPeriod", "BaseParam", "ImageParamUrls", "EvaluateCount", "ProductEvaluateInfo", "Favorited", "ProductTitle", "BannerImageUrl", "QualityInfo", "ProductPromoType", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "Discount", "RentAmountinfo", });
+        new java.lang.String[] { "ProductId", "ProductType", "Brand", "ImageUrl", "Desc", "AgeBracket", "LowestRent", "Unit", "RentCount", "MaxAvailable", "MarketPrice", "PledgePrice", "TransportationPrice", "Location", "CategoryInfo", "ShortRentPeriod", "LongRentPeriod", "BaseParam", "ImageParamUrls", "EvaluateCount", "ProductEvaluateInfo", "Favorited", "ProductTitle", "BannerImageUrl", "QualityInfo", "ProductPromoType", "ValidStatus", "ValidStartTime", "ValidEndTime", "ServerTime", "Discount", "RentAmountinfo", "CategoryQualityInfos", });
     internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_qjoy_basjoo_core_model_pb_CategoryInfo_fieldAccessorTable = new

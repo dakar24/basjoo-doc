@@ -53,6 +53,7 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_SERVERTIME = 30;
   public static final int TAG_DISCOUNT = 31;
   public static final int TAG_RENTAMOUNTINFO = 32;
+  public static final int TAG_CATEGORYQUALITYINFOS = 33;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -86,6 +87,7 @@ public final class ProductDetailInfo extends Message {
   public static final Long DEFAULT_SERVERTIME = 0L;
   public static final Double DEFAULT_DISCOUNT = 0D;
   public static final List<RentAmountinfo> DEFAULT_RENTAMOUNTINFO = Collections.emptyList();
+  public static final List<CategoryQualityInfo> DEFAULT_CATEGORYQUALITYINFOS = Collections.emptyList();
 
   /**
    * 产品Id
@@ -279,6 +281,12 @@ public final class ProductDetailInfo extends Message {
   @ProtoField(tag = 32, label = REPEATED)
   public List<RentAmountinfo> rentAmountinfo;
 
+  /**
+   * 库存，押金信息
+   */
+  @ProtoField(tag = 33, label = REPEATED)
+  public List<CategoryQualityInfo> categoryQualityInfos;
+
   public ProductDetailInfo(ProductDetailInfo message) {
     super(message);
     if (message == null) return;
@@ -314,6 +322,7 @@ public final class ProductDetailInfo extends Message {
     this.serverTime = message.serverTime;
     this.discount = message.discount;
     this.rentAmountinfo = copyOf(message.rentAmountinfo);
+    this.categoryQualityInfos = copyOf(message.categoryQualityInfos);
   }
 
   public ProductDetailInfo() {
@@ -417,6 +426,9 @@ public final class ProductDetailInfo extends Message {
         case TAG_RENTAMOUNTINFO:
         this.rentAmountinfo = immutableCopyOf((List<RentAmountinfo>)value);
         break;
+        case TAG_CATEGORYQUALITYINFOS:
+        this.categoryQualityInfos = immutableCopyOf((List<CategoryQualityInfo>)value);
+        break;
         default: break;
         };
     return this;
@@ -458,7 +470,8 @@ public final class ProductDetailInfo extends Message {
         && equals(validEndTime, o.validEndTime)
         && equals(serverTime, o.serverTime)
         && equals(discount, o.discount)
-        && equals(rentAmountinfo, o.rentAmountinfo);
+        && equals(rentAmountinfo, o.rentAmountinfo)
+        && equals(categoryQualityInfos, o.categoryQualityInfos);
   }
 
   @Override
@@ -497,6 +510,7 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (serverTime != null ? serverTime.hashCode() : 0);
       result = result * 37 + (discount != null ? discount.hashCode() : 0);
       result = result * 37 + (rentAmountinfo != null ? rentAmountinfo.hashCode() : 1);
+      result = result * 37 + (categoryQualityInfos != null ? categoryQualityInfos.hashCode() : 1);
       hashCode = result;
     }
     return result;
