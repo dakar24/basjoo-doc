@@ -233,7 +233,7 @@ message ProductDetailInfo {
    optional double                 discount = 31;
    
    //租金信息
-   repeated RentAmountinfo         rentAmountinfo = 32;
+   repeated RentAmountInfo         rentAmountInfo = 32;
 
    //库存，押金信息
    repeated CategoryQualityInfo    categoryQualityInfos = 33;
@@ -301,7 +301,7 @@ message RentPeriodInfo {
 
 
 //租金信息，根据categoryCode,qualityCode,rentCode组合条件确定租金的信息
-message RentAmountinfo{
+message RentAmountInfo{
 
    //codeKey （categoryCode_qualityCode_rentCode）
    required string               codeKey = 1; 

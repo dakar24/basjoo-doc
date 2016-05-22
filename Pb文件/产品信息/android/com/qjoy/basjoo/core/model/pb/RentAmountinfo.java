@@ -12,7 +12,7 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 /**
  * 租金信息，根据categoryCode,qualityCode,rentCode组合条件确定租金的信息
  */
-public final class RentAmountinfo extends Message {
+public final class RentAmountInfo extends Message {
 
   public static final int TAG_CODEKEY = 1;
   public static final int TAG_RENTAMOUNTPERDAY = 2;
@@ -56,7 +56,7 @@ public final class RentAmountinfo extends Message {
   @ProtoField(tag = 5, type = DOUBLE, label = REQUIRED)
   public Double originalRentAmount;
 
-  public RentAmountinfo(RentAmountinfo message) {
+  public RentAmountInfo(RentAmountInfo message) {
     super(message);
     if (message == null) return;
     this.codeKey = message.codeKey;
@@ -66,10 +66,10 @@ public final class RentAmountinfo extends Message {
     this.originalRentAmount = message.originalRentAmount;
   }
 
-  public RentAmountinfo() {
+  public RentAmountInfo() {
   }
 
-  public RentAmountinfo fillTagValue(int tag, Object value) {
+  public RentAmountInfo fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_CODEKEY:
         this.codeKey = (String)value;
@@ -94,8 +94,8 @@ public final class RentAmountinfo extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof RentAmountinfo)) return false;
-    RentAmountinfo o = (RentAmountinfo) other;
+    if (!(other instanceof RentAmountInfo)) return false;
+    RentAmountInfo o = (RentAmountInfo) other;
     return equals(codeKey, o.codeKey)
         && equals(rentAmountPerDay, o.rentAmountPerDay)
         && equals(rentAmountPerMonth, o.rentAmountPerMonth)

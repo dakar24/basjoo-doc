@@ -14,7 +14,7 @@
 @class ProductEvaluateInfo;
 @class ProductLiteInfo;
 @class QualityInfo;
-@class RentAmountinfo;
+@class RentAmountInfo;
 @class RentPeriodInfo;
 @class SearchProductListRequest;
 @class SearchProductListResult;
@@ -167,7 +167,7 @@ typedef NS_ENUM(SInt32, ProductPromoType) {
 @property (nonatomic)SInt64 validEndTime;
 @property (nonatomic)SInt64 serverTime;
 @property (nonatomic)Float64 discount;
-@property (nonatomic,strong) NSMutableArray * rentAmountinfo;
+@property (nonatomic,strong) NSMutableArray * rentAmountInfo;
 @property (nonatomic,strong) NSMutableArray * categoryQualityInfos;
 @end
 
@@ -205,7 +205,7 @@ typedef NS_ENUM(SInt32, ProductPromoType) {
 @property (nonatomic,strong) NSString* rentPeriodName;
 @end
 
-@interface RentAmountinfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@interface RentAmountInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasCodeKey;
 @property (readonly) BOOL hasRentAmountPerDay;
 @property (readonly) BOOL hasRentAmountPerMonth;

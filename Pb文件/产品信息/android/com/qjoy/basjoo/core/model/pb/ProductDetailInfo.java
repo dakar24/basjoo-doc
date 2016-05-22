@@ -86,7 +86,7 @@ public final class ProductDetailInfo extends Message {
   public static final Long DEFAULT_VALIDENDTIME = 0L;
   public static final Long DEFAULT_SERVERTIME = 0L;
   public static final Double DEFAULT_DISCOUNT = 0D;
-  public static final List<RentAmountinfo> DEFAULT_RENTAMOUNTINFO = Collections.emptyList();
+  public static final List<RentAmountInfo> DEFAULT_RENTAMOUNTINFO = Collections.emptyList();
   public static final List<CategoryQualityInfo> DEFAULT_CATEGORYQUALITYINFOS = Collections.emptyList();
 
   /**
@@ -279,7 +279,7 @@ public final class ProductDetailInfo extends Message {
    * 租金信息
    */
   @ProtoField(tag = 32, label = REPEATED)
-  public List<RentAmountinfo> rentAmountinfo;
+  public List<RentAmountInfo> rentAmountInfo;
 
   /**
    * 库存，押金信息
@@ -321,7 +321,7 @@ public final class ProductDetailInfo extends Message {
     this.validEndTime = message.validEndTime;
     this.serverTime = message.serverTime;
     this.discount = message.discount;
-    this.rentAmountinfo = copyOf(message.rentAmountinfo);
+    this.rentAmountInfo = copyOf(message.rentAmountInfo);
     this.categoryQualityInfos = copyOf(message.categoryQualityInfos);
   }
 
@@ -424,7 +424,7 @@ public final class ProductDetailInfo extends Message {
         this.discount = (Double)value;
         break;
         case TAG_RENTAMOUNTINFO:
-        this.rentAmountinfo = immutableCopyOf((List<RentAmountinfo>)value);
+        this.rentAmountInfo = immutableCopyOf((List<RentAmountInfo>)value);
         break;
         case TAG_CATEGORYQUALITYINFOS:
         this.categoryQualityInfos = immutableCopyOf((List<CategoryQualityInfo>)value);
@@ -470,7 +470,7 @@ public final class ProductDetailInfo extends Message {
         && equals(validEndTime, o.validEndTime)
         && equals(serverTime, o.serverTime)
         && equals(discount, o.discount)
-        && equals(rentAmountinfo, o.rentAmountinfo)
+        && equals(rentAmountInfo, o.rentAmountInfo)
         && equals(categoryQualityInfos, o.categoryQualityInfos);
   }
 
@@ -509,7 +509,7 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (validEndTime != null ? validEndTime.hashCode() : 0);
       result = result * 37 + (serverTime != null ? serverTime.hashCode() : 0);
       result = result * 37 + (discount != null ? discount.hashCode() : 0);
-      result = result * 37 + (rentAmountinfo != null ? rentAmountinfo.hashCode() : 1);
+      result = result * 37 + (rentAmountInfo != null ? rentAmountInfo.hashCode() : 1);
       result = result * 37 + (categoryQualityInfos != null ? categoryQualityInfos.hashCode() : 1);
       hashCode = result;
     }

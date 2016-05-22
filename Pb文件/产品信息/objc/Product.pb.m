@@ -1044,7 +1044,7 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   if (self.hasDiscount) {
     [output writeDouble:31 value:self.discount];
   }
-  [self.rentAmountinfo enumerateObjectsUsingBlock:^(RentAmountinfo *element, NSUInteger idx, BOOL *stop) {
+  [self.rentAmountInfo enumerateObjectsUsingBlock:^(RentAmountInfo *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:32 value:element];
   }];
   [self.categoryQualityInfos enumerateObjectsUsingBlock:^(CategoryQualityInfo *element, NSUInteger idx, BOOL *stop) {
@@ -1161,7 +1161,7 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   if (self.hasDiscount) {
     size_ += computeDoubleSize(31, self.discount);
   }
-  [self.rentAmountinfo enumerateObjectsUsingBlock:^(RentAmountinfo *element, NSUInteger idx, BOOL *stop) {
+  [self.rentAmountInfo enumerateObjectsUsingBlock:^(RentAmountInfo *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(32, element);
   }];
   [self.categoryQualityInfos enumerateObjectsUsingBlock:^(CategoryQualityInfo *element, NSUInteger idx, BOOL *stop) {
@@ -1288,8 +1288,8 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   if (self.hasDiscount) {
     [output appendFormat:@"%@%@: %@\n", indent, @"discount", [NSNumber numberWithDouble:self.discount]];
   }
-  [self.rentAmountinfo enumerateObjectsUsingBlock:^(RentAmountinfo *element, NSUInteger idx, BOOL *stop) {
-    [output appendFormat:@"%@%@ {\n", indent, @"rentAmountinfo"];
+  [self.rentAmountInfo enumerateObjectsUsingBlock:^(RentAmountInfo *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"rentAmountInfo"];
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
@@ -1467,14 +1467,14 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   _hasDiscount = YES;
   _discount = value;
 }
-- (void)setRentAmountinfoArray:(NSArray *)array {
-  _rentAmountinfo = [[NSMutableArray alloc]initWithArray:array];
+- (void)setRentAmountInfoArray:(NSArray *)array {
+  _rentAmountInfo = [[NSMutableArray alloc]initWithArray:array];
 }
-- (void)addRentAmountinfo:(RentAmountinfo*)value {
-  if (_rentAmountinfo == nil) {
-    _rentAmountinfo = [[NSMutableArray alloc]init];
+- (void)addRentAmountInfo:(RentAmountInfo*)value {
+  if (_rentAmountInfo == nil) {
+    _rentAmountInfo = [[NSMutableArray alloc]init];
   }
-  [_rentAmountinfo addObject:value];
+  [_rentAmountInfo addObject:value];
 }
 - (void)setCategoryQualityInfosArray:(NSArray *)array {
   _categoryQualityInfos = [[NSMutableArray alloc]initWithArray:array];
@@ -1642,9 +1642,9 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
         break;
       }
       case 258: {
-        RentAmountinfo* sub = [[RentAmountinfo alloc] init];
+        RentAmountInfo* sub = [[RentAmountInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
-        [self addRentAmountinfo:sub];
+        [self addRentAmountInfo:sub];
         break;
       }
       case 266: {
@@ -2049,7 +2049,7 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
 @end
 
 
-@implementation RentAmountinfo
+@implementation RentAmountInfo
 
 - (instancetype) init {
   if ((self = [super init])) {
@@ -2102,8 +2102,8 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (RentAmountinfo*) parseFromData:(NSData*) data {
-  RentAmountinfo* result = [[RentAmountinfo alloc] init];
++ (RentAmountInfo*) parseFromData:(NSData*) data {
+  RentAmountInfo* result = [[RentAmountInfo alloc] init];
   [result mergeFromData:data];  return result;
 }
 #ifdef DEBUG
