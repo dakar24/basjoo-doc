@@ -246,7 +246,6 @@
     _unit = 0;
     _rentCount = 0L;
     _marketPrice = 0;
-    _pledgePrice = 0;
     _favoriteId = @"";
   }
   return self;
@@ -279,11 +278,8 @@
   if (self.hasMarketPrice) {
     [output writeDouble:9 value:self.marketPrice];
   }
-  if (self.hasPledgePrice) {
-    [output writeDouble:10 value:self.pledgePrice];
-  }
   if (self.hasFavoriteId) {
-    [output writeString:11 value:self.favoriteId];
+    [output writeString:10 value:self.favoriteId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -318,11 +314,8 @@
   if (self.hasMarketPrice) {
     size_ += computeDoubleSize(9, self.marketPrice);
   }
-  if (self.hasPledgePrice) {
-    size_ += computeDoubleSize(10, self.pledgePrice);
-  }
   if (self.hasFavoriteId) {
-    size_ += computeStringSize(11, self.favoriteId);
+    size_ += computeStringSize(10, self.favoriteId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -360,9 +353,6 @@
   }
   if (self.hasMarketPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"marketPrice", [NSNumber numberWithDouble:self.marketPrice]];
-  }
-  if (self.hasPledgePrice) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"pledgePrice", [NSNumber numberWithDouble:self.pledgePrice]];
   }
   if (self.hasFavoriteId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"favoriteId", self.favoriteId];
@@ -405,10 +395,6 @@
 - (void) setMarketPrice:(Float64) value {
   _hasMarketPrice = YES;
   _marketPrice = value;
-}
-- (void) setPledgePrice:(Float64) value {
-  _hasPledgePrice = YES;
-  _pledgePrice = value;
 }
 - (void) setFavoriteId:(NSString*) value {
   _hasFavoriteId = YES;
@@ -465,11 +451,7 @@
         [self setMarketPrice:[input readDouble]];
         break;
       }
-      case 81: {
-        [self setPledgePrice:[input readDouble]];
-        break;
-      }
-      case 90: {
+      case 82: {
         [self setFavoriteId:[input readString]];
         break;
       }

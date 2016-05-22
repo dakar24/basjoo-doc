@@ -64,11 +64,8 @@ message FavoriteLiteInfo {
    //市场价
    optional double                 marketPrice = 9; 
    
-   //押金
-   optional double                 pledgePrice = 10; 
-   
    //收藏Id
-   required string                 favoriteId = 11; 
+   required string                 favoriteId = 10; 
     
 }
 

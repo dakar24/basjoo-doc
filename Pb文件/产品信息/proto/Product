@@ -77,36 +77,33 @@ message ProductLiteInfo {
    //市场价
    optional double                 marketPrice = 9; 
    
-   //押金
-   optional double                 pledgePrice = 10; 
-   
    //用户是否已收藏
-   optional bool                   favorited = 11; 
+   optional bool                   favorited = 10; 
    
    
    //产品标题
-   required string                 productTitle = 12; 
+   required string                 productTitle = 11; 
 
    //横幅图片地址
-   optional string                 bannerImageUrl = 13; 
+   optional string                 bannerImageUrl = 12; 
 
    //产品活动类型
-   optional ProductPromoType       productPromoType = 14; 
+   optional ProductPromoType       productPromoType = 13; 
 
    //生效（开始）状态
-   optional int32                  validStatus = 15;
+   optional int32                  validStatus = 14;
    
    //开始时间
-   optional int64                  validStartTime = 16;
+   optional int64                  validStartTime = 15;
     
    //结束时间
-   optional int64                  validEndTime = 17;
+   optional int64                  validEndTime = 16;
   
    //服务端当前时间
-   optional int64                  serverTime = 18;
+   optional int64                  serverTime = 17;
    
    //折扣
-   optional double                 discount = 19;
+   optional double                 discount = 18;
 
    
     
@@ -171,72 +168,69 @@ message ProductDetailInfo {
    
    //市场价
    optional double                 marketPrice = 11; 
-   
-   //押金
-   optional double                 pledgePrice = 12; 
-   
+    
    //运费
-   optional double                 transportationPrice = 13; 
+   optional double                 transportationPrice = 12; 
    
    //所在地
-   optional string                 location = 14; 
+   optional string                 location = 13; 
    
    //分类信息
-   repeated CategoryInfo           categoryInfo = 15;   
+   repeated CategoryInfo           categoryInfo = 14;   
   
    //短租信息
-   repeated RentPeriodInfo         shortRentPeriod = 16;
+   repeated RentPeriodInfo         shortRentPeriod = 15;
    
    //长租信息
-   repeated RentPeriodInfo         longRentPeriod = 17;
+   repeated RentPeriodInfo         longRentPeriod = 16;
    
    //产品基本参数
-   repeated ProductBaseParam       baseParam = 18;
+   repeated ProductBaseParam       baseParam = 17;
    
    //图文参数地址（多图文）
-   repeated string                 imageParamUrls=19; 
+   repeated string                 imageParamUrls=18; 
    
    //评价总数
-   optional int64                  evaluateCount=20;
+   optional int64                  evaluateCount=19;
    
    //前N个评价信息
-   repeated ProductEvaluateInfo    productEvaluateInfo=21;
+   repeated ProductEvaluateInfo    productEvaluateInfo=20;
    
    //用户是否已收藏
-   optional bool                   favorited = 22; 
+   optional bool                   favorited = 21; 
    
    //产品标题
-   required string                 productTitle = 23; 
+   required string                 productTitle = 22; 
 
    //横幅图片地址
-   optional string                 bannerImageUrl = 24;
+   optional string                 bannerImageUrl = 23;
    
    //成色信息
-   repeated QualityInfo            qualityInfo = 25;
+   repeated QualityInfo            qualityInfo = 24;
 
    //产品活动类型
-   optional ProductPromoType       productPromoType = 26;
+   optional ProductPromoType       productPromoType = 25;
 
    //生效（开始）状态
-   optional int32                  validStatus = 27;
+   optional int32                  validStatus = 26;
    
    //开始时间
-   optional int64                  validStartTime = 28;
+   optional int64                  validStartTime = 27;
     
    //结束时间
-   optional int64                  validEndTime = 29;
+   optional int64                  validEndTime = 28;
   
    //服务端当前时间
-   optional int64                  serverTime = 30;
+   optional int64                  serverTime = 29;
    
    //折扣
-   optional double                 discount = 31;
+   optional double                 discount = 30;
    
    //租金信息
-   repeated RentAmountInfo         rentAmountInfo = 32;
+   repeated RentAmountInfo         rentAmountInfo = 31;
 
    //库存，押金信息
-   repeated CategoryQualityInfo    categoryQualityInfos = 33;
+   repeated CategoryQualityInfo    categoryQualityInfos = 32;
    
 }
 

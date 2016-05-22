@@ -32,28 +32,27 @@ public final class ProductDetailInfo extends Message {
   public static final int TAG_RENTCOUNT = 9;
   public static final int TAG_MAXAVAILABLE = 10;
   public static final int TAG_MARKETPRICE = 11;
-  public static final int TAG_PLEDGEPRICE = 12;
-  public static final int TAG_TRANSPORTATIONPRICE = 13;
-  public static final int TAG_LOCATION = 14;
-  public static final int TAG_CATEGORYINFO = 15;
-  public static final int TAG_SHORTRENTPERIOD = 16;
-  public static final int TAG_LONGRENTPERIOD = 17;
-  public static final int TAG_BASEPARAM = 18;
-  public static final int TAG_IMAGEPARAMURLS = 19;
-  public static final int TAG_EVALUATECOUNT = 20;
-  public static final int TAG_PRODUCTEVALUATEINFO = 21;
-  public static final int TAG_FAVORITED = 22;
-  public static final int TAG_PRODUCTTITLE = 23;
-  public static final int TAG_BANNERIMAGEURL = 24;
-  public static final int TAG_QUALITYINFO = 25;
-  public static final int TAG_PRODUCTPROMOTYPE = 26;
-  public static final int TAG_VALIDSTATUS = 27;
-  public static final int TAG_VALIDSTARTTIME = 28;
-  public static final int TAG_VALIDENDTIME = 29;
-  public static final int TAG_SERVERTIME = 30;
-  public static final int TAG_DISCOUNT = 31;
-  public static final int TAG_RENTAMOUNTINFO = 32;
-  public static final int TAG_CATEGORYQUALITYINFOS = 33;
+  public static final int TAG_TRANSPORTATIONPRICE = 12;
+  public static final int TAG_LOCATION = 13;
+  public static final int TAG_CATEGORYINFO = 14;
+  public static final int TAG_SHORTRENTPERIOD = 15;
+  public static final int TAG_LONGRENTPERIOD = 16;
+  public static final int TAG_BASEPARAM = 17;
+  public static final int TAG_IMAGEPARAMURLS = 18;
+  public static final int TAG_EVALUATECOUNT = 19;
+  public static final int TAG_PRODUCTEVALUATEINFO = 20;
+  public static final int TAG_FAVORITED = 21;
+  public static final int TAG_PRODUCTTITLE = 22;
+  public static final int TAG_BANNERIMAGEURL = 23;
+  public static final int TAG_QUALITYINFO = 24;
+  public static final int TAG_PRODUCTPROMOTYPE = 25;
+  public static final int TAG_VALIDSTATUS = 26;
+  public static final int TAG_VALIDSTARTTIME = 27;
+  public static final int TAG_VALIDENDTIME = 28;
+  public static final int TAG_SERVERTIME = 29;
+  public static final int TAG_DISCOUNT = 30;
+  public static final int TAG_RENTAMOUNTINFO = 31;
+  public static final int TAG_CATEGORYQUALITYINFOS = 32;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -66,7 +65,6 @@ public final class ProductDetailInfo extends Message {
   public static final Long DEFAULT_RENTCOUNT = 0L;
   public static final Long DEFAULT_MAXAVAILABLE = 0L;
   public static final Double DEFAULT_MARKETPRICE = 0D;
-  public static final Double DEFAULT_PLEDGEPRICE = 0D;
   public static final Double DEFAULT_TRANSPORTATIONPRICE = 0D;
   public static final String DEFAULT_LOCATION = "";
   public static final List<CategoryInfo> DEFAULT_CATEGORYINFO = Collections.emptyList();
@@ -156,135 +154,129 @@ public final class ProductDetailInfo extends Message {
   public Double marketPrice;
 
   /**
-   * 押金
-   */
-  @ProtoField(tag = 12, type = DOUBLE)
-  public Double pledgePrice;
-
-  /**
    * 运费
    */
-  @ProtoField(tag = 13, type = DOUBLE)
+  @ProtoField(tag = 12, type = DOUBLE)
   public Double transportationPrice;
 
   /**
    * 所在地
    */
-  @ProtoField(tag = 14, type = STRING)
+  @ProtoField(tag = 13, type = STRING)
   public String location;
 
   /**
    * 分类信息
    */
-  @ProtoField(tag = 15, label = REPEATED)
+  @ProtoField(tag = 14, label = REPEATED)
   public List<CategoryInfo> categoryInfo;
 
   /**
    * 短租信息
    */
-  @ProtoField(tag = 16, label = REPEATED)
+  @ProtoField(tag = 15, label = REPEATED)
   public List<RentPeriodInfo> shortRentPeriod;
 
   /**
    * 长租信息
    */
-  @ProtoField(tag = 17, label = REPEATED)
+  @ProtoField(tag = 16, label = REPEATED)
   public List<RentPeriodInfo> longRentPeriod;
 
   /**
    * 产品基本参数
    */
-  @ProtoField(tag = 18, label = REPEATED)
+  @ProtoField(tag = 17, label = REPEATED)
   public List<ProductBaseParam> baseParam;
 
   /**
    * 图文参数地址（多图文）
    */
-  @ProtoField(tag = 19, type = STRING, label = REPEATED)
+  @ProtoField(tag = 18, type = STRING, label = REPEATED)
   public List<String> imageParamUrls;
 
   /**
    * 评价总数
    */
-  @ProtoField(tag = 20, type = INT64)
+  @ProtoField(tag = 19, type = INT64)
   public Long evaluateCount;
 
   /**
    * 前N个评价信息
    */
-  @ProtoField(tag = 21, label = REPEATED)
+  @ProtoField(tag = 20, label = REPEATED)
   public List<ProductEvaluateInfo> productEvaluateInfo;
 
   /**
    * 用户是否已收藏
    */
-  @ProtoField(tag = 22, type = BOOL)
+  @ProtoField(tag = 21, type = BOOL)
   public Boolean favorited;
 
   /**
    * 产品标题
    */
-  @ProtoField(tag = 23, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 22, type = STRING, label = REQUIRED)
   public String productTitle;
 
   /**
    * 横幅图片地址
    */
-  @ProtoField(tag = 24, type = STRING)
+  @ProtoField(tag = 23, type = STRING)
   public String bannerImageUrl;
 
   /**
    * 成色信息
    */
-  @ProtoField(tag = 25, label = REPEATED)
+  @ProtoField(tag = 24, label = REPEATED)
   public List<QualityInfo> qualityInfo;
 
   /**
    * 产品活动类型
    */
-  @ProtoField(tag = 26, type = ENUM)
+  @ProtoField(tag = 25, type = ENUM)
   public ProductPromoType productPromoType;
 
   /**
    * 生效（开始）状态
    */
-  @ProtoField(tag = 27, type = INT32)
+  @ProtoField(tag = 26, type = INT32)
   public Integer validStatus;
 
   /**
    * 开始时间
    */
-  @ProtoField(tag = 28, type = INT64)
+  @ProtoField(tag = 27, type = INT64)
   public Long validStartTime;
 
   /**
    * 结束时间
    */
-  @ProtoField(tag = 29, type = INT64)
+  @ProtoField(tag = 28, type = INT64)
   public Long validEndTime;
 
   /**
    * 服务端当前时间
    */
-  @ProtoField(tag = 30, type = INT64)
+  @ProtoField(tag = 29, type = INT64)
   public Long serverTime;
 
   /**
    * 折扣
    */
-  @ProtoField(tag = 31, type = DOUBLE)
+  @ProtoField(tag = 30, type = DOUBLE)
   public Double discount;
 
   /**
    * 租金信息
    */
-  @ProtoField(tag = 32, label = REPEATED)
+  @ProtoField(tag = 31, label = REPEATED)
   public List<RentAmountInfo> rentAmountInfo;
 
   /**
    * 库存，押金信息
    */
-  @ProtoField(tag = 33, label = REPEATED)
+  @ProtoField(tag = 32, label = REPEATED)
   public List<CategoryQualityInfo> categoryQualityInfos;
 
   public ProductDetailInfo(ProductDetailInfo message) {
@@ -301,7 +293,6 @@ public final class ProductDetailInfo extends Message {
     this.rentCount = message.rentCount;
     this.maxAvailable = message.maxAvailable;
     this.marketPrice = message.marketPrice;
-    this.pledgePrice = message.pledgePrice;
     this.transportationPrice = message.transportationPrice;
     this.location = message.location;
     this.categoryInfo = copyOf(message.categoryInfo);
@@ -362,9 +353,6 @@ public final class ProductDetailInfo extends Message {
         break;
         case TAG_MARKETPRICE:
         this.marketPrice = (Double)value;
-        break;
-        case TAG_PLEDGEPRICE:
-        this.pledgePrice = (Double)value;
         break;
         case TAG_TRANSPORTATIONPRICE:
         this.transportationPrice = (Double)value;
@@ -450,7 +438,6 @@ public final class ProductDetailInfo extends Message {
         && equals(rentCount, o.rentCount)
         && equals(maxAvailable, o.maxAvailable)
         && equals(marketPrice, o.marketPrice)
-        && equals(pledgePrice, o.pledgePrice)
         && equals(transportationPrice, o.transportationPrice)
         && equals(location, o.location)
         && equals(categoryInfo, o.categoryInfo)
@@ -489,7 +476,6 @@ public final class ProductDetailInfo extends Message {
       result = result * 37 + (rentCount != null ? rentCount.hashCode() : 0);
       result = result * 37 + (maxAvailable != null ? maxAvailable.hashCode() : 0);
       result = result * 37 + (marketPrice != null ? marketPrice.hashCode() : 0);
-      result = result * 37 + (pledgePrice != null ? pledgePrice.hashCode() : 0);
       result = result * 37 + (transportationPrice != null ? transportationPrice.hashCode() : 0);
       result = result * 37 + (location != null ? location.hashCode() : 0);
       result = result * 37 + (categoryInfo != null ? categoryInfo.hashCode() : 1);

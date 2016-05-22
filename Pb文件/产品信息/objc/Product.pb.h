@@ -65,7 +65,6 @@ typedef NS_ENUM(SInt32, ProductPromoType) {
 @property (readonly) BOOL hasUnit;
 @property (readonly) BOOL hasRentCount;
 @property (readonly) BOOL hasMarketPrice;
-@property (readonly) BOOL hasPledgePrice;
 @property (readonly) BOOL hasFavorited;
 @property (readonly) BOOL hasProductTitle;
 @property (readonly) BOOL hasBannerImageUrl;
@@ -84,7 +83,6 @@ typedef NS_ENUM(SInt32, ProductPromoType) {
 @property (nonatomic)SInt32 unit;
 @property (nonatomic)SInt64 rentCount;
 @property (nonatomic)Float64 marketPrice;
-@property (nonatomic)Float64 pledgePrice;
 @property (nonatomic)BOOL favorited;
 @property (nonatomic,strong) NSString* productTitle;
 @property (nonatomic,strong) NSString* bannerImageUrl;
@@ -123,7 +121,6 @@ typedef NS_ENUM(SInt32, ProductPromoType) {
 @property (readonly) BOOL hasRentCount;
 @property (readonly) BOOL hasMaxAvailable;
 @property (readonly) BOOL hasMarketPrice;
-@property (readonly) BOOL hasPledgePrice;
 @property (readonly) BOOL hasTransportationPrice;
 @property (readonly) BOOL hasLocation;
 @property (readonly) BOOL hasEvaluateCount;
@@ -147,7 +144,6 @@ typedef NS_ENUM(SInt32, ProductPromoType) {
 @property (nonatomic)SInt64 rentCount;
 @property (nonatomic)SInt64 maxAvailable;
 @property (nonatomic)Float64 marketPrice;
-@property (nonatomic)Float64 pledgePrice;
 @property (nonatomic)Float64 transportationPrice;
 @property (nonatomic,strong) NSString* location;
 @property (nonatomic,strong) NSMutableArray * categoryInfo;

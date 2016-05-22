@@ -27,16 +27,15 @@ public final class ProductLiteInfo extends Message {
   public static final int TAG_UNIT = 7;
   public static final int TAG_RENTCOUNT = 8;
   public static final int TAG_MARKETPRICE = 9;
-  public static final int TAG_PLEDGEPRICE = 10;
-  public static final int TAG_FAVORITED = 11;
-  public static final int TAG_PRODUCTTITLE = 12;
-  public static final int TAG_BANNERIMAGEURL = 13;
-  public static final int TAG_PRODUCTPROMOTYPE = 14;
-  public static final int TAG_VALIDSTATUS = 15;
-  public static final int TAG_VALIDSTARTTIME = 16;
-  public static final int TAG_VALIDENDTIME = 17;
-  public static final int TAG_SERVERTIME = 18;
-  public static final int TAG_DISCOUNT = 19;
+  public static final int TAG_FAVORITED = 10;
+  public static final int TAG_PRODUCTTITLE = 11;
+  public static final int TAG_BANNERIMAGEURL = 12;
+  public static final int TAG_PRODUCTPROMOTYPE = 13;
+  public static final int TAG_VALIDSTATUS = 14;
+  public static final int TAG_VALIDSTARTTIME = 15;
+  public static final int TAG_VALIDENDTIME = 16;
+  public static final int TAG_SERVERTIME = 17;
+  public static final int TAG_DISCOUNT = 18;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -47,7 +46,6 @@ public final class ProductLiteInfo extends Message {
   public static final Integer DEFAULT_UNIT = 0;
   public static final Long DEFAULT_RENTCOUNT = 0L;
   public static final Double DEFAULT_MARKETPRICE = 0D;
-  public static final Double DEFAULT_PLEDGEPRICE = 0D;
   public static final Boolean DEFAULT_FAVORITED = false;
   public static final String DEFAULT_PRODUCTTITLE = "";
   public static final String DEFAULT_BANNERIMAGEURL = "";
@@ -113,63 +111,57 @@ public final class ProductLiteInfo extends Message {
   public Double marketPrice;
 
   /**
-   * 押金
-   */
-  @ProtoField(tag = 10, type = DOUBLE)
-  public Double pledgePrice;
-
-  /**
    * 用户是否已收藏
    */
-  @ProtoField(tag = 11, type = BOOL)
+  @ProtoField(tag = 10, type = BOOL)
   public Boolean favorited;
 
   /**
    * 产品标题
    */
-  @ProtoField(tag = 12, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 11, type = STRING, label = REQUIRED)
   public String productTitle;
 
   /**
    * 横幅图片地址
    */
-  @ProtoField(tag = 13, type = STRING)
+  @ProtoField(tag = 12, type = STRING)
   public String bannerImageUrl;
 
   /**
    * 产品活动类型
    */
-  @ProtoField(tag = 14, type = ENUM)
+  @ProtoField(tag = 13, type = ENUM)
   public ProductPromoType productPromoType;
 
   /**
    * 生效（开始）状态
    */
-  @ProtoField(tag = 15, type = INT32)
+  @ProtoField(tag = 14, type = INT32)
   public Integer validStatus;
 
   /**
    * 开始时间
    */
-  @ProtoField(tag = 16, type = INT64)
+  @ProtoField(tag = 15, type = INT64)
   public Long validStartTime;
 
   /**
    * 结束时间
    */
-  @ProtoField(tag = 17, type = INT64)
+  @ProtoField(tag = 16, type = INT64)
   public Long validEndTime;
 
   /**
    * 服务端当前时间
    */
-  @ProtoField(tag = 18, type = INT64)
+  @ProtoField(tag = 17, type = INT64)
   public Long serverTime;
 
   /**
    * 折扣
    */
-  @ProtoField(tag = 19, type = DOUBLE)
+  @ProtoField(tag = 18, type = DOUBLE)
   public Double discount;
 
   public ProductLiteInfo(ProductLiteInfo message) {
@@ -184,7 +176,6 @@ public final class ProductLiteInfo extends Message {
     this.unit = message.unit;
     this.rentCount = message.rentCount;
     this.marketPrice = message.marketPrice;
-    this.pledgePrice = message.pledgePrice;
     this.favorited = message.favorited;
     this.productTitle = message.productTitle;
     this.bannerImageUrl = message.bannerImageUrl;
@@ -227,9 +218,6 @@ public final class ProductLiteInfo extends Message {
         break;
         case TAG_MARKETPRICE:
         this.marketPrice = (Double)value;
-        break;
-        case TAG_PLEDGEPRICE:
-        this.pledgePrice = (Double)value;
         break;
         case TAG_FAVORITED:
         this.favorited = (Boolean)value;
@@ -277,7 +265,6 @@ public final class ProductLiteInfo extends Message {
         && equals(unit, o.unit)
         && equals(rentCount, o.rentCount)
         && equals(marketPrice, o.marketPrice)
-        && equals(pledgePrice, o.pledgePrice)
         && equals(favorited, o.favorited)
         && equals(productTitle, o.productTitle)
         && equals(bannerImageUrl, o.bannerImageUrl)
@@ -302,7 +289,6 @@ public final class ProductLiteInfo extends Message {
       result = result * 37 + (unit != null ? unit.hashCode() : 0);
       result = result * 37 + (rentCount != null ? rentCount.hashCode() : 0);
       result = result * 37 + (marketPrice != null ? marketPrice.hashCode() : 0);
-      result = result * 37 + (pledgePrice != null ? pledgePrice.hashCode() : 0);
       result = result * 37 + (favorited != null ? favorited.hashCode() : 0);
       result = result * 37 + (productTitle != null ? productTitle.hashCode() : 0);
       result = result * 37 + (bannerImageUrl != null ? bannerImageUrl.hashCode() : 0);

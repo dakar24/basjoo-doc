@@ -348,7 +348,6 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
     _unit = 0;
     _rentCount = 0L;
     _marketPrice = 0;
-    _pledgePrice = 0;
     _favorited = NO;
     _productTitle = @"";
     _bannerImageUrl = @"";
@@ -389,35 +388,32 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   if (self.hasMarketPrice) {
     [output writeDouble:9 value:self.marketPrice];
   }
-  if (self.hasPledgePrice) {
-    [output writeDouble:10 value:self.pledgePrice];
-  }
   if (self.hasFavorited) {
-    [output writeBool:11 value:self.favorited];
+    [output writeBool:10 value:self.favorited];
   }
   if (self.hasProductTitle) {
-    [output writeString:12 value:self.productTitle];
+    [output writeString:11 value:self.productTitle];
   }
   if (self.hasBannerImageUrl) {
-    [output writeString:13 value:self.bannerImageUrl];
+    [output writeString:12 value:self.bannerImageUrl];
   }
   if (self.hasProductPromoType) {
-    [output writeEnum:14 value:self.productPromoType];
+    [output writeEnum:13 value:self.productPromoType];
   }
   if (self.hasValidStatus) {
-    [output writeInt32:15 value:self.validStatus];
+    [output writeInt32:14 value:self.validStatus];
   }
   if (self.hasValidStartTime) {
-    [output writeInt64:16 value:self.validStartTime];
+    [output writeInt64:15 value:self.validStartTime];
   }
   if (self.hasValidEndTime) {
-    [output writeInt64:17 value:self.validEndTime];
+    [output writeInt64:16 value:self.validEndTime];
   }
   if (self.hasServerTime) {
-    [output writeInt64:18 value:self.serverTime];
+    [output writeInt64:17 value:self.serverTime];
   }
   if (self.hasDiscount) {
-    [output writeDouble:19 value:self.discount];
+    [output writeDouble:18 value:self.discount];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -452,35 +448,32 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   if (self.hasMarketPrice) {
     size_ += computeDoubleSize(9, self.marketPrice);
   }
-  if (self.hasPledgePrice) {
-    size_ += computeDoubleSize(10, self.pledgePrice);
-  }
   if (self.hasFavorited) {
-    size_ += computeBoolSize(11, self.favorited);
+    size_ += computeBoolSize(10, self.favorited);
   }
   if (self.hasProductTitle) {
-    size_ += computeStringSize(12, self.productTitle);
+    size_ += computeStringSize(11, self.productTitle);
   }
   if (self.hasBannerImageUrl) {
-    size_ += computeStringSize(13, self.bannerImageUrl);
+    size_ += computeStringSize(12, self.bannerImageUrl);
   }
   if (self.hasProductPromoType) {
-    size_ += computeEnumSize(14, self.productPromoType);
+    size_ += computeEnumSize(13, self.productPromoType);
   }
   if (self.hasValidStatus) {
-    size_ += computeInt32Size(15, self.validStatus);
+    size_ += computeInt32Size(14, self.validStatus);
   }
   if (self.hasValidStartTime) {
-    size_ += computeInt64Size(16, self.validStartTime);
+    size_ += computeInt64Size(15, self.validStartTime);
   }
   if (self.hasValidEndTime) {
-    size_ += computeInt64Size(17, self.validEndTime);
+    size_ += computeInt64Size(16, self.validEndTime);
   }
   if (self.hasServerTime) {
-    size_ += computeInt64Size(18, self.serverTime);
+    size_ += computeInt64Size(17, self.serverTime);
   }
   if (self.hasDiscount) {
-    size_ += computeDoubleSize(19, self.discount);
+    size_ += computeDoubleSize(18, self.discount);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -518,9 +511,6 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   }
   if (self.hasMarketPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"marketPrice", [NSNumber numberWithDouble:self.marketPrice]];
-  }
-  if (self.hasPledgePrice) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"pledgePrice", [NSNumber numberWithDouble:self.pledgePrice]];
   }
   if (self.hasFavorited) {
     [output appendFormat:@"%@%@: %@\n", indent, @"favorited", [NSNumber numberWithBool:self.favorited]];
@@ -587,10 +577,6 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
 - (void) setMarketPrice:(Float64) value {
   _hasMarketPrice = YES;
   _marketPrice = value;
-}
-- (void) setPledgePrice:(Float64) value {
-  _hasPledgePrice = YES;
-  _pledgePrice = value;
 }
 - (void) setFavorited:(BOOL) value {
   _hasFavorited = YES;
@@ -679,48 +665,44 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
         [self setMarketPrice:[input readDouble]];
         break;
       }
-      case 81: {
-        [self setPledgePrice:[input readDouble]];
-        break;
-      }
-      case 88: {
+      case 80: {
         [self setFavorited:[input readBool]];
         break;
       }
-      case 98: {
+      case 90: {
         [self setProductTitle:[input readString]];
         break;
       }
-      case 106: {
+      case 98: {
         [self setBannerImageUrl:[input readString]];
         break;
       }
-      case 112: {
+      case 104: {
         ProductPromoType value = (ProductPromoType)[input readEnum];
         if (ProductPromoTypeIsValidValue(value)) {
           [self setProductPromoType:value];
         } else {
-          [unknownFields_ mergeVarintField:14 value:value];
+          [unknownFields_ mergeVarintField:13 value:value];
         }
         break;
       }
-      case 120: {
+      case 112: {
         [self setValidStatus:[input readInt32]];
         break;
       }
-      case 128: {
+      case 120: {
         [self setValidStartTime:[input readInt64]];
         break;
       }
-      case 136: {
+      case 128: {
         [self setValidEndTime:[input readInt64]];
         break;
       }
-      case 144: {
+      case 136: {
         [self setServerTime:[input readInt64]];
         break;
       }
-      case 153: {
+      case 145: {
         [self setDiscount:[input readDouble]];
         break;
       }
@@ -934,7 +916,6 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
     _rentCount = 0L;
     _maxAvailable = 0L;
     _marketPrice = 0;
-    _pledgePrice = 0;
     _transportationPrice = 0;
     _location = @"";
     _evaluateCount = 0L;
@@ -984,71 +965,68 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   if (self.hasMarketPrice) {
     [output writeDouble:11 value:self.marketPrice];
   }
-  if (self.hasPledgePrice) {
-    [output writeDouble:12 value:self.pledgePrice];
-  }
   if (self.hasTransportationPrice) {
-    [output writeDouble:13 value:self.transportationPrice];
+    [output writeDouble:12 value:self.transportationPrice];
   }
   if (self.hasLocation) {
-    [output writeString:14 value:self.location];
+    [output writeString:13 value:self.location];
   }
   [self.categoryInfo enumerateObjectsUsingBlock:^(CategoryInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:15 value:element];
+    [output writeMessage:14 value:element];
   }];
   [self.shortRentPeriod enumerateObjectsUsingBlock:^(RentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:16 value:element];
+    [output writeMessage:15 value:element];
   }];
   [self.longRentPeriod enumerateObjectsUsingBlock:^(RentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:17 value:element];
+    [output writeMessage:16 value:element];
   }];
   [self.baseParam enumerateObjectsUsingBlock:^(ProductBaseParam *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:18 value:element];
+    [output writeMessage:17 value:element];
   }];
   [self.imageParamUrls enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
-    [output writeString:19 value:element];
+    [output writeString:18 value:element];
   }];
   if (self.hasEvaluateCount) {
-    [output writeInt64:20 value:self.evaluateCount];
+    [output writeInt64:19 value:self.evaluateCount];
   }
   [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:21 value:element];
+    [output writeMessage:20 value:element];
   }];
   if (self.hasFavorited) {
-    [output writeBool:22 value:self.favorited];
+    [output writeBool:21 value:self.favorited];
   }
   if (self.hasProductTitle) {
-    [output writeString:23 value:self.productTitle];
+    [output writeString:22 value:self.productTitle];
   }
   if (self.hasBannerImageUrl) {
-    [output writeString:24 value:self.bannerImageUrl];
+    [output writeString:23 value:self.bannerImageUrl];
   }
   [self.qualityInfo enumerateObjectsUsingBlock:^(QualityInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:25 value:element];
+    [output writeMessage:24 value:element];
   }];
   if (self.hasProductPromoType) {
-    [output writeEnum:26 value:self.productPromoType];
+    [output writeEnum:25 value:self.productPromoType];
   }
   if (self.hasValidStatus) {
-    [output writeInt32:27 value:self.validStatus];
+    [output writeInt32:26 value:self.validStatus];
   }
   if (self.hasValidStartTime) {
-    [output writeInt64:28 value:self.validStartTime];
+    [output writeInt64:27 value:self.validStartTime];
   }
   if (self.hasValidEndTime) {
-    [output writeInt64:29 value:self.validEndTime];
+    [output writeInt64:28 value:self.validEndTime];
   }
   if (self.hasServerTime) {
-    [output writeInt64:30 value:self.serverTime];
+    [output writeInt64:29 value:self.serverTime];
   }
   if (self.hasDiscount) {
-    [output writeDouble:31 value:self.discount];
+    [output writeDouble:30 value:self.discount];
   }
   [self.rentAmountInfo enumerateObjectsUsingBlock:^(RentAmountInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:32 value:element];
+    [output writeMessage:31 value:element];
   }];
   [self.categoryQualityInfos enumerateObjectsUsingBlock:^(CategoryQualityInfo *element, NSUInteger idx, BOOL *stop) {
-    [output writeMessage:33 value:element];
+    [output writeMessage:32 value:element];
   }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -1095,26 +1073,23 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   if (self.hasMarketPrice) {
     size_ += computeDoubleSize(11, self.marketPrice);
   }
-  if (self.hasPledgePrice) {
-    size_ += computeDoubleSize(12, self.pledgePrice);
-  }
   if (self.hasTransportationPrice) {
-    size_ += computeDoubleSize(13, self.transportationPrice);
+    size_ += computeDoubleSize(12, self.transportationPrice);
   }
   if (self.hasLocation) {
-    size_ += computeStringSize(14, self.location);
+    size_ += computeStringSize(13, self.location);
   }
   [self.categoryInfo enumerateObjectsUsingBlock:^(CategoryInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(15, element);
+    size_ += computeMessageSize(14, element);
   }];
   [self.shortRentPeriod enumerateObjectsUsingBlock:^(RentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(16, element);
+    size_ += computeMessageSize(15, element);
   }];
   [self.longRentPeriod enumerateObjectsUsingBlock:^(RentPeriodInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(17, element);
+    size_ += computeMessageSize(16, element);
   }];
   [self.baseParam enumerateObjectsUsingBlock:^(ProductBaseParam *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(18, element);
+    size_ += computeMessageSize(17, element);
   }];
   {
     __block SInt32 dataSize = 0;
@@ -1126,46 +1101,46 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
     size_ += (SInt32)(2 * count);
   }
   if (self.hasEvaluateCount) {
-    size_ += computeInt64Size(20, self.evaluateCount);
+    size_ += computeInt64Size(19, self.evaluateCount);
   }
   [self.productEvaluateInfo enumerateObjectsUsingBlock:^(ProductEvaluateInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(21, element);
+    size_ += computeMessageSize(20, element);
   }];
   if (self.hasFavorited) {
-    size_ += computeBoolSize(22, self.favorited);
+    size_ += computeBoolSize(21, self.favorited);
   }
   if (self.hasProductTitle) {
-    size_ += computeStringSize(23, self.productTitle);
+    size_ += computeStringSize(22, self.productTitle);
   }
   if (self.hasBannerImageUrl) {
-    size_ += computeStringSize(24, self.bannerImageUrl);
+    size_ += computeStringSize(23, self.bannerImageUrl);
   }
   [self.qualityInfo enumerateObjectsUsingBlock:^(QualityInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(25, element);
+    size_ += computeMessageSize(24, element);
   }];
   if (self.hasProductPromoType) {
-    size_ += computeEnumSize(26, self.productPromoType);
+    size_ += computeEnumSize(25, self.productPromoType);
   }
   if (self.hasValidStatus) {
-    size_ += computeInt32Size(27, self.validStatus);
+    size_ += computeInt32Size(26, self.validStatus);
   }
   if (self.hasValidStartTime) {
-    size_ += computeInt64Size(28, self.validStartTime);
+    size_ += computeInt64Size(27, self.validStartTime);
   }
   if (self.hasValidEndTime) {
-    size_ += computeInt64Size(29, self.validEndTime);
+    size_ += computeInt64Size(28, self.validEndTime);
   }
   if (self.hasServerTime) {
-    size_ += computeInt64Size(30, self.serverTime);
+    size_ += computeInt64Size(29, self.serverTime);
   }
   if (self.hasDiscount) {
-    size_ += computeDoubleSize(31, self.discount);
+    size_ += computeDoubleSize(30, self.discount);
   }
   [self.rentAmountInfo enumerateObjectsUsingBlock:^(RentAmountInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(32, element);
+    size_ += computeMessageSize(31, element);
   }];
   [self.categoryQualityInfos enumerateObjectsUsingBlock:^(CategoryQualityInfo *element, NSUInteger idx, BOOL *stop) {
-    size_ += computeMessageSize(33, element);
+    size_ += computeMessageSize(32, element);
   }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -1209,9 +1184,6 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
   }
   if (self.hasMarketPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"marketPrice", [NSNumber numberWithDouble:self.marketPrice]];
-  }
-  if (self.hasPledgePrice) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"pledgePrice", [NSNumber numberWithDouble:self.pledgePrice]];
   }
   if (self.hasTransportationPrice) {
     [output appendFormat:@"%@%@: %@\n", indent, @"transportationPrice", [NSNumber numberWithDouble:self.transportationPrice]];
@@ -1351,10 +1323,6 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
 - (void) setMarketPrice:(Float64) value {
   _hasMarketPrice = YES;
   _marketPrice = value;
-}
-- (void) setPledgePrice:(Float64) value {
-  _hasPledgePrice = YES;
-  _pledgePrice = value;
 }
 - (void) setTransportationPrice:(Float64) value {
   _hasTransportationPrice = YES;
@@ -1545,109 +1513,105 @@ BOOL ProductPromoTypeIsValidValue(ProductPromoType value) {
         break;
       }
       case 97: {
-        [self setPledgePrice:[input readDouble]];
-        break;
-      }
-      case 105: {
         [self setTransportationPrice:[input readDouble]];
         break;
       }
-      case 114: {
+      case 106: {
         [self setLocation:[input readString]];
         break;
       }
-      case 122: {
+      case 114: {
         CategoryInfo* sub = [[CategoryInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addCategoryInfo:sub];
         break;
       }
-      case 130: {
+      case 122: {
         RentPeriodInfo* sub = [[RentPeriodInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addShortRentPeriod:sub];
         break;
       }
-      case 138: {
+      case 130: {
         RentPeriodInfo* sub = [[RentPeriodInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addLongRentPeriod:sub];
         break;
       }
-      case 146: {
+      case 138: {
         ProductBaseParam* sub = [[ProductBaseParam alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addBaseParam:sub];
         break;
       }
-      case 154: {
+      case 146: {
         [self addImageParamUrls:[input readString]];
         break;
       }
-      case 160: {
+      case 152: {
         [self setEvaluateCount:[input readInt64]];
         break;
       }
-      case 170: {
+      case 162: {
         ProductEvaluateInfo* sub = [[ProductEvaluateInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addProductEvaluateInfo:sub];
         break;
       }
-      case 176: {
+      case 168: {
         [self setFavorited:[input readBool]];
         break;
       }
-      case 186: {
+      case 178: {
         [self setProductTitle:[input readString]];
         break;
       }
-      case 194: {
+      case 186: {
         [self setBannerImageUrl:[input readString]];
         break;
       }
-      case 202: {
+      case 194: {
         QualityInfo* sub = [[QualityInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addQualityInfo:sub];
         break;
       }
-      case 208: {
+      case 200: {
         ProductPromoType value = (ProductPromoType)[input readEnum];
         if (ProductPromoTypeIsValidValue(value)) {
           [self setProductPromoType:value];
         } else {
-          [unknownFields_ mergeVarintField:26 value:value];
+          [unknownFields_ mergeVarintField:25 value:value];
         }
         break;
       }
-      case 216: {
+      case 208: {
         [self setValidStatus:[input readInt32]];
         break;
       }
-      case 224: {
+      case 216: {
         [self setValidStartTime:[input readInt64]];
         break;
       }
-      case 232: {
+      case 224: {
         [self setValidEndTime:[input readInt64]];
         break;
       }
-      case 240: {
+      case 232: {
         [self setServerTime:[input readInt64]];
         break;
       }
-      case 249: {
+      case 241: {
         [self setDiscount:[input readDouble]];
         break;
       }
-      case 258: {
+      case 250: {
         RentAmountInfo* sub = [[RentAmountInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addRentAmountInfo:sub];
         break;
       }
-      case 266: {
+      case 258: {
         CategoryQualityInfo* sub = [[CategoryQualityInfo alloc] init];
         [input readQJMessage:sub extensionRegistry:extensionRegistry];
         [self addCategoryQualityInfos:sub];

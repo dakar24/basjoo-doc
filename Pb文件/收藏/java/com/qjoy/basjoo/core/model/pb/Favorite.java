@@ -2230,24 +2230,7 @@ public final class Favorite {
     double getMarketPrice();
 
     /**
-     * <code>optional double pledgePrice = 10;</code>
-     *
-     * <pre>
-     *押金
-     * </pre>
-     */
-    boolean hasPledgePrice();
-    /**
-     * <code>optional double pledgePrice = 10;</code>
-     *
-     * <pre>
-     *押金
-     * </pre>
-     */
-    double getPledgePrice();
-
-    /**
-     * <code>required string favoriteId = 11;</code>
+     * <code>required string favoriteId = 10;</code>
      *
      * <pre>
      *收藏Id
@@ -2255,7 +2238,7 @@ public final class Favorite {
      */
     boolean hasFavoriteId();
     /**
-     * <code>required string favoriteId = 11;</code>
+     * <code>required string favoriteId = 10;</code>
      *
      * <pre>
      *收藏Id
@@ -2263,7 +2246,7 @@ public final class Favorite {
      */
     java.lang.String getFavoriteId();
     /**
-     * <code>required string favoriteId = 11;</code>
+     * <code>required string favoriteId = 10;</code>
      *
      * <pre>
      *收藏Id
@@ -2378,14 +2361,9 @@ public final class Favorite {
               marketPrice_ = input.readDouble();
               break;
             }
-            case 81: {
-              bitField0_ |= 0x00000200;
-              pledgePrice_ = input.readDouble();
-              break;
-            }
-            case 90: {
+            case 82: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000200;
               favoriteId_ = bs;
               break;
             }
@@ -2791,43 +2769,20 @@ public final class Favorite {
       return marketPrice_;
     }
 
-    public static final int PLEDGEPRICE_FIELD_NUMBER = 10;
-    private double pledgePrice_;
-    /**
-     * <code>optional double pledgePrice = 10;</code>
-     *
-     * <pre>
-     *押金
-     * </pre>
-     */
-    public boolean hasPledgePrice() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    /**
-     * <code>optional double pledgePrice = 10;</code>
-     *
-     * <pre>
-     *押金
-     * </pre>
-     */
-    public double getPledgePrice() {
-      return pledgePrice_;
-    }
-
-    public static final int FAVORITEID_FIELD_NUMBER = 11;
+    public static final int FAVORITEID_FIELD_NUMBER = 10;
     private java.lang.Object favoriteId_;
     /**
-     * <code>required string favoriteId = 11;</code>
+     * <code>required string favoriteId = 10;</code>
      *
      * <pre>
      *收藏Id
      * </pre>
      */
     public boolean hasFavoriteId() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
-     * <code>required string favoriteId = 11;</code>
+     * <code>required string favoriteId = 10;</code>
      *
      * <pre>
      *收藏Id
@@ -2848,7 +2803,7 @@ public final class Favorite {
       }
     }
     /**
-     * <code>required string favoriteId = 11;</code>
+     * <code>required string favoriteId = 10;</code>
      *
      * <pre>
      *收藏Id
@@ -2878,7 +2833,6 @@ public final class Favorite {
       unit_ = 0;
       rentCount_ = 0L;
       marketPrice_ = 0D;
-      pledgePrice_ = 0D;
       favoriteId_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -2946,10 +2900,7 @@ public final class Favorite {
         output.writeDouble(9, marketPrice_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeDouble(10, pledgePrice_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeBytes(11, getFavoriteIdBytes());
+        output.writeBytes(10, getFavoriteIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -2998,11 +2949,7 @@ public final class Favorite {
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, pledgePrice_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(11, getFavoriteIdBytes());
+          .computeBytesSize(10, getFavoriteIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3143,10 +3090,8 @@ public final class Favorite {
         bitField0_ = (bitField0_ & ~0x00000080);
         marketPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000100);
-        pledgePrice_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000200);
         favoriteId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -3214,10 +3159,6 @@ public final class Favorite {
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.pledgePrice_ = pledgePrice_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000400;
-        }
         result.favoriteId_ = favoriteId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -3272,11 +3213,8 @@ public final class Favorite {
         if (other.hasMarketPrice()) {
           setMarketPrice(other.getMarketPrice());
         }
-        if (other.hasPledgePrice()) {
-          setPledgePrice(other.getPledgePrice());
-        }
         if (other.hasFavoriteId()) {
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000200;
           favoriteId_ = other.favoriteId_;
           onChanged();
         }
@@ -4023,67 +3961,19 @@ public final class Favorite {
         return this;
       }
 
-      private double pledgePrice_ ;
-      /**
-       * <code>optional double pledgePrice = 10;</code>
-       *
-       * <pre>
-       *押金
-       * </pre>
-       */
-      public boolean hasPledgePrice() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
-      }
-      /**
-       * <code>optional double pledgePrice = 10;</code>
-       *
-       * <pre>
-       *押金
-       * </pre>
-       */
-      public double getPledgePrice() {
-        return pledgePrice_;
-      }
-      /**
-       * <code>optional double pledgePrice = 10;</code>
-       *
-       * <pre>
-       *押金
-       * </pre>
-       */
-      public Builder setPledgePrice(double value) {
-        bitField0_ |= 0x00000200;
-        pledgePrice_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional double pledgePrice = 10;</code>
-       *
-       * <pre>
-       *押金
-       * </pre>
-       */
-      public Builder clearPledgePrice() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        pledgePrice_ = 0D;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object favoriteId_ = "";
       /**
-       * <code>required string favoriteId = 11;</code>
+       * <code>required string favoriteId = 10;</code>
        *
        * <pre>
        *收藏Id
        * </pre>
        */
       public boolean hasFavoriteId() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>required string favoriteId = 11;</code>
+       * <code>required string favoriteId = 10;</code>
        *
        * <pre>
        *收藏Id
@@ -4104,7 +3994,7 @@ public final class Favorite {
         }
       }
       /**
-       * <code>required string favoriteId = 11;</code>
+       * <code>required string favoriteId = 10;</code>
        *
        * <pre>
        *收藏Id
@@ -4124,7 +4014,7 @@ public final class Favorite {
         }
       }
       /**
-       * <code>required string favoriteId = 11;</code>
+       * <code>required string favoriteId = 10;</code>
        *
        * <pre>
        *收藏Id
@@ -4135,26 +4025,26 @@ public final class Favorite {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000200;
         favoriteId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string favoriteId = 11;</code>
+       * <code>required string favoriteId = 10;</code>
        *
        * <pre>
        *收藏Id
        * </pre>
        */
       public Builder clearFavoriteId() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         favoriteId_ = getDefaultInstance().getFavoriteId();
         onChanged();
         return this;
       }
       /**
-       * <code>required string favoriteId = 11;</code>
+       * <code>required string favoriteId = 10;</code>
        *
        * <pre>
        *收藏Id
@@ -4165,7 +4055,7 @@ public final class Favorite {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000200;
         favoriteId_ = value;
         onChanged();
         return this;
@@ -7303,20 +7193,20 @@ public final class Favorite {
       "istResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultM" +
       "sg\030\002 \002(\t\022\020\n\010maxIndex\030\003 \001(\005\022\017\n\007hasMore\030\004 " +
       "\002(\010\022I\n\020favoriteLiteInfo\030\005 \003(\0132/.com.qjoy" +
-      ".basjoo.core.model.pb.FavoriteLiteInfo\"\340" +
+      ".basjoo.core.model.pb.FavoriteLiteInfo\"\313" +
       "\001\n\020FavoriteLiteInfo\022\021\n\tproductId\030\001 \002(\t\022\023" +
       "\n\013productType\030\002 \002(\t\022\r\n\005brand\030\003 \002(\t\022\024\n\014ma" +
       "inImageUrl\030\004 \002(\t\022\014\n\004desc\030\005 \002(\t\022\022\n\nlowest",
       "Rent\030\006 \001(\001\022\014\n\004unit\030\007 \001(\005\022\021\n\trentCount\030\010 " +
-      "\001(\003\022\023\n\013marketPrice\030\t \001(\001\022\023\n\013pledgePrice\030" +
-      "\n \001(\001\022\022\n\nfavoriteId\030\013 \002(\t\"7\n\022AddFavorite" +
-      "Request\022\021\n\tproductId\030\001 \002(\t\022\016\n\006userId\030\002 \002" +
-      "(\t\"N\n\021AddFavoriteResult\022\022\n\nresultCode\030\001 " +
-      "\002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\022\n\nfavoriteId\030\003 \002" +
-      "(\t\"<\n\025DeleteFavoriteRequest\022\023\n\013favoriteI" +
-      "ds\030\001 \003(\t\022\016\n\006userId\030\002 \002(\t\"=\n\024DeleteFavori" +
-      "teResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMs" +
-      "g\030\002 \002(\tB\037\n\035com.qjoy.basjoo.core.model.pb"
+      "\001(\003\022\023\n\013marketPrice\030\t \001(\001\022\022\n\nfavoriteId\030\n" +
+      " \002(\t\"7\n\022AddFavoriteRequest\022\021\n\tproductId\030" +
+      "\001 \002(\t\022\016\n\006userId\030\002 \002(\t\"N\n\021AddFavoriteResu" +
+      "lt\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(" +
+      "\t\022\022\n\nfavoriteId\030\003 \002(\t\"<\n\025DeleteFavoriteR" +
+      "equest\022\023\n\013favoriteIds\030\001 \003(\t\022\016\n\006userId\030\002 " +
+      "\002(\t\"=\n\024DeleteFavoriteResult\022\022\n\nresultCod" +
+      "e\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\tB\037\n\035com.qjoy.b" +
+      "asjoo.core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7347,7 +7237,7 @@ public final class Favorite {
     internal_static_com_qjoy_basjoo_core_model_pb_FavoriteLiteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_FavoriteLiteInfo_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", "Brand", "MainImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MarketPrice", "PledgePrice", "FavoriteId", });
+        new java.lang.String[] { "ProductId", "ProductType", "Brand", "MainImageUrl", "Desc", "LowestRent", "Unit", "RentCount", "MarketPrice", "FavoriteId", });
     internal_static_com_qjoy_basjoo_core_model_pb_AddFavoriteRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_qjoy_basjoo_core_model_pb_AddFavoriteRequest_fieldAccessorTable = new

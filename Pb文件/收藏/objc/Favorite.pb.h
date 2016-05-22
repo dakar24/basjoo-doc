@@ -39,7 +39,6 @@
 @property (readonly) BOOL hasUnit;
 @property (readonly) BOOL hasRentCount;
 @property (readonly) BOOL hasMarketPrice;
-@property (readonly) BOOL hasPledgePrice;
 @property (readonly) BOOL hasFavoriteId;
 @property (nonatomic,strong) NSString* productId;
 @property (nonatomic,strong) NSString* productType;
@@ -50,7 +49,6 @@
 @property (nonatomic)SInt32 unit;
 @property (nonatomic)SInt64 rentCount;
 @property (nonatomic)Float64 marketPrice;
-@property (nonatomic)Float64 pledgePrice;
 @property (nonatomic,strong) NSString* favoriteId;
 @end
 

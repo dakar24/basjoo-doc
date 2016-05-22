@@ -25,8 +25,7 @@ public final class FavoriteLiteInfo extends Message {
   public static final int TAG_UNIT = 7;
   public static final int TAG_RENTCOUNT = 8;
   public static final int TAG_MARKETPRICE = 9;
-  public static final int TAG_PLEDGEPRICE = 10;
-  public static final int TAG_FAVORITEID = 11;
+  public static final int TAG_FAVORITEID = 10;
 
   public static final String DEFAULT_PRODUCTID = "";
   public static final String DEFAULT_PRODUCTTYPE = "";
@@ -37,7 +36,6 @@ public final class FavoriteLiteInfo extends Message {
   public static final Integer DEFAULT_UNIT = 0;
   public static final Long DEFAULT_RENTCOUNT = 0L;
   public static final Double DEFAULT_MARKETPRICE = 0D;
-  public static final Double DEFAULT_PLEDGEPRICE = 0D;
   public static final String DEFAULT_FAVORITEID = "";
 
   /**
@@ -95,15 +93,9 @@ public final class FavoriteLiteInfo extends Message {
   public Double marketPrice;
 
   /**
-   * 押金
-   */
-  @ProtoField(tag = 10, type = DOUBLE)
-  public Double pledgePrice;
-
-  /**
    * 收藏Id
    */
-  @ProtoField(tag = 11, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 10, type = STRING, label = REQUIRED)
   public String favoriteId;
 
   public FavoriteLiteInfo(FavoriteLiteInfo message) {
@@ -118,7 +110,6 @@ public final class FavoriteLiteInfo extends Message {
     this.unit = message.unit;
     this.rentCount = message.rentCount;
     this.marketPrice = message.marketPrice;
-    this.pledgePrice = message.pledgePrice;
     this.favoriteId = message.favoriteId;
   }
 
@@ -154,9 +145,6 @@ public final class FavoriteLiteInfo extends Message {
         case TAG_MARKETPRICE:
         this.marketPrice = (Double)value;
         break;
-        case TAG_PLEDGEPRICE:
-        this.pledgePrice = (Double)value;
-        break;
         case TAG_FAVORITEID:
         this.favoriteId = (String)value;
         break;
@@ -179,7 +167,6 @@ public final class FavoriteLiteInfo extends Message {
         && equals(unit, o.unit)
         && equals(rentCount, o.rentCount)
         && equals(marketPrice, o.marketPrice)
-        && equals(pledgePrice, o.pledgePrice)
         && equals(favoriteId, o.favoriteId);
   }
 
@@ -196,7 +183,6 @@ public final class FavoriteLiteInfo extends Message {
       result = result * 37 + (unit != null ? unit.hashCode() : 0);
       result = result * 37 + (rentCount != null ? rentCount.hashCode() : 0);
       result = result * 37 + (marketPrice != null ? marketPrice.hashCode() : 0);
-      result = result * 37 + (pledgePrice != null ? pledgePrice.hashCode() : 0);
       result = result * 37 + (favoriteId != null ? favoriteId.hashCode() : 0);
       hashCode = result;
     }
