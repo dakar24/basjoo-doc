@@ -96,7 +96,7 @@ message CommitOrderResult {
 	repeated string                 vouchers = 17;
 	
 	//选择成色编码
-	required string                 qualityCode = 18;
+	optional string                 qualityCode = 18;
 
     
 }

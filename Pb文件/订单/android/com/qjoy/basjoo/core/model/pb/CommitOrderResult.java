@@ -155,7 +155,7 @@ public final class CommitOrderResult extends Message {
   /**
    * 选择成色编码
    */
-  @ProtoField(tag = 18, type = STRING, label = REQUIRED)
+  @ProtoField(tag = 18, type = STRING)
   public String qualityCode;
 
   public CommitOrderResult(CommitOrderResult message) {
