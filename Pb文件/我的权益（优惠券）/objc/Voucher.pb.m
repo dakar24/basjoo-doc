@@ -9,6 +9,7 @@
     _voucherStatus = 0;
     _voucherType = 0;
     _startIndex = 0;
+    _userId = @"";
   }
   return self;
 }
@@ -21,6 +22,9 @@
   }
   if (self.hasStartIndex) {
     [output writeInt32:3 value:self.startIndex];
+  }
+  if (self.hasUserId) {
+    [output writeString:4 value:self.userId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -36,6 +40,9 @@
   }
   if (self.hasStartIndex) {
     size_ += computeInt32Size(3, self.startIndex);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(4, self.userId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -56,6 +63,9 @@
   if (self.hasStartIndex) {
     [output appendFormat:@"%@%@: %@\n", indent, @"startIndex", [NSNumber numberWithInteger:self.startIndex]];
   }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -70,6 +80,10 @@
 - (void) setStartIndex:(SInt32) value {
   _hasStartIndex = YES;
   _startIndex = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -96,6 +110,10 @@
       }
       case 24: {
         [self setStartIndex:[input readInt32]];
+        break;
+      }
+      case 34: {
+        [self setUserId:[input readString]];
         break;
       }
     }

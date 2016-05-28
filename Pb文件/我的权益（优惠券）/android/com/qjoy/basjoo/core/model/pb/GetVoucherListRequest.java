@@ -6,6 +6,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 import static com.squareup.wire.Message.Datatype.INT32;
+import static com.squareup.wire.Message.Datatype.STRING;
+import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
  * 获取优惠券（代金券、折扣券）列表
@@ -15,10 +17,12 @@ public final class GetVoucherListRequest extends Message {
   public static final int TAG_VOUCHERSTATUS = 1;
   public static final int TAG_VOUCHERTYPE = 2;
   public static final int TAG_STARTINDEX = 3;
+  public static final int TAG_USERID = 4;
 
   public static final Integer DEFAULT_VOUCHERSTATUS = 0;
   public static final Integer DEFAULT_VOUCHERTYPE = 0;
   public static final Integer DEFAULT_STARTINDEX = 0;
+  public static final String DEFAULT_USERID = "";
 
   /**
    * 优惠券状态 0:全部优惠券,1:仅显示有效券，2:仅显示无效（过期、已使用等）券，
@@ -38,12 +42,19 @@ public final class GetVoucherListRequest extends Message {
   @ProtoField(tag = 3, type = INT32)
   public Integer startIndex;
 
+  /**
+   * 用户ID
+   */
+  @ProtoField(tag = 4, type = STRING, label = REQUIRED)
+  public String userId;
+
   public GetVoucherListRequest(GetVoucherListRequest message) {
     super(message);
     if (message == null) return;
     this.voucherStatus = message.voucherStatus;
     this.voucherType = message.voucherType;
     this.startIndex = message.startIndex;
+    this.userId = message.userId;
   }
 
   public GetVoucherListRequest() {
@@ -60,6 +71,9 @@ public final class GetVoucherListRequest extends Message {
         case TAG_STARTINDEX:
         this.startIndex = (Integer)value;
         break;
+        case TAG_USERID:
+        this.userId = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -72,7 +86,8 @@ public final class GetVoucherListRequest extends Message {
     GetVoucherListRequest o = (GetVoucherListRequest) other;
     return equals(voucherStatus, o.voucherStatus)
         && equals(voucherType, o.voucherType)
-        && equals(startIndex, o.startIndex);
+        && equals(startIndex, o.startIndex)
+        && equals(userId, o.userId);
   }
 
   @Override
@@ -82,6 +97,7 @@ public final class GetVoucherListRequest extends Message {
       result = voucherStatus != null ? voucherStatus.hashCode() : 0;
       result = result * 37 + (voucherType != null ? voucherType.hashCode() : 0);
       result = result * 37 + (startIndex != null ? startIndex.hashCode() : 0);
+      result = result * 37 + (userId != null ? userId.hashCode() : 0);
       hashCode = result;
     }
     return result;

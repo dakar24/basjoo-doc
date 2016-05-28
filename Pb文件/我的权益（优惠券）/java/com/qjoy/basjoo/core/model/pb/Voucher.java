@@ -62,6 +62,32 @@ public final class Voucher {
      * </pre>
      */
     int getStartIndex();
+
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    boolean hasUserId();
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
   }
   /**
    * Protobuf type {@code com.qjoy.basjoo.core.model.pb.GetVoucherListRequest}
@@ -132,6 +158,12 @@ public final class Voucher {
             case 24: {
               bitField0_ |= 0x00000004;
               startIndex_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              userId_ = bs;
               break;
             }
           }
@@ -243,10 +275,65 @@ public final class Voucher {
       return startIndex_;
     }
 
+    public static final int USERID_FIELD_NUMBER = 4;
+    private java.lang.Object userId_;
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string userId = 4;</code>
+     *
+     * <pre>
+     *用户ID
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       voucherStatus_ = 0;
       voucherType_ = 0;
       startIndex_ = 0;
+      userId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -254,6 +341,10 @@ public final class Voucher {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -269,6 +360,9 @@ public final class Voucher {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, startIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getUserIdBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -290,6 +384,10 @@ public final class Voucher {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, startIndex_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getUserIdBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -418,6 +516,8 @@ public final class Voucher {
         bitField0_ = (bitField0_ & ~0x00000002);
         startIndex_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
+        userId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -458,6 +558,10 @@ public final class Voucher {
           to_bitField0_ |= 0x00000004;
         }
         result.startIndex_ = startIndex_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.userId_ = userId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -483,11 +587,20 @@ public final class Voucher {
         if (other.hasStartIndex()) {
           setStartIndex(other.getStartIndex());
         }
+        if (other.hasUserId()) {
+          bitField0_ |= 0x00000008;
+          userId_ = other.userId_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasUserId()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -650,6 +763,106 @@ public final class Voucher {
       public Builder clearStartIndex() {
         bitField0_ = (bitField0_ & ~0x00000004);
         startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public boolean hasUserId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string userId = 4;</code>
+       *
+       * <pre>
+       *用户ID
+       * </pre>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -2120,7 +2333,7 @@ public final class Voucher {
      * <code>required string voucherStatus = 4;</code>
      *
      * <pre>
-     *优惠券状态 1:有效券，2:已使用，3:已过期
+     *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
      * </pre>
      */
     boolean hasVoucherStatus();
@@ -2128,7 +2341,7 @@ public final class Voucher {
      * <code>required string voucherStatus = 4;</code>
      *
      * <pre>
-     *优惠券状态 1:有效券，2:已使用，3:已过期
+     *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
      * </pre>
      */
     java.lang.String getVoucherStatus();
@@ -2136,7 +2349,7 @@ public final class Voucher {
      * <code>required string voucherStatus = 4;</code>
      *
      * <pre>
-     *优惠券状态 1:有效券，2:已使用，3:已过期
+     *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
      * </pre>
      */
     com.google.protobuf.ByteString
@@ -2538,7 +2751,7 @@ public final class Voucher {
      * <code>required string voucherStatus = 4;</code>
      *
      * <pre>
-     *优惠券状态 1:有效券，2:已使用，3:已过期
+     *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
      * </pre>
      */
     public boolean hasVoucherStatus() {
@@ -2548,7 +2761,7 @@ public final class Voucher {
      * <code>required string voucherStatus = 4;</code>
      *
      * <pre>
-     *优惠券状态 1:有效券，2:已使用，3:已过期
+     *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
      * </pre>
      */
     public java.lang.String getVoucherStatus() {
@@ -2569,7 +2782,7 @@ public final class Voucher {
      * <code>required string voucherStatus = 4;</code>
      *
      * <pre>
-     *优惠券状态 1:有效券，2:已使用，3:已过期
+     *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
      * </pre>
      */
     public com.google.protobuf.ByteString
@@ -3473,7 +3686,7 @@ public final class Voucher {
        * <code>required string voucherStatus = 4;</code>
        *
        * <pre>
-       *优惠券状态 1:有效券，2:已使用，3:已过期
+       *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
        * </pre>
        */
       public boolean hasVoucherStatus() {
@@ -3483,7 +3696,7 @@ public final class Voucher {
        * <code>required string voucherStatus = 4;</code>
        *
        * <pre>
-       *优惠券状态 1:有效券，2:已使用，3:已过期
+       *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
        * </pre>
        */
       public java.lang.String getVoucherStatus() {
@@ -3504,7 +3717,7 @@ public final class Voucher {
        * <code>required string voucherStatus = 4;</code>
        *
        * <pre>
-       *优惠券状态 1:有效券，2:已使用，3:已过期
+       *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
        * </pre>
        */
       public com.google.protobuf.ByteString
@@ -3524,7 +3737,7 @@ public final class Voucher {
        * <code>required string voucherStatus = 4;</code>
        *
        * <pre>
-       *优惠券状态 1:有效券，2:已使用，3:已过期
+       *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
        * </pre>
        */
       public Builder setVoucherStatus(
@@ -3541,7 +3754,7 @@ public final class Voucher {
        * <code>required string voucherStatus = 4;</code>
        *
        * <pre>
-       *优惠券状态 1:有效券，2:已使用，3:已过期
+       *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
        * </pre>
        */
       public Builder clearVoucherStatus() {
@@ -3554,7 +3767,7 @@ public final class Voucher {
        * <code>required string voucherStatus = 4;</code>
        *
        * <pre>
-       *优惠券状态 1:有效券，2:已使用，3:已过期
+       *优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
        * </pre>
        */
       public Builder setVoucherStatusBytes(
@@ -3900,18 +4113,19 @@ public final class Voucher {
   static {
     java.lang.String[] descriptorData = {
       "\n\007Voucher\022\035com.qjoy.basjoo.core.model.pb" +
-      "\"W\n\025GetVoucherListRequest\022\025\n\rvoucherStat" +
+      "\"g\n\025GetVoucherListRequest\022\025\n\rvoucherStat" +
       "us\030\001 \001(\005\022\023\n\013voucherType\030\002 \001(\005\022\022\n\nstartIn" +
-      "dex\030\003 \001(\005\"\241\001\n\024GetVoucherListResult\022\022\n\nre" +
-      "sultCode\030\001 \002(\t\022\021\n\tresultMsg\030\002 \002(\t\022\017\n\007has" +
-      "More\030\003 \002(\010\022\020\n\010maxIndex\030\004 \001(\005\022?\n\013voucherI" +
-      "nfo\030\005 \003(\0132*.com.qjoy.basjoo.core.model.p" +
-      "b.VoucherInfo\"\275\001\n\013VoucherInfo\022\021\n\tvoucher" +
-      "Id\030\001 \002(\t\022\024\n\014voucherTitle\030\002 \002(\t\022\023\n\013vouche" +
-      "rType\030\003 \002(\t\022\025\n\rvoucherStatus\030\004 \002(\t\022\026\n\016va",
-      "lidStartTime\030\005 \002(\003\022\024\n\014validEndTime\030\006 \002(\003" +
-      "\022\023\n\013voucherDesc\030\007 \002(\t\022\026\n\016voucherBenefit\030" +
-      "\010 \002(\tB\037\n\035com.qjoy.basjoo.core.model.pb"
+      "dex\030\003 \001(\005\022\016\n\006userId\030\004 \002(\t\"\241\001\n\024GetVoucher" +
+      "ListResult\022\022\n\nresultCode\030\001 \002(\t\022\021\n\tresult" +
+      "Msg\030\002 \002(\t\022\017\n\007hasMore\030\003 \002(\010\022\020\n\010maxIndex\030\004" +
+      " \001(\005\022?\n\013voucherInfo\030\005 \003(\0132*.com.qjoy.bas" +
+      "joo.core.model.pb.VoucherInfo\"\275\001\n\013Vouche" +
+      "rInfo\022\021\n\tvoucherId\030\001 \002(\t\022\024\n\014voucherTitle" +
+      "\030\002 \002(\t\022\023\n\013voucherType\030\003 \002(\t\022\025\n\rvoucherSt",
+      "atus\030\004 \002(\t\022\026\n\016validStartTime\030\005 \002(\003\022\024\n\014va" +
+      "lidEndTime\030\006 \002(\003\022\023\n\013voucherDesc\030\007 \002(\t\022\026\n" +
+      "\016voucherBenefit\030\010 \002(\tB\037\n\035com.qjoy.basjoo" +
+      ".core.model.pb"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3930,7 +4144,7 @@ public final class Voucher {
     internal_static_com_qjoy_basjoo_core_model_pb_GetVoucherListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_qjoy_basjoo_core_model_pb_GetVoucherListRequest_descriptor,
-        new java.lang.String[] { "VoucherStatus", "VoucherType", "StartIndex", });
+        new java.lang.String[] { "VoucherStatus", "VoucherType", "StartIndex", "UserId", });
     internal_static_com_qjoy_basjoo_core_model_pb_GetVoucherListResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_qjoy_basjoo_core_model_pb_GetVoucherListResult_fieldAccessorTable = new

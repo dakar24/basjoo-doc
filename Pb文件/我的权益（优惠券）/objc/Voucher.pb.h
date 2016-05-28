@@ -10,9 +10,11 @@
 @property (readonly) BOOL hasVoucherStatus;
 @property (readonly) BOOL hasVoucherType;
 @property (readonly) BOOL hasStartIndex;
+@property (readonly) BOOL hasUserId;
 @property (nonatomic)SInt32 voucherStatus;
 @property (nonatomic)SInt32 voucherType;
 @property (nonatomic)SInt32 startIndex;
+@property (nonatomic,strong) NSString* userId;
 @end
 
 @interface GetVoucherListResult : QJPBGeneratedMessage<GeneratedMessageProtocol>

@@ -51,7 +51,7 @@ public final class VoucherInfo extends Message {
   public String voucherType;
 
   /**
-   * 优惠券状态 1:有效券，2:已使用，3:已过期
+   * 优惠券状态 1:有效券，2:已使用，3:已过期，4：使用中，暂未完成支付
    */
   @ProtoField(tag = 4, type = STRING, label = REQUIRED)
   public String voucherStatus;
