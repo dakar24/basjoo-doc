@@ -24,6 +24,7 @@ public final class BindWxUserRequest extends Message {
   public static final int TAG_MOBILENO = 9;
   public static final int TAG_CHECKCODE = 10;
   public static final int TAG_RECOMMENDCODE = 11;
+  public static final int TAG_CLIENTINFO = 12;
 
   public static final String DEFAULT_OPENID = "";
   public static final String DEFAULT_NICKNAME = "";
@@ -103,6 +104,12 @@ public final class BindWxUserRequest extends Message {
   @ProtoField(tag = 11, type = STRING)
   public String recommendCode;
 
+  /**
+   * 客户端信息
+   */
+  @ProtoField(tag = 12)
+  public ClientInfo clientInfo;
+
   public BindWxUserRequest(BindWxUserRequest message) {
     super(message);
     if (message == null) return;
@@ -117,6 +124,7 @@ public final class BindWxUserRequest extends Message {
     this.mobileNo = message.mobileNo;
     this.checkCode = message.checkCode;
     this.recommendCode = message.recommendCode;
+    this.clientInfo = message.clientInfo;
   }
 
   public BindWxUserRequest() {
@@ -157,6 +165,9 @@ public final class BindWxUserRequest extends Message {
         case TAG_RECOMMENDCODE:
         this.recommendCode = (String)value;
         break;
+        case TAG_CLIENTINFO:
+        this.clientInfo = (ClientInfo)value;
+        break;
         default: break;
         };
     return this;
@@ -177,7 +188,8 @@ public final class BindWxUserRequest extends Message {
         && equals(unionId, o.unionId)
         && equals(mobileNo, o.mobileNo)
         && equals(checkCode, o.checkCode)
-        && equals(recommendCode, o.recommendCode);
+        && equals(recommendCode, o.recommendCode)
+        && equals(clientInfo, o.clientInfo);
   }
 
   @Override
@@ -195,6 +207,7 @@ public final class BindWxUserRequest extends Message {
       result = result * 37 + (mobileNo != null ? mobileNo.hashCode() : 0);
       result = result * 37 + (checkCode != null ? checkCode.hashCode() : 0);
       result = result * 37 + (recommendCode != null ? recommendCode.hashCode() : 0);
+      result = result * 37 + (clientInfo != null ? clientInfo.hashCode() : 0);
       hashCode = result;
     }
     return result;

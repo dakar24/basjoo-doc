@@ -11,6 +11,9 @@ message LoginRequest {
 	
     //密码
     required string                 password = 2;
+
+    //客户端信息
+    optional ClientInfo             clientInfo = 3;
     
 }
 
@@ -24,7 +27,7 @@ message LoginResult {
    optional string                 sessionId = 3;
    //用户ID
    optional string                 userId = 4;
-    //头像
+   //头像
    optional string                 headIconUrl = 5;
    //手机号
    optional string                 mobileNo = 6;
@@ -38,14 +41,19 @@ message LoginResult {
 
    //登录类型
    optional LoginType              loginType =10;
+
+   //设备ID(如果客户端未上报，服务端会补充生成) 
+   optional string                 did = 11;
 }
 
 //登录类型
 enum LoginType {
-  //普通登录  
+  //普通登录（账密登录）  
   NORMAL = 0;
   //微信登录
   WXLOGIN = 1;
+  //免密登录（报活无密登录）
+  FAKELOGIN = 2;
 }
 
 
@@ -54,6 +62,9 @@ message WxLoginRequest {
 
    //微信openID
    required string                openId = 1; 
+
+   //客户端信息
+   optional ClientInfo             clientInfo = 2;
    
 }
 
@@ -107,6 +118,80 @@ message BindWxUserRequest {
  
    //推荐码（邀请码）
    optional string                recommendCode  =11;
+
+   //客户端信息
+   optional ClientInfo            clientInfo = 12;
+
+}
+
+//设备信息
+message ClientInfo {
+
+    // 客户端类型  iOS Android
+    optional string            osType = 1;
+
+    // 客户端的版本号 1.0.0.20160529001
+    optional string            clientVersion = 2;
+
+    // 客户端ID(IMSI|IMEI)
+    optional string            clientId = 3;
+
+    // 设备ID(如果客户端未上报，服务端会补充生成) 
+    optional string            did = 4;
+
+    // 设备指纹（客户端生产，服务端不会补充）
+    optional string            apdid = 5;
+
+    // 客户端渠道信息（如360，腾讯等下载渠道）
+    optional string            channel = 6;
+
+}
+
+//报活请求
+message ReportActiveRequest { 
+
+   //用户ID
+   optional string                 userId = 1;
+
+   //sessionID
+   optional string                 sessionId = 2;
+
+   //客户端信息
+   optional ClientInfo             clientInfo = 3;
+} 
+
+//报活结果
+message ReportActiveResult { 
+
+   //结果码：100 仅报活成功 。200 报活并且免密登录成功 可从结果中获取到用户相关信息。900:需要升级客户端
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+   optional string                 sessionId = 3;
+   //用户ID
+   optional string                 userId = 4;
+   //头像
+   optional string                 headIconUrl = 5;
+   //手机号
+   optional string                 mobileNo = 6;
+   //用户名
+   optional string                 userName = 7; 
+   //昵称
+   optional string                 nickName = 8; 
+   
+   //推荐码，类似Uber
+   optional string                 recommendCode= 9;
+
+   //登录类型
+   optional LoginType              loginType = 10;
+
+   // 设备ID(如果客户端未上报，服务端会补充生成) 
+   optional string                 did = 11;
+
+   //客户端升级包下载地址
+   optional string                 upgradeUrl = 12;
+
 }
  
 

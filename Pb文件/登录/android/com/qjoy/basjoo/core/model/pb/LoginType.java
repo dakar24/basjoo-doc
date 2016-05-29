@@ -7,13 +7,17 @@ import com.squareup.wire.ProtoEnum;
 public enum LoginType
     implements ProtoEnum {
   /**
-   * 普通登录
+   * 普通登录（账密登录）
    */
   NORMAL(0),
   /**
    * 微信登录
    */
-  WXLOGIN(1);
+  WXLOGIN(1),
+  /**
+   * 免密登录（报活无密登录）
+   */
+  FAKELOGIN(2);
 
   private final int value;
 

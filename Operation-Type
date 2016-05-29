@@ -5,6 +5,7 @@
 微信登陆：qjoy.basjoo.wxLogin
 微信登录预信息：qjoy.basjoo.getWxPreInfo
 绑定微信用户：qjoy.basjoo.bindWxUser
+报活：qjoy.basjoo.reportActive
 
 
 #验证码（统一接口）

@@ -15,6 +15,7 @@ public final class LoginRequest extends Message {
 
   public static final int TAG_LOGINID = 1;
   public static final int TAG_PASSWORD = 2;
+  public static final int TAG_CLIENTINFO = 3;
 
   public static final String DEFAULT_LOGINID = "";
   public static final String DEFAULT_PASSWORD = "";
@@ -31,11 +32,18 @@ public final class LoginRequest extends Message {
   @ProtoField(tag = 2, type = STRING, label = REQUIRED)
   public String password;
 
+  /**
+   * 客户端信息
+   */
+  @ProtoField(tag = 3)
+  public ClientInfo clientInfo;
+
   public LoginRequest(LoginRequest message) {
     super(message);
     if (message == null) return;
     this.loginId = message.loginId;
     this.password = message.password;
+    this.clientInfo = message.clientInfo;
   }
 
   public LoginRequest() {
@@ -49,6 +57,9 @@ public final class LoginRequest extends Message {
         case TAG_PASSWORD:
         this.password = (String)value;
         break;
+        case TAG_CLIENTINFO:
+        this.clientInfo = (ClientInfo)value;
+        break;
         default: break;
         };
     return this;
@@ -60,7 +71,8 @@ public final class LoginRequest extends Message {
     if (!(other instanceof LoginRequest)) return false;
     LoginRequest o = (LoginRequest) other;
     return equals(loginId, o.loginId)
-        && equals(password, o.password);
+        && equals(password, o.password)
+        && equals(clientInfo, o.clientInfo);
   }
 
   @Override
@@ -69,6 +81,7 @@ public final class LoginRequest extends Message {
     if (result == 0) {
       result = loginId != null ? loginId.hashCode() : 0;
       result = result * 37 + (password != null ? password.hashCode() : 0);
+      result = result * 37 + (clientInfo != null ? clientInfo.hashCode() : 0);
       hashCode = result;
     }
     return result;

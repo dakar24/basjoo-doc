@@ -10,9 +10,9 @@ import static com.squareup.wire.Message.Datatype.STRING;
 import static com.squareup.wire.Message.Label.REQUIRED;
 
 /**
- * 登录结果
+ * 报活结果
  */
-public final class LoginResult extends Message {
+public final class ReportActiveResult extends Message {
 
   public static final int TAG_RESULTCODE = 1;
   public static final int TAG_RESULTMSG = 2;
@@ -25,6 +25,7 @@ public final class LoginResult extends Message {
   public static final int TAG_RECOMMENDCODE = 9;
   public static final int TAG_LOGINTYPE = 10;
   public static final int TAG_DID = 11;
+  public static final int TAG_UPGRADEURL = 12;
 
   public static final String DEFAULT_RESULTCODE = "";
   public static final String DEFAULT_RESULTMSG = "";
@@ -37,7 +38,11 @@ public final class LoginResult extends Message {
   public static final String DEFAULT_RECOMMENDCODE = "";
   public static final LoginType DEFAULT_LOGINTYPE = LoginType.NORMAL;
   public static final String DEFAULT_DID = "";
+  public static final String DEFAULT_UPGRADEURL = "";
 
+  /**
+   * 结果码：100 仅报活成功 。200 报活并且免密登录成功 可从结果中获取到用户相关信息。900:需要升级客户端
+   */
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String resultCode;
 
@@ -95,7 +100,13 @@ public final class LoginResult extends Message {
   @ProtoField(tag = 11, type = STRING)
   public String did;
 
-  public LoginResult(LoginResult message) {
+  /**
+   * 客户端升级包下载地址
+   */
+  @ProtoField(tag = 12, type = STRING)
+  public String upgradeUrl;
+
+  public ReportActiveResult(ReportActiveResult message) {
     super(message);
     if (message == null) return;
     this.resultCode = message.resultCode;
@@ -109,12 +120,13 @@ public final class LoginResult extends Message {
     this.recommendCode = message.recommendCode;
     this.loginType = message.loginType;
     this.did = message.did;
+    this.upgradeUrl = message.upgradeUrl;
   }
 
-  public LoginResult() {
+  public ReportActiveResult() {
   }
 
-  public LoginResult fillTagValue(int tag, Object value) {
+  public ReportActiveResult fillTagValue(int tag, Object value) {
     switch(tag) {
         case TAG_RESULTCODE:
         this.resultCode = (String)value;
@@ -149,6 +161,9 @@ public final class LoginResult extends Message {
         case TAG_DID:
         this.did = (String)value;
         break;
+        case TAG_UPGRADEURL:
+        this.upgradeUrl = (String)value;
+        break;
         default: break;
         };
     return this;
@@ -157,8 +172,8 @@ public final class LoginResult extends Message {
   @Override
   public boolean equals(Object other) {
     if (other == this) return true;
-    if (!(other instanceof LoginResult)) return false;
-    LoginResult o = (LoginResult) other;
+    if (!(other instanceof ReportActiveResult)) return false;
+    ReportActiveResult o = (ReportActiveResult) other;
     return equals(resultCode, o.resultCode)
         && equals(resultMsg, o.resultMsg)
         && equals(sessionId, o.sessionId)
@@ -169,7 +184,8 @@ public final class LoginResult extends Message {
         && equals(nickName, o.nickName)
         && equals(recommendCode, o.recommendCode)
         && equals(loginType, o.loginType)
-        && equals(did, o.did);
+        && equals(did, o.did)
+        && equals(upgradeUrl, o.upgradeUrl);
   }
 
   @Override
@@ -187,6 +203,7 @@ public final class LoginResult extends Message {
       result = result * 37 + (recommendCode != null ? recommendCode.hashCode() : 0);
       result = result * 37 + (loginType != null ? loginType.hashCode() : 0);
       result = result * 37 + (did != null ? did.hashCode() : 0);
+      result = result * 37 + (upgradeUrl != null ? upgradeUrl.hashCode() : 0);
       hashCode = result;
     }
     return result;

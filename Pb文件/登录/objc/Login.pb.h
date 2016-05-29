@@ -3,22 +3,28 @@
 #import <QJProtocolBuffers/ProtocolBuffers.h>
 
 @class BindWxUserRequest;
+@class ClientInfo;
 @class GetWxPreInfoRequest;
 @class GetWxPreInfoResult;
 @class LoginRequest;
 @class LoginResult;
+@class ReportActiveRequest;
+@class ReportActiveResult;
 @class WxLoginRequest;
 
 typedef NS_ENUM(SInt32, LoginType) {
   LoginTypeNormal = 0,
   LoginTypeWxlogin = 1,
+  LoginTypeFakelogin = 2,
 };
 
 @interface LoginRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasLoginId;
 @property (readonly) BOOL hasPassword;
+@property (readonly) BOOL hasClientInfo;
 @property (nonatomic,strong) NSString* loginId;
 @property (nonatomic,strong) NSString* password;
+@property (nonatomic,strong) ClientInfo* clientInfo;
 @end
 
 @interface LoginResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -32,6 +38,7 @@ typedef NS_ENUM(SInt32, LoginType) {
 @property (readonly) BOOL hasNickName;
 @property (readonly) BOOL hasRecommendCode;
 @property (readonly) BOOL hasLoginType;
+@property (readonly) BOOL hasDid;
 @property (nonatomic,strong) NSString* resultCode;
 @property (nonatomic,strong) NSString* resultMsg;
 @property (nonatomic,strong) NSString* sessionId;
@@ -42,11 +49,14 @@ typedef NS_ENUM(SInt32, LoginType) {
 @property (nonatomic,strong) NSString* nickName;
 @property (nonatomic,strong) NSString* recommendCode;
 @property (nonatomic)LoginType loginType;
+@property (nonatomic,strong) NSString* did;
 @end
 
 @interface WxLoginRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
 @property (readonly) BOOL hasOpenId;
+@property (readonly) BOOL hasClientInfo;
 @property (nonatomic,strong) NSString* openId;
+@property (nonatomic,strong) ClientInfo* clientInfo;
 @end
 
 @interface GetWxPreInfoRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
@@ -71,6 +81,7 @@ typedef NS_ENUM(SInt32, LoginType) {
 @property (readonly) BOOL hasMobileNo;
 @property (readonly) BOOL hasCheckCode;
 @property (readonly) BOOL hasRecommendCode;
+@property (readonly) BOOL hasClientInfo;
 @property (nonatomic,strong) NSString* openId;
 @property (nonatomic,strong) NSString* nickName;
 @property (nonatomic,strong) NSString* province;
@@ -82,5 +93,57 @@ typedef NS_ENUM(SInt32, LoginType) {
 @property (nonatomic,strong) NSString* mobileNo;
 @property (nonatomic,strong) NSString* checkCode;
 @property (nonatomic,strong) NSString* recommendCode;
+@property (nonatomic,strong) ClientInfo* clientInfo;
+@end
+
+@interface ClientInfo : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasOsType;
+@property (readonly) BOOL hasClientVersion;
+@property (readonly) BOOL hasClientId;
+@property (readonly) BOOL hasDid;
+@property (readonly) BOOL hasApdid;
+@property (readonly) BOOL hasChannel;
+@property (nonatomic,strong) NSString* osType;
+@property (nonatomic,strong) NSString* clientVersion;
+@property (nonatomic,strong) NSString* clientId;
+@property (nonatomic,strong) NSString* did;
+@property (nonatomic,strong) NSString* apdid;
+@property (nonatomic,strong) NSString* channel;
+@end
+
+@interface ReportActiveRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasSessionId;
+@property (readonly) BOOL hasClientInfo;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSString* sessionId;
+@property (nonatomic,strong) ClientInfo* clientInfo;
+@end
+
+@interface ReportActiveResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (readonly) BOOL hasSessionId;
+@property (readonly) BOOL hasUserId;
+@property (readonly) BOOL hasHeadIconUrl;
+@property (readonly) BOOL hasMobileNo;
+@property (readonly) BOOL hasUserName;
+@property (readonly) BOOL hasNickName;
+@property (readonly) BOOL hasRecommendCode;
+@property (readonly) BOOL hasLoginType;
+@property (readonly) BOOL hasDid;
+@property (readonly) BOOL hasUpgradeUrl;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
+@property (nonatomic,strong) NSString* sessionId;
+@property (nonatomic,strong) NSString* userId;
+@property (nonatomic,strong) NSString* headIconUrl;
+@property (nonatomic,strong) NSString* mobileNo;
+@property (nonatomic,strong) NSString* userName;
+@property (nonatomic,strong) NSString* nickName;
+@property (nonatomic,strong) NSString* recommendCode;
+@property (nonatomic)LoginType loginType;
+@property (nonatomic,strong) NSString* did;
+@property (nonatomic,strong) NSString* upgradeUrl;
 @end
 

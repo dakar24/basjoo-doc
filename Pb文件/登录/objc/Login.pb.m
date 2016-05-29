@@ -6,6 +6,7 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   switch (value) {
     case LoginTypeNormal:
     case LoginTypeWxlogin:
+    case LoginTypeFakelogin:
       return YES;
     default:
       return NO;
@@ -28,6 +29,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   if (self.hasPassword) {
     [output writeString:2 value:self.password];
   }
+  if (self.hasClientInfo) {
+    [output writeMessage:3 value:self.clientInfo];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -39,6 +43,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   }
   if (self.hasPassword) {
     size_ += computeStringSize(2, self.password);
+  }
+  if (self.hasClientInfo) {
+    size_ += computeMessageSize(3, self.clientInfo);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -56,6 +63,12 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   if (self.hasPassword) {
     [output appendFormat:@"%@%@: %@\n", indent, @"password", self.password];
   }
+  if (self.hasClientInfo) {
+    [output appendFormat:@"%@%@ {\n", indent, @"clientInfo"];
+    [self.clientInfo writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
@@ -66,6 +79,10 @@ BOOL LoginTypeIsValidValue(LoginType value) {
 - (void) setPassword:(NSString*) value {
   _hasPassword = YES;
   _password = value;
+}
+- (void) setClientInfo:(ClientInfo*) value {
+  _hasClientInfo = YES;
+  _clientInfo = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -90,6 +107,12 @@ BOOL LoginTypeIsValidValue(LoginType value) {
         [self setPassword:[input readString]];
         break;
       }
+      case 26: {
+        ClientInfo* sub = [[ClientInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self setClientInfo:sub];
+        break;
+      }
     }
   }
 }
@@ -110,6 +133,7 @@ BOOL LoginTypeIsValidValue(LoginType value) {
     _nickName = @"";
     _recommendCode = @"";
     _loginType = LoginTypeNormal;
+    _did = @"";
   }
   return self;
 }
@@ -143,6 +167,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   }
   if (self.hasLoginType) {
     [output writeEnum:10 value:self.loginType];
+  }
+  if (self.hasDid) {
+    [output writeString:11 value:self.did];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -179,6 +206,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   }
   if (self.hasLoginType) {
     size_ += computeEnumSize(10, self.loginType);
+  }
+  if (self.hasDid) {
+    size_ += computeStringSize(11, self.did);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -219,6 +249,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   }
   if (self.hasLoginType) {
     [output appendFormat:@"%@%@: %d\n", indent, @"loginType", (int)self.loginType];
+  }
+  if (self.hasDid) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"did", self.did];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -262,6 +295,10 @@ BOOL LoginTypeIsValidValue(LoginType value) {
 - (void) setLoginType:(LoginType) value {
   _hasLoginType = YES;
   _loginType = value;
+}
+- (void) setDid:(NSString*) value {
+  _hasDid = YES;
+  _did = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -323,6 +360,10 @@ BOOL LoginTypeIsValidValue(LoginType value) {
         }
         break;
       }
+      case 90: {
+        [self setDid:[input readString]];
+        break;
+      }
     }
   }
 }
@@ -341,6 +382,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   if (self.hasOpenId) {
     [output writeString:1 value:self.openId];
   }
+  if (self.hasClientInfo) {
+    [output writeMessage:2 value:self.clientInfo];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -349,6 +393,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   size_ = 0;
   if (self.hasOpenId) {
     size_ += computeStringSize(1, self.openId);
+  }
+  if (self.hasClientInfo) {
+    size_ += computeMessageSize(2, self.clientInfo);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -363,12 +410,22 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   if (self.hasOpenId) {
     [output appendFormat:@"%@%@: %@\n", indent, @"openId", self.openId];
   }
+  if (self.hasClientInfo) {
+    [output appendFormat:@"%@%@ {\n", indent, @"clientInfo"];
+    [self.clientInfo writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 #endif
 - (void) setOpenId:(NSString*) value {
   _hasOpenId = YES;
   _openId = value;
+}
+- (void) setClientInfo:(ClientInfo*) value {
+  _hasClientInfo = YES;
+  _clientInfo = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -387,6 +444,12 @@ BOOL LoginTypeIsValidValue(LoginType value) {
       }
       case 10: {
         [self setOpenId:[input readString]];
+        break;
+      }
+      case 18: {
+        ClientInfo* sub = [[ClientInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self setClientInfo:sub];
         break;
       }
     }
@@ -579,6 +642,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   if (self.hasRecommendCode) {
     [output writeString:11 value:self.recommendCode];
   }
+  if (self.hasClientInfo) {
+    [output writeMessage:12 value:self.clientInfo];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -617,6 +683,9 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   }
   if (self.hasRecommendCode) {
     size_ += computeStringSize(11, self.recommendCode);
+  }
+  if (self.hasClientInfo) {
+    size_ += computeMessageSize(12, self.clientInfo);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -660,6 +729,12 @@ BOOL LoginTypeIsValidValue(LoginType value) {
   }
   if (self.hasRecommendCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"recommendCode", self.recommendCode];
+  }
+  if (self.hasClientInfo) {
+    [output appendFormat:@"%@%@ {\n", indent, @"clientInfo"];
+    [self.clientInfo writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -707,6 +782,10 @@ BOOL LoginTypeIsValidValue(LoginType value) {
 - (void) setRecommendCode:(NSString*) value {
   _hasRecommendCode = YES;
   _recommendCode = value;
+}
+- (void) setClientInfo:(ClientInfo*) value {
+  _hasClientInfo = YES;
+  _clientInfo = value;
 }
 - (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
@@ -765,6 +844,543 @@ BOOL LoginTypeIsValidValue(LoginType value) {
       }
       case 90: {
         [self setRecommendCode:[input readString]];
+        break;
+      }
+      case 98: {
+        ClientInfo* sub = [[ClientInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self setClientInfo:sub];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ClientInfo
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _osType = @"";
+    _clientVersion = @"";
+    _clientId = @"";
+    _did = @"";
+    _apdid = @"";
+    _channel = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasOsType) {
+    [output writeString:1 value:self.osType];
+  }
+  if (self.hasClientVersion) {
+    [output writeString:2 value:self.clientVersion];
+  }
+  if (self.hasClientId) {
+    [output writeString:3 value:self.clientId];
+  }
+  if (self.hasDid) {
+    [output writeString:4 value:self.did];
+  }
+  if (self.hasApdid) {
+    [output writeString:5 value:self.apdid];
+  }
+  if (self.hasChannel) {
+    [output writeString:6 value:self.channel];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasOsType) {
+    size_ += computeStringSize(1, self.osType);
+  }
+  if (self.hasClientVersion) {
+    size_ += computeStringSize(2, self.clientVersion);
+  }
+  if (self.hasClientId) {
+    size_ += computeStringSize(3, self.clientId);
+  }
+  if (self.hasDid) {
+    size_ += computeStringSize(4, self.did);
+  }
+  if (self.hasApdid) {
+    size_ += computeStringSize(5, self.apdid);
+  }
+  if (self.hasChannel) {
+    size_ += computeStringSize(6, self.channel);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ClientInfo*) parseFromData:(NSData*) data {
+  ClientInfo* result = [[ClientInfo alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasOsType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"osType", self.osType];
+  }
+  if (self.hasClientVersion) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"clientVersion", self.clientVersion];
+  }
+  if (self.hasClientId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"clientId", self.clientId];
+  }
+  if (self.hasDid) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"did", self.did];
+  }
+  if (self.hasApdid) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"apdid", self.apdid];
+  }
+  if (self.hasChannel) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"channel", self.channel];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setOsType:(NSString*) value {
+  _hasOsType = YES;
+  _osType = value;
+}
+- (void) setClientVersion:(NSString*) value {
+  _hasClientVersion = YES;
+  _clientVersion = value;
+}
+- (void) setClientId:(NSString*) value {
+  _hasClientId = YES;
+  _clientId = value;
+}
+- (void) setDid:(NSString*) value {
+  _hasDid = YES;
+  _did = value;
+}
+- (void) setApdid:(NSString*) value {
+  _hasApdid = YES;
+  _apdid = value;
+}
+- (void) setChannel:(NSString*) value {
+  _hasChannel = YES;
+  _channel = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setOsType:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setClientVersion:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setClientId:[input readString]];
+        break;
+      }
+      case 34: {
+        [self setDid:[input readString]];
+        break;
+      }
+      case 42: {
+        [self setApdid:[input readString]];
+        break;
+      }
+      case 50: {
+        [self setChannel:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ReportActiveRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _userId = @"";
+    _sessionId = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUserId) {
+    [output writeString:1 value:self.userId];
+  }
+  if (self.hasSessionId) {
+    [output writeString:2 value:self.sessionId];
+  }
+  if (self.hasClientInfo) {
+    [output writeMessage:3 value:self.clientInfo];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasUserId) {
+    size_ += computeStringSize(1, self.userId);
+  }
+  if (self.hasSessionId) {
+    size_ += computeStringSize(2, self.sessionId);
+  }
+  if (self.hasClientInfo) {
+    size_ += computeMessageSize(3, self.clientInfo);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ReportActiveRequest*) parseFromData:(NSData*) data {
+  ReportActiveRequest* result = [[ReportActiveRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
+  if (self.hasSessionId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"sessionId", self.sessionId];
+  }
+  if (self.hasClientInfo) {
+    [output appendFormat:@"%@%@ {\n", indent, @"clientInfo"];
+    [self.clientInfo writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
+- (void) setSessionId:(NSString*) value {
+  _hasSessionId = YES;
+  _sessionId = value;
+}
+- (void) setClientInfo:(ClientInfo*) value {
+  _hasClientInfo = YES;
+  _clientInfo = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setUserId:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setSessionId:[input readString]];
+        break;
+      }
+      case 26: {
+        ClientInfo* sub = [[ClientInfo alloc] init];
+        [input readQJMessage:sub extensionRegistry:extensionRegistry];
+        [self setClientInfo:sub];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation ReportActiveResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+    _sessionId = @"";
+    _userId = @"";
+    _headIconUrl = @"";
+    _mobileNo = @"";
+    _userName = @"";
+    _nickName = @"";
+    _recommendCode = @"";
+    _loginType = LoginTypeNormal;
+    _did = @"";
+    _upgradeUrl = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  if (self.hasSessionId) {
+    [output writeString:3 value:self.sessionId];
+  }
+  if (self.hasUserId) {
+    [output writeString:4 value:self.userId];
+  }
+  if (self.hasHeadIconUrl) {
+    [output writeString:5 value:self.headIconUrl];
+  }
+  if (self.hasMobileNo) {
+    [output writeString:6 value:self.mobileNo];
+  }
+  if (self.hasUserName) {
+    [output writeString:7 value:self.userName];
+  }
+  if (self.hasNickName) {
+    [output writeString:8 value:self.nickName];
+  }
+  if (self.hasRecommendCode) {
+    [output writeString:9 value:self.recommendCode];
+  }
+  if (self.hasLoginType) {
+    [output writeEnum:10 value:self.loginType];
+  }
+  if (self.hasDid) {
+    [output writeString:11 value:self.did];
+  }
+  if (self.hasUpgradeUrl) {
+    [output writeString:12 value:self.upgradeUrl];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  if (self.hasSessionId) {
+    size_ += computeStringSize(3, self.sessionId);
+  }
+  if (self.hasUserId) {
+    size_ += computeStringSize(4, self.userId);
+  }
+  if (self.hasHeadIconUrl) {
+    size_ += computeStringSize(5, self.headIconUrl);
+  }
+  if (self.hasMobileNo) {
+    size_ += computeStringSize(6, self.mobileNo);
+  }
+  if (self.hasUserName) {
+    size_ += computeStringSize(7, self.userName);
+  }
+  if (self.hasNickName) {
+    size_ += computeStringSize(8, self.nickName);
+  }
+  if (self.hasRecommendCode) {
+    size_ += computeStringSize(9, self.recommendCode);
+  }
+  if (self.hasLoginType) {
+    size_ += computeEnumSize(10, self.loginType);
+  }
+  if (self.hasDid) {
+    size_ += computeStringSize(11, self.did);
+  }
+  if (self.hasUpgradeUrl) {
+    size_ += computeStringSize(12, self.upgradeUrl);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (ReportActiveResult*) parseFromData:(NSData*) data {
+  ReportActiveResult* result = [[ReportActiveResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  if (self.hasSessionId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"sessionId", self.sessionId];
+  }
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
+  if (self.hasHeadIconUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"headIconUrl", self.headIconUrl];
+  }
+  if (self.hasMobileNo) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"mobileNo", self.mobileNo];
+  }
+  if (self.hasUserName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userName", self.userName];
+  }
+  if (self.hasNickName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"nickName", self.nickName];
+  }
+  if (self.hasRecommendCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"recommendCode", self.recommendCode];
+  }
+  if (self.hasLoginType) {
+    [output appendFormat:@"%@%@: %d\n", indent, @"loginType", (int)self.loginType];
+  }
+  if (self.hasDid) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"did", self.did];
+  }
+  if (self.hasUpgradeUrl) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"upgradeUrl", self.upgradeUrl];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) setSessionId:(NSString*) value {
+  _hasSessionId = YES;
+  _sessionId = value;
+}
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
+- (void) setHeadIconUrl:(NSString*) value {
+  _hasHeadIconUrl = YES;
+  _headIconUrl = value;
+}
+- (void) setMobileNo:(NSString*) value {
+  _hasMobileNo = YES;
+  _mobileNo = value;
+}
+- (void) setUserName:(NSString*) value {
+  _hasUserName = YES;
+  _userName = value;
+}
+- (void) setNickName:(NSString*) value {
+  _hasNickName = YES;
+  _nickName = value;
+}
+- (void) setRecommendCode:(NSString*) value {
+  _hasRecommendCode = YES;
+  _recommendCode = value;
+}
+- (void) setLoginType:(LoginType) value {
+  _hasLoginType = YES;
+  _loginType = value;
+}
+- (void) setDid:(NSString*) value {
+  _hasDid = YES;
+  _did = value;
+}
+- (void) setUpgradeUrl:(NSString*) value {
+  _hasUpgradeUrl = YES;
+  _upgradeUrl = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setSessionId:[input readString]];
+        break;
+      }
+      case 34: {
+        [self setUserId:[input readString]];
+        break;
+      }
+      case 42: {
+        [self setHeadIconUrl:[input readString]];
+        break;
+      }
+      case 50: {
+        [self setMobileNo:[input readString]];
+        break;
+      }
+      case 58: {
+        [self setUserName:[input readString]];
+        break;
+      }
+      case 66: {
+        [self setNickName:[input readString]];
+        break;
+      }
+      case 74: {
+        [self setRecommendCode:[input readString]];
+        break;
+      }
+      case 80: {
+        LoginType value = (LoginType)[input readEnum];
+        if (LoginTypeIsValidValue(value)) {
+          [self setLoginType:value];
+        } else {
+          [unknownFields_ mergeVarintField:10 value:value];
+        }
+        break;
+      }
+      case 90: {
+        [self setDid:[input readString]];
+        break;
+      }
+      case 98: {
+        [self setUpgradeUrl:[input readString]];
         break;
       }
     }

@@ -14,6 +14,7 @@ import static com.squareup.wire.Message.Label.REQUIRED;
 public final class WxLoginRequest extends Message {
 
   public static final int TAG_OPENID = 1;
+  public static final int TAG_CLIENTINFO = 2;
 
   public static final String DEFAULT_OPENID = "";
 
@@ -23,10 +24,17 @@ public final class WxLoginRequest extends Message {
   @ProtoField(tag = 1, type = STRING, label = REQUIRED)
   public String openId;
 
+  /**
+   * 客户端信息
+   */
+  @ProtoField(tag = 2)
+  public ClientInfo clientInfo;
+
   public WxLoginRequest(WxLoginRequest message) {
     super(message);
     if (message == null) return;
     this.openId = message.openId;
+    this.clientInfo = message.clientInfo;
   }
 
   public WxLoginRequest() {
@@ -37,6 +45,9 @@ public final class WxLoginRequest extends Message {
         case TAG_OPENID:
         this.openId = (String)value;
         break;
+        case TAG_CLIENTINFO:
+        this.clientInfo = (ClientInfo)value;
+        break;
         default: break;
         };
     return this;
@@ -46,12 +57,19 @@ public final class WxLoginRequest extends Message {
   public boolean equals(Object other) {
     if (other == this) return true;
     if (!(other instanceof WxLoginRequest)) return false;
-    return equals(openId, ((WxLoginRequest) other).openId);
+    WxLoginRequest o = (WxLoginRequest) other;
+    return equals(openId, o.openId)
+        && equals(clientInfo, o.clientInfo);
   }
 
   @Override
   public int hashCode() {
     int result = hashCode;
-    return result != 0 ? result : (hashCode = openId != null ? openId.hashCode() : 0);
+    if (result == 0) {
+      result = openId != null ? openId.hashCode() : 0;
+      result = result * 37 + (clientInfo != null ? clientInfo.hashCode() : 0);
+      hashCode = result;
+    }
+    return result;
   }
 }
