@@ -193,6 +193,23 @@ message ReportActiveResult {
    optional string                 upgradeUrl = 12;
 
 }
+
+//登出请求
+message LogoutRequest {   
+
+    required string                 userId = 1;
+
+    
+}
+
+//登出结果
+message LogoutResult { 
+
+   required string                 resultCode = 1;
+    
+   required string                 resultMsg = 2;
+   
+}
  
 
 

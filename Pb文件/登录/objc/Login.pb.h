@@ -8,6 +8,8 @@
 @class GetWxPreInfoResult;
 @class LoginRequest;
 @class LoginResult;
+@class LogoutRequest;
+@class LogoutResult;
 @class ReportActiveRequest;
 @class ReportActiveResult;
 @class WxLoginRequest;
@@ -145,5 +147,17 @@ typedef NS_ENUM(SInt32, LoginType) {
 @property (nonatomic)LoginType loginType;
 @property (nonatomic,strong) NSString* did;
 @property (nonatomic,strong) NSString* upgradeUrl;
+@end
+
+@interface LogoutRequest : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasUserId;
+@property (nonatomic,strong) NSString* userId;
+@end
+
+@interface LogoutResult : QJPBGeneratedMessage<GeneratedMessageProtocol>
+@property (readonly) BOOL hasResultCode;
+@property (readonly) BOOL hasResultMsg;
+@property (nonatomic,strong) NSString* resultCode;
+@property (nonatomic,strong) NSString* resultMsg;
 @end
 

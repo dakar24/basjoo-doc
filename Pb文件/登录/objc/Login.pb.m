@@ -1389,3 +1389,153 @@ BOOL LoginTypeIsValidValue(LoginType value) {
 @end
 
 
+@implementation LogoutRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _userId = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUserId) {
+    [output writeString:1 value:self.userId];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasUserId) {
+    size_ += computeStringSize(1, self.userId);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (LogoutRequest*) parseFromData:(NSData*) data {
+  LogoutRequest* result = [[LogoutRequest alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", self.userId];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setUserId:(NSString*) value {
+  _hasUserId = YES;
+  _userId = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setUserId:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
+@implementation LogoutResult
+
+- (instancetype) init {
+  if ((self = [super init])) {
+    _resultCode = @"";
+    _resultMsg = @"";
+  }
+  return self;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasResultCode) {
+    [output writeString:1 value:self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output writeString:2 value:self.resultMsg];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+
+  size_ = 0;
+  if (self.hasResultCode) {
+    size_ += computeStringSize(1, self.resultCode);
+  }
+  if (self.hasResultMsg) {
+    size_ += computeStringSize(2, self.resultMsg);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (LogoutResult*) parseFromData:(NSData*) data {
+  LogoutResult* result = [[LogoutResult alloc] init];
+  [result mergeFromData:data];  return result;
+}
+#ifdef DEBUG
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasResultCode) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultCode", self.resultCode];
+  }
+  if (self.hasResultMsg) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"resultMsg", self.resultMsg];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+#endif
+- (void) setResultCode:(NSString*) value {
+  _hasResultCode = YES;
+  _resultCode = value;
+}
+- (void) setResultMsg:(NSString*) value {
+  _hasResultMsg = YES;
+  _resultMsg = value;
+}
+- (void) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields_ = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields_ build]];
+        return ;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields_ extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields_ build]];
+          return ;
+        }
+        break;
+      }
+      case 10: {
+        [self setResultCode:[input readString]];
+        break;
+      }
+      case 18: {
+        [self setResultMsg:[input readString]];
+        break;
+      }
+    }
+  }
+}
+@end
+
+
